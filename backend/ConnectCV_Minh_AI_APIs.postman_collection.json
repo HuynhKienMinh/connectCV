@@ -1,0 +1,221 @@
+{
+  "info": {
+    "name": "ConnectCV - Minh AI Core APIs",
+    "description": "Bộ API hoàn chỉnh cho 2 module AI (cv.js & interview.js) sử dụng Google Gemini AI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. AI Generate ATS CV (cv.js)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"companyName\": \"FPT Software Cần Thơ\",\n  \"jdText\": \"Tuyển dụng Lập trình viên Backend Node.js. Yêu cầu thành thạo Express, PostgreSQL/MongoDB, hiểu biết RESTful API và Docker, tối ưu hóa cơ sở dữ liệu.\",\n  \"profile\": {\n    \"fullName\": \"Huỳnh Kiên Minh\",\n    \"education\": \"Đại học Cần Thơ - Ngành CNTT\",\n    \"skills\": [\n      \"JavaScript\",\n      \"Node.js\",\n      \"Express\",\n      \"PostgreSQL\",\n      \"Git\",\n      \"Docker\"\n    ],\n    \"projects\": [\n      {\n        \"name\": \"ConnectCV Platform\",\n        \"description\": \"Xây dựng hệ sinh thái tuyển dụng thông minh tích hợp AI.\"\n      }\n    ]\n  },\n  \"language\": \"vi\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cv/generate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cv",
+            "generate"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. AI Score ATS CV (cv.js)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cvText\": \"Huỳnh Kiên Minh - Lập trình viên Backend Node.js với 1 năm kinh nghiệm. Kỹ năng: JavaScript, Express, PostgreSQL, Git.\",\n  \"jdText\": \"Tuyển dụng Backend Developer: Thành thạo Node.js, Express, PostgreSQL, Docker, Redis, CI/CD.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cv/ats-score",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cv",
+            "ats-score"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. AI Mock Interview & Intentional Hooking (interview.js)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jobTitle\": \"Backend Developer Node.js\",\n  \"jdText\": \"Xây dựng hệ thống REST API, tối ưu truy vấn PostgreSQL, xử lý luồng dữ liệu thời gian thực.\",\n  \"profile\": \"Có kinh nghiệm làm việc với Node.js, PostgreSQL và Docker, từng xử lý tối ưu hệ thống thương mại điện tử.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/interview/start",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "interview",
+            "start"
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. AI Evaluate Answer STAR (interview.js)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"Em hãy chia sẻ một trải nghiệm tự hào nhất trong dự án gần đây?\",\n  \"candidateAnswer\": \"Dạ trải nghiệm tự hào nhất của em là vận hành dự án số tại Cần Thơ, giúp tăng 35% doanh số. Tuy nhiên, bài học đắt giá nhất là một sự cố xung đột dữ liệu tồn kho ngay đêm cao điểm bán hàng. Em đã chủ động áp dụng kỹ thuật đối soát dữ liệu bán tự động tự nghiên cứu để cứu nguy hệ thống và bảo toàn 100% đánh giá 5 sao từ khách hàng.\",\n  \"category\": \"Behavioral\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/interview/evaluate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "interview",
+            "evaluate"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. AI Generate Proposal Freelance (interview.js)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"projectTitle\": \"Xây dựng REST API Backend cho ứng dụng đặt đồ ăn nhanh\",\n  \"clientRequirement\": \"Cần lập trình viên Node.js xây dựng API quản lý đơn hàng, tích hợp thanh toán VietQR và thông báo thời gian thực qua socket.\",\n  \"freelancerSkills\": \"Thành thạo Node.js, Express, PostgreSQL, Socket.io và cổng thanh toán QR.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/interview/proposal",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "interview",
+            "proposal"
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. Community Debrief & Earn Free Credits (interview.js)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"companyName\": \"Viettel Post Cần Thơ\",\n  \"position\": \"Junior Backend Engineer\",\n  \"difficultyRating\": 4,\n  \"interviewQuestions\": [\n    \"Sự khác biệt cốt lõi giữa SQL và NoSQL là gì?\",\n    \"Em giải quyết xung đột deadlock trong database như thế nào?\"\n  ],\n  \"reviewText\": \"Phỏng vấn 2 vòng, người phỏng vấn rất thân thiện và hỏi sâu về database.\",\n  \"anonymous\": false\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/interview/debrief",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "interview",
+            "debrief"
+          ]
+        }
+      }
+    },
+    {
+      "name": "8. Get Community Interview Questions (interview.js)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/interview/community-questions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "interview",
+            "community-questions"
+          ]
+        }
+      }
+    }
+  ]
+}
