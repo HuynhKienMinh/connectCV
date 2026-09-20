@@ -1,0 +1,13 @@
+{
+  "name": "exe-ai-career-copilot-frontend",
+  "version": "1.0.0",
+  "description": "Web Dashboard cho AI Career & Freelance Copilot (React + Vite + Tailwind)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
