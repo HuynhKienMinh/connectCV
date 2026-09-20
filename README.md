@@ -1,3 +1,4 @@
+```plaintext
 connectcv/
 ├── .gitignore
 ├── README.md
@@ -43,3 +44,4 @@ connectcv/
     └── popup/
         ├── popup.html
         └── popup.js
+\```
