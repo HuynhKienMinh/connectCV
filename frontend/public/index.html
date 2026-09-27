@@ -2108,7 +2108,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               body: JSON.stringify({
                 cvData: latestCVData,
                 templateId: tmplId,
-                profile: profileObj
+                profile: profileObj,
+                language: targetLang
               })
             });
             const renderData = await renderRes.json();
@@ -3024,7 +3025,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           body: JSON.stringify({
             cvData: latestCVData,
             templateId: tmplId,
-            profile: profileObj
+            profile: profileObj,
+            language: currentCVLanguage
           })
         });
 
@@ -3052,6 +3054,26 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         } else if (latestRenderedHtml) {
           fsIframe.srcdoc = latestRenderedHtml;
         }
+        const isEn = (latestCVData && latestCVData.language === 'en') || currentCVLanguage === 'en';
+        const fsTitle = document.querySelector('#modal-cv-fullscreen h3');
+        if (fsTitle) {
+          fsTitle.innerHTML = `<i class="fa-solid fa-file-invoice text-blue-600 mr-2"></i> ${isEn ? 'Fullscreen: Tailored Resume' : 'Toàn Màn Hình: Bản CV Độc Bản'}`;
+        }
+        const fsHint = document.querySelector('#modal-cv-fullscreen span.text-\\[11px\\]');
+        if (fsHint) {
+          fsHint.innerHTML = `<i class="fa-solid fa-pen text-blue-600 mr-1"></i> ${isEn ? 'Click text to edit directly' : 'Có thể nhấp vào chữ để chỉnh sửa trực tiếp'}`;
+        }
+        const fsBtns = document.querySelectorAll('#modal-cv-fullscreen button[onclick]');
+        fsBtns.forEach(btn => {
+          const fn = btn.getAttribute('onclick');
+          if (fn === 'downloadCVPDF()') {
+            btn.innerHTML = `<i class="fa-solid fa-download mr-1.5"></i> ${isEn ? 'Download PDF' : 'Tải PDF'}`;
+          } else if (fn === 'printCV()') {
+            btn.innerHTML = `<i class="fa-solid fa-print mr-1.5"></i> ${isEn ? 'Print CV' : 'In CV'}`;
+          } else if (fn === 'downloadCVDoc()') {
+            btn.innerHTML = `<i class="fa-solid fa-file-word mr-1.5"></i> ${isEn ? 'Download Doc' : 'Tải Doc'}`;
+          }
+        });
         modal.classList.remove('hidden');
       }
     }
@@ -3095,11 +3117,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             <div class="inline-flex p-1 bg-white rounded-lg border border-slate-200 shadow-2xs text-xs">
               <button type="button" onclick="switchCVTab('visual')" id="tab-btn-visual" class="px-3 py-1 rounded-md transition flex items-center space-x-1.5 ${currentCVTab === 'visual' ? 'bg-blue-600 text-white shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900 font-semibold'}">
                 <i class="fa-solid fa-eye text-xs"></i>
-                <span>Xem CV Trực Quan</span>
+                <span>${isEn ? 'Visual CV Preview' : 'Xem CV Trực Quan'}</span>
               </button>
               <button type="button" onclick="switchCVTab('ats')" id="tab-btn-ats" class="px-3 py-1 rounded-md transition flex items-center space-x-1.5 ${currentCVTab === 'ats' ? 'bg-blue-600 text-white shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900 font-semibold'}">
                 <i class="fa-solid fa-chart-pie text-xs"></i>
-                <span>Phân Tích ATS (${cv.atsScore}/100)</span>
+                <span>${isEn ? `ATS Benchmark (${cv.atsScore}/100)` : `Phân Tích ATS (${cv.atsScore}/100)`}</span>
               </button>
             </div>
 
@@ -3107,12 +3129,12 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             <div class="flex items-center space-x-2 text-xs">
               <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-700 shadow-2xs" title="${tmplName}">
                 <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: ${tmplColor}"></span>
-                <span class="text-slate-500 font-medium">Mẫu:</span>
+                <span class="text-slate-500 font-medium">${isEn ? 'Template:' : 'Mẫu:'}</span>
                 <span class="max-w-[130px] sm:max-w-[170px] truncate font-bold text-slate-800">${tmplName}</span>
               </div>
-              <button type="button" onclick="toggleCVFullscreen()" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-600 font-medium transition flex items-center gap-1 shadow-2xs" title="Xem toàn màn hình">
+              <button type="button" onclick="toggleCVFullscreen()" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-600 font-medium transition flex items-center gap-1 shadow-2xs" title="${isEn ? 'Fullscreen' : 'Xem toàn màn hình'}">
                 <i class="fa-solid fa-expand text-xs"></i>
-                <span class="hidden sm:inline">Phóng To</span>
+                <span class="hidden sm:inline">${isEn ? 'Fullscreen' : 'Phóng To'}</span>
               </button>
             </div>
           </div>
@@ -3121,9 +3143,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           <div id="cv-editable-hint" class="${currentCVTab === 'visual' ? '' : 'hidden'} bg-amber-50 border-b border-amber-200/60 px-3.5 py-1 text-[11px] text-amber-800 flex items-center justify-between shrink-0">
             <div class="flex items-center space-x-1.5">
               <i class="fa-solid fa-wand-magic-sparkles text-amber-600 text-xs"></i>
-              <span><b>Mẫu CV hoàn chỉnh:</b> Bạn có thể bấm chuột trực tiếp vào văn bản trong CV để sửa đổi nhanh trước khi In!</span>
+              <span>${isEn ? '<b>Interactive Resume:</b> You can click directly on any text inside the CV to edit before printing!' : '<b>Mẫu CV hoàn chỉnh:</b> Bạn có thể bấm chuột trực tiếp vào văn bản trong CV để sửa đổi nhanh trước khi In!'}</span>
             </div>
-            <span class="text-[10px] text-amber-600 font-medium hidden md:inline">Khổ A4 • Chuẩn ATS</span>
+            <span class="text-[10px] text-amber-600 font-medium hidden md:inline">${isEn ? 'A4 Size • ATS Compliant' : 'Khổ A4 • Chuẩn ATS'}</span>
           </div>
 
           <!-- Tab 1: Live Visual Template CV -->

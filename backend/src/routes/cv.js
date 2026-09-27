@@ -294,7 +294,7 @@ YÊU CẦU:
  */
 router.post('/render', (req, res) => {
   try {
-    const { cvData, templateId, profile, language = 'vi' } = req.body;
+    const { cvData, templateId, profile } = req.body;
     if (!cvData) {
       return res.status(400).json({ success: false, message: 'Vui lòng cung cấp cvData!' });
     }
@@ -302,9 +302,10 @@ router.post('/render', (req, res) => {
       return res.status(400).json({ success: false, message: 'Template ID không hợp lệ' });
     }
 
+    const effectiveLanguage = req.body.language || cvData.language || 'vi';
     const template    = getTemplateById(templateId);
     const profileObj  = safeParseProfile(profile);
-    const html        = renderCVDataToTemplateHtml(template, cvData, profileObj, language);
+    const html        = renderCVDataToTemplateHtml(template, cvData, profileObj, effectiveLanguage);
 
     return res.status(200).json({
       success: true,

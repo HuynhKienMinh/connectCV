@@ -18,36 +18,64 @@ function escapeHtml(str) {
 function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi') {
   // ── i18n labels — dịch section headers theo ngôn ngữ CV
   const isEn = language === 'en' || cvData.language === 'en';
+
+  const formatAddress = (addr, enMode) => {
+    if (!addr) return enMode ? 'Can Tho, Vietnam' : 'Cần Thơ, Việt Nam';
+    if (!enMode) return addr;
+    return addr
+      .replace(/Việt Nam|Viet Nam/gi, 'Vietnam')
+      .replace(/Cần Thơ/gi, 'Can Tho')
+      .replace(/Hà Nội/gi, 'Hanoi')
+      .replace(/TP\.?\s*Hồ Chí Minh|Hồ Chí Minh/gi, 'Ho Chi Minh City')
+      .replace(/Đà Nẵng/gi, 'Da Nang')
+      .replace(/Hải Phòng/gi, 'Hai Phong')
+      .replace(/Quận\s*(\d+)/gi, 'District $1');
+  };
+
   const L = {
-    careerObjective:      isEn ? 'Career Objective'      : 'Mục tiêu nghề nghiệp',
-    careerObjectiveUpper: isEn ? 'CAREER OBJECTIVE'      : 'MỤC TIÊU NGHỀ NGHIỆP',
-    summary:              isEn ? 'Professional Summary'  : 'Mục tiêu nghề nghiệp',
-    summaryUpper:         isEn ? 'PROFESSIONAL SUMMARY'  : 'MỤC TIÊU NGHỀ NGHIỆP',
-    workExperience:       isEn ? 'Work Experience'       : 'Kinh nghiệm làm việc',
-    workExperienceUpper:  isEn ? 'WORK EXPERIENCE'       : 'KINH NGHIỆM LÀM VIỆC',
-    education:            isEn ? 'Education'             : 'Học vấn',
-    educationUpper:       isEn ? 'EDUCATION'             : 'HỌC VẤN',
-    skills:               isEn ? 'Skills'                : 'Kỹ năng',
-    skillsUpper:          isEn ? 'SKILLS'                : 'KỸ NĂNG',
-    technicalSkills:      isEn ? 'Technical Skills'      : 'Kỹ năng chuyên môn',
-    technicalSkillsUpper: isEn ? 'TECHNICAL SKILLS'      : 'KỸ NĂNG CHỦ ĐẠO',
-    techAndToolsUpper:    isEn ? 'TECHNICAL SKILLS'      : 'KỸ THUẬT & CÔNG NGHỆ',
-    contact:              isEn ? 'Contact'               : 'Liên hệ',
-    contactUpper:         isEn ? 'CONTACT'               : 'LIÊN HỆ',
+    careerObjective:      isEn ? 'Career Objective'           : 'Mục tiêu nghề nghiệp',
+    careerObjectiveUpper: isEn ? 'CAREER OBJECTIVE'           : 'MỤC TIÊU NGHỀ NGHIỆP',
+    summary:              isEn ? 'Professional Summary'       : 'Mục tiêu nghề nghiệp',
+    summaryUpper:         isEn ? 'PROFESSIONAL SUMMARY'       : 'MỤC TIÊU NGHỀ NGHIỆP',
+    workExperience:       isEn ? 'Work Experience'            : 'Kinh nghiệm làm việc',
+    workExperienceUpper:  isEn ? 'WORK EXPERIENCE'           : 'KINH NGHIỆM LÀM VIỆC',
+    education:            isEn ? 'Education'                  : 'Học vấn',
+    educationUpper:       isEn ? 'EDUCATION'                  : 'HỌC VẤN',
+    skills:               isEn ? 'Skills'                     : 'Kỹ năng',
+    skillsUpper:          isEn ? 'SKILLS'                     : 'KỸ NĂNG',
+    technicalSkills:      isEn ? 'Technical Skills'           : 'Kỹ năng chuyên môn',
+    technicalSkillsUpper: isEn ? 'TECHNICAL SKILLS'           : 'KỸ NĂNG CHỦ ĐẠO',
+    techAndToolsUpper:    isEn ? 'TECHNICAL SKILLS'           : 'KỸ THUẬT & CÔNG NGHỆ',
+    contact:              isEn ? 'Contact'                    : 'Liên hệ',
+    contactUpper:         isEn ? 'CONTACT'                    : 'LIÊN HỆ',
+    personalInfo:         isEn ? 'Personal Information'       : 'Thông tin cá nhân',
+    personalInfoUpper:    isEn ? 'PERSONAL INFORMATION'       : 'THÔNG TIN CÁ NHÂN',
+    info:                 isEn ? 'Information'                : 'Thông tin',
+    infoUpper:            isEn ? 'INFORMATION'                : 'THÔNG TIN',
+    phone:                isEn ? 'Phone'                      : 'Số điện thoại',
+    phoneUpper:           isEn ? 'PHONE'                      : 'SỐ ĐIỆN THOẠI',
+    email:                isEn ? 'Email'                      : 'Email',
+    emailUpper:           isEn ? 'EMAIL'                      : 'EMAIL',
+    address:              isEn ? 'Address'                    : 'Địa chỉ',
+    addressUpper:         isEn ? 'ADDRESS'                    : 'ĐỊA CHỈ',
+    present:              isEn ? 'Present'                    : 'Hiện tại',
   };
   const color = tmpl.themeColor || '#00B14F';
   const layout = tmpl.layout || 'single_column_classic';
   const slug = tmpl.slug || 'default_v2';
 
   // 1. Chuẩn hóa thông tin ứng viên (Đã lọc & vô hiệu hóa triệt để XSS và ký tự độc hại)
-  const candidate = escapeHtml(cvData.fullName || userProfile.fullName || 'Huỳnh Kiên Minh');
-  const role = escapeHtml(cvData.targetRole || userProfile.targetRole || 'Lập trình viên Backend Node.js');
+  const candidate = escapeHtml(cvData.fullName || userProfile.fullName || (isEn ? 'Huynh Kien Minh' : 'Huỳnh Kiên Minh'));
+  const role = escapeHtml(cvData.targetRole || userProfile.targetRole || (isEn ? 'Backend Node.js Developer' : 'Lập trình viên Backend Node.js'));
   const phone = escapeHtml(userProfile.phone || cvData.phone || '(+84) 912 345 678');
   const email = escapeHtml(userProfile.email || cvData.email || 'kienminh.dev@gmail.com');
-  const address = escapeHtml(userProfile.address || cvData.address || 'Cần Thơ, Việt Nam');
+  const rawAddr = cvData.address || userProfile.address || (isEn ? 'Can Tho, Vietnam' : 'Cần Thơ, Việt Nam');
+  const address = escapeHtml(formatAddress(rawAddr, isEn));
   const birth = escapeHtml(userProfile.birth || '24/08/1998');
-  const gender = escapeHtml(userProfile.gender || 'Nam');
-  const summary = escapeHtml(cvData.summary || userProfile.summary || 'Kỹ sư phần mềm giàu nhiệt huyết với nền tảng vững chắc về phát triển hệ thống Backend, thiết kế cơ sở dữ liệu và tối ưu hóa hiệu năng ứng dụng. Mục tiêu trở thành Senior Backend Engineer đóng góp vào các giải pháp công nghệ quy mô lớn.');
+  const gender = escapeHtml(userProfile.gender || (isEn ? 'Male' : 'Nam'));
+  const summary = escapeHtml(cvData.summary || userProfile.summary || (isEn
+    ? 'Dedicated Software Engineer with over 4 years of expertise in Backend development, database architecture, and high-performance system optimization. Proficient in Node.js, TypeScript, and cloud-native environments. Proven track record of designing scalable RESTful APIs and improving system latency by 35% using MongoDB and PostgreSQL.'
+    : 'Kỹ sư phần mềm giàu nhiệt huyết với nền tảng vững chắc về phát triển hệ thống Backend, thiết kế cơ sở dữ liệu và tối ưu hóa hiệu năng ứng dụng. Mục tiêu trở thành Senior Backend Engineer đóng góp vào các giải pháp công nghệ quy mô lớn.'));
 
   // Avatar cá nhân của người dùng (hỗ trợ base64 upload hoặc link ảnh đã sanitize)
   let rawAvatar = userProfile.avatarUrl || userProfile.avatarDataUrl || cvData.avatarUrl || cvData.avatarDataUrl || '';
@@ -72,38 +100,62 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     skills = userProfile.skills;
   }
   if (skills.length === 0) {
-    skills = ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Tối ưu hóa hiệu năng'];
+    skills = isEn
+      ? ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Performance Optimization']
+      : ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Tối ưu hóa hiệu năng'];
   }
   skills = skills.map(sk => escapeHtml(sk));
 
   // 3. Chuẩn hóa kinh nghiệm làm việc
   let experience = (cvData.tailoredExperience || []).map(exp => ({
-    company: exp.organization || exp.company || 'Dự án ConnectCV',
-    role: exp.role || exp.position || 'Nhà phát triển Backend',
-    time: exp.duration || exp.time || '06/2023 - Hiện tại',
+    company: exp.organization || exp.company || (isEn ? 'ConnectCV Project' : 'Dự án ConnectCV'),
+    role: exp.role || exp.position || (isEn ? 'Backend Developer' : 'Nhà phát triển Backend'),
+    time: (exp.duration || exp.time || (isEn ? '06/2023 - Present' : '06/2023 - Hiện tại')).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
     bullets: Array.isArray(exp.achievements) ? exp.achievements : (Array.isArray(exp.bullets) ? exp.bullets : [])
   }));
 
   if (experience.length === 0 && Array.isArray(userProfile.experience) && userProfile.experience.length > 0) {
     experience = userProfile.experience.map(exp => ({
-      company: exp.company || exp.organization || 'Dự án ConnectCV',
+      company: exp.company || exp.organization || (isEn ? 'ConnectCV Project' : 'Dự án ConnectCV'),
       role: exp.role || role,
-      time: exp.duration || exp.time || '2023 - Hiện tại',
+      time: (exp.duration || exp.time || (isEn ? '2023 - Present' : '2023 - Hiện tại')).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
       bullets: Array.isArray(exp.achievements) ? exp.achievements : (Array.isArray(exp.bullets) ? exp.bullets : [exp.description || ''])
     }));
   } else if (experience.length === 0 && Array.isArray(userProfile.projects) && userProfile.projects.length > 0) {
     experience = userProfile.projects.map(p => ({
-      company: p.name || 'Dự án ConnectCV',
+      company: p.name || (isEn ? 'ConnectCV Project' : 'Dự án ConnectCV'),
       role: role,
-      time: '2023 - Hiện tại',
+      time: isEn ? '2023 - Present' : '2023 - Hiện tại',
       bullets: [
-        p.description || 'Phát triển kiến trúc backend RESTful API và tối ưu hóa truy vấn cơ sở dữ liệu.',
-        'Đạt hiệu suất xử lý cao và đảm bảo tính bảo mật toàn vẹn dữ liệu hệ thống.'
+        p.description || (isEn ? 'Architected RESTful API backend and optimized database queries.' : 'Phát triển kiến trúc backend RESTful API và tối ưu hóa truy vấn cơ sở dữ liệu.'),
+        isEn ? 'Delivered high system performance and guaranteed end-to-end data integrity.' : 'Đạt hiệu suất xử lý cao và đảm bảo tính bảo mật toàn vẹn dữ liệu hệ thống.'
       ]
     }));
   }
   if (experience.length === 0) {
-    experience = [
+    experience = isEn ? [
+      {
+        company: 'ConnectCV Project (AI Career Platform)',
+        role: role,
+        time: '06/2023 - Present',
+        bullets: [
+          "Successfully developed 'ConnectCV' AI platform supporting CV optimization and interview training, serving 500+ pilot users.",
+          'Architected and built high-performance RESTful APIs using Node.js and Express, cutting API latency by 25%.',
+          'Leveraged PostgreSQL for secure and scalable user data management, ensuring 99.9% uptime.',
+          'Containerized backend services with Docker, cutting environment deployment setup time by 30% via Git CI/CD pipelines.'
+        ]
+      },
+      {
+        company: 'TechPro Solutions Corp',
+        role: 'Junior Backend Developer',
+        time: '08/2022 - 05/2023',
+        bullets: [
+          'Engineered relational database schemas and developed business logic APIs for internal enterprise tools.',
+          'Integrated secure third-party payment gateways and JWT user authentication mechanisms.',
+          'Collaborated with frontend and QA teams in Agile sprints to resolve production defects.'
+        ]
+      }
+    ] : [
       {
         company: 'Dự án ConnectCV (Nền tảng AI Career)',
         role: role,
@@ -136,27 +188,33 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 
   // 4. Chuẩn hóa học vấn
   let education = (cvData.education || []).map(edu => ({
-    school: edu.school || 'Trường Đại học',
-    degree: edu.degree || 'Kỹ sư Kỹ thuật Phần mềm',
-    time: edu.duration || edu.time || '2019 - 2023',
-    highlight: edu.highlights || edu.highlight || 'Tốt nghiệp loại Giỏi'
+    school: edu.school || (isEn ? 'Can Tho University' : 'Đại học Cần Thơ'),
+    degree: edu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
+    time: (edu.duration || edu.time || '2019 - 2023').replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
+    highlight: (edu.highlights || edu.highlight || (isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi'))
+      .replace(/Tốt nghiệp loại Giỏi/gi, isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi')
+      .replace(/Tốt nghiệp loại Xuất sắc/gi, isEn ? 'Graduated with High Distinction' : 'Tốt nghiệp loại Xuất sắc')
   }));
 
   if (education.length === 0 && userProfile.education) {
     if (Array.isArray(userProfile.education)) {
       education = userProfile.education.map(edu => ({
-        school: edu.school || 'Trường Đại học',
-        degree: edu.degree || 'Kỹ sư Kỹ thuật Phần mềm',
-        time: edu.duration || edu.time || '2019 - 2023',
-        highlight: edu.highlights || edu.highlight || 'Tốt nghiệp loại Giỏi'
+        school: edu.school || (isEn ? 'Can Tho University' : 'Đại học Cần Thơ'),
+        degree: edu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
+        time: (edu.duration || edu.time || '2019 - 2023').replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
+        highlight: (edu.highlights || edu.highlight || (isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi'))
+          .replace(/Tốt nghiệp loại Giỏi/gi, isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi')
       }));
     } else {
+      const sch = typeof userProfile.education === 'string'
+        ? userProfile.education
+        : (userProfile.education.school || (isEn ? 'Can Tho University' : 'Đại học Cần Thơ'));
       education = [
         {
-          school: typeof userProfile.education === 'string' ? userProfile.education : (userProfile.education.school || 'Đại học Cần Thơ'),
-          degree: userProfile.education.degree || 'Kỹ sư Kỹ thuật Phần mềm',
-          time: userProfile.education.time || '2019 - 2023',
-          highlight: 'Tốt nghiệp loại Giỏi • Điểm đồ án chuyên ngành: 9.2/10'
+          school: isEn ? sch.replace(/Đại học Cần Thơ/gi, 'Can Tho University') : sch,
+          degree: userProfile.education.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
+          time: (userProfile.education.time || '2019 - 2023').replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
+          highlight: isEn ? 'Graduated with Honors • Capstone Project Score: 9.2/10' : 'Tốt nghiệp loại Giỏi • Điểm đồ án chuyên ngành: 9.2/10'
         }
       ];
     }
@@ -164,10 +222,10 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
   if (education.length === 0) {
     education = [
       {
-        school: 'Đại học Cần Thơ',
-        degree: 'Kỹ sư Kỹ thuật Phần mềm',
+        school: isEn ? 'Can Tho University' : 'Đại học Cần Thơ',
+        degree: isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm',
         time: '2019 - 2023',
-        highlight: 'GPA: 3.5/4.0 (Tốt nghiệp loại Giỏi) • Giải Nhì Nghiên cứu Khoa học Sinh viên'
+        highlight: isEn ? 'GPA: 3.5/4.0 (Graduated with Honors) • Student Scientific Research Second Prize' : 'GPA: 3.5/4.0 (Tốt nghiệp loại Giỏi) • Giải Nhì Nghiên cứu Khoa học Sinh viên'
       }
     ];
   }
@@ -182,15 +240,15 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
   const toolbarHtml = `
     <div class="cv-toolbar no-print">
         <button onclick="downloadAsPdf()" style="background:#00B14F; color:#fff; border:none; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
-          📥 Tải PDF (Chuẩn A4)
+          ${isEn ? '📥 Download PDF (A4)' : '📥 Tải PDF (Chuẩn A4)'}
         </button>
         <button onclick="window.print()" style="background:#2563eb; color:#fff; border:none; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
-          🖨️ In A4
+          ${isEn ? '🖨️ Print A4' : '🖨️ In A4'}
         </button>
         <button onclick="saveCurrentCVHtml()" style="background:#fff; border:1px solid #cbd5e1; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
-          💾 Lưu File HTML
+          ${isEn ? '💾 Save HTML' : '💾 Lưu File HTML'}
         </button>
-        <span style="font-size:12px; color:#64748b; font-weight:600;">🎨 Mẫu: <b>${escapeHtml(tmpl.title || '')}</b></span>
+        <span style="font-size:12px; color:#64748b; font-weight:600;">🎨 ${isEn ? 'Template' : 'Mẫu'}: <b>${escapeHtml(tmpl.title || '')}</b></span>
     </div>
   `;
 
@@ -480,7 +538,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; border-top:2px solid ${color}; border-bottom:2px solid ${color}; padding:10px 0; margin-bottom:20px;">
           <div>
-              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">THÔNG TIN CÁ NHÂN</h4>
+              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">${L.personalInfoUpper}</h4>
               <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.6; margin:0;">
                   <li contenteditable="true">• ${phone}</li>
                   <li contenteditable="true">• ${email}</li>
@@ -535,7 +593,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="font-size:11px; color:#d1d5db; line-height:1.6; margin-bottom:16px;">
-                  <div style="color:${color}; font-weight:700; margin-bottom:4px;">THÔNG TIN CÁ NHÂN</div>
+                  <div style="color:${color}; font-weight:700; margin-bottom:4px;">${L.personalInfoUpper}</div>
                   <div>📞 ${phone}</div>
                   <div>✉️ ${email}</div>
                   <div>📍 ${address}</div>
@@ -667,11 +725,11 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               
               <div style="background:${color}; color:#ffffff; padding:16px 14px; border-radius:4px;">
                   <div style="font-size:10.5px; line-height:1.8; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:10px;">
-                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700;">Số điện thoại</div>
+                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700;">${L.phone}</div>
                       <div contenteditable="true">${phone}</div>
                       <div style="color:#d4b8a5; font-size:9.5px; font-weight:700; margin-top:4px;">Email</div>
                       <div contenteditable="true">${email}</div>
-                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700; margin-top:4px;">Địa chỉ</div>
+                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700; margin-top:4px;">${L.address}</div>
                       <div contenteditable="true">${address}</div>
                   </div>
 
@@ -734,12 +792,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           </div>
 
           <div style="margin-bottom:16px;">
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:6px;">EXECUTIVE SUMMARY</h2>
+              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:6px;">${L.summaryUpper}</h2>
               <p style="font-size:11.5px; line-height:1.5; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
           </div>
 
           <div style="margin-bottom:16px;">
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:8px;">PROFESSIONAL EXPERIENCE</h2>
+              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:8px;">${L.workExperienceUpper}</h2>
               ${experience.map(exp => `
               <div style="margin-bottom:12px;">
                   <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:12px;">
@@ -755,7 +813,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           </div>
 
           <div style="margin-bottom:16px;">
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:8px;">EDUCATION</h2>
+              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:8px;">${L.educationUpper}</h2>
               ${education.map(edu => `
               <div style="margin-bottom:6px;">
                   <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:12px;">
@@ -769,7 +827,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           </div>
 
           <div>
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:6px;">CORE COMPETENCIES & TECHNICAL SKILLS</h2>
+              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:6px;">${L.technicalSkillsUpper}</h2>
               <p style="font-size:11px; line-height:1.5; margin:0;" contenteditable="true">${skills.join(' • ')}</p>
           </div>
       </div>
@@ -923,7 +981,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:12px; margin-bottom:12px;">
-                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Thông Tin</h3>
+                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${L.contactUpper}</h3>
                   <div style="font-size:10px; color:${sbTextColor}; line-height:1.8;">
                       <div contenteditable="true">📞 ${phone}</div>
                       <div contenteditable="true">✉️ ${email}</div>
@@ -999,7 +1057,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${candidate} - CV Chuẩn ATS [${tmpl.title}]</title>
+    <title>${candidate} - ${isEn ? 'ATS Standard Resume' : 'CV Chuẩn ATS'} [${tmpl.title}]</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="/js/html2pdf.bundle.min.js"></script>
