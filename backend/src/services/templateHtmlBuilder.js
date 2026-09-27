@@ -19,13 +19,21 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
   // ── i18n labels — dịch section headers theo ngôn ngữ CV
   const isEn = language === 'en' || cvData.language === 'en';
   const L = {
-    careerObjective: isEn ? 'Career Objective'     : 'Mục tiêu nghề nghiệp',
-    workExperience:  isEn ? 'Work Experience'       : 'Kinh nghiệm làm việc',
-    education:       isEn ? 'Education'             : 'Học vấn & Bằng cấp',
-    skills:          isEn ? 'Technical Skills'      : 'Kỹ năng chuyên môn',
-    softSkills:      isEn ? 'Soft Skills'           : 'Kỹ năng mềm',
-    contact:         isEn ? 'Contact'               : 'Liên hệ',
-    summary:         isEn ? 'Professional Summary'  : 'Mục tiêu nghề nghiệp',
+    careerObjective:      isEn ? 'Career Objective'      : 'Mục tiêu nghề nghiệp',
+    careerObjectiveUpper: isEn ? 'CAREER OBJECTIVE'      : 'MỤC TIÊU NGHỀ NGHIỆP',
+    summary:              isEn ? 'Professional Summary'  : 'Mục tiêu nghề nghiệp',
+    summaryUpper:         isEn ? 'PROFESSIONAL SUMMARY'  : 'MỤC TIÊU NGHỀ NGHIỆP',
+    workExperience:       isEn ? 'Work Experience'       : 'Kinh nghiệm làm việc',
+    workExperienceUpper:  isEn ? 'WORK EXPERIENCE'       : 'KINH NGHIỆM LÀM VIỆC',
+    education:            isEn ? 'Education'             : 'Học vấn',
+    educationUpper:       isEn ? 'EDUCATION'             : 'HỌC VẤN',
+    skills:               isEn ? 'Skills'                : 'Kỹ năng',
+    skillsUpper:          isEn ? 'SKILLS'                : 'KỸ NĂNG',
+    technicalSkills:      isEn ? 'Technical Skills'      : 'Kỹ năng chuyên môn',
+    technicalSkillsUpper: isEn ? 'TECHNICAL SKILLS'      : 'KỸ NĂNG CHỦ ĐẠO',
+    techAndToolsUpper:    isEn ? 'TECHNICAL SKILLS'      : 'KỸ THUẬT & CÔNG NGHỆ',
+    contact:              isEn ? 'Contact'               : 'Liên hệ',
+    contactUpper:         isEn ? 'CONTACT'               : 'LIÊN HỆ',
   };
   const color = tmpl.themeColor || '#00B14F';
   const layout = tmpl.layout || 'single_column_classic';
@@ -338,12 +346,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; margin-bottom:12px;">
-                  <h3 style="font-size:10px; font-weight:800; color:${sidebarAccent}; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Kỹ Năng</h3>
+                  <h3 style="font-size:10px; font-weight:800; color:${sidebarAccent}; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">${L.skillsUpper}</h3>
                   ${skills.map(sk => `<div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ ${sk}</div>`).join('')}
               </div>
 
               <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px;">
-                  <h3 style="font-size:10px; font-weight:800; color:${sidebarAccent}; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Học Vấn</h3>
+                  <h3 style="font-size:10px; font-weight:800; color:${sidebarAccent}; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">${L.educationUpper}</h3>
                   ${education.map(edu => `
                   <div style="margin-bottom:8px;">
                       <div style="font-size:10.5px; font-weight:700; color:#ffffff;" contenteditable="true">${edu.school}</div>
@@ -357,12 +365,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <!-- CỘT PHẢI - NỘI DUNG -->
           <div style="flex:1; height:100%; min-height:296mm; padding:24px 22px; box-sizing:border-box; overflow:hidden;">
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${sidebarBg}; text-transform:uppercase; border-bottom:2px solid ${sidebarBg}; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+                  <h2 style="font-size:13px; font-weight:800; color:${sidebarBg}; text-transform:uppercase; border-bottom:2px solid ${sidebarBg}; padding-bottom:4px; margin-bottom:10px;">${L.careerObjectiveUpper}</h2>
                   <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
               </div>
 
               <div>
-                  <h2 style="font-size:13px; font-weight:800; color:${sidebarBg}; text-transform:uppercase; border-bottom:2px solid ${sidebarBg}; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                  <h2 style="font-size:13px; font-weight:800; color:${sidebarBg}; text-transform:uppercase; border-bottom:2px solid ${sidebarBg}; padding-bottom:4px; margin-bottom:12px;">${L.workExperienceUpper}</h2>
                   ${experience.map(exp => `
                   <div style="margin-bottom:14px;">
                       <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -402,7 +410,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="margin-bottom:18px;">
-                  <h3 style="font-size:12px; font-weight:700; color:#ffffff; text-transform:uppercase; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:3px; margin-bottom:8px;">MỤC TIÊU NGHỀ NGHIỆP</h3>
+                  <h3 style="font-size:12px; font-weight:700; color:#ffffff; text-transform:uppercase; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h3>
                   <p style="font-size:11px; color:#d1d5db; line-height:1.45; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
               </div>
 
@@ -420,7 +428,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <div style="flex:1; height:100%; min-height:296mm; background:#ffffff; padding:25px 22px; box-sizing:border-box; overflow:hidden;">
               <div style="margin-bottom:20px;">
                   <h2 style="font-size:14px; font-weight:800; color:#1e293b; text-transform:uppercase; display:flex; align-items:center; gap:6px; border-bottom:2px solid #e2e8f0; padding-bottom:4px; margin-bottom:10px;">
-                      <span>🎓 HỌC VẤN</span>
+                      <span>🎓 ${L.educationUpper}</span>
                   </h2>
                   ${education.map(edu => `
                   <div style="margin-bottom:8px;">
@@ -436,7 +444,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 
               <div>
                   <h2 style="font-size:14px; font-weight:800; color:#1e293b; text-transform:uppercase; display:flex; align-items:center; gap:6px; border-bottom:2px solid #e2e8f0; padding-bottom:4px; margin-bottom:10px;">
-                      <span>💼 KINH NGHIỆM LÀM VIỆC</span>
+                      <span>💼 ${L.workExperienceUpper}</span>
                   </h2>
                   ${experience.map(exp => `
                   <div style="margin-bottom:14px; border-left:2px solid ${color}; padding-left:10px; margin-left:2px;">
@@ -480,13 +488,13 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </ul>
           </div>
           <div style="border-left:1px solid #e2e8f0; padding-left:12px;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">HỌC VẤN</h4>
+              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">${L.educationUpper}</h4>
               <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.6; margin:0;">
                   ${education.map(edu => `<li contenteditable="true">• ${edu.school} (${edu.time})</li>`).join('')}
               </ul>
           </div>
           <div style="border-left:1px solid #e2e8f0; padding-left:12px;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">KỸ NĂNG CHỦ ĐẠO</h4>
+              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">${L.technicalSkillsUpper}</h4>
               <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.6; margin:0;">
                   ${skills.slice(0, 4).map(sk => `<li contenteditable="true">• ${sk}</li>`).join('')}
               </ul>
@@ -494,7 +502,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
       </div>
 
       <div>
-          <h3 style="font-size:13.5px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:14px;">KINH NGHIỆM LÀM VIỆC</h3>
+          <h3 style="font-size:13.5px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:14px;">${L.workExperienceUpper}</h3>
           ${experience.map(exp => `
           <div style="display:flex; gap:16px; margin-bottom:15px;">
               <div style="width:130px; font-size:11px; font-weight:700; color:#64748b; flex-shrink:0;">
@@ -534,7 +542,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="margin-bottom:16px;">
-                  <div style="color:${color}; font-weight:700; font-size:11.5px; margin-bottom:6px;">KỸ NĂNG</div>
+                  <div style="color:${color}; font-weight:700; font-size:11.5px; margin-bottom:6px;">${L.skillsUpper}</div>
                   <ul style="padding-left:14px; font-size:11px; color:#e5e7eb; line-height:1.5; margin:0;">
                       ${skills.map(sk => `<li contenteditable="true">${sk}</li>`).join('')}
                   </ul>
@@ -544,12 +552,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <!-- CỘT PHẢI (TIMELINE CAM) -->
           <div style="flex:1; height:100%; min-height:296mm; background:#ffffff; padding:25px 22px; box-sizing:border-box; overflow:hidden;">
               <div style="margin-bottom:18px;">
-                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">MỤC TIÊU NGHỀ NGHIỆP</h3>
+                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h3>
                   <p style="font-size:11.5px; color:#334155; line-height:1.5; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
               </div>
 
               <div style="margin-bottom:18px;">
-                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:10px;">KINH NGHIỆM LÀM VIỆC</h3>
+                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:10px;">${L.workExperienceUpper}</h3>
                   ${experience.map(exp => `
                   <div style="margin-bottom:14px;">
                       <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -565,7 +573,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div>
-                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">HỌC VẤN</h3>
+                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.educationUpper}</h3>
                   ${education.map(edu => `
                   <div style="margin-bottom:8px;">
                       <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -603,7 +611,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
       <div style="display:flex; gap:20px;">
           <div style="flex:2;">
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">Kinh Nghiệm Làm Việc</h2>
+                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.workExperienceUpper}</h2>
                   ${experience.map(exp => `
                   <div style="margin-bottom:12px; padding-left:10px; border-left:2px solid #e2e8f0;">
                       <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -620,11 +628,11 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           </div>
           <div style="flex:1; border-left:1.5px solid #e2e8f0; padding-left:16px;">
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">Mục Tiêu</h2>
+                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h2>
                   <p style="font-size:11px; color:#334155; line-height:1.5; margin:0;" contenteditable="true">${summary}</p>
               </div>
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">Học Vấn</h2>
+                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.educationUpper}</h2>
                   ${education.map(edu => `
                   <div style="margin-bottom:8px;">
                       <div style="font-size:11.5px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</div>
@@ -634,7 +642,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
                   `).join('')}
               </div>
               <div>
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">Kỹ Năng</h2>
+                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.skillsUpper}</h2>
                   <ul style="list-style:none; padding:0; font-size:11px; color:#334155; line-height:1.7; margin:0;">
                       ${skills.map(sk => `<li contenteditable="true">→ ${sk}</li>`).join('')}
                   </ul>
@@ -668,7 +676,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
                   </div>
 
                   <div style="margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:10px;">
-                      <div style="font-size:11px; font-weight:800; text-transform:uppercase; margin-bottom:6px; color:#f5ebe0;">Học Vấn</div>
+                      <div style="font-size:11px; font-weight:800; text-transform:uppercase; margin-bottom:6px; color:#f5ebe0;">${L.educationUpper}</div>
                       ${education.map(edu => `
                       <div style="margin-bottom:6px;">
                           <div style="font-size:10.5px; font-weight:700;" contenteditable="true">${edu.school}</div>
@@ -691,12 +699,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 
           <div style="flex:1;">
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">Mục Tiêu Nghề Nghiệp</h2>
+                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h2>
                   <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
               </div>
 
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:10px;">Kinh Nghiệm Làm Việc</h2>
+                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:10px;">${L.workExperienceUpper}</h2>
                   ${experience.map(exp => `
                   <div style="margin-bottom:14px;">
                       <div style="display:flex; justify-content:space-between; align-items:baseline;">
@@ -785,12 +793,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
       </div>
 
       <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.careerObjectiveUpper}</h2>
           <p style="font-size:11.5px; color:#334155; line-height:1.6; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
       </div>
 
       <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:12px;">${L.workExperienceUpper}</h2>
           ${experience.map(exp => `
           <div style="display:flex; gap:16px; margin-bottom:14px;">
               <div style="width:110px; font-size:11px; color:#64748b; flex-shrink:0; text-align:right; padding-top:2px;" contenteditable="true">${exp.time}</div>
@@ -808,7 +816,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 
       <div style="display:flex; gap:20px;">
           <div style="flex:1;">
-              <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">Học Vấn</h2>
+              <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.educationUpper}</h2>
               ${education.map(edu => `
               <div style="margin-bottom:8px;">
                   <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</div>
@@ -818,7 +826,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               `).join('')}
           </div>
           <div style="flex:1;">
-              <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">Kỹ Năng</h2>
+              <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.skillsUpper}</h2>
               <div style="columns:2; column-gap:10px;">
                   ${skills.map(sk => `<div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ ${sk}</div>`).join('')}
               </div>
@@ -850,7 +858,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 
       <div style="flex:1; padding:16px 24px; box-sizing:border-box; overflow:hidden;">
           <div style="margin-bottom:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px 16px;">
-              <div style="font-size:10px; color:#94a3b8; font-family:monospace; margin-bottom:4px;">// MỤC TIÊU NGHỀ NGHIỆP</div>
+              <div style="font-size:10px; color:#94a3b8; font-family:monospace; margin-bottom:4px;">// ${L.careerObjectiveUpper}</div>
               <p style="font-size:11.5px; color:#334155; line-height:1.55; margin:0;" contenteditable="true">${summary}</p>
           </div>
 
@@ -871,7 +879,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
                   `).join('')}
               </div>
               <div style="flex:2;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:12px;">// KỸ THUẬT & CÔNG NGHỆ</h2>
+                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:12px;">// ${L.techAndToolsUpper}</h2>
                   <div style="display:flex; flex-direction:column; gap:5px;">
                       ${skills.map(sk => `<div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid ${color}; border-radius:0 4px 4px 0;" contenteditable="true">${sk}</div>`).join('')}
                   </div>
@@ -924,7 +932,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:12px; margin-bottom:12px;">
-                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Học Vấn</h3>
+                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${L.educationUpper}</h3>
                   ${education.map(edu => `
                   <div style="margin-bottom:8px;">
                       <div style="font-size:10.5px; font-weight:700; color:${sbTextColor};" contenteditable="true">${edu.school}</div>
@@ -935,7 +943,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
               </div>
 
               <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:12px;">
-                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kỹ Năng</h3>
+                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${L.skillsUpper}</h3>
                   ${skills.map(sk => `<div style="font-size:10px; color:${sbTextColor}; margin-bottom:4px;" contenteditable="true">▸ ${sk}</div>`).join('')}
               </div>
           </div>
@@ -943,12 +951,12 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <!-- NỘI DUNG CHÍNH -->
           <div style="flex:1; height:100%; padding:24px 22px; box-sizing:border-box; overflow:hidden;">
               <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.careerObjectiveUpper}</h2>
                   <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
               </div>
 
               <div>
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:12px;">${L.workExperienceUpper}</h2>
                   ${experience.map(exp => `
                   <div style="margin-bottom:14px;">
                       <div style="display:flex; justify-content:space-between; align-items:baseline;">
