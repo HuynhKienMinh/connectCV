@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Huỳnh Kiến Minh | Senior Backend &amp; AI Engineer - Portfolio</title>
-  
-  <!-- OpenGraph Metadata chuẩn SEO & Social Share (LinkedIn, Facebook, Zalo) -->
   <meta name="title" content="Huỳnh Kiến Minh - Senior Backend &amp; AI Engineer | Portfolio">
   <meta name="description" content="Kỹ sư Phần mềm đam mê kiến trúc Backend chịu tải cao, tích hợp AI Agents và bảo mật hệ thống. Có kinh nghiệm triển khai Docker, Node.js, WebSocket và tối ưu hóa">
   <meta property="og:type" content="website">
@@ -17,63 +15,32 @@
   <meta property="twitter:title" content="Huỳnh Kiến Minh - Senior Backend &amp; AI Engineer">
   <meta property="twitter:description" content="Kỹ sư Phần mềm đam mê kiến trúc Backend chịu tải cao, tích hợp AI Agents và bảo mật hệ thống. Có kinh nghiệm triển khai Docker, Node.js, WebSocket và tối ưu hóa">
   <meta property="twitter:image" content="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80">
-
-  <!-- Cài đặt Tailwind CSS & Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#eef2ff',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-            }
-          }
-        }
-      }
+      theme: { extend: { fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }, colors: { brand: { 50: '#eef2ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca' } } } }
     }
   </script>
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .glass-card {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-card-hover:hover {
-      border-color: rgba(99, 102, 241, 0.4);
-      transform: translateY(-2px);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    .glass-card { background: rgba(30,41,59,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .glass-card-hover:hover { border-color: rgba(99,102,241,0.4); transform: translateY(-2px); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
   </style>
 </head>
-<body class="bg-[#0b0f19] text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
-
-  <!-- Glow Background Decorations -->
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen">
   <div class="fixed top-0 left-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
   <div class="fixed bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-  <!-- Navbar -->
   <header class="sticky top-0 z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="#hero" class="flex items-center space-x-2.5 font-bold text-lg text-white">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white text-sm shadow-md">
-          <i class="fa-solid fa-code"></i>
-        </span>
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white text-sm shadow-md"><i class="fa-solid fa-code"></i></span>
         <span class="tracking-tight">Huỳnh Kiến Minh</span>
       </a>
-
       <nav class="hidden md:flex items-center space-x-6 text-sm text-slate-300 font-medium">
         <a href="#about" class="hover:text-indigo-400 transition">Giới Thiệu</a>
         <a href="#projects" class="hover:text-indigo-400 transition">Dự Án</a>
@@ -81,18 +48,13 @@
         <a href="#skills" class="hover:text-indigo-400 transition">Kỹ Năng</a>
         <a href="#contact" class="hover:text-indigo-400 transition">Liên Hệ</a>
       </nav>
-
-      <div class="flex items-center space-x-3">
-        <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-indigo-500/20 flex items-center">
-          <i class="fa-solid fa-paper-plane mr-1.5"></i> Kết Nối
-        </a>
-      </div>
+      <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-indigo-500/20 flex items-center">
+        <i class="fa-solid fa-paper-plane mr-1.5"></i> Kết Nối
+      </a>
     </div>
   </header>
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12 space-y-16">
-
-    <!-- HERO SECTION (Theo mô hình Ảnh 3) -->
     <section id="hero" class="pt-6 pb-4">
       <div class="glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden">
         <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8">
@@ -101,23 +63,19 @@
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>Sẵn sàng đón nhận cơ hội việc làm mới</span>
             </div>
-
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
               Xin chào, tôi là <span class="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">Huỳnh Kiến Minh</span>
             </h1>
-
             <p class="text-lg text-indigo-200/90 font-medium">Senior Backend &amp; AI Engineer</p>
             <p class="text-sm text-slate-400 leading-relaxed max-w-xl">Kỹ sư Phần mềm đam mê kiến trúc Backend chịu tải cao, tích hợp AI Agents và bảo mật hệ thống. Có kinh nghiệm triển khai Docker, Node.js, WebSocket và tối ưu hóa hệ thống chuẩn CISO.</p>
-
             <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
               <span class="text-xs text-slate-400 flex items-center bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/60">
                 <i class="fa-solid fa-location-dot text-indigo-400 mr-1.5"></i> Cần Thơ, Việt Nam
               </span>
               <span class="text-xs text-emerald-400 flex items-center bg-emerald-950/40 px-3 py-1.5 rounded-lg border border-emerald-800/40">
-                <i class="fa-solid fa-certificate mr-1.5"></i> ConnectCV ATS Score: <b class="ml-1 font-bold">95/100</b>
+                <i class="fa-solid fa-certificate mr-1.5"></i> ConnectCV ATS Score: <b class="ml-1 font-bold">92/100</b>
               </span>
             </div>
-
             <div class="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-3">
               <a href="#projects" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition shadow-md shadow-indigo-600/30 flex items-center">
                 <i class="fa-solid fa-diagram-project mr-2"></i> Xem Dự Án Nổi Bật
@@ -127,13 +85,11 @@
               </a>
             </div>
           </div>
-
-          <!-- Avatar with Gradient Ring -->
           <div class="relative flex-shrink-0">
             <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full p-1 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Huỳnh Kiến Minh" class="w-full h-full object-cover rounded-full bg-slate-800" onerror="this.src='https://ui-avatars.com/api/?name=Hu%E1%BB%B3nh%20Ki%E1%BA%BFn%20Minh&size=300&background=4f46e5&color=fff'">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Huỳnh Kiến Minh" class="w-full h-full object-cover rounded-full bg-slate-800"
+                   onerror="this.src='https://ui-avatars.com/api/?name=Hu%E1%BB%B3nh%20Ki%E1%BA%BFn%20Minh&size=300&background=4f46e5&color=fff'">
             </div>
-            <!-- Subdomain Tag -->
             <div class="absolute -bottom-2 right-4 px-3 py-1 bg-slate-900/90 border border-indigo-500/40 rounded-full text-[11px] font-mono text-indigo-300 shadow-lg flex items-center">
               <i class="fa-solid fa-globe mr-1.5 text-indigo-400"></i> kienminh.connectcv.io.vn
             </div>
@@ -142,83 +98,56 @@
       </div>
     </section>
 
-    <!-- ABOUT & STATS BENTO GRID -->
     <section id="about" class="space-y-6">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-user-astronaut text-indigo-500 mr-2.5"></i> Về Bản Thân & Năng Lực
-        </h2>
-      </div>
-
+      <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
+        <i class="fa-solid fa-user-astronaut text-indigo-500 mr-2.5"></i> Về Bản Thân & Năng Lực
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Bio Card -->
         <div class="glass-card glass-card-hover p-6 rounded-2xl md:col-span-2 space-y-3">
           <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider">Định vị nghề nghiệp</h3>
           <p class="text-sm text-slate-300 leading-relaxed">Kỹ sư Phần mềm đam mê kiến trúc Backend chịu tải cao, tích hợp AI Agents và bảo mật hệ thống. Có kinh nghiệm triển khai Docker, Node.js, WebSocket và tối ưu hóa hệ thống chuẩn CISO.</p>
           <div class="pt-3 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
-            <div>
-              <span class="text-slate-400 block text-[11px]">Email liên hệ:</span>
-              <span class="font-medium text-slate-200">minhhk.ce191608@gmail.com</span>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[11px]">Số điện thoại:</span>
-              <span class="font-medium text-slate-200">0939 123 456</span>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[11px]">Khu vực làm việc:</span>
-              <span class="font-medium text-slate-200">Cần Thơ, Việt Nam</span>
-            </div>
+            <div><span class="text-slate-400 block text-[11px]">Email liên hệ:</span><span class="font-medium text-slate-200">minhhk.ce191608@gmail.com</span></div>
+            <div><span class="text-slate-400 block text-[11px]">Số điện thoại:</span><span class="font-medium text-slate-200">0939 123 456</span></div>
+            <div><span class="text-slate-400 block text-[11px]">Khu vực làm việc:</span><span class="font-medium text-slate-200">Cần Thơ, Việt Nam</span></div>
           </div>
         </div>
-
-        <!-- ATS & Highlight Card -->
         <div class="glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between space-y-4">
           <div>
             <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider mb-2">Chứng thực ConnectCV</h3>
             <div class="flex items-center space-x-3">
-              <div class="text-4xl font-extrabold text-emerald-400">95<span class="text-lg text-slate-400">/100</span></div>
-              <div class="text-xs text-slate-300">
-                <span class="font-bold text-white block">ATS Compatibility</span>
-                <span class="text-emerald-400 text-[11px]">Đã qua thẩm định tiêu chuẩn</span>
-              </div>
+              <div class="text-4xl font-extrabold text-emerald-400">92<span class="text-lg text-slate-400">/100</span></div>
+              <div class="text-xs text-slate-300"><span class="font-bold text-white block">ATS Compatibility</span><span class="text-emerald-400 text-[11px]">Đã qua thẩm định tiêu chuẩn</span></div>
             </div>
           </div>
           <div class="text-xs text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
-            <i class="fa-solid fa-shield-halved text-indigo-400 mr-1.5"></i> Hồ sơ được bảo vệ và tối ưu từ khóa khớp chuẩn JD doanh nghiệp.
+            <i class="fa-solid fa-shield-halved text-indigo-400 mr-1.5"></i> Hồ sơ tối ưu từ khóa khớp chuẩn JD doanh nghiệp.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (Lặp qua mảng projects như Ảnh 3) -->
     <section id="projects" class="space-y-6">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-rocket text-indigo-500 mr-2.5"></i> Dự Án Tiêu Biểu (1)
-        </h2>
-      </div>
-
+      <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
+        <i class="fa-solid fa-rocket text-indigo-500 mr-2.5"></i> Dự Án Tiêu Biểu (1)
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
           <div class="glass-card glass-card-hover p-6 rounded-2xl flex flex-col justify-between space-y-4">
             <div class="space-y-2.5">
               <div class="flex items-center justify-between">
-                <h3 class="text-base font-bold text-white group-hover:text-indigo-400 transition">ConnectCV</h3>
+                <h3 class="text-base font-bold text-white">ConnectCV (Nền tảng AI Career)</h3>
                 <span class="text-[11px] font-mono text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-800/50">Project #1</span>
               </div>
-              <p class="text-xs text-slate-300 leading-relaxed">Nền tảng AI tối ưu hóa CV và luyện phỏng vấn chiến lược</p>
-              
-              <!-- Tech tags -->
+              <p class="text-xs text-slate-300 leading-relaxed">Phát triển nền tảng AI ConnectCV hỗ trợ tối ưu hóa CV và luyện phỏng vấn phục vụ 500+ người dùng.; Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi.; Ứng dụng PostgreSQL và Docker để chuẩn hóa quy trình triển khai và bảo mật dữ liệu.</p>
               
                 <div class="flex flex-wrap gap-1.5 pt-2">
-                  <span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">JavaScript</span><span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">Node.js</span><span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">Express</span><span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">PostgreSQL</span>
+                  <span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">Node.js</span><span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">Express</span><span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">JavaScript</span><span class="px-2 py-0.5 bg-slate-800 text-indigo-300 text-[11px] font-medium rounded-md border border-slate-700/60">TypeScript</span>
                 </div>
               
             </div>
-
-            <!-- Links -->
             <div class="pt-3 border-t border-slate-800/80 flex items-center space-x-3 text-xs">
-              <a href="https://demo.connectcv.io.vn" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-bold flex items-center"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Trải Nghiệm Demo</a>
+              <a href="https://demo.connectcv.io.vn" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-bold flex items-center"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Demo</a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white font-medium flex items-center"><i class="fa-brands fa-github mr-1"></i> Mã Nguồn</a>
             </div>
           </div>
@@ -226,41 +155,30 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE & EDUCATION (Timeline công việc & học vấn) -->
     <section id="experience" class="space-y-6">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
-          <i class="fa-solid fa-briefcase text-indigo-500 mr-2.5"></i> Kinh Nghiệm Làm Việc & Học Vấn
-        </h2>
-      </div>
-
+      <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
+        <i class="fa-solid fa-briefcase text-indigo-500 mr-2.5"></i> Kinh Nghiệm & Học Vấn
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Work Experience -->
         <div class="glass-card p-6 rounded-2xl space-y-4">
-          <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider flex items-center">
-            <i class="fa-solid fa-laptop-code mr-2"></i> Lộ Trình Công Việc
-          </h3>
+          <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider flex items-center"><i class="fa-solid fa-laptop-code mr-2"></i> Lộ Trình Công Việc</h3>
           <div class="space-y-4">
             
               <div class="border-l-2 border-indigo-500/60 pl-3.5 space-y-1">
-                <div class="text-xs font-bold text-white">Lập trình viên Backend (Dự án cá nhân/Nghiên cứu)</div>
-                <div class="text-[11px] text-indigo-300">ConnectCV Project • <span class="text-slate-400 font-normal">06/2023 - Hiện tại</span></div>
+                <div class="text-xs font-bold text-white">Lập trình viên Backend</div>
+                <div class="text-[11px] text-indigo-300">ConnectCV (Nền tảng AI Career) • <span class="text-slate-400 font-normal">06/2023 - Hiện tại</span></div>
                 <p class="text-xs text-slate-300 leading-relaxed pt-1">Phát triển và bảo trì hệ thống phần mềm.</p>
               </div>
             
           </div>
         </div>
-
-        <!-- Education -->
         <div class="glass-card p-6 rounded-2xl space-y-4">
-          <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider flex items-center">
-            <i class="fa-solid fa-graduation-cap mr-2"></i> Quá Trình Đào Tạo
-          </h3>
+          <h3 class="text-sm font-bold text-indigo-300 uppercase tracking-wider flex items-center"><i class="fa-solid fa-graduation-cap mr-2"></i> Quá Trình Đào Tạo</h3>
           <div class="space-y-4">
             
               <div class="border-l-2 border-purple-500/60 pl-3.5 space-y-1">
                 <div class="text-xs font-bold text-white">Đại học FPT Phân hiệu Cần Thơ</div>
-                <div class="text-[11px] text-purple-300">Kỹ thuật Phần mềm (Software Engineering) • <span class="text-slate-400">2022 - 2026</span></div>
+                <div class="text-[11px] text-purple-300">Kỹ thuật Phần mềm • <span class="text-slate-400">2022 - 2026</span></div>
               </div>
             
           </div>
@@ -268,13 +186,11 @@
       </div>
     </section>
 
-    <!-- SKILLS SECTION (Danh sách tags theo nhóm) -->
     <section id="skills" class="space-y-6">
       <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center">
         <i class="fa-solid fa-layer-group text-indigo-500 mr-2.5"></i> Kỹ Năng & Công Nghệ
       </h2>
-
-      <div class="glass-card p-6 rounded-2xl space-y-4">
+      <div class="glass-card p-6 rounded-2xl">
         <div class="flex flex-wrap gap-2">
           
             <span class="px-3 py-1.5 bg-slate-800/80 hover:bg-indigo-950/60 text-slate-200 hover:text-indigo-300 border border-slate-700/80 rounded-xl text-xs font-medium transition flex items-center space-x-1.5">
@@ -331,14 +247,12 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION (Mạng xã hội & kết nối trực tiếp) -->
     <section id="contact" class="space-y-6 pb-8">
-      <div class="glass-card p-8 sm:p-10 rounded-3xl text-center space-y-6 relative overflow-hidden">
+      <div class="glass-card p-8 sm:p-10 rounded-3xl text-center space-y-6">
         <div class="max-w-xl mx-auto space-y-2">
           <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Hãy Cùng Nhau Hợp Tác!</h2>
           <p class="text-xs sm:text-sm text-slate-400">Tôi luôn chào đón các cơ hội việc làm, dự án freelance hoặc lời mời hợp tác công nghệ.</p>
         </div>
-
         <div class="flex flex-wrap items-center justify-center gap-3">
           <a href="mailto:minhhk.ce191608@gmail.com" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-indigo-600/30 flex items-center">
             <i class="fa-solid fa-envelope mr-2"></i> minhhk.ce191608@gmail.com
@@ -347,27 +261,21 @@
             <i class="fa-solid fa-phone mr-2"></i> 0939 123 456
           </a>
         </div>
-
         <div class="pt-4 flex items-center justify-center space-x-4 text-lg text-slate-400">
-          <a href="https://github.com/kienminh" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" title="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://linkedin.com/in/kienminh" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/kienminh"   target="_blank" rel="noopener noreferrer" class="hover:text-white transition"        title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/kienminh" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition"    title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
           
           
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer class="border-t border-slate-800/80 py-8 bg-[#070a12] text-center text-xs text-slate-500">
     <div class="max-w-6xl mx-auto px-4 space-y-2">
       <p>&copy; 2026 <b>Huỳnh Kiến Minh</b>. All rights reserved.</p>
-      <p class="text-[11px] text-slate-600">
-        Trang Portfolio tĩnh được tạo và tối ưu hóa tự động bởi <span class="text-indigo-400 font-semibold">ConnectCV AI Copilot Platform</span> • Phản hồi siêu tốc &lt;30ms qua CDN Edge.
-      </p>
+      <p class="text-[11px] text-slate-600">Portfolio tạo bởi <span class="text-indigo-400 font-semibold">ConnectCV AI Copilot</span></p>
     </div>
   </footer>
-
 </body>
 </html>

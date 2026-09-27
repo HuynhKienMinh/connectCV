@@ -151,6 +151,19 @@ app.use('/api/chatbot', chatbotRouter);
 // Portfolio: no AI call, global limiter đủ
 app.use('/api/portfolio', require('./src/routes/portfolio'));
 
+// Upload: file upload với rate limiter riêng (10 lần/15 phút)
+const uploadLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'Bạn đã upload quá nhiều ảnh. Vui lòng thử lại sau 15 phút.' }
+});
+app.use('/api/upload', uploadLimiter);
+// Upload route cần body parser riêng cho multipart (multer tự xử lý)
+// KHÔNG dùng express.json() cho route này
+app.use('/api/upload', require('./src/routes/upload'));
+
 // =========================================================
 // 9. GLOBAL ERROR HANDLER — Không leak stack trace ra client
 // =========================================================

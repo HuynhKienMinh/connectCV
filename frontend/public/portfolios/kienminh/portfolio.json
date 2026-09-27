@@ -22,13 +22,13 @@
   ],
   "projects": [
     {
-      "name": "ConnectCV",
-      "description": "Nền tảng AI tối ưu hóa CV và luyện phỏng vấn chiến lược",
+      "name": "ConnectCV (Nền tảng AI Career)",
+      "description": "Phát triển nền tảng AI ConnectCV hỗ trợ tối ưu hóa CV và luyện phỏng vấn phục vụ 500+ người dùng.; Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi.; Ứng dụng PostgreSQL và Docker để chuẩn hóa quy trình triển khai và bảo mật dữ liệu.",
       "tags": [
-        "JavaScript",
         "Node.js",
         "Express",
-        "PostgreSQL"
+        "JavaScript",
+        "TypeScript"
       ],
       "demoUrl": "https://demo.connectcv.io.vn",
       "repoUrl": "https://github.com"
@@ -36,12 +36,12 @@
   ],
   "experience": [
     {
-      "role": "Lập trình viên Backend (Dự án cá nhân/Nghiên cứu)",
-      "organization": "ConnectCV Project",
+      "role": "Lập trình viên Backend",
+      "organization": "ConnectCV (Nền tảng AI Career)",
       "duration": "06/2023 - Hiện tại",
       "description": "Phát triển và bảo trì hệ thống phần mềm."
     }
   ],
-  "atsScore": 95,
+  "atsScore": 92,
   "username": "kienminh"
 }
