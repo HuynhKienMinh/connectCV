@@ -3772,6 +3772,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         window.speechSynthesis.cancel();
       }
 
+      // Hiển thị ngay phụ đề câu nói của AI để ứng viên không phải chờ
+      updateLiveCaption('interviewer', text);
       setLiveOrbState('thinking', 'Đang kết nối âm thanh giọng đọc...');
 
       try {
@@ -3847,7 +3849,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           if (viVoice) {
             utterance.voice = viVoice;
           } else {
-            console.warn('[Web Speech] Không có giọng tiếng Việt hệ thống, tránh phát âm đánh vần tiếng Anh.');
+            console.warn('[Web Speech] Không có giọng tiếng Việt hệ thống, hiển thị phụ đề để ứng viên đọc.');
             setTimeout(() => {
               isAISpeakingOrThinking = false;
               currentSpeechBuffer = '';
@@ -3857,7 +3859,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               } else {
                 setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
               }
-            }, 450);
+            }, 3500);
             return;
           }
 
