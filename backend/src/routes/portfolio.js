@@ -34,7 +34,7 @@ function sanitizeText(str) {
     .replace(/'/g, '&#039;');
 }
 
-// ✅ FIX: sanitizeUrl được dùng cho cả avatarUrl (trước đây bị bỏ sót → Stored XSS)
+// ✅ FIX: sanitizeUrl được dùng cho các liên kết web (GitHub, Demo, Repo)
 function sanitizeUrl(url) {
   if (!url) return '';
   const trimmed = String(url).trim();
@@ -42,6 +42,28 @@ function sanitizeUrl(url) {
     return trimmed.replace(/"/g, '%22').replace(/'/g, '%27').replace(/</g, '%3C').replace(/>/g, '%3E');
   }
   return '#';
+}
+
+// ✅ FIX: sanitizeAvatarUrl cho phép cả HTTP(S) URL và Data URL base64 an toàn (JPEG, PNG, WEBP, GIF)
+// Chặn triệt để SVG và javascript: để chống XSS
+function sanitizeAvatarUrl(url, fallbackName = 'User') {
+  const fallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(fallbackName)}&size=300&background=4f46e5&color=fff`;
+  if (!url) return fallback;
+  const trimmed = String(url).trim();
+
+  // 1. Data URL ảnh base64 hợp lệ (JPG, PNG, WEBP, GIF) — an toàn tuyệt đối
+  if (/^data:image\/(jpeg|png|webp|gif);base64,[A-Za-z0-9+/=]+$/i.test(trimmed)) {
+    return trimmed;
+  }
+
+  // 2. HTTP / HTTPS / đường dẫn ảnh nội bộ
+  if (/^(https?:\/\/|\/images\/)/i.test(trimmed)) {
+    if (!/[<>"'\s]/.test(trimmed)) {
+      return trimmed.replace(/"/g, '%22').replace(/'/g, '%27').replace(/</g, '%3C').replace(/>/g, '%3E');
+    }
+  }
+
+  return fallback;
 }
 
 function validateUsername(username) {
@@ -76,8 +98,11 @@ function generatePortfolioHtml(data) {
   const safeEmail     = sanitizeText(email);
   const safePhone     = sanitizeText(phone);
   const safeScore     = parseInt(atsScore, 10) || 90;
-  // ✅ FIX: avatarUrl qua sanitizeUrl() — chặn javascript: data: XSS vectors
-  const safeAvatarUrl = sanitizeUrl(avatarUrl) || 'https://ui-avatars.com/api/?name=User&size=300&background=4f46e5&color=fff';
+  // ✅ FIX: avatarUrl qua sanitizeAvatarUrl() — hỗ trợ ảnh upload DataURL và chặn XSS
+  const safeAvatarUrl = sanitizeAvatarUrl(avatarUrl, safeName);
+  const metaImageUrl  = safeAvatarUrl.startsWith('data:')
+    ? `https://ui-avatars.com/api/?name=${encodeURIComponent(safeName)}&size=300&background=4f46e5&color=fff`
+    : safeAvatarUrl;
 
   return `<!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
@@ -91,11 +116,11 @@ function generatePortfolioHtml(data) {
   <meta property="og:url" content="https://${sanitizeText(username)}.connectcv.io.vn">
   <meta property="og:title" content="${safeName} - ${safeTitle} | Portfolio">
   <meta property="og:description" content="${safeBio.substring(0, 160)}">
-  <meta property="og:image" content="${safeAvatarUrl}">
+  <meta property="og:image" content="${metaImageUrl}">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="${safeName} - ${safeTitle}">
   <meta property="twitter:description" content="${safeBio.substring(0, 160)}">
-  <meta property="twitter:image" content="${safeAvatarUrl}">
+  <meta property="twitter:image" content="${metaImageUrl}">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">

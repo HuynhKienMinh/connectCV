@@ -1,7 +1,7 @@
 {
   "fullName": "Huỳnh Kiến Minh",
   "title": "Senior Backend & AI Engineer",
-  "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+  "avatarUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/wAALCAABAAEBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/9oACAEBAAA/AH8A/9k=",
   "location": "Cần Thơ, Việt Nam",
   "bio": "Kỹ sư Phần mềm đam mê kiến trúc Backend chịu tải cao, tích hợp AI Agents và bảo mật hệ thống. Có kinh nghiệm triển khai Docker, Node.js, WebSocket và tối ưu hóa hệ thống chuẩn CISO.",
   "email": "minhhk.ce191608@gmail.com",
@@ -34,14 +34,7 @@
       "repoUrl": "https://github.com"
     }
   ],
-  "experience": [
-    {
-      "role": "Lập trình viên Backend",
-      "organization": "ConnectCV (Nền tảng AI Career)",
-      "duration": "06/2023 - Hiện tại",
-      "description": "Phát triển và bảo trì hệ thống phần mềm."
-    }
-  ],
-  "atsScore": 92,
+  "experience": [],
+  "atsScore": 95,
   "username": "kienminh"
 }
