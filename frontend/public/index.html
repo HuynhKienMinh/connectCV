@@ -3758,65 +3758,6 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     // Biến cờ toàn cục chống Acoustic Echo: Khóa hoàn toàn Micro khi AI đang suy luận hoặc phát âm
     let isAISpeakingOrThinking = false;
 
-    // Phát nhanh âm thanh Base64 nhận trực tiếp từ server (Zero Network Roundtrip)
-    async function playInlineAudioBase64(audioBase64, text) {
-      if (!audioBase64) {
-        return playNaturalVoice(text);
-      }
-
-      isAISpeakingOrThinking = true;
-      stopLiveListening();
-      currentSpeechBuffer = '';
-
-      if (currentLiveAudio) {
-        currentLiveAudio.pause();
-        currentLiveAudio = null;
-      }
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
-
-      setLiveOrbState('speaking');
-      updateLiveCaption('interviewer', text);
-
-      try {
-        currentLiveAudio = new Audio('data:audio/mp3;base64,' + audioBase64);
-
-        currentLiveAudio.onplay = () => {
-          isAISpeakingOrThinking = true;
-          stopLiveListening();
-          currentSpeechBuffer = '';
-          setLiveOrbState('speaking');
-          updateLiveCaption('interviewer', text);
-        };
-
-        currentLiveAudio.onended = () => {
-          currentLiveAudio = null;
-          // Độ trễ an toàn 450ms để triệt tiêu hoàn toàn âm vang (Acoustic Echo Clearance) từ loa
-          setTimeout(() => {
-            isAISpeakingOrThinking = false;
-            currentSpeechBuffer = '';
-            const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-            if (isHandsFree) {
-              startLiveListening();
-            } else {
-              setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
-            }
-          }, 450);
-        };
-
-        currentLiveAudio.onerror = (e) => {
-          console.warn('Lỗi phát inline audio base64, chuyển fallback:', e);
-          fallbackBrowserSpeech(text);
-        };
-
-        await currentLiveAudio.play();
-      } catch (err) {
-        console.warn('Lỗi Audio.play inline base64, thử playNaturalVoice:', err);
-        await playNaturalVoice(text);
-      }
-    }
-
     // Phát âm thanh giọng đọc tiếng Việt (Microsoft Neural Voice + Web Speech Synthesis Fallback)
     async function playNaturalVoice(text) {
       isAISpeakingOrThinking = true;
@@ -3831,8 +3772,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         window.speechSynthesis.cancel();
       }
 
-      setLiveOrbState('speaking');
-      updateLiveCaption('interviewer', text);
+      setLiveOrbState('thinking', 'Đang kết nối âm thanh giọng đọc...');
 
       try {
         const res = await fetch('/api/interview/tts', {
@@ -3903,8 +3843,23 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           utterance.rate = 1.0;
 
           const voices = window.speechSynthesis.getVoices();
-          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN'));
-          if (viVoice) utterance.voice = viVoice;
+          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN') || (v.name && v.name.toLowerCase().includes('vietnam')));
+          if (viVoice) {
+            utterance.voice = viVoice;
+          } else {
+            console.warn('[Web Speech] Không có giọng tiếng Việt hệ thống, tránh phát âm đánh vần tiếng Anh.');
+            setTimeout(() => {
+              isAISpeakingOrThinking = false;
+              currentSpeechBuffer = '';
+              const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+              if (isHandsFree) {
+                startLiveListening();
+              } else {
+                setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
+              }
+            }, 450);
+            return;
+          }
 
           utterance.onend = () => {
             setTimeout(() => {
@@ -4501,15 +4456,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             showLiveFeedback(data.data.quickFeedback);
           }
 
-          // Zero-Wait UI: Cập nhật ngay câu nói của AI lên phụ đề để người dùng đọc tức thì
-          updateLiveCaption('interviewer', reply);
-
-          // Phát âm thanh giọng đọc: Ưu tiên dùng audioBase64 kèm theo (Zero latency roundtrip)
-          if (data.data.audioBase64) {
-            await playInlineAudioBase64(data.data.audioBase64, reply);
-          } else {
-            await playNaturalVoice(reply);
-          }
+          // Phát câu trả lời bằng giọng đọc tự nhiên
+          await playNaturalVoice(reply);
         } else {
           isAISpeakingOrThinking = false;
           updateLiveCaption('error', 'Lỗi: ' + (data.message || 'Không thể nhận phản hồi'));
@@ -4550,8 +4498,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             jobTitle: document.getElementById('int-title').value,
             jdText: document.getElementById('int-jd').value,
             candidateProfile: document.getElementById('int-exp').value,
-            action: 'start',
-            voice: selectedVoice
+            action: 'start'
           })
         });
 
@@ -4567,14 +4514,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             showLiveFeedback(data.data.quickFeedback);
           }
 
-          // Zero-Wait UI: Cập nhật ngay câu chào mở đầu lên phụ đề
-          updateLiveCaption('interviewer', reply);
-
-          if (data.data.audioBase64) {
-            await playInlineAudioBase64(data.data.audioBase64, reply);
-          } else {
-            await playNaturalVoice(reply);
-          }
+          // Đọc câu hỏi mở đầu bằng giọng nói tự nhiên
+          await playNaturalVoice(reply);
         } else {
           isAISpeakingOrThinking = false;
           updateLiveCaption('error', 'Không thể bắt đầu: ' + (data.message || 'Lỗi server'));

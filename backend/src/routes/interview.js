@@ -228,12 +228,8 @@ router.post('/live-chat', async (req, res) => {
       history,
       jdText,
       candidateProfile,
-      action,
-      voice
+      action
     } = req.body;
-
-    const VALID_VOICES = ['vi-VN-NamMinhNeural', 'vi-VN-HoaiMyNeural'];
-    const safeVoice    = VALID_VOICES.includes(voice) ? voice : 'vi-VN-NamMinhNeural';
 
     const currentMsg   = (userMessage || message || '').trim();
     const rawHistory   = history || conversationHistory || [];
@@ -271,24 +267,9 @@ Trả về DUY NHẤT một JSON hợp lệ:
 }
 `;
 
-      const t0 = Date.now();
       const result = await callGeminiJSON(prompt, 'gemini-flash-lite-latest', { maxOutputTokens: 180, temperature: 0.6 });
-      const geminiTime = Date.now() - t0;
       const reply = result.interviewerReply || result.reply || `Chào bạn! Rất vui được gặp bạn trong buổi phỏng vấn vị trí ${safeTitle}. Bạn có thể giới thiệu nhanh về bản thân và kinh nghiệm nổi bật nhất không?`;
       const quickFeedback = result.quickFeedback || result.quickEvaluation || 'Bắt đầu phiên phỏng vấn';
-
-      let audioBase64 = null;
-      const t1 = Date.now();
-      try {
-        const audioBuffer = await generateSpeechMP3(reply, safeVoice);
-        if (audioBuffer && audioBuffer.length > 0) {
-          audioBase64 = audioBuffer.toString('base64');
-        }
-      } catch (ttsErr) {
-        console.warn('[Interview /live-chat start TTS warning]:', ttsErr.message);
-      }
-      const ttsTime = Date.now() - t1;
-      console.log(`[Live-Chat Start] Gemini: ${geminiTime}ms | TTS: ${ttsTime}ms | Total: ${Date.now() - t0}ms`);
 
       return res.status(200).json({
         success: true,
@@ -297,9 +278,7 @@ Trả về DUY NHẤT một JSON hợp lệ:
           reply: reply,
           quickFeedback: quickFeedback,
           quickEvaluation: quickFeedback,
-          interviewPhase: 'opening',
-          audioBase64: audioBase64,
-          voice: safeVoice
+          interviewPhase: 'opening'
         }
       });
     }
@@ -341,24 +320,9 @@ Trả về DUY NHẤT một JSON hợp lệ:
 }
 `;
 
-    const t0 = Date.now();
     const result = await callGeminiJSON(prompt, 'gemini-flash-lite-latest', { maxOutputTokens: 200, temperature: 0.6 });
-    const geminiTime = Date.now() - t0;
     const reply = result.interviewerReply || result.reply || 'Cảm ơn câu trả lời của bạn. Bạn có thể chia sẻ cụ thể hơn về một thử thách kỹ thuật lớn nhất bạn từng gặp và cách bạn đã vượt qua nó không?';
     const quickFeedback = result.quickFeedback || result.quickEvaluation || 'Phản hồi tốt';
-
-    let audioBase64 = null;
-    const t1 = Date.now();
-    try {
-      const audioBuffer = await generateSpeechMP3(reply, safeVoice);
-      if (audioBuffer && audioBuffer.length > 0) {
-        audioBase64 = audioBuffer.toString('base64');
-      }
-    } catch (ttsErr) {
-      console.warn('[Interview /live-chat reply TTS warning]:', ttsErr.message);
-    }
-    const ttsTime = Date.now() - t1;
-    console.log(`[Live-Chat Reply] Gemini: ${geminiTime}ms | TTS: ${ttsTime}ms | Total: ${Date.now() - t0}ms`);
 
     return res.status(200).json({
       success: true,
@@ -367,9 +331,7 @@ Trả về DUY NHẤT một JSON hợp lệ:
         reply: reply,
         quickFeedback: quickFeedback,
         quickEvaluation: quickFeedback,
-        interviewPhase: result.interviewPhase || 'technical',
-        audioBase64: audioBase64,
-        voice: safeVoice
+        interviewPhase: result.interviewPhase || 'technical'
       }
     });
   } catch (error) {
