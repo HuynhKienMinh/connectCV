@@ -13,6 +13,9 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Hỗ trợ Nginx reverse proxy (giúp express-rate-limit nhận diện đúng client IP)
+app.set('trust proxy', 1);
+
 // =========================================================
 // 1. SECURITY HEADERS — Helmet (chặn XSS, clickjacking, MIME sniff...)
 // =========================================================

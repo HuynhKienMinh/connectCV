@@ -41,6 +41,16 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
   const gender = escapeHtml(userProfile.gender || 'Nam');
   const summary = escapeHtml(cvData.summary || userProfile.summary || 'Kỹ sư phần mềm giàu nhiệt huyết với nền tảng vững chắc về phát triển hệ thống Backend, thiết kế cơ sở dữ liệu và tối ưu hóa hiệu năng ứng dụng. Mục tiêu trở thành Senior Backend Engineer đóng góp vào các giải pháp công nghệ quy mô lớn.');
 
+  // Avatar cá nhân của người dùng (hỗ trợ base64 upload hoặc link ảnh đã sanitize)
+  let rawAvatar = userProfile.avatarUrl || userProfile.avatarDataUrl || cvData.avatarUrl || cvData.avatarDataUrl || '';
+  let candidateAvatar = '';
+  if (rawAvatar && typeof rawAvatar === 'string') {
+    const trimmed = rawAvatar.trim();
+    if (trimmed.startsWith('data:image/') || trimmed.startsWith('https://') || trimmed.startsWith('http://') || trimmed.startsWith('/')) {
+      candidateAvatar = escapeHtml(trimmed);
+    }
+  }
+
   // 2. Chuẩn hóa danh sách kỹ năng
   let skills = [];
   if (cvData.highlightedSkills) {
@@ -184,7 +194,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     bodyContent = `
       <div class="cv-header" style="display:flex; align-items:center; gap:20px; border-bottom:2px solid ${color}; padding-bottom:15px; margin-bottom:18px;">
           <div style="width:85px; height:85px; border-radius:50%; background:#e2e8f0; overflow:hidden; border:2px solid ${color}; flex-shrink:0;">
-              <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_v2.jpg';" />
+              <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_v2.jpg';" />
           </div>
           <div>
               <h1 style="font-size:22px; font-weight:800; color:#1e293b; text-transform:uppercase; margin:0;" contenteditable="true">${candidate}</h1>
@@ -245,7 +255,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     bodyContent = `
       <div style="text-align:center; border-bottom:2px solid ${color}; padding-bottom:16px; margin-bottom:18px;">
           <div style="width:80px; height:80px; border-radius:50%; background:#e2e8f0; overflow:hidden; margin:0 auto 10px auto; border:2px solid ${color};">
-              <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_junior.jpg';" />
+              <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_junior.jpg';" />
           </div>
           <h1 style="font-size:22px; font-weight:800; color:#1e293b; text-transform:uppercase; margin:0;" contenteditable="true">${candidate}</h1>
           <div style="font-size:13px; font-weight:700; color:${color}; margin-top:3px;" contenteditable="true">${role}</div>
@@ -313,7 +323,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <div style="width:34%; background:${sidebarBg} !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:#ffffff; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0; height:100%; min-height:296mm; box-sizing:border-box;">
               <div style="text-align:center; margin-bottom:18px;">
                   <div style="width:90px; height:90px; border-radius:50%; overflow:hidden; background:#5a3f5b; margin:0 auto 12px auto; border:3px solid ${sidebarAccent};">
-                      <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/impressive_6_v2.jpg';" />
+                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/impressive_6_v2.jpg';" />
                   </div>
                   <h1 style="font-size:15px; font-weight:800; color:#ffffff; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">${candidate}</h1>
                   <div style="font-size:10.5px; color:${sidebarAccent}; margin-top:5px;" contenteditable="true">${role}</div>
@@ -378,7 +388,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <div style="width:36%; height:100%; min-height:296mm; background:${color} !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:#ffffff; padding:25px 18px; box-sizing:border-box;">
               <div style="text-align:center; margin-bottom:18px;">
                   <div style="position:relative; width:100px; height:100px; border-radius:50%; margin:0 auto 10px auto; overflow:hidden; border:3px solid #ffffff;">
-                      <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/onepage_impressive_2_v2.jpg';" />
+                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/onepage_impressive_2_v2.jpg';" />
                   </div>
                   <h1 style="font-size:19px; font-weight:800; color:#ffffff; margin:0;" contenteditable="true">${candidate}</h1>
                   <div style="font-size:12px; color:#d1d5db; margin-top:2px;" contenteditable="true">${role}</div>
@@ -450,7 +460,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     bodyContent = `
       <div style="display:flex; gap:20px; align-items:center; margin-bottom:18px;">
           <div style="width:110px; height:125px; border-radius:8px; overflow:hidden; background:#e2e8f0; flex-shrink:0;">
-              <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/elegant.jpg';" />
+              <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/elegant.jpg';" />
           </div>
           <div style="flex:1;">
               <h1 style="font-size:24px; font-weight:800; color:${color}; margin:0;" contenteditable="true">${candidate}</h1>
@@ -510,7 +520,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <div style="width:35%; height:100%; min-height:296mm; background:#242c35 !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:#ffffff; padding:25px 16px; box-sizing:border-box;">
               <div style="margin-bottom:18px;">
                   <div style="width:105px; height:120px; border-radius:8px; overflow:hidden; margin:0 auto 10px auto; border:2px solid ${color};">
-                      <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/ambitious.jpg';" />
+                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/ambitious.jpg';" />
                   </div>
                   <h1 style="font-size:18px; font-weight:800; color:${color}; text-align:center; margin:0;" contenteditable="true">${candidate}</h1>
                   <div style="font-size:11px; color:#ffffff; text-align:center; font-weight:600; margin-top:2px;" contenteditable="true">${role}</div>
@@ -576,7 +586,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
       <div style="border-bottom:3px solid ${color}; padding-bottom:14px; margin-bottom:18px;">
           <div style="display:flex; align-items:center; gap:18px;">
               <div style="width:90px; height:105px; border-radius:6px; overflow:hidden; background:#f1f5f9; flex-shrink:0; border:1px solid #e2e8f0;">
-                  <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/minimalism_v2.jpg';" />
+                  <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/minimalism_v2.jpg';" />
               </div>
               <div>
                   <h1 style="font-size:23px; font-weight:800; color:#1e293b; text-transform:uppercase; letter-spacing:1px; margin:0;" contenteditable="true">${candidate}</h1>
@@ -644,7 +654,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
       <div style="display:flex; gap:20px;">
           <div style="width:34%; flex-shrink:0;">
               <div style="width:100%; height:200px; border-radius:4px; overflow:hidden; background:#d4b8a5; margin-bottom:12px; border:1px solid #d4b8a5;">
-                  <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/pro_1_v2.jpg';" />
+                  <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/pro_1_v2.jpg';" />
               </div>
               
               <div style="background:${color}; color:#ffffff; padding:16px 14px; border-radius:4px;">
@@ -824,7 +834,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <div style="background:#0f172a !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; padding:18px 28px 16px 28px; box-sizing:border-box;">
               <div style="display:flex; gap:18px; align-items:center;">
                   <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; background:#1e293b; flex-shrink:0; border:2px solid ${color};">
-                      <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/dev_1.jpg';" />
+                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/dev_1.jpg';" />
                   </div>
                   <div style="flex:1;">
                       <h1 style="font-size:20px; font-weight:900; color:#f1f5f9; margin:0; font-family:monospace;" contenteditable="true">${candidate}</h1>
@@ -898,7 +908,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
           <div style="width:34%; height:100%; min-height:296mm; background:${sbBg} !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:${sbTextColor}; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0; box-sizing:border-box;">
               <div style="text-align:center; margin-bottom:18px;">
                   <div style="width:95px; height:95px; border-radius:50%; overflow:hidden; background:rgba(255,255,255,0.2); margin:0 auto 12px auto; border:3px solid ${sbAccentColor};">
-                      <img src="/images/avatars/${slug}.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_v2.jpg';" />
+                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_v2.jpg';" />
                   </div>
                   <h1 style="font-size:16px; font-weight:800; color:${sbTextColor}; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">${candidate}</h1>
                   <div style="font-size:11px; color:${sbAccentColor}; margin-top:5px;" contenteditable="true">${role}</div>

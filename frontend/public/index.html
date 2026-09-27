@@ -152,9 +152,12 @@
     if (file.name.length > 255) {
       return 'Tên file quá dài.';
     }
-    // Kiểm tra tên file an toàn (chống path traversal)
-    if (/[<>:"/\\|?* -]/.test(file.name)) {
-      return 'Tên file chứa ký tự không hợp lệ.';
+    // Kiểm tra tên file an toàn (chống path traversal & ký tự nguy hiểm)
+    const dangerous = ['<', '>', ':', '"', '/', '\\', '|', '?', '*'];
+    for (let i = 0; i < dangerous.length; i++) {
+      if (file.name.includes(dangerous[i])) {
+        return 'Tên file chứa ký tự không hợp lệ.';
+      }
     }
     return null; // valid
   }
@@ -172,6 +175,8 @@
   }
 
   // ─── CV Avatar Handler ─────────────────────────────────────
+
+  window.currentCvAvatarDataUrl = '';
 
   async function handleCvAvatarUpload(event) {
     const file  = event.target.files?.[0];
@@ -223,7 +228,25 @@
       }
 
       btn.textContent = 'Thay ảnh';
-      showToastSuccess('Upload ảnh thành công!', 'Avatar CV');
+      window.currentCvAvatarDataUrl = dataUrl;
+
+      // Cập nhật vào textarea profile
+      if (typeof syncProfileFormToJSON === 'function') syncProfileFormToJSON();
+
+      // Cập nhật trực tiếp ảnh đại diện trên CV Preview đang hiển thị (nếu có)
+      try {
+        const cvResult = document.getElementById('cv-result');
+        if (cvResult) {
+          const imgs = cvResult.querySelectorAll('img');
+          imgs.forEach(img => {
+            if (img.src && (img.src.includes('/images/avatars/') || img.id === 'preview-cv-avatar')) {
+              img.src = dataUrl;
+            }
+          });
+        }
+      } catch(e) {}
+
+      showToastSuccess('Upload ảnh đại diện thành công! CV đã được cập nhật ảnh mới.', 'Avatar CV');
     } catch (err) {
       errEl.textContent = err.message || 'Upload thất bại. Vui lòng thử lại.';
       errEl.classList.remove('hidden');
@@ -245,6 +268,8 @@
     if (removeBtn)  removeBtn.classList.add('hidden');
     if (fileInput)  fileInput.value = '';
     if (btn)        btn.textContent = 'Tải ảnh lên';
+    window.currentCvAvatarDataUrl = '';
+    if (typeof syncProfileFormToJSON === 'function') syncProfileFormToJSON();
 
     // Xóa avatarDataUrl khỏi JSON profile
     try {
@@ -2541,6 +2566,8 @@ Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code?</tex
         address,
         birth,
         summary,
+        avatarUrl: window.currentCvAvatarDataUrl || "",
+        avatarDataUrl: window.currentCvAvatarDataUrl || "",
         skills,
         education: currentEducationList.map(e => ({
           school: sanitizeInput(e.school || ''),
@@ -2582,6 +2609,20 @@ Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code?</tex
         if (obj.address && document.getElementById('prof-address')) document.getElementById('prof-address').value = obj.address;
         if (obj.birth && document.getElementById('prof-birth')) document.getElementById('prof-birth').value = obj.birth;
         if (obj.summary && document.getElementById('prof-summary')) document.getElementById('prof-summary').value = obj.summary;
+
+        // Khôi phục avatar preview nếu có trong JSON
+        const av = obj.avatarUrl || obj.avatarDataUrl;
+        if (av && typeof av === 'string' && av.trim()) {
+          window.currentCvAvatarDataUrl = av;
+          const pImg = document.getElementById('cv-avatar-preview-img');
+          const pEmpty = document.getElementById('cv-avatar-empty-icon');
+          const pBtn = document.getElementById('cv-avatar-remove-btn');
+          const pLabel = document.getElementById('cv-avatar-btn-label');
+          if (pImg) { pImg.src = av; pImg.classList.remove('hidden'); }
+          if (pEmpty) pEmpty.classList.add('hidden');
+          if (pBtn) pBtn.classList.remove('hidden');
+          if (pLabel) pLabel.textContent = 'Thay ảnh';
+        }
 
         if (Array.isArray(obj.skills) && document.getElementById('prof-skills')) {
           document.getElementById('prof-skills').value = obj.skills.join(', ');
@@ -4543,82 +4584,111 @@ Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code?</tex
 
     async function submitDebrief() {
       const btn = document.getElementById('btn-debrief');
+      if (!btn) return;
 
-      // Client-side cooldown check
+      // Safe helper thông báo (phòng trường hợp toast bị lỗi)
+      const notify = (msg, title, type = 'error') => {
+        if (type === 'success' && typeof showToastSuccess === 'function') showToastSuccess(msg, title);
+        else if (typeof showToastError === 'function') showToastError(msg, title);
+        else alert((title ? title + ': ' : '') + msg);
+      };
+
+      // 1. Client-side cooldown check
       const lastSubmit = parseInt(localStorage.getItem(DEBRIEF_COOLDOWN_KEY) || '0', 10);
       if (lastSubmit > 0 && (Date.now() - lastSubmit) < DEBRIEF_COOLDOWN_MS) {
-        showToastError('Bạn đã chia sẻ gần đây. Vui lòng chờ đủ 6 giờ trước khi chia sẻ tiếp!', '⏱️ Cooldown');
+        notify('Bạn đã chia sẻ gần đây. Vui lòng chờ đủ 6 giờ trước khi chia sẻ tiếp!', '⏱️ Đang trong thời gian chờ');
+        updateDebriefButtonState();
         return;
       }
 
-      // Client-side validation
-      const validErr = validateDebriefForm();
+      // 2. Client-side validation
+      const validErr = typeof validateDebriefForm === 'function' ? validateDebriefForm() : null;
       if (validErr) {
-        showToastError(validErr, '⚠️ Nội dung không hợp lệ');
+        notify(validErr, '⚠️ Nội dung không hợp lệ');
         return;
       }
 
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang xác minh & gửi bài...';
 
+      let isSuccess = false;
+
       try {
-        const lines = document.getElementById('deb-questions').value.split('\n').map(s => s.trim()).filter(Boolean);
+        const rawQ = document.getElementById('deb-questions')?.value || '';
+        const lines = rawQ.split('\n').map(s => s.trim()).filter(Boolean);
+
+        const payload = {
+          companyName: (document.getElementById('deb-company')?.value || '').trim(),
+          position:    (document.getElementById('deb-pos')?.value || '').trim(),
+          interviewQuestions: lines,
+          reviewText:  (document.getElementById('deb-review')?.value || '').trim(),
+          difficultyRating: 4,
+          anonymous:   false
+        };
 
         const res = await fetch('/api/interview/debrief', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            companyName: document.getElementById('deb-company').value.trim(),
-            position:    document.getElementById('deb-pos').value.trim(),
-            interviewQuestions: lines,
-            reviewText:  document.getElementById('deb-review').value.trim(),
-            difficultyRating: 4,
-            anonymous:   false
-          })
+          body: JSON.stringify(payload)
         });
 
-        const data = await res.json();
+        const data = await res.json().catch(() => ({ success: false, message: 'Lỗi phản hồi từ server.' }));
 
-        if (data.success) {
+        if (res.ok && data.success) {
+          isSuccess = true;
           // Lưu timestamp submit để enforce cooldown
           localStorage.setItem(DEBRIEF_COOLDOWN_KEY, Date.now().toString());
 
-          updateCredits(data.data?.awardedCredits || 5);
-          showToastSuccess(`${data.message} (Chia sẻ tiếp sau: ${data.data?.nextShareAvailableIn || '6 giờ'})`, '🎉 Thành công!');
-          loadCommunityQuestions();
+          if (typeof updateCredits === 'function') {
+            updateCredits(data.data?.awardedCredits || 5);
+          }
 
-          // Xóa form
-          document.getElementById('deb-company').value    = '';
-          document.getElementById('deb-pos').value        = '';
-          document.getElementById('deb-questions').value  = '';
-          document.getElementById('deb-review').value     = '';
+          notify(data.message || 'Chia sẻ thành công! Bạn nhận được +5 Credits.', '🎉 Thành công!', 'success');
 
-          // Bắt đầu hiển thị countdown
+          if (typeof loadCommunityQuestions === 'function') {
+            loadCommunityQuestions();
+          }
+
+          // Xóa form sau khi gửi thành công
+          if (document.getElementById('deb-company'))   document.getElementById('deb-company').value = '';
+          if (document.getElementById('deb-pos'))       document.getElementById('deb-pos').value = '';
+          if (document.getElementById('deb-questions')) document.getElementById('deb-questions').value = '';
+          if (document.getElementById('deb-review'))    document.getElementById('deb-review').value = '';
+
+          // Hiển thị cooldown countdown
           updateDebriefButtonState();
 
         } else {
-          // Lỗi từ server (status 400, 409, 429...)
-          const isSpam = res.status === 409;
-          const isCooldown = res.status === 429;
-
-          if (isCooldown) {
-            // Server cũng reject vì cooldown → đồng bộ lại localStorage
+          // Xử lý các mã lỗi cụ thể từ server
+          if (res.status === 429) {
+            // Cooldown từ server -> đồng bộ với localStorage
             localStorage.setItem(DEBRIEF_COOLDOWN_KEY, Date.now().toString());
+            notify(data.message || 'Bạn đã chia sẻ gần đây. Vui lòng quay lại sau.', '⏱️ Giới hạn chia sẻ');
             updateDebriefButtonState();
-            showToastError(data.message, '⏱️ Quá giới hạn');
-          } else if (isSpam) {
-            showToastError(data.message, '🔁 Nội dung trùng lặp');
+          } else if (res.status === 409) {
+            notify(data.message || 'Nội dung này đã được chia sẻ trước đó.', '🔁 Trùng lặp');
+            btn.disabled = false;
+            btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
           } else {
-            showToastError(data.message || 'Nội dung không hợp lệ.', '❌ Lỗi xác thực');
-            // Restore button nếu lỗi 400 (không phải spam, user có thể sửa lại)
+            notify(data.message || 'Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.', '❌ Từ chối');
             btn.disabled = false;
             btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
           }
         }
       } catch (err) {
-        showToastError('Không thể kết nối đến server. Vui lòng thử lại.', 'Lỗi mạng');
+        console.error('[Debrief Error]', err);
+        notify('Không thể kết nối đến máy chủ. Vui lòng kiểm tra mạng và thử lại.', 'Lỗi kết nối');
         btn.disabled = false;
         btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+      } finally {
+        // Tuyệt đối không để nút bị kẹt ở trạng thái loading nếu không thành công và không trong cooldown
+        if (!isSuccess) {
+          const currentLast = parseInt(localStorage.getItem(DEBRIEF_COOLDOWN_KEY) || '0', 10);
+          if (Date.now() - currentLast >= DEBRIEF_COOLDOWN_MS) {
+            btn.disabled = false;
+            btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+          }
+        }
       }
     }
 
