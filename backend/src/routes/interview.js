@@ -8,24 +8,43 @@ const express = require('express');
 const router = express.Router();
 const { callGeminiJSON, callGeminiText, genAI } = require('../services/geminiService');
 
-// ─── In-memory store: giới hạn 200 entries tránh memory leak ──
-const MAX_DEBRIEF_ENTRIES = 200;
-const communityDebriefQuestions = [
-  {
-    id: 'deb-001',
-    companyName: 'FPT Software Cần Thơ',
-    position: 'Node.js Backend Developer',
-    difficultyRating: 4,
-    interviewQuestions: [
-      'Giải thích cơ chế Event Loop trong Node.js và cách xử lý non-blocking I/O?',
-      'Em xử lý xung đột dữ liệu thế nào khi có 1000 request cùng đặt mua một sản phẩm trong 1 giây?',
-      'Kinh nghiệm tối ưu query trong PostgreSQL / MongoDB của em là gì?'
-    ],
-    reviewText: 'Phỏng vấn 2 vòng kỹ thuật rất thực chiến, người phỏng vấn chú trọng tư duy giải quyết vấn đề.',
-    sharedAt: new Date().toISOString(),
-    awardedCredits: 5
+// ─── Persistent Debrief Store: Lưu vào backend/data/debrief_questions.json ──
+const fs = require('fs');
+const path = require('path');
+const DEBRIEF_FILE = path.resolve(__dirname, '../../data/debrief_questions.json');
+const MAX_DEBRIEF_ENTRIES = 500;
+
+let communityDebriefQuestions = [];
+
+function loadDebriefStore() {
+  try {
+    if (fs.existsSync(DEBRIEF_FILE)) {
+      const raw = fs.readFileSync(DEBRIEF_FILE, 'utf8');
+      communityDebriefQuestions = JSON.parse(raw);
+      console.log(`[Debrief Store] Loaded ${communityDebriefQuestions.length} entries from disk.`);
+    } else {
+      console.log('[Debrief Store] Initializing empty or default store.');
+      communityDebriefQuestions = [];
+    }
+  } catch (e) {
+    console.error('[Debrief Store] Error reading debrief file:', e.message);
+    communityDebriefQuestions = [];
   }
-];
+}
+
+async function saveDebriefStore() {
+  try {
+    const dir = path.dirname(DEBRIEF_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    await fs.promises.writeFile(DEBRIEF_FILE, JSON.stringify(communityDebriefQuestions, null, 2), 'utf8');
+  } catch (e) {
+    console.error('[Debrief Store] Error saving debrief file:', e.message);
+  }
+}
+
+// Khởi động nạp dữ liệu từ file
+loadDebriefStore();
+
 
 // ─── Helper: Sanitize user input trước khi nhúng vào AI prompt ──
 function sanitizeForPrompt(input, maxLength = 3000) {
@@ -541,20 +560,50 @@ router.post('/debrief', async (req, res) => {
       communityDebriefQuestions.splice(MAX_DEBRIEF_ENTRIES - 1);
     }
 
+    // Tự động nhận diện tags từ câu hỏi và vị trí
+    const combinedText = `${position} ${questions.join(' ')}`.toLowerCase();
+    const potentialTags = [
+      'Node.js', 'React', 'Vue', 'Angular', 'TypeScript', 'JavaScript', 'Python', 'Java', 'Golang',
+      'SQL', 'PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Docker', 'Kubernetes', 'AWS',
+      'System Design', 'Microservices', 'Clean Architecture', 'API', 'Security', 'Testing',
+      'Data Analysis', 'Product', 'Marketing', 'Behavioral', 'STAR Method'
+    ];
+    const detectedTags = potentialTags.filter(tag => combinedText.includes(tag.toLowerCase())).slice(0, 5);
+    if (detectedTags.length === 0) detectedTags.push('Kỹ Năng Chung');
+
+    // Nhận diện category
+    const isIT = /(developer|engineer|coder|lập trình|backend|frontend|fullstack|devops|security|qa|tester|ai|data)/i.test(position);
+    const category = isIT ? 'IT' : 'Business';
+
+    const isAnon = Boolean(anonymous);
+    const authorName = isAnon ? 'Ứng viên Ẩn danh' : String(req.body.authorName || 'Huỳnh Kiên Minh').substring(0, 50).trim();
+    const authorRole = isAnon ? 'Ứng viên' : String(req.body.authorRole || position).substring(0, 60).trim();
+    const authorAvatar = isAnon ? '' : String(req.body.authorAvatar || '').substring(0, 500);
+
     const debriefEntry = {
       id: 'deb-' + Date.now(),
+      authorName,
+      authorRole,
+      authorAvatar,
       companyName: String(companyName).substring(0, 100).trim(),
       position: String(position).substring(0, 100).trim(),
       difficultyRating: Math.min(5, Math.max(1, Number(difficultyRating) || 3)),
+      category,
+      tags: detectedTags,
       interviewQuestions: questions.slice(0, 20).map(q => String(q).substring(0, 500).trim()),
       reviewText: String(reviewText || '').substring(0, 1000).trim() || 'Phỏng vấn thực tế',
-      anonymous: Boolean(anonymous),
+      anonymous: isAnon,
       sharedAt: new Date().toISOString(),
+      likesCount: 1, // Khởi tạo 1 like động viên
+      likedIps: [ip],
       awardedCredits: 5,
       contentHash: hash
     };
 
     communityDebriefQuestions.unshift(debriefEntry);
+
+    // Lưu bền vững vào file JSON
+    await saveDebriefStore();
 
     // ─── 6. Ghi nhận IP cooldown & hash ─────────────────────────
     ipDebriefCooldown.set(ip, Date.now());
@@ -587,22 +636,117 @@ router.post('/debrief', async (req, res) => {
 });
 
 // ─────────────────────────────────────────────────────────────────────
-// GET /api/interview/community-questions — Lấy câu hỏi cộng đồng
+// GET /api/interview/community-questions — MXH: Tìm kiếm & Lọc câu hỏi
 // ─────────────────────────────────────────────────────────────────────
 router.get('/community-questions', (req, res) => {
   try {
-    const { company, position } = req.query;
-    const limit = Math.min(50, Math.max(1, parseInt(req.query.limit) || 10));
+    const { q, company, position, category, minDifficulty, sort = 'newest' } = req.query;
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 20));
 
-    let filtered = communityDebriefQuestions;
-    if (company)   filtered = filtered.filter(i => i.companyName.toLowerCase().includes(String(company).substring(0,50).toLowerCase()));
-    if (position)  filtered = filtered.filter(i => i.position.toLowerCase().includes(String(position).substring(0,50).toLowerCase()));
+    let filtered = [...communityDebriefQuestions];
 
-    return res.status(200).json({ success: true, totalEntries: filtered.length, data: filtered.slice(0, limit) });
+    // 1. Tìm kiếm tổng quát (q): khớp trong company, position, câu hỏi, review, tags
+    if (q && typeof q === 'string' && q.trim()) {
+      const kw = q.trim().toLowerCase();
+      filtered = filtered.filter(item => {
+        const inCompany = item.companyName?.toLowerCase().includes(kw);
+        const inPosition = item.position?.toLowerCase().includes(kw);
+        const inReview = item.reviewText?.toLowerCase().includes(kw);
+        const inTags = Array.isArray(item.tags) && item.tags.some(t => t.toLowerCase().includes(kw));
+        const inQuestions = Array.isArray(item.interviewQuestions) && item.interviewQuestions.some(ques => ques.toLowerCase().includes(kw));
+        return inCompany || inPosition || inReview || inTags || inQuestions;
+      });
+    }
+
+    // 2. Lọc theo Company
+    if (company && typeof company === 'string' && company.trim()) {
+      filtered = filtered.filter(i => i.companyName.toLowerCase().includes(company.trim().toLowerCase()));
+    }
+
+    // 3. Lọc theo Position
+    if (position && typeof position === 'string' && position.trim()) {
+      filtered = filtered.filter(i => i.position.toLowerCase().includes(position.trim().toLowerCase()));
+    }
+
+    // 4. Lọc theo Category (IT, Business...)
+    if (category && category !== 'ALL') {
+      filtered = filtered.filter(i => i.category === category);
+    }
+
+    // 5. Lọc theo độ khó tối thiểu
+    if (minDifficulty && Number(minDifficulty)) {
+      filtered = filtered.filter(i => (i.difficultyRating || 3) >= Number(minDifficulty));
+    }
+
+    // 6. Sắp xếp
+    if (sort === 'popular') {
+      filtered.sort((a, b) => (b.likesCount || 0) - (a.likesCount || 0));
+    } else {
+      // Mặc định: Mới nhất
+      filtered.sort((a, b) => new Date(b.sharedAt || 0) - new Date(a.sharedAt || 0));
+    }
+
+    // Danh sách công ty nổi bật để gợi ý tìm kiếm
+    const companiesSet = new Set();
+    communityDebriefQuestions.forEach(i => { if (i.companyName) companiesSet.add(i.companyName); });
+
+    return res.status(200).json({
+      success: true,
+      totalEntries: filtered.length,
+      allTotalCount: communityDebriefQuestions.length,
+      topCompanies: Array.from(companiesSet).slice(0, 10),
+      data: filtered.slice(0, limit)
+    });
   } catch (error) {
+    console.error('[Community Questions GET]', error.message);
     return res.status(500).json({ success: false, message: 'Lỗi lấy danh sách câu hỏi cộng đồng.' });
   }
 });
 
+// ─────────────────────────────────────────────────────────────────────
+// POST /api/interview/community-questions/:id/like — Thả tim / Bỏ thích bài viết
+// ─────────────────────────────────────────────────────────────────────
+router.post('/community-questions/:id/like', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
+
+    const item = communityDebriefQuestions.find(i => i.id === id);
+    if (!item) {
+      return res.status(404).json({ success: false, message: 'Không tìm thấy bài chia sẻ.' });
+    }
+
+    if (!Array.isArray(item.likedIps)) item.likedIps = [];
+    if (typeof item.likesCount !== 'number') item.likesCount = item.likedIps.length;
+
+    const hasLiked = item.likedIps.includes(ip);
+    if (hasLiked) {
+      // Bỏ like
+      item.likedIps = item.likedIps.filter(x => x !== ip);
+      item.likesCount = Math.max(0, item.likesCount - 1);
+    } else {
+      // Like
+      item.likedIps.push(ip);
+      item.likesCount = (item.likesCount || 0) + 1;
+    }
+
+    // Lưu lại trạng thái
+    await saveDebriefStore();
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        id: item.id,
+        likesCount: item.likesCount,
+        hasLiked: !hasLiked
+      }
+    });
+  } catch (error) {
+    console.error('[Community Like POST]', error.message);
+    return res.status(500).json({ success: false, message: 'Không thể thả tim lúc này.' });
+  }
+});
+
 module.exports = router;
+
 
