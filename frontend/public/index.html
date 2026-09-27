@@ -3843,10 +3843,31 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           utterance.rate = 1.0;
 
           const voices = window.speechSynthesis.getVoices();
-          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN'));
-          if (viVoice) utterance.voice = viVoice;
-
-          utterance.onend = () => {
+          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN') || (v.name && v.name.toLowerCase().includes('vietnam')));
+          if (viVoice) {
+            utterance.voice = viVoice;
+            utterance.onend = () => {
+              setTimeout(() => {
+                isAISpeakingOrThinking = false;
+                currentSpeechBuffer = '';
+                const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+                if (isHandsFree) {
+                  startLiveListening();
+                } else {
+                  setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
+                }
+              }, 450);
+            };
+            utterance.onerror = () => {
+              setTimeout(() => {
+                isAISpeakingOrThinking = false;
+                currentSpeechBuffer = '';
+                startLiveListening();
+              }, 450);
+            };
+            window.speechSynthesis.speak(utterance);
+          } else {
+            console.warn('[Web Speech] Trình duyệt không có giọng đọc tiếng Việt, tránh phát âm đánh vần bằng giọng tiếng Anh.');
             setTimeout(() => {
               isAISpeakingOrThinking = false;
               currentSpeechBuffer = '';
@@ -3856,18 +3877,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               } else {
                 setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
               }
-            }, 450);
-          };
-
-          utterance.onerror = () => {
-            setTimeout(() => {
-              isAISpeakingOrThinking = false;
-              currentSpeechBuffer = '';
-              startLiveListening();
-            }, 450);
-          };
-
-          window.speechSynthesis.speak(utterance);
+            }, 3000);
+            return;
+          }
           return;
         } catch (e) {
           console.warn('SpeechSynthesis error:', e);
