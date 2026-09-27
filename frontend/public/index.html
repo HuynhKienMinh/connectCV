@@ -352,6 +352,13 @@
 
   // Restore on load (after DOM ready)
   document.addEventListener('DOMContentLoaded', function() {
+    // Khởi tạo trạng thái cooldown cho debrief khi load trang
+    setTimeout(() => {
+      if (typeof updateDebriefButtonState === 'function') {
+        updateDebriefButtonState();
+      }
+    }, 800);
+
     
     // Auto-save on input change
     ['cv-company','cv-target-role','cv-jd','cv-profile'].forEach(function(id) {
@@ -1471,6 +1478,14 @@ Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code?</tex
             <button onclick="submitDebrief()" id="btn-debrief" class="w-full py-3 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl shadow-md transition flex items-center justify-center">
               <span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>
             </button>
+            <!-- Anti-spam: Cooldown info banner -->
+            <div id="debrief-cooldown-info" class="hidden mt-2 p-2.5 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-800 flex items-start gap-2">
+              <i class="fa-solid fa-shield-halved text-amber-500 flex-shrink-0 mt-0.5"></i>
+              <span>Mỗi người chỉ được chia sẻ <strong>1 lần / 6 giờ</strong>. Nội dung giả mạo, ngẫu nhiên hoặc trùng lặp sẽ bị từ chối tự động.</span>
+            </div>
+            <p class="text-[10px] text-slate-400 text-center mt-1.5">
+              <i class="fa-solid fa-lock text-emerald-500 mr-1"></i>Xác minh nội dung tự động · Chống spam nhiều lớp
+            </p>
           </div>
         </div>
 
@@ -4421,10 +4436,130 @@ Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code?</tex
     }
 
     // 6. DEBRIEF (+5 CREDITS)
+    // ─── Debrief Anti-Spam (Client-side) ────────────────────────────────
+    const DEBRIEF_COOLDOWN_KEY = 'connectcv_debrief_last_submit';
+    const DEBRIEF_COOLDOWN_MS  = 6 * 60 * 60 * 1000; // 6 giờ
+    let _debriefCountdownTimer = null;
+
+    /** Kiểm tra và cập nhật trạng thái nút submit dựa trên cooldown */
+    function updateDebriefButtonState() {
+      const btn       = document.getElementById('btn-debrief');
+      const infoEl    = document.getElementById('debrief-cooldown-info');
+      if (!btn) return;
+
+      const lastSubmit = parseInt(localStorage.getItem(DEBRIEF_COOLDOWN_KEY) || '0', 10);
+      const elapsed    = Date.now() - lastSubmit;
+
+      if (lastSubmit > 0 && elapsed < DEBRIEF_COOLDOWN_MS) {
+        // Đang trong cooldown
+        const remainingMs = DEBRIEF_COOLDOWN_MS - elapsed;
+        btn.disabled = true;
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
+        btn.classList.remove('hover:bg-pink-700');
+
+        // Cập nhật countdown mỗi giây
+        if (_debriefCountdownTimer) clearInterval(_debriefCountdownTimer);
+        _debriefCountdownTimer = setInterval(() => {
+          const rem = DEBRIEF_COOLDOWN_MS - (Date.now() - lastSubmit);
+          if (rem <= 0) {
+            clearInterval(_debriefCountdownTimer);
+            updateDebriefButtonState(); // Reset về trạng thái bình thường
+            return;
+          }
+          const h = Math.floor(rem / 3600000);
+          const m = Math.floor((rem % 3600000) / 60000);
+          const s = Math.floor((rem % 60000) / 1000);
+          btn.innerHTML = `<i class="fa-solid fa-clock mr-2"></i> Chờ ${h}h ${m}m ${s}s để chia sẻ tiếp`;
+          if (infoEl) infoEl.classList.remove('hidden');
+        }, 1000);
+
+        // Trigger ngay lần đầu
+        const rem = remainingMs;
+        const h = Math.floor(rem / 3600000);
+        const m = Math.floor((rem % 3600000) / 60000);
+        const s = Math.floor((rem % 60000) / 1000);
+        btn.innerHTML = `<i class="fa-solid fa-clock mr-2"></i> Chờ ${h}h ${m}m ${s}s để chia sẻ tiếp`;
+        if (infoEl) infoEl.classList.remove('hidden');
+      } else {
+        // Hết cooldown hoặc chưa submit lần nào
+        if (_debriefCountdownTimer) { clearInterval(_debriefCountdownTimer); _debriefCountdownTimer = null; }
+        btn.disabled = false;
+        btn.classList.remove('opacity-60', 'cursor-not-allowed');
+        btn.classList.add('hover:bg-pink-700');
+        btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+        if (infoEl) infoEl.classList.add('hidden');
+      }
+    }
+
+    /** Client-side validation trước khi gửi server */
+    function validateDebriefForm() {
+      const company   = (document.getElementById('deb-company')?.value || '').trim();
+      const position  = (document.getElementById('deb-pos')?.value    || '').trim();
+      const questions = (document.getElementById('deb-questions')?.value || '').trim();
+      const review    = (document.getElementById('deb-review')?.value  || '').trim();
+
+      // Required fields
+      if (company.length < 3) {
+        return 'Tên công ty phải có ít nhất 3 ký tự.';
+      }
+      if (position.length < 5) {
+        return 'Vị trí phỏng vấn phải có ít nhất 5 ký tự.';
+      }
+
+      // Questions
+      const lines = questions.split('\n').map(s => s.trim()).filter(Boolean);
+      if (lines.length === 0) {
+        return 'Vui lòng nhập ít nhất 1 câu hỏi phỏng vấn.';
+      }
+      if (lines.length > 20) {
+        return 'Tối đa 20 câu hỏi mỗi lần chia sẻ.';
+      }
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].length < 15) {
+          return `Câu hỏi ${i + 1} quá ngắn (ít nhất 15 ký tự). Vui lòng nhập câu hỏi thực tế.`;
+        }
+        // Kiểm tra random: không có khoảng trắng + toàn chữ thường + entropy cao
+        const q = lines[i];
+        if (!q.includes(' ')) {
+          const uniqueRatio = new Set(q.toLowerCase()).size / q.length;
+          if (uniqueRatio > 0.75 && q.length > 12) {
+            return `Câu hỏi ${i + 1} có vẻ là ký tự ngẫu nhiên. Vui lòng nhập câu hỏi phỏng vấn thực tế.`;
+          }
+        }
+        const words = q.split(/\s+/).filter(w => w.length > 2).length;
+        if (words < 3) {
+          return `Câu hỏi ${i + 1} quá đơn giản. Hãy viết đầy đủ như: "Bạn xử lý conflict trong team như thế nào?"`;
+        }
+      }
+
+      // Random check cho company & position
+      if (!company.includes(' ') && company.length > 15) {
+        const uniqueRatio = new Set(company.toLowerCase()).size / company.length;
+        if (uniqueRatio > 0.75) return 'Tên công ty không hợp lệ. Vui lòng nhập tên thực tế.';
+      }
+
+      return null; // valid
+    }
+
     async function submitDebrief() {
       const btn = document.getElementById('btn-debrief');
+
+      // Client-side cooldown check
+      const lastSubmit = parseInt(localStorage.getItem(DEBRIEF_COOLDOWN_KEY) || '0', 10);
+      if (lastSubmit > 0 && (Date.now() - lastSubmit) < DEBRIEF_COOLDOWN_MS) {
+        showToastError('Bạn đã chia sẻ gần đây. Vui lòng chờ đủ 6 giờ trước khi chia sẻ tiếp!', '⏱️ Cooldown');
+        return;
+      }
+
+      // Client-side validation
+      const validErr = validateDebriefForm();
+      if (validErr) {
+        showToastError(validErr, '⚠️ Nội dung không hợp lệ');
+        return;
+      }
+
       btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang gửi bài chia sẻ...';
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang xác minh & gửi bài...';
 
       try {
         const lines = document.getElementById('deb-questions').value.split('\n').map(s => s.trim()).filter(Boolean);
@@ -4433,26 +4568,55 @@ Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code?</tex
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            companyName: document.getElementById('deb-company').value,
-            position: document.getElementById('deb-pos').value,
+            companyName: document.getElementById('deb-company').value.trim(),
+            position:    document.getElementById('deb-pos').value.trim(),
             interviewQuestions: lines,
-            reviewText: document.getElementById('deb-review').value,
+            reviewText:  document.getElementById('deb-review').value.trim(),
             difficultyRating: 4,
-            anonymous: false
+            anonymous:   false
           })
         });
 
         const data = await res.json();
+
         if (data.success) {
-          updateCredits(data.data.awardedCredits || 5);
-          showToastSuccess(data.message, '🎉 Thành công');
+          // Lưu timestamp submit để enforce cooldown
+          localStorage.setItem(DEBRIEF_COOLDOWN_KEY, Date.now().toString());
+
+          updateCredits(data.data?.awardedCredits || 5);
+          showToastSuccess(`${data.message} (Chia sẻ tiếp sau: ${data.data?.nextShareAvailableIn || '6 giờ'})`, '🎉 Thành công!');
           loadCommunityQuestions();
+
+          // Xóa form
+          document.getElementById('deb-company').value    = '';
+          document.getElementById('deb-pos').value        = '';
+          document.getElementById('deb-questions').value  = '';
+          document.getElementById('deb-review').value     = '';
+
+          // Bắt đầu hiển thị countdown
+          updateDebriefButtonState();
+
         } else {
-          showToastError('Lỗi: ' + data.message, 'Lỗi');
+          // Lỗi từ server (status 400, 409, 429...)
+          const isSpam = res.status === 409;
+          const isCooldown = res.status === 429;
+
+          if (isCooldown) {
+            // Server cũng reject vì cooldown → đồng bộ lại localStorage
+            localStorage.setItem(DEBRIEF_COOLDOWN_KEY, Date.now().toString());
+            updateDebriefButtonState();
+            showToastError(data.message, '⏱️ Quá giới hạn');
+          } else if (isSpam) {
+            showToastError(data.message, '🔁 Nội dung trùng lặp');
+          } else {
+            showToastError(data.message || 'Nội dung không hợp lệ.', '❌ Lỗi xác thực');
+            // Restore button nếu lỗi 400 (không phải spam, user có thể sửa lại)
+            btn.disabled = false;
+            btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+          }
         }
       } catch (err) {
-        showToastError('Không thể gửi bài. Vui lòng thử lại.', 'Lỗi');
-      } finally {
+        showToastError('Không thể kết nối đến server. Vui lòng thử lại.', 'Lỗi mạng');
         btn.disabled = false;
         btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
       }

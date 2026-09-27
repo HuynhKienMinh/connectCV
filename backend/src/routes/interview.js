@@ -379,45 +379,207 @@ Trả về DUY NHẤT JSON:
 });
 
 // ─────────────────────────────────────────────────────────────────────
+// DEBRIEF ANTI-SPAM SYSTEM
+// ─────────────────────────────────────────────────────────────────────
+
+// Per-IP cooldown: 1 lần/6 giờ — chặn spam liên tục từ cùng IP
+// Map<ip, lastSubmitTimestamp>
+const ipDebriefCooldown = new Map();
+const DEBRIEF_COOLDOWN_MS = 6 * 60 * 60 * 1000; // 6 giờ
+
+// Bộ hash nội dung đã submit — chặn duplicate content
+// Set<contentHash>
+const submittedContentHashes = new Set();
+const MAX_HASH_STORE = 10000;
+
+// Helper: tạo hash fingerprint từ nội dung bài chia sẻ
+const crypto = require('crypto');
+function contentHash(companyName, position, questions) {
+  const normalized = [
+    companyName.toLowerCase().trim(),
+    position.toLowerCase().trim(),
+    ...questions.map(q => q.toLowerCase().trim().replace(/\s+/g, ' '))
+  ].join('|');
+  return crypto.createHash('sha256').update(normalized).digest('hex').substring(0, 32);
+}
+
+// Helper: kiểm tra chất lượng nội dung (chặn random/gibberish)
+function validateContentQuality(text, fieldName, minLen = 10) {
+  const t = String(text || '').trim();
+
+  // Độ dài tối thiểu
+  if (t.length < minLen) {
+    return `${fieldName} quá ngắn (tối thiểu ${minLen} ký tự).`;
+  }
+
+  // Tỷ lệ ký tự có nghĩa — ít nhất 50% là chữ cái / số / dấu cách
+  const meaningfulChars = (t.match(/[\p{L}\p{N}\s]/gu) || []).length;
+  if (meaningfulChars / t.length < 0.5) {
+    return `${fieldName} chứa quá nhiều ký tự đặc biệt vô nghĩa.`;
+  }
+
+  // Phát hiện mẫu random (ký tự lặp liên tiếp nhiều lần, VD: zsxdfgdg...)
+  // Nếu không có khoảng trắng VÀ không phải tên công ty viết liền (không có chữ hoa) thì reject
+  if (!t.includes(' ') && t.length > 15 && !/[A-Z]/.test(t) && fieldName !== 'Câu hỏi') {
+    return `${fieldName} có vẻ là dữ liệu ngẫu nhiên, không hợp lệ.`;
+  }
+
+  // Không được toàn số
+  if (/^\d+$/.test(t)) {
+    return `${fieldName} không thể là toàn số.`;
+  }
+
+  // Unique char ratio — chuỗi random thường có entropy cao nhưng không có space
+  // Tính tỷ lệ ký tự duy nhất: nếu > 80% là duy nhất VÀ không có space → random
+  const chars = t.replace(/\s/g, '');
+  const uniqueChars = new Set(chars.toLowerCase()).size;
+  if (chars.length > 12 && uniqueChars / chars.length > 0.75 && !t.includes(' ')) {
+    return `${fieldName} có vẻ là chuỗi ký tự ngẫu nhiên, không hợp lệ.`;
+  }
+
+  return null; // valid
+}
+
+// Helper: Validate câu hỏi phỏng vấn
+function validateQuestionList(questions) {
+  if (!Array.isArray(questions) || questions.length === 0) {
+    return 'Cần ít nhất 1 câu hỏi phỏng vấn.';
+  }
+  if (questions.length > 20) {
+    return 'Tối đa 20 câu hỏi mỗi lần chia sẻ.';
+  }
+
+  for (let i = 0; i < questions.length; i++) {
+    const q = String(questions[i] || '').trim();
+    if (q.length < 15) {
+      return `Câu hỏi ${i + 1} quá ngắn (tối thiểu 15 ký tự). Vui lòng nhập câu hỏi thực tế.`;
+    }
+    if (q.length > 500) {
+      return `Câu hỏi ${i + 1} quá dài (tối đa 500 ký tự).`;
+    }
+    // Kiểm tra quality từng câu hỏi
+    const err = validateContentQuality(q, `Câu hỏi ${i + 1}`, 15);
+    if (err) return err;
+
+    // Câu hỏi nên chứa dấu hỏi HOẶC dạng mệnh đề (không bắt buộc nhưng check cơ bản)
+    const meaningfulWords = q.split(/\s+/).filter(w => w.length > 2).length;
+    if (meaningfulWords < 3) {
+      return `Câu hỏi ${i + 1} quá đơn giản. Vui lòng nhập câu hỏi phỏng vấn thực tế.`;
+    }
+  }
+
+  return null; // valid
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // POST /api/interview/debrief — Chia sẻ câu hỏi thực tế nhận Credits
 // ─────────────────────────────────────────────────────────────────────
 router.post('/debrief', async (req, res) => {
   try {
+    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
     const { companyName, position, interviewQuestions, difficultyRating = 3, reviewText, anonymous = false } = req.body;
 
-    if (!companyName || !position || !Array.isArray(interviewQuestions) || interviewQuestions.length === 0) {
-      return res.status(400).json({ success: false, message: 'Vui lòng cung cấp tên công ty, vị trí và ít nhất 1 câu hỏi phỏng vấn!' });
+    // ─── 1. Required fields ───────────────────────────────────────
+    if (!companyName || !position || !interviewQuestions) {
+      return res.status(400).json({
+        success: false,
+        message: 'Vui lòng điền đầy đủ: Tên công ty, Vị trí và ít nhất 1 câu hỏi phỏng vấn.'
+      });
     }
 
-    // Validate question count
-    if (interviewQuestions.length > 20) {
-      return res.status(400).json({ success: false, message: 'Tối đa 20 câu hỏi mỗi lần chia sẻ.' });
+    // ─── 2. Per-IP Rate Limit: 1 lần / 6 giờ ────────────────────
+    const lastSubmit = ipDebriefCooldown.get(ip);
+    if (lastSubmit) {
+      const elapsed = Date.now() - lastSubmit;
+      if (elapsed < DEBRIEF_COOLDOWN_MS) {
+        const remaining = Math.ceil((DEBRIEF_COOLDOWN_MS - elapsed) / 60000);
+        return res.status(429).json({
+          success: false,
+          message: `Bạn đã chia sẻ gần đây. Vui lòng chờ thêm ${remaining} phút trước khi chia sẻ tiếp.`,
+          retryAfterMinutes: remaining
+        });
+      }
     }
 
-    // Giới hạn in-memory store
+    // ─── 3. Content Quality Validation ──────────────────────────
+    const companyErr = validateContentQuality(companyName, 'Tên công ty', 3);
+    if (companyErr) return res.status(400).json({ success: false, message: companyErr });
+
+    const positionErr = validateContentQuality(position, 'Vị trí phỏng vấn', 5);
+    if (positionErr) return res.status(400).json({ success: false, message: positionErr });
+
+    // Parse questions: có thể là array hoặc string phân tách bởi \n
+    let questions = Array.isArray(interviewQuestions)
+      ? interviewQuestions
+      : String(interviewQuestions).split('\n').map(s => s.trim()).filter(Boolean);
+
+    const questionErr = validateQuestionList(questions);
+    if (questionErr) return res.status(400).json({ success: false, message: questionErr });
+
+    // reviewText: không bắt buộc nhưng nếu có phải có ý nghĩa
+    if (reviewText && String(reviewText).trim().length > 0) {
+      const reviewErr = validateContentQuality(String(reviewText), 'Đánh giá', 10);
+      if (reviewErr) return res.status(400).json({ success: false, message: reviewErr });
+    }
+
+    // ─── 4. Duplicate Detection — Hash-based ────────────────────
+    const hash = contentHash(
+      String(companyName),
+      String(position),
+      questions.slice(0, 5) // hash 5 câu đầu đủ để detect trùng
+    );
+
+    if (submittedContentHashes.has(hash)) {
+      return res.status(409).json({
+        success: false,
+        message: 'Nội dung này đã được chia sẻ trước đó. Mỗi bài chia sẻ phải là thông tin phỏng vấn thực tế mới và độc đáo.'
+      });
+    }
+
+    // ─── 5. Store entry ──────────────────────────────────────────
     if (communityDebriefQuestions.length >= MAX_DEBRIEF_ENTRIES) {
       communityDebriefQuestions.splice(MAX_DEBRIEF_ENTRIES - 1);
     }
 
     const debriefEntry = {
       id: 'deb-' + Date.now(),
-      companyName: String(companyName).substring(0, 100),
-      position: String(position).substring(0, 100),
+      companyName: String(companyName).substring(0, 100).trim(),
+      position: String(position).substring(0, 100).trim(),
       difficultyRating: Math.min(5, Math.max(1, Number(difficultyRating) || 3)),
-      interviewQuestions: interviewQuestions.slice(0, 20).map(q => String(q).substring(0, 500)),
-      reviewText: String(reviewText || 'Trải nghiệm phỏng vấn tích cực').substring(0, 1000),
+      interviewQuestions: questions.slice(0, 20).map(q => String(q).substring(0, 500).trim()),
+      reviewText: String(reviewText || '').substring(0, 1000).trim() || 'Phỏng vấn thực tế',
       anonymous: Boolean(anonymous),
       sharedAt: new Date().toISOString(),
-      awardedCredits: 5
+      awardedCredits: 5,
+      contentHash: hash
     };
 
     communityDebriefQuestions.unshift(debriefEntry);
 
+    // ─── 6. Ghi nhận IP cooldown & hash ─────────────────────────
+    ipDebriefCooldown.set(ip, Date.now());
+
+    // Dọn dẹp hash store nếu quá lớn
+    if (submittedContentHashes.size >= MAX_HASH_STORE) {
+      const first = submittedContentHashes.values().next().value;
+      submittedContentHashes.delete(first);
+    }
+    submittedContentHashes.add(hash);
+
+    console.log(`[Debrief] ✅ New entry: "${debriefEntry.companyName}" / "${debriefEntry.position}" — IP: ${ip}`);
+
     return res.status(201).json({
       success: true,
-      message: '🎉 Chia sẻ câu hỏi phỏng vấn thành công! Bạn đã nhận +5 Credits vào tài khoản.',
-      data: { awardedCredits: 5, debriefId: debriefEntry.id, companyName: debriefEntry.companyName, totalQuestionsContributed: debriefEntry.interviewQuestions.length }
+      message: '🎉 Chia sẻ thành công! Bạn đã nhận +5 Credits. Cảm ơn đóng góp cho cộng đồng!',
+      data: {
+        awardedCredits: 5,
+        debriefId: debriefEntry.id,
+        companyName: debriefEntry.companyName,
+        totalQuestionsContributed: debriefEntry.interviewQuestions.length,
+        nextShareAvailableIn: '6 giờ'
+      }
     });
+
   } catch (error) {
     console.error('[Interview /debrief]', error.message);
     return res.status(500).json({ success: false, message: 'Không thể lưu bài chia sẻ. Vui lòng thử lại.' });
@@ -443,3 +605,4 @@ router.get('/community-questions', (req, res) => {
 });
 
 module.exports = router;
+
