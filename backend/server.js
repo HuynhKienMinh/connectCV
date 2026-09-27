@@ -76,15 +76,6 @@ const aiLimiter = rateLimit({
   message: { success: false, message: 'Giới hạn 15 lần gọi AI mỗi 5 phút. Vui lòng thử lại sau ít phút.' }
 });
 
-// Tầng 2b — Live Interview Chat: 60 request / 5 phút mỗi IP (đảm bảo đàm thoại live mượt mà không ngắt quãng)
-const liveLimiter = rateLimit({
-  windowMs: 5 * 60 * 1000,
-  max: 60,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: { success: false, message: 'Bạn đã thực hiện quá nhiều lượt hỏi đáp trong 5 phút. Vui lòng đợi ít phút rồi tiếp tục.' }
-});
-
 // Tầng 3 — TTS (Audio): 20 request / phút (tránh TTS abuse)
 const ttsLimiter = rateLimit({
   windowMs: 60 * 1000,
@@ -150,7 +141,7 @@ const interviewRouter = require('./src/routes/interview');
 app.use('/api/interview/tts', ttsLimiter);
 app.use('/api/interview/transcribe', aiLimiter);
 app.use('/api/interview/start', aiLimiter);
-app.use('/api/interview/live-chat', liveLimiter);
+app.use('/api/interview/live-chat', aiLimiter);
 app.use('/api/interview/evaluate', aiLimiter);
 app.use('/api/interview/proposal', aiLimiter);
 app.use('/api/interview', interviewRouter);

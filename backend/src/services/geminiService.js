@@ -51,16 +51,16 @@ function withTimeout(promise, ms = 45000, label = 'Gemini') {
 // MODEL CHAIN — fallback nếu model đầu lỗi
 // ─────────────────────────────────────────────────────────
 const MODEL_CHAIN = [
-  'gemini-flash-lite-latest',
   'gemini-2.5-flash-lite',
   'gemini-2.5-flash',
+  'gemini-flash-lite-latest',
   'gemini-flash-latest'
 ];
 
 /**
  * Gọi Gemini AI sinh JSON — tự động fallback model + timeout 45s mỗi model
  */
-async function callGeminiJSON(prompt, preferredModel = 'gemini-flash-lite-latest', extraConfig = {}) {
+async function callGeminiJSON(prompt, preferredModel = 'gemini-2.5-flash-lite') {
   const modelsToTry = [preferredModel, ...MODEL_CHAIN.filter(m => m !== preferredModel)];
   let lastError = null;
 
@@ -68,7 +68,7 @@ async function callGeminiJSON(prompt, preferredModel = 'gemini-flash-lite-latest
     try {
       const model = genAI.getGenerativeModel({
         model: modelName,
-        generationConfig: { responseMimeType: 'application/json', ...extraConfig }
+        generationConfig: { responseMimeType: 'application/json' }
       });
 
       const result = await withTimeout(
@@ -92,16 +92,13 @@ async function callGeminiJSON(prompt, preferredModel = 'gemini-flash-lite-latest
 /**
  * Gọi Gemini AI sinh text tự do — với timeout 45s
  */
-async function callGeminiText(prompt, preferredModel = 'gemini-flash-lite-latest', extraConfig = {}) {
+async function callGeminiText(prompt, preferredModel = 'gemini-2.5-flash-lite') {
   const modelsToTry = [preferredModel, ...MODEL_CHAIN.filter(m => m !== preferredModel)];
   let lastError = null;
 
   for (const modelName of modelsToTry) {
     try {
-      const model  = genAI.getGenerativeModel({
-        model: modelName,
-        generationConfig: { ...extraConfig }
-      });
+      const model  = genAI.getGenerativeModel({ model: modelName });
       const result = await withTimeout(model.generateContent(prompt), 45000, modelName);
       return result.response.text();
     } catch (error) {

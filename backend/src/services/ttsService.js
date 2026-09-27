@@ -1,5 +1,4 @@
 const { MsEdgeTTS, OUTPUT_FORMAT } = require('msedge-tts');
-const https = require('https');
 
 // Cache đơn giản trong bộ nhớ để tái sử dụng audio nếu văn bản trùng nhau
 const audioCache = new Map();
@@ -20,114 +19,7 @@ function cleanTextForSpeech(text) {
 }
 
 /**
- * Helper lấy một đoạn audio MP3 tiếng Việt từ Google Translate TTS
- */
-function getGoogleTTSChunk(text) {
-  return new Promise((resolve, reject) => {
-    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&q=' + encodeURIComponent(text) + '&tl=vi&client=tw-ob';
-    const req = https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } }, (res) => {
-      if (res.statusCode !== 200) {
-        return reject(new Error('Google TTS status: ' + res.statusCode));
-      }
-      const chunks = [];
-      res.on('data', c => chunks.push(c));
-      res.on('end', () => resolve(Buffer.concat(chunks)));
-    });
-    req.on('error', reject);
-    req.setTimeout(5000, () => {
-      req.destroy();
-      reject(new Error('Google TTS timeout'));
-    });
-  });
-}
-
-/**
- * Fallback tạo Audio Buffer MP3 tiếng Việt qua Google TTS (chia câu nếu văn bản dài)
- */
-async function generateGoogleTTSFallback(text) {
-  const sentences = text.match(/[^.!?]+[.!?]+|\S+/g) || [text];
-  const parts = [];
-  let current = '';
-  for (const s of sentences) {
-    if ((current + ' ' + s).length > 160) {
-      if (current) parts.push(current.trim());
-      current = s;
-    } else {
-      current = current ? current + ' ' + s : s;
-    }
-  }
-  if (current) parts.push(current.trim());
-
-  const audioBuffers = await Promise.all(parts.map(p => getGoogleTTSChunk(p)));
-  return Buffer.concat(audioBuffers);
-}
-
-/**
- * Gọi Microsoft Edge TTS stream với khả năng cứu dữ liệu âm thanh khi socket đóng sớm
- */
-function fetchEdgeTTS(cleaned, voiceName) {
-  return new Promise(async (resolve, reject) => {
-    let resolved = false;
-    let timer = null;
-
-    try {
-      const tts = new MsEdgeTTS();
-      await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3);
-      const { audioStream } = tts.toStream(cleaned);
-      const chunks = [];
-
-      timer = setTimeout(() => {
-        if (!resolved) {
-          resolved = true;
-          const totalBytes = chunks.reduce((acc, c) => acc + c.length, 0);
-          if (totalBytes > 1000) {
-            console.warn(`[TTS timeout] Salvaged ${totalBytes} bytes before timeout.`);
-            resolve(Buffer.concat(chunks));
-          } else {
-            reject(new Error('Edge TTS stream timeout'));
-          }
-        }
-      }, 7000);
-
-      audioStream.on('data', (chunk) => {
-        chunks.push(chunk);
-      });
-
-      audioStream.on('end', () => {
-        if (!resolved) {
-          resolved = true;
-          if (timer) clearTimeout(timer);
-          const buffer = Buffer.concat(chunks);
-          resolve(buffer);
-        }
-      });
-
-      audioStream.on('error', (err) => {
-        if (!resolved) {
-          resolved = true;
-          if (timer) clearTimeout(timer);
-          const totalBytes = chunks.reduce((acc, c) => acc + c.length, 0);
-          // Cứu dữ liệu âm thanh đã nhận được nếu Microsoft ngắt kết nối trước turn.end
-          if (totalBytes > 1000) {
-            console.warn(`[TTS Stream Rescued] Salvaged ${totalBytes} bytes of audio despite socket close: ${err.message}`);
-            return resolve(Buffer.concat(chunks));
-          }
-          reject(err);
-        }
-      });
-    } catch (err) {
-      if (!resolved) {
-        resolved = true;
-        if (timer) clearTimeout(timer);
-        reject(err);
-      }
-    }
-  });
-}
-
-/**
  * Chuyển văn bản thành Audio Buffer MP3 chất lượng cao bằng Microsoft Edge Neural Voice
- * Có cơ chế tự động cứu stream, retry 1 lần và fallback Google TTS tiếng Việt an toàn tuyệt đối.
  * @param {string} text - Văn bản cần đọc
  * @param {string} voiceName - Tên giọng đọc ('vi-VN-NamMinhNeural' hoặc 'vi-VN-HoaiMyNeural')
  * @returns {Promise<Buffer>} Audio MP3 buffer
@@ -143,43 +35,36 @@ async function generateSpeechMP3(text, voiceName = 'vi-VN-NamMinhNeural') {
     return audioCache.get(cacheKey);
   }
 
-  let buffer = null;
+  const tts = new MsEdgeTTS();
+  await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3);
 
-  // Lần thử 1: Microsoft Edge Neural Voice
-  try {
-    buffer = await fetchEdgeTTS(cleaned, voiceName);
-  } catch (err1) {
-    console.warn('[TTS Attempt 1 warning]:', err1.message);
-    // Lần thử 2: Thử lại Microsoft Edge TTS 1 lần nữa
+  return new Promise((resolve, reject) => {
     try {
-      buffer = await fetchEdgeTTS(cleaned, voiceName);
-    } catch (err2) {
-      console.warn('[TTS Attempt 2 warning]:', err2.message);
-    }
-  }
+      const { audioStream } = tts.toStream(cleaned);
+      const chunks = [];
 
-  // Nếu cả 2 lần Edge TTS không có buffer hợp lệ (>1000 bytes), chuyển sang Google Vietnamese TTS
-  if (!buffer || buffer.length < 1000) {
-    console.warn('[TTS Fallback] Đang dùng Google Vietnamese TTS fallback...');
-    try {
-      buffer = await generateGoogleTTSFallback(cleaned);
-    } catch (gErr) {
-      console.error('[TTS Google Fallback Error]:', gErr.message);
-      throw new Error('Không thể tạo âm thanh giọng đọc từ tất cả nguồn TTS.');
-    }
-  }
+      audioStream.on('data', (chunk) => {
+        chunks.push(chunk);
+      });
 
-  if (buffer && buffer.length > 0) {
-    // Giữ cache tối đa 50 mục
-    if (audioCache.size > 50) {
-      const firstKey = audioCache.keys().next().value;
-      audioCache.delete(firstKey);
-    }
-    audioCache.set(cacheKey, buffer);
-    return buffer;
-  }
+      audioStream.on('end', () => {
+        const buffer = Buffer.concat(chunks);
+        // Lưu cache tối đa 50 mục gần nhất
+        if (audioCache.size > 50) {
+          const firstKey = audioCache.keys().next().value;
+          audioCache.delete(firstKey);
+        }
+        audioCache.set(cacheKey, buffer);
+        resolve(buffer);
+      });
 
-  throw new Error('Không thể tạo file âm thanh');
+      audioStream.on('error', (err) => {
+        reject(err);
+      });
+    } catch (err) {
+      reject(err);
+    }
+  });
 }
 
 module.exports = {

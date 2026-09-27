@@ -3674,7 +3674,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         const hasText = Boolean((currentSpeechBuffer && currentSpeechBuffer.trim()) || (document.getElementById('live-quick-input')?.value || '').trim());
         badge.className = 'inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 mb-2';
         statusText.innerText = customMessage || (isHandsFree 
-          ? 'Đang lắng nghe... (Nói tự nhiên, AI sẽ tự phản hồi)' 
+          ? 'Đang lắng nghe... (Nói tự nhiên, dừng 1.5s tự gửi)' 
           : 'Đang lắng nghe... (Nói xong bấm Gửi hoặc Nói Xong)');
         interruptBtn.classList.add('hidden');
 
@@ -3772,8 +3772,6 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         window.speechSynthesis.cancel();
       }
 
-      // Hiển thị ngay phụ đề câu nói của AI để ứng viên không phải chờ
-      updateLiveCaption('interviewer', text);
       setLiveOrbState('thinking', 'Đang kết nối âm thanh giọng đọc...');
 
       try {
@@ -3845,23 +3843,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           utterance.rate = 1.0;
 
           const voices = window.speechSynthesis.getVoices();
-          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN') || (v.name && v.name.toLowerCase().includes('vietnam')));
-          if (viVoice) {
-            utterance.voice = viVoice;
-          } else {
-            console.warn('[Web Speech] Không có giọng tiếng Việt hệ thống, hiển thị phụ đề để ứng viên đọc.');
-            setTimeout(() => {
-              isAISpeakingOrThinking = false;
-              currentSpeechBuffer = '';
-              const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-              if (isHandsFree) {
-                startLiveListening();
-              } else {
-                setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
-              }
-            }, 3500);
-            return;
-          }
+          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN'));
+          if (viVoice) utterance.voice = viVoice;
 
           utterance.onend = () => {
             setTimeout(() => {
@@ -3982,7 +3965,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           isListeningActive = true;
           const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
           setLiveOrbState('listening', isHandsFree 
-            ? 'Đang lắng nghe... (Nói tự nhiên, AI sẽ tự phản hồi)' 
+            ? 'Đang lắng nghe... (Nói tự nhiên, dừng 1.5s tự gửi)' 
             : 'Đang lắng nghe... (Nói xong bấm Gửi hoặc Nói Xong)');
         };
 
@@ -4018,7 +4001,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                   stopLiveListening();
                   sendCandidateLiveAnswer(toSend);
                 }
-              }, 850);
+              }, 1500);
             } else {
               // Chế độ thủ công: Cập nhật nút chính thành "Nói xong - Gửi"
               const micLabel = document.getElementById('btn-live-mic-label');
@@ -4213,8 +4196,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             }
           } else {
             const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-            // Dừng sau khi đã phát hiện giọng nói và im lặng 1.0 giây (trong chế độ rảnh tay)
-            if (hasDetectedSpeech && isHandsFree && (Date.now() - silenceStartTime > 1000)) {
+            // Dừng sau khi đã phát hiện giọng nói và im lặng 1.8 giây (trong chế độ rảnh tay)
+            if (hasDetectedSpeech && isHandsFree && (Date.now() - silenceStartTime > 1800)) {
               stopMediaRecorderListening();
               return;
             }
@@ -4443,8 +4426,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             candidateProfile: document.getElementById('int-exp').value,
             history: liveInterviewHistory,
             message: answerText,
-            action: 'reply',
-            voice: selectedVoice
+            action: 'reply'
           })
         });
 
@@ -4826,7 +4808,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           const micIcon = document.getElementById('btn-live-mic-icon');
           if (isListeningActive || isMediaRecording) {
             if (isHandsFree) {
-              if (statusText) statusText.innerText = 'Đang lắng nghe... (Nói tự nhiên, AI sẽ tự phản hồi)';
+              if (statusText) statusText.innerText = 'Đang lắng nghe... (Nói tự nhiên, dừng 1.5s tự gửi)';
               if (micLabel) micLabel.innerText = 'Đang nghe...';
               if (micIcon) micIcon.className = 'fa-solid fa-microphone mr-1.5';
               if (currentSpeechBuffer.trim()) {
@@ -4837,7 +4819,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                     stopLiveListening();
                     sendCandidateLiveAnswer(toSend);
                   }
-                }, 850);
+                }, 1500);
               }
             } else {
               clearTimeout(vadSilenceTimer);
