@@ -36,21 +36,33 @@ async function generateSpeechMP3(text, voiceName = 'vi-VN-NamMinhNeural') {
   }
 
   const tts = new MsEdgeTTS();
-  await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_96KBITRATE_MONO_MP3);
+  await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
 
   return new Promise((resolve, reject) => {
+    let timer = null;
     try {
       const { audioStream } = tts.toStream(cleaned);
       const chunks = [];
+
+      timer = setTimeout(() => {
+        if (chunks.length > 0) {
+          const buffer = Buffer.concat(chunks);
+          audioCache.set(cacheKey, buffer);
+          resolve(buffer);
+        } else {
+          reject(new Error('TTS timeout: stream took too long'));
+        }
+      }, 3500);
 
       audioStream.on('data', (chunk) => {
         chunks.push(chunk);
       });
 
       audioStream.on('end', () => {
+        clearTimeout(timer);
         const buffer = Buffer.concat(chunks);
-        // Lưu cache tối đa 50 mục gần nhất
-        if (audioCache.size > 50) {
+        // Lưu cache tối đa 100 mục gần nhất
+        if (audioCache.size > 100) {
           const firstKey = audioCache.keys().next().value;
           audioCache.delete(firstKey);
         }
@@ -59,9 +71,15 @@ async function generateSpeechMP3(text, voiceName = 'vi-VN-NamMinhNeural') {
       });
 
       audioStream.on('error', (err) => {
-        reject(err);
+        clearTimeout(timer);
+        if (chunks.length > 0) {
+          resolve(Buffer.concat(chunks));
+        } else {
+          reject(err);
+        }
       });
     } catch (err) {
+      if (timer) clearTimeout(timer);
       reject(err);
     }
   });
