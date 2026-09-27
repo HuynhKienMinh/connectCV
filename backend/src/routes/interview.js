@@ -69,18 +69,8 @@ function escStr(s, max = 200) {
   return sanitizeForPrompt(String(s || ''), max).replace(/"/g, '\\"');
 }
 
-// ─── TTS Helper ──────────────────────────────────────────────
-const MsEdgeTTS = require('msedge-tts');
-const { MsEdgeTTS: TTS, OUTPUT_FORMAT } = MsEdgeTTS;
-
-async function generateSpeechMP3(text, voiceName = 'vi-VN-HoaiMyNeural') {
-  const tts = new TTS();
-  await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
-  const { audioStream } = await tts.toStream(text);
-  const chunks = [];
-  for await (const chunk of audioStream) chunks.push(chunk);
-  return Buffer.concat(chunks);
-}
+// ─── TTS Helper (sử dụng service chuẩn có caching và clean text) ──
+const { generateSpeechMP3 } = require('../services/ttsService');
 
 // ─────────────────────────────────────────────────────────────────────
 // POST /api/interview/start — Tạo bộ câu hỏi phỏng vấn STAR
@@ -150,10 +140,14 @@ router.post('/tts', async (req, res) => {
     const safeText = String(text).trim().substring(0, 1000);
 
     const VALID_VOICES = ['vi-VN-HoaiMyNeural', 'vi-VN-NamMinhNeural'];
-    const safeVoice = VALID_VOICES.includes(voice) ? voice : 'vi-VN-HoaiMyNeural';
+    const safeVoice = VALID_VOICES.includes(voice) ? voice : 'vi-VN-NamMinhNeural';
 
     const audioBuffer = await generateSpeechMP3(safeText, safeVoice);
-    res.set({ 'Content-Type': 'audio/mpeg', 'Content-Length': audioBuffer.length, 'Cache-Control': 'public, max-age=86400' });
+    res.set({
+      'Content-Type': 'audio/mpeg',
+      'Content-Length': audioBuffer.length,
+      'Cache-Control': 'public, max-age=86400'
+    });
     return res.end(audioBuffer);
   } catch (err) {
     console.error('[Interview /tts]', err.message);
@@ -222,40 +216,124 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
 });
 
 // ─────────────────────────────────────────────────────────────────────
-// POST /api/interview/live-chat — Phỏng vấn live theo lượt
+// POST /api/interview/live-chat — Phỏng vấn live theo lượt (Start & Reply)
 // ─────────────────────────────────────────────────────────────────────
 router.post('/live-chat', async (req, res) => {
   try {
-    const { userMessage, jobTitle, conversationHistory = [], jdText } = req.body;
-    if (!userMessage || !userMessage.trim()) {
+    const {
+      userMessage,
+      message,
+      jobTitle,
+      conversationHistory,
+      history,
+      jdText,
+      candidateProfile,
+      action
+    } = req.body;
+
+    const currentMsg   = (userMessage || message || '').trim();
+    const rawHistory   = history || conversationHistory || [];
+    const safeTitle    = escStr(jobTitle || 'Software Engineer', 100);
+    const safeJD       = sanitizeForPrompt(jdText || '', 2500);
+    const safeProfile  = sanitizeForPrompt(candidateProfile || '', 1500);
+
+    const isStart = action === 'start' || (!currentMsg && rawHistory.length === 0);
+
+    if (!isStart && !currentMsg) {
       return res.status(400).json({ success: false, message: 'Vui lòng cung cấp câu trả lời!' });
     }
 
-    const safeMsg     = sanitizeForPrompt(userMessage, 800);
-    const safeTitle   = escStr(jobTitle || 'Software Engineer', 100);
-    const safeJD      = sanitizeForPrompt(jdText, 2000);
-    const recentHist  = (conversationHistory || []).slice(-6).map(h => `${h.role === 'interviewer' ? 'Interviewer' : 'Candidate'}: ${sanitizeForPrompt(h.content, 300)}`).join('\n');
+    if (isStart) {
+      const prompt = `
+Bạn là Trưởng nhóm Tuyển dụng AI (Senior Technical Hiring Manager) tại công ty hàng đầu.
+Bạn đang trực tiếp phỏng vấn ứng viên cho vị trí: "${safeTitle}".
+
+MÔ TẢ CÔNG VIỆC (JD):
+${safeJD || 'Phỏng vấn đánh giá năng lực chuyên môn và xử lý tình huống thực tế.'}
+
+THÔNG TIN ỨNG VIÊN:
+${safeProfile || 'Ứng viên vừa tham gia buổi phỏng vấn.'}
+
+NHIỆM VỤ:
+1. Hãy mở đầu buổi phỏng vấn một cách tự nhiên, lịch thiệp, thân thiện và ấm áp.
+2. Chào mừng ứng viên, giới thiệu ngắn gọn lý do buổi phỏng vấn và đưa ra câu hỏi mở đầu (ví dụ: mời ứng viên giới thiệu đôi nét về bản thân hoặc chia sẻ về kinh nghiệm nổi bật nhất liên quan tới vị trí này).
+3. Đảm bảo câu thoại súc tích, mạch lạc (khoảng 2-3 câu, tối đa 60 từ), rất thích hợp để phát âm bằng giọng đọc AI tự nhiên (TTS). Tuyệt đối không dùng markdown, dấu sao hay ký tự lạ.
+
+Trả về DUY NHẤT một JSON hợp lệ:
+{
+  "interviewerReply": "Chào bạn! Rất vui được gặp bạn trong buổi phỏng vấn vị trí ${safeTitle} hôm nay. Để bắt đầu, bạn có thể chia sẻ đôi nét về bản thân và những kinh nghiệm nổi bật nhất của mình không?",
+  "quickFeedback": "Bắt đầu buổi phỏng vấn thành công",
+  "interviewPhase": "opening"
+}
+`;
+
+      const result = await callGeminiJSON(prompt);
+      const reply = result.interviewerReply || result.reply || `Chào bạn! Rất vui được gặp bạn trong buổi phỏng vấn vị trí ${safeTitle} hôm nay. Để bắt đầu, bạn có thể giới thiệu đôi nét về bản thân và kinh nghiệm nổi bật nhất của mình không?`;
+      const quickFeedback = result.quickFeedback || result.quickEvaluation || 'Bắt đầu phiên phỏng vấn';
+
+      return res.status(200).json({
+        success: true,
+        data: {
+          interviewerReply: reply,
+          reply: reply,
+          quickFeedback: quickFeedback,
+          quickEvaluation: quickFeedback,
+          interviewPhase: 'opening'
+        }
+      });
+    }
+
+    // Xử lý lượt phản hồi (action === 'reply')
+    const safeMsg = sanitizeForPrompt(currentMsg, 800);
+    const recentHist = rawHistory.slice(-8).map(h => {
+      const r = h.role === 'interviewer' ? 'Interviewer' : 'Candidate';
+      const text = h.message || h.content || '';
+      return `${r}: ${sanitizeForPrompt(text, 400)}`;
+    }).join('\n');
 
     const prompt = `
-Bạn là Nhà tuyển dụng AI đang phỏng vấn ứng viên vị trí "${safeTitle}".
-JD: ${safeJD}
+Bạn là Trưởng nhóm Tuyển dụng AI (Senior Technical Hiring Manager) đang phỏng vấn ứng viên cho vị trí "${safeTitle}".
 
-Lịch sử phỏng vấn:
-${recentHist || '(Bắt đầu phỏng vấn)'}
+MÔ TẢ CÔNG VIỆC (JD):
+${safeJD}
 
-Ứng viên vừa nói: "${safeMsg}"
+THÔNG TIN ỨNG VIÊN:
+${safeProfile}
 
-Hãy phản hồi tự nhiên như người phỏng vấn thật: gật đầu với điểm tốt, đào sâu điểm chưa rõ, hỏi câu tiếp theo.
-Trả về DUY NHẤT JSON:
+LỊCH SỬ ĐỐI THOẠI GẦN ĐÂY:
+${recentHist || '(Chưa có đối thoại trước đó)'}
+
+ỨNG VIÊN VỪA TRẢ LỜI:
+"${safeMsg}"
+
+NHIỆM VỤ:
+1. Đóng vai người phỏng vấn thật: ngắn gọn ghi nhận câu trả lời vừa rồi (khen ngợi điểm mạnh hoặc hỏi sâu vào chi tiết kỹ thuật/giải pháp thực tế).
+2. Đưa ra tiếp 1 câu hỏi logic, sắc bén theo mô hình STAR (Situation, Task, Action, Result) để thử thách năng lực giải quyết vấn đề của ứng viên.
+3. Câu nói súc tích, tự nhiên (khoảng 2-3 câu, tối đa 70 từ), rất dễ nghe khi đọc qua TTS tiếng Việt. Tuyệt đối không dùng ký tự định dạng markdown như dấu sao hay gạch đầu dòng.
+4. Kèm 1 lời nhận xét nhanh (quickFeedback) ngắn gọn để ứng viên biết điểm mạnh hoặc điểm cần cải thiện ngay lập tức.
+
+Trả về DUY NHẤT một JSON hợp lệ:
 {
-  "reply": "Phản hồi và câu hỏi tiếp theo của interviewer...",
-  "quickEvaluation": "Đánh giá ngắn 1 câu về câu trả lời vừa rồi...",
-  "interviewPhase": "opening | technical | behavioral | closing"
+  "interviewerReply": "Câu phản hồi và câu hỏi phỏng vấn tiếp theo...",
+  "quickFeedback": "Góp ý nhanh 1 câu...",
+  "interviewPhase": "technical"
 }
 `;
 
     const result = await callGeminiJSON(prompt);
-    return res.status(200).json({ success: true, data: result });
+    const reply = result.interviewerReply || result.reply || 'Cảm ơn câu trả lời của bạn. Bạn có thể chia sẻ cụ thể hơn về một thử thách kỹ thuật lớn nhất bạn từng gặp và cách bạn đã vượt qua nó không?';
+    const quickFeedback = result.quickFeedback || result.quickEvaluation || 'Phản hồi tốt';
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        interviewerReply: reply,
+        reply: reply,
+        quickFeedback: quickFeedback,
+        quickEvaluation: quickFeedback,
+        interviewPhase: result.interviewPhase || 'technical'
+      }
+    });
   } catch (error) {
     console.error('[Interview /live-chat]', error.message);
     return res.status(500).json({ success: false, message: 'Lỗi kết nối phỏng vấn AI. Vui lòng thử lại.' });
@@ -263,37 +341,75 @@ Trả về DUY NHẤT JSON:
 });
 
 // ─────────────────────────────────────────────────────────────────────
-// POST /api/interview/live-summary — Tóm tắt phiên phỏng vấn live
+// POST /api/interview/live-summary — Tóm tắt & Báo cáo STAR hoàn chỉnh
 // ─────────────────────────────────────────────────────────────────────
 router.post('/live-summary', async (req, res) => {
   try {
-    const { conversationHistory = [], jobTitle } = req.body;
-    if (!conversationHistory.length) {
+    const { history, conversationHistory, jobTitle, jdText, candidateProfile } = req.body;
+    const rawHist = history || conversationHistory || [];
+    if (!rawHist.length) {
       return res.status(400).json({ success: false, message: 'Không có lịch sử phỏng vấn để tóm tắt.' });
     }
 
-    const safeTitle = escStr(jobTitle || 'Software Engineer', 100);
-    const safeHist  = conversationHistory.slice(-20).map(h =>
-      `${h.role === 'interviewer' ? 'Interviewer' : 'Candidate'}: ${sanitizeForPrompt(h.content, 500)}`
-    ).join('\n');
+    const safeTitle   = escStr(jobTitle || 'Software Engineer', 100);
+    const safeJD      = sanitizeForPrompt(jdText || '', 2000);
+    const safeProfile = sanitizeForPrompt(candidateProfile || '', 1000);
+
+    const safeHistStr = rawHist.slice(-20).map(h => {
+      const r = h.role === 'interviewer' ? 'Interviewer' : 'Candidate';
+      const text = h.message || h.content || '';
+      return `${r}: ${sanitizeForPrompt(text, 500)}`;
+    }).join('\n');
 
     const prompt = `
-Bạn là chuyên gia đánh giá phỏng vấn.
-Phân tích phiên phỏng vấn sau cho vị trí "${safeTitle}":
+Bạn là Hội đồng Giám khảo Tuyển dụng Cấp cao chuyên gia phỏng vấn theo phương pháp STAR.
+Hãy đánh giá toàn diện buổi phỏng vấn sau cho vị trí "${safeTitle}":
 
-${safeHist}
+JD VỊ TRÍ:
+${safeJD}
 
-Trả về DUY NHẤT JSON:
+HỒ SƠ ỨNG VIÊN:
+${safeProfile}
+
+LỊCH SỬ ĐỐI THOẠI TRỰC TIẾP:
+${safeHistStr}
+
+YÊU CẦU ĐÁNH GIÁ:
+1. Chấm điểm tổng thể (overallScore) trên thang điểm 10 (ví dụ: 8.5).
+2. Xếp loại (rating): "Xuất Sắc" (>=8.5), "Rất Tốt" (>=7.0), hoặc "Cần Trau Dồi Thêm" (<7.0).
+3. Nhận định tổng quan (summary): 2-3 câu đúc kết năng lực và mức độ phù hợp.
+4. Điểm mạnh nổi bật (strengths): Mảng 2-3 chuỗi điểm sáng.
+5. Kỹ năng cần trau dồi (improvements): Mảng 2-3 chuỗi góp ý cải thiện.
+6. Chi tiết từng lượt hỏi đáp (qaBreakdown): Mảng các object:
+   - question: câu hỏi của người phỏng vấn
+   - candidateAnswer: câu trả lời của ứng viên
+   - score: điểm số 1-10
+   - critique: nhận xét cụ thể ưu/nhược điểm
+   - suggestedStarAnswer: gợi ý trả lời xuất sắc theo cấu trúc { situation, task, action, result }
+7. Lời khuyên chiến lược cho buổi phỏng vấn thật (finalAdvice): 1-2 câu lời khuyên quý giá.
+
+BẮT BUỘC trả về DUY NHẤT một JSON hợp lệ theo cấu trúc:
 {
-  "overallScore": 7.5,
-  "starMethodScore": 8,
-  "communicationScore": 7,
-  "technicalScore": 8,
-  "strengths": ["Điểm mạnh 1", "Điểm mạnh 2"],
-  "improvements": ["Cần cải thiện 1"],
-  "keyMoments": ["Khoảnh khắc nổi bật..."],
-  "hiringRecommendation": "Strong Yes | Yes | Maybe | No",
-  "overallFeedback": "Nhận xét tổng thể..."
+  "overallScore": 8.5,
+  "rating": "Rất Tốt",
+  "summary": "Ứng viên nắm vững kiến thức chuyên môn và trình bày mạch lạc...",
+  "strengths": ["Nắm chắc kiến trúc hệ thống", "Tự tin trong giao tiếp"],
+  "improvements": ["Cần định lượng kết quả cụ thể bằng số liệu %"],
+  "qaBreakdown": [
+    {
+      "question": "Câu hỏi của NTD...",
+      "candidateAnswer": "Câu trả lời của bạn...",
+      "score": 8,
+      "critique": "Nhận xét...",
+      "suggestedStarAnswer": {
+        "situation": "Bối cảnh tình huống...",
+        "task": "Mục tiêu nhiệm vụ...",
+        "action": "Giải pháp hành động...",
+        "result": "Kết quả đo lường được..."
+      }
+    }
+  ],
+  "finalAdvice": "Hãy luôn mang theo số liệu đo lường thực tế để tăng tính thuyết phục..."
 }
 `;
 

@@ -3749,14 +3749,17 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       container.scrollTop = container.scrollHeight;
     }
 
-    // Phát âm thanh giọng đọc tiếng Việt siêu chuẩn (Microsoft Neural Voice)
+    // Phát âm thanh giọng đọc tiếng Việt (Microsoft Neural Voice + Web Speech Synthesis Fallback)
     async function playNaturalVoice(text) {
       if (currentLiveAudio) {
         currentLiveAudio.pause();
         currentLiveAudio = null;
       }
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
 
-      setLiveOrbState('thinking', 'Đang tải âm thanh giọng đọc tiếng Việt...');
+      setLiveOrbState('thinking', 'Đang kết nối âm thanh giọng đọc...');
 
       try {
         const res = await fetch('/api/interview/tts', {
@@ -3788,16 +3791,67 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         };
 
         currentLiveAudio.onerror = (e) => {
-          console.warn('Lỗi phát âm thanh:', e);
-          startLiveListening();
+          console.warn('Lỗi phát âm thanh server, chuyển fallback:', e);
+          fallbackBrowserSpeech(text);
         };
 
         await currentLiveAudio.play();
       } catch (err) {
-        console.error('Lỗi TTS:', err);
-        // Nếu lỗi mạng âm thanh, vẫn tự động chuyển sang nghe để phiên phỏng vấn không bị đứt
-        startLiveListening();
+        console.warn('Lỗi TTS server, sử dụng giọng đọc trình duyệt (Web Speech):', err);
+        fallbackBrowserSpeech(text);
       }
+    }
+
+    // Fallback giọng đọc trực tiếp từ trình duyệt khi server TTS bận hoặc không kết nối được
+    function fallbackBrowserSpeech(text) {
+      setLiveOrbState('speaking');
+      updateLiveCaption('interviewer', text);
+
+      if ('speechSynthesis' in window) {
+        try {
+          const cleanText = text
+            .replace(/[*_~`#>]/g, '')
+            .replace(/\[.*?\]/g, '')
+            .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
+            .trim();
+
+          const utterance = new SpeechSynthesisUtterance(cleanText);
+          utterance.lang = 'vi-VN';
+          utterance.rate = 1.0;
+
+          const voices = window.speechSynthesis.getVoices();
+          const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN'));
+          if (viVoice) utterance.voice = viVoice;
+
+          utterance.onend = () => {
+            const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+            if (isHandsFree) {
+              startLiveListening();
+            } else {
+              setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
+            }
+          };
+
+          utterance.onerror = () => {
+            startLiveListening();
+          };
+
+          window.speechSynthesis.speak(utterance);
+          return;
+        } catch (e) {
+          console.warn('SpeechSynthesis error:', e);
+        }
+      }
+
+      // Nếu trình duyệt không có SpeechSynthesis, hiển thị phụ đề 3.5s rồi lắng nghe
+      setTimeout(() => {
+        const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+        if (isHandsFree) {
+          startLiveListening();
+        } else {
+          setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
+        }
+      }, 3500);
     }
 
     // Nút "Ngắt lời" (Interrupt) - Cho phép ứng viên ngắt lời AI bất cứ lúc nào
@@ -4174,6 +4228,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     // Bật/Tắt Micro khi bấm nút chính hoặc bấm vào Quả cầu
     function toggleLiveOrbMic() {
+      if (liveInterviewHistory.length === 0) {
+        startLiveInterview();
+        return;
+      }
+
       if (currentLiveAudio) {
         interruptAI();
         return;
@@ -4227,7 +4286,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
         const data = await res.json();
         if (data.success && data.data) {
-          const reply = data.data.interviewerReply;
+          const reply = data.data.interviewerReply || data.data.reply;
           appendTranscriptMessage('interviewer', reply);
           liveInterviewHistory.push({ role: 'interviewer', message: reply });
 
@@ -4275,7 +4334,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
         const data = await res.json();
         if (data.success && data.data) {
-          const reply = data.data.interviewerReply;
+          const reply = data.data.interviewerReply || data.data.reply;
           liveInterviewHistory = [{ role: 'interviewer', message: reply }];
           
           document.getElementById('transcript-drawer-messages').innerHTML = '';
