@@ -206,12 +206,12 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
     }
 
     if (!transcript && lastError) {
-      return res.status(200).json({ success: false, transcript: '[Không nghe rõ]', message: 'Không thể nhận diện giọng nói lúc này.' });
+      return res.status(200).json({ success: false, transcript: '[Không nghe rõ]', data: { transcript: '[Không nghe rõ]' }, message: 'Không thể nhận diện giọng nói lúc này.' });
     }
-    return res.status(200).json({ success: true, transcript });
+    return res.status(200).json({ success: true, transcript, data: { transcript } });
   } catch (error) {
     console.error('[Interview /transcribe]', error.message);
-    return res.status(500).json({ success: false, transcript: '[Không nghe rõ]', message: 'Lỗi xử lý âm thanh.' });
+    return res.status(500).json({ success: false, transcript: '[Không nghe rõ]', data: { transcript: '[Không nghe rõ]' }, message: 'Lỗi xử lý âm thanh.' });
   }
 });
 

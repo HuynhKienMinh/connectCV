@@ -3670,12 +3670,17 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         orb.className += ' bg-gradient-to-tr from-emerald-600 via-teal-500 to-green-400 shadow-[0_0_50px_rgba(16,185,129,0.8)] scale-105';
         icon.className = 'fa-solid fa-microphone text-3xl animate-bounce';
 
+        const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+        const hasText = Boolean((currentSpeechBuffer && currentSpeechBuffer.trim()) || (document.getElementById('live-quick-input')?.value || '').trim());
         badge.className = 'inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 mb-2';
-        statusText.innerText = customMessage || 'Đang lắng nghe... (Nói tự nhiên, dừng 1s tự gửi)';
+        statusText.innerText = customMessage || (isHandsFree 
+          ? 'Đang lắng nghe... (Nói tự nhiên, dừng 1.5s tự gửi)' 
+          : 'Đang lắng nghe... (Nói xong bấm Gửi hoặc Nói Xong)');
         interruptBtn.classList.add('hidden');
 
         micBtn.className = 'h-10 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold text-xs shadow-md transition flex items-center animate-pulse';
-        micLabel.innerText = 'Đang nghe...';
+        micLabel.innerText = isHandsFree ? 'Đang nghe...' : (hasText ? 'Nói xong - Gửi' : 'Đang nghe...');
+        micIcon.className = (!isHandsFree && hasText) ? 'fa-solid fa-paper-plane mr-1.5' : 'fa-solid fa-microphone mr-1.5';
       } else if (state === 'thinking') {
         ambient.className = 'absolute w-72 h-72 rounded-full blur-3xl opacity-40 bg-purple-600 transition-all duration-700 pointer-events-none';
         glowRing.className = 'absolute w-36 h-36 rounded-full blur-xl opacity-60 bg-purple-500 transition-all duration-500';
@@ -3703,6 +3708,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
         micBtn.className = 'h-10 px-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold text-xs shadow-md transition flex items-center';
         micLabel.innerText = 'Bật Mic';
+        micIcon.className = 'fa-solid fa-microphone mr-1.5';
       }
     }
 
@@ -3890,16 +3896,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     // Khởi tạo và Bật micro nhận diện giọng nói tiếng Việt
     async function startLiveListening() {
-      // Nếu là Brave hoặc đã được đánh dấu ưu tiên Gemini Transcribe
-      if (preferGeminiTranscribe || (navigator.brave && await navigator.brave.isBrave())) {
-        preferGeminiTranscribe = true;
-        startMediaRecorderListening();
-        return;
-      }
-
+      // Nếu là Brave hoặc không có SpeechRecognition, dùng Gemini Audio Transcribe
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      if (!SpeechRecognition) {
-        console.warn('Web Speech API không hỗ trợ, chuyển sang MediaRecorder');
+      if (!SpeechRecognition || preferGeminiTranscribe || (navigator.brave && await navigator.brave.isBrave())) {
         preferGeminiTranscribe = true;
         startMediaRecorderListening();
         return;
@@ -3920,44 +3919,63 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
         liveRecognizer.onstart = () => {
           isListeningActive = true;
-          setLiveOrbState('listening', 'Đang lắng nghe... (Nói tự nhiên, dừng 1.2s tự gửi)');
+          const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+          setLiveOrbState('listening', isHandsFree 
+            ? 'Đang lắng nghe... (Nói tự nhiên, dừng 1.5s tự gửi)' 
+            : 'Đang lắng nghe... (Nói xong bấm Gửi hoặc Nói Xong)');
         };
 
         liveRecognizer.onresult = (event) => {
-          let interimText = '';
-          for (let i = event.resultIndex; i < event.results.length; ++i) {
-            interimText += event.results[i][0].transcript;
+          let accumulated = '';
+          for (let i = 0; i < event.results.length; ++i) {
+            accumulated += event.results[i][0].transcript;
           }
 
-          if (interimText.trim()) {
-            currentSpeechBuffer = interimText.trim();
+          const text = accumulated.trim();
+          if (text) {
+            currentSpeechBuffer = text;
             updateLiveCaption('candidate', currentSpeechBuffer);
 
-            // Phát hiện ngưng nói (Silence Detection): Sau 1.3 giây im lặng, tự động gửi câu trả lời
+            // Đồng bộ trực tiếp vào ô gõ câu trả lời để người dùng thấy rõ
+            const quickInput = document.getElementById('live-quick-input');
+            if (quickInput && (!document.activeElement || document.activeElement !== quickInput)) {
+              quickInput.value = currentSpeechBuffer;
+            }
+
             const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
             if (isHandsFree) {
               clearTimeout(vadSilenceTimer);
               vadSilenceTimer = setTimeout(() => {
                 if (currentSpeechBuffer.trim()) {
+                  const toSend = currentSpeechBuffer.trim();
                   stopLiveListening();
-                  sendCandidateLiveAnswer(currentSpeechBuffer.trim());
+                  sendCandidateLiveAnswer(toSend);
                 }
-              }, 1300);
+              }, 1500);
+            } else {
+              // Chế độ thủ công: Cập nhật nút chính thành "Nói xong - Gửi"
+              const micLabel = document.getElementById('btn-live-mic-label');
+              const micIcon = document.getElementById('btn-live-mic-icon');
+              if (micLabel) micLabel.innerText = 'Nói xong - Gửi';
+              if (micIcon) micIcon.className = 'fa-solid fa-paper-plane mr-1.5';
             }
           }
         };
 
         liveRecognizer.onerror = (event) => {
           console.warn('Web Speech API error:', event.error);
-          if (event.error === 'no-speech') {
+          if (event.error === 'no-speech' || event.error === 'aborted') {
             return;
           }
-          // Lỗi network là đặc trưng của Brave khi chặn Google Speech Server
-          if (event.error === 'network' || event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-            console.log('Chuyển đổi tự động sang Gemini Audio Transcribe do lỗi: ' + event.error);
+          if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+            console.log('Chuyển đổi sang Gemini Audio Transcribe do quyền micro/service: ' + event.error);
             preferGeminiTranscribe = true;
             isListeningActive = false;
             startMediaRecorderListening();
+            return;
+          }
+          if (event.error === 'network') {
+            console.warn('Web Speech API network warning. Giữ nguyên phiên...');
             return;
           }
           setLiveOrbState('idle', 'Micro tạm dừng: ' + event.error);
@@ -3966,6 +3984,22 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
         liveRecognizer.onend = () => {
           isListeningActive = false;
+          const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+          // Nếu ở chế độ rảnh tay và đã có đoạn câu người dùng nói khi phiên dừng, tự gửi
+          if (isHandsFree && currentSpeechBuffer && currentSpeechBuffer.trim().length > 2) {
+            const toSend = currentSpeechBuffer.trim();
+            currentSpeechBuffer = '';
+            stopLiveListening();
+            sendCandidateLiveAnswer(toSend);
+            return;
+          }
+          // Nếu ở chế độ rảnh tay và AI không nói gì (chỉ do Web Speech ngắt nhịp), tự động lắng nghe tiếp
+          if (isHandsFree && !currentLiveAudio && liveInterviewHistory.length > 0) {
+            try {
+              liveRecognizer.start();
+              isListeningActive = true;
+            } catch (e) {}
+          }
         };
 
         liveRecognizer.start();
@@ -4094,13 +4128,21 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             }
           }
 
-          if (speechAvg > 15) {
+          if (speechAvg > 12) {
             hasDetectedSpeech = true;
             silenceStartTime = Date.now();
+            updateLiveCaption('candidate', '🎙️ [Đang thu âm giọng nói của bạn...]');
+            const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+            if (!isHandsFree) {
+              const micLabel = document.getElementById('btn-live-mic-label');
+              const micIcon = document.getElementById('btn-live-mic-icon');
+              if (micLabel) micLabel.innerText = 'Nói xong - Gửi';
+              if (micIcon) micIcon.className = 'fa-solid fa-paper-plane mr-1.5';
+            }
           } else {
             const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-            // Dừng sau khi đã phát hiện giọng nói và im lặng 2.2 giây
-            if (hasDetectedSpeech && isHandsFree && (Date.now() - silenceStartTime > 2200)) {
+            // Dừng sau khi đã phát hiện giọng nói và im lặng 1.8 giây (trong chế độ rảnh tay)
+            if (hasDetectedSpeech && isHandsFree && (Date.now() - silenceStartTime > 1800)) {
               stopMediaRecorderListening();
               return;
             }
@@ -4186,8 +4228,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             return;
           }
 
-          if (data.success && data.data && data.data.transcript) {
-            const text = data.data.transcript.trim();
+          const rawTranscript = (data.data && data.data.transcript) ? data.data.transcript : (data.transcript || '');
+          if (data.success && rawTranscript) {
+            const text = rawTranscript.trim();
             // Lọc bỏ nếu âm thanh không rõ hoặc là chuỗi vô nghĩa
             if (!text || text === '[Không nghe rõ]' || text.toLowerCase().includes('không nghe rõ') || /^\d+$/.test(text) || text.includes('-->')) {
               updateLiveCaption('error', '⚠️ Micro chưa thu được tiếng nói rõ ràng. Vui lòng nói to hơn hoặc gõ trực tiếp vào ô bên dưới.');
@@ -4197,6 +4240,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               return;
             }
             updateLiveCaption('candidate', text);
+            const quickInput = document.getElementById('live-quick-input');
+            if (quickInput) quickInput.value = text;
             sendCandidateLiveAnswer(text);
           } else {
             updateLiveCaption('error', data.message || 'Chưa nghe rõ giọng nói. Bạn hãy nói lại hoặc gõ vào ô bên dưới.');
@@ -4238,7 +4283,24 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         return;
       }
 
+      const inputVal = (document.getElementById('live-quick-input')?.value || '').trim();
+      const textToSend = inputVal || currentSpeechBuffer.trim();
+
       if (isListeningActive || isMediaRecording) {
+        // Trong MediaRecorder mode: nếu đang thu âm mà chưa có text, bấm nút để dừng thu và transcribe
+        if (isMediaRecording && !textToSend) {
+          stopMediaRecorderListening();
+          return;
+        }
+
+        // Nếu đã có nội dung nói xong (ở chế độ thủ công hoặc đã thu được văn bản), bấm nút là GỬI NGAY!
+        if (textToSend) {
+          stopLiveListening();
+          sendCandidateLiveAnswer(textToSend);
+          return;
+        }
+
+        // Nếu chưa nói gì, tạm dừng micro
         stopLiveListening();
         setLiveOrbState('idle', 'Đã tạm dừng Micro');
       } else {
@@ -4246,12 +4308,13 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       }
     }
 
-    // Gửi câu trả lời nhanh từ ô input gõ trực tiếp
+    // Gửi câu trả lời nhanh từ ô input gõ trực tiếp hoặc từ phụ đề giọng nói đã thu
     function sendQuickLiveAnswer() {
       const input = document.getElementById('live-quick-input');
-      const text = input.value.trim();
+      const text = ((input ? input.value : '') || currentSpeechBuffer || '').trim();
       if (!text) return;
-      input.value = '';
+      if (input) input.value = '';
+      currentSpeechBuffer = '';
       if (currentLiveAudio) {
         currentLiveAudio.pause();
         currentLiveAudio = null;
@@ -4263,6 +4326,10 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     // Gửi câu trả lời của ứng viên sang AI và tiếp tục vòng lặp Gemini Live
     async function sendCandidateLiveAnswer(answerText) {
       if (!answerText || !answerText.trim()) return;
+
+      currentSpeechBuffer = '';
+      const quickInput = document.getElementById('live-quick-input');
+      if (quickInput) quickInput.value = '';
 
       appendTranscriptMessage('candidate', answerText);
       liveInterviewHistory.push({ role: 'candidate', message: answerText });
@@ -4624,6 +4691,38 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           if (e.key === 'Enter') {
             e.preventDefault();
             sendQuickLiveAnswer();
+          }
+        });
+      }
+      const handsFreeToggle = document.getElementById('handsfree-toggle');
+      if (handsFreeToggle) {
+        handsFreeToggle.addEventListener('change', (e) => {
+          const isHandsFree = e.target.checked;
+          const statusText = document.getElementById('live-status-text');
+          const micLabel = document.getElementById('btn-live-mic-label');
+          const micIcon = document.getElementById('btn-live-mic-icon');
+          if (isListeningActive || isMediaRecording) {
+            if (isHandsFree) {
+              if (statusText) statusText.innerText = 'Đang lắng nghe... (Nói tự nhiên, dừng 1.5s tự gửi)';
+              if (micLabel) micLabel.innerText = 'Đang nghe...';
+              if (micIcon) micIcon.className = 'fa-solid fa-microphone mr-1.5';
+              if (currentSpeechBuffer.trim()) {
+                clearTimeout(vadSilenceTimer);
+                vadSilenceTimer = setTimeout(() => {
+                  if (currentSpeechBuffer.trim()) {
+                    const toSend = currentSpeechBuffer.trim();
+                    stopLiveListening();
+                    sendCandidateLiveAnswer(toSend);
+                  }
+                }, 1500);
+              }
+            } else {
+              clearTimeout(vadSilenceTimer);
+              if (statusText) statusText.innerText = 'Đang lắng nghe... (Nói xong bấm Gửi hoặc Nói Xong)';
+              const hasBuf = Boolean(currentSpeechBuffer.trim() || (document.getElementById('live-quick-input')?.value || '').trim());
+              if (micLabel) micLabel.innerText = hasBuf ? 'Nói xong - Gửi' : 'Đang nghe...';
+              if (micIcon) micIcon.className = hasBuf ? 'fa-solid fa-paper-plane mr-1.5' : 'fa-solid fa-microphone mr-1.5';
+            }
           }
         });
       }
