@@ -1,5 +1,31 @@
 [
   {
+    "id": "deb-1790523782181",
+    "authorName": "Ứng viên Ẩn danh",
+    "authorRole": "Ứng viên",
+    "authorAvatar": "",
+    "companyName": "vitell post",
+    "position": "quản lý kho",
+    "difficultyRating": 5,
+    "category": "Business",
+    "tags": [
+      "Kỹ Năng Chung"
+    ],
+    "interviewQuestions": [
+      "ăn cơm chưa ,giới thiệu bản thân đi",
+      "kinh nghiệm làm ở đâu, kĩ năng gì"
+    ],
+    "reviewText": "trả lời ngắn gọn đúng trọng tâm",
+    "anonymous": true,
+    "sharedAt": "2026-09-27T15:43:02.181Z",
+    "likesCount": 1,
+    "likedIps": [
+      "172.21.0.1"
+    ],
+    "awardedCredits": 5,
+    "contentHash": "c7754df0a0fb7596f47a86f0f08256fc"
+  },
+  {
     "id": "deb-001",
     "authorName": "Huỳnh Kiên Minh",
     "authorRole": "Senior Backend Engineer",

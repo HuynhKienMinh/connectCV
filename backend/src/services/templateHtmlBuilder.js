@@ -87,154 +87,119 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     }
   }
 
-  // 2. Chuẩn hóa danh sách kỹ năng
-  let skills = [];
+  // 2. Chuẩn hóa danh sách kỹ năng (Ưu tiên kỹ năng kỹ thuật thực tế từ Profile & JD)
+  let technicalSkills = [];
+  let softSkills = [];
   if (cvData.highlightedSkills) {
-    if (Array.isArray(cvData.highlightedSkills.technical)) skills.push(...cvData.highlightedSkills.technical);
-    if (Array.isArray(cvData.highlightedSkills.soft)) skills.push(...cvData.highlightedSkills.soft);
+    if (Array.isArray(cvData.highlightedSkills.technical)) technicalSkills.push(...cvData.highlightedSkills.technical);
+    if (Array.isArray(cvData.highlightedSkills.soft)) softSkills.push(...cvData.highlightedSkills.soft);
   }
-  if (skills.length === 0 && Array.isArray(cvData.matchedKeywords) && cvData.matchedKeywords.length > 0) {
-    skills = cvData.matchedKeywords;
+  if (technicalSkills.length === 0 && Array.isArray(cvData.matchedKeywords) && cvData.matchedKeywords.length > 0) {
+    technicalSkills = cvData.matchedKeywords;
   }
-  if (skills.length === 0 && Array.isArray(userProfile.skills) && userProfile.skills.length > 0) {
-    skills = userProfile.skills;
+  if (technicalSkills.length === 0 && Array.isArray(userProfile.skills) && userProfile.skills.length > 0) {
+    technicalSkills = userProfile.skills;
   }
-  if (skills.length === 0) {
-    skills = isEn
-      ? ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Performance Optimization']
-      : ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Tối ưu hóa hiệu năng'];
+  if (technicalSkills.length === 0) {
+    technicalSkills = isEn
+      ? ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Redis']
+      : ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Redis'];
+  }
+
+  // Danh sách kỹ năng: Bắt buộc giữ vững kỹ năng kỹ thuật cốt lõi, không để slogan văn hóa lấn át
+  let skills = [...technicalSkills];
+  if (skills.length < 8 && softSkills.length > 0) {
+    // Chỉ thêm tối đa 2 kỹ năng mềm chuyên nghiệp nếu còn chỗ
+    skills.push(...softSkills.slice(0, 2));
   }
   skills = skills.map(sk => escapeHtml(sk));
 
-  // 3. Chuẩn hóa kinh nghiệm làm việc
-  let experience = (cvData.tailoredExperience || []).map(exp => ({
-    company: exp.organization || exp.company || (isEn ? 'ConnectCV Project' : 'Dự án ConnectCV'),
-    role: exp.role || exp.position || (isEn ? 'Backend Developer' : 'Nhà phát triển Backend'),
-    time: (exp.duration || exp.time || (isEn ? '06/2023 - Present' : '06/2023 - Hiện tại')).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
-    bullets: Array.isArray(exp.achievements) ? exp.achievements : (Array.isArray(exp.bullets) ? exp.bullets : [])
-  }));
-
-  if (experience.length === 0 && Array.isArray(userProfile.experience) && userProfile.experience.length > 0) {
-    experience = userProfile.experience.map(exp => ({
-      company: exp.company || exp.organization || (isEn ? 'ConnectCV Project' : 'Dự án ConnectCV'),
-      role: exp.role || role,
-      time: (exp.duration || exp.time || (isEn ? '2023 - Present' : '2023 - Hiện tại')).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
-      bullets: Array.isArray(exp.achievements) ? exp.achievements : (Array.isArray(exp.bullets) ? exp.bullets : [exp.description || ''])
-    }));
-  } else if (experience.length === 0 && Array.isArray(userProfile.projects) && userProfile.projects.length > 0) {
-    experience = userProfile.projects.map(p => ({
-      company: p.name || (isEn ? 'ConnectCV Project' : 'Dự án ConnectCV'),
-      role: role,
-      time: isEn ? '2023 - Present' : '2023 - Hiện tại',
-      bullets: [
-        p.description || (isEn ? 'Architected RESTful API backend and optimized database queries.' : 'Phát triển kiến trúc backend RESTful API và tối ưu hóa truy vấn cơ sở dữ liệu.'),
-        isEn ? 'Delivered high system performance and guaranteed end-to-end data integrity.' : 'Đạt hiệu suất xử lý cao và đảm bảo tính bảo mật toàn vẹn dữ liệu hệ thống.'
-      ]
-    }));
+  // 3. Chuẩn hóa kinh nghiệm làm việc (Ground Truth First: Bảo toàn 100% công ty/dự án thật của ứng viên)
+  let rawExpList = [];
+  if (Array.isArray(userProfile.experience) && userProfile.experience.length > 0) {
+    rawExpList = userProfile.experience;
+  } else if (Array.isArray(cvData.tailoredExperience) && cvData.tailoredExperience.length > 0) {
+    rawExpList = cvData.tailoredExperience;
   }
+
+  let experience = rawExpList.map((exp, idx) => {
+    const profileExp = (Array.isArray(userProfile.experience) && userProfile.experience[idx]) || null;
+    const aiExp = (Array.isArray(cvData.tailoredExperience) && cvData.tailoredExperience[idx]) || {};
+
+    const company = (profileExp && (profileExp.company || profileExp.organization)) || aiExp.organization || exp.organization || exp.company || (isEn ? 'ConnectCV Project (AI Career Platform)' : 'ConnectCV (Nền tảng AI Career)');
+    const role = (profileExp && (profileExp.role || profileExp.position)) || aiExp.role || exp.role || exp.position || (isEn ? 'Backend Developer' : 'Lập trình viên Backend');
+    const time = (profileExp && (profileExp.time || profileExp.duration)) || aiExp.duration || exp.duration || exp.time || (isEn ? '06/2023 - Present' : '06/2023 - Hiện tại');
+
+    // Bullets ưu tiên thành tích được AI may đo theo JD và văn hóa công ty mục tiêu
+    let bullets = [];
+    if (Array.isArray(aiExp.achievements) && aiExp.achievements.length > 0) {
+      bullets = aiExp.achievements;
+    } else if (Array.isArray(exp.achievements) && exp.achievements.length > 0) {
+      bullets = exp.achievements;
+    } else if (Array.isArray(exp.bullets) && exp.bullets.length > 0) {
+      bullets = exp.bullets;
+    } else if (profileExp && Array.isArray(profileExp.bullets)) {
+      bullets = profileExp.bullets;
+    }
+
+    return {
+      company: escapeHtml(company),
+      role: escapeHtml(role),
+      time: escapeHtml(String(time).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại')),
+      bullets: (bullets || []).map(b => escapeHtml(b))
+    };
+  });
+
   if (experience.length === 0) {
-    experience = isEn ? [
+    experience = [
       {
-        company: 'ConnectCV Project (AI Career Platform)',
-        role: role,
-        time: '06/2023 - Present',
+        company: escapeHtml(isEn ? 'ConnectCV (AI Career Platform)' : 'ConnectCV (Nền tảng AI Career)'),
+        role: escapeHtml(role),
+        time: escapeHtml(isEn ? '06/2023 - Present' : '06/2023 - Hiện tại'),
         bullets: [
-          "Successfully developed 'ConnectCV' AI platform supporting CV optimization and interview training, serving 500+ pilot users.",
-          'Architected and built high-performance RESTful APIs using Node.js and Express, cutting API latency by 25%.',
-          'Leveraged PostgreSQL for secure and scalable user data management, ensuring 99.9% uptime.',
-          'Containerized backend services with Docker, cutting environment deployment setup time by 30% via Git CI/CD pipelines.'
-        ]
-      },
-      {
-        company: 'TechPro Solutions Corp',
-        role: 'Junior Backend Developer',
-        time: '08/2022 - 05/2023',
-        bullets: [
-          'Engineered relational database schemas and developed business logic APIs for internal enterprise tools.',
-          'Integrated secure third-party payment gateways and JWT user authentication mechanisms.',
-          'Collaborated with frontend and QA teams in Agile sprints to resolve production defects.'
-        ]
-      }
-    ] : [
-      {
-        company: 'Dự án ConnectCV (Nền tảng AI Career)',
-        role: role,
-        time: '06/2023 - Hiện tại',
-        bullets: [
-          "Phát triển thành công nền tảng AI 'ConnectCV' hỗ trợ tối ưu hóa CV và luyện phỏng vấn, phục vụ hơn 500+ người dùng thử nghiệm.",
-          'Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi yêu cầu.',
-          'Ứng dụng PostgreSQL để lưu trữ và quản lý dữ liệu người dùng, đảm bảo tính bảo mật và toàn vẹn dữ liệu.',
-          'Triển khai hệ thống thông qua Docker, giúp giảm 30% thời gian cấu hình môi trường và tối ưu hóa quy trình CI/CD với Git.'
-        ]
-      },
-      {
-        company: 'Công ty Cổ phần Công nghệ TechPro',
-        role: 'Lập trình viên Backend Fresher',
-        time: '08/2022 - 05/2023',
-        bullets: [
-          'Tham gia thiết kế cơ sở dữ liệu quan hệ và lập trình các API nghiệp vụ phục vụ hệ thống quản lý.',
-          'Tích hợp các cổng thanh toán và dịch vụ xác thực người dùng JWT an toàn.',
-          'Phối hợp với đội ngũ Front End và QA để kiểm thử, tái hiện lỗi và nâng cao chất lượng sản phẩm.'
+          escapeHtml(isEn ? "Architected and engineered high-performance RESTful APIs using Node.js & Express, reducing latency by 25%." : "Phát triển nền tảng AI ConnectCV hỗ trợ tối ưu hóa CV và luyện phỏng vấn phục vụ 500+ người dùng."),
+          escapeHtml(isEn ? "Built resilient data access layer with PostgreSQL and Redis cache, ensuring ACID integrity." : "Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi."),
+          escapeHtml(isEn ? "Standardized CI/CD containerization pipeline using Docker and Git, improving deployment safety." : "Ứng dụng PostgreSQL và Docker để chuẩn hóa quy trình triển khai và bảo mật dữ liệu.")
         ]
       }
     ];
   }
-  experience = experience.map(exp => ({
-    company: escapeHtml(exp.company),
-    role: escapeHtml(exp.role),
-    time: escapeHtml(exp.time),
-    bullets: (exp.bullets || []).map(b => escapeHtml(b))
-  }));
 
-  // 4. Chuẩn hóa học vấn
-  let education = (cvData.education || []).map(edu => ({
-    school: edu.school || (isEn ? 'Can Tho University' : 'Đại học Cần Thơ'),
-    degree: edu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
-    time: (edu.duration || edu.time || '2019 - 2023').replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
-    highlight: (edu.highlights || edu.highlight || (isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi'))
-      .replace(/Tốt nghiệp loại Giỏi/gi, isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi')
-      .replace(/Tốt nghiệp loại Xuất sắc/gi, isEn ? 'Graduated with High Distinction' : 'Tốt nghiệp loại Xuất sắc')
-  }));
-
-  if (education.length === 0 && userProfile.education) {
-    if (Array.isArray(userProfile.education)) {
-      education = userProfile.education.map(edu => ({
-        school: edu.school || (isEn ? 'Can Tho University' : 'Đại học Cần Thơ'),
-        degree: edu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
-        time: (edu.duration || edu.time || '2019 - 2023').replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
-        highlight: (edu.highlights || edu.highlight || (isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi'))
-          .replace(/Tốt nghiệp loại Giỏi/gi, isEn ? 'Graduated with Honors' : 'Tốt nghiệp loại Giỏi')
-      }));
-    } else {
-      const sch = typeof userProfile.education === 'string'
-        ? userProfile.education
-        : (userProfile.education.school || (isEn ? 'Can Tho University' : 'Đại học Cần Thơ'));
-      education = [
-        {
-          school: isEn ? sch.replace(/Đại học Cần Thơ/gi, 'Can Tho University') : sch,
-          degree: userProfile.education.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
-          time: (userProfile.education.time || '2019 - 2023').replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại'),
-          highlight: isEn ? 'Graduated with Honors • Capstone Project Score: 9.2/10' : 'Tốt nghiệp loại Giỏi • Điểm đồ án chuyên ngành: 9.2/10'
-        }
-      ];
-    }
+  // 4. Chuẩn hóa học vấn (Ground Truth First: Bảo toàn 100% Trường học, Ngành học từ Profile của người dùng)
+  let rawEduList = [];
+  if (Array.isArray(userProfile.education) && userProfile.education.length > 0) {
+    rawEduList = userProfile.education;
+  } else if (Array.isArray(cvData.education) && cvData.education.length > 0) {
+    rawEduList = cvData.education;
   }
+
+  let education = rawEduList.map((edu, idx) => {
+    const profileEdu = (Array.isArray(userProfile.education) && userProfile.education[idx]) || null;
+    const aiEdu = (Array.isArray(cvData.education) && cvData.education[idx]) || {};
+
+    const school = (profileEdu && profileEdu.school) || edu.school || aiEdu.school || (isEn ? 'FPT University Can Tho' : 'Đại học FPT Cần Thơ');
+    const degree = (profileEdu && profileEdu.degree) || edu.degree || aiEdu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm');
+    const time = (profileEdu && (profileEdu.time || profileEdu.duration)) || edu.duration || edu.time || '2019 - 2023';
+    const highlight = (profileEdu && (profileEdu.highlight || profileEdu.highlights)) || aiEdu.highlights || edu.highlights || edu.highlight || (isEn ? 'Graduated with Honors - GPA 3.6/4.0' : 'Tốt nghiệp loại Giỏi - GPA 3.6/4.0');
+
+    return {
+      school: escapeHtml(school),
+      degree: escapeHtml(degree),
+      time: escapeHtml(String(time).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại')),
+      highlight: escapeHtml(highlight)
+    };
+  });
+
   if (education.length === 0) {
     education = [
       {
-        school: isEn ? 'Can Tho University' : 'Đại học Cần Thơ',
-        degree: isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm',
+        school: escapeHtml(isEn ? 'FPT University Can Tho' : 'Đại học FPT Cần Thơ'),
+        degree: escapeHtml(isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
         time: '2019 - 2023',
-        highlight: isEn ? 'GPA: 3.5/4.0 (Graduated with Honors) • Student Scientific Research Second Prize' : 'GPA: 3.5/4.0 (Tốt nghiệp loại Giỏi) • Giải Nhì Nghiên cứu Khoa học Sinh viên'
+        highlight: escapeHtml(isEn ? 'GPA: 3.6/4.0 (Graduated with Honors)' : 'GPA: 3.6/4.0 (Tốt nghiệp loại Giỏi)')
       }
     ];
   }
-  education = education.map(edu => ({
-    school: escapeHtml(edu.school),
-    degree: escapeHtml(edu.degree),
-    time: escapeHtml(edu.time),
-    highlight: escapeHtml(edu.highlight)
-  }));
 
   // Toolbar HTML
   const toolbarHtml = `

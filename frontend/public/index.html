@@ -337,7 +337,7 @@
 
 
   // ── localStorage Auto-Save / Restore ─────────────────────────────────
-  const DRAFT_KEY = 'connectcv_profile_draft_v2';
+  const DRAFT_KEY = 'connectcv_profile_draft_v3';
   const JD_KEY    = 'connectcv_jd_draft';
 
   function saveDraftToLocalStorage() {
@@ -352,18 +352,24 @@
 
   function restoreDraftFromLocalStorage() {
     try {
-      const raw = localStorage.getItem(DRAFT_KEY);
+      let raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) {
+        // Fallback kiểm tra v2 và nâng cấp tự động
+        raw = localStorage.getItem('connectcv_profile_draft_v2');
+      }
       if (!raw) return false;
       const data = JSON.parse(raw);
       if (data.profile && document.getElementById('cv-profile')) {
-        document.getElementById('cv-profile').value = data.profile;
+        let pStr = typeof data.profile === 'string' ? data.profile : JSON.stringify(data.profile);
+        pStr = pStr.replace(/Đại học Cần Thơ/g, 'Đại học FPT Cần Thơ');
+        document.getElementById('cv-profile').value = pStr;
         if (data.jd     && document.getElementById('cv-jd'))          document.getElementById('cv-jd').value          = data.jd;
         if (data.company&& document.getElementById('cv-company'))      document.getElementById('cv-company').value      = data.company;
         if (data.role   && document.getElementById('cv-target-role'))  document.getElementById('cv-target-role').value  = data.role;
         // Sync to visual form if available
         if (typeof syncJSONToProfileForm === 'function') syncJSONToProfileForm();
         // Show save time badge
-        const savedAt = new Date(data.savedAt);
+        const savedAt = new Date(data.savedAt || Date.now());
         const badge = document.getElementById('draft-saved-badge');
         if (badge) badge.innerHTML = `<i class="fa-solid fa-cloud mr-1"></i> Đã khôi phục bản nháp ${savedAt.toLocaleTimeString('vi-VN')}`;
         return true;
@@ -970,7 +976,7 @@ Yêu cầu:
   "skills": ["Node.js", "Express", "JavaScript", "TypeScript", "PostgreSQL", "Docker", "Git", "RESTful API"],
   "education": [
     {
-      "school": "Đại học Cần Thơ",
+      "school": "Đại học FPT Cần Thơ",
       "degree": "Kỹ sư Kỹ thuật Phần mềm",
       "time": "2019 - 2023",
       "highlight": "Tốt nghiệp loại Giỏi - GPA 3.6/4.0"
@@ -1090,7 +1096,7 @@ Yêu cầu:
               <div>
                 <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Nội Dung Bản CV Hiện Có</label>
                 <textarea id="score-cv-text" rows="7" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">Huỳnh Kiên Minh - Lập trình viên Backend
-Học vấn: Đại học Cần Thơ
+Học vấn: Đại học FPT Cần Thơ
 Kỹ năng: JavaScript, Node.js, Express, PostgreSQL, Git.
 Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</textarea>
               </div>
@@ -2577,7 +2583,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     let currentEducationList = [
       {
-        school: "Đại học Cần Thơ",
+        school: "Đại học FPT Cần Thơ",
         degree: "Kỹ sư Kỹ thuật Phần mềm",
         time: "2019 - 2023",
         highlight: "Tốt nghiệp loại Giỏi - GPA 3.6/4.0"
@@ -2609,7 +2615,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         skills: ["Node.js", "Express", "JavaScript", "TypeScript", "PostgreSQL", "Docker", "Git", "RESTful API", "Redis", "CI/CD"],
         education: [
           {
-            school: "Đại học Cần Thơ",
+            school: "Đại học FPT Cần Thơ",
             degree: "Kỹ sư Kỹ thuật Phần mềm",
             time: "2019 - 2023",
             highlight: "Tốt nghiệp loại Giỏi - GPA 3.6/4.0 • Điểm đồ án 9.2/10"
@@ -2699,7 +2705,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
             <div>
               <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Trường đào tạo</label>
-              <input type="text" value="${escapeForAttr(edu.school || '')}" oninput="updateEduField(${idx}, 'school', this.value)" placeholder="VD: Đại học Cần Thơ" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-300 rounded-md text-xs text-slate-800 focus:bg-white focus:ring-1 focus:ring-blue-500 focus:outline-none">
+              <input type="text" value="${escapeForAttr(edu.school || '')}" oninput="updateEduField(${idx}, 'school', this.value)" placeholder="VD: Đại học FPT Cần Thơ" class="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-300 rounded-md text-xs text-slate-800 focus:bg-white focus:ring-1 focus:ring-blue-500 focus:outline-none">
             </div>
             <div>
               <label class="block text-[10px] font-semibold text-slate-500 mb-0.5">Chuyên ngành / Bằng cấp</label>

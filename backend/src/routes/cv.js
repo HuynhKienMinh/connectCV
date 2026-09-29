@@ -257,65 +257,133 @@ router.post('/generate', async (req, res) => {
 
     const isEn = language === 'en';
 
-    // ── 4. Xây dựng prompt với dữ liệu đã sanitize
+    // ── 4. Xây dựng prompt với dữ liệu đã sanitize và QUY TẮC BẢO TOÀN DỮ LIỆU THỰC TẾ
     const prompt = `
 Bạn là chuyên gia tư vấn nghề nghiệp cấp cao và chuyên gia tối ưu hóa CV chuẩn ATS quốc tế.
-Nhiệm vụ: Phân tích JD, Hồ sơ ứng viên và Văn hóa doanh nghiệp mục tiêu để tạo CV độc bản đạt điểm ATS >90%.
+Nhiệm vụ: Phân tích JD, Hồ sơ ứng viên và Văn hóa doanh nghiệp mục tiêu để may đo CV độc bản đạt điểm ATS >90%.
 
-MẪU CV: "${appliedTemplate.title}" — Phong cách: "${appliedTemplate.style}" — Ngành: "${appliedTemplate.industry}"
+MẪU CV ÁP DỤNG: "${appliedTemplate.title}" — Phong cách: "${appliedTemplate.style}" — Ngành: "${appliedTemplate.industry}"
 
-HỒ SƠ ỨNG VIÊN (PROFILE):
+HỒ SƠ ỨNG VIÊN THỰC TẾ (GROUND TRUTH PROFILE):
 ${safeProfile}
 
-BẢN MÔ TẢ CÔNG VIỆC (JD):
+BẢN MÔ TẢ CÔNG VIỆC MỤC TIÊU (JD):
 ${safeJD}
 ${safeCulture ? `
 VĂN HÓA DOANH NGHIỆP MỤC TIÊU:
 ${safeCulture}
-(Lưu ý: May đo nội dung tóm tắt bản thân và các điểm nhấn kinh nghiệm phản ánh sự tương thích sâu sắc với văn hóa công ty này)
 ` : ''}
-YÊU CẦU:
-1. NGÔN NGỮ: ${isEn
+
+NGUYÊN TẮC BẤT DI BẤT DỊCH (BẮT BUỘC TUÂN THỦ 100%):
+1. TRUNG THỰC VỚI HỌC VẤN (EDUCATION):
+   - BẮT BUỘC giữ nguyên 100% thông tin học vấn từ HỒ SƠ ỨNG VIÊN (Tên trường, Chuyên ngành/Bằng cấp, Niên khóa, GPA/Thành tích).
+   - TUYỆT ĐỐI KHÔNG TỰ BỊA ĐẶT HOẶC ĐỔI TÊN TRƯỜNG ĐẠI HỌC (Ví dụ: Nếu hồ sơ ghi "Đại học FPT Cần Thơ", BẮT BUỘC phải xuất "Đại học FPT Cần Thơ". NGHIÊM CẤM đổi thành "Đại học Cần Thơ", "Đại học Bách Khoa" hay bất kỳ trường nào khác).
+   - TUYỆT ĐỐI KHÔNG BỊA RA ĐỒ ÁN TỐT NGHIỆP NẾU HỒ SƠ KHÔNG ĐỀ CẬP.
+
+2. BẢO TOÀN LỊCH SỬ KINH NGHIỆM & DỰ ÁN (tailoredExperience):
+   - BẮT BUỘC giữ đúng Tên công ty / Tên dự án thực tế, Vị trí và Thời gian trong Hồ sơ ứng viên (Ví dụ: "ConnectCV (Nền tảng AI Career)", "Lập trình viên Backend", "06/2023 - Hiện tại").
+   - MAY ĐO LÀ GÌ: Lấy chính các công việc/dự án có thật của ứng viên, viết lại các dòng thành tích (achievements) theo công thức STAR (Tình huống - Nhiệm vụ - Hành động kỹ thuật - Kết quả đo lường bằng số liệu %), lồng ghép từ khóa kỹ thuật khớp với JD và văn hóa công ty mục tiêu (${safeCompany || 'Doanh nghiệp'}).
+   - TUYỆT ĐỐI KHÔNG THAY ĐỔI TÊN CÔNG TY, KHÔNG XÓA DỰ ÁN CỦA ỨNG VIÊN ĐỂ BỊA CÔNG TY KHÁC.
+
+3. KỸ NĂNG CHỦ ĐẠO (highlightedSkills):
+   - "technical": BẮT BUỘC là các công nghệ, ngôn ngữ, công cụ kỹ thuật thực tế từ hồ sơ và JD (Node.js, Express, PostgreSQL, Docker, TypeScript, Git, RESTful API, Redis...).
+   - "soft": Kỹ năng làm việc chuyên nghiệp (Giải quyết vấn đề, Làm việc nhóm, Tư duy phản biện...).
+   - TUYỆT ĐỐI KHÔNG đưa các câu slogan/khẩu hiệu văn hóa vào danh sách kỹ năng kỹ thuật.
+
+4. TÓM TẮT NĂNG LỰC / MỤC TIÊU NGHỀ NGHIỆP (summary):
+   - Viết 3-4 câu sắc bén, nêu bật năng lực kỹ thuật cốt lõi của ứng viên gắn liền với bài toán và giá trị văn hóa của công ty mục tiêu (${safeCompany || 'Doanh nghiệp'}).
+
+5. NGÔN NGỮ: ${isEn
   ? 'TOÀN BỘ nội dung CV phải bằng TIẾNG ANH CHUYÊN NGHIỆP (Professional Resume English). Dịch tất cả thông tin sang thuật ngữ tiếng Anh quốc tế. Tuyệt đối không để lẫn tiếng Việt.'
   : 'TOÀN BỘ nội dung CV phải bằng TIẾNG VIỆT CHUẨN MỰC, chuyên nghiệp (giữ nguyên thuật ngữ kỹ thuật quốc tế như Node.js, Docker, API, Git...).'
 }
-2. Tối ưu từ khóa ATS: Lồng ghép từ khóa từ JD vào summary, skills, experience — trung thực với năng lực.
-3. Văn phong: Action Verbs, định lượng thành tích (phương pháp STAR).
-4. BẮT BUỘC trả về DUY NHẤT một JSON hợp lệ theo cấu trúc:
+
+CẤU TRÚC JSON TRẢ VỀ (CHỈ TRẢ VỀ DUY NHẤT JSON NÀY):
 {
   "language": "${isEn ? 'en' : 'vi'}",
-  "fullName": "Họ tên ứng viên",
+  "fullName": "${profileObj.fullName || 'Họ tên ứng viên'}",
   "atsScore": 95,
   "targetRole": "${safeRole || (isEn ? 'Target Job Title' : 'Vị trí ứng tuyển')}",
   "company": "${safeCompany || (isEn ? 'Target Employer' : 'Doanh nghiệp')}",
   "summary": "Tóm tắt chuyên nghiệp 3-4 câu...",
   "highlightedSkills": {
-    "technical": ["Skill 1", "Skill 2"],
-    "soft": ["Soft Skill 1"]
+    "technical": ["Kỹ năng kỹ thuật 1", "Kỹ năng 2"],
+    "soft": ["Kỹ năng mềm 1", "Kỹ năng mềm 2"]
   },
   "tailoredExperience": [
     {
-      "role": "Vị trí công việc",
-      "organization": "Tên công ty",
-      "duration": "${isEn ? 'Jan 2023 - Present' : '01/2023 - Hiện tại'}",
-      "achievements": ["Thành tích 1 có số liệu đo lường...", "Thành tích 2..."]
+      "role": "Vị trí công việc thực tế từ Profile",
+      "organization": "Tên công ty/dự án thực tế từ Profile",
+      "duration": "Thời gian từ Profile",
+      "achievements": [
+        "Thành tích 1 viết theo chuẩn STAR có số liệu...",
+        "Thành tích 2..."
+      ]
     }
   ],
   "education": [
     {
-      "degree": "${isEn ? 'Bachelor of Science' : 'Cử nhân'}",
-      "school": "Tên trường",
-      "highlights": "GPA hoặc thành tích nổi bật"
+      "school": "Tên trường CHÍNH XÁC từ Profile",
+      "degree": "Chuyên ngành/Bằng cấp từ Profile",
+      "duration": "Niên khóa từ Profile",
+      "highlights": "GPA hoặc thành tích thực tế từ Profile"
     }
   ],
-  "matchedKeywords": ["Keyword 1", "Keyword 2"],
-  "missingKeywords": ["Keyword cần thêm"],
-  "atsRecommendations": ["Lời khuyên cải thiện ATS score 1", "Lời khuyên 2"]
+  "matchedKeywords": ["Từ khóa khớp 1", "Từ khóa khớp 2"],
+  "missingKeywords": ["Từ khóa gợi ý bổ sung"],
+  "atsRecommendations": ["Lời khuyên tối ưu ATS 1", "Lời khuyên 2"]
 }
 `;
 
     // ── 5. Gọi AI
     const aiResult = await callGeminiJSON(prompt);
+
+    // ── 5.1. BẢO VỆ CHẶT CHẼ DỮ LIỆU THỰC TẾ (GROUND TRUTH ENFORCEMENT)
+    // Ngăn chặn triệt để AI ảo giác/tự bịa trường học hoặc đổi tên công ty của ứng viên
+    if (aiResult) {
+      // 1. Bảo toàn học vấn từ profile gốc
+      if (Array.isArray(profileObj.education) && profileObj.education.length > 0) {
+        aiResult.education = profileObj.education.map((realEdu, idx) => {
+          const aiEdu = (Array.isArray(aiResult.education) && aiResult.education[idx]) || {};
+          return {
+            school: realEdu.school || (isEn ? 'FPT University Can Tho' : 'Đại học FPT Cần Thơ'),
+            degree: realEdu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
+            duration: realEdu.time || realEdu.duration || '2019 - 2023',
+            highlights: realEdu.highlight || aiEdu.highlights || (isEn ? 'Graduated with Honors - GPA 3.6/4.0' : 'Tốt nghiệp loại Giỏi - GPA 3.6/4.0')
+          };
+        });
+      }
+
+      // 2. Bảo toàn tên công ty/dự án và chức danh thực tế từ profile gốc
+      if (Array.isArray(profileObj.experience) && profileObj.experience.length > 0) {
+        if (!Array.isArray(aiResult.tailoredExperience) || aiResult.tailoredExperience.length === 0) {
+          aiResult.tailoredExperience = profileObj.experience.map(e => ({
+            role: e.role,
+            organization: e.company,
+            duration: e.time,
+            achievements: Array.isArray(e.bullets) ? e.bullets : []
+          }));
+        } else {
+          // Gắn chặt tên công ty thật và chức danh thật của ứng viên
+          aiResult.tailoredExperience = aiResult.tailoredExperience.map((aiExp, idx) => {
+            const realExp = profileObj.experience[idx] || profileObj.experience[0];
+            return {
+              role: realExp.role || aiExp.role,
+              organization: realExp.company || aiExp.organization,
+              duration: realExp.time || aiExp.duration,
+              achievements: Array.isArray(aiExp.achievements) && aiExp.achievements.length > 0 
+                ? aiExp.achievements 
+                : (Array.isArray(realExp.bullets) ? realExp.bullets : [])
+            };
+          });
+        }
+      }
+
+      // 3. Bảo toàn họ tên từ profile gốc
+      if (profileObj.fullName) {
+        aiResult.fullName = profileObj.fullName;
+      }
+    }
 
     // ── 6. Render HTML
     const renderedHtml = renderCVDataToTemplateHtml(appliedTemplate, aiResult, profileObj, language);
