@@ -136,8 +136,24 @@ const aiInputGuard = (req, res, next) => {
     if (jdText && String(jdText).length > 8000) {
       return res.status(400).json({ success: false, message: 'Bản mô tả công việc (JD) quá dài (tối đa 8.000 ký tự).' });
     }
-    if (profile && JSON.stringify(profile).length > 15000) {
-      return res.status(400).json({ success: false, message: 'Hồ sơ ứng viên quá dài (tối đa 15.000 ký tự).' });
+    if (profile) {
+      // Bóc tách ảnh đại diện base64 trước khi đo lường độ dài ký tự văn bản của Profile
+      let cleanProfileText = '';
+      if (typeof profile === 'object' && profile !== null) {
+        try {
+          const clone = { ...profile };
+          if (clone.avatarUrl && String(clone.avatarUrl).startsWith('data:')) delete clone.avatarUrl;
+          if (clone.avatarDataUrl && String(clone.avatarDataUrl).startsWith('data:')) delete clone.avatarDataUrl;
+          cleanProfileText = JSON.stringify(clone);
+        } catch (_) {
+          cleanProfileText = String(profile);
+        }
+      } else {
+        cleanProfileText = String(profile).replace(/data:image\/[^;]+;base64,[A-Za-z0-9+/=]+/g, '');
+      }
+      if (cleanProfileText.length > 25000) {
+        return res.status(400).json({ success: false, message: 'Hồ sơ ứng viên quá dài (tối đa 25.000 ký tự văn bản).' });
+      }
     }
     if (message && String(message).length > 2500) {
       return res.status(400).json({ success: false, message: 'Nội dung tin nhắn quá dài (tối đa 2.500 ký tự).' });

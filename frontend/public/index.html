@@ -3467,6 +3467,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         batchCVResults = [];
         activeBatchIndex = 0;
 
+        let lastErrorMessage = '';
         try {
           for (let i = 0; i < selectedJobs.length; i++) {
             const job = selectedJobs[i];
@@ -3497,6 +3498,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 appliedTemplate: data.appliedTemplate,
                 renderedHtml: data.renderedHtml
               });
+            } else {
+              lastErrorMessage = data.message || (data.details && data.details.join(', ')) || 'Không thể tạo CV qua AI';
             }
           }
 
@@ -3515,10 +3518,13 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             renderCVResult(latestCVData, latestRenderedHtml);
             showToastSuccess(`Đã tạo thành công ${batchCVResults.length} bản CV chuẩn ATS theo từng công ty!`, 'Hoàn tất');
           } else {
-            resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Không thể tạo CV. Vui lòng thử lại.</div>`;
+            resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl space-y-1">
+              <div class="font-bold flex items-center"><i class="fa-solid fa-circle-exclamation mr-2"></i> Không thể tạo CV</div>
+              <div class="text-sm">${lastErrorMessage || 'Vui lòng kiểm tra lại thông tin hồ sơ hoặc thử lại.'}</div>
+            </div>`;
           }
         } catch (err) {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi kết nối: ${err.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl">Lỗi kết nối: ${err.message}</div>`;
         } finally {
           setButtonState(false, `🚀 Bắt Đầu Tạo ${selectedJobs.length} CV Chuẩn ATS`);
         }
@@ -3566,10 +3572,14 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
             renderCVResult(latestCVData, latestRenderedHtml);
           } else {
-            resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message || data.error}</div>`;
+            const errorMsg = data.message || (data.details && data.details.join(', ')) || data.error || 'Vui lòng thử lại.';
+            resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl space-y-1">
+              <div class="font-bold flex items-center"><i class="fa-solid fa-circle-exclamation mr-2"></i> Không thể tạo CV</div>
+              <div class="text-sm">${errorMsg}</div>
+            </div>`;
           }
         } catch (err) {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Không thể kết nối đến API: ${err.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl">Không thể kết nối đến API: ${err.message}</div>`;
         } finally {
           setButtonState(false, '🚀 Bắt Đầu Tạo CV Chuẩn ATS');
         }

@@ -22,8 +22,8 @@ const {
 // HELPER: Validation schemas (Joi)
 // ─────────────────────────────────────────────────────────
 const profileSchema = Joi.alternatives().try(
-  Joi.object().max(50),
-  Joi.string().max(6000)
+  Joi.object().unknown(true),
+  Joi.string().max(1000000)
 ).required();
 
 const generateSchema = Joi.object({
@@ -116,11 +116,19 @@ router.get('/templates', (req, res) => {
 router.post('/templates/recommend', async (req, res) => {
   try {
     const { targetRole, companyName, jdText, profile } = req.body;
+    const profileObj = safeParseProfile(profile);
+    const promptProfileObj = { ...profileObj };
+    if (promptProfileObj.avatarUrl && String(promptProfileObj.avatarUrl).startsWith('data:')) {
+      delete promptProfileObj.avatarUrl;
+    }
+    if (promptProfileObj.avatarDataUrl && String(promptProfileObj.avatarDataUrl).startsWith('data:')) {
+      delete promptProfileObj.avatarDataUrl;
+    }
     const recommendation = await autoMatchTemplate({
       targetRole: sanitizeForPrompt(targetRole, 200),
       companyName: sanitizeForPrompt(companyName, 200),
       jdText: sanitizeForPrompt(jdText, 3000),
-      profile: safeParseProfile(profile)
+      profile: promptProfileObj
     });
     return res.status(200).json({ success: true, message: 'Đã đề xuất mẫu CV phù hợp nhất!', data: recommendation });
   } catch (error) {
@@ -237,14 +245,23 @@ router.post('/generate', async (req, res) => {
     const safeRole     = sanitizeForPrompt(targetRole, 150);
     const safeCulture  = sanitizeForPrompt(companyCulture, 1000);
     const profileObj   = safeParseProfile(profile);
-    const safeProfile  = sanitizeForPrompt(JSON.stringify(profileObj), 4000);
+
+    // Bóc tách base64 avatar ra khỏi prompt để tránh lãng phí token & tránh cắt cụt học vấn/kinh nghiệm
+    const promptProfileObj = { ...profileObj };
+    if (promptProfileObj.avatarUrl && String(promptProfileObj.avatarUrl).startsWith('data:')) {
+      promptProfileObj.avatarUrl = '[Ảnh chân dung đã đính kèm]';
+    }
+    if (promptProfileObj.avatarDataUrl && String(promptProfileObj.avatarDataUrl).startsWith('data:')) {
+      promptProfileObj.avatarDataUrl = '[Ảnh chân dung đã đính kèm]';
+    }
+    const safeProfile  = sanitizeForPrompt(JSON.stringify(promptProfileObj), 12000);
 
     // ── 3. Xác định mẫu CV áp dụng
     let appliedTemplate  = null;
     let templateMatchInfo = null;
 
     if (templateMode === 'auto') {
-      const matchResult = await autoMatchTemplate({ targetRole: safeRole, companyName: safeCompany, jdText: safeJD, profile: profileObj });
+      const matchResult = await autoMatchTemplate({ targetRole: safeRole, companyName: safeCompany, jdText: safeJD, profile: promptProfileObj });
       appliedTemplate   = matchResult.template;
       templateMatchInfo = { mode: 'auto', matchScore: matchResult.matchScore, reasons: matchResult.reasons };
     } else {

@@ -456,6 +456,15 @@ async function autoMatchTemplate({ targetRole, companyName, jdText, profile }) {
       style: t.style
     }));
 
+    const cleanProfile = (typeof profile === 'object' && profile !== null)
+      ? (() => {
+          const c = { ...profile };
+          delete c.avatarUrl;
+          delete c.avatarDataUrl;
+          return c;
+        })()
+      : profile;
+
     const prompt = `
 Bạn là chuyên gia tư vấn tuyển dụng và cấu trúc CV ATS cao cấp.
 Hãy phân tích thông tin vị trí ứng tuyển "${targetRole || 'Không ghi'}", công ty ứng tuyển "${companyName || 'Doanh nghiệp'}" và bản mô tả công việc (JD) dưới đây để CHỌN DUY NHẤT 1 MẪU CV ATS PHÙ HỢP NHẤT trong danh sách sau:
@@ -467,7 +476,7 @@ MÔ TẢ CÔNG VIỆC (JD):
 ${(jdText || '').slice(0, 1000)}
 
 HỒ SƠ ỨNG VIÊN:
-${typeof profile === 'object' ? JSON.stringify(profile).slice(0, 500) : (profile || '').slice(0, 500)}
+${typeof cleanProfile === 'object' ? JSON.stringify(cleanProfile).slice(0, 1000) : String(cleanProfile || '').slice(0, 1000)}
 
 YÊU CẦU:
 1. Chọn mã "recommendedTemplateId" phù hợp nhất từ danh sách.
