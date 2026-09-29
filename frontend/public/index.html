@@ -508,7 +508,7 @@
             <!-- Nút Bắt Đầu Tạo CV Trên Cùng -->
             <button onclick="generateCV()" id="btn-generate-cv" class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold rounded-xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center text-xs sm:text-sm">
               <i class="fa-solid fa-wand-magic-sparkles mr-2 text-amber-300"></i>
-              <span>🚀 Bắt Đầu Tạo CV Chuẩn ATS</span>
+              <span id="btn-generate-cv-text">🚀 Bắt Đầu Tạo CV Chuẩn ATS</span>
             </button>
           </div>
         </div>
@@ -664,33 +664,126 @@
               <span class="text-[11px] text-slate-400 font-medium"><i class="fa-solid fa-floppy-disk text-emerald-500 mr-1"></i>Tự động lưu nháp</span>
             </div>
 
-            <!-- Tên Công ty & JD -->
-            
-          <!-- Tên Công ty & Vị trí ứng tuyển -->
-          <div class="space-y-3">
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                Tên Công Ty / Doanh Nghiệp Mục Tiêu
-              </label>
-              <input id="cv-company" type="text" value="FPT Software Cần Thơ" placeholder="VD: FPT Software, Viettel, VNG, Shopee..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition font-medium">
-            </div>
-
-            <!-- Bản mô tả công việc (JD) -->
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">
-                  Bản Mô Tả Công Việc (JD) Mục Tiêu
-                </label>
-                <span class="text-[10px] text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded-full">AI Tối Ưu Từ Khóa Khớp JD</span>
+            <!-- KHỐI LỰA CHỌN CÔNG VIỆC MỤC TIÊU & CHẾ ĐỘ MAY ĐO CV (AUTO MATCH vs MANUAL) -->
+            <div class="space-y-3.5">
+              <!-- Mode Toggle Switcher -->
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                  <i class="fa-solid fa-crosshairs text-blue-600"></i> Mục Tiêu Tuyển Dụng & Doanh Nghiệp
+                </span>
+                <span class="text-[10px] font-semibold text-slate-400">Chọn 1 trong 2 chế độ</span>
               </div>
-              <textarea id="cv-jd" rows="3" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none leading-relaxed transition" placeholder="Dán nội dung yêu cầu tuyển dụng (JD) vào đây để AI may đo CV...">Tuyển dụng Lập trình viên Backend Node.js.
+
+              <div class="bg-slate-100 p-1 rounded-2xl flex items-center gap-1 border border-slate-200">
+                <button type="button" id="btn-mode-automatch" onclick="switchJobInputMode('automatch')" class="flex-1 py-2 px-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 bg-white text-blue-700 shadow-xs border border-blue-200">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i>
+                  <span>Tự Động Match Việc (Auto Match)</span>
+                  <span class="px-1.5 py-0.5 rounded-md text-[9px] bg-blue-100 text-blue-800 font-extrabold uppercase">Mặc định</span>
+                </button>
+                <button type="button" id="btn-mode-manual" onclick="switchJobInputMode('manual')" class="flex-1 py-2 px-3 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center justify-center gap-1.5">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <span>Nhập Thủ Công (Manual)</span>
+                </button>
+              </div>
+
+              <!-- CHẾ ĐỘ 1: AUTO MATCH THEO TỪ KHÓA PROFILE (MẶC ĐỊNH) -->
+              <div id="job-mode-automatch-container" class="space-y-3">
+                <!-- AI Keyword & Recommendation Banner -->
+                <div class="p-3.5 bg-gradient-to-br from-blue-50/80 to-indigo-50/50 border border-blue-100 rounded-2xl space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs shadow-xs">
+                        <i class="fa-solid fa-microchip"></i>
+                      </div>
+                      <span class="text-xs font-bold text-slate-800">AI Gợi Ý & Khớp Nối Theo Hồ Sơ (Profile)</span>
+                    </div>
+                    <button type="button" onclick="refreshAutoMatchJobs(true)" class="text-[11px] text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 transition" title="Làm mới phân tích từ khóa theo profile hiện tại">
+                      <i class="fa-solid fa-arrows-rotate text-xs"></i> Làm mới
+                    </button>
+                  </div>
+
+                  <!-- Gợi ý vị trí & Lĩnh vực phù hợp -->
+                  <div class="space-y-1.5 text-xs">
+                    <div class="flex flex-wrap items-center gap-1.5">
+                      <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-briefcase text-indigo-500 mr-1"></i>Vị trí gợi ý:</span>
+                      <div id="automatch-suggested-roles" class="flex flex-wrap gap-1">
+                        <!-- Rendered by JS -->
+                        <span class="px-2 py-0.5 rounded-md bg-white border border-indigo-200 text-indigo-700 text-[11px] font-medium">Lập trình viên Backend</span>
+                        <span class="px-2 py-0.5 rounded-md bg-white border border-indigo-200 text-indigo-700 text-[11px] font-medium">Node.js Engineer</span>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5">
+                      <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-shapes text-emerald-500 mr-1"></i>Lĩnh vực:</span>
+                      <div id="automatch-suggested-fields" class="flex flex-wrap gap-1">
+                        <!-- Rendered by JS -->
+                        <span class="px-2 py-0.5 rounded-md bg-white border border-emerald-200 text-emerald-700 text-[11px] font-medium">Công nghệ thông tin</span>
+                        <span class="px-2 py-0.5 rounded-md bg-white border border-emerald-200 text-emerald-700 text-[11px] font-medium">Cloud & Microservices</span>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5">
+                      <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-key text-amber-500 mr-1"></i>Từ khóa thế mạnh:</span>
+                      <div id="automatch-extracted-keywords" class="flex flex-wrap gap-1">
+                        <!-- Rendered by JS -->
+                        <span class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-medium border border-amber-200">Node.js</span>
+                        <span class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-medium border border-amber-200">PostgreSQL</span>
+                        <span class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-medium border border-amber-200">Docker</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Thanh Công Cụ Chọn All & Thống Kê Match Score >= 85% -->
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-2">
+                  <label class="flex items-center gap-2 cursor-pointer select-none">
+                    <input type="checkbox" id="chk-select-all-jobs" checked onchange="toggleSelectAllJobs(this.checked)" class="w-4 h-4 text-blue-600 bg-white border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
+                    <span class="text-xs font-bold text-slate-800">
+                      Chọn tất cả việc làm phù hợp (&ge; 85%)
+                    </span>
+                  </label>
+                  <div class="flex items-center gap-2">
+                    <span id="badge-selected-jobs-count" class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-600 text-white shadow-2xs">
+                      Đang chọn: 0 việc
+                    </span>
+                  </div>
+                </div>
+
+                <div class="text-[11px] text-slate-500 italic px-1 flex items-center gap-1">
+                  <i class="fa-solid fa-circle-info text-blue-500"></i>
+                  <span>Tick chọn ô nào thì sẽ tạo CV tương ứng với vị trí và văn hóa công ty đó (tick bao nhiêu ô tạo bấy nhiêu CV).</span>
+                </div>
+
+                <!-- Danh Sách Job Phù Hợp (>= 85%) Sắp Xếp Giảm Dần -->
+                <div id="automatch-jobs-list" class="space-y-2.5 max-h-[380px] overflow-y-auto pr-1 custom-scrollbar">
+                  <!-- Sẽ được render động bằng JS -->
+                </div>
+              </div>
+
+              <!-- CHẾ ĐỘ 2: NHẬP THỦ CÔNG CÔNG TY & JD (ẨN KHI Ở AUTO MATCH) -->
+              <div id="job-mode-manual-container" class="hidden space-y-3">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    Tên Công Ty / Doanh Nghiệp Mục Tiêu
+                  </label>
+                  <input id="cv-company" type="text" value="FPT Software Cần Thơ" placeholder="VD: FPT Software, Viettel, VNG, Shopee..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition font-medium">
+                </div>
+
+                <!-- Bản mô tả công việc (JD) -->
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">
+                      Bản Mô Tả Công Việc (JD) Mục Tiêu
+                    </label>
+                    <span class="text-[10px] text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded-full">AI Tối Ưu Từ Khóa Khớp JD</span>
+                  </div>
+                  <textarea id="cv-jd" rows="3" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none leading-relaxed transition" placeholder="Dán nội dung yêu cầu tuyển dụng (JD) vào đây để AI may đo CV...">Tuyển dụng Lập trình viên Backend Node.js.
 Yêu cầu:
 - Thành thạo Node.js, Express, JavaScript/TypeScript.
 - Có kinh nghiệm làm việc với cơ sở dữ liệu PostgreSQL hoặc MongoDB.
 - Hiểu biết về RESTful API, Docker và tối ưu hóa hiệu năng hệ thống.
 - Kỹ năng giải quyết vấn đề và làm việc nhóm tốt.</textarea>
+                </div>
+              </div>
             </div>
-          </div>
 
 
             <!-- Bộ Nhập Liệu Profile Cá Nhân, Kỹ Năng, Học Vấn, Kinh Nghiệm -->
@@ -904,9 +997,9 @@ Yêu cầu:
 
             <!-- Nút tạo CV dự phòng ở đáy form -->
             <div class="pt-4 border-t border-slate-100">
-              <button onclick="generateCV()" class="w-full py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center text-sm">
+              <button id="btn-generate-cv-bottom" onclick="generateCV()" class="w-full py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center text-sm">
                 <i class="fa-solid fa-wand-magic-sparkles mr-2 text-amber-300"></i>
-                <span>🚀 Bắt Đầu Tạo CV Chuẩn ATS</span>
+                <span id="btn-generate-cv-bottom-text">🚀 Bắt Đầu Tạo CV Chuẩn ATS</span>
               </button>
             </div>
 
@@ -938,6 +1031,22 @@ Yêu cầu:
                     <i class="fa-solid fa-expand"></i>
                   </button>
                 </div>
+              </div>
+            </div>
+
+            <!-- THANH CHUYỂN ĐỔI CV KHI TẠO HÀNG LOẠT (BATCH CV TABS) -->
+            <div id="batch-cv-switcher-container" class="hidden pb-2 border-b border-slate-100 flex-shrink-0">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                  <i class="fa-solid fa-layer-group text-blue-600"></i>
+                  <span>Các Bản CV Đã May Đo Theo Công Ty:</span>
+                </span>
+                <span id="batch-cv-count-label" class="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
+                  1/1 CV
+                </span>
+              </div>
+              <div id="batch-cv-tabs" class="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar text-xs">
+                <!-- Rendered dynamically -->
               </div>
             </div>
 
@@ -2781,6 +2890,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       }
 
       scheduleAutoRecommendation();
+      scheduleAutoMatchRefresh();
     }
 
     function syncJSONToProfileForm() {
@@ -2873,6 +2983,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       renderEducationList();
       renderExperienceList();
       syncProfileFormToJSON();
+      refreshAutoMatchJobs(true);
     }
 
     function clearProfileForm() {
@@ -2900,6 +3011,378 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       syncProfileFormToJSON();
     }
 
+    // ══════════════════════════════════════════════════════════════════════════════
+    // HỆ THỐNG GỢI Ý VIỆC LÀM & TỰ ĐỘNG KHỚP NỐI (AUTO MATCH >= 85%) & BATCH CV
+    // ══════════════════════════════════════════════════════════════════════════════
+    let currentJobInputMode = 'automatch'; // 'automatch' | 'manual'
+    let availableMatchedJobs = [];
+    let selectedJobIds = new Set();
+    let batchCVResults = [];
+    let activeBatchIndex = 0;
+    let autoMatchDebounceTimer = null;
+
+    // Chuyển đổi giữa chế độ Auto Match (Mặc định) và Nhập thủ công (Manual)
+    function switchJobInputMode(mode) {
+      currentJobInputMode = mode;
+      const btnAuto = document.getElementById('btn-mode-automatch');
+      const btnManual = document.getElementById('btn-mode-manual');
+      const autoContainer = document.getElementById('job-mode-automatch-container');
+      const manualContainer = document.getElementById('job-mode-manual-container');
+
+      if (mode === 'automatch') {
+        if (btnAuto) {
+          btnAuto.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 bg-white text-blue-700 shadow-xs border border-blue-200';
+        }
+        if (btnManual) {
+          btnManual.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center justify-center gap-1.5';
+        }
+        if (autoContainer) autoContainer.classList.remove('hidden');
+        if (manualContainer) manualContainer.classList.add('hidden');
+      } else {
+        if (btnAuto) {
+          btnAuto.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 transition flex items-center justify-center gap-1.5';
+        }
+        if (btnManual) {
+          btnManual.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 bg-white text-blue-700 shadow-xs border border-blue-200';
+        }
+        if (autoContainer) autoContainer.classList.add('hidden');
+        if (manualContainer) manualContainer.classList.remove('hidden');
+      }
+      updateSelectedJobsCounter();
+    }
+
+    // Debounce tự động quét gợi ý việc làm khi profile thay đổi
+    function scheduleAutoMatchRefresh() {
+      if (autoMatchDebounceTimer) clearTimeout(autoMatchDebounceTimer);
+      autoMatchDebounceTimer = setTimeout(() => {
+        refreshAutoMatchJobs(false);
+      }, 600);
+    }
+
+    // Gọi API phân tích Profile và lấy danh sách Jobs phù hợp >= 85%
+    async function refreshAutoMatchJobs(force = false) {
+      try {
+        let profileObj;
+        try {
+          profileObj = JSON.parse(document.getElementById('cv-profile')?.value || '{}');
+        } catch {
+          profileObj = {};
+        }
+
+        const res = await fetch('/api/cv/auto-match-jobs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ profile: profileObj })
+        });
+
+        const data = await res.json();
+        if (data && data.success) {
+          const suggestedRoles = data.suggestedRoles || data.data?.suggestedRoles || [];
+          const suggestedFields = data.suggestedFields || data.data?.suggestedFields || [];
+          const profileKeywords = data.profileKeywords || data.data?.extractedKeywords || [];
+          const matchedJobs = data.matchedJobs || data.data?.matchedJobs || [];
+
+          // Cập nhật gợi ý vị trí
+          const rolesContainer = document.getElementById('automatch-suggested-roles');
+          if (rolesContainer && Array.isArray(suggestedRoles)) {
+            rolesContainer.innerHTML = suggestedRoles.map(r => `
+              <span class="px-2 py-0.5 rounded-md bg-white border border-indigo-200 text-indigo-700 text-[11px] font-semibold">${escapeForHtml(r)}</span>
+            `).join('');
+          }
+
+          // Cập nhật gợi ý lĩnh vực
+          const fieldsContainer = document.getElementById('automatch-suggested-fields');
+          if (fieldsContainer && Array.isArray(suggestedFields)) {
+            fieldsContainer.innerHTML = suggestedFields.map(f => `
+              <span class="px-2 py-0.5 rounded-md bg-white border border-emerald-200 text-emerald-700 text-[11px] font-semibold">${escapeForHtml(f)}</span>
+            `).join('');
+          }
+
+          // Cập nhật từ khóa thế mạnh
+          const kwContainer = document.getElementById('automatch-extracted-keywords');
+          if (kwContainer && Array.isArray(profileKeywords)) {
+            kwContainer.innerHTML = profileKeywords.slice(0, 7).map(k => `
+              <span class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-medium border border-amber-200">${escapeForHtml(k)}</span>
+            `).join('');
+          }
+
+          // Lọc chắc chắn >= 85% và sắp xếp giảm dần theo matchScore
+          availableMatchedJobs = (matchedJobs || [])
+            .filter(j => (j.matchScore || 0) >= 85)
+            .sort((a, b) => (b.matchScore || 0) - (a.matchScore || 0));
+
+          window.availableMatchedJobs = availableMatchedJobs;
+          window.selectedJobIds = selectedJobIds;
+
+          // Mặc định: Tick all tất cả các job >= 85%
+          selectedJobIds.clear();
+          availableMatchedJobs.forEach(j => selectedJobIds.add(j.id));
+          const chkAll = document.getElementById('chk-select-all-jobs');
+          if (chkAll) chkAll.checked = true;
+
+          renderAutoMatchJobs();
+          updateSelectedJobsCounter();
+
+          if (force) {
+            showToastSuccess(`Đã tìm thấy ${availableMatchedJobs.length} việc làm có tỷ lệ phù hợp &ge; 85%!`, 'AI Matching');
+          }
+        }
+      } catch (err) {
+        console.warn('Lỗi khi tự động phân tích việc làm:', err);
+      }
+    }
+
+    // Render danh sách các Job Cards phù hợp >= 85%
+    function renderAutoMatchJobs() {
+      const container = document.getElementById('automatch-jobs-list');
+      if (!container) return;
+
+      if (!availableMatchedJobs || availableMatchedJobs.length === 0) {
+        container.innerHTML = `
+          <div class="p-4 bg-slate-50 border border-dashed border-slate-200 rounded-xl text-center text-xs text-slate-500">
+            <i class="fa-solid fa-triangle-exclamation text-amber-500 text-base mb-1 block"></i>
+            Chưa tìm thấy việc làm có tỷ lệ tương thích &ge; 85%. Hãy cập nhật thêm kỹ năng hoặc kinh nghiệm trong hồ sơ!
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = availableMatchedJobs.map((job) => {
+        const isChecked = selectedJobIds.has(job.id);
+        const score = job.matchScore || 90;
+        let badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+        let badgeIcon = 'fa-solid fa-star';
+        if (score >= 95) {
+          badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+          badgeIcon = 'fa-solid fa-wand-magic-sparkles text-amber-500';
+        } else if (score >= 90) {
+          badgeClass = 'bg-blue-100 text-blue-800 border-blue-300';
+          badgeIcon = 'fa-solid fa-bolt text-blue-600';
+        } else {
+          badgeClass = 'bg-teal-100 text-teal-800 border-teal-300';
+          badgeIcon = 'fa-solid fa-check text-teal-600';
+        }
+
+        return `
+          <div class="p-3.5 bg-white rounded-2xl border ${isChecked ? 'border-blue-400 bg-blue-50/20 shadow-xs' : 'border-slate-200 hover:border-slate-300'} transition space-y-2.5">
+            <!-- Header Card: Checkbox + Tên Công Ty + Vị trí + % Phù hợp -->
+            <div class="flex items-start justify-between gap-2.5">
+              <div class="flex items-start gap-2.5">
+                <input type="checkbox" id="chk-job-${job.id}" ${isChecked ? 'checked' : ''} onchange="toggleJobSelection('${job.id}', this.checked)" class="w-4 h-4 text-blue-600 rounded cursor-pointer mt-1 focus:ring-blue-500">
+                <div>
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="font-black text-slate-800 text-xs">${escapeForHtml(job.company)}</span>
+                  </div>
+                  <h4 class="font-bold text-blue-700 text-xs mt-0.5">${escapeForHtml(job.role)}</h4>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-black border flex items-center gap-1 shrink-0 ${badgeClass}">
+                <i class="${badgeIcon} text-[10px]"></i>
+                <span>${score}% Phù Hợp</span>
+              </span>
+            </div>
+
+            <!-- Tóm Tắt Cô Đọng Quan Trọng: Mức Lương, Vị Trí Địa Lý, Hình Thức -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-[11px] text-slate-600 bg-slate-50/80 p-2 rounded-xl border border-slate-100">
+              <div class="flex items-center gap-1">
+                <span class="text-slate-400 font-medium">💵 Lương:</span>
+                <span class="font-bold text-emerald-600 truncate">${escapeForHtml(job.salary || 'Thỏa thuận')}</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="text-slate-400 font-medium">📍 Địa điểm:</span>
+                <span class="font-medium text-slate-700 truncate">${escapeForHtml(job.location || 'Toàn quốc')}</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="text-slate-400 font-medium">💼 Hình thức:</span>
+                <span class="font-medium text-slate-700 truncate">${escapeForHtml(job.workType || 'Toàn thời gian')}</span>
+              </div>
+            </div>
+
+            <!-- Tóm Tắt Văn Hóa Công Ty -->
+            <div class="text-[11px] text-slate-600 leading-relaxed flex items-start gap-1.5">
+              <span class="text-amber-600 font-bold shrink-0">🏛️ Văn hóa:</span>
+              <span class="text-slate-700 line-clamp-2">${escapeForHtml(job.culture || '')}</span>
+            </div>
+
+            <!-- Footer: Nút Chi Tiết & Từ Khóa Trùng Khớp -->
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1 overflow-hidden">
+                <span class="text-[10px] text-slate-400 font-semibold shrink-0">Từ khóa:</span>
+                <div class="flex flex-wrap gap-1">
+                  ${(job.matchedKeywords || job.keywords || []).slice(0, 3).map(k => `
+                    <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600 text-[10px] font-medium">${escapeForHtml(k)}</span>
+                  `).join('')}
+                </div>
+              </div>
+              <button type="button" onclick="viewJobDetails('${job.id}')" class="px-2.5 py-1 bg-white hover:bg-blue-50 border border-blue-200 text-blue-700 font-bold rounded-lg text-[11px] transition shadow-2xs flex items-center gap-1 shrink-0">
+                <i class="fa-solid fa-circle-info text-blue-600"></i>
+                <span>Chi tiết</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Toggle tick all
+    function toggleSelectAllJobs(checked) {
+      if (checked) {
+        availableMatchedJobs.forEach(j => selectedJobIds.add(j.id));
+      } else {
+        selectedJobIds.clear();
+      }
+      renderAutoMatchJobs();
+      updateSelectedJobsCounter();
+    }
+
+    // Toggle tick một job riêng lẻ
+    function toggleJobSelection(jobId, checked) {
+      if (checked) {
+        selectedJobIds.add(jobId);
+      } else {
+        selectedJobIds.delete(jobId);
+      }
+
+      const chkAll = document.getElementById('chk-select-all-jobs');
+      if (chkAll) {
+        chkAll.checked = (selectedJobIds.size === availableMatchedJobs.length && availableMatchedJobs.length > 0);
+      }
+      renderAutoMatchJobs();
+      updateSelectedJobsCounter();
+    }
+
+    // Cập nhật badge số lượng và nhãn nút tạo CV
+    function updateSelectedJobsCounter() {
+      const badge = document.getElementById('badge-selected-jobs-count');
+      const btnTopText = document.getElementById('btn-generate-cv-text');
+      const btnBottomText = document.getElementById('btn-generate-cv-bottom-text');
+
+      if (badge) {
+        badge.textContent = `Đang chọn: ${selectedJobIds.size}/${availableMatchedJobs.length} việc`;
+      }
+
+      const labelText = (currentJobInputMode === 'automatch')
+        ? (selectedJobIds.size > 0 
+            ? `🚀 Bắt Đầu Tạo ${selectedJobIds.size} CV Chuẩn ATS` 
+            : `🚀 Chọn Ít Nhất 1 Việc Làm Để Tạo CV`)
+        : `🚀 Bắt Đầu Tạo CV Chuẩn ATS`;
+
+      if (btnTopText) btnTopText.innerHTML = labelText;
+      if (btnBottomText) btnBottomText.innerHTML = labelText;
+    }
+
+    // Xem chi tiết công việc trong Modal
+    function viewJobDetails(jobId) {
+      const job = availableMatchedJobs.find(j => j.id === jobId);
+      if (!job) return;
+
+      const modal = document.getElementById('modal-job-detail');
+      if (!modal) return;
+
+      const logoImg = document.getElementById('modal-job-logo');
+      if (logoImg) {
+        logoImg.src = job.companyLogo || 'https://upload.wikimedia.org/wikipedia/commons/1/11/FPT_logo_2010.svg';
+      }
+      document.getElementById('modal-job-company').textContent = job.company || '';
+      document.getElementById('modal-job-role').textContent = job.role || '';
+      document.getElementById('modal-job-match-badge').textContent = `${job.matchScore || 90}% Phù Hợp`;
+      document.getElementById('modal-job-salary').textContent = job.salary || 'Thỏa thuận';
+      document.getElementById('modal-job-location').textContent = job.location || 'Toàn quốc';
+      document.getElementById('modal-job-worktype').textContent = job.workType || 'Toàn thời gian';
+      document.getElementById('modal-job-culture').textContent = job.cultureDetails || job.culture || '';
+      document.getElementById('modal-job-fitreason').textContent = job.fitReason || 'Hồ sơ có tỷ lệ tương thích cao với yêu cầu tuyển dụng.';
+
+      const kwContainer = document.getElementById('modal-job-keywords');
+      if (kwContainer) {
+        kwContainer.innerHTML = (job.matchedKeywords || job.keywords || []).map(k => `
+          <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold text-[10px]">${escapeForHtml(k)}</span>
+        `).join('');
+      }
+
+      const respList = document.getElementById('modal-job-responsibilities');
+      if (respList) {
+        respList.innerHTML = (job.responsibilities || []).map(r => `
+          <li class="leading-relaxed">${escapeForHtml(r)}</li>
+        `).join('');
+      }
+
+      const reqList = document.getElementById('modal-job-requirements');
+      if (reqList) {
+        reqList.innerHTML = (job.requirements || []).map(r => `
+          <li class="leading-relaxed">${escapeForHtml(r)}</li>
+        `).join('');
+      }
+
+      const benList = document.getElementById('modal-job-benefits');
+      if (benList) {
+        benList.innerHTML = (job.benefits || []).map(b => `
+          <li class="leading-relaxed">${escapeForHtml(b)}</li>
+        `).join('');
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeJobDetailModal() {
+      const modal = document.getElementById('modal-job-detail');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Render thanh chuyển đổi giữa các bản CV đã tạo
+    function renderBatchTabs() {
+      const container = document.getElementById('batch-cv-tabs');
+      const countLabel = document.getElementById('batch-cv-count-label');
+      const barWrapper = document.getElementById('batch-cv-switcher-container');
+      if (!container) return;
+
+      if (!batchCVResults || batchCVResults.length <= 1) {
+        if (barWrapper) barWrapper.classList.add('hidden');
+        return;
+      }
+      if (barWrapper) barWrapper.classList.remove('hidden');
+
+      if (countLabel) {
+        countLabel.textContent = `${activeBatchIndex + 1}/${batchCVResults.length} Bản CV`;
+      }
+
+      container.innerHTML = batchCVResults.map((item, idx) => {
+        const isActive = idx === activeBatchIndex;
+        const compName = item.job ? item.job.company : (item.cvData?.company || `CV #${idx+1}`);
+        const score = item.cvData?.atsScore || item.job?.matchScore || 90;
+        return `
+          <button type="button" onclick="selectBatchCV(${idx})" class="px-3 py-1.5 rounded-xl font-bold transition shrink-0 flex items-center gap-1.5 border cursor-pointer ${
+            isActive 
+              ? 'bg-blue-600 text-white border-blue-600 shadow-xs' 
+              : 'bg-white text-slate-700 hover:bg-slate-50 border-slate-200'
+          }">
+            <i class="fa-solid fa-building text-[10px]"></i>
+            <span class="max-w-[130px] truncate">${escapeForHtml(compName)}</span>
+            <span class="px-1.5 py-0.2 rounded-full text-[9px] font-black ${isActive ? 'bg-white/20 text-white' : 'bg-emerald-100 text-emerald-800'}">
+              ${score}%
+            </span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // Chọn xem 1 bản CV cụ thể trong danh sách đã tạo
+    function selectBatchCV(index) {
+      if (!batchCVResults[index]) return;
+      activeBatchIndex = index;
+      const current = batchCVResults[index];
+      latestCVData = current.cvData;
+      latestRenderedHtml = current.renderedHtml;
+      currentAppliedTemplate = current.appliedTemplate;
+
+      const badge = document.getElementById('cv-badge');
+      if (badge && latestCVData) {
+        const isEn = latestCVData.language === 'en';
+        badge.innerText = isEn ? `ATS Score: ${latestCVData.atsScore}/100` : `Điểm ATS: ${latestCVData.atsScore}/100`;
+      }
+      renderBatchTabs();
+      renderCVResult(latestCVData, latestRenderedHtml);
+    }
+
     function initCVTemplateListeners() {
       loadCVTemplates();
       initProfileForm();
@@ -2907,6 +3390,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       const jdInput = document.getElementById('cv-jd');
       if (compInput) compInput.addEventListener('input', scheduleAutoRecommendation);
       if (jdInput) jdInput.addEventListener('input', scheduleAutoRecommendation);
+      refreshAutoMatchJobs();
     }
 
     if (document.readyState === 'loading') {
@@ -2915,65 +3399,156 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       initCVTemplateListeners();
     }
 
-    // Tạo CV bằng Gemini AI theo ngôn ngữ & mẫu CV đã chọn
+    // Tạo CV bằng Gemini AI theo ngôn ngữ & mẫu CV đã chọn (Hỗ trợ May đo Đơn chiếc & May đo Hàng loạt theo Job)
     async function generateCV() {
-      const btn = document.getElementById('btn-generate-cv');
+      const btnTop = document.getElementById('btn-generate-cv');
+      const btnBottom = document.getElementById('btn-generate-cv-bottom');
+      const btnTopText = document.getElementById('btn-generate-cv-text');
+      const btnBottomText = document.getElementById('btn-generate-cv-bottom-text');
       const resultDiv = document.getElementById('cv-result');
       const badge = document.getElementById('cv-badge');
       const actions = document.getElementById('cv-download-actions');
-
       const isEn = currentCVLanguage === 'en';
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang tạo CV ATS bằng ${isEn ? 'Tiếng Anh (English)' : 'Tiếng Việt'}...`;
-      resultDiv.innerHTML = `
-        <div class="text-center py-20 text-slate-400 space-y-3">
-          <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-600"></i>
-          <p class="font-semibold text-slate-700">Gemini AI đang phân tích JD và áp dụng mẫu CV ATS tối ưu...</p>
-          <p class="text-xs text-slate-400">Tối ưu hóa từ khóa và may đo thành tích chuẩn STAR</p>
-        </div>
-      `;
 
+      let profileObj;
       try {
-        let profileObj;
+        profileObj = JSON.parse(document.getElementById('cv-profile').value);
+      } catch {
+        profileObj = document.getElementById('cv-profile').value;
+      }
+
+      function setButtonState(isLoading, text) {
+        if (btnTop) btnTop.disabled = isLoading;
+        if (btnBottom) btnBottom.disabled = isLoading;
+        if (btnTopText) btnTopText.innerHTML = text;
+        if (btnBottomText) btnBottomText.innerHTML = text;
+      }
+
+      if (currentJobInputMode === 'automatch') {
+        const selectedJobs = availableMatchedJobs.filter(j => selectedJobIds.has(j.id));
+        if (selectedJobs.length === 0) {
+          showToastWarning('Vui lòng tick chọn ít nhất 1 việc làm phù hợp để tạo CV.', 'Chưa chọn việc');
+          return;
+        }
+
+        setButtonState(true, `<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Đang tạo 1/${selectedJobs.length} CV...`);
+        resultDiv.innerHTML = `
+          <div class="text-center py-20 text-slate-400 space-y-3">
+            <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-600"></i>
+            <p class="font-semibold text-slate-700">Gemini AI đang phân tích và may đo CV cho ${selectedJobs.length} doanh nghiệp đã chọn...</p>
+            <p class="text-xs text-slate-400">Tối ưu hóa từ khóa theo từng JD và may đo chuẩn hóa theo văn hóa từng doanh nghiệp</p>
+          </div>
+        `;
+
+        batchCVResults = [];
+        activeBatchIndex = 0;
+
         try {
-          profileObj = JSON.parse(document.getElementById('cv-profile').value);
-        } catch {
-          profileObj = document.getElementById('cv-profile').value;
+          for (let i = 0; i < selectedJobs.length; i++) {
+            const job = selectedJobs[i];
+            setButtonState(true, `<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> May đo CV (${i + 1}/${selectedJobs.length}): ${job.company.substring(0, 16)}...`);
+
+            const res = await fetch('/api/cv/generate', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                companyName: job.company,
+                targetRole: job.role,
+                companyCulture: job.cultureDetails || job.culture,
+                jdText: job.jdText || job.description,
+                profile: profileObj,
+                language: currentCVLanguage,
+                templateMode: currentTemplateMode,
+                selectedTemplateId: currentSelectedTemplateId
+              })
+            });
+
+            const data = await res.json();
+            if (data.success && data.data) {
+              const cvData = data.data;
+              cvData.language = currentCVLanguage;
+              batchCVResults.push({
+                job,
+                cvData,
+                appliedTemplate: data.appliedTemplate,
+                renderedHtml: data.renderedHtml
+              });
+            }
+          }
+
+          if (batchCVResults.length > 0) {
+            latestCVData = batchCVResults[0].cvData;
+            currentAppliedTemplate = batchCVResults[0].appliedTemplate;
+            latestRenderedHtml = batchCVResults[0].renderedHtml;
+
+            if (badge) {
+              badge.classList.remove('hidden');
+              badge.innerText = `Điểm ATS: ${latestCVData.atsScore}/100`;
+            }
+            if (actions) actions.classList.remove('hidden');
+
+            renderBatchTabs();
+            renderCVResult(latestCVData, latestRenderedHtml);
+            showToastSuccess(`Đã tạo thành công ${batchCVResults.length} bản CV chuẩn ATS theo từng công ty!`, 'Hoàn tất');
+          } else {
+            resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Không thể tạo CV. Vui lòng thử lại.</div>`;
+          }
+        } catch (err) {
+          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi kết nối: ${err.message}</div>`;
+        } finally {
+          setButtonState(false, `🚀 Bắt Đầu Tạo ${selectedJobs.length} CV Chuẩn ATS`);
         }
 
-        const res = await fetch('/api/cv/generate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            companyName: document.getElementById('cv-company').value,
-            jdText: document.getElementById('cv-jd').value,
-            profile: profileObj,
-            language: currentCVLanguage,
-            templateMode: currentTemplateMode,
-            selectedTemplateId: currentSelectedTemplateId
-          })
-        });
+      } else {
+        // Chế độ nhập thủ công (Manual)
+        setButtonState(true, `<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Đang tạo CV ATS bằng ${isEn ? 'Tiếng Anh' : 'Tiếng Việt'}...`);
+        resultDiv.innerHTML = `
+          <div class="text-center py-20 text-slate-400 space-y-3">
+            <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-600"></i>
+            <p class="font-semibold text-slate-700">Gemini AI đang phân tích JD và áp dụng mẫu CV ATS tối ưu...</p>
+            <p class="text-xs text-slate-400">Tối ưu hóa từ khóa và may đo thành tích chuẩn STAR</p>
+          </div>
+        `;
 
-        const data = await res.json();
-        if (data.success && data.data) {
-          latestCVData = data.data;
-          latestCVData.language = currentCVLanguage;
-          currentAppliedTemplate = data.appliedTemplate;
-          latestRenderedHtml = data.renderedHtml;
+        try {
+          const res = await fetch('/api/cv/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              companyName: document.getElementById('cv-company')?.value || '',
+              jdText: document.getElementById('cv-jd')?.value || '',
+              profile: profileObj,
+              language: currentCVLanguage,
+              templateMode: currentTemplateMode,
+              selectedTemplateId: currentSelectedTemplateId
+            })
+          });
 
-          badge.classList.remove('hidden');
-          badge.innerText = `Điểm ATS: ${latestCVData.atsScore}/100`;
-          if (actions) actions.classList.remove('hidden');
+          const data = await res.json();
+          if (data.success && data.data) {
+            latestCVData = data.data;
+            latestCVData.language = currentCVLanguage;
+            currentAppliedTemplate = data.appliedTemplate;
+            latestRenderedHtml = data.renderedHtml;
 
-          renderCVResult(latestCVData, latestRenderedHtml);
-        } else {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message || data.error}</div>`;
+            if (badge) {
+              badge.classList.remove('hidden');
+              badge.innerText = `Điểm ATS: ${latestCVData.atsScore}/100`;
+            }
+            if (actions) actions.classList.remove('hidden');
+
+            document.getElementById('batch-cv-switcher-container')?.classList.add('hidden');
+            batchCVResults = [];
+
+            renderCVResult(latestCVData, latestRenderedHtml);
+          } else {
+            resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message || data.error}</div>`;
+          }
+        } catch (err) {
+          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Không thể kết nối đến API: ${err.message}</div>`;
+        } finally {
+          setButtonState(false, '🚀 Bắt Đầu Tạo CV Chuẩn ATS');
         }
-      } catch (err) {
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Không thể kết nối đến API: ${err.message}</div>`;
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = '<span>🚀 Bắt Đầu Tạo CV ATS Bằng Gemini AI</span>';
       }
     }
 
@@ -6109,6 +6684,103 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       </div>
       <div class="flex-1 bg-slate-300/80 p-2 overflow-hidden">
         <iframe id="iframe-cv-fullscreen" class="w-full h-full bg-white rounded-lg border-0 shadow-inner" src="about:blank"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL XEM CHI TIẾT CÔNG VIỆC, JD & VĂN HÓA DOANH NGHIỆP -->
+  <div id="modal-job-detail" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4 animate-fade-in">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-100 flex items-start justify-between bg-slate-50/70">
+        <div class="flex items-start gap-3.5">
+          <div id="modal-job-logo-wrapper" class="w-12 h-12 rounded-2xl bg-white border border-slate-200 p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+            <img id="modal-job-logo" src="" alt="Logo" class="max-h-full max-w-full object-contain">
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h3 id="modal-job-company" class="text-base font-black text-slate-900"></h3>
+              <span id="modal-job-match-badge" class="px-2 py-0.5 rounded-full text-xs font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200"></span>
+            </div>
+            <p id="modal-job-role" class="text-xs font-bold text-blue-700 mt-0.5"></p>
+          </div>
+        </div>
+        <button type="button" onclick="closeJobDetailModal()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center font-bold text-sm transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body (Cuộn độc lập) -->
+      <div class="p-6 overflow-y-auto space-y-4 custom-scrollbar text-xs">
+        <!-- Quick Meta Badges -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="block text-[10px] uppercase font-bold text-slate-400">💵 Mức Lương</span>
+            <span id="modal-job-salary" class="font-extrabold text-emerald-600 text-xs"></span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="block text-[10px] uppercase font-bold text-slate-400">📍 Địa Điểm</span>
+            <span id="modal-job-location" class="font-bold text-slate-700 text-xs"></span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="block text-[10px] uppercase font-bold text-slate-400">💼 Hình Thức</span>
+            <span id="modal-job-worktype" class="font-bold text-slate-700 text-xs"></span>
+          </div>
+        </div>
+
+        <!-- Văn Hóa Doanh Nghiệp -->
+        <div class="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-1">
+          <h4 class="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+            <i class="fa-solid fa-landmark text-amber-600"></i> Văn Hóa Doanh Nghiệp & Môi Trường Làm Việc
+          </h4>
+          <p id="modal-job-culture" class="text-slate-700 text-xs leading-relaxed"></p>
+        </div>
+
+        <!-- Phân Tích Độ Tương Thích AI -->
+        <div class="p-3.5 rounded-2xl bg-blue-50/70 border border-blue-200 space-y-1.5">
+          <h4 class="text-xs font-bold text-blue-900 flex items-center gap-1.5">
+            <i class="fa-solid fa-wand-magic-sparkles text-blue-600"></i> Đánh Giá Tương Thích Từ AI
+          </h4>
+          <p id="modal-job-fitreason" class="text-blue-800 text-xs"></p>
+          <div class="flex flex-wrap gap-1 pt-1">
+            <span class="text-[10px] font-bold text-blue-700">Từ khóa trùng khớp:</span>
+            <div id="modal-job-keywords" class="flex flex-wrap gap-1"></div>
+          </div>
+        </div>
+
+        <!-- Trách Nhiệm Công Việc -->
+        <div class="space-y-1.5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check text-blue-600"></i> Trách Nhiệm Công Việc Chính
+          </h4>
+          <ul id="modal-job-responsibilities" class="space-y-1 text-slate-600 list-disc list-inside"></ul>
+        </div>
+
+        <!-- Yêu Cầu Ứng Viên -->
+        <div class="space-y-1.5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
+            <i class="fa-solid fa-user-check text-indigo-600"></i> Yêu Cầu Chuyên Môn
+          </h4>
+          <ul id="modal-job-requirements" class="space-y-1 text-slate-600 list-disc list-inside"></ul>
+        </div>
+
+        <!-- Quyền Lợi & Phúc Lợi -->
+        <div class="space-y-1.5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
+            <i class="fa-solid fa-gift text-rose-500"></i> Quyền Lợi & Đãi Ngộ
+          </h4>
+          <ul id="modal-job-benefits" class="space-y-1 text-slate-600 list-disc list-inside"></ul>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-100 flex items-center justify-between bg-slate-50">
+        <span class="text-[11px] text-slate-500">
+          CV được may đo chuẩn xác theo JD và văn hóa công ty này.
+        </span>
+        <button type="button" onclick="closeJobDetailModal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-xs shadow-xs transition">
+          Đóng Chi Tiết
+        </button>
       </div>
     </div>
   </div>

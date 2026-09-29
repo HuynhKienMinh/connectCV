@@ -12,6 +12,11 @@ const {
   getTemplateDocxPath,
   renderCVDataToTemplateHtml
 } = require('../services/templateService');
+const {
+  matchJobsWithProfile,
+  getAllJobs,
+  getJobById
+} = require('../services/jobService');
 
 // ─────────────────────────────────────────────────────────
 // HELPER: Validation schemas (Joi)
@@ -26,6 +31,7 @@ const generateSchema = Joi.object({
   profile:           profileSchema,
   companyName:       Joi.string().max(150).allow('').optional(),
   targetRole:        Joi.string().max(150).allow('').optional(),
+  companyCulture:    Joi.string().max(1000).allow('').optional(),
   language:          Joi.string().valid('vi', 'en').default('vi'),
   templateMode:      Joi.string().valid('auto', 'manual').default('auto'),
   selectedTemplateId: Joi.string().max(100).allow('').optional()
@@ -124,6 +130,50 @@ router.post('/templates/recommend', async (req, res) => {
 });
 
 /**
+ * @route   POST /api/cv/auto-match-jobs
+ * @desc    Gợi ý vị trí, lĩnh vực và khớp nối danh sách việc làm phù hợp >= 85% theo hồ sơ
+ */
+router.post('/auto-match-jobs', (req, res) => {
+  try {
+    const profile = safeParseProfile(req.body.profile);
+    const result = matchJobsWithProfile(profile);
+    return res.status(200).json(result);
+  } catch (error) {
+    console.error('Lỗi API /api/cv/auto-match-jobs:', error.message);
+    return res.status(500).json({ success: false, message: 'Lỗi phân tích và khớp nối việc làm' });
+  }
+});
+
+/**
+ * @route   GET /api/cv/jobs
+ * @desc    Lấy danh sách tất cả các việc làm trên hệ thống
+ */
+router.get('/jobs', (req, res) => {
+  try {
+    const jobs = getAllJobs();
+    return res.status(200).json({ success: true, count: jobs.length, jobs });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: 'Lỗi lấy danh sách việc làm' });
+  }
+});
+
+/**
+ * @route   GET /api/cv/jobs/:jobId
+ * @desc    Lấy chi tiết một việc làm cụ thể
+ */
+router.get('/jobs/:jobId', (req, res) => {
+  try {
+    const job = getJobById(req.params.jobId);
+    if (!job) {
+      return res.status(404).json({ success: false, message: 'Không tìm thấy việc làm' });
+    }
+    return res.status(200).json({ success: true, job });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: 'Lỗi lấy chi tiết việc làm' });
+  }
+});
+
+/**
  * @route   GET /api/cv/templates/:templateId/preview
  * @desc    Xem trước giao diện HTML của mẫu CV
  */
@@ -179,12 +229,13 @@ router.post('/generate', async (req, res) => {
       });
     }
 
-    const { jdText, profile, companyName, targetRole, language, templateMode, selectedTemplateId } = value;
+    const { jdText, profile, companyName, targetRole, companyCulture, language, templateMode, selectedTemplateId } = value;
 
     // ── 2. Sanitize chống Prompt Injection
     const safeJD       = sanitizeForPrompt(jdText, 5000);
     const safeCompany  = sanitizeForPrompt(companyName, 150);
     const safeRole     = sanitizeForPrompt(targetRole, 150);
+    const safeCulture  = sanitizeForPrompt(companyCulture, 1000);
     const profileObj   = safeParseProfile(profile);
     const safeProfile  = sanitizeForPrompt(JSON.stringify(profileObj), 4000);
 
@@ -209,7 +260,7 @@ router.post('/generate', async (req, res) => {
     // ── 4. Xây dựng prompt với dữ liệu đã sanitize
     const prompt = `
 Bạn là chuyên gia tư vấn nghề nghiệp cấp cao và chuyên gia tối ưu hóa CV chuẩn ATS quốc tế.
-Nhiệm vụ: Phân tích JD và Hồ sơ ứng viên để tạo CV độc bản đạt điểm ATS >90%.
+Nhiệm vụ: Phân tích JD, Hồ sơ ứng viên và Văn hóa doanh nghiệp mục tiêu để tạo CV độc bản đạt điểm ATS >90%.
 
 MẪU CV: "${appliedTemplate.title}" — Phong cách: "${appliedTemplate.style}" — Ngành: "${appliedTemplate.industry}"
 
@@ -218,7 +269,11 @@ ${safeProfile}
 
 BẢN MÔ TẢ CÔNG VIỆC (JD):
 ${safeJD}
-
+${safeCulture ? `
+VĂN HÓA DOANH NGHIỆP MỤC TIÊU:
+${safeCulture}
+(Lưu ý: May đo nội dung tóm tắt bản thân và các điểm nhấn kinh nghiệm phản ánh sự tương thích sâu sắc với văn hóa công ty này)
+` : ''}
 YÊU CẦU:
 1. NGÔN NGỮ: ${isEn
   ? 'TOÀN BỘ nội dung CV phải bằng TIẾNG ANH CHUYÊN NGHIỆP (Professional Resume English). Dịch tất cả thông tin sang thuật ngữ tiếng Anh quốc tế. Tuyệt đối không để lẫn tiếng Việt.'
