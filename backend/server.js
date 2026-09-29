@@ -149,17 +149,24 @@ const aiInputGuard = (req, res, next) => {
   next();
 };
 
-// CV routes: generate, translate, ats-score dùng AI limiter + Input Guard
+// Auth middleware: Trích xuất danh tính người dùng (nếu có)
+const { optionalAuth } = require('./src/middlewares/authMiddleware');
+
+// Auth routes: Đăng ký, Đăng nhập, Profile me, Admin set-role (Supabase / Dev)
+const authRouter = require('./src/routes/auth');
+app.use('/api/auth', authRouter);
+
+// CV routes: generate, translate, ats-score dùng AI limiter + Input Guard + Optional Auth
 const cvRouter = require('./src/routes/cv');
-app.use('/api/cv', aiInputGuard);
+app.use('/api/cv', optionalAuth, aiInputGuard);
 app.use('/api/cv/generate', aiLimiter);
 app.use('/api/cv/translate', aiLimiter);
 app.use('/api/cv/ats-score', aiLimiter);
 app.use('/api/cv', cvRouter);
 
-// Interview routes: start, live-chat, evaluate, proposal, transcribe dùng AI/TTS limiter
+// Interview routes: start, live-chat, evaluate, proposal, transcribe dùng AI/TTS limiter + Optional Auth
 const interviewRouter = require('./src/routes/interview');
-app.use('/api/interview', aiInputGuard);
+app.use('/api/interview', optionalAuth, aiInputGuard);
 app.use('/api/interview/tts', ttsLimiter);
 app.use('/api/interview/transcribe', aiLimiter);
 app.use('/api/interview/start', aiLimiter);
@@ -168,9 +175,9 @@ app.use('/api/interview/evaluate', aiLimiter);
 app.use('/api/interview/proposal', aiLimiter);
 app.use('/api/interview', interviewRouter);
 
-// Chatbot: AI limiter
+// Chatbot: AI limiter + Optional Auth
 const chatbotRouter = require('./src/routes/chatbot');
-app.use('/api/chatbot', aiInputGuard);
+app.use('/api/chatbot', optionalAuth, aiInputGuard);
 app.use('/api/chatbot/message', aiLimiter);
 app.use('/api/chatbot', chatbotRouter);
 

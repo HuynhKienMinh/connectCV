@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- html2pdf.js for 1-click clean PDF downloads -->
   <script src="/js/html2pdf.bundle.min.js"></script>
+  <!-- Supabase Auth JS SDK v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
     .tab-active { border-bottom: 3px solid #2563eb; color: #2563eb; font-weight: 600; }
@@ -433,8 +435,24 @@
           <i class="fa-solid fa-coins text-amber-500 mr-2"></i>
           <span id="creditBalance">15</span>&nbsp;Credits
         </div>
-        <div class="text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-md font-mono">
+        <div class="text-xs text-slate-500 bg-slate-100 px-3 py-1.5 rounded-md font-mono hidden sm:block">
           Backend: <span class="text-emerald-600 font-bold">http://localhost:5000</span>
+        </div>
+        <!-- Auth State & Profile Chip -->
+        <div id="auth-header-wrapper" class="flex items-center">
+          <button type="button" onclick="openAuthModal()" id="btn-open-login" class="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center shadow-xs">
+            <i class="fa-solid fa-arrow-right-to-bracket mr-1.5"></i> Đăng Nhập
+          </button>
+          <div id="user-profile-chip" class="hidden items-center space-x-2 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-xl shadow-xs">
+            <img id="user-avatar" src="https://ui-avatars.com/api/?name=User" class="w-7 h-7 rounded-full object-cover border border-slate-300">
+            <div class="flex flex-col text-left">
+              <span id="user-name" class="text-xs font-bold text-slate-800 leading-tight truncate max-w-[120px]">User</span>
+              <span id="user-role-badge" class="text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded-full w-fit bg-blue-100 text-blue-800">CANDIDATE</span>
+            </div>
+            <button type="button" onclick="handleLogout()" class="text-slate-400 hover:text-rose-600 p-1 text-xs transition" title="Đăng xuất">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -6788,7 +6806,319 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           Đóng Chi Tiết
         </button>
       </div>
+  <!-- ======================================================== -->
+  <!-- MODAL XÁC THỰC: ĐĂNG NHẬP & ĐĂNG KÝ (SUPABASE & DEV AUTH) -->
+  <!-- ======================================================== -->
+  <div id="modal-auth" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-3 sm:p-4 animate-fade-in">
+    <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-md overflow-hidden animate-scale-up">
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-xs">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-slate-900">Xác Thực & Phân Quyền</h3>
+            <p class="text-[11px] text-slate-500 font-medium">Bảo mật chuẩn OWASP ASVS / Supabase Auth</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeAuthModal()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Tab Chuyển Đổi: Đăng nhập vs Đăng ký -->
+      <div class="flex border-b border-slate-100 bg-slate-50/50 p-1.5">
+        <button type="button" onclick="switchAuthTab('login')" id="tab-auth-login" class="flex-1 py-2 text-xs font-bold rounded-xl transition text-blue-700 bg-white shadow-xs">
+          <i class="fa-solid fa-right-to-bracket mr-1.5"></i> Đăng Nhập
+        </button>
+        <button type="button" onclick="switchAuthTab('register')" id="tab-auth-register" class="flex-1 py-2 text-xs font-bold rounded-xl transition text-slate-500 hover:text-slate-800">
+          <i class="fa-solid fa-user-plus mr-1.5"></i> Đăng Ký Mới
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 space-y-4">
+        <!-- Form Đăng Nhập -->
+        <div id="form-auth-login" class="space-y-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Email Tài Khoản</label>
+            <input type="email" id="login-email" placeholder="VD: student@fpt.edu.vn" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Mật Khẩu</label>
+            <input type="password" id="login-password" placeholder="Nhập mật khẩu..." class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <button type="button" onclick="handleLoginSubmit()" id="btn-submit-login" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md transition flex items-center justify-center">
+            <span>Đăng Nhập Vào Hệ Thống</span>
+          </button>
+
+          <!-- 1-Click Fast Presets (Dành cho Giám Khảo & Test Demo) -->
+          <div class="pt-2 border-t border-slate-100">
+            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">⚡ 1-Click Demo Tài Khoản Phân Quyền:</p>
+            <div class="grid grid-cols-3 gap-1.5 text-[10px]">
+              <button type="button" onclick="fillQuickLogin('student@fpt.edu.vn', 'Student@123')" class="px-2 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold rounded-lg border border-emerald-200 transition text-center truncate" title="Role: CANDIDATE">
+                🎓 Sinh Viên
+              </button>
+              <button type="button" onclick="fillQuickLogin('recruiter@fpt.com', 'Recruiter@123')" class="px-2 py-1.5 bg-sky-50 hover:bg-sky-100 text-sky-800 font-bold rounded-lg border border-sky-200 transition text-center truncate" title="Role: RECRUITER">
+                💼 HR Tuyển Dụng
+              </button>
+              <button type="button" onclick="fillQuickLogin('admin@connectcv.io.vn', 'Admin@123')" class="px-2 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-800 font-bold rounded-lg border border-purple-200 transition text-center truncate" title="Role: ADMIN">
+                🛡️ Quản Trị Viên
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Đăng Ký -->
+        <div id="form-auth-register" class="space-y-3 hidden">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Họ Và Tên</label>
+            <input type="text" id="reg-fullname" placeholder="VD: Huỳnh Kiên Minh" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Email</label>
+            <input type="email" id="reg-email" placeholder="VD: user@fpt.edu.vn" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Mật Khẩu (Tối thiểu 6 ký tự)</label>
+            <input type="password" id="reg-password" placeholder="Nhập mật khẩu an toàn..." class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Vai Trò Người Dùng</label>
+            <select id="reg-role" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
+              <option value="CANDIDATE">🎓 Ứng Viên / Sinh Viên Tìm Việc</option>
+              <option value="RECRUITER">💼 Doanh Nghiệp / Nhà Tuyển Dụng</option>
+            </select>
+          </div>
+          <button type="button" onclick="handleRegisterSubmit()" id="btn-submit-register" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md transition flex items-center justify-center">
+            <span>Tạo Tài Khoản Mới</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Script Điều Khiển Xác Thực (Auth Controller) -->
+  <script>
+    (function initConnectCVAuth() {
+      const AUTH_STORAGE_KEY = 'connectcv_auth_token';
+      let currentUser = null;
+      let supabaseClient = null;
+
+      // 1. Tự động bọc fetch() để đính kèm Token xác thực nếu có
+      const originalFetch = window.fetch;
+      window.fetch = async function(...args) {
+        let [resource, config] = args;
+        config = config || {};
+        const token = localStorage.getItem(AUTH_STORAGE_KEY);
+        if (token) {
+          config.headers = config.headers || {};
+          if (config.headers instanceof Headers) {
+            if (!config.headers.has('Authorization')) {
+              config.headers.append('Authorization', `Bearer ${token}`);
+            }
+          } else {
+            if (!config.headers['Authorization']) {
+              config.headers['Authorization'] = `Bearer ${token}`;
+            }
+          }
+        }
+        return originalFetch(resource, config);
+      };
+
+      // 2. Khởi tạo & Kiểm tra Session khi tải trang
+      async function checkCurrentSession() {
+        try {
+          // Lấy cấu hình Supabase từ backend (nếu có)
+          const cfgRes = await originalFetch('/api/auth/config');
+          const cfgData = await cfgRes.json();
+          if (cfgData.mode === 'supabase' && cfgData.supabaseUrl && window.supabase) {
+            supabaseClient = window.supabase.createClient(cfgData.supabaseUrl, cfgData.supabaseAnonKey);
+          }
+
+          const token = localStorage.getItem(AUTH_STORAGE_KEY);
+          if (!token) {
+            updateAuthUI(null);
+            return;
+          }
+
+          const meRes = await fetch('/api/auth/me');
+          if (meRes.ok) {
+            const meData = await meRes.json();
+            currentUser = meData.user;
+            updateAuthUI(currentUser);
+          } else {
+            // Token hết hạn hoặc không hợp lệ
+            localStorage.removeItem(AUTH_STORAGE_KEY);
+            updateAuthUI(null);
+          }
+        } catch (e) {
+          updateAuthUI(null);
+        }
+      }
+
+      // 3. Cập nhật giao diện theo trạng thái đăng nhập
+      function updateAuthUI(user) {
+        const btnLogin = document.getElementById('btn-open-login');
+        const userChip = document.getElementById('user-profile-chip');
+        const userName = document.getElementById('user-name');
+        const userRole = document.getElementById('user-role-badge');
+        const userAvatar = document.getElementById('user-avatar');
+
+        if (user) {
+          if (btnLogin) btnLogin.classList.add('hidden');
+          if (userChip) {
+            userChip.classList.remove('hidden');
+            userChip.classList.add('flex');
+          }
+          if (userName) userName.textContent = user.fullName || user.email;
+          if (userRole) {
+            userRole.textContent = user.role;
+            userRole.className = `text-[9px] font-extrabold uppercase px-1.5 py-0.2 rounded-full w-fit ${
+              user.role === 'ADMIN' ? 'bg-purple-100 text-purple-800' :
+              user.role === 'RECRUITER' ? 'bg-sky-100 text-sky-800' :
+              'bg-emerald-100 text-emerald-800'
+            }`;
+          }
+          if (userAvatar) {
+            userAvatar.src = user.avatarUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.fullName || user.email)}&background=4f46e5&color=fff`;
+          }
+        } else {
+          if (btnLogin) btnLogin.classList.remove('hidden');
+          if (userChip) {
+            userChip.classList.add('hidden');
+            userChip.classList.remove('flex');
+          }
+        }
+      }
+
+      // 4. Modal functions
+      window.openAuthModal = function() {
+        const m = document.getElementById('modal-auth');
+        if (m) m.classList.remove('hidden');
+      };
+
+      window.closeAuthModal = function() {
+        const m = document.getElementById('modal-auth');
+        if (m) m.classList.add('hidden');
+      };
+
+      window.switchAuthTab = function(tab) {
+        const tabLogin = document.getElementById('tab-auth-login');
+        const tabReg = document.getElementById('tab-auth-register');
+        const formLogin = document.getElementById('form-auth-login');
+        const formReg = document.getElementById('form-auth-register');
+
+        if (tab === 'login') {
+          tabLogin.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition text-blue-700 bg-white shadow-xs';
+          tabReg.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition text-slate-500 hover:text-slate-800';
+          formLogin.classList.remove('hidden');
+          formReg.classList.add('hidden');
+        } else {
+          tabReg.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition text-emerald-700 bg-white shadow-xs';
+          tabLogin.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition text-slate-500 hover:text-slate-800';
+          formReg.classList.remove('hidden');
+          formLogin.classList.add('hidden');
+        }
+      };
+
+      window.fillQuickLogin = function(email, pass) {
+        document.getElementById('login-email').value = email;
+        document.getElementById('login-password').value = pass;
+        window.handleLoginSubmit();
+      };
+
+      window.handleLoginSubmit = async function() {
+        const email = document.getElementById('login-email').value.trim();
+        const password = document.getElementById('login-password').value;
+        const btn = document.getElementById('btn-submit-login');
+
+        if (!email || !password) {
+          showToast('error', 'Lỗi', 'Vui lòng nhập đầy đủ email và mật khẩu.');
+          return;
+        }
+
+        try {
+          btn.disabled = true;
+          btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Đang xác thực...';
+
+          const res = await originalFetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+
+          const data = await res.json();
+          if (res.ok && data.success && data.token) {
+            localStorage.setItem(AUTH_STORAGE_KEY, data.token);
+            currentUser = data.user;
+            updateAuthUI(currentUser);
+            closeAuthModal();
+            showToast('success', 'Thành Công', `Chào mừng ${data.user.fullName || data.user.email} (${data.user.role})!`);
+          } else {
+            showToast('error', 'Đăng Nhập Thất Bại', data.message || 'Email hoặc mật khẩu không chính xác.');
+          }
+        } catch (err) {
+          showToast('error', 'Lỗi Kết Nối', err.message);
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Đăng Nhập Vào Hệ Thống</span>';
+        }
+      };
+
+      window.handleRegisterSubmit = async function() {
+        const fullName = document.getElementById('reg-fullname').value.trim();
+        const email = document.getElementById('reg-email').value.trim();
+        const password = document.getElementById('reg-password').value;
+        const requestedRole = document.getElementById('reg-role').value;
+        const btn = document.getElementById('btn-submit-register');
+
+        if (!email || !password) {
+          showToast('error', 'Lỗi', 'Vui lòng điền đầy đủ email và mật khẩu.');
+          return;
+        }
+
+        try {
+          btn.disabled = true;
+          btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Đang tạo tài khoản...';
+
+          const res = await originalFetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fullName, email, password, requestedRole })
+          });
+
+          const data = await res.json();
+          if (res.ok && data.success) {
+            if (data.token) {
+              localStorage.setItem(AUTH_STORAGE_KEY, data.token);
+              currentUser = data.user;
+              updateAuthUI(currentUser);
+            }
+            closeAuthModal();
+            showToast('success', 'Đăng Ký Thành Công', data.message || 'Tài khoản của bạn đã được khởi tạo!');
+          } else {
+            showToast('error', 'Đăng Ký Thất Bại', data.message);
+          }
+        } catch (err) {
+          showToast('error', 'Lỗi Kết Nối', err.message);
+        } finally {
+          btn.disabled = false;
+          btn.innerHTML = '<span>Tạo Tài Khoản Mới</span>';
+        }
+      };
+
+      window.handleLogout = function() {
+        localStorage.removeItem(AUTH_STORAGE_KEY);
+        currentUser = null;
+        updateAuthUI(null);
+        showToast('info', 'Đã Đăng Xuất', 'Bạn đã đăng xuất khỏi phiên làm việc.');
+      };
+
+      // Tự động chạy khi khởi động
+      checkCurrentSession();
+    })();
+  </script>
 </body>
 </html>
