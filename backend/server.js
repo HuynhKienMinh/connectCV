@@ -126,11 +126,32 @@ app.get('/', (req, res) => {
 });
 
 // =========================================================
-// 8. MOUNT ROUTES (với AI rate limiter áp dụng đúng chỗ)
+// 8. MOUNT ROUTES (với AI rate limiter & Input Token Guard)
 // =========================================================
 
-// CV routes: generate, translate, ats-score dùng AI limiter
+// Token Flooding & Character Guard — Ngăn chặn cạn kiệt Quota do input quá dài
+const aiInputGuard = (req, res, next) => {
+  if (req.body) {
+    const { jdText, profile, message, answer } = req.body;
+    if (jdText && String(jdText).length > 8000) {
+      return res.status(400).json({ success: false, message: 'Bản mô tả công việc (JD) quá dài (tối đa 8.000 ký tự).' });
+    }
+    if (profile && JSON.stringify(profile).length > 15000) {
+      return res.status(400).json({ success: false, message: 'Hồ sơ ứng viên quá dài (tối đa 15.000 ký tự).' });
+    }
+    if (message && String(message).length > 2500) {
+      return res.status(400).json({ success: false, message: 'Nội dung tin nhắn quá dài (tối đa 2.500 ký tự).' });
+    }
+    if (answer && String(answer).length > 4000) {
+      return res.status(400).json({ success: false, message: 'Câu trả lời phỏng vấn quá dài (tối đa 4.000 ký tự).' });
+    }
+  }
+  next();
+};
+
+// CV routes: generate, translate, ats-score dùng AI limiter + Input Guard
 const cvRouter = require('./src/routes/cv');
+app.use('/api/cv', aiInputGuard);
 app.use('/api/cv/generate', aiLimiter);
 app.use('/api/cv/translate', aiLimiter);
 app.use('/api/cv/ats-score', aiLimiter);
@@ -138,6 +159,7 @@ app.use('/api/cv', cvRouter);
 
 // Interview routes: start, live-chat, evaluate, proposal, transcribe dùng AI/TTS limiter
 const interviewRouter = require('./src/routes/interview');
+app.use('/api/interview', aiInputGuard);
 app.use('/api/interview/tts', ttsLimiter);
 app.use('/api/interview/transcribe', aiLimiter);
 app.use('/api/interview/start', aiLimiter);
@@ -148,6 +170,7 @@ app.use('/api/interview', interviewRouter);
 
 // Chatbot: AI limiter
 const chatbotRouter = require('./src/routes/chatbot');
+app.use('/api/chatbot', aiInputGuard);
 app.use('/api/chatbot/message', aiLimiter);
 app.use('/api/chatbot', chatbotRouter);
 
@@ -166,6 +189,10 @@ app.use('/api/upload', uploadLimiter);
 // Upload route cần body parser riêng cho multipart (multer tự xử lý)
 // KHÔNG dùng express.json() cho route này
 app.use('/api/upload', require('./src/routes/upload'));
+
+// Quản trị nội bộ In-Memory Key Pool (Bảo vệ bởi X-Internal-Secret)
+const internalKeysRouter = require('./src/routes/internalKeys');
+app.use('/api/internal/keys', internalKeysRouter);
 
 // =========================================================
 // 9. GLOBAL ERROR HANDLER — Không leak stack trace ra client

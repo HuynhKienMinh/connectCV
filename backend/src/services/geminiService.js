@@ -1,13 +1,19 @@
-// geminiService.js v2 — Thêm timeout per-request để tránh treo server
+// geminiService.js v3 — Hardened Multi-Key Pool & Auto-Failover
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const keyManager = require('./keyManager');
 require('dotenv').config();
 
-const apiKey = process.env.GEMINI_API_KEY;
-if (!apiKey) {
-  console.warn('⚠️  CẢNH BÁO: GEMINI_API_KEY chưa được cấu hình trong .env!');
-}
-
-const genAI = new GoogleGenerativeAI(apiKey || '');
+// ─────────────────────────────────────────────────────────
+// DYNAMIC GENAI PROXY (Tương thích 100% mã nguồn cũ)
+// Tự động cấp client với active key mới nhất từ RAM Key Pool
+// ─────────────────────────────────────────────────────────
+const genAI = {
+  getGenerativeModel(options) {
+    const activeKey = keyManager.getActiveKey().apiKey;
+    const client = new GoogleGenerativeAI(activeKey);
+    return client.getGenerativeModel(options);
+  }
+};
 
 // ─────────────────────────────────────────────────────────
 // HELPER: Trích xuất JSON an toàn từ text LLM
@@ -36,7 +42,7 @@ function extractJSON(rawText) {
 }
 
 // ─────────────────────────────────────────────────────────
-// HELPER: Race giữa Gemini call và timeout
+// HELPER: Race giữa Gemini call và timeout (45 giây)
 // ─────────────────────────────────────────────────────────
 function withTimeout(promise, ms = 45000, label = 'Gemini') {
   return Promise.race([
@@ -48,7 +54,7 @@ function withTimeout(promise, ms = 45000, label = 'Gemini') {
 }
 
 // ─────────────────────────────────────────────────────────
-// MODEL CHAIN — fallback nếu model đầu lỗi
+// MODEL CHAIN — Tối ưu tốc độ và độ ổn định
 // ─────────────────────────────────────────────────────────
 const MODEL_CHAIN = [
   'gemini-2.5-flash-lite',
@@ -58,56 +64,76 @@ const MODEL_CHAIN = [
 ];
 
 /**
- * Gọi Gemini AI sinh JSON — tự động fallback model + timeout 45s mỗi model
+ * Gọi Gemini AI sinh JSON — Kết hợp Auto-Failover Key Pool + Model Fallback
  */
 async function callGeminiJSON(prompt, preferredModel = 'gemini-2.5-flash-lite') {
-  const modelsToTry = [preferredModel, ...MODEL_CHAIN.filter(m => m !== preferredModel)];
-  let lastError = null;
+  return keyManager.executeWithRetry(async (activeApiKey) => {
+    const client = new GoogleGenerativeAI(activeApiKey);
+    const modelsToTry = [preferredModel, ...MODEL_CHAIN.filter(m => m !== preferredModel)];
+    let lastError = null;
 
-  for (const modelName of modelsToTry) {
-    try {
-      const model = genAI.getGenerativeModel({
-        model: modelName,
-        generationConfig: { responseMimeType: 'application/json' }
-      });
+    for (const modelName of modelsToTry) {
+      try {
+        const model = client.getGenerativeModel({
+          model: modelName,
+          generationConfig: { responseMimeType: 'application/json' }
+        });
 
-      const result = await withTimeout(
-        model.generateContent(prompt),
-        45000,
-        modelName
-      );
+        const result = await withTimeout(
+          model.generateContent(prompt),
+          45000,
+          modelName
+        );
 
-      const text = result.response.text();
-      return extractJSON(text);
-    } catch (error) {
-      console.warn(`[Gemini] Model ${modelName} lỗi: ${error.message}`);
-      lastError = error;
+        const text = result.response.text();
+        return extractJSON(text);
+      } catch (error) {
+        // Nếu lỗi do Quota / Rate limit (429) hoặc Auth (403), ném lỗi ra ngoài ngay
+        // để keyManager kích hoạt chuyển sang Key dự phòng
+        if (keyManager.isRateLimitError(error) || keyManager.isAuthError(error)) {
+          throw error;
+        }
+        console.warn(`[Gemini] Model ${modelName} lỗi: ${error.message}`);
+        lastError = error;
+      }
     }
-  }
 
-  console.error('[Gemini] Toàn bộ model đều thất bại:', lastError?.message);
-  throw new Error('AI tạm thời không khả dụng. Vui lòng thử lại sau ít phút.');
+    console.error('[Gemini] Toàn bộ model đều thất bại:', lastError?.message);
+    throw lastError || new Error('AI tạm thời không khả dụng. Vui lòng thử lại sau ít phút.');
+  }, 'callGeminiJSON');
 }
 
 /**
- * Gọi Gemini AI sinh text tự do — với timeout 45s
+ * Gọi Gemini AI sinh text tự do — Kết hợp Auto-Failover Key Pool + Model Fallback
  */
 async function callGeminiText(prompt, preferredModel = 'gemini-2.5-flash-lite') {
-  const modelsToTry = [preferredModel, ...MODEL_CHAIN.filter(m => m !== preferredModel)];
-  let lastError = null;
+  return keyManager.executeWithRetry(async (activeApiKey) => {
+    const client = new GoogleGenerativeAI(activeApiKey);
+    const modelsToTry = [preferredModel, ...MODEL_CHAIN.filter(m => m !== preferredModel)];
+    let lastError = null;
 
-  for (const modelName of modelsToTry) {
-    try {
-      const model  = genAI.getGenerativeModel({ model: modelName });
-      const result = await withTimeout(model.generateContent(prompt), 45000, modelName);
-      return result.response.text();
-    } catch (error) {
-      console.warn(`[Gemini] Model ${modelName} lỗi: ${error.message}`);
-      lastError = error;
+    for (const modelName of modelsToTry) {
+      try {
+        const model = client.getGenerativeModel({ model: modelName });
+        const result = await withTimeout(model.generateContent(prompt), 45000, modelName);
+        return result.response.text();
+      } catch (error) {
+        if (keyManager.isRateLimitError(error) || keyManager.isAuthError(error)) {
+          throw error;
+        }
+        console.warn(`[Gemini] Model ${modelName} lỗi: ${error.message}`);
+        lastError = error;
+      }
     }
-  }
 
-  throw new Error('AI tạm thời không khả dụng. Vui lòng thử lại sau ít phút.');
+    throw lastError || new Error('AI tạm thời không khả dụng. Vui lòng thử lại sau ít phút.');
+  }, 'callGeminiText');
 }
 
-module.exports = { genAI, callGeminiJSON, callGeminiText, extractJSON };
+module.exports = {
+  genAI,
+  keyManager,
+  callGeminiJSON,
+  callGeminiText,
+  extractJSON
+};
