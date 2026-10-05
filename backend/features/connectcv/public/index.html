@@ -3668,7 +3668,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           URL.revokeObjectURL(url);
         }, 200);
 
-        showToastSuccess('Đã tải xuống file Word (.docx) chuẩn mẫu thành công!', 'Hoàn tất');
+        showToastSuccess(format === 'ats' ? 'Đã xuất Word nội dung chỉnh sửa được.' : 'Đã xuất file Word theo thiết kế mẫu.', 'Hoàn tất');
       } catch (err) {
         console.error('Lỗi tải file Word từ máy chủ:', err);
         showToastWarning('Không thể tải file Word tự động. Vui lòng thử lại.', 'Lỗi');
@@ -4887,7 +4887,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
                   <div class="bg-gradient-to-r from-purple-50/60 to-indigo-50/60 border border-purple-200/80 p-3.5 rounded-xl space-y-2 text-xs">
                     <div class="font-bold text-purple-900 flex items-center text-[11px] uppercase tracking-wider">
                       <i class="fa-solid fa-wand-magic-sparkles text-purple-600 mr-1.5"></i>
-                      Gợi Ý Phiên Bản Trả Lời Xuất Sắc Theo Chuẩn STAR:
+                      Tách STAR từ câu trả lời gốc — phần trống cần bổ sung dữ kiện thật:
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                       <div class="bg-white/90 p-2.5 rounded-lg border border-purple-100">
