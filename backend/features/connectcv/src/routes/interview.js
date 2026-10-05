@@ -61,7 +61,7 @@ router.post('/start', async (req, res) => {
 
     const safeTitle   = escStr(jobTitle, 150);
     const safeJD      = sanitizeForPrompt(jdText, 4000);
-    const safeProfile = sanitizeForPrompt(require('../services/aiProfilePrivacy').planningProfile(profile), 2000);
+    const safeProfile = sanitizeForPrompt(require('../services/aiProfilePrivacy').planningProfile(typeof profile === 'string' ? { experience: profile } : profile), 2000);
 
     const prompt = `
 Bạn là chuyên gia phỏng vấn tuyển dụng hàng đầu.
@@ -74,6 +74,7 @@ Hồ sơ ứng viên:
 ${safeProfile}
 
 YÊU CẦU: Với mỗi câu hỏi, cung cấp: category (Behavioral/Technical/Situational), difficulty (Easy/Medium/Hard), question, winningAnswerSample (chuẩn STAR).
+Mỗi câu trả lời mẫu tối đa 180 từ. Đây là ví dụ GIẢ ĐỊNH để luyện tập, không phải thành tích thật của ứng viên. Nếu minh họa dữ kiện ngoài hồ sơ, ghi rõ "Ví dụ giả định"; không khẳng định ứng viên đã dùng công cụ, làm dự án hoặc đạt số liệu chưa được cung cấp.
 
 BẮT BUỘC trả về duy nhất JSON:
 {
@@ -419,6 +420,7 @@ Phân loại: "${safeCat}"
 Câu trả lời của ứng viên: "${safeA}"
 
 Đánh giá theo: STAR (Situation/Task/Action/Result) + Intentional Hooking.
+Chỉ đánh giá dựa trên câu trả lời đã cung cấp. improvedAnswer phải giữ nguyên dữ kiện, số liệu và công cụ; không tự thêm thành tích, thời gian hay kết quả chưa được xác nhận. Nếu thiếu thông tin, ghi gợi ý cần bổ sung ngoài câu trả lời.
 Trả về DUY NHẤT JSON:
 {
   "score": 8.5,
