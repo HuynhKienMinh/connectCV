@@ -39,19 +39,20 @@ function extractJSON(rawText) {
     try { return JSON.parse(text.substring(start, end + 1).trim()); } catch (e) {}
   }
 
-  throw new Error(`Không thể trích xuất JSON từ phản hồi AI: ${text.slice(0, 150)}...`);
+  throw new Error('Không thể trích xuất JSON từ phản hồi AI.');
 }
 
 // ─────────────────────────────────────────────────────────
 // HELPER: Race giữa Gemini call và timeout (45 giây)
 // ─────────────────────────────────────────────────────────
-function withTimeout(promise, ms = 45000, label = 'Gemini') {
-  return Promise.race([
+async function withTimeout(promise, ms = 45000, label = 'Gemini') {
+  let timer;
+  try { return await Promise.race([
     promise,
     new Promise((_, reject) =>
-      setTimeout(() => reject(new Error(`[Timeout] ${label} không phản hồi sau ${ms / 1000}s`)), ms)
+      timer = setTimeout(() => reject(new Error(`[Timeout] ${label} không phản hồi sau ${ms / 1000}s`)), ms)
     )
-  ]);
+  ]); } finally { clearTimeout(timer); }
 }
 
 // ─────────────────────────────────────────────────────────
@@ -75,8 +76,8 @@ async function callGeminiJSON(prompt, preferredModel = 'gemini-2.5-flash-lite') 
       try {
         const model = client.getGenerativeModel({
           model: modelName,
-          generationConfig: { responseMimeType: 'application/json' }
-        });
+          generationConfig: { responseMimeType: 'application/json', maxOutputTokens: 8192, thinkingConfig: { thinkingBudget: 0 } }
+        }, { timeout: 45000 });
 
         const result = await withTimeout(
           model.generateContent(prompt),
@@ -117,7 +118,7 @@ async function callGeminiText(prompt, preferredModel = 'gemini-2.5-flash-lite') 
 
     for (const modelName of modelsToTry) {
       try {
-        const model = client.getGenerativeModel({ model: modelName });
+        const model = client.getGenerativeModel({ model: modelName, generationConfig: { maxOutputTokens: 4096, thinkingConfig: { thinkingBudget: 0 } } }, { timeout: 45000 });
         const result = await withTimeout(model.generateContent(prompt), 45000, modelName);
         return result.response.text();
       } catch (error) {

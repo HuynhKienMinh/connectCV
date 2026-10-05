@@ -3486,6 +3486,12 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         return;
       }
 
+      if (format === 'design' && window.connectCVServerPdf === false) {
+        showToastWarning('Chọn Lưu thành PDF trong hộp thoại in. Bật đồ họa nền và tắt đầu trang/chân trang để giữ thiết kế mẫu.', 'Lưu PDF bằng trình duyệt');
+        printCV();
+        return;
+      }
+
       const fullscreenModal = document.getElementById('modal-cv-fullscreen');
       const isFullscreen = fullscreenModal && !fullscreenModal.classList.contains('hidden');
       const iframe = isFullscreen 
