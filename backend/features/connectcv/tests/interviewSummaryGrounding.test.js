@@ -15,3 +15,8 @@ test('missing, duplicated or invalid evaluation scores fail explicitly',()=>{
  for(const rows of [[],[{answerId:'answer-1',score:12}],[{answerId:'answer-1',score:8},{answerId:'answer-1',score:9}]])assert.throws(()=>groundSummary({qaBreakdown:rows},pairs));
  assert.deepEqual(answeredPairs([{role:'interviewer',message:'Only a question'}]),[]);
 });
+test('AI feedback cannot report new numerical claims outside the supplied answer',()=>{
+ const result=groundSummary({improvements:['The query improved by 30ms'],strengths:['Reached 5ms'],finalAdvice:'Claim 70% improvement',qaBreakdown:[{answerId:'answer-1',score:8,critique:'Reduced by 30ms'}]},answeredPairs(history));
+ assert.equal(result.strengths.length,0);
+ for(const text of [...result.improvements,result.finalAdvice,result.qaBreakdown[0].critique])assert.doesNotMatch(text,/30|70|5ms/);
+});

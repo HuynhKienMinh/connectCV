@@ -12,6 +12,10 @@ function answeredPairs(history) {
 function groundSummary(result,pairs){
  if(!pairs.length)throw Error('No answered interview turns');
  const rows=Array.isArray(result.qaBreakdown)?result.qaBreakdown:[];
+ const numbers=text=>String(text||'').match(/\d+(?:[.,]\d+)?/g)||[];
+ const sourceNumbers=new Set(pairs.flatMap(pair=>numbers(pair.candidateAnswer)));
+ const supported=text=>numbers(text).every(number=>sourceNumbers.has(number));
+ const fallback='Hãy đối chiếu số liệu gốc và bổ sung bối cảnh, nhiệm vụ, hành động và kết quả thực tế.';
  const normalized=value=>String(value||'').normalize('NFKC').replace(/\s+/g,' ').trim();
  const qaBreakdown=pairs.map(pair=>{
   const matches=rows.filter(row=>row.answerId===pair.answerId);
@@ -21,9 +25,9 @@ function groundSummary(result,pairs){
    const quote=String(row.suggestedStarAnswer?.[key]||'').trim();
    suggestedStarAnswer[key]=quote&&source.includes(normalized(quote))?quote:'';
   }
-  return {...row,...pair,suggestedStarAnswer};
+  return {...row,...pair,critique:supported(row.critique)?String(row.critique||''):fallback,suggestedStarAnswer};
  });
  const overallScore=Math.round(qaBreakdown.reduce((sum,row)=>sum+row.score,0)/qaBreakdown.length*10)/10;
- return {...result,qaBreakdown,overallScore,rating:overallScore>=8.5?'Xuất Sắc':overallScore>=7?'Rất Tốt':'Cần Trau Dồi Thêm',summary:`Đánh giá dựa trên ${pairs.length} câu trả lời đã được ghi nhận. Các câu hỏi chưa trả lời không được chấm điểm.`};
+ return {...result,qaBreakdown,overallScore,strengths:(Array.isArray(result.strengths)?result.strengths:[]).filter(supported),improvements:(Array.isArray(result.improvements)?result.improvements:[]).map(text=>supported(text)?text:fallback),finalAdvice:supported(result.finalAdvice)?result.finalAdvice:fallback,rating:overallScore>=8.5?'Xuất Sắc':overallScore>=7?'Rất Tốt':'Cần Trau Dồi Thêm',summary:`Đánh giá dựa trên ${pairs.length} câu trả lời đã được ghi nhận. Các câu hỏi chưa trả lời không được chấm điểm.`};
 }
 module.exports={answeredPairs,groundSummary};
