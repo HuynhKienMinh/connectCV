@@ -1,5 +1,7 @@
 'use strict';
 (() => {
+ // Unsaved drafts from a shared browser must not cross account boundaries.
+ for(const key of Object.keys(sessionStorage))if(key.startsWith('connectcv_'))sessionStorage.removeItem(key);
  const allowed=new Set(window.connectCVParentOrigins||[]),pending=new Map();
  const parentOrigin=(()=>{try{return new URL(document.referrer).origin;}catch{return '';}})();
  window.addEventListener('message',e=>{
