@@ -1,2 +1,6 @@
-@import "tailwindcss";
-@source "../../backend/features/connectcv/public/index.html";
+/* Studio preserves the Tailwind 3 design contract of the local reference.
+   Compiled CSS is committed and checked during every frontend build.
+   Regenerate with build-studio.cjs and an external 3.4.17 compiler. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
