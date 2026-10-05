@@ -119,7 +119,7 @@ router.post('/tts', async (req, res) => {
     res.set({
       'Content-Type': 'audio/mpeg',
       'Content-Length': audioBuffer.length,
-      'Cache-Control': 'public, max-age=86400'
+      'Cache-Control': 'no-store'
     });
     return res.end(audioBuffer);
   } catch (err) {

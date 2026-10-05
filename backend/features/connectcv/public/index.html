@@ -29,6 +29,12 @@
       #btn-generate-cv { width: 100%; white-space: normal; }
     }
     body { font-family: 'Inter', sans-serif; }
+    #live-visualizer-container { background:linear-gradient(#0f172a,#020617); color:#f8fafc; min-height:340px; }
+    #live-orb { background:linear-gradient(135deg,#2563eb,#4f46e5,#06b6d4); }
+    #live-caption-box,#live-quick-input,#transcript-drawer { background:#1e293b; color:#f8fafc; }
+    #live-status-badge { background:#1d4ed8; color:#fff; }
+    #live-quick-feedback-box { background:#422006; color:#fef3c7; }
+    #btn-live-mic { background:#dc2626; color:#fff; }
     .tab-active { border-bottom: 3px solid #2563eb; color: #2563eb; font-weight: 600; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -3930,6 +3936,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       try {
         const res = await fetch('/api/interview/tts', {
           method: 'POST',
+          signal: AbortSignal.timeout(15000),
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text, voice: selectedVoice })
         });
