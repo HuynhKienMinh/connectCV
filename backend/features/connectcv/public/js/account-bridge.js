@@ -22,6 +22,14 @@
   return result;
  };
  window.addEventListener('load',async()=>{
+  if(window.connectCVServerPdf===false)for(const button of document.querySelectorAll('button[onclick]')){
+   if((button.getAttribute('onclick')||'').includes('downloadCVDoc(')){
+    button.textContent='Word (nội dung)';button.title='Tải Word dạng văn bản chỉnh sửa được. Dùng PDF để giữ thiết kế mẫu.';
+   }
+   if((button.getAttribute('onclick')||'').includes('downloadCVPDF(')){
+    button.textContent='Lưu PDF';button.title='Mở hộp thoại in để lưu PDF theo thiết kế mẫu.';
+   }
+  }
   const module=new URLSearchParams(location.search).get('module');
   const tabs={cv:'tab-cv-module',interview:'tab-interview-module',social:'tab-debrief',chatbot:'tab-chatbot'};
   if(tabs[module]&&typeof switchTab==='function')switchTab(tabs[module]);

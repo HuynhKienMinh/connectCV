@@ -3609,6 +3609,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // TẢI FILE WORD (.DOCX) CHUẨN MẪU CV (ĐÚNG MÀU SẮC, ĐÚNG THEO MẪU ĐÃ CHỌN, ĐIỀN DỮ LIỆU ỨNG VIÊN)
     async function downloadCVDoc(format = 'design') {
+      if (window.connectCVServerPdf === false) format = 'ats';
       if (!latestCVData) {
         showToastWarning('Vui lòng tạo CV trước khi tải xuống.', 'Chưa có CV');
         return;
