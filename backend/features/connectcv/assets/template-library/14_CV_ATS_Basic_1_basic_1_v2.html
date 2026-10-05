@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic 1 - Nguyễn Tùng Dương (Vận hành sàn thương mại điện tử)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; min-height:280mm; margin:-15mm -20mm; overflow:hidden;">
+            <!-- CỘT TRÁI - SIDEBAR XÁM -->
+            <div style="width:36%; background:#4A5568; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0;">
+                <div style="text-align:center; margin-bottom:18px;">
+                    <div style="width:95px; height:95px; border-radius:6px; overflow:hidden; background:#5a6a80; margin:0 auto 12px auto; border:3px solid rgba(255,255,255,0.4);">
+                        <img src="/images/avatars/basic_1_v2.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/basic_1_v2.jpg';" />
+                    </div>
+                    <h1 style="font-size:15px; font-weight:800; color:#ffffff; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">Nguyễn Tùng Dương</h1>
+                    <div style="font-size:10.5px; color:#cbd5e0; margin-top:5px;" contenteditable="true">Vận hành sàn thương mại điện tử</div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#e2e8f0; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Thông Tin Cá Nhân</h3>
+                    <div style="font-size:10px; color:#e2e8f0; line-height:1.8;">
+                        <div contenteditable="true">📞 0123 456 789</div>
+                        <div contenteditable="true">✉️ hotro@topcv.vn</div>
+                        <div contenteditable="true">📍 Hoàng Mai, Hà Nội</div>
+                    </div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#e2e8f0; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Học Vấn</h3>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="font-size:10.5px; font-weight:700; color:#ffffff;" contenteditable="true">Đại học TopCV</div>
+                        <div style="font-size:10px; color:#e2e8f0;" contenteditable="true">Cử nhân Thương mại điện tử</div>
+                        <div style="font-size:9.5px; color:#a0aec0;" contenteditable="true">2016 - 2020 • Tốt nghiệp loại: Giỏi | GPA: 3.5/4.0</div>
+                    </div>
+                    
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#e2e8f0; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kỹ Năng</h3>
+                    <div style="font-size:10px; color:#e2e8f0; margin-bottom:4px;" contenteditable="true">▸ Kỹ năng SEO cơ bản sàn TMĐT</div><div style="font-size:10px; color:#e2e8f0; margin-bottom:4px;" contenteditable="true">▸ Kỹ năng phân tích, nghiên cứu thị trường</div><div style="font-size:10px; color:#e2e8f0; margin-bottom:4px;" contenteditable="true">▸ Kỹ năng viết nội dung sản phẩm</div><div style="font-size:10px; color:#e2e8f0; margin-bottom:4px;" contenteditable="true">▸ Kỹ năng giải quyết vấn đề</div><div style="font-size:10px; color:#e2e8f0; margin-bottom:4px;" contenteditable="true">▸ Quản lý kho hàng & đơn hàng</div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI -->
+            <div style="flex:1; padding:24px 22px;">
+                <div style="margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #4A5568;">
+                    <h2 style="font-size:14px; font-weight:800; color:#4A5568; text-transform:uppercase; margin-bottom:8px;">Mục Tiêu Nghề Nghiệp</h2>
+                    <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify;" contenteditable="true">Với hơn 4 năm kinh nghiệm trong lĩnh vực Thương mại điện tử, tôi có thế mạnh trong quản lý vận hành và tối ưu quy trình bán hàng trên các sàn TMĐT. Ở vị trí gần nhất, tôi đã duy trì điểm vận hành của gian hàng ở mức 4.8/5.0 và góp phần nâng tỷ lệ chốt đơn hàng lên 10% chỉ sau 6 tháng. Trong 2 năm tới, tôi đặt mục tiêu phát triển lên vị trí quản lý, dẫn dắt đội ngũ nâng cao hiệu quả kinh doanh trực tuyến của doanh nghiệp.</p>
+                </div>
+
+                <div>
+                    <h2 style="font-size:13px; font-weight:800; color:#4A5568; text-transform:uppercase; border-bottom:2px solid #4A5568; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">NDS Group</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">02/2024 - Đến nay</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#4A5568; margin-bottom:5px;" contenteditable="true">Chuyên viên vận hành thương mại điện tử</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Triển khai thiết lập gian hàng bao gồm: tiêu đề, mô tả, giá cả, hình ảnh sản phẩm và giao diện gian hàng trên Shopee, Lazada, TikTok Shop.</li><li contenteditable="true">Đề xuất tham gia các chương trình khuyến mãi trên các Sàn TMĐT nhằm thúc đẩy doanh số bán hàng.</li><li contenteditable="true">Thiết lập và triển khai các chiến dịch quảng cáo trên các sàn TMĐT: quảng cáo hiển thị, quảng cáo video, quảng cáo tìm kiếm.</li><li contenteditable="true">Tham gia xây dựng 5 kịch bản bán hàng, 3 kịch bản CSKH giúp tăng tỷ lệ chốt đơn lên 10% trong 6 tháng.</li><li contenteditable="true">Theo dõi, cập nhật và báo cáo các chỉ số như: doanh thu, traffic, CR, AOV, ngân sách, tỉ lệ click, tỉ lệ chuyển đổi.</li><li contenteditable="true">Duy trì điểm vận hành của gian hàng ở mức 4.8/5.0 trong suốt 6 tháng.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">NTD & Partners</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">07/2021 - 01/2024</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#4A5568; margin-bottom:5px;" contenteditable="true">Nhân viên thương mại điện tử</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Thiết lập mục tiêu và xây dựng kế hoạch bán hàng trên các sàn TMĐT (Tiki, Lazada, Shopee) để thúc đẩy doanh số và phát triển thương hiệu.</li><li contenteditable="true">Đăng tải, cập nhật sản phẩm chuẩn SEO, đồng thời chỉnh sửa giao diện gian hàng.</li><li contenteditable="true">Nghiên cứu và tham gia các chương trình khuyến mãi trên các trang TMĐT.</li><li contenteditable="true">Tối ưu các chỉ số vận hành trên các sàn TMĐT như: Thời gian trả lời tin nhắn, thời gian xử lý đơn hàng, giao hàng.</li><li contenteditable="true">Làm báo cáo doanh số bán hàng hàng tháng trên các kênh TMĐT.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '14_CV_ATS_Basic_1_basic_1_v2.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

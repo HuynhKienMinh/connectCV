@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyên gia - Nguyễn Tùng Dương (Giám đốc Quan hệ Khách hàng Doanh nghiệp)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="border-bottom:3px solid #003161; padding-bottom:14px; margin-bottom:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px;">
+                <div>
+                    <h1 style="font-size:24px; font-weight:900; color:#0f172a; margin:0; text-transform:none;" contenteditable="true">Nguyễn Tùng Dương</h1>
+                    <div style="font-size:13px; font-weight:700; color:#003161; margin-top:4px;" contenteditable="true">Giám đốc Quan hệ Khách hàng Doanh nghiệp</div>
+                </div>
+                <div style="text-align:right; font-size:11px; color:#475569; line-height:1.7;">
+                    <div contenteditable="true">📞 0123 456 789</div>
+                    <div contenteditable="true">✉️ tech.growth@topcv.vn</div>
+                    <div contenteditable="true">📍 Hoàng Mai, Hà Nội</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom:16px;">
+            <h2 style="font-size:13px; font-weight:800; color:#003161; text-transform:uppercase; border-bottom:2px solid #003161; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+            <p style="font-size:11.5px; color:#334155; line-height:1.6; text-align:justify;" contenteditable="true">Giám đốc bán hàng 15 năm kinh nghiệm trong lĩnh vực công nghệ và bán lẻ. Là người giỏi truyền động lực và định hướng kết quả, có tư duy đổi mới, tư duy phân tích và lập kế hoạch chiến lược dựa trên dữ liệu. Mong muốn tìm kiếm công việc vị trí giám đốc vùng để cải thiện năng lực kinh doanh và đóng góp vào sự phát triển chung của toàn doanh nghiệp.</p>
+        </div>
+
+        <div style="margin-bottom:16px;">
+            <h2 style="font-size:13px; font-weight:800; color:#003161; text-transform:uppercase; border-bottom:2px solid #003161; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+            
+            <div style="display:flex; gap:16px; margin-bottom:14px;">
+                <div style="width:110px; font-size:11px; color:#64748b; flex-shrink:0; text-align:right; padding-top:2px;" contenteditable="true">08/2012 - 08/2022</div>
+                <div style="width:1px; background:#003161; flex-shrink:0;"></div>
+                <div style="flex:1;">
+                    <div style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty ABC TopCV</div>
+                    <div style="font-size:11.5px; font-weight:700; color:#003161; margin-bottom:5px;" contenteditable="true">Giám Đốc Quan Hệ Khách Hàng Doanh Nghiệp</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Quản lý danh mục khách hàng doanh nghiệp trong ngành thời trang (nhà phân phối, đại lý, chuỗi bán lẻ).</li><li contenteditable="true">Phát triển mạng lưới khách hàng B2B qua hội chợ, sự kiện ngành hàng, triển lãm thời trang.</li><li contenteditable="true">Tư vấn giải pháp tài chính, cấp tín dụng và phương án thanh toán cho doanh nghiệp ngành thời trang.</li><li contenteditable="true">Phối hợp với bộ phận thiết kế, sản xuất để cá nhân hóa sản phẩm hoặc dịch vụ theo nhu cầu từng khách hàng.</li><li contenteditable="true">Đàm phán hợp đồng mua hàng, hợp tác thương hiệu (co-branding) và phân phối.</li><li contenteditable="true">Quản lý đội ngũ sales B2B, đánh giá hiệu suất và đào tạo kỹ năng bán hàng doanh nghiệp.</li><li contenteditable="true">Xây dựng báo cáo về doanh số, tỷ lệ giữ chân khách hàng và xu hướng tiêu dùng trong ngành.</li><li contenteditable="true">Thành tựu: Đóng góp 42% tổng doanh thu B2B năm 2024 thông qua việc ký kết với 3 chuỗi bán lẻ thời trang lớn.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display:flex; gap:16px; margin-bottom:14px;">
+                <div style="width:110px; font-size:11px; color:#64748b; flex-shrink:0; text-align:right; padding-top:2px;" contenteditable="true">08/2017 - 07/2012</div>
+                <div style="width:1px; background:#003161; flex-shrink:0;"></div>
+                <div style="flex:1;">
+                    <div style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty BCD TopCV</div>
+                    <div style="font-size:11.5px; font-weight:700; color:#003161; margin-bottom:5px;" contenteditable="true">Giám Đốc Kinh Doanh</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Xây dựng và tham mưu cho chủ tịch HĐQT về chiến lược tổng thể, kế hoạch kinh doanh và Marketing của Công ty.</li><li contenteditable="true">Tham mưu cho chủ tịch HĐQT về các vấn đề: Công tác hoạch định cơ cấu tổ chức nguồn lực nhân sự kinh doanh của công ty, hệ thống công cụ quản trị, quy trình quy định, cơ chế chính sách của các bộ phận kinh doanh nhằm đạt được mục tiêu kinh doanh của công ty.</li><li contenteditable="true">Xây dựng kế hoạch và tổ chức thực hiện việc kiểm tra, giám sát tất cả hoạt động của các bộ phận liên quan.</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div style="display:flex; gap:20px;">
+            <div style="flex:1;">
+                <h2 style="font-size:13px; font-weight:800; color:#003161; text-transform:uppercase; border-bottom:2px solid #003161; padding-bottom:4px; margin-bottom:10px;">Học Vấn</h2>
+                
+                <div style="margin-bottom:8px;">
+                    <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Chuyên ngành Quản trị Kinh Doanh</div>
+                    <div style="font-size:11.5px; color:#003161; font-weight:600;" contenteditable="true">Cử nhân Quản trị Kinh doanh</div>
+                    <div style="font-size:11px; color:#64748b;" contenteditable="true">2003 - 2005 • Tốt nghiệp loại Giỏi</div>
+                </div>
+                
+            </div>
+            <div style="flex:1;">
+                <h2 style="font-size:13px; font-weight:800; color:#003161; text-transform:uppercase; border-bottom:2px solid #003161; padding-bottom:4px; margin-bottom:10px;">Kỹ Năng</h2>
+                <div style="columns:2; column-gap:10px;">
+                    <div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ Phân tích thị trường, đối thủ cạnh tranh</div><div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ Lập kế hoạch, chiến lược kinh doanh, chiến lược Marketing</div><div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ Đàm phán hợp đồng thương hiệu (co-branding)</div><div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ Quản lý danh mục khách hàng doanh nghiệp B2B</div><div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ Lãnh đạo và quản lý đội ngũ sales B2B</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '19_CV_ATS_Chuyen_Gia_experts.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

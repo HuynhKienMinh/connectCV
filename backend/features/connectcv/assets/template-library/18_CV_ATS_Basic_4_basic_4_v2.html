@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic 4 - NGUYỄN KHÁNH HUYỀN (TRƯỞNG NHÓM TESTER)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="margin:-15mm -20mm 0 -20mm; background:#ffffff; padding:20px 28px 16px 28px; border-bottom:3px solid #0A7EB5;">
+            <div style="display:flex; gap:20px; align-items:center;">
+                <div style="width:95px; height:115px; border-radius:8px; overflow:hidden; background:#e0f7fa; flex-shrink:0; border:2px solid #0A7EB5;">
+                    <img src="/images/avatars/basic_4_v2.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/basic_4_v2.jpg';" />
+                </div>
+                <div style="flex:1;">
+                    <h1 style="font-size:22px; font-weight:900; color:#0f172a; text-transform:uppercase; margin:0;" contenteditable="true">NGUYỄN KHÁNH HUYỀN</h1>
+                    <div style="font-size:13px; font-weight:700; color:#0A7EB5; margin-top:4px; text-transform:uppercase;" contenteditable="true">TRƯỞNG NHÓM TESTER</div>
+                    <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:16px; font-size:11px; color:#64748b;">
+                        <span>📞 0123456789</span>
+                        <span>✉️ tech.growth@topcv.vn</span>
+                        <span>📍 Ba Đình, Hà Nội</span>
+                    </div>
+                </div>
+                <div style="text-align:right; flex-shrink:0;">
+                    <div style="font-size:10px; color:#64748b; margin-bottom:4px;" contenteditable="true">Website</div>
+                    <div style="font-size:10px; color:#0A7EB5;" contenteditable="true">bc.net/tencuaban</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:18px; margin-bottom:16px;">
+            <div style="background:#0A7EB508; border:1px solid #0A7EB530; border-radius:8px; padding:14px;">
+                <p style="font-size:11.5px; color:#334155; line-height:1.6; margin:0; font-style:italic;" contenteditable="true">"Trưởng nhóm Tester với 7 năm kinh nghiệm trong lĩnh vực kiểm thử phần mềm, sở hữu các chứng chỉ quốc tế chuyên sâu về QA. Kỹ năng lãnh đạo tốt, giàu kinh nghiệm trong việc đào tạo, phát triển đội nhóm kiểm thử. Tìm kiếm cơ hội đảm nhận vai trò quản lý mảng Tester tại môi trường chuyên nghiệp, nơi có thể đóng góp vào sự phát triển công nghệ và chất lượng sản phẩm của doanh nghiệp."</p>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:20px; margin-bottom:16px;">
+            <div style="flex:3;">
+                <h2 style="font-size:13px; font-weight:800; color:#0A7EB5; text-transform:uppercase; border-bottom:2px solid #0A7EB5; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                
+                <div style="margin-bottom:14px;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                        <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty CP Công nghệ Minwon Việt Nam</span>
+                        <span style="font-size:10.5px; color:#64748b;" contenteditable="true">08/2022 - 08/2025</span>
+                    </div>
+                    <div style="font-size:11.5px; font-weight:700; color:#0A7EB5; margin-bottom:5px;" contenteditable="true">Tester Leader</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Chịu trách nhiệm quản lý nghiệp vụ, công việc của team Tester.</li><li contenteditable="true">Lập kế hoạch, chiến lược test cho team tester và quản lý tiến độ, chất lượng của đội nhóm.</li><li contenteditable="true">Thực hiện việc test với các loại sản phẩm khác nhau, áp dụng các kỹ thuật test và phần mềm test khác nhau để xác nhận sản phẩm đáp ứng được các chỉ tiêu kỹ thuật theo yêu cầu của khách hàng.</li><li contenteditable="true">Đảm bảo tiến độ, chất lượng công việc và báo cáo thường xuyên tới quản lý.</li><li contenteditable="true">Tham gia xây dựng tài liệu dự án, viết tài liệu hướng dẫn sử dụng chương trình.</li><li contenteditable="true">Tổng hợp kết quả test của cả team, tạo báo cáo phân tích chất lượng cho khách hàng.</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom:14px;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                        <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty Cổ phần V-Tech</span>
+                        <span style="font-size:10.5px; color:#64748b;" contenteditable="true">08/2018 - 07/2022</span>
+                    </div>
+                    <div style="font-size:11.5px; font-weight:700; color:#0A7EB5; margin-bottom:5px;" contenteditable="true">Senior QA / Tester</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Thực hiện kiểm thử tự động API với Postman và Newman.</li><li contenteditable="true">Thiết kế test cases, test scenarios cho hơn 15 dự án Web và Mobile App.</li><li contenteditable="true">Phối hợp chặt chẽ với team Dev để tái hiện lỗi và verify bản vá lỗi.</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div style="flex:2;">
+                <h2 style="font-size:13px; font-weight:800; color:#0A7EB5; text-transform:uppercase; border-bottom:2px solid #0A7EB5; padding-bottom:4px; margin-bottom:12px;">Học Vấn</h2>
+                
+                <div style="margin-bottom:10px;">
+                    <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Đại học TopCV Hà Nội</div>
+                    <div style="font-size:11.5px; color:#0A7EB5; font-weight:600;" contenteditable="true">Chuyên ngành Công nghệ thông tin</div>
+                    <div style="font-size:11px; color:#64748b;" contenteditable="true">2010 - 2013 • Tốt nghiệp loại: Giỏi • Chứng chỉ CAST (Certified Associate in Software Testing) 2022 • CETPA 2022</div>
+                </div>
+                
+
+                <h2 style="font-size:13px; font-weight:800; color:#0A7EB5; text-transform:uppercase; border-bottom:2px solid #0A7EB5; padding-bottom:4px; margin-bottom:10px; margin-top:16px;">Kỹ Năng</h2>
+                <div style="display:flex; flex-direction:column; gap:5px;">
+                    <div style="font-size:11px; color:#334155; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0A7EB5; font-size:10px;">●</span> Lập và phân tích kế hoạch kiểm thử, viết kịch bản kiểm thử nâng cao</div><div style="font-size:11px; color:#334155; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0A7EB5; font-size:10px;">●</span> Kiểm thử chức năng, hiệu năng, giao diện (UI/UX) và bảo mật</div><div style="font-size:11px; color:#334155; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0A7EB5; font-size:10px;">●</span> Sử dụng thành thạo các công cụ: JIRA, TestRail, Postman, Selenium</div><div style="font-size:11px; color:#334155; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0A7EB5; font-size:10px;">●</span> Phân tích lỗi, truy vết và lập báo cáo lỗi theo tiêu chuẩn</div><div style="font-size:11px; color:#334155; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0A7EB5; font-size:10px;">●</span> Lập kế hoạch và giám sát tiến độ kiểm thử theo mô hình Agile</div><div style="font-size:11px; color:#334155; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0A7EB5; font-size:10px;">●</span> Đào tạo và lãnh đạo đội ngũ QA</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '18_CV_ATS_Basic_4_basic_4_v2.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

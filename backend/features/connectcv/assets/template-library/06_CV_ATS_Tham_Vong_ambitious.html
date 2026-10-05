@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tham vọng - Vũ Tùng Dương (Senior Digital Marketing)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; min-height:280mm;">
+            <!-- CỘT TRÁI (THAN CHÌ KẾT HỢP VÀNG CAM) -->
+            <div style="width:35%; background:#242c35; color:#ffffff; padding:25px 16px; box-sizing:border-box;">
+                <div style="margin-bottom:18px;">
+                    <div style="width:105px; height:120px; border-radius:8px; overflow:hidden; margin:0 auto 10px auto; border:2px solid #EC8F00;">
+                        <img src="/images/avatars/ambitious.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/ambitious.jpg';" />
+                    </div>
+                    <h1 style="font-size:19px; font-weight:800; color:#EC8F00; text-align:center; margin:0;" contenteditable="true">Vũ Tùng Dương</h1>
+                    <div style="font-size:11.5px; color:#ffffff; text-align:center; font-weight:600; margin-top:2px;" contenteditable="true">Senior Digital Marketing</div>
+                </div>
+
+                <div style="font-size:11px; color:#d1d5db; line-height:1.6; margin-bottom:16px;">
+                    <div style="color:#EC8F00; font-weight:700; margin-bottom:4px;">THÔNG TIN CÁ NHÂN</div>
+                    <div>📞 0123456789</div>
+                    <div>✉️ tech.growth@topcv.vn</div>
+                    <div>📍 Ba Đình, Hà Nội</div>
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <div style="color:#EC8F00; font-weight:700; font-size:11.5px; margin-bottom:6px;">KỸ NĂNG</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#e5e7eb; line-height:1.5;">
+                        <li contenteditable="true">Kỹ năng Sử dụng công cụ Digital Marketing</li><li contenteditable="true">Kỹ năng sáng tạo nội dung</li><li contenteditable="true">Kỹ năng phân tích dữ liệu</li><li contenteditable="true">Performance Ads (Google, Facebook, TikTok)</li><li contenteditable="true">Marketing Automation</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <div style="color:#EC8F00; font-weight:700; font-size:11.5px; margin-bottom:4px;">NGƯỜI GIỚI THIỆU</div>
+                    <div style="font-size:10.5px; color:#d1d5db;" contenteditable="true">Ông Nguyễn Xuân Hiệp - CEO Công ty BCD TopCV (Email: abc@gmail.com - SĐT: 0123 456 789)</div>
+                </div>
+
+                <div>
+                    <div style="color:#EC8F00; font-weight:700; font-size:11.5px; margin-bottom:4px;">GIẢI THƯỞNG</div>
+                    <div style="font-size:10.5px; color:#d1d5db;" contenteditable="true">2024: Nhân viên xuất sắc 2024 - Công ty BCD TopCV</div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI (NỀN TRẮNG TIMELINE CAM) -->
+            <div style="width:65%; background:#ffffff; padding:25px 22px; box-sizing:border-box;">
+                <div style="margin-bottom:18px;">
+                    <h3 style="font-size:13px; font-weight:800; color:#EC8F00; text-transform:uppercase; border-bottom:2px solid #EC8F00; padding-bottom:3px; margin-bottom:8px;">MỤC TIÊU NGHỀ NGHIỆP</h3>
+                    <p style="font-size:11.5px; color:#334155; line-height:1.5; text-align:justify;" contenteditable="true">Senior Digital Marketing với hơn 4 năm kinh nghiệm làm việc. Thành công xây dựng và quản lý các chiến dịch Digital Marketing đa kênh, bao gồm SEO, Ads, Social Media, Email Marketing, E-commerce, v.vv.. giúp công ty tăng trưởng 25% doanh thu (tương ứng 20 tỷ). Trong 2 năm tới, tôi đặt mục tiêu thăng tiến lên vị trí Marketing Manager với khát vọng có thể dẫn dắt đội ngũ 10+ người, cùng công ty chinh phục những đỉnh cao mới trên thị trường công nghệ.</p>
+                </div>
+
+                <div style="margin-bottom:18px;">
+                    <h3 style="font-size:13px; font-weight:800; color:#EC8F00; text-transform:uppercase; border-bottom:2px solid #EC8F00; padding-bottom:3px; margin-bottom:10px;">KINH NGHIỆM LÀM VIỆC</h3>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Senior Digital Marketing</span>
+                            <span style="font-size:11px; color:#64748b; font-weight:600;" contenteditable="true">07/2023 - Hiện tại</span>
+                        </div>
+                        <div style="font-size:11.5px; color:#EC8F00; font-weight:600; margin-bottom:4px;" contenteditable="true">Công ty BCD TopCV</div>
+                        <ul style="padding-left:16px; font-size:11px; color:#334155; line-height:1.45;">
+                            <li contenteditable="true">Phân tích thị trường, đưa ra đánh giá và xây dựng chiến lược Digital Marketing đa kênh, bao gồm SEM, Social Media, Email Marketing, OOH.</li><li contenteditable="true">Định hướng nội dung, lên kế hoạch và triển khai Content Marketing đa kênh.</li><li contenteditable="true">Quản lý hiệu quả ngân sách quảng cáo hàng tháng trên các kênh: Google Ads, Facebook Ads, Instagram Ads, Tiktok Ads, E-Commerce Ads.</li><li contenteditable="true">Xây dựng và quản lý kênh Shopee, Tiktok Shop, thúc đẩy traffic về gian hàng (bao gồm Organic và Paid Traffic).</li><li contenteditable="true">Thành tựu: Tăng trưởng 25% doanh thu (2024 so với 2023). Tạo ra chiến dịch X viral: Đạt 5 triệu lượt tiếp cận, 500.000 lượt tương tác.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Nhân viên Marketing Online</span>
+                            <span style="font-size:11px; color:#64748b; font-weight:600;" contenteditable="true">07/2021 - 06/2023</span>
+                        </div>
+                        <div style="font-size:11.5px; color:#EC8F00; font-weight:600; margin-bottom:4px;" contenteditable="true">Công ty ABC TopCV</div>
+                        <ul style="padding-left:16px; font-size:11px; color:#334155; line-height:1.45;">
+                            <li contenteditable="true">Hỗ trợ bộ phận Content lên ý tưởng và đăng tải trên các nền tảng Social.</li><li contenteditable="true">Lên ý tưởng, viết kịch bản, hỗ trợ quay và chỉnh sửa các video TikTok.</li><li contenteditable="true">Nghiên cứu từ khóa, tối ưu content SEO và xây dựng hệ thống backlink cho website.</li><li contenteditable="true">Triển khai các chiến dịch quảng cáo trên Google Ads và Facebook Ads.</li><li contenteditable="true">Thành tựu: Tăng trưởng 30% Organic Traffic vào website trong 6 tháng. Hỗ trợ tăng 100.000 lượt theo dõi trên Fanpage sau 10 tháng.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <h3 style="font-size:13px; font-weight:800; color:#EC8F00; text-transform:uppercase; border-bottom:2px solid #EC8F00; padding-bottom:3px; margin-bottom:8px;">HỌC VẤN</h3>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Đại học TopCV</span>
+                            <span style="font-size:11px; color:#64748b;" contenteditable="true">2016 - 2020</span>
+                        </div>
+                        <div style="font-size:11px; color:#475569;" contenteditable="true">Cử nhân Marketing • Tốt nghiệp loại Giỏi | GPA: 3.4/4.0</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '06_CV_ATS_Tham_Vong_ambitious.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

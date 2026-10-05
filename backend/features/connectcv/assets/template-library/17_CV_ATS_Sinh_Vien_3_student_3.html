@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh viên 3 - Vũ Hoàng Việt (Thực tập sinh Kiểm toán)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; min-height:280mm; margin:-15mm -20mm; overflow:hidden;">
+            <!-- CỘT TRÁI - SIDEBAR XANH NHẠT -->
+            <div style="width:38%; background:#EFF6FF; border-right:2px solid #93C5FD; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0;">
+                <div style="margin-bottom:16px;">
+                    <div style="width:95px; height:95px; border-radius:10px; overflow:hidden; background:#dbeafe; border:3px solid #0359AB; margin-bottom:12px;">
+                        <img src="/images/avatars/student_3.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/student_3.jpg';" />
+                    </div>
+                    <h1 style="font-size:16px; font-weight:800; color:#0359AB; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">Vũ Hoàng Việt</h1>
+                    <div style="font-size:11px; color:#1e40af; margin-top:4px; font-weight:600;" contenteditable="true">Thực tập sinh Kiểm toán</div>
+                </div>
+
+                <div style="margin-bottom:0;">
+                    <div style="font-size:10.5px; color:#1e40af; line-height:1.8; margin-bottom:12px;">
+                        <div contenteditable="true">📅 (034) 612 6612</div>
+                        <div contenteditable="true">✉️ hotro@topcv.vn</div>
+                        <div contenteditable="true">📍 Thanh Xuân, Hà Nội</div>
+                    </div>
+
+                    <div style="background:#0359AB20; border-radius:8px; padding:10px; margin-bottom:12px;">
+                        <h3 style="font-size:11px; font-weight:800; color:#0359AB; text-transform:uppercase; margin-bottom:8px;">Mục Tiêu Nghề Nghiệp</h3>
+                        <p style="font-size:10.5px; color:#1e3a8a; line-height:1.5;" contenteditable="true">Tự tin với khả năng nghiên cứu, phân tích và tổng hợp thông tin, luôn đề cao kỷ luật và trách nhiệm trong công việc. Mục tiêu dài hạn: Xây dựng sự nghiệp trong lĩnh vực Kiểm toán và Tài chính, trong môi trường làm việc chuyên nghiệp. Mục tiêu ngắn hạn: Tốt nghiệp đại học Ngoại thương bằng Xuất sắc.</p>
+                    </div>
+
+                    <div style="background:#0359AB20; border-radius:8px; padding:10px; margin-bottom:12px;">
+                        <h3 style="font-size:11px; font-weight:800; color:#0359AB; text-transform:uppercase; margin-bottom:8px;">Kỹ Năng</h3>
+                        <ul style="list-style:none; padding:0;">
+                            <li style="font-size:10.5px; color:#1e3a8a; margin-bottom:4px; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0359AB;">◆</span> Phân tích và tổng hợp thông tin</li><li style="font-size:10.5px; color:#1e3a8a; margin-bottom:4px; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0359AB;">◆</span> Thành thạo kỹ năng xử lý tình huống</li><li style="font-size:10.5px; color:#1e3a8a; margin-bottom:4px; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0359AB;">◆</span> Thành thạo tư duy phản biện</li><li style="font-size:10.5px; color:#1e3a8a; margin-bottom:4px; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0359AB;">◆</span> Excel chuyên sâu cho kế toán</li><li style="font-size:10.5px; color:#1e3a8a; margin-bottom:4px; display:flex; align-items:center; gap:6px;" contenteditable="true"><span style="color:#0359AB;">◆</span> Tiếng Anh chuyên ngành tài chính</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI -->
+            <div style="flex:1; padding:24px 22px;">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#0359AB; text-transform:uppercase; border-bottom:2px solid #0359AB; padding-bottom:4px; margin-bottom:12px;">Học Vấn</h2>
+                    
+                    <div style="margin-bottom:10px;">
+                        <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Đại học Ngoại thương Hà Nội</div>
+                        <div style="font-size:11.5px; color:#0359AB; font-weight:600;" contenteditable="true">Chuyên ngành: Ngân hàng và Tài chính quốc tế</div>
+                        <div style="font-size:11px; color:#64748b;" contenteditable="true">2021 - 2025 • Xếp loại: Xuất sắc (GPA 3.6 trên các môn đã hoàn thành) • Môn học liên quan: Lý thuyết Kiểm toán: 8.6; Nguyên lý Kế toán: 8.8; Kế toán quản trị: 8.9</div>
+                    </div>
+                    
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#0359AB; text-transform:uppercase; border-bottom:2px solid #0359AB; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Phê la cà phê</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">2024 - Nay</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#0359AB; margin-bottom:5px;" contenteditable="true">Nhân viên Bán hàng part-time</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Thu ngân và hướng dẫn khách hàng.</li><li contenteditable="true">Kiểm đếm quỹ tiền mặt cuối ca, đối soát hóa đơn phần mềm bán hàng.</li><li contenteditable="true">Hỗ trợ quản lý ca kiểm kê tồn kho nguyên liệu hàng tuần.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">CLB Nguồn nhân lực - Đại học Ngoại thương</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">2022 - 2025</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#0359AB; margin-bottom:5px;" contenteditable="true">Thành viên Ban Sự kiện</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Tham gia tổ chức chuỗi sự kiện Career Path và Meet-up nằm trong chuỗi sự kiện thuộc 'Business & Economic Career Festival' lần thứ 10.</li><li contenteditable="true">Leader tổ chức các sự kiện Seminar với đối tác P&G và PepsiCo.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <h2 style="font-size:13px; font-weight:800; color:#0359AB; text-transform:uppercase; border-bottom:2px solid #0359AB; padding-bottom:4px; margin-bottom:10px;">Hoạt Động</h2>
+                    <p style="font-size:11px; color:#334155;" contenteditable="true">Tham gia các câu lạc bộ học thuật và dự án thực tế tại trường đại học.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '17_CV_ATS_Sinh_Vien_3_student_3.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

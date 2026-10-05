@@ -1,0 +1,2 @@
+const fs=require('fs'),path=require('path'),postcss=require('postcss'),tailwind=require('@tailwindcss/postcss');
+(async()=>{const from=path.resolve('src/studio.css');const result=await postcss([tailwind()]).process(fs.readFileSync(from,'utf8'),{from});const out=path.resolve('../backend/features/connectcv/public/css/studio.css');fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,result.css);console.log('Studio CSS compiled locally');})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lập Trình Viên - Nguyễn Mai Anh (Kỹ Sư Phần Mềm IT (Full-Stack Engineer))</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="margin:-15mm -20mm 0 -20mm; background:#0f172a; padding:18px 28px 16px 28px;">
+            <div style="display:flex; gap:18px; align-items:center;">
+                <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; background:#1e293b; flex-shrink:0; border:2px solid #0984E3;">
+                    <img src="/images/avatars/dev_1.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/dev_1.jpg';" />
+                </div>
+                <div style="flex:1;">
+                    <h1 style="font-size:20px; font-weight:900; color:#f1f5f9; margin:0; font-family:monospace;" contenteditable="true">Nguyễn Mai Anh</h1>
+                    <div style="font-size:12px; color:#0984E3; font-weight:700; margin-top:4px; font-family:monospace;" contenteditable="true">$ Kỹ Sư Phần Mềm IT (Full-Stack Engineer)</div>
+                </div>
+                <div style="text-align:right; font-size:10px; color:#94a3b8; font-family:monospace;">
+                    <div contenteditable="true">📞 (024) 6680 5588</div>
+                    <div contenteditable="true">✉️ hotro@topcv.vn</div>
+                    <div contenteditable="true">📍 Quận A, Hà Nội</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:16px; margin-bottom:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px 16px;">
+            <div style="font-size:10px; color:#94a3b8; font-family:monospace; margin-bottom:4px;">// MỤC TIÊU NGHỀ NGHIỆP</div>
+            <p style="font-size:11.5px; color:#334155; line-height:1.55; margin:0;" contenteditable="true">Kỹ sư phần mềm với hơn 4 năm kinh nghiệm trong lĩnh vực phát triển phần mềm và ứng dụng thương mại. Tôi mong muốn được gia nhập vào công ty để xây dựng các giải pháp kinh doanh tiên tiến và sáng tạo giúp tăng doanh thu cho công ty. Trong các vai trò đảm nhận trước đây, 98% thời gian tôi hoàn thành dự án đúng thời hạn. Đồng thời xây dựng quy trình quan trọng giúp tăng hiệu quả và tối ưu thời gian trong dự án.</p>
+        </div>
+
+        <div style="display:flex; gap:20px; margin-bottom:14px;">
+            <div style="flex:3;">
+                <h2 style="font-size:12px; font-weight:800; color:#0984E3; text-transform:uppercase; border-bottom:2px solid #0984E3; padding-bottom:3px; margin-bottom:12px;">//KINH NGHIỆM LÀM VIỆC</h2>
+                
+                <div style="margin-bottom:14px;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                        <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty ABC</span>
+                        <span style="font-size:10px; color:#64748b; font-family:monospace;" contenteditable="true">01/2022 - 03/2024</span>
+                    </div>
+                    <div style="font-size:11px; font-weight:700; color:#0984E3; margin-bottom:4px; font-family:monospace;" contenteditable="true">// Kỹ Sư Phần Mềm</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Tư vấn giải pháp cho 100 khách hàng, trao đổi, giải đáp thắc mắc. Phân tích nhu cầu của khách hàng, phân tích ứng dụng của doanh nghiệp. Review hạ tầng khách hàng.</li><li contenteditable="true">Xây dựng và Review Proposal, Quotation.</li><li contenteditable="true">Xây dựng kế hoạch triển khai, kế hoạch migrate, timeline.</li><li contenteditable="true">Bảo trì, báo cáo, tối ưu hóa chi phí, hiệu suất, bảo mật, tính sẵn có của ứng dụng và đảm bảo hoạt động liên tục hàng ngày trên nền tảng đám mây.</li><li contenteditable="true">Hỗ trợ khách hàng xử lý sự cố trong phạm vi phòng Cloud.</li><li contenteditable="true">Duy trì luồng tối đa không bị gián đoạn của các hoạt động quan trọng trong kinh doanh. Giảm 25% thời gian chết và chi phí bảo hành lên đến 45%.</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom:14px;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                        <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty XYZ</span>
+                        <span style="font-size:10px; color:#64748b; font-family:monospace;" contenteditable="true">01/2020 - 04/2022</span>
+                    </div>
+                    <div style="font-size:11px; font-weight:700; color:#0984E3; margin-bottom:4px; font-family:monospace;" contenteditable="true">// Kỹ Sư Phần Mềm</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Lập trình phần mềm theo kế hoạch của công ty. Sửa đổi, cập nhật, cấu trúc lại và gỡ lỗi mã.</li><li contenteditable="true">Tìm kiếm và sửa lỗi (debugging) phần mềm. Thực hiện (testing) phần mềm, đảm bảo phần mềm chạy tốt và không lỗi.</li><li contenteditable="true">Triển khai và cải tiến các ứng dụng có độ trễ thấp, tính sẵn sàng cao.</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div style="flex:2;">
+                <h2 style="font-size:12px; font-weight:800; color:#0984E3; text-transform:uppercase; border-bottom:2px solid #0984E3; padding-bottom:3px; margin-bottom:12px;">//KỸ THUẬT</h2>
+                <div style="display:flex; flex-direction:column; gap:5px;">
+                    <div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid #0984E3; border-radius:0 4px 4px 0;" contenteditable="true">JavaScript / TypeScript</div><div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid #0984E3; border-radius:0 4px 4px 0;" contenteditable="true">Node.js (Express, NestJS)</div><div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid #0984E3; border-radius:0 4px 4px 0;" contenteditable="true">Python (FastAPI, Flask)</div><div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid #0984E3; border-radius:0 4px 4px 0;" contenteditable="true">PostgreSQL, MongoDB, Redis</div><div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid #0984E3; border-radius:0 4px 4px 0;" contenteditable="true">Docker, Kubernetes, AWS</div><div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid #0984E3; border-radius:0 4px 4px 0;" contenteditable="true">RESTful API, GraphQL, gRPC</div>
+                </div>
+                <h2 style="font-size:12px; font-weight:800; color:#0984E3; text-transform:uppercase; border-bottom:2px solid #0984E3; padding-bottom:3px; margin:14px 0 10px 0;">//HỌC VẤN</h2>
+                
+                <div style="margin-bottom:8px;">
+                    <div style="font-size:11px; font-weight:700; color:#1e293b;" contenteditable="true">Đại học Bách Khoa Hà Nội</div>
+                    <div style="font-size:10.5px; color:#0984E3; font-family:monospace;" contenteditable="true">Kỹ thuật Phần mềm</div>
+                    <div style="font-size:10px; color:#64748b;" contenteditable="true">2016 - 2020 • GPA: 3.6/4.0 (Tốt nghiệp loại Giỏi) • AWS Certified Solutions Architect</div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '20_CV_ATS_Dev_Lap_Trinh_Vien_dev_1.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

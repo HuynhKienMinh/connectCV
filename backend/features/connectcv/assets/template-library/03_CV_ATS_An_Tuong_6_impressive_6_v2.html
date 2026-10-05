@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ấn tượng 6 - Trần Mạnh Dũng (Content Leader / Marketing Specialist)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; min-height:280mm; margin:-15mm -20mm; overflow:hidden;">
+            <!-- CỘT TRÁI - SIDEBAR TỐI BURGUNDY -->
+            <div style="width:34%; background:#39283A; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0;">
+                <div style="text-align:center; margin-bottom:18px;">
+                    <div style="width:90px; height:90px; border-radius:50%; overflow:hidden; background:#5a3f5b; margin:0 auto 12px auto; border:3px solid #d4b8d6;">
+                        <img src="/images/avatars/impressive_6_v2.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/impressive_6_v2.jpg';" />
+                    </div>
+                    <h1 style="font-size:14.5px; font-weight:800; color:#ffffff; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">Trần Mạnh Dũng</h1>
+                    <div style="font-size:10.5px; color:#d4b8d6; margin-top:5px;" contenteditable="true">Content Leader / Marketing Specialist</div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; margin-bottom:12px;">
+                    <div style="font-size:10px; color:#d4b8d6; line-height:1.9;">
+                        <div contenteditable="true">📞 0987 654 321</div>
+                        <div contenteditable="true">✉️ manhdung.content@gmail.com</div>
+                        <div contenteditable="true">📍 Cầu Giấy, Hà Nội</div>
+                    </div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; margin-bottom:12px;">
+                    <h3 style="font-size:10px; font-weight:800; color:#d4b8d6; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Kỹ Năng</h3>
+                    <div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ Content Strategy</div><div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ SEO Onpage/Offpage</div><div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ Copywriting</div><div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ Storytelling</div><div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ Viral Video Script</div><div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ Google Analytics 4</div><div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ Canva Pro & CapCut</div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px;">
+                    <h3 style="font-size:10px; font-weight:800; color:#d4b8d6; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Học Vấn</h3>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="font-size:10.5px; font-weight:700; color:#ffffff;" contenteditable="true">Trường Đại học Khoa học Xã hội & Nhân văn - ĐHQGHN</div>
+                        <div style="font-size:10px; color:#d4b8d6;" contenteditable="true">Chuyên ngành: Báo chí & Truyền thông Đa phương tiện</div>
+                        <div style="font-size:9.5px; color:#b89abc;" contenteditable="true">2014 - 2018</div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI - NỘI DUNG -->
+            <div style="flex:1; padding:24px 22px;">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#39283A; text-transform:uppercase; border-bottom:2px solid #39283A; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+                    <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify;" contenteditable="true">Hơn 5 năm kinh nghiệm chuyên sâu trong lĩnh vực Content Marketing và Xây dựng Chiến lược Nội dung Đa kênh (Website, Social Media, PR, Video). Sở trường kết hợp giữa tư duy sáng tạo nghệ thuật và phân tích dữ liệu hiệu quả chiến dịch (Data-driven Content). Đã từng dẫn dắt đội ngũ 8 nhân sự, phát triển website từ 50.000 lên 450.000 Organic Traffic/tháng, đóng góp 35% tỷ lệ chuyển đổi cho bộ phận kinh doanh.</p>
+                </div>
+
+                <div>
+                    <h2 style="font-size:13px; font-weight:800; color:#39283A; text-transform:uppercase; border-bottom:2px solid #39283A; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Tập đoàn Công nghệ & Giáo dục Edutech Global</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">06/2021 - Hiện tại</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#39283A; margin-bottom:5px;" contenteditable="true">Content Marketing Team Lead</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Chịu trách nhiệm toàn diện định hướng nội dung trên toàn bộ hệ thống kênh số: Website, Fanpage (300k followers), Kênh TikTok (500k followers), Email Marketing.</li><li contenteditable="true">Lập kế hoạch và quản lý ngân sách sản xuất nội dung 150 triệu/tháng, tối ưu ROI đạt 3.8x.</li><li contenteditable="true">Triển khai dự án SEO Pillar-Cluster giúp 120 từ khóa chính ngành giáo dục lọt Top 3 Google Search trong 6 tháng.</li><li contenteditable="true">Đào tạo và trực tiếp quản lý đội ngũ gồm 5 Copywriters, 2 Video Creators và 1 SEO Specialist.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Công ty Cổ phần Truyền thông MediaMax</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">08/2018 - 05/2021</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#39283A; margin-bottom:5px;" contenteditable="true">Senior Content Specialist</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Sáng tạo kịch bản viral video, bài viết chuẩn SEO và nội dung quảng cáo Facebook Ads cho các nhãn hàng F&B và Bất động sản.</li><li contenteditable="true">Viết hơn 30 bài thông cáo báo chí (PR Articles) đăng trên các trang báo điện tử lớn (VnExpress, ZingNews, Cafebiz).</li><li contenteditable="true">Thực hiện A/B testing tiêu đề và hình ảnh quảng cáo, tăng CTR từ 1.8% lên 3.9%.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '03_CV_ATS_An_Tuong_6_impressive_6_v2.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

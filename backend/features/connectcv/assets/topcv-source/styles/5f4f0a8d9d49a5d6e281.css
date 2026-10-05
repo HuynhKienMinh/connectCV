@@ -1,0 +1,104 @@
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/dev_2/assets/fonts/RobotoCondensed-Light.ttf); font-weight: normal; }
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/dev_2/assets/fonts/RobotoCondensed-Bold.ttf); font-weight: bold; }
+.cvo-document .cvo-page { padding: 0mm; position: relative; color: rgb(44, 105, 165); }
+.cvo-document .cvo-subpage { padding: 0mm 0mm 1cm; }
+#cvo-body { margin: 0px auto; width: 100%; position: relative; font-family: RobotoCondensed, Arial, sans-serif; font-size: 14px; line-height: 18px; }
+#col-right { width: 65%; float: right; min-height: 560px; }
+#group-col-right { padding-top: 20px; padding-right: 16px; width: 100%; }
+#col-left { width: 35%; min-height: 560px; float: left; }
+#col-left .cvo-block { width: 100%; padding: 5px 12px; }
+#cvo-profile-avatar-wraper { padding: 10px 0px; text-align: center; display: inline-table; }
+#col-left .cvo-block-title { margin: 0px 0px 5px; font-size: 18px; line-height: 32px; text-transform: capitalize; font-weight: bold; }
+#col-left .cvo-block-title span { display: inline-block; padding-right: 5px; width: 100%; vertical-align: middle; color: rgb(44, 105, 165); }
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  #col-left .cvo-block-title span { font-weight: normal; }
+}
+#col-left #cvo-profile { width: 100%; padding: 0px; margin-top: 0px; }
+#profile-title-wrapper { text-align: center; padding: 10px; }
+.block-name-profile { text-align: left; margin-left: 10px; margin-top: 15px; position: relative; }
+#cvo-profile-blocktitle { padding-left: 3px !important; }
+#cvbuilder-container #cvo-profile:hover #profile-title-wrapper { box-shadow: rgb(204, 204, 204) 0px 2px 0px 2px inset; }
+#profile-title-wrapper [contenteditable="true"]:empty::before { content: attr(cvo-placeholder); color: rgb(187, 187, 187); font-weight: 100; }
+#profile-title-wrapper .cvoInvalidate { color: orange; }
+#cvo-profile-fullname { margin-top: 15px; font-size: 22px; font-weight: bold; width: 100%; line-height: 34px; display: inline-block; text-transform: uppercase; color: rgb(44, 105, 165); word-break: break-word; }
+#cvo-profile-title { min-width: 50%; font-size: 14px; font-weight: bold; color: rgb(44, 105, 165); text-transform: capitalize; background-color: rgb(230, 241, 253); padding: 0px 15px; border-radius: 30px; line-height: 2.2; margin-left: 30px; word-break: break-word; display: inline-block; }
+.block-name-profile i.fa { width: 25px; height: 25px; background-color: rgb(44, 105, 165); color: rgb(255, 255, 255); border-radius: 50%; display: inline-block; text-align: center; font-size: 10px; line-height: 25px; position: absolute; margin-top: 2px; }
+#cvo-profile-avatar { width: 100%; height: 100%; border-radius: 5%; margin-left: -10px; }
+#cvo-profile-avatar-outer { width: 170px; height: 170px; margin: auto; display: table-cell; vertical-align: middle; text-align: center; }
+#cvo-profile-website { width: 170px; word-break: break-all; }
+#profile-contact-wraper { width: 90%; margin: 10px auto; padding: 10px 8px; border-radius: 5px; }
+#profile-contact-wraper div { padding: 5px 0px; }
+#profile-contact-wraper i.fa { width: 25px; height: 25px; background-color: rgb(44, 105, 165); color: rgb(255, 255, 255); border-radius: 20%; display: inline-block; text-align: center; font-size: 12px; line-height: 25px; }
+#profile-contact-wraper span { padding-left: 15px; width: 188px; vertical-align: middle; padding-top: 3px; }
+#profile-contact-wraper span#cvo-profile-email { word-break: break-all; }
+.cvo-profile-info-row { display: -webkit-flex; }
+#cvo-objective-objective { width: 100%; }
+#cvo-skillrate { padding-left: 0px; padding-right: 0px; }
+#cvo-skillrate { padding-left: 0px; }
+#skillrate-table .row { margin-bottom: 14px; color: rgb(255, 255, 255); }
+#cvo-interest { padding-left: 0px; padding-right: 0px; }
+.interest-item { background-color: rgb(245, 245, 245); padding: 3px 8px; border-radius: 4px; margin-right: 6px; margin-bottom: 6px; float: left; }
+.cvo-interest-wrapper { display: inline-block; }
+#interest-table .row { margin-bottom: 15px; }
+#interest-table li { width: 100%; list-style-type: circle; }
+.cvo-interest-details { width: 100%; vertical-align: top; }
+.block-title-section-icon { width: 8px; height: 30px; border-radius: 8px; background-color: rgb(0, 177, 79); margin-left: -4px; }
+.cvo-block-content-wrapper { display: -webkit-flex; flex-direction: row; word-break: break-word; }
+.block-title-section-content { margin-left: 16px; width: 100%; }
+#col-right .cvo-block { width: 100%; padding: 3px 0px; }
+#col-right .cvo-block-title { margin: 0px 0px 10px; font-size: 20px; line-height: 32px; text-transform: capitalize; font-weight: bold; }
+#col-right .cvo-block-title span:nth-child(2) { width: 440px; vertical-align: middle; }
+#col-right .cvo-block-title.no-horizontal-line { background-image: none; }
+#col-right .cvo-block-title i.fa { color: rgb(255, 255, 255); border-radius: 50%; text-align: center; width: 40px; height: 40px; vertical-align: middle; padding-top: 10px; margin-right: 5px; }
+#col-right .cvo-block-title span { display: inline-block; padding-right: 5px; width: 100%; }
+#col-right .row { margin: 5px 0px; }
+.row-title { margin-bottom: 5px; padding-top: 10px; width: 100%; word-break: break-word; }
+.row-details { margin-top: 10px; }
+.row-details [cvo-form-field] { width: 100%; }
+.cvo-info-wrapper, .block-detail-company { display: inline-block; margin-top: 10px; width: 100%; }
+.cvo-info-separator { height: 16px; width: 1px; background-color: rgb(51, 51, 51); float: left; margin: 0px 8px; }
+.cvo-section-wrapper { float: left; text-transform: uppercase; text-align: left; font-weight: bold; }
+.cvo-section-info-value { min-width: 33%; padding-left: 8px; }
+.cvo-section-time-value, .cvo-experience-time, .cvo-activity-time { font-size: 1em; float: right; text-transform: capitalize; width: 38%; text-align: right; font-weight: bold; }
+.cvo-section-time-value .cvo-background-time, .cvo-experience-time .cvo-background-time, .cvo-activity-time .cvo-background-time { background-color: rgb(230, 241, 253); padding: 1px 10px; border-radius: 15px; width: fit-content; float: right; }
+.cvo-section-time-value .default_min_width { min-width: 15pt; }
+.cvo-education-school-wraper { width: 73%; padding-right: 5px; text-transform: uppercase; text-align: left; font-weight: bold; float: left; }
+.cvo-education-school { text-transform: capitalize; }
+.cvo-education-time { font-size: 1em; float: left; text-transform: uppercase; }
+.cvo-education-time .default_min_width { min-width: 15pt; }
+.cvo-education-title { min-width: 33%; font-weight: bold; }
+.cvo-experience-time .default_min_width { min-width: 15pt; }
+.cvo-experience-company-wraper { float: left; text-transform: uppercase; text-align: left; font-weight: bold; }
+.cvo-experience-company { text-transform: capitalize; }
+.cvo-experience-position { min-width: 33%; font-weight: bold; }
+.cvo-activity-organization-wraper { float: left; text-transform: uppercase; text-align: left; font-weight: bold; }
+.cvo-activity-organization { text-transform: capitalize; }
+.cvo-activity-time .default_min_width { min-width: 15pt; }
+.cvo-activity-position { min-width: 33%; font-weight: bold; }
+.cvo-award-title { margin-top: 10px; }
+.cvo-award-time-wraper, .cvo-certification-time-wraper { text-transform: uppercase; text-align: left; font-weight: bold; }
+.cvo-award-time { font-size: 1em; text-transform: uppercase; }
+.cvo-certification-time { font-size: 1em; float: left; text-transform: uppercase; }
+.cvo-award-time-wraper .default_min_width, .cvo-certification-time-wraper .default_min_width { min-width: 15pt; }
+#reference-table .row:nth-child(2n+1) { padding-right: 10px; }
+#reference-table .row:nth-child(2n) { padding-left: 10px; }
+#reference-table .row:only-child { width: 100%; padding-left: 0px; padding-right: 0px; }
+#reference-table .cvo-reference-content { width: 100%; }
+#cvo-additional-info #cvo-additional-information-details { width: 100%; display: inline-block; margin-bottom: 15px; }
+.hidden-time .cvo-education-school-wraper, .hidden-time .cvo-activity-organization-wraper, .hidden-time .cvo-experience-company-wraper, .hidden-time .cvo-award-title-wraper, .hidden-time .cvo-cerrtification-title-wraper { width: 100%; }
+#cv-watermark { position: absolute; right: 20px; bottom: 10px; font-size: 12px; color: rgb(85, 85, 85); }
+.label-top { width: 33px; height: 110px; background-color: rgb(230, 241, 253); margin-top: -20px; margin-left: 22px; }
+#skill-table, #award-table, #activity-table, #certification-table, #experience-table, .interests-content, #cvo-objective-objective, #education-table, #cvo-additional-information-details, #reference-table { background-color: rgb(250, 250, 250); border-radius: 10px; padding: 15px; line-height: 2; }
+#skill-table { margin-left: 0px !important; }
+.cvo-education-details { padding-left: 10px; position: relative; }
+.cvo-skillgroup-skill-description { padding-left: 10px; position: relative; }
+.title-common-before { position: relative; margin-left: 15px; padding-left: 5px; }
+.cvo-block-title .title-common-before::after { content: "//"; position: absolute; left: -15px; }
+.block-education-title, .block-experience-position, .block-activity-position { float: left; width: 60%; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #group-col-right .cvo-block { padding-right: 12px; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}
+@page { margin: 1cm; }

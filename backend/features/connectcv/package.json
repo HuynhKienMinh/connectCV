@@ -1,0 +1,39 @@
+{
+  "name": "connectcv-ai-features",
+  "version": "2.0.0",
+  "description": "Isolated CV, interview, community and chatbot feature module",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --test tests/cvGrounding.test.js",
+    "test:cv-routes": "node tests/cvRoutes.check.cjs",
+    "test:security": "node tests/featureSecurity.check.cjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "adm-zip": "^0.6.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "joi": "^17.13.3",
+    "msedge-tts": "^2.0.7",
+    "multer": "2.4.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
+    "playwright-core": "1.63.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "CV",
+    "ATS",
+    "AI",
+    "Gemini",
+    "Career"
+  ],
+  "author": "ConnectCV Team",
+  "license": "MIT"
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarity - Hoàng Tường Vy (Content Marketing)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; min-height:280mm; margin:-15mm -20mm; overflow:hidden;">
+            <!-- CỘT TRÁI - SIDEBAR TỐI -->
+            <div style="width:36%; background:#1A1A2E; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0;">
+                <div style="text-align:left; margin-bottom:18px;">
+                    <div style="width:90px; height:90px; border-radius:50%; overflow:hidden; background:#2d2d4e; margin:0 0 12px 0; border:3px solid #2E2E2E;">
+                        <img src="/images/avatars/clarity.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/clarity.jpg';" />
+                    </div>
+                    <h1 style="font-size:16px; font-weight:800; color:#ffffff; text-transform:uppercase; line-height:1.25; margin:0;" contenteditable="true">Hoàng Tường Vy</h1>
+                    <div style="font-size:11px; color:#2E2E2E; margin-top:5px; font-weight:600;" contenteditable="true">Content Marketing</div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#2E2E2E; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Thông Tin Cá Nhân</h3>
+                    <div style="font-size:10px; color:#e2e2e2; line-height:1.8;">
+                        <div contenteditable="true">📅 (024) 6680 5588</div>
+                        <div contenteditable="true">✉ hotro@topcv.vn</div>
+                        <div contenteditable="true">📍 Ba Đình, Hà Nội</div>
+                    </div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#2E2E2E; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Học Vấn</h3>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="font-size:10.5px; font-weight:700; color:#ffffff;" contenteditable="true">Đại học TopCV</div>
+                        <div style="font-size:10px; color:#2E2E2E;" contenteditable="true">Truyền thông đại chúng</div>
+                        <div style="font-size:9.5px; color:#e2e2e2;" contenteditable="true">2015 - 2019</div>
+                    </div>
+                    
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#2E2E2E; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Kỹ Năng</h3>
+                    <div style="font-size:10px; color:#e2e2e2; margin-bottom:3px;" contenteditable="true">▪ Kỹ năng giao tiếp</div><div style="font-size:10px; color:#e2e2e2; margin-bottom:3px;" contenteditable="true">▪ Kỹ năng lắng nghe</div><div style="font-size:10px; color:#e2e2e2; margin-bottom:3px;" contenteditable="true">▪ Kỹ năng đàm phán</div><div style="font-size:10px; color:#e2e2e2; margin-bottom:3px;" contenteditable="true">▪ Kỹ năng giải quyết vấn đề</div><div style="font-size:10px; color:#e2e2e2; margin-bottom:3px;" contenteditable="true">▪ Kỹ năng làm việc dưới áp lực cao</div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#2E2E2E; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">Người Giới Thiệu</h3>
+                    <p style="font-size:10px; color:#e2e2e2; font-style:italic;" contenteditable="true">Cung cấp theo yêu cầu</p>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI - NỘI DUNG -->
+            <div style="flex:1; padding:24px 22px;">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#2E2E2E; text-transform:uppercase; border-bottom:2px solid #2E2E2E; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+                    <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify;" contenteditable="true">Với hơn 5 năm kinh nghiệm trong lĩnh vực Content Marketing, tôi đã trau dồi cho mình kiến thức chuyên môn ở đa dạng lĩnh vực, đặc biệt là Giáo dục - đào tạo. Mục tiêu của tôi trong 2 năm tới là trở thành Leader Content Marketing, trực tiếp triển khai nhiều chiến dịch mới với nội dung đột phá, đóng góp vào sự phát triển bền vững của doanh nghiệp.</p>
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#2E2E2E; text-transform:uppercase; border-bottom:2px solid #2E2E2E; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">SVT Investment & Development Co., Ltd</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">08/2019 - Nay</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#2E2E2E; margin-bottom:5px;" contenteditable="true">Chuyên viên Content Marketing</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Lên kế hoạch, trực tiếp triển khai và xây dựng nội dung cho các kênh Facebook, Zalo, Instagram, Tiktok.</li><li contenteditable="true">Sản xuất nội dung chạy quảng cáo quảng bá sản phẩm ứng dụng học ngoại ngữ LittleHe trên Facebook.</li><li contenteditable="true">Thúc đẩy tăng trưởng traffic từ nguồn referral lên 28% từ 248.000/tháng lên 318.000/tháng thông qua việc xây dựng nội dung bắt trend hàng ngày.</li><li contenteditable="true">Tỷ lệ thương hiệu được đề cập tới trên các mạng xã hội Facebook, Tiktok tăng 285% so với thời điểm tháng 06/2022.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <h2 style="font-size:13px; font-weight:800; color:#2E2E2E; text-transform:uppercase; border-bottom:2px solid #2E2E2E; padding-bottom:4px; margin-bottom:10px;">Hoạt Động</h2>
+                    <div style="display:flex; flex-wrap:wrap; gap:5px;">
+                        <span style="font-size:10.5px; padding:3px 10px; background:#2E2E2E15; border:1px solid #2E2E2E40; border-radius:4px; color:#334155;" contenteditable="true">Kỹ năng giao tiếp</span><span style="font-size:10.5px; padding:3px 10px; background:#2E2E2E15; border:1px solid #2E2E2E40; border-radius:4px; color:#334155;" contenteditable="true">Kỹ năng lắng nghe</span><span style="font-size:10.5px; padding:3px 10px; background:#2E2E2E15; border:1px solid #2E2E2E40; border-radius:4px; color:#334155;" contenteditable="true">Kỹ năng đàm phán</span><span style="font-size:10.5px; padding:3px 10px; background:#2E2E2E15; border:1px solid #2E2E2E40; border-radius:4px; color:#334155;" contenteditable="true">Kỹ năng giải quyết vấn đề</span><span style="font-size:10.5px; padding:3px 10px; background:#2E2E2E15; border:1px solid #2E2E2E40; border-radius:4px; color:#334155;" contenteditable="true">Kỹ năng làm việc dưới áp lực cao</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '11_CV_ATS_Clarity_clarity.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

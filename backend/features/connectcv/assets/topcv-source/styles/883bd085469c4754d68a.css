@@ -1,0 +1,16 @@
+@media print {
+  @page { margin: 0.13cm 0px !important; }
+  body { background-color: white; margin: 0px !important; padding: 0px !important; }
+  .cvo-document { margin: 0px !important; padding: 0px !important; }
+  .cvo-document .cvo-page { border-width: medium; border-style: none; border-color: currentcolor; border-image: none; border-radius: 0px; width: initial; min-height: initial; background: initial; break-after: page; margin: 0px !important; box-shadow: none !important; }
+  section { break-after: avoid !important; break-inside: auto !important; }
+  .cvo-document .cvo-subpage { outline: none; }
+  [cvo-form-field] { outline: none; }
+  [cvo-form-field]:hover, [cvo-form-field]:focus { outline: none; }
+  .non-printable { display: none; }
+  .cvo-document .cvo-subpage, .cvo-block .row { break-inside: auto !important; }
+  body { background-image: unset !important; background-color: white !important; }
+  #cover-letter { break-after: page; }
+  .cv-letter-print { padding: 19px; background-color: white; }
+  .cv-letter-print h4 { margin-top: 10px; margin-bottom: 10px; }
+}

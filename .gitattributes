@@ -1,0 +1,5 @@
+# Native design version hashes must be identical on Windows and Linux.
+backend/features/connectcv/assets/** -text whitespace=-trailing-space,-blank-at-eof
+backend/features/connectcv/src/services/topcvSourceRenderer.js -text whitespace=-trailing-space
+# Imported Lab markup retains its original formatting.
+backend/features/connectcv/public/** whitespace=-trailing-space,-blank-at-eof

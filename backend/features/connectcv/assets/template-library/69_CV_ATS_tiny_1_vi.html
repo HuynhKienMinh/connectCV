@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGUYỄN MINH TRANG - TINY_1 (VI)</title>
+    <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #f1f5f9; padding: 25px 0; color: #1e293b; line-height: 1.5; }
+    .cv-page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        padding: 16mm 18mm;
+        position: relative;
+    }
+    @media print {
+        body { background: none; padding: 0; }
+        .cv-page { width: 100%; box-shadow: none; padding: 12mm 15mm; margin: 0; }
+        @page { size: A4 portrait; margin: 0; }
+    }
+    h1 { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; margin-bottom: 4px; }
+    .subtitle { font-size: 13px; font-weight: 700; color: #00B14F; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.8px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; color: #64748b; margin-bottom: 18px; }
+    .contact-item { display: flex; align-items: center; gap: 4px; }
+    .section-title {
+        font-size: 12.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #00B14F;
+        border-bottom: 1.5px solid #00B14F;
+        padding-bottom: 4px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+        letter-spacing: 0.6px;
+    }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .item-title { font-size: 12px; font-weight: 700; color: #0f172a; }
+    .item-date { font-size: 10.5px; color: #64748b; font-weight: 600; }
+    .item-sub { font-size: 11px; font-weight: 600; color: #475569; margin-bottom: 4px; font-style: italic; }
+    .item-desc { font-size: 11px; color: #334155; line-height: 1.5; }
+    ul.bullet-list { padding-left: 16px; margin-bottom: 10px; }
+    ul.bullet-list li { font-size: 11px; color: #334155; margin-bottom: 4px; line-height: 1.45; }
+    .skills-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .skill-chip { font-size: 10.5px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 3px 8px; border-radius: 4px; color: #1e293b; font-weight: 500; }
+    .summary-text { font-size: 11px; color: #334155; line-height: 1.6; text-align: justify; margin-bottom: 10px; }
+
+    /* Layout: 2 Cột Sidebar */
+    .two-col-container { display: flex; gap: 20px; }
+    .sidebar { width: 34%; border-right: 1px solid #e2e8f0; padding-right: 18px; }
+    .main-content { width: 66%; }
+    .sidebar-section-title { font-size: 11.5px; font-weight: 800; text-transform: uppercase; color: #00B14F; border-bottom: 1.5px solid #00B14F; padding-bottom: 3px; margin-top: 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="cv-page" contenteditable="true">
+        
+        <header style="text-align: center; margin-bottom: 14px;">
+            <h1>NGUYỄN MINH TRANG</h1>
+            <div class="subtitle">Chuyên Viên Kiểm Toán Trẻ (Junior Auditor / Audit Assistant)</div>
+            <div class="contact-row" style="justify-content: center;">
+                <span class="contact-item">📞 0345 612 8812</span>
+                <span>•</span>
+                <span class="contact-item">✉️ minhtrang.audit@gmail.com</span>
+                <span>•</span>
+                <span class="contact-item">📍 Thanh Xuân, Hà Nội</span>
+                <span>•</span>
+                <span class="contact-item">🌐 linkedin.com/in/minhtrang-audit</span>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">MỤC TIÊU NGHỀ NGHIỆP</div>
+            <p class="summary-text">Cử nhân xuất sắc chuyên ngành Kế toán - Kiểm toán Đại học Ngoại thương với kiến thức vững chắc về chuẩn mực VAS và IFRS. Đã hoàn thành 6/9 môn F-level chứng chỉ quốc tế ACCA. Kỹ năng phân tích số liệu tỉ mỉ, tư duy phản biện logic và tinh thần cầu tiến học hỏi cao trong môi trường chuyên nghiệp.</p>
+        </section>
+
+        <section>
+            <div class="section-title">KINH NGHIỆM THỰC TẬP & DỰ ÁN</div>
+            
+            <div style="margin-bottom: 14px;">
+                <div class="item-header">
+                    <span class="item-title">Thực tập sinh Kiểm toán (Audit Intern) – Công ty TNHH Kiểm toán & Tư vấn Tài chính A&C</span>
+                    <span class="item-date">12/2023 - 05/2024</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Tham gia cùng đoàn kiểm toán thực địa tại 8 doanh nghiệp sản xuất và thương mại có quy mô vốn trên 50 tỷ VNĐ.</li><li>Thực hiện kiểm tra chi tiết và đối chiếu số dư các phần hành trọng yếu: Tiền mặt, Tài sản cố định và Phải thu khách hàng.</li><li>Hỗ trợ soạn thảo thư xác nhận ngân hàng và tham gia kiểm kê hàng tồn kho thực tế.</li>
+                </ul>
+            </div>
+            
+        </section>
+
+        <section>
+            <div class="section-title">HỌC VẤN</div>
+            
+            <div style="margin-bottom: 10px;">
+                <div class="item-header">
+                    <span class="item-title">Trường Đại học Ngoại Thương Hà Nội</span>
+                    <span class="item-date">2020 - 2024</span>
+                </div>
+                <div class="item-sub">Chuyên ngành Kế toán - Kiểm toán Chất lượng cao</div>
+                <div class="item-desc">✦ GPA: 3.75/4.0 (Top 5% sinh viên toàn khóa) • Đạt Học bổng Khuyến khích Học tập 5 kỳ liên tiếp</div>
+            </div>
+            
+        </section>
+
+        <section>
+            <div class="section-title">KỸ NĂNG NỔI BẬT</div>
+            <div class="skills-container">
+                <span class="skill-chip">Kiểm toán Báo cáo Tài chính</span><span class="skill-chip">Chuẩn mực VAS & IFRS</span><span class="skill-chip">Phần mềm MISA, Excel nâng cao (VLOOKUP, Pivot)</span><span class="skill-chip">Phân tích Dữ liệu Kế toán</span><span class="skill-chip">Kỹ năng Làm việc Nhóm</span><span class="skill-chip">Tiếng Anh Thương mại</span>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">CHỨNG CHỈ NGHỀ NGHIỆP</div>
+            <ul class="bullet-list">
+                <li>ACCA Applied Skills (Đã hoàn thành 6 môn F-level: F1 - F6) (2024)</li><li>IELTS Academic 7.5 (2023)</li><li>Chứng chỉ MOS Excel Expert (2022)</li>
+            </ul>
+        </section>
+        
+    </div>
+</body>
+</html>

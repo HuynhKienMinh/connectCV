@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh lịch - Nguyễn Quỳnh Như (Quản lý nhà hàng (Hospitality))</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; gap:20px; align-items:center; margin-bottom:18px;">
+            <div style="width:110px; height:125px; border-radius:8px; overflow:hidden; background:#e2e8f0; flex-shrink:0;">
+                <img src="/images/avatars/elegant.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/elegant.jpg';" />
+            </div>
+            <div style="flex:1;">
+                <h1 style="font-size:24px; font-weight:800; color:#B82A38; margin:0;" contenteditable="true">Nguyễn Quỳnh Như</h1>
+                <div style="font-size:13.5px; font-weight:700; color:#1e293b; text-transform:uppercase; margin-top:3px; margin-bottom:8px;" contenteditable="true">Quản lý nhà hàng (Hospitality)</div>
+                <div style="width:100%; height:2px; background:#1e293b; margin-bottom:8px;"></div>
+                <p style="font-size:11px; color:#475569; line-height:1.45; text-align:justify;" contenteditable="true">Quản lý cửa hàng với hơn 05 năm kinh nghiệm trong lĩnh vực Nhà hàng - Khách sạn. Có kinh nghiệm quản lý đội nhóm gồm 20 nhân viên cấp dưới. Tính tổ chức và kỷ luật cao, không ngừng đổi mới để cải thiện sản phẩm và dịch vụ đi kèm. Luôn đặt trải nghiệm của khách hàng lên trên cùng và nỗ lực đưa tên tuổi thương hiệu tiếp cận được tệp người dùng rộng hơn.</p>
+            </div>
+        </div>
+
+        <!-- 3 CỘT THÔNG TIN PHÂN CÁCH BẰNG VIỀN MÀU -->
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; border-top:2px solid #B82A38; border-bottom:2px solid #B82A38; padding:10px 0; margin-bottom:20px;">
+            <div>
+                <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">THÔNG TIN CÁ NHÂN</h4>
+                <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.5;">
+                    <li contenteditable="true">• 15/05/1995</li><li contenteditable="true">• hotro@topcv.vn</li><li contenteditable="true">• (024) 6680 5588</li><li contenteditable="true">• Cầu Giấy, Hà Nội</li>
+                </ul>
+            </div>
+            <div style="border-left:1px solid #e2e8f0; padding-left:12px;">
+                <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">HỌC VẤN</h4>
+                <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.5;">
+                    <li contenteditable="true">• Đại học TopCV</li><li contenteditable="true">• Ngành Quản trị Nhà hàng Khách sạn</li><li contenteditable="true">• 2013 - 2017 (Loại Giỏi)</li><li contenteditable="true">• Top 05 sinh viên xuất sắc 2017</li>
+                </ul>
+            </div>
+            <div style="border-left:1px solid #e2e8f0; padding-left:12px;">
+                <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">CHỨNG CHỈ</h4>
+                <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.5;">
+                    <li contenteditable="true">• 2022: Nghiệp vụ quản lý Nhà hàng</li><li contenteditable="true">• 2021: IELTS 6.0</li><li contenteditable="true">• HACCP Vệ sinh an toàn thực phẩm</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="font-size:13.5px; font-weight:800; color:#B82A38; text-transform:uppercase; border-bottom:1.5px solid #B82A38; padding-bottom:3px; margin-bottom:14px;">KINH NGHIỆM LÀM VIỆC</h3>
+            
+            <div style="display:flex; gap:16px; margin-bottom:15px;">
+                <div style="width:130px; font-size:11px; font-weight:700; color:#64748b; flex-shrink:0;">
+                    <div style="color:#B82A38;">● 01/2022 - Hiện tại</div>
+                    <div style="color:#1e293b; margin-top:2px;">MW Hotel & Residence TopCV</div>
+                </div>
+                <div style="flex:1; border-left:2px solid #B82A38; padding-left:14px;">
+                    <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Quản lý nhà hàng</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.45; margin-top:4px;">
+                        <li contenteditable="true">Theo dõi và kiểm soát số lượng, chất lượng đồ dùng, công cụ, nguyên liệu nấu ăn tại nhà hàng của khách sạn.</li><li contenteditable="true">Làm việc trực tiếp với bếp ăn để xử lý các vấn đề liên quan tới số lượng và chất lượng bữa ăn hàng ngày của khách hàng.</li><li contenteditable="true">Giải quyết các khiếu nại của khách hàng về chất lượng đồ ăn, điều kiện nhà hàng và thái độ phục vụ.</li><li contenteditable="true">Quản lý đội ngũ nhân viên, bao gồm: điều phối công việc và điều chỉnh lịch làm việc phù hợp với tình hình thực tế.</li><li contenteditable="true">Tham gia tuyển dụng, tiếp nhận và đào tạo nhân viên mới.</li><li contenteditable="true">Quản lý ngân sách, chi phí và doanh thu hàng tháng.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display:flex; gap:16px; margin-bottom:15px;">
+                <div style="width:130px; font-size:11px; font-weight:700; color:#64748b; flex-shrink:0;">
+                    <div style="color:#B82A38;">● 02/2020 - 12/2021</div>
+                    <div style="color:#1e293b; margin-top:2px;">SVT Coffee & Tea TopCV</div>
+                </div>
+                <div style="flex:1; border-left:2px solid #B82A38; padding-left:14px;">
+                    <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Quản lý cửa hàng</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.45; margin-top:4px;">
+                        <li contenteditable="true">Chịu trách nhiệm về tình hình doanh thu của cửa hàng và báo cáo kết quả kinh doanh cho Giám sát khu vực.</li><li contenteditable="true">Lên kế hoạch làm việc hàng tuần cho toàn bộ nhân viên cửa hàng.</li><li contenteditable="true">Quản lý số lượng và chất lượng nguyên liệu đầu vào, máy móc, dụng cụ của cửa hàng.</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '05_CV_ATS_Thanh_Lich_elegant.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tối giản 2 - Phạm Thúy Hà (Nhân viên Kế toán nội bộ)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="border-bottom:3px solid #263A4D; padding-bottom:14px; margin-bottom:18px;">
+            <div style="display:flex; align-items:center; gap:18px;">
+                <div style="width:90px; height:105px; border-radius:6px; overflow:hidden; background:#f1f5f9; flex-shrink:0; border:1px solid #e2e8f0;">
+                    <img src="/images/avatars/minimalism_v2.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/minimalism_v2.jpg';" />
+                </div>
+                <div>
+                    <h1 style="font-size:23px; font-weight:800; color:#1e293b; text-transform:uppercase; letter-spacing:1px; margin:0;" contenteditable="true">Phạm Thúy Hà</h1>
+                    <div style="font-size:13px; font-weight:700; color:#263A4D; margin-top:4px; text-transform:uppercase; letter-spacing:0.5px;" contenteditable="true">Nhân viên Kế toán nội bộ</div>
+                    <div style="font-size:11px; color:#64748b; margin-top:8px; display:flex; flex-wrap:wrap; gap:14px;">
+                        <span>📞 0976 543 210</span>
+                        <span>✉️ thuyha.ketoan@gmail.com</span>
+                        <span>📍 Đống Đa, Hà Nội</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:20px;">
+            <div style="flex:2;">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:12px; font-weight:800; color:#263A4D; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #263A4D; padding-bottom:3px; margin-bottom:8px;">Kinh Nghiệm Làm Việc</h2>
+                    
+                    <div style="margin-bottom:12px; padding-left:10px; border-left:2px solid #e2e8f0;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Công ty Cổ phần Thương mại Vĩnh Thịnh</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">08/2022 - Hiện tại</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:600; color:#263A4D; margin-bottom:4px;" contenteditable="true">Kế toán viên tổng hợp</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.45;">
+                            <li contenteditable="true">Theo dõi thu chi, kiểm soát chứng từ hóa đơn hợp lệ, hạch toán vào phần mềm kế toán.</li><li contenteditable="true">Lập báo cáo tài chính nội bộ định kỳ hàng tháng/quý cho Ban Giám đốc.</li><li contenteditable="true">Kiểm tra công nợ khách hàng, đối chiếu công nợ nhà cung cấp, giảm nợ quá hạn xuống dưới 3%.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <div style="flex:1; border-left:1.5px solid #e2e8f0; padding-left:16px;">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:12px; font-weight:800; color:#263A4D; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #263A4D; padding-bottom:3px; margin-bottom:8px;">Mục Tiêu</h2>
+                    <p style="font-size:11px; color:#334155; line-height:1.5;" contenteditable="true">Nhân viên kế toán với hơn 3 năm kinh nghiệm, nắm vững các nghiệp vụ kế toán nội bộ, kế toán thuế và quản lý công nợ. Sử dụng thành thạo phần mềm MISA, FAST và hàm Excel nâng cao. Luôn cẩn trọng, tỉ mỉ và bảo mật thông tin tài chính tuyệt đối.</p>
+                </div>
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:12px; font-weight:800; color:#263A4D; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #263A4D; padding-bottom:3px; margin-bottom:8px;">Học Vấn</h2>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="font-size:11.5px; font-weight:700; color:#1e293b;" contenteditable="true">Học viện Tài chính</div>
+                        <div style="font-size:11px; color:#263A4D; font-weight:600;" contenteditable="true">Ngành Kế toán Doanh nghiệp</div>
+                        <div style="font-size:10.5px; color:#64748b;" contenteditable="true">2018 - 2022 • Tốt nghiệp loại Khá (GPA: 3.2/4.0) • Chứng chỉ Kế toán trưởng Quốc gia</div>
+                    </div>
+                    
+                </div>
+                <div>
+                    <h2 style="font-size:12px; font-weight:800; color:#263A4D; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #263A4D; padding-bottom:3px; margin-bottom:8px;">Kỹ Năng</h2>
+                    <ul style="list-style:none; padding:0; font-size:11px; color:#334155; line-height:1.7;">
+                        <li contenteditable="true">→ Kế toán nội bộ</li><li contenteditable="true">→ Kế toán thuế</li><li contenteditable="true">→ Báo cáo tài chính</li><li contenteditable="true">→ Quản lý dòng tiền</li><li contenteditable="true">→ Phần mềm MISA / FAST</li><li contenteditable="true">→ Quyết toán thuế TNCN / TNDN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '07_CV_ATS_Toi_Gian_2_minimalism_v2.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

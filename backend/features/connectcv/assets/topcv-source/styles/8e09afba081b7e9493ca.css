@@ -1,0 +1,191 @@
+
+        .ql-picker.ql-size .ql-picker-label[data-value='10px']::before {
+          content: "Cỡ chữ 10px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='10px']::before {
+          content: "10px";
+       }
+        .ql-size-10px {
+          font-size: 10px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='11px']::before {
+          content: "Cỡ chữ 11px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='11px']::before {
+          content: "11px";
+       }
+        .ql-size-11px {
+          font-size: 11px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='12px']::before {
+          content: "Cỡ chữ 12px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='12px']::before {
+          content: "12px";
+       }
+        .ql-size-12px {
+          font-size: 12px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='13px']::before {
+          content: "Cỡ chữ 13px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='13px']::before {
+          content: "13px";
+       }
+        .ql-size-13px {
+          font-size: 13px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='14px']::before {
+          content: "Cỡ chữ 14px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='14px']::before {
+          content: "14px";
+       }
+        .ql-size-14px {
+          font-size: 14px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='15px']::before {
+          content: "Cỡ chữ 15px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='15px']::before {
+          content: "15px";
+       }
+        .ql-size-15px {
+          font-size: 15px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='16px']::before {
+          content: "Cỡ chữ 16px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='16px']::before {
+          content: "16px";
+       }
+        .ql-size-16px {
+          font-size: 16px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='17px']::before {
+          content: "Cỡ chữ 17px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='17px']::before {
+          content: "17px";
+       }
+        .ql-size-17px {
+          font-size: 17px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='18px']::before {
+          content: "Cỡ chữ 18px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='18px']::before {
+          content: "18px";
+       }
+        .ql-size-18px {
+          font-size: 18px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='19px']::before {
+          content: "Cỡ chữ 19px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='19px']::before {
+          content: "19px";
+       }
+        .ql-size-19px {
+          font-size: 19px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='20px']::before {
+          content: "Cỡ chữ 20px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='20px']::before {
+          content: "20px";
+       }
+        .ql-size-20px {
+          font-size: 20px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='22px']::before {
+          content: "Cỡ chữ 22px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='22px']::before {
+          content: "22px";
+       }
+        .ql-size-22px {
+          font-size: 22px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='23px']::before {
+          content: "Cỡ chữ 23px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='23px']::before {
+          content: "23px";
+       }
+        .ql-size-23px {
+          font-size: 23px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='24px']::before {
+          content: "Cỡ chữ 24px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='24px']::before {
+          content: "24px";
+       }
+        .ql-size-24px {
+          font-size: 24px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='26px']::before {
+          content: "Cỡ chữ 26px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='26px']::before {
+          content: "26px";
+       }
+        .ql-size-26px {
+          font-size: 26px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='30px']::before {
+          content: "Cỡ chữ 30px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='30px']::before {
+          content: "30px";
+       }
+        .ql-size-30px {
+          font-size: 30px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='32px']::before {
+          content: "Cỡ chữ 32px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='32px']::before {
+          content: "32px";
+       }
+        .ql-size-32px {
+          font-size: 32px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='36px']::before {
+          content: "Cỡ chữ 36px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='36px']::before {
+          content: "36px";
+       }
+        .ql-size-36px {
+          font-size: 36px;
+       }
+        
+        .ql-picker.ql-size .ql-picker-label[data-value='48px']::before {
+          content: "Cỡ chữ 48px";
+       }
+        .ql-picker.ql-size .ql-picker-item[data-value='48px']::before {
+          content: "48px";
+       }
+        .ql-size-48px {
+          font-size: 48px;
+       }
+        

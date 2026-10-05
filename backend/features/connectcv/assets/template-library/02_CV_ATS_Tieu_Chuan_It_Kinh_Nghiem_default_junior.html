@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiêu chuẩn (ít kinh nghiệm) - Nguyễn Minh Trang (Audit Intern / Junior Auditor)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="text-align:center; border-bottom:2px solid #1A5276; padding-bottom:16px; margin-bottom:18px;">
+            <div style="width:80px; height:80px; border-radius:50%; background:#e2e8f0; overflow:hidden; margin:0 auto 10px auto; border:2px solid #1A5276;">
+                <img src="/images/avatars/default_junior.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/default_junior.jpg';" />
+            </div>
+            <h1 style="font-size:22px; font-weight:800; color:#1e293b; text-transform:uppercase;" contenteditable="true">Nguyễn Minh Trang</h1>
+            <div style="font-size:13px; font-weight:700; color:#1A5276; margin-top:3px;" contenteditable="true">Audit Intern / Junior Auditor</div>
+            <div style="font-size:11px; color:#64748b; margin-top:6px; display:flex; justify-content:center; gap:20px;">
+                <span>📞 0345 612 8812</span>
+                <span>✉️ minhtrang.audit@gmail.com</span>
+                <span>📍 Thanh Xuân, Hà Nội</span>
+            </div>
+        </div>
+
+        <div style="margin-bottom:15px; text-align:center;">
+            <h2 style="font-size:13px; font-weight:800; color:#1A5276; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">MỤC TIÊU NGHỀ NGHIỆP</h2>
+            <div style="width:40px; height:2px; background:#1A5276; margin:0 auto 8px auto;"></div>
+            <p style="font-size:11.5px; color:#334155; line-height:1.5; max-width:90%; margin:0 auto;" contenteditable="true">Sinh viên năm cuối chuyên ngành Kế toán - Kiểm toán Đại học Ngoại thương với nền tảng kiến thức vững vàng về VAS và IFRS. Có khả năng làm việc với số liệu tỉ mỉ, tư duy logic phản biện và tinh thần học hỏi cầu tiến cao trong môi trường kiểm toán chuyên nghiệp.</p>
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <h2 style="font-size:13px; font-weight:800; color:#1A5276; text-transform:uppercase; text-align:center; letter-spacing:1px; margin-bottom:6px;">HỌC VẤN</h2>
+            <div style="width:40px; height:2px; background:#1A5276; margin:0 auto 8px auto;"></div>
+            
+            <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Trường Đại học Ngoại Thương Hà Nội</span>
+                    <span style="font-size:11px; color:#64748b;" contenteditable="true">2020 - 2024</span>
+                </div>
+                <div style="font-size:11.5px; color:#1A5276; font-weight:600;" contenteditable="true">Chuyên ngành: Kế toán - Kiểm toán chất lượng cao (ACCA)</div>
+                <div style="font-size:11px; color:#475569;" contenteditable="true">• GPA: 3.75/4.0 (Top 5% toàn khóa) • Đạt 6/9 môn F-level chứng chỉ nghề nghiệp quốc tế ACCA</div>
+            </div>
+            
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <h2 style="font-size:13px; font-weight:800; color:#1A5276; text-transform:uppercase; text-align:center; letter-spacing:1px; margin-bottom:6px;">HOẠT ĐỘNG & ĐOÀN THỂ</h2>
+            <div style="width:40px; height:2px; background:#1A5276; margin:0 auto 8px auto;"></div>
+            
+            <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">CLB Kế toán - Kiểm toán trẻ (CFO Club) FTU</span>
+                    <span style="font-size:11px; color:#64748b;" contenteditable="true">2021 - 2023</span>
+                </div>
+                <div style="font-size:11.5px; color:#1A5276; font-weight:600;" contenteditable="true">Trưởng ban Chuyên môn</div>
+                <div style="font-size:11px; color:#475569;" contenteditable="true">• Tổ chức chuỗi hội thảo chuyên đề phân tích BCTC thu hút hơn 600 sinh viên tham gia.</div>
+            </div>
+            
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <h2 style="font-size:13px; font-weight:800; color:#1A5276; text-transform:uppercase; text-align:center; letter-spacing:1px; margin-bottom:6px;">KINH NGHIỆM THỰC TẬP</h2>
+            <div style="width:40px; height:2px; background:#1A5276; margin:0 auto 8px auto;"></div>
+            
+            <div style="margin-bottom:10px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">Công ty TNHH Kiểm toán & Tư vấn Tài chính A&C</span>
+                    <span style="font-size:11px; color:#64748b;" contenteditable="true">12/2023 - 05/2024</span>
+                </div>
+                <div style="font-size:11.5px; color:#1A5276; font-weight:600;" contenteditable="true">Thực tập sinh Kiểm toán (Audit Assistant Intern)</div>
+                <ul style="padding-left:16px; font-size:11px; color:#334155; line-height:1.45; margin-top:3px;">
+                    <li contenteditable="true">Tham gia cùng đoàn kiểm toán thực địa tại 8 doanh nghiệp sản xuất và thương mại quy mô vừa.</li><li contenteditable="true">Thực hiện soát xét và đối chiếu số dư các phần hành tiền mặt, tài sản cố định, phải thu khách hàng.</li><li contenteditable="true">Hỗ trợ soạn thảo thư xác nhận và lập biên bản kiểm kê quỹ tiền mặt đúng chuẩn mực.</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '02_CV_ATS_Tieu_Chuan_It_Kinh_Nghiem_default_junior.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

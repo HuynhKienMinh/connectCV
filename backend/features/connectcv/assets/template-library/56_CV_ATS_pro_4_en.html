@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEXANDER TRI HOANG - PRO_4 (EN)</title>
+    <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #f1f5f9; padding: 25px 0; color: #1e293b; line-height: 1.5; }
+    .cv-page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        padding: 16mm 18mm;
+        position: relative;
+    }
+    @media print {
+        body { background: none; padding: 0; }
+        .cv-page { width: 100%; box-shadow: none; padding: 12mm 15mm; margin: 0; }
+        @page { size: A4 portrait; margin: 0; }
+    }
+    h1 { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a; margin-bottom: 4px; }
+    .subtitle { font-size: 13px; font-weight: 700; color: #00B14F; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.8px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; color: #64748b; margin-bottom: 18px; }
+    .contact-item { display: flex; align-items: center; gap: 4px; }
+    .section-title {
+        font-size: 12.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #00B14F;
+        border-bottom: 1.5px solid #00B14F;
+        padding-bottom: 4px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+        letter-spacing: 0.6px;
+    }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .item-title { font-size: 12px; font-weight: 700; color: #0f172a; }
+    .item-date { font-size: 10.5px; color: #64748b; font-weight: 600; }
+    .item-sub { font-size: 11px; font-weight: 600; color: #475569; margin-bottom: 4px; font-style: italic; }
+    .item-desc { font-size: 11px; color: #334155; line-height: 1.5; }
+    ul.bullet-list { padding-left: 16px; margin-bottom: 10px; }
+    ul.bullet-list li { font-size: 11px; color: #334155; margin-bottom: 4px; line-height: 1.45; }
+    .skills-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .skill-chip { font-size: 10.5px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 3px 8px; border-radius: 4px; color: #1e293b; font-weight: 500; }
+    .summary-text { font-size: 11px; color: #334155; line-height: 1.6; text-align: justify; margin-bottom: 10px; }
+
+    /* Layout: 2 Cột Sidebar */
+    .two-col-container { display: flex; gap: 20px; }
+    .sidebar { width: 34%; border-right: 1px solid #e2e8f0; padding-right: 18px; }
+    .main-content { width: 66%; }
+    .sidebar-section-title { font-size: 11.5px; font-weight: 800; text-transform: uppercase; color: #00B14F; border-bottom: 1.5px solid #00B14F; padding-bottom: 3px; margin-top: 16px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="cv-page" contenteditable="true">
+        
+        <div class="two-col-container">
+            <aside class="sidebar">
+                <h1>ALEXANDER TRI HOANG</h1>
+                <div class="subtitle">Senior Full-Stack Software Engineer</div>
+                
+                <div class="sidebar-section-title">CONTACT INFORMATION</div>
+                <div style="font-size: 11px; color: #475569; line-height: 1.7; margin-bottom: 10px;">
+                    <div>📞 (+84) 988 123 456</div>
+                    <div>✉️ alex.trihoang@gmail.com</div>
+                    <div>📍 Cau Giay, Hanoi, Vietnam</div>
+                    <div>🌐 linkedin.com/in/alex-trihoang</div>
+                </div>
+
+                <div class="sidebar-section-title">CORE SKILLS & TECHNOLOGIES</div>
+                <div class="skills-container">
+                    <span class="skill-chip">JavaScript / TypeScript</span><span class="skill-chip">Node.js (NestJS, Express)</span><span class="skill-chip">React / Next.js</span><span class="skill-chip">PostgreSQL, MongoDB, Redis</span><span class="skill-chip">AWS (EC2, S3, Lambda, ECS)</span><span class="skill-chip">Docker, Kubernetes, CI/CD</span><span class="skill-chip">System Architecture & Security</span>
+                </div>
+
+                <div class="sidebar-section-title">CERTIFICATIONS & AWARDS</div>
+                <ul class="bullet-list" style="padding-left: 14px;">
+                    <li>AWS Certified Solutions Architect – Associate (2023)</li><li>Certified Kubernetes Administrator - CKA (2022)</li><li>Professional Working English - TOEIC 880 / 990 (2021)</li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <div class="section-title">PROFESSIONAL SUMMARY</div>
+                <p class="summary-text">Full-Stack Software Engineer with over 5 years of experience architecting and building high-traffic cloud platforms serving millions of active users. Deep expertise in Node.js, React, Microservices architecture, and AWS cloud solutions. Passionate about system scalability, zero-downtime deployments, and clean code principles.</p>
+
+                <div class="section-title">WORK EXPERIENCE</div>
+                
+                <div style="margin-bottom: 12px;">
+                    <div class="item-header">
+                        <span class="item-title">Lead Software Engineer</span>
+                        <span class="item-date">06/2022 - Present</span>
+                    </div>
+                    <div class="item-sub">FPT Software Technology Corp</div>
+                    <ul class="bullet-list">
+                        <li>Spearheaded the architectural migration of core services from monolithic to microservices, reducing API response latency by 45% and elevating platform availability to 99.98%.</li><li>Implemented a multi-tier distributed caching layer with Redis, reducing primary database query loads by 60%.</li><li>Automated end-to-end CI/CD deployment pipelines on GitHub Actions, cutting release turnaround time from 2 weeks down to 3 days.</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <div class="item-header">
+                        <span class="item-title">Full-Stack Software Engineer</span>
+                        <span class="item-date">08/2019 - 05/2022</span>
+                    </div>
+                    <div class="item-sub">VNG Corporation</div>
+                    <ul class="bullet-list">
+                        <li>Engineered secure payment and transaction processing modules catering to over 1.2 million monthly active users.</li><li>Optimized frontend web performance utilizing Next.js Server-Side Rendering (SSR), improving Google Lighthouse score from 65 to 94/100.</li>
+                    </ul>
+                </div>
+                
+
+                <div class="section-title">EDUCATION</div>
+                
+                <div style="margin-bottom: 10px;">
+                    <div class="item-header">
+                        <span class="item-title">Hanoi University of Science and Technology (HUST)</span>
+                        <span class="item-date">2015 - 2020</span>
+                    </div>
+                    <div class="item-sub">Bachelor of Science in Computer Science</div>
+                    <div class="item-desc">✦ Graduated with High Distinction (GPA: 3.65/4.0) • 1st Prize in Annual University Innovation Contest 2019</div>
+                </div>
+                
+
+                <div class="section-title">FEATURED PROJECTS</div>
+                
+                <div style="margin-bottom: 8px;">
+                    <div class="item-title">Smart HR Enterprise SaaS Platform <span style="font-weight: normal; color: #64748b;">(Architect & Backend Lead)</span></div>
+                    <div class="item-desc">✦ Scalable enterprise solution supporting 250+ corporate clients with real-time analytics.</div>
+                </div>
+                
+            </main>
+        </div>
+        
+    </div>
+</body>
+</html>

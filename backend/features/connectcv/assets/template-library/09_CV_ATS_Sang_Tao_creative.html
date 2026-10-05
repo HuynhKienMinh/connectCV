@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sáng tạo - Nguyễn Trúc Anh (Nhân viên Livestream & Content Creator)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="margin:-15mm -20mm 0 -20mm; background:linear-gradient(135deg, #7D8C75 0%, #7D8C75cc 100%); padding:22px 30px; display:flex; align-items:center; gap:22px;">
+            <div style="width:90px; height:90px; border-radius:50%; overflow:hidden; background:#ffffff40; border:3px solid #ffffff; flex-shrink:0;">
+                <img src="/images/avatars/creative.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/creative.jpg';" />
+            </div>
+            <div>
+                <h1 style="font-size:22px; font-weight:900; color:#ffffff; text-transform:uppercase; margin:0; text-shadow:0 1px 2px rgba(0,0,0,0.3);" contenteditable="true">Nguyễn Trúc Anh</h1>
+                <div style="font-size:13px; font-weight:600; color:#ffffffdd; margin-top:4px;" contenteditable="true">Nhân viên Livestream & Content Creator</div>
+                <div style="font-size:11px; color:#ffffffbb; margin-top:8px; display:flex; gap:16px; flex-wrap:wrap;">
+                    <span>📞 0934 888 999</span>
+                    <span>✉️ trucanh.live@gmail.com</span>
+                    <span>📍 Cầu Giấy, Hà Nội</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:20px; margin-top:18px;">
+            <div style="width:36%; flex-shrink:0;">
+                <div style="background:#7D8C7510; border-radius:8px; padding:14px; margin-bottom:14px;">
+                    <h3 style="font-size:12px; font-weight:800; color:#7D8C75; text-transform:uppercase; margin-bottom:8px; border-bottom:1.5px solid #7D8C75; padding-bottom:4px;">Mục Tiêu</h3>
+                    <p style="font-size:11px; color:#334155; line-height:1.5;" contenteditable="true">Người sáng tạo nội dung và Host Livestream năng động, hoạt ngôn, có hơn 3 năm kinh nghiệm phát sóng trực tiếp trên TikTok Shop và Shopee Live. Kỷ lục doanh số 250 triệu VNĐ trong một phiên live 3 giờ. Khả năng tương tác cuốn hút và giữ chân người xem cao.</p>
+                </div>
+                <div style="background:#7D8C7510; border-radius:8px; padding:14px; margin-bottom:14px;">
+                    <h3 style="font-size:12px; font-weight:800; color:#7D8C75; text-transform:uppercase; margin-bottom:8px; border-bottom:1.5px solid #7D8C75; padding-bottom:4px;">Học Vấn</h3>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="font-size:11px; font-weight:700; color:#1e293b;" contenteditable="true">Đại học Sân khấu Điện ảnh Hà Nội</div>
+                        <div style="font-size:10.5px; color:#7D8C75;" contenteditable="true">Chuyên ngành Nghệ thuật</div>
+                        <div style="font-size:10px; color:#64748b;" contenteditable="true">2019 - 2023 • Top 10 Cuộc thi Tìm kiếm Tài năng Trẻ</div>
+                    </div>
+                    
+                </div>
+                <div style="background:#7D8C7510; border-radius:8px; padding:14px;">
+                    <h3 style="font-size:12px; font-weight:800; color:#7D8C75; text-transform:uppercase; margin-bottom:8px; border-bottom:1.5px solid #7D8C75; padding-bottom:4px;">Kỹ Năng</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:5px;">
+                        <span style="font-size:10px; padding:2px 7px; background:#7D8C7520; border:1px solid #7D8C7550; border-radius:12px; color:#7D8C75; font-weight:600;" contenteditable="true">Livestream bán hàng</span><span style="font-size:10px; padding:2px 7px; background:#7D8C7520; border:1px solid #7D8C7550; border-radius:12px; color:#7D8C75; font-weight:600;" contenteditable="true">Xây dựng kịch bản phễu</span><span style="font-size:10px; padding:2px 7px; background:#7D8C7520; border:1px solid #7D8C7550; border-radius:12px; color:#7D8C75; font-weight:600;" contenteditable="true">Bắt trend TikTok</span><span style="font-size:10px; padding:2px 7px; background:#7D8C7520; border:1px solid #7D8C7550; border-radius:12px; color:#7D8C75; font-weight:600;" contenteditable="true">Diễn xuất & Hoạt ngôn</span><span style="font-size:10px; padding:2px 7px; background:#7D8C7520; border:1px solid #7D8C7550; border-radius:12px; color:#7D8C75; font-weight:600;" contenteditable="true">OBS Studio</span>
+                    </div>
+                </div>
+            </div>
+            <div style="flex:1;">
+                <h2 style="font-size:13px; font-weight:800; color:#7D8C75; text-transform:uppercase; border-bottom:2px solid #7D8C75; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                
+                <div style="margin-bottom:14px; padding-left:12px; border-left:3px solid #7D8C75;">
+                    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                        <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">Agency Thời Trang & Mỹ Phẩm BeautyTop</span>
+                        <span style="font-size:10.5px; color:#64748b;" contenteditable="true">01/2023 - Hiện tại</span>
+                    </div>
+                    <div style="font-size:11.5px; font-weight:600; color:#7D8C75; margin-bottom:5px;" contenteditable="true">Lead Streamer & KOC</div>
+                    <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                        <li contenteditable="true">Trực tiếp dẫn các phiên livestream cao điểm Flash Sale, duy trì GMV trung bình 80 - 150 triệu/phiên.</li><li contenteditable="true">Phối hợp với team kỹ thuật setup ánh sáng, góc máy và kịch bản tung voucher kích cầu chuyển đổi.</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '09_CV_ATS_Sang_Tao_creative.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1700 @@
+{
+  "title": "Danh mục toàn bộ mẫu CV ATS TopCV (Tiếng Việt & Tiếng Anh, Mẫu Thường + Mẫu Cao Cấp)",
+  "source_vi": "https://www.topcv.vn/mau-cv-tieng-viet/mau-ats",
+  "source_en": "https://www.topcv.vn/mau-cv-tieng-anh/mau-ats",
+  "updated_at": "2026-09-30 01:53:28",
+  "total_templates": 74,
+  "templates": [
+    {
+      "index": 1,
+      "slug": "ambitious",
+      "title_vi": "Tham vọng",
+      "title_en": "Ambitious ATS",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "EC8F00",
+        "14ABE2"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tham-vong-_AAMFV1pWBw1QAwJVVlIBVVFTBldUAQ0GBlBSVwe878.webp?t=1751708503&color=EC8F00&template_name=ambitious&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tham-vong-_VQdSVQsJAgFUUVVUCgkADgABBFZXV1ACDVIDBQ19c8.webp?t=1751709023&color=EC8F00&template_name=ambitious&lang=en",
+      "local_snapshot_vi": "snapshots/vi/ambitious.webp",
+      "local_snapshot_en": "snapshots/en/ambitious.webp",
+      "html_vi": "01_CV_ATS_ambitious_vi.html",
+      "docx_vi": "01_CV_ATS_ambitious_vi.docx",
+      "html_en": "01_CV_ATS_ambitious_en.html",
+      "docx_en": "01_CV_ATS_ambitious_en.docx"
+    },
+    {
+      "index": 2,
+      "slug": "ambitious_1",
+      "title_vi": "Tham vọng 1",
+      "title_en": "Ambitious 1",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "e58f30"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tham-vong-1-_UAFSA1dVU1MHDQZXDwFRVVIAVgcDVggDUVcFVw4354.webp?t=1755425869&color=e58f30&template_name=ambitious_1&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tham-vong-1-_WgwGBlNVUFwOVlIEUQRWVAQCAQBSVVNXVgEBWQf094.webp?t=1755426358&color=e58f30&template_name=ambitious_1&lang=en",
+      "local_snapshot_vi": "snapshots/vi/ambitious_1.webp",
+      "local_snapshot_en": "snapshots/en/ambitious_1.webp",
+      "html_vi": "02_CV_ATS_ambitious_1_vi.html",
+      "docx_vi": "02_CV_ATS_ambitious_1_vi.docx",
+      "html_en": "02_CV_ATS_ambitious_1_en.html",
+      "docx_en": "02_CV_ATS_ambitious_1_en.docx"
+    },
+    {
+      "index": 3,
+      "slug": "basic_1_v2",
+      "title_vi": "Basic 1",
+      "title_en": "Basic 1",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "a2acb8",
+        "7CB4DE",
+        "8ED39B",
+        "F1B99C",
+        "CCCCCC"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-1-_V1cEAQVeB1JUAgMCBlcFVQNcBlVaDQFTAFZTVAb120.webp?t=1756265984&color=a2acb8&template_name=basic_1_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-1-_A1BWAFIGUVEGWwBVVVQHUgJSBAMPVwICUwFUDg48d7.webp?t=1750240126&color=a2acb8&template_name=basic_1_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/basic_1_v2.webp",
+      "local_snapshot_en": "snapshots/en/basic_1_v2.webp",
+      "html_vi": "03_CV_ATS_basic_1_v2_vi.html",
+      "docx_vi": "03_CV_ATS_basic_1_v2_vi.docx",
+      "html_en": "03_CV_ATS_basic_1_v2_en.html",
+      "docx_en": "03_CV_ATS_basic_1_v2_en.docx"
+    },
+    {
+      "index": 4,
+      "slug": "basic_2",
+      "title_vi": "Basic 2",
+      "title_en": "Basic 2",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/basic_2.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/basic_2.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/basic_2.webp",
+      "local_snapshot_en": "snapshots/en/basic_2.webp",
+      "html_vi": "04_CV_ATS_basic_2_vi.html",
+      "docx_vi": "04_CV_ATS_basic_2_vi.docx",
+      "html_en": "04_CV_ATS_basic_2_en.html",
+      "docx_en": "04_CV_ATS_basic_2_en.docx"
+    },
+    {
+      "index": 5,
+      "slug": "basic_3_v2",
+      "title_vi": "Basic 3",
+      "title_en": "Basic 3",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "DFF1E4",
+        "E3F4F4",
+        "FFEFEE",
+        "F1F1F1"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-3-_UlACDQBQAFZTUlQAVgAAAQEFAQhVBQUJUVcDUwa508.webp?t=1758620266&color=DFF1E4&template_name=basic_3_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-3-_WwQEBFQBUVUEUAQIUVcPAwBWVFYCBVwPAQUGVQ392e.webp?t=1758278512&color=DFF1E4&template_name=basic_3_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/basic_3_v2.webp",
+      "local_snapshot_en": "snapshots/en/basic_3_v2.webp",
+      "html_vi": "05_CV_ATS_basic_3_v2_vi.html",
+      "docx_vi": "05_CV_ATS_basic_3_v2_vi.docx",
+      "html_en": "05_CV_ATS_basic_3_v2_en.html",
+      "docx_en": "05_CV_ATS_basic_3_v2_en.docx"
+    },
+    {
+      "index": 6,
+      "slug": "basic_4_v2",
+      "title_vi": "Basic 4",
+      "title_en": "Basic 4",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "0A7EB5",
+        "00B4D8",
+        "17AD30",
+        "FFA211",
+        "646D79"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-4-_UFZTVlMDDVQOV1tUDgYEBQ5WBQJSDgUMUQ4HUQf38b.webp?t=1758539892&color=0A7EB5&template_name=basic_4_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-4-_VgIBUV5XVwEDAVdTUQ9TV1ZTVVVSV1cAUQQCVg4c7d.webp?t=1750415565&color=0A7EB5&template_name=basic_4_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/basic_4_v2.webp",
+      "local_snapshot_en": "snapshots/en/basic_4_v2.webp",
+      "html_vi": "06_CV_ATS_basic_4_v2_vi.html",
+      "docx_vi": "06_CV_ATS_basic_4_v2_vi.docx",
+      "html_en": "06_CV_ATS_basic_4_v2_en.html",
+      "docx_en": "06_CV_ATS_basic_4_v2_en.docx"
+    },
+    {
+      "index": 7,
+      "slug": "basic_5_v2",
+      "title_vi": "Basic 5",
+      "title_en": "Basic 5",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "D07438",
+        "668A6F",
+        "D17D98",
+        "6A80B9",
+        "897FCE",
+        "789EAA"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-5-_CVYMVgMBXFQNA1YJBlRaUF9SAgdXCVZdUVdTAQ5114.webp?t=1750136756&color=D07438&template_name=basic_5_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-basic-5-_UFQCAlFSWwBXAAcPAAUCBAAGXVFVCgdQWQBaAw2ece.webp?t=1750149067&color=D07438&template_name=basic_5_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/basic_5_v2.webp",
+      "local_snapshot_en": "snapshots/en/basic_5_v2.webp",
+      "html_vi": "07_CV_ATS_basic_5_v2_vi.html",
+      "docx_vi": "07_CV_ATS_basic_5_v2_vi.docx",
+      "html_en": "07_CV_ATS_basic_5_v2_en.html",
+      "docx_en": "07_CV_ATS_basic_5_v2_en.docx"
+    },
+    {
+      "index": 8,
+      "slug": "bright",
+      "title_vi": "Bright",
+      "title_en": "Bright ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "4B5346",
+        "8D494A",
+        "345B69"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-bright-_V11VWgZUBgUOXQVQBwRTVQYOBw5TUQYHAAlaBA9a89.webp?t=1758279230&color=4B5346&template_name=bright&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-bright-_BQ9WAANWBwYDVFUEUgNWBwcADAUCAVteUFJVUgd854.webp?t=1758279269&color=4B5346&template_name=bright&lang=en",
+      "local_snapshot_vi": "snapshots/vi/bright.webp",
+      "local_snapshot_en": "snapshots/en/bright.webp",
+      "html_vi": "08_CV_ATS_bright_vi.html",
+      "docx_vi": "08_CV_ATS_bright_vi.docx",
+      "html_en": "08_CV_ATS_bright_en.html",
+      "docx_en": "08_CV_ATS_bright_en.docx"
+    },
+    {
+      "index": 9,
+      "slug": "chrome",
+      "title_vi": "Chrome",
+      "title_en": "Chrome Modern",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/chrome.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/chrome.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/chrome.webp",
+      "local_snapshot_en": "snapshots/en/chrome.webp",
+      "html_vi": "09_CV_ATS_chrome_vi.html",
+      "docx_vi": "09_CV_ATS_chrome_vi.docx",
+      "html_en": "09_CV_ATS_chrome_en.html",
+      "docx_en": "09_CV_ATS_chrome_en.docx"
+    },
+    {
+      "index": 10,
+      "slug": "clarity",
+      "title_vi": "Clarity",
+      "title_en": "Clarity ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "2E2E2E",
+        "0D4559",
+        "7A5343"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-clarity-_A1QFA1EGBwJXUVcACgcPAA1RVAVcUlcBBwYEAg90e5.webp?t=1751514549&color=2E2E2E&template_name=clarity&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-clarity-_VlcFBgQFUwQNAVZQVlRXAAtVW1wCAggMBwAJXQ43f6.webp?t=1751514579&color=2E2E2E&template_name=clarity&lang=en",
+      "local_snapshot_vi": "snapshots/vi/clarity.webp",
+      "local_snapshot_en": "snapshots/en/clarity.webp",
+      "html_vi": "10_CV_ATS_clarity_vi.html",
+      "docx_vi": "10_CV_ATS_clarity_vi.docx",
+      "html_en": "10_CV_ATS_clarity_en.html",
+      "docx_en": "10_CV_ATS_clarity_en.docx"
+    },
+    {
+      "index": 11,
+      "slug": "classic_1",
+      "title_vi": "Cổ Điển 1",
+      "title_en": "Classic 1",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/classic_1.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/classic_1.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/classic_1.webp",
+      "local_snapshot_en": "snapshots/en/classic_1.webp",
+      "html_vi": "11_CV_ATS_classic_1_vi.html",
+      "docx_vi": "11_CV_ATS_classic_1_vi.docx",
+      "html_en": "11_CV_ATS_classic_1_en.html",
+      "docx_en": "11_CV_ATS_classic_1_en.docx"
+    },
+    {
+      "index": 12,
+      "slug": "creative",
+      "title_vi": "Sáng tạo",
+      "title_en": "Creative ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "B8C0B3",
+        "F1ADAE"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-sang-tao-_UVAIVQEFV1NRUlcNAgRTUVZSAVNXAVdSU1UGUA7ec8.webp?t=1751536561&color=B8C0B3&template_name=creative&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-sang-tao-_UgoHV1VUV1ULXggAVVNZBgsBU1ENBFBVUVUAUg0680.webp?t=1751536816&color=B8C0B3&template_name=creative&lang=en",
+      "local_snapshot_vi": "snapshots/vi/creative.webp",
+      "local_snapshot_en": "snapshots/en/creative.webp",
+      "html_vi": "12_CV_ATS_creative_vi.html",
+      "docx_vi": "12_CV_ATS_creative_vi.docx",
+      "html_en": "12_CV_ATS_creative_en.html",
+      "docx_en": "12_CV_ATS_creative_en.docx"
+    },
+    {
+      "index": 13,
+      "slug": "cv_color",
+      "title_vi": "Màu sắc",
+      "title_en": "Colorful Palette",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/cv_color.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/cv_color.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/cv_color.webp",
+      "local_snapshot_en": "snapshots/en/cv_color.webp",
+      "html_vi": "13_CV_ATS_cv_color_vi.html",
+      "docx_vi": "13_CV_ATS_cv_color_vi.docx",
+      "html_en": "13_CV_ATS_cv_color_en.html",
+      "docx_en": "13_CV_ATS_cv_color_en.docx"
+    },
+    {
+      "index": 14,
+      "slug": "default_junior",
+      "title_vi": "Tiêu chuẩn (ít kinh nghiệm)",
+      "title_en": "Standard ATS (Junior)",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "F6F6F6",
+        "EEF1E7",
+        "DBE9EC",
+        "F8EFE9"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tieu-chuan-it-kinh-nghiem-_AwMBBgcFDlZRVAYCWQwLUgBVB1ACUlQAAlsHUg57b4.webp?t=1763723169&color=F6F6F6&template_name=default_junior&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tieu-chuan-it-kinh-nghiem-_B1AGCQRUXwlUAFtWWlpYA1oCA1FSAF4HUFEMUw7a28.webp?t=1763453555&color=F6F6F6&template_name=default_junior&lang=en",
+      "local_snapshot_vi": "snapshots/vi/default_junior.webp",
+      "local_snapshot_en": "snapshots/en/default_junior.webp",
+      "html_vi": "14_CV_ATS_default_junior_vi.html",
+      "docx_vi": "14_CV_ATS_default_junior_vi.docx",
+      "html_en": "14_CV_ATS_default_junior_en.html",
+      "docx_en": "14_CV_ATS_default_junior_en.docx"
+    },
+    {
+      "index": 15,
+      "slug": "default_v2",
+      "title_vi": "Tiêu chuẩn",
+      "title_en": "Standard ATS",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "000000",
+        "404040",
+        "1F3F57",
+        "3A0912"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tieu-chuan-_BgoGAAMJAl4HAANQUgIDBFEMBQ5SAFJQV1ENDQd2e5.webp?t=1753327595&color=000000&template_name=default_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-tieu-chuan-_UQADCVNTXFgFAFYGDQkGXVMFVgAGXVFXAQVSAw1d8c.webp?t=1751365716&color=000000&template_name=default_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/default_v2.webp",
+      "local_snapshot_en": "snapshots/en/default_v2.webp",
+      "html_vi": "15_CV_ATS_default_v2_vi.html",
+      "docx_vi": "15_CV_ATS_default_v2_vi.docx",
+      "html_en": "15_CV_ATS_default_v2_en.html",
+      "docx_en": "15_CV_ATS_default_v2_en.docx"
+    },
+    {
+      "index": 16,
+      "slug": "delicate_1",
+      "title_vi": "Tinh tế 1",
+      "title_en": "Delicate 1",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/delicate_1.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/delicate_1.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/delicate_1.webp",
+      "local_snapshot_en": "snapshots/en/delicate_1.webp",
+      "html_vi": "16_CV_ATS_delicate_1_vi.html",
+      "docx_vi": "16_CV_ATS_delicate_1_vi.docx",
+      "html_en": "16_CV_ATS_delicate_1_en.html",
+      "docx_en": "16_CV_ATS_delicate_1_en.docx"
+    },
+    {
+      "index": 17,
+      "slug": "dev_1",
+      "title_vi": "Lập Trình Viên",
+      "title_en": "Software Developer",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/dev_1.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/dev_1.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/dev_1.webp",
+      "local_snapshot_en": "snapshots/en/dev_1.webp",
+      "html_vi": "17_CV_ATS_dev_1_vi.html",
+      "docx_vi": "17_CV_ATS_dev_1_vi.docx",
+      "html_en": "17_CV_ATS_dev_1_en.html",
+      "docx_en": "17_CV_ATS_dev_1_en.docx"
+    },
+    {
+      "index": 18,
+      "slug": "dev_2",
+      "title_vi": "Lập trình viên 2",
+      "title_en": "Software Developer 2",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/dev_2.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/dev_2.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/dev_2.webp",
+      "local_snapshot_en": "snapshots/en/dev_2.webp",
+      "html_vi": "18_CV_ATS_dev_2_vi.html",
+      "docx_vi": "18_CV_ATS_dev_2_vi.docx",
+      "html_en": "18_CV_ATS_dev_2_en.html",
+      "docx_en": "18_CV_ATS_dev_2_en.docx"
+    },
+    {
+      "index": 19,
+      "slug": "elegant",
+      "title_vi": "Thanh lịch",
+      "title_en": "Elegant ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "B82A38",
+        "55669C",
+        "529163",
+        "E08F0B"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-lich-_VAYKBV1YUQEAVgMCUFxTV1VQBANcUltXV1IFBw9153.webp?t=1753330233&color=B82A38&template_name=elegant&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-lich-_AAMBVldTVgIBUgBRAwpbAVNSBgNSUAQNDlUHAA4a5a.webp?t=1753332424&color=B82A38&template_name=elegant&lang=en",
+      "local_snapshot_vi": "snapshots/vi/elegant.webp",
+      "local_snapshot_en": "snapshots/en/elegant.webp",
+      "html_vi": "19_CV_ATS_elegant_vi.html",
+      "docx_vi": "19_CV_ATS_elegant_vi.docx",
+      "html_en": "19_CV_ATS_elegant_en.html",
+      "docx_en": "19_CV_ATS_elegant_en.docx"
+    },
+    {
+      "index": 20,
+      "slug": "experts",
+      "title_vi": "Chuyên gia",
+      "title_en": "Executive Expert",
+      "is_pro": false,
+      "tags": [
+        "Harvard",
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "000000",
+        "003161",
+        "1D1B77"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-chuyen-gia-_AgQHWgAHVAQGAlAFAQhfVVIDVAZQVgdRUQMNAQd9ba.webp?t=1759200330&color=000000&template_name=experts&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-chuyen-gia-_AQBVXFwFAldfW1BRAQBTCAlVC1cAAFFWVgFUXge5f3.webp?t=1759200448&color=000000&template_name=experts&lang=en",
+      "local_snapshot_vi": "snapshots/vi/experts.webp",
+      "local_snapshot_en": "snapshots/en/experts.webp",
+      "html_vi": "20_CV_ATS_experts_vi.html",
+      "docx_vi": "20_CV_ATS_experts_vi.docx",
+      "html_en": "20_CV_ATS_experts_en.html",
+      "docx_en": "20_CV_ATS_experts_en.docx"
+    },
+    {
+      "index": 21,
+      "slug": "formal",
+      "title_vi": "Trang trọng",
+      "title_en": "Formal ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "6c3d2f",
+        "5D9CA3",
+        "7479E8",
+        "E86F51",
+        "DA7198"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-trang-trong-_AF9SV1oCWwVcA1gHUV1cAAYJUQ1VAl4AB1ILDQ67b3.webp?t=1752807032&color=6c3d2f&template_name=formal&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-trang-trong-_CAAOWVJTAwFVVgNVU1MAAwVTUQtVDwdaUVQDVg0843.webp?t=1752807069&color=6c3d2f&template_name=formal&lang=en",
+      "local_snapshot_vi": "snapshots/vi/formal.webp",
+      "local_snapshot_en": "snapshots/en/formal.webp",
+      "html_vi": "21_CV_ATS_formal_vi.html",
+      "docx_vi": "21_CV_ATS_formal_vi.docx",
+      "html_en": "21_CV_ATS_formal_en.html",
+      "docx_en": "21_CV_ATS_formal_en.docx"
+    },
+    {
+      "index": 22,
+      "slug": "fresher",
+      "title_vi": "Fresher",
+      "title_en": "Fresher / Graduate",
+      "is_pro": true,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/fresher.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/fresher.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/fresher.webp",
+      "local_snapshot_en": "snapshots/en/fresher.webp",
+      "html_vi": "22_CV_ATS_fresher_vi.html",
+      "docx_vi": "22_CV_ATS_fresher_vi.docx",
+      "html_en": "22_CV_ATS_fresher_en.html",
+      "docx_en": "22_CV_ATS_fresher_en.docx"
+    },
+    {
+      "index": 23,
+      "slug": "graceful",
+      "title_vi": "Thanh nhã",
+      "title_en": "Graceful ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "661d1d",
+        "D77F1D",
+        "7A5343",
+        "4C8684",
+        "4C5D42",
+        "0D4559"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-nha-_WlJTAlBWAQoABV9QAgZRAAcAAVEDUVsEUQ9aUg0ee8.webp?t=1752838154&color=661d1d&template_name=graceful&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-nha-_BVdcBAYJUVQEUQMBVAVWVwJWAwIBUwcDVAEAWQf69a.webp?t=1752839074&color=661d1d&template_name=graceful&lang=en",
+      "local_snapshot_vi": "snapshots/vi/graceful.webp",
+      "local_snapshot_en": "snapshots/en/graceful.webp",
+      "html_vi": "23_CV_ATS_graceful_vi.html",
+      "docx_vi": "23_CV_ATS_graceful_vi.docx",
+      "html_en": "23_CV_ATS_graceful_en.html",
+      "docx_en": "23_CV_ATS_graceful_en.docx"
+    },
+    {
+      "index": 24,
+      "slug": "gradient_1_v2",
+      "title_vi": "Gradient 1",
+      "title_en": "Gradient Modern",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "653e8c",
+        "BDA4ED",
+        "71B8FF"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-gradient-1-_AAFdAF0GAgENAABVVFYCUFpaU1ABUVBWAgEFVQd890.webp?t=1751365157&color=653e8c&template_name=gradient_1_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-gradient-1-_UVZUBVMHBgRSAAUNAQkFXQ4ABwRZBQcPUAYIWwfd9c.webp?t=1751365281&color=653e8c&template_name=gradient_1_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/gradient_1_v2.webp",
+      "local_snapshot_en": "snapshots/en/gradient_1_v2.webp",
+      "html_vi": "24_CV_ATS_gradient_1_v2_vi.html",
+      "docx_vi": "24_CV_ATS_gradient_1_v2_vi.docx",
+      "html_en": "24_CV_ATS_gradient_1_v2_en.html",
+      "docx_en": "24_CV_ATS_gradient_1_v2_en.docx"
+    },
+    {
+      "index": 25,
+      "slug": "hello",
+      "title_vi": "Hello",
+      "title_en": "Hello ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/hello.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/hello.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/hello.webp",
+      "local_snapshot_en": "snapshots/en/hello.webp",
+      "html_vi": "25_CV_ATS_hello_vi.html",
+      "docx_vi": "25_CV_ATS_hello_vi.docx",
+      "html_en": "25_CV_ATS_hello_en.html",
+      "docx_en": "25_CV_ATS_hello_en.docx"
+    },
+    {
+      "index": 26,
+      "slug": "impressive_3_v2",
+      "title_vi": "Ấn tượng 3",
+      "title_en": "Impressive 3",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "7a5c53",
+        "497D74",
+        "6CAC6A",
+        "27445D",
+        "55669D"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-3-_BFdWAFICAlwFAwdWVAYJVAJQB1YGCARQAFVUAA4550.webp?t=1752807159&color=7a5c53&template_name=impressive_3_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-3-_DQtYUgdQXVQGDQlQUAtUVgIGAFNaC1APDVkEAA125b.webp?t=1752807248&color=7a5c53&template_name=impressive_3_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/impressive_3_v2.webp",
+      "local_snapshot_en": "snapshots/en/impressive_3_v2.webp",
+      "html_vi": "26_CV_ATS_impressive_3_v2_vi.html",
+      "docx_vi": "26_CV_ATS_impressive_3_v2_vi.docx",
+      "html_en": "26_CV_ATS_impressive_3_v2_en.html",
+      "docx_en": "26_CV_ATS_impressive_3_v2_en.docx"
+    },
+    {
+      "index": 27,
+      "slug": "impressive_5",
+      "title_vi": "Ấn tượng 5",
+      "title_en": "Impressive 5",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/impressive_5.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/impressive_5.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/impressive_5.webp",
+      "local_snapshot_en": "snapshots/en/impressive_5.webp",
+      "html_vi": "27_CV_ATS_impressive_5_vi.html",
+      "docx_vi": "27_CV_ATS_impressive_5_vi.docx",
+      "html_en": "27_CV_ATS_impressive_5_en.html",
+      "docx_en": "27_CV_ATS_impressive_5_en.docx"
+    },
+    {
+      "index": 28,
+      "slug": "impressive_6_v2",
+      "title_vi": "Ấn tượng 6",
+      "title_en": "Impressive 6",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "574040",
+        "515C51",
+        "4e7b8b",
+        "537D5D",
+        "9A7DB6",
+        "8D494A"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-6-_VlJVBQcNCQgBBVdWAgMCVQFTUAYPVgBUCVNRAQb0f5.webp?t=1756435041&color=574040&template_name=impressive_6_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-6-_DFRVB1FRAAUGD15YUAsCWAlWVg8MUg8IB1FfUA9a76.webp?t=1755425422&color=574040&template_name=impressive_6_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/impressive_6_v2.webp",
+      "local_snapshot_en": "snapshots/en/impressive_6_v2.webp",
+      "html_vi": "28_CV_ATS_impressive_6_v2_vi.html",
+      "docx_vi": "28_CV_ATS_impressive_6_v2_vi.docx",
+      "html_en": "28_CV_ATS_impressive_6_v2_en.html",
+      "docx_en": "28_CV_ATS_impressive_6_v2_en.docx"
+    },
+    {
+      "index": 29,
+      "slug": "impressive_pro",
+      "title_vi": "Chuyên Nghiệp Ấn Tượng",
+      "title_en": "Impressive Professional",
+      "is_pro": true,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/impressive_pro.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/impressive_pro.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/impressive_pro.webp",
+      "local_snapshot_en": "snapshots/en/impressive_pro.webp",
+      "html_vi": "29_CV_ATS_impressive_pro_vi.html",
+      "docx_vi": "29_CV_ATS_impressive_pro_vi.docx",
+      "html_en": "29_CV_ATS_impressive_pro_en.html",
+      "docx_en": "29_CV_ATS_impressive_pro_en.docx"
+    },
+    {
+      "index": 30,
+      "slug": "landing",
+      "title_vi": "Landing",
+      "title_en": "Landing Page ATS",
+      "is_pro": true,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/landing.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/landing.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/landing.webp",
+      "local_snapshot_en": "snapshots/en/landing.webp",
+      "html_vi": "30_CV_ATS_landing_vi.html",
+      "docx_vi": "30_CV_ATS_landing_vi.docx",
+      "html_en": "30_CV_ATS_landing_en.html",
+      "docx_en": "30_CV_ATS_landing_en.docx"
+    },
+    {
+      "index": 31,
+      "slug": "minimalism_v2",
+      "title_vi": "Tối giản 2",
+      "title_en": "Minimalism 2",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "263A4D",
+        "27548a",
+        "497d74"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-toi-gian-2-_BQIFVQdWDgNUDgJXVlcNCw0KDwxSV1ZTVFAJBge3ff.webp?t=1762145812&color=263A4D&template_name=minimalism_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-toi-gian-2-_BgADVFQCAFECBwMGBlADBlYCAAgEAwIEUVAHAQd0d3.webp?t=1750152036&color=263A4D&template_name=minimalism_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/minimalism_v2.webp",
+      "local_snapshot_en": "snapshots/en/minimalism_v2.webp",
+      "html_vi": "31_CV_ATS_minimalism_v2_vi.html",
+      "docx_vi": "31_CV_ATS_minimalism_v2_vi.docx",
+      "html_en": "31_CV_ATS_minimalism_v2_en.html",
+      "docx_en": "31_CV_ATS_minimalism_v2_en.docx"
+    },
+    {
+      "index": 32,
+      "slug": "modern_1_v2",
+      "title_vi": "Hiện Đại 1",
+      "title_en": "Modern 1",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "a94a4b",
+        "4B9DBC",
+        "F28B3D",
+        "24B35F"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-1-_VAFaBAAJVw0CAQ4CUQECV1QABQcCAgkCVgNVCw391b.webp?t=1750134891&color=a94a4b&template_name=modern_1_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-1-_WQdXVAcBVlUAAgIGBlUHUgcKVQ8KVVcHVlQMUQ2878.webp?t=1750304839&color=a94a4b&template_name=modern_1_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/modern_1_v2.webp",
+      "local_snapshot_en": "snapshots/en/modern_1_v2.webp",
+      "html_vi": "32_CV_ATS_modern_1_v2_vi.html",
+      "docx_vi": "32_CV_ATS_modern_1_v2_vi.docx",
+      "html_en": "32_CV_ATS_modern_1_v2_en.html",
+      "docx_en": "32_CV_ATS_modern_1_v2_en.docx"
+    },
+    {
+      "index": 33,
+      "slug": "modern_2_v2",
+      "title_vi": "Hiện Đại 2",
+      "title_en": "Modern 2",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "ef476f",
+        "555555",
+        "38618c",
+        "118ab2",
+        "1a936f"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-2-_V1ZcVVNQBgEDUAIFVFIFAA4AUwBVBQNXXl1dUQa141.webp?t=1756283220&color=ef476f&template_name=modern_2_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-2-_WAAKAlEAB1VWUVxVU1MHAggBVQICBVRQV1EGBQ452f.webp?t=1750148448&color=ef476f&template_name=modern_2_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/modern_2_v2.webp",
+      "local_snapshot_en": "snapshots/en/modern_2_v2.webp",
+      "html_vi": "33_CV_ATS_modern_2_v2_vi.html",
+      "docx_vi": "33_CV_ATS_modern_2_v2_vi.docx",
+      "html_en": "33_CV_ATS_modern_2_v2_en.html",
+      "docx_en": "33_CV_ATS_modern_2_v2_en.docx"
+    },
+    {
+      "index": 34,
+      "slug": "modern_3",
+      "title_vi": "Hiện Đại 3",
+      "title_en": "Modern 3",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/modern_3.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/modern_3.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/modern_3.webp",
+      "local_snapshot_en": "snapshots/en/modern_3.webp",
+      "html_vi": "34_CV_ATS_modern_3_vi.html",
+      "docx_vi": "34_CV_ATS_modern_3_vi.docx",
+      "html_en": "34_CV_ATS_modern_3_en.html",
+      "docx_en": "34_CV_ATS_modern_3_en.docx"
+    },
+    {
+      "index": 35,
+      "slug": "modern_4_v2",
+      "title_vi": "Hiện Đại 4",
+      "title_en": "Modern 4",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "F0B043",
+        "7CBFBB",
+        "1FC49B",
+        "B397CF",
+        "FC8383"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-4-_VQELAlBRCQRQW1MGV11VDgJRVQFXC1INBAoCUw7091.webp?t=1758278850&color=F0B043&template_name=modern_4_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-4-_DFBXAgRSBFhaBQJbVlAIUloFD1dWUgdQV1UOAge332.webp?t=1750141950&color=F0B043&template_name=modern_4_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/modern_4_v2.webp",
+      "local_snapshot_en": "snapshots/en/modern_4_v2.webp",
+      "html_vi": "35_CV_ATS_modern_4_v2_vi.html",
+      "docx_vi": "35_CV_ATS_modern_4_v2_vi.docx",
+      "html_en": "35_CV_ATS_modern_4_v2_en.html",
+      "docx_en": "35_CV_ATS_modern_4_v2_en.docx"
+    },
+    {
+      "index": 36,
+      "slug": "modern_5",
+      "title_vi": "Hiện Đại 5",
+      "title_en": "Modern 5",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/modern_5.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/modern_5.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/modern_5.webp",
+      "local_snapshot_en": "snapshots/en/modern_5.webp",
+      "html_vi": "36_CV_ATS_modern_5_vi.html",
+      "docx_vi": "36_CV_ATS_modern_5_vi.docx",
+      "html_en": "36_CV_ATS_modern_5_en.html",
+      "docx_en": "36_CV_ATS_modern_5_en.docx"
+    },
+    {
+      "index": 37,
+      "slug": "modern_6_v2",
+      "title_vi": "Hiện đại 6",
+      "title_en": "Modern 6",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "7a415a",
+        "E79619",
+        "A94A4B",
+        "BE5985",
+        "3D8D7A"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-6-_XVRQAAECVwZRUFRYBVwCXAIDUAcDVAgBAlJRUw0fd2.webp?t=1755161319&color=7a415a&template_name=modern_6_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-hien-dai-6-_BVBUAFFRU1JeBwQHBAIIUwBaVldVBFMFBFcAVQd11f.webp?t=1750160029&color=7a415a&template_name=modern_6_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/modern_6_v2.webp",
+      "local_snapshot_en": "snapshots/en/modern_6_v2.webp",
+      "html_vi": "37_CV_ATS_modern_6_v2_vi.html",
+      "docx_vi": "37_CV_ATS_modern_6_v2_vi.docx",
+      "html_en": "37_CV_ATS_modern_6_v2_en.html",
+      "docx_en": "37_CV_ATS_modern_6_v2_en.docx"
+    },
+    {
+      "index": 38,
+      "slug": "onepage_classic",
+      "title_vi": "Một Trang Cổ Điển",
+      "title_en": "Classic One-Page",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/onepage_classic.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/onepage_classic.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/onepage_classic.webp",
+      "local_snapshot_en": "snapshots/en/onepage_classic.webp",
+      "html_vi": "38_CV_ATS_onepage_classic_vi.html",
+      "docx_vi": "38_CV_ATS_onepage_classic_vi.docx",
+      "html_en": "38_CV_ATS_onepage_classic_en.html",
+      "docx_en": "38_CV_ATS_onepage_classic_en.docx"
+    },
+    {
+      "index": 39,
+      "slug": "onepage_elegant_v2",
+      "title_vi": "Thanh Lịch 1",
+      "title_en": "Elegant 1",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "ATS"
+      ],
+      "colors": [
+        "556E8E",
+        "3BA469",
+        "202122"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-lich-1-_VlcLBQ0EBwFUBwUAW1tRVgRdXQcBAgIIVQIBXQ9411.webp?t=1749795770&color=556E8E&template_name=onepage_elegant_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-lich-1-_VFVUUldcUgILUwQCAgkBAwUEAwJQBVFQBV8EWg0243.webp?t=1750151818&color=556E8E&template_name=onepage_elegant_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/onepage_elegant_v2.webp",
+      "local_snapshot_en": "snapshots/en/onepage_elegant_v2.webp",
+      "html_vi": "39_CV_ATS_onepage_elegant_v2_vi.html",
+      "docx_vi": "39_CV_ATS_onepage_elegant_v2_vi.docx",
+      "html_en": "39_CV_ATS_onepage_elegant_v2_en.html",
+      "docx_en": "39_CV_ATS_onepage_elegant_v2_en.docx"
+    },
+    {
+      "index": 40,
+      "slug": "onepage_impressive_2_v2",
+      "title_vi": "Ấn tượng 2",
+      "title_en": "Impressive 2",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "505c50",
+        "5C8373",
+        "27445d",
+        "9f5255"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-2-_CQdVBAZTVVdQVglUBgVWU1YIBFlaVFYEAwUAAA3f18.webp?t=1749809943&color=505c50&template_name=onepage_impressive_2_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-2-_AwwLXApVAAMHVAYADVoGAAwDAV1ZA1YGBg0DVge40a.webp?t=1750243030&color=505c50&template_name=onepage_impressive_2_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/onepage_impressive_2_v2.webp",
+      "local_snapshot_en": "snapshots/en/onepage_impressive_2_v2.webp",
+      "html_vi": "40_CV_ATS_onepage_impressive_2_v2_vi.html",
+      "docx_vi": "40_CV_ATS_onepage_impressive_2_v2_vi.docx",
+      "html_en": "40_CV_ATS_onepage_impressive_2_v2_en.html",
+      "docx_en": "40_CV_ATS_onepage_impressive_2_v2_en.docx"
+    },
+    {
+      "index": 41,
+      "slug": "onepage_impressive_3_v2",
+      "title_vi": "Ấn tượng 4",
+      "title_en": "Impressive 4",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "316160",
+        "1fbc8a",
+        "6A80B9",
+        "658A6F",
+        "897FCE"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-4-_BlQBAFNdXQRVVVNWWgQGAlEHUwYABVYAAAVQBw9a20.webp?t=1756267140&color=316160&template_name=onepage_impressive_3_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-4-_XwBTUgUFBgNVVwBRAQEAB1FUBVRTUglTUgcFWA6595.webp?t=1750403395&color=316160&template_name=onepage_impressive_3_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/onepage_impressive_3_v2.webp",
+      "local_snapshot_en": "snapshots/en/onepage_impressive_3_v2.webp",
+      "html_vi": "41_CV_ATS_onepage_impressive_3_v2_vi.html",
+      "docx_vi": "41_CV_ATS_onepage_impressive_3_v2_vi.docx",
+      "html_en": "41_CV_ATS_onepage_impressive_3_v2_en.html",
+      "docx_en": "41_CV_ATS_onepage_impressive_3_v2_en.docx"
+    },
+    {
+      "index": 42,
+      "slug": "onepage_impressive_v2",
+      "title_vi": "Ấn tượng",
+      "title_en": "Impressive Classic",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "EC8F00",
+        "6897AD",
+        "212F3F"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-_UgkHBlVXBVFaVwALUwBeWFBRAw9UAAcAUwJVVA4a94.webp?t=1749787248&color=EC8F00&template_name=onepage_impressive_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-an-tuong-_UVZWCwBSAAsKAVEAUgZdBQRQVQVQVlBVDQxSUw8eb3.webp?t=1750145956&color=EC8F00&template_name=onepage_impressive_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/onepage_impressive_v2.webp",
+      "local_snapshot_en": "snapshots/en/onepage_impressive_v2.webp",
+      "html_vi": "42_CV_ATS_onepage_impressive_v2_vi.html",
+      "docx_vi": "42_CV_ATS_onepage_impressive_v2_vi.docx",
+      "html_en": "42_CV_ATS_onepage_impressive_v2_en.html",
+      "docx_en": "42_CV_ATS_onepage_impressive_v2_en.docx"
+    },
+    {
+      "index": 43,
+      "slug": "outstanding",
+      "title_vi": "Outstanding",
+      "title_en": "Outstanding ATS",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding.webp",
+      "local_snapshot_en": "snapshots/en/outstanding.webp",
+      "html_vi": "43_CV_ATS_outstanding_vi.html",
+      "docx_vi": "43_CV_ATS_outstanding_vi.docx",
+      "html_en": "43_CV_ATS_outstanding_en.html",
+      "docx_en": "43_CV_ATS_outstanding_en.docx"
+    },
+    {
+      "index": 44,
+      "slug": "outstanding_10_v2",
+      "title_vi": "Outstanding 10",
+      "title_en": "Outstanding 10",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "7F987D",
+        "6C8192",
+        "E58E54",
+        "9D7DA5",
+        "4F9CA5"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-outstanding-10-_UVYCAQBXAF4ECQRbAwFQAVJUUlJWBQkDB1IAAA3cda.webp?t=1751253371&color=7F987D&template_name=outstanding_10_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-outstanding-10-_CAEHAlQFCwAJVgRTDABRAwBYDQpYUAFVBFYABw2496.webp?t=1751253496&color=7F987D&template_name=outstanding_10_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_10_v2.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_10_v2.webp",
+      "html_vi": "44_CV_ATS_outstanding_10_v2_vi.html",
+      "docx_vi": "44_CV_ATS_outstanding_10_v2_vi.docx",
+      "html_en": "44_CV_ATS_outstanding_10_v2_en.html",
+      "docx_en": "44_CV_ATS_outstanding_10_v2_en.docx"
+    },
+    {
+      "index": 45,
+      "slug": "outstanding_11",
+      "title_vi": "Outstanding 11",
+      "title_en": "Outstanding 11",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding_11.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding_11.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_11.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_11.webp",
+      "html_vi": "45_CV_ATS_outstanding_11_vi.html",
+      "docx_vi": "45_CV_ATS_outstanding_11_vi.docx",
+      "html_en": "45_CV_ATS_outstanding_11_en.html",
+      "docx_en": "45_CV_ATS_outstanding_11_en.docx"
+    },
+    {
+      "index": 46,
+      "slug": "outstanding_2",
+      "title_vi": "Outstanding 2",
+      "title_en": "Outstanding 2",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding_2.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding_2.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_2.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_2.webp",
+      "html_vi": "46_CV_ATS_outstanding_2_vi.html",
+      "docx_vi": "46_CV_ATS_outstanding_2_vi.docx",
+      "html_en": "46_CV_ATS_outstanding_2_en.html",
+      "docx_en": "46_CV_ATS_outstanding_2_en.docx"
+    },
+    {
+      "index": 47,
+      "slug": "outstanding_3",
+      "title_vi": "Outstanding 3",
+      "title_en": "Outstanding 3",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding_3.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding_3.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_3.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_3.webp",
+      "html_vi": "47_CV_ATS_outstanding_3_vi.html",
+      "docx_vi": "47_CV_ATS_outstanding_3_vi.docx",
+      "html_en": "47_CV_ATS_outstanding_3_en.html",
+      "docx_en": "47_CV_ATS_outstanding_3_en.docx"
+    },
+    {
+      "index": 48,
+      "slug": "outstanding_5",
+      "title_vi": "Outstanding 5",
+      "title_en": "Outstanding 5",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding_5.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding_5.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_5.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_5.webp",
+      "html_vi": "48_CV_ATS_outstanding_5_vi.html",
+      "docx_vi": "48_CV_ATS_outstanding_5_vi.docx",
+      "html_en": "48_CV_ATS_outstanding_5_en.html",
+      "docx_en": "48_CV_ATS_outstanding_5_en.docx"
+    },
+    {
+      "index": 49,
+      "slug": "outstanding_7",
+      "title_vi": "Outstanding 7",
+      "title_en": "Outstanding 7",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding_7.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding_7.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_7.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_7.webp",
+      "html_vi": "49_CV_ATS_outstanding_7_vi.html",
+      "docx_vi": "49_CV_ATS_outstanding_7_vi.docx",
+      "html_en": "49_CV_ATS_outstanding_7_en.html",
+      "docx_en": "49_CV_ATS_outstanding_7_en.docx"
+    },
+    {
+      "index": 50,
+      "slug": "outstanding_9",
+      "title_vi": "Outstanding 9",
+      "title_en": "Outstanding 9",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/outstanding_9.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/outstanding_9.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/outstanding_9.webp",
+      "local_snapshot_en": "snapshots/en/outstanding_9.webp",
+      "html_vi": "50_CV_ATS_outstanding_9_vi.html",
+      "docx_vi": "50_CV_ATS_outstanding_9_vi.docx",
+      "html_en": "50_CV_ATS_outstanding_9_en.html",
+      "docx_en": "50_CV_ATS_outstanding_9_en.docx"
+    },
+    {
+      "index": 51,
+      "slug": "passion",
+      "title_vi": "Đam mê",
+      "title_en": "Passion ATS",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "000000",
+        "351616"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-dam-me-_VVQGU1VUAVxbUQxXB1JUVARaDQlXBA4DVw9XUw0e40.webp?t=1756280894&color=000000&template_name=passion&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-dam-me-_AQoIBwQEB1UNBFMJVQYADwBQXQYFCgQCBFhUUQa1aa.webp?t=1750146792&color=000000&template_name=passion&lang=en",
+      "local_snapshot_vi": "snapshots/vi/passion.webp",
+      "local_snapshot_en": "snapshots/en/passion.webp",
+      "html_vi": "51_CV_ATS_passion_vi.html",
+      "docx_vi": "51_CV_ATS_passion_vi.docx",
+      "html_en": "51_CV_ATS_passion_en.html",
+      "docx_en": "51_CV_ATS_passion_en.docx"
+    },
+    {
+      "index": 52,
+      "slug": "premium_v2",
+      "title_vi": "Cao Cấp",
+      "title_en": "Premium Executive",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "000000",
+        "8967B3",
+        "6A80B9",
+        "5EA68E"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-cao-cap-_AABXVwsBUFMFUQQCVFsLBlIHWVFWBVJcBwtRAQ7b75.webp?t=1756279954&color=000000&template_name=premium_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-cao-cap-_BFdRWwcCAg1QVwEMBQVXUAYMBAdRBAEFVA1UUg3e83.webp?t=1750142618&color=000000&template_name=premium_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/premium_v2.webp",
+      "local_snapshot_en": "snapshots/en/premium_v2.webp",
+      "html_vi": "52_CV_ATS_premium_v2_vi.html",
+      "docx_vi": "52_CV_ATS_premium_v2_vi.docx",
+      "html_en": "52_CV_ATS_premium_v2_en.html",
+      "docx_en": "52_CV_ATS_premium_v2_en.docx"
+    },
+    {
+      "index": 53,
+      "slug": "pro_1_v2",
+      "title_vi": "Chuyên Nghiệp 1",
+      "title_en": "Professional 1",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "6b4e37",
+        "668a6f",
+        "3a8fb0",
+        "48a6a7",
+        "9376b5",
+        "E66565"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-chuyen-nghiep-1-_BgUCClACA1dRVgMBV1VQXgMCCVBWAAZYAgAEVA78d8.webp?t=1758278414&color=6b4e37&template_name=pro_1_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-chuyen-nghiep-1-_UVQHU1ZUAgMCUgBaVlRXBAhXBl0CWF1WUgMFBQafd9.webp?t=1758278448&color=6b4e37&template_name=pro_1_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/pro_1_v2.webp",
+      "local_snapshot_en": "snapshots/en/pro_1_v2.webp",
+      "html_vi": "53_CV_ATS_pro_1_v2_vi.html",
+      "docx_vi": "53_CV_ATS_pro_1_v2_vi.docx",
+      "html_en": "53_CV_ATS_pro_1_v2_en.html",
+      "docx_en": "53_CV_ATS_pro_1_v2_en.docx"
+    },
+    {
+      "index": 54,
+      "slug": "pro_2",
+      "title_vi": "Chuyên Nghiệp 2",
+      "title_en": "Professional 2",
+      "is_pro": true,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/pro_2.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/pro_2.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/pro_2.webp",
+      "local_snapshot_en": "snapshots/en/pro_2.webp",
+      "html_vi": "54_CV_ATS_pro_2_vi.html",
+      "docx_vi": "54_CV_ATS_pro_2_vi.docx",
+      "html_en": "54_CV_ATS_pro_2_en.html",
+      "docx_en": "54_CV_ATS_pro_2_en.docx"
+    },
+    {
+      "index": 55,
+      "slug": "pro_3",
+      "title_vi": "Chuyên Nghiệp 3",
+      "title_en": "Professional 3",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/pro_3.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/pro_3.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/pro_3.webp",
+      "local_snapshot_en": "snapshots/en/pro_3.webp",
+      "html_vi": "55_CV_ATS_pro_3_vi.html",
+      "docx_vi": "55_CV_ATS_pro_3_vi.docx",
+      "html_en": "55_CV_ATS_pro_3_en.html",
+      "docx_en": "55_CV_ATS_pro_3_en.docx"
+    },
+    {
+      "index": 56,
+      "slug": "pro_4",
+      "title_vi": "Chuyên Nghiệp 4",
+      "title_en": "Professional 4",
+      "is_pro": true,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/pro_4.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/pro_4.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/pro_4.webp",
+      "local_snapshot_en": "snapshots/en/pro_4.webp",
+      "html_vi": "56_CV_ATS_pro_4_vi.html",
+      "docx_vi": "56_CV_ATS_pro_4_vi.docx",
+      "html_en": "56_CV_ATS_pro_4_en.html",
+      "docx_en": "56_CV_ATS_pro_4_en.docx"
+    },
+    {
+      "index": 57,
+      "slug": "pro_5",
+      "title_vi": "Chuyên Nghiệp 5",
+      "title_en": "Professional 5",
+      "is_pro": true,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/pro_5.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/pro_5.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/pro_5.webp",
+      "local_snapshot_en": "snapshots/en/pro_5.webp",
+      "html_vi": "57_CV_ATS_pro_5_vi.html",
+      "docx_vi": "57_CV_ATS_pro_5_vi.docx",
+      "html_en": "57_CV_ATS_pro_5_en.html",
+      "docx_en": "57_CV_ATS_pro_5_en.docx"
+    },
+    {
+      "index": 58,
+      "slug": "prosper",
+      "title_vi": "Thành đạt",
+      "title_en": "Prosper ATS",
+      "is_pro": false,
+      "tags": [
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "FFB156",
+        "00AFD3",
+        "777777"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-dat-_CggDAQVRDANQBwQBVAZRUg5XBlpXWAIBAANWBAe9e7.webp?t=1750410781&color=FFB156&template_name=prosper&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thanh-dat-_BFRbAQUBXAVWBwUDDgQFVVUAU1tVV1MACFsCWQ50d1.webp?t=1750387998&color=FFB156&template_name=prosper&lang=en",
+      "local_snapshot_vi": "snapshots/vi/prosper.webp",
+      "local_snapshot_en": "snapshots/en/prosper.webp",
+      "html_vi": "58_CV_ATS_prosper_vi.html",
+      "docx_vi": "58_CV_ATS_prosper_vi.docx",
+      "html_en": "58_CV_ATS_prosper_en.html",
+      "docx_en": "58_CV_ATS_prosper_en.docx"
+    },
+    {
+      "index": 59,
+      "slug": "schoolarship_standard",
+      "title_vi": "Xin Học Bổng Tiêu Chuẩn",
+      "title_en": "Scholarship Standard",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/schoolarship_standard.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "",
+      "local_snapshot_en": "snapshots/en/schoolarship_standard.webp",
+      "html_vi": "59_CV_ATS_schoolarship_standard_vi.html",
+      "docx_vi": "59_CV_ATS_schoolarship_standard_vi.docx",
+      "html_en": "59_CV_ATS_schoolarship_standard_en.html",
+      "docx_en": "59_CV_ATS_schoolarship_standard_en.docx"
+    },
+    {
+      "index": 60,
+      "slug": "senior_2",
+      "title_vi": "Senior 2",
+      "title_en": "Senior 2",
+      "is_pro": false,
+      "tags": [
+        "Harvard",
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/senior_2.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/senior_2.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/senior_2.webp",
+      "local_snapshot_en": "snapshots/en/senior_2.webp",
+      "html_vi": "60_CV_ATS_senior_2_vi.html",
+      "docx_vi": "60_CV_ATS_senior_2_vi.docx",
+      "html_en": "60_CV_ATS_senior_2_en.html",
+      "docx_en": "60_CV_ATS_senior_2_en.docx"
+    },
+    {
+      "index": 61,
+      "slug": "senior_v2",
+      "title_vi": "Senior",
+      "title_en": "Senior Harvard ATS",
+      "is_pro": false,
+      "tags": [
+        "Harvard",
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "000000"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-senior-_B1tfBFEAUgALBAgBBl0MD1wECQBQAQFQAwIAAw44ec.webp?t=1756265781&color=000000&template_name=senior_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-senior-_AggDWVZRXgEHAwQLAlRXUAADUVJSCl0FV10AUwc365.webp?t=1750321958&color=000000&template_name=senior_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/senior_v2.webp",
+      "local_snapshot_en": "snapshots/en/senior_v2.webp",
+      "html_vi": "61_CV_ATS_senior_v2_vi.html",
+      "docx_vi": "61_CV_ATS_senior_v2_vi.docx",
+      "html_en": "61_CV_ATS_senior_v2_en.html",
+      "docx_en": "61_CV_ATS_senior_v2_en.docx"
+    },
+    {
+      "index": 62,
+      "slug": "software_engineer",
+      "title_vi": "Kỹ Sư Phần Mềm",
+      "title_en": "Software Engineer Pro",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/software_engineer.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/software_engineer.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/software_engineer.webp",
+      "local_snapshot_en": "snapshots/en/software_engineer.webp",
+      "html_vi": "62_CV_ATS_software_engineer_vi.html",
+      "docx_vi": "62_CV_ATS_software_engineer_vi.docx",
+      "html_en": "62_CV_ATS_software_engineer_en.html",
+      "docx_en": "62_CV_ATS_software_engineer_en.docx"
+    },
+    {
+      "index": 63,
+      "slug": "student_3",
+      "title_vi": "Sinh viên 3",
+      "title_en": "Student 3",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Chuyên nghiệp",
+        "ATS"
+      ],
+      "colors": [
+        "0359AB",
+        "3C9B68",
+        "84994F",
+        "EF7722",
+        "6FA4AF"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-sinh-vien-3-_AwIHClUID1cFCQQAAgRUVAlYV1FSBAQDXFdWUQ2ff4.webp?t=1763719062&color=0359AB&template_name=student_3&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-sinh-vien-3-_UA0CAAkNUwcDAgADUAZZAA1QUFYFVVJcV1NRBQ168d.webp?t=1763719245&color=0359AB&template_name=student_3&lang=en",
+      "local_snapshot_vi": "snapshots/vi/student_3.webp",
+      "local_snapshot_en": "snapshots/en/student_3.webp",
+      "html_vi": "63_CV_ATS_student_3_vi.html",
+      "docx_vi": "63_CV_ATS_student_3_vi.docx",
+      "html_en": "63_CV_ATS_student_3_en.html",
+      "docx_en": "63_CV_ATS_student_3_en.docx"
+    },
+    {
+      "index": 64,
+      "slug": "sun",
+      "title_vi": "Hệ mặt trời",
+      "title_en": "Solar System Pro",
+      "is_pro": true,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/sun.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/sun.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/sun.webp",
+      "local_snapshot_en": "snapshots/en/sun.webp",
+      "html_vi": "64_CV_ATS_sun_vi.html",
+      "docx_vi": "64_CV_ATS_sun_vi.docx",
+      "html_en": "64_CV_ATS_sun_en.html",
+      "docx_en": "64_CV_ATS_sun_en.docx"
+    },
+    {
+      "index": 65,
+      "slug": "tiktop",
+      "title_vi": "TikTop",
+      "title_en": "TikTop Creative",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/tiktop.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/tiktop.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/tiktop.webp",
+      "local_snapshot_en": "snapshots/en/tiktop.webp",
+      "html_vi": "65_CV_ATS_tiktop_vi.html",
+      "docx_vi": "65_CV_ATS_tiktop_vi.docx",
+      "html_en": "65_CV_ATS_tiktop_en.html",
+      "docx_en": "65_CV_ATS_tiktop_en.docx"
+    },
+    {
+      "index": 66,
+      "slug": "time",
+      "title_vi": "Thời đại",
+      "title_en": "Modern Era ATS",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [
+        "FFE800",
+        "A8D1FF",
+        "FFC0A5",
+        "B0FF4D",
+        "DDB2FF"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thoi-dai-_UggABAcBUQAEA1YHB1QFXwVRBVZUVwMNAFFfUwbad8.webp?t=1756284938&color=FFE800&template_name=time&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-thoi-dai-_BggFAFYAUwMEUlJbDVkHUlQGAgdUAVYJAgAPCA5c14.webp?t=1750152139&color=FFE800&template_name=time&lang=en",
+      "local_snapshot_vi": "snapshots/vi/time.webp",
+      "local_snapshot_en": "snapshots/en/time.webp",
+      "html_vi": "66_CV_ATS_time_vi.html",
+      "docx_vi": "66_CV_ATS_time_vi.docx",
+      "html_en": "66_CV_ATS_time_en.html",
+      "docx_en": "66_CV_ATS_time_en.docx"
+    },
+    {
+      "index": 67,
+      "slug": "timeline_clean_2",
+      "title_vi": "Dòng Thời Gian 2",
+      "title_en": "Timeline 2",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/timeline_clean_2.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/timeline_clean_2.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/timeline_clean_2.webp",
+      "local_snapshot_en": "snapshots/en/timeline_clean_2.webp",
+      "html_vi": "67_CV_ATS_timeline_clean_2_vi.html",
+      "docx_vi": "67_CV_ATS_timeline_clean_2_vi.docx",
+      "html_en": "67_CV_ATS_timeline_clean_2_en.html",
+      "docx_en": "67_CV_ATS_timeline_clean_2_en.docx"
+    },
+    {
+      "index": 68,
+      "slug": "timeline_clean_v2",
+      "title_vi": "Dòng Thời Gian",
+      "title_en": "Timeline Classic",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [
+        "EC8F00",
+        "32A1B5",
+        "C44B4B",
+        "00A915",
+        "646D79"
+      ],
+      "preview_url_vi": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-dong-thoi-gian-_VQANBFcDDgUAUFANBQMHAgRVVwFWWVtWAwNTUQ40fa.webp?t=1756027168&color=EC8F00&template_name=timeline_clean_v2&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/cv/snapshot/template-cv/mau-cv-dong-thoi-gian-_UgIBAwFYBgdTUAxVVFEAAQFXUwRRWgBZUloHVQ8ae1.webp?t=1750147806&color=EC8F00&template_name=timeline_clean_v2&lang=en",
+      "local_snapshot_vi": "snapshots/vi/timeline_clean_v2.webp",
+      "local_snapshot_en": "snapshots/en/timeline_clean_v2.webp",
+      "html_vi": "68_CV_ATS_timeline_clean_v2_vi.html",
+      "docx_vi": "68_CV_ATS_timeline_clean_v2_vi.docx",
+      "html_en": "68_CV_ATS_timeline_clean_v2_en.html",
+      "docx_en": "68_CV_ATS_timeline_clean_v2_en.docx"
+    },
+    {
+      "index": 69,
+      "slug": "tiny_1",
+      "title_vi": "Sinh Viên",
+      "title_en": "Collegiate Student",
+      "is_pro": false,
+      "tags": [
+        "ATS",
+        "Đơn giản"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/tiny_1.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/tiny_1.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/tiny_1.webp",
+      "local_snapshot_en": "snapshots/en/tiny_1.webp",
+      "html_vi": "69_CV_ATS_tiny_1_vi.html",
+      "docx_vi": "69_CV_ATS_tiny_1_vi.docx",
+      "html_en": "69_CV_ATS_tiny_1_en.html",
+      "docx_en": "69_CV_ATS_tiny_1_en.docx"
+    },
+    {
+      "index": 70,
+      "slug": "topinstar",
+      "title_vi": "Topinstar",
+      "title_en": "Topinstar ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/topinstar.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/topinstar.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/topinstar.webp",
+      "local_snapshot_en": "snapshots/en/topinstar.webp",
+      "html_vi": "70_CV_ATS_topinstar_vi.html",
+      "docx_vi": "70_CV_ATS_topinstar_vi.docx",
+      "html_en": "70_CV_ATS_topinstar_en.html",
+      "docx_en": "70_CV_ATS_topinstar_en.docx"
+    },
+    {
+      "index": 71,
+      "slug": "toppier",
+      "title_vi": "Toppier",
+      "title_en": "Toppier ATS",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/toppier.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/toppier.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/toppier.webp",
+      "local_snapshot_en": "snapshots/en/toppier.webp",
+      "html_vi": "71_CV_ATS_toppier_vi.html",
+      "docx_vi": "71_CV_ATS_toppier_vi.docx",
+      "html_en": "71_CV_ATS_toppier_en.html",
+      "docx_en": "71_CV_ATS_toppier_en.docx"
+    },
+    {
+      "index": 72,
+      "slug": "toptify",
+      "title_vi": "Toptify",
+      "title_en": "Toptify ATS",
+      "is_pro": false,
+      "tags": [
+        "Hiện đại",
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/toptify.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/toptify.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/toptify.webp",
+      "local_snapshot_en": "snapshots/en/toptify.webp",
+      "html_vi": "72_CV_ATS_toptify_vi.html",
+      "docx_vi": "72_CV_ATS_toptify_vi.docx",
+      "html_en": "72_CV_ATS_toptify_en.html",
+      "docx_en": "72_CV_ATS_toptify_en.docx"
+    },
+    {
+      "index": 73,
+      "slug": "twittop",
+      "title_vi": "Twittop",
+      "title_en": "Twittop ATS",
+      "is_pro": false,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/twittop.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/twittop.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/twittop.webp",
+      "local_snapshot_en": "snapshots/en/twittop.webp",
+      "html_vi": "73_CV_ATS_twittop_vi.html",
+      "docx_vi": "73_CV_ATS_twittop_vi.docx",
+      "html_en": "73_CV_ATS_twittop_en.html",
+      "docx_en": "73_CV_ATS_twittop_en.docx"
+    },
+    {
+      "index": 74,
+      "slug": "vintage",
+      "title_vi": "Vintage",
+      "title_en": "Vintage Pro",
+      "is_pro": true,
+      "tags": [
+        "Ấn tượng",
+        "ATS"
+      ],
+      "colors": [],
+      "preview_url_vi": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/vi/vintage.webp?v=3.5&lang=vi",
+      "preview_url_en": "https://www.topcv.vn/v4/image/cv-template/screenshots/thumbs/cv-template-thumbnails-v1.4/en/vintage.webp?v=3.5&lang=en",
+      "local_snapshot_vi": "snapshots/vi/vintage.webp",
+      "local_snapshot_en": "snapshots/en/vintage.webp",
+      "html_vi": "74_CV_ATS_vintage_vi.html",
+      "docx_vi": "74_CV_ATS_vintage_vi.docx",
+      "html_en": "74_CV_ATS_vintage_en.html",
+      "docx_en": "74_CV_ATS_vintage_en.docx"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+#cv-layout-viewer { width: 1150px; margin: 0px auto; overflow: hidden; padding-top: 80px; }
+#cvo-document-root { width: 800px; float: left; }
+#job-info { float: left; width: 330px; margin-left: 20px; background-color: white; padding: 15px; }
+h2 { font-size: 18px; }
+.job-title { color: rgb(0, 177, 79); }
+.company-title { }
+#candidate-name { font-size: 1.5em; font-weight: bold; text-align: center; color: rgb(0, 177, 79); margin-bottom: 10px; }
+#apply-info { width: 100%; }
+#apply-info th, #apply-info td { padding: 5px 0px; }
+#apply-info th { text-align: left; width: 120px; }
+.label { display: inline; padding: 0.2em 0.6em 0.3em; font-size: 75%; font-weight: 700; line-height: 1; color: rgb(255, 255, 255); text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25em; }
+.label-primary { background-color: rgb(60, 141, 188); }
+.label-danger { background-color: rgb(221, 75, 57); }
+.label-default { background-color: rgb(210, 214, 222); color: rgb(68, 68, 68); }
+.btn-download-apply { display: block; width: 200px; margin: 5px auto; text-align: center; color: rgb(255, 255, 255); background-color: rgb(31, 188, 137); padding: 10px 12px; border-radius: 3px; }
+.btn-download-apply:hover { background-color: rgb(37, 158, 119); }
+.iframe #header-viewer { display: none; }
+.iframe #cv-layout-viewer { padding-top: 0px; }
+.iframe #job-info { display: none; }
+.iframe #cvo-document-root { margin: 0px auto; float: none; }
+.iframe #cv-layout-viewer { width: auto; }
+.iframe #cvo-document { margin-bottom: 30px; }
+body#cv-viewer.iframe { background-color: transparent; }
+@media print {
+  #cv-layout-viewer, #cvo-document-root { width: inherit; padding: 0px; float: inherit; }
+}
+#cover-letter { width: 210mm; background-color: rgb(255, 255, 255); margin: 0px auto 10px; padding: 30px; font-size: 14px; line-height: 20px; }
+#cover-letter .avatar { width: 15%; float: left; }
+#cover-letter .avatar img { width: 70%; border-radius: 50%; }
+#cover-letter .letter { position: relative; background-color: rgb(255, 255, 255); margin: 0px auto 10px; padding: 0px 20px 20px; font-size: 14px; line-height: 22px; float: left; width: 85%; text-align: justify; word-break: break-word; }
+#cover-letter h3 { text-align: center; margin-bottom: 15px; text-transform: uppercase; font-weight: bold; font-size: 16px; color: rgb(0, 188, 212); }
+body#cv-viewer.iframe::-webkit-scrollbar { width: 8px; border-radius: 10px !important; }
+body#cv-viewer.iframe::-webkit-scrollbar-track { background: rgb(255, 255, 255); }
+body#cv-viewer.iframe::-webkit-scrollbar-thumb { background: rgba(33, 47, 63, 0.15); border-radius: 10px !important; }

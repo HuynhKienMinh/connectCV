@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: connectcv-api
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.13.1
+      - key: FIREBASE_PROJECT_ID
+        value: connect-cv
+      - key: WEB_ORIGINS
+        value: https://connect-cv.web.app,https://connect-cv.firebaseapp.com
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: /etc/secrets/firebase-admin.json
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CV_TRANSLATION_SIGNING_SECRET
+        sync: false

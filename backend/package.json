@@ -1,0 +1,24 @@
+{
+  "name": "exe-ai-career-copilot-backend",
+  "version": "1.0.0",
+  "description": "Backend API cho AI Career & Freelance Copilot (EXE Project)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "postinstall": "npm ci --omit=dev --prefix features/connectcv"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.0",
+    "firebase-admin": "^14.5.0",
+    "helmet": "^8.3.0",
+    "joi": "^18.2.9"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.13.6",
+    "gaxios": {
+      "uuid": "^11.1.1"
+    }
+  }
+}

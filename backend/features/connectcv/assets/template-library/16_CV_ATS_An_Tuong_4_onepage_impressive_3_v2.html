@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ấn tượng 4 - Nguyễn Lê Tú Anh (Giáo viên tiếng Anh)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div style="display:flex; min-height:280mm; margin:-15mm -20mm; overflow:hidden;">
+            <!-- CỘT TRÁI - SIDEBAR XANH TEAL -->
+            <div style="width:36%; background:#2C6E6B; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0;">
+                <div style="text-align:center; margin-bottom:18px;">
+                    <div style="width:95px; height:95px; border-radius:50%; overflow:hidden; background:#3a8a87; margin:0 auto 12px auto; border:3px solid rgba(255,255,255,0.5);">
+                        <img src="/images/avatars/onepage_impressive_3_v2.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/onepage_impressive_3_v2.jpg';" />
+                    </div>
+                    <h1 style="font-size:14.5px; font-weight:800; color:#ffffff; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">Nguyễn Lê Tú Anh</h1>
+                    <div style="font-size:10.5px; color:#b2dfde; margin-top:5px;" contenteditable="true">Giáo viên tiếng Anh</div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#b2dfde; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Thông Tin</h3>
+                    <div style="font-size:10px; color:#e0f2f1; line-height:1.8;">
+                        <div contenteditable="true">📞 0123456789</div>
+                        <div contenteditable="true">✉️ emailcuaban@mail.vn</div>
+                        <div contenteditable="true">📍 Ba Đình, Hà Nội</div>
+                    </div>
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:13px; margin-bottom:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#b2dfde; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Học Vấn</h3>
+                    
+                    <div style="margin-bottom:8px;">
+                        <div style="font-size:10.5px; font-weight:700; color:#ffffff;" contenteditable="true">Đại học TopCV</div>
+                        <div style="font-size:10px; color:#b2dfde;" contenteditable="true">Chuyên ngành Ngôn ngữ Anh</div>
+                        <div style="font-size:9.5px; color:#80cbc4;" contenteditable="true">2015 - 2019</div>
+                    </div>
+                    
+                </div>
+
+                <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:13px;">
+                    <h3 style="font-size:10.5px; font-weight:800; color:#b2dfde; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kỹ Năng</h3>
+                    <div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Soạn bài và thiết kế giáo án</div><div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Kỹ năng giảng dạy TOEIC & IELTS</div><div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Quản lý lớp & tương tác học viên</div><div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Giao tiếp và truyền đạt dễ hiểu</div><div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Đánh giá năng lực & phân loại trình độ</div><div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Tổ chức hoạt động & sự kiện đào tạo</div><div style="font-size:10px; color:#e0f2f1; margin-bottom:4px;" contenteditable="true">▸ Làm việc nhóm & cộng tác liên phòng ban</div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI -->
+            <div style="flex:1; padding:24px 22px;">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#2C6E6B; text-transform:uppercase; border-bottom:2px solid #2C6E6B; padding-bottom:4px; margin-bottom:10px;">Mục Tiêu Nghề Nghiệp</h2>
+                    <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify;" contenteditable="true">Là Giáo viên tiếng Anh với hơn 5 năm kinh nghiệm trong giảng dạy, thiết kế bài giảng, chấm bài và đánh giá năng lực học viên, tôi đã đồng hành cùng 500+ học viên trong hành trình ôn luyện TOEIC và IELTS. Tôi mong muốn ứng tuyển vị trí Giáo viên tiếng Anh tại Quý công ty để tiếp tục phát huy chuyên môn, hỗ trợ học viên chinh phục mục tiêu tiếng Anh đồng thời nâng cao chất lượng giảng dạy của trung tâm.</p>
+                </div>
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:13px; font-weight:800; color:#2C6E6B; text-transform:uppercase; border-bottom:2px solid #2C6E6B; padding-bottom:4px; margin-bottom:12px;">Kinh Nghiệm Làm Việc</h2>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">CÔNG TY CỔ PHẦN GIÁO DỤC HJS</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">06/2021 - Nay</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#2C6E6B; margin-bottom:5px;" contenteditable="true">Giáo Viên Tiếng Anh</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Trực tiếp giảng dạy 25+ lớp (bao gồm lớp luyện thi TOEIC, IELTS và Tiếng Anh giao tiếp) theo chỉ đạo của Trung tâm.</li><li contenteditable="true">Soạn giáo án điện tử và biên soạn tài liệu học tập theo syllabus.</li><li contenteditable="true">Chấm chữa bài tập về nhà, bài thi thử và đánh giá kết quả học tập cuối khóa của từng học viên.</li><li contenteditable="true">Tham gia các chương trình đào tạo, cuộc họp chuyên môn và các chương trình, sự kiện do Trung tâm tổ chức.</li><li contenteditable="true">Thành tích: Trung bình 97% học viên hoàn thành khóa học và hơn 80% học viên đạt được mục tiêu học tập ban đầu. Hỗ trợ 200+ học viên ôn thi TOEIC và đạt thành tích trung bình 750 điểm.</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-bottom:14px;">
+                        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                            <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">TRUNG TÂM ANH NGỮ YJH</span>
+                            <span style="font-size:10.5px; color:#64748b;" contenteditable="true">08/2019 - 07/2021</span>
+                        </div>
+                        <div style="font-size:11.5px; font-weight:700; color:#2C6E6B; margin-bottom:5px;" contenteditable="true">Gia sư dạy kèm</div>
+                        <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5;">
+                            <li contenteditable="true">Dạy kèm 1:1 môn tiếng Anh cho một học sinh cấp 3 trong vòng 2 năm.</li><li contenteditable="true">Hỗ trợ học sinh củng cố kiến thức trên lớp, làm bài tập về nhà và bổ trợ kiến thức nâng cao.</li><li contenteditable="true">Tổng hợp và biên soạn tài liệu giảng dạy, bộ đề thi Đại học phù hợp với năng lực và mục tiêu của học sinh.</li><li contenteditable="true">Thành tích: Hỗ trợ học sinh cải thiện điểm trung bình môn tiếng Anh từ 7.0 lên 9.5 sau 2 kỳ học.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '16_CV_ATS_An_Tuong_4_onepage_impressive_3_v2.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>

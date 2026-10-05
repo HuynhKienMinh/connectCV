@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiêu chuẩn - Lê Quang Dũng (Business Development Executive)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 20px;
+        }
+        body.in-iframe {
+            padding: 8px !important;
+            background: #f8fafc !important;
+        }
+        body.in-iframe .cv-toolbar {
+            display: none !important;
+        }
+        body.in-iframe .cv-page-container {
+            margin: 5px auto 10px auto !important;
+            width: 100% !important;
+            max-width: 210mm !important;
+            padding: 12mm 15mm !important;
+        }
+        .cv-page-container {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            background: #ffffff;
+            margin: 30px auto 20px auto;
+            padding: 15mm 20mm;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            position: relative;
+            box-sizing: border-box;
+        }
+        .cv-toolbar {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+            border: 1px solid #e2e8f0;
+        }
+        [contenteditable="true"] { outline: none; border-radius: 2px; }
+        [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
+        [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
+        @media print {
+            body { padding: 0; background: #ffffff; }
+            .no-print { display: none !important; }
+            .cv-page-container { margin: 0; box-shadow: none; padding: 15mm; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+            window.addEventListener('DOMContentLoaded', function() {
+                var tb = document.querySelector('.cv-toolbar');
+                if (tb) tb.style.display = 'none';
+            });
+        }
+    </script>
+    
+    <div class="cv-toolbar no-print">
+        <button onclick="window.print()" style="background:#00B14F; color:#fff; border:none; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">🖨️ In / Xuất PDF (A4)</button>
+        <button onclick="saveCurrentCV()" style="background:#fff; border:1px solid #cbd5e1; padding:8px 16px; border-radius:20px; font-weight:bold; cursor:pointer;">💾 Lưu File</button>
+        <span style="font-size:12px; color:#64748b;">🎨 Mẫu chuẩn TopCV ATS</span>
+    </div>
+    
+    <div class="cv-page-container" id="cv-content">
+        
+        <div class="cv-header" style="display:flex; align-items:center; gap:20px; border-bottom:2px solid #00B14F; padding-bottom:15px; margin-bottom:18px;">
+            <div style="width:85px; height:85px; border-radius:50%; background:#e2e8f0; overflow:hidden; border:2px solid #00B14F; flex-shrink:0;">
+                <img src="/images/avatars/default_v2.jpg" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='avatars/default_v2.jpg';" />
+            </div>
+            <div>
+                <h1 style="font-size:22px; font-weight:800; color:#1e293b; text-transform:uppercase;" contenteditable="true">Lê Quang Dũng</h1>
+                <div style="font-size:13px; font-weight:700; color:#00B14F; text-transform:uppercase; margin-top:2px;" contenteditable="true">Business Development Executive</div>
+                <div style="font-size:11.5px; color:#64748b; margin-top:5px; display:flex; gap:15px; flex-wrap:wrap;">
+                    <span>📞 0912 345 678</span>
+                    <span>✉️ lequangdung.bd@gmail.com</span>
+                    <span>📍 Ba Đình, Hà Nội</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom:16px;">
+            <h2 style="font-size:13px; font-weight:800; color:#00B14F; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">Mục tiêu nghề nghiệp</h2>
+            <p style="font-size:11.5px; color:#334155; line-height:1.5; text-align:justify;" contenteditable="true">Với hơn 4 năm kinh nghiệm làm việc ở vị trí Nhân viên phát triển kinh doanh tại các doanh nghiệp B2B và dịch vụ công nghệ, tôi có thế mạnh trong việc hoạch định chiến lược kinh doanh, tìm kiếm và mở rộng mạng lưới khách hàng doanh nghiệp tiềm năng. Đạt tăng trưởng doanh thu 128% so với cùng kỳ.</p>
+        </div>
+
+        <div style="margin-bottom:16px;">
+            <h2 style="font-size:13px; font-weight:800; color:#00B14F; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">Kinh nghiệm làm việc</h2>
+            
+            <div style="margin-bottom:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">Công ty TNHH Giải pháp Công nghệ Thăng Long</span>
+                    <span style="font-size:11px; color:#64748b; font-style:italic;" contenteditable="true">03/2022 - Hiện tại</span>
+                </div>
+                <div style="font-size:11.5px; font-weight:600; color:#00B14F; margin-bottom:4px;" contenteditable="true">Chuyên viên Phát triển Kinh doanh (Senior BD Executive)</div>
+                <ul style="padding-left:16px; font-size:11.5px; color:#334155; line-height:1.45;">
+                    <li contenteditable="true">Xây dựng và triển khai chiến lược phát triển đối tác B2B, quản lý pipeline khách hàng với quy mô giao dịch 100 - 500 triệu VNĐ.</li><li contenteditable="true">Đạt và vượt chỉ tiêu doanh số 6 quý liên tiếp (đạt trung bình 125% - 140% KPI được giao).</li><li contenteditable="true">Đàm phán và ký kết thành công hơn 45 hợp đồng hợp tác chiến lược mới với chuỗi bán lẻ lớn.</li>
+                </ul>
+            </div>
+            
+            <div style="margin-bottom:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">Công ty Cổ phần Thương mại & Dịch vụ Á Châu</span>
+                    <span style="font-size:11px; color:#64748b; font-style:italic;" contenteditable="true">04/2020 - 02/2022</span>
+                </div>
+                <div style="font-size:11.5px; font-weight:600; color:#00B14F; margin-bottom:4px;" contenteditable="true">Nhân viên Kinh doanh Doanh nghiệp (B2B Sales Rep)</div>
+                <ul style="padding-left:16px; font-size:11.5px; color:#334155; line-height:1.45;">
+                    <li contenteditable="true">Tiếp cận và tư vấn giải pháp phần mềm quản lý cho hơn 200 khách hàng doanh nghiệp SME vừa và nhỏ.</li><li contenteditable="true">Duy trì tỷ lệ giữ chân khách hàng (Retention Rate) đạt trên 92% qua dịch vụ chăm sóc chu đáo.</li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div style="margin-bottom:16px;">
+            <h2 style="font-size:13px; font-weight:800; color:#00B14F; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">Học vấn</h2>
+            
+            <div style="margin-bottom:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                    <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">Trường Đại học Ngoại Thương Hà Nội</span>
+                    <span style="font-size:11px; color:#64748b; font-style:italic;" contenteditable="true">2016 - 2020</span>
+                </div>
+                <div style="font-size:11.5px; color:#00B14F; font-weight:600;" contenteditable="true">Chuyên ngành: Quản trị Kinh doanh Quốc tế</div>
+                <div style="font-size:11px; color:#64748b; margin-top:2px;" contenteditable="true">• GPA: 8.5/10 (Tốt nghiệp loại Giỏi) • Giải Nhì cuộc thi Business Case Competition 2019</div>
+            </div>
+            
+        </div>
+
+        <div>
+            <h2 style="font-size:13px; font-weight:800; color:#00B14F; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">Kỹ năng chuyên môn</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                <span style="font-size:11px; padding:3px 8px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:4px; color:#334155;" contenteditable="true">Bán hàng B2B</span><span style="font-size:11px; padding:3px 8px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:4px; color:#334155;" contenteditable="true">Đàm phán hợp đồng</span><span style="font-size:11px; padding:3px 8px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:4px; color:#334155;" contenteditable="true">Quản lý phễu CRM (HubSpot, Salesforce)</span><span style="font-size:11px; padding:3px 8px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:4px; color:#334155;" contenteditable="true">Phân tích thị trường</span><span style="font-size:11px; padding:3px 8px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:4px; color:#334155;" contenteditable="true">Kỹ năng giao tiếp thuyết phục</span>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function saveCurrentCV() {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '01_CV_ATS_Tieu_Chuan_default_v2.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>
