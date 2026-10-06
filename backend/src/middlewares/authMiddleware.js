@@ -91,6 +91,9 @@ async function optionalAuth(req, res, next) {
   try {
     const user = await verifyToken(token);
     req.user = user;
+    // Đánh dấu identity đã được xác thực qua auth provider hợp lệ
+    // featureSecurity.js dùng flag này để cho phép POST requests trong production
+    req.featureIdentityVerified = true;
   } catch (e) {
     req.user = null; // Token lỗi thì xem như Guest, không chặn request
   }
