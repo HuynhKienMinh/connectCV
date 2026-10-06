@@ -3916,7 +3916,12 @@ Yêu cầu:
 
         const res = await fetch('/api/cv/export-pdf', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(localStorage.getItem('connectcv_auth_token')
+              ? { 'Authorization': `Bearer ${localStorage.getItem('connectcv_auth_token')}` }
+              : {})
+          },
           body: JSON.stringify(payload)
         });
 
@@ -4019,7 +4024,12 @@ Yêu cầu:
 
         const res = await fetch('/api/cv/export-docx', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            ...(localStorage.getItem('connectcv_auth_token')
+              ? { 'Authorization': `Bearer ${localStorage.getItem('connectcv_auth_token')}` }
+              : {})
+          },
           body: JSON.stringify(payload)
         });
 
