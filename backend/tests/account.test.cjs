@@ -9,6 +9,14 @@ class TestDB{
  runTransaction(fn){const run=this.queue.then(async()=>{const draft=new Map([...this.records].map(([k,v])=>[k,structuredClone(v)]));const tx={get:async ref=>({exists:draft.has(ref.path),data:()=>draft.get(ref.path)}),create:(ref,data)=>{assert(!draft.has(ref.path));draft.set(ref.path,data);},update:(ref,data)=>{assert(draft.has(ref.path));draft.set(ref.path,{...draft.get(ref.path),...data});},delete:ref=>draft.delete(ref.path)};const result=await fn(tx);this.records=draft;return result;});this.queue=run.catch(()=>{});return run;}
 }
 async function authCheck(verify,header){let status=0,next=false;const req={headers:{authorization:header},body:{userId:'forged',admin:true}};const res={status(n){status=n;return this;},json(){return this;}};await createRequireAuth(verify)(req,res,()=>next=true);return {status,next,req};}
+test('real Firebase verifier rejects a forged legacy HS256 admin token',async()=>{
+ const crypto=require('node:crypto'),encode=value=>Buffer.from(JSON.stringify(value)).toString('base64url'),now=Math.floor(Date.now()/1000);
+ const unsigned=encode({alg:'HS256',typ:'JWT',kid:'legacy-test'})+'.'+encode({sub:'fixture',aud:'connect-cv',iss:'https://securetoken.google.com/connect-cv',iat:now,exp:now+3600,admin:true,role:'ADMIN',email_verified:true});
+ const token=unsigned+'.'+crypto.createHmac('sha256','synthetic-test-secret').update(unsigned).digest('base64url');
+ const verify=(value,revoked)=>require('../src/config/firebase').auth().verifyIdToken(value,revoked);
+ await assert.rejects(verify(token,true),error=>error.code==='auth/argument-error');
+ const result=await authCheck(verify,'Bearer '+token);assert.equal(result.status,401);assert.equal(result.next,false);assert.equal(result.req.user,undefined);
+});
 test('identity comes only from verified Firebase token; revocation check enabled',async()=>{const result=await authCheck(async(token,revoked)=>{assert.equal(revoked,true);return {uid:'real',aud:'connect-cv',email_verified:true};},'Bearer '+'x'.repeat(30));assert(result.next);assert.equal(result.req.user.id,'real');assert.equal(result.req.user.role,'candidate');});
 test('missing, malformed, wrong project and revoked tokens fail closed',async()=>{
  assert.equal((await authCheck(()=>{throw Error();},'')).status,401);

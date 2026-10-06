@@ -4,6 +4,7 @@ const { getTemplateById, renderCVDataToTemplateHtml } = require('./templateServi
 
 let browserInstance = null;
 let browserLaunchingPromise = null;
+let rendererReady=false;
 
 /**
  * Khởi tạo hoặc tái sử dụng Chromium browser singleton
@@ -24,7 +25,7 @@ async function getBrowser() {
       if(!endpoint&&process.env.NODE_ENV==='production'&&typeof process.getuid==='function'&&process.getuid()===0)throw new Error('Production CV renderer must run as an unprivileged user');
       const browser = endpoint ? await puppeteer.connect({browserWSEndpoint:endpoint,protocolTimeout:30000}).catch(()=>{throw new Error('CV browser worker connection failed');}) : await puppeteer.launch({
         env: Object.assign(Object.fromEntries(['PATH','HOME','TMPDIR','LANG','LD_LIBRARY_PATH','SYSTEMROOT','WINDIR'].filter(k=>process.env[k]).map(k=>[k,process.env[k]])),{FONTCONFIG_FILE:require('path').resolve(__dirname,'../../assets/native-system-fonts/fonts.conf')}),
-        executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium-browser',
+        executablePath: require('./browserConfig').browserPath(process.env,require('playwright-core').chromium),
         headless: 'new',
         args: [
           ...(process.env.NODE_ENV==='production'?[]:['--no-sandbox','--disable-setuid-sandbox']),
@@ -37,11 +38,14 @@ async function getBrowser() {
       browser.on('disconnected', () => {
         console.warn('Chromium browser disconnected, will recreate on next request.');
         browserInstance = null;
+        rendererReady=false;
       });
 
       browserInstance = browser;
+      rendererReady=true;
       return browser;
     } catch (err) {
+      rendererReady=false;
       console.error('Không thể khởi chạy Chromium browser:', err.message);
       throw err;
     }
@@ -185,5 +189,7 @@ async function generateCvPdfUnchecked({ html, templateId, cvData, userProfile, l
 async function generateCvPdf(options){return require('./renderCapacity').withRenderSlot(()=>generateCvPdfUnchecked(options));}
 module.exports = {
   getBrowser,
-  generateCvPdf
+  generateCvPdf,
+  isRendererReady:()=>rendererReady,
+  async probeRenderer(){try{await getBrowser();return true;}catch{return false;}}
 };

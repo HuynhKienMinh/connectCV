@@ -21,7 +21,7 @@ function createApp({ frontendDistPath = path.join(__dirname, '../frontend/dist')
     next();
   });
   app.use('/api',require('express-rate-limit').rateLimit({windowMs:60000,limit:120,standardHeaders:'draft-7',legacyHeaders:false}));
-  app.get('/ai/runtime.js',(req,res)=>{res.type('application/javascript').set('Cache-Control','no-store').send('window.connectCVParentOrigins='+JSON.stringify([...origins])+';window.connectCVServerPdf='+JSON.stringify(!!(process.env.CHROMIUM_PATH||process.env.CV_BROWSER_WS_ENDPOINT))+';');});
+  app.get('/ai/runtime.js',(req,res)=>{res.type('application/javascript').set('Cache-Control','no-store').send('window.connectCVParentOrigins='+JSON.stringify([...origins])+';window.connectCVServerPdf='+JSON.stringify(require('./features/connectcv/src/services/pdfService').isRendererReady())+';');});
   app.use('/api/account',require('./src/routes/account'));
   app.use('/api/portfolios',require('./src/routes/portfolios'));
   const {requireAuth, requireVerified}=require('./src/middlewares/firebaseAuth');

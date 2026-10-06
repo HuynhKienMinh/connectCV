@@ -29,4 +29,4 @@ function wrapBrowser(browser){
   };
  }};
 }
-module.exports={async launch({headless,args,env,executablePath}){return wrapBrowser(await chromium.launch({headless:true,args,env,executablePath,chromiumSandbox:process.env.NODE_ENV==='production',timeout:30000}));},async connect({browserWSEndpoint}){return wrapBrowser(await chromium.connectOverCDP(browserWSEndpoint,{timeout:30000}));}};
+module.exports={async launch(options){return wrapBrowser(await chromium.launch(require('./browserConfig').launchOptions(options,process.env.NODE_ENV==='production')));},async connect({browserWSEndpoint}){return wrapBrowser(await chromium.connectOverCDP(browserWSEndpoint,{timeout:30000}));}};

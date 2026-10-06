@@ -24,3 +24,4 @@ backend/src/middlewares/authMiddleware.js
 backend/src/middlewares/checkRole.js
 backend/src/config/db.js
 .firebase/
+backend/.render-browsers/

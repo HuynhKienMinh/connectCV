@@ -4,7 +4,7 @@
   "description": "Isolated CV, interview, community and chatbot feature module",
   "main": "server.js",
   "scripts": {
-    "test": "node --test tests/cvGrounding.test.js tests/runtimeResources.test.js tests/interviewSummaryGrounding.test.js",
+    "test": "node --test tests/cvGrounding.test.js tests/runtimeResources.test.js tests/interviewSummaryGrounding.test.js tests/browserConfig.test.js",
     "test:cv-routes": "node tests/cvRoutes.check.cjs",
     "test:security": "node tests/featureSecurity.check.cjs"
   },
