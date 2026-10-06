@@ -1,0 +1,10 @@
+[
+  {
+    "id": "gemini_main_01",
+    "apiKey": "REPLACE_WITH_YOUR_GEMINI_API_KEY_1"
+  },
+  {
+    "id": "gemini_backup_02",
+    "apiKey": "REPLACE_WITH_YOUR_GEMINI_API_KEY_2"
+  }
+]

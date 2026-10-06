@@ -1,0 +1,170 @@
+[
+  {
+    "id": "deb-1790523782181",
+    "authorName": "Ứng viên Ẩn danh",
+    "authorRole": "Ứng viên",
+    "authorAvatar": "",
+    "companyName": "vitell post",
+    "position": "quản lý kho",
+    "difficultyRating": 5,
+    "category": "Business",
+    "tags": [
+      "Kỹ Năng Chung"
+    ],
+    "interviewQuestions": [
+      "ăn cơm chưa ,giới thiệu bản thân đi",
+      "kinh nghiệm làm ở đâu, kĩ năng gì"
+    ],
+    "reviewText": "trả lời ngắn gọn đúng trọng tâm",
+    "anonymous": true,
+    "sharedAt": "2026-09-27T15:43:02.181Z",
+    "likesCount": 1,
+    "likedIps": [
+      "172.21.0.1"
+    ],
+    "awardedCredits": 5,
+    "contentHash": "c7754df0a0fb7596f47a86f0f08256fc"
+  },
+  {
+    "id": "deb-001",
+    "authorName": "Huỳnh Kiên Minh",
+    "authorRole": "Senior Backend Engineer",
+    "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    "companyName": "FPT Software Cần Thơ",
+    "position": "Lập trình viên Backend Node.js",
+    "difficultyRating": 4,
+    "category": "IT",
+    "tags": [
+      "Node.js",
+      "PostgreSQL",
+      "System Design",
+      "Microservices"
+    ],
+    "interviewQuestions": [
+      "Giải thích cơ chế Event Loop trong Node.js và cách xử lý non-blocking I/O khi gặp tác vụ nặng?",
+      "Em xử lý xung đột dữ liệu thế nào khi có 1000 request cùng đặt mua một sản phẩm duy nhất trong 1 giây?",
+      "Kinh nghiệm tối ưu query và lập chỉ mục (indexing) trong PostgreSQL / MongoDB của em là gì?",
+      "Tại sao nên sử dụng Redis làm cache layer và chiến lược invalidate cache thế nào để tránh cache stampede?"
+    ],
+    "reviewText": "Phỏng vấn 2 vòng: Vòng 1 hỏi sâu về JavaScript core & database indexing. Vòng 2 là thiết kế kiến trúc hệ thống thương mại điện tử thực tế. Người phỏng vấn rất thân thiện và đánh giá cao tư duy giải quyết vấn đề.",
+    "anonymous": false,
+    "sharedAt": "2026-09-26T10:15:00.000Z",
+    "likesCount": 25,
+    "likedIps": [
+      "127.0.0.1",
+      "::ffff:172.21.0.1"
+    ],
+    "awardedCredits": 5
+  },
+  {
+    "id": "deb-002",
+    "authorName": "Ẩn danh",
+    "authorRole": "Ứng viên Tech",
+    "authorAvatar": "",
+    "companyName": "Viettel Post Cần Thơ",
+    "position": "Junior Backend Engineer",
+    "difficultyRating": 3,
+    "category": "IT",
+    "tags": [
+      "SQL",
+      "Express.js",
+      "Docker",
+      "Database"
+    ],
+    "interviewQuestions": [
+      "Sự khác biệt cốt lõi giữa cơ sở dữ liệu SQL (quan hệ) và NoSQL là gì? Khi nào nên chọn cái nào?",
+      "Em giải quyết xung đột deadlock trong database như thế nào trong dự án thực tế?",
+      "Hãy nêu cách tổ chức cấu trúc dự án Express.js cho clean code, tách lớp controller, service và repository?"
+    ],
+    "reviewText": "Phỏng vấn 2 vòng, người phỏng vấn rất thân thiện và hỏi sâu về database optimization, transaction ACID và containerization Docker.",
+    "anonymous": true,
+    "sharedAt": "2026-09-26T15:30:00.000Z",
+    "likesCount": 19,
+    "likedIps": [
+      "172.21.0.1"
+    ],
+    "awardedCredits": 5
+  },
+  {
+    "id": "deb-003",
+    "authorName": "Trần Hoàng Nam",
+    "authorRole": "Frontend React Developer",
+    "authorAvatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    "companyName": "VNG Corporation",
+    "position": "Middle Frontend Developer (React)",
+    "difficultyRating": 5,
+    "category": "IT",
+    "tags": [
+      "React",
+      "Performance",
+      "Next.js",
+      "State Management"
+    ],
+    "interviewQuestions": [
+      "Giải thích cách hoạt động của React Fiber và Reconciliation algorithm?",
+      "Em dùng chiến lược gì để tối ưu Core Web Vitals (LCP, FID/INP, CLS) cho một web app có hơn 50,000 active users hàng ngày?",
+      "So sánh Zustand, Redux Toolkit và React Query trong việc quản lý server state vs client state?",
+      "Làm thế nào để phòng chống các lỗ hổng XSS và CSRF ở tầng frontend khi làm việc với JWT?"
+    ],
+    "reviewText": "Vòng kỹ thuật kéo dài 90 phút có live-coding một custom hook `useDebounceThrottle`. Yêu cầu nắm rất vững internals của React chứ không chỉ dùng thư viện.",
+    "anonymous": false,
+    "sharedAt": "2026-09-25T08:00:00.000Z",
+    "likesCount": 35,
+    "likedIps": [],
+    "awardedCredits": 5
+  },
+  {
+    "id": "deb-004",
+    "authorName": "Lê Thị Thu Thảo",
+    "authorRole": "Product Growth Specialist",
+    "authorAvatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    "companyName": "Shopee Việt Nam",
+    "position": "Senior Business Analyst & Product Growth",
+    "difficultyRating": 4,
+    "category": "Business",
+    "tags": [
+      "Product",
+      "A/B Testing",
+      "Data Analysis",
+      "SQL"
+    ],
+    "interviewQuestions": [
+      "Nếu tỷ lệ chuyển đổi thanh toán của chiến dịch Mega Sale giảm 8% so với cùng kỳ, em sẽ phân rã dữ liệu thế nào để tìm ra điểm nghẽn?",
+      "Thiết kế một bài test A/B kiểm tra tính năng gợi ý sản phẩm tự động: Em chọn cỡ mẫu và số ngày chạy như thế nào để đảm bảo ý nghĩa thống kê?",
+      "Làm sao để em thuyết phục đội ngũ Engineering ưu tiên làm tính năng mà stakeholder kinh doanh đang đòi hỏi gấp?"
+    ],
+    "reviewText": "Bài test case study 48 tiếng về tối ưu tỷ lệ hoàn thành đơn hàng cho ngành hàng FMCG, sau đó phỏng vấn trực tiếp với Regional Product Lead bằng tiếng Anh 100%.",
+    "anonymous": false,
+    "sharedAt": "2026-09-24T14:20:00.000Z",
+    "likesCount": 29,
+    "likedIps": [],
+    "awardedCredits": 5
+  },
+  {
+    "id": "deb-005",
+    "authorName": "Ẩn danh",
+    "authorRole": "Cybersecurity Specialist",
+    "authorAvatar": "",
+    "companyName": "Ngân Hàng TMCP Quân Đội (MB Bank)",
+    "position": "Chuyên Viên An Toàn Thông Tin (AppSec)",
+    "difficultyRating": 5,
+    "category": "IT",
+    "tags": [
+      "Security",
+      "OWASP",
+      "Penetration Testing",
+      "API Security"
+    ],
+    "interviewQuestions": [
+      "Hãy trình bày quy trình rà soát lỗ hổng IDOR và BOLA (Broken Object Level Authorization) trong kiến trúc Microservices API ngân hàng?",
+      "Cách em kiểm tra và giảm thiểu rủi ro khi bên thứ 3 (Vendor) tích hợp cổng thanh toán webhook vào hệ thống lõi?",
+      "Khi phát hiện nghi vấn một endpoint bị leak dữ liệu qua kỹ thuật Blind SQL Injection, em sẽ tiến hành khoanh vùng và xử lý sự cố (Incident Response) theo những bước nào?"
+    ],
+    "reviewText": "Quy trình tuyển dụng chuyên nghiệp, kiểm tra chặt chẽ chứng chỉ quốc tế (CEH/OSCP) và hỏi sâu về các tiêu chuẩn bảo mật PCI-DSS, ISO 27001.",
+    "anonymous": true,
+    "sharedAt": "2026-09-23T09:00:00.000Z",
+    "likesCount": 42,
+    "likedIps": [],
+    "awardedCredits": 5
+  }
+]

@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+.env
+.keys.json
+*.keys.json
+
+# Never bake local user/community records into deployment images
+data/
+
+# mau_CV is bundled into the image for cloud deployment (Koyeb, etc.)
+# Do NOT add mau_CV here
+portfolios/
