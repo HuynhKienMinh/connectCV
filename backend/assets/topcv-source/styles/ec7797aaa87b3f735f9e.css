@@ -1,0 +1,102 @@
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/RobotoCondensed-Light.ttf); font-weight: normal; }
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/RobotoCondensed-Bold.ttf); font-weight: bold; }
+@font-face { font-family: Maitree; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/Maitree-Light.ttf); font-weight: normal; }
+@font-face { font-family: Maitree; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/Maitree-Bold.ttf); font-weight: bold; }
+@font-face { font-family: OpenSans; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/OpenSans-Light.ttf); font-weight: normal; }
+@font-face { font-family: OpenSans; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/OpenSans-Bold.ttf); font-weight: bold; }
+@font-face { font-family: Prompt; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/Prompt-Light.ttf); font-weight: normal; }
+@font-face { font-family: Prompt; src: url(https://www.topcv.vn/packages/cvo/templates/outstanding_3/assets/fonts/Prompt-Bold.ttf); font-weight: bold; }
+.cvo-document .cvo-page { padding: 0mm; position: relative; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
+#cvo-main { padding-bottom: 32px; }
+.cvo-block-content { margin-top: 12px; }
+.cvo-block-content-section { margin-top: 20px; }
+.cvo-document .cvo-subpage { padding: 0px; }
+.cvo-bold-text { font-weight: bold; text-transform: uppercase; }
+[contenteditable="true"]:empty::before { color: rgb(255, 255, 255); opacity: 0.6; }
+#group-header [contenteditable="true"]:empty::before { content: attr(cvo-placeholder); color: grey; font-weight: 100; opacity: 0.6; }
+#group-header .cvoInvalidate { color: orange; }
+#cvo-body { margin: 0px auto; width: 100%; min-height: 190mm; position: relative; font-family: RobotoCondensed, Arial, sans-serif; font-size: 14px; line-height: 18px; overflow: auto; }
+.cvo-block-body { word-break: break-word; }
+#avatar-group-outer { padding-left: 16px; padding-right: 16px; width: 40%; float: left; }
+#group-header-avatar { width: 100%; min-height: 60px; background-color: rgb(44, 62, 80); text-align: center; padding-top: 32px; padding-bottom: 24px; }
+#group-header { margin: 0px auto; width: 60%; min-height: 60px; float: left; padding-left: 24px; padding-top: 64px; }
+.cvo-block-title-icon { color: rgb(153, 153, 153); width: 24px; }
+#cvo-objective .cvo-block-title-icon { color: rgb(204, 204, 204); }
+.cvo-block-title-underline-wrapper { height: 4px; }
+.cvo-bold-underline { height: 4px; background-color: rgb(0, 177, 79); position: absolute; width: 90px; }
+.cvo-normal-underline { float: left; height: 1px; width: 100%; background-color: rgb(0, 177, 79); margin-top: 1.5px; }
+#cvo-profile-wrapper { width: 100%; }
+#cvo-profile-info-wrapper { width: 100%; }
+.cvo-profile-info-wrapper { height: 50px; background: rgb(0, 177, 79); width: 100%; display: block; padding-left: 32px; }
+.cvo-profile-info-item { float: left; height: 100%; line-height: 50px; color: rgb(255, 255, 255); }
+.cvo-profile-info-value { margin-right: 2%; overflow: hidden; white-space: nowrap; }
+.text-overflow-ellipsis { text-overflow: ellipsis; }
+.text-overflow-inherit { text-overflow: inherit; }
+.profile-header-icon { width: 20px; height: 20px; border: 1px solid rgb(255, 255, 255); text-align: center; line-height: 19px; border-radius: 2px; font-size: 12px; margin-right: 4px; }
+.contact-item { float: left; padding: 4px 12px; background-color: rgb(242, 235, 39); margin: 4px; border-radius: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 275px; color: rgb(51, 51, 51); }
+.cvo-time { color: rgb(51, 51, 51); font-weight: bold; }
+.cvo-title-wrapper { color: rgb(51, 51, 51); font-weight: bold; margin-bottom: 4px; }
+.cvo-education-school { font-weight: bold; }
+.cvo-experience-wrapper { color: rgb(51, 51, 51); font-weight: bold; margin-bottom: 4px; }
+.cvo-profile-contact-info { display: inline-block; }
+#cvo-profile #topline { height: 12px; width: 100%; background-color: rgb(183, 233, 205); }
+.header-wrapper { padding: 16px; }
+.cvo-avatar-wrapper { width: 144px; height: 144px; text-align: center; padding-top: 4px; border: 3px solid rgb(0, 177, 79); border-radius: 50%; margin: auto; }
+#cvo-profile-avatar { width: 130px; height: 130px; border-radius: 50%; }
+#cvo-header-left { padding-top: 10px; float: left; text-align: left; width: 50%; }
+#cvo-header-right { padding-top: 10px; float: right; text-align: right; width: 30%; }
+#cvo-header-right div { margin-bottom: 4px; line-height: 18px; }
+#cvo-header-right span { display: inline-block; width: 99%; }
+#cvo-header-right i { color: rgb(143, 203, 220); }
+#cvo-name-title-wrapper { margin-bottom: 8px; }
+#cvo-profile-fullname { width: 100%; font-weight: 500; font-family: RobotoCondensed-Bold, Arial, sans-serif; font-size: 32px; text-transform: uppercase; line-height: 42px; display: inline-block; color: rgb(51, 51, 51); }
+#cvo-profile-title { width: 100%; font-size: 16px; text-transform: uppercase; font-weight: 500; margin-top: 4px; }
+.group-col-left-wrapper { width: 40%; float: left; min-height: 560px; padding-left: 16px; padding-right: 16px; }
+#group-col-right { width: 60%; min-height: 560px; float: left; }
+.cvo-block-title-underline { height: 4px; background-color: rgb(242, 235, 39); }
+.row { margin-top: 20px; }
+#group-col-left .cvo-block { width: 100%; padding-top: 10px; padding-bottom: 10px; }
+#group-col-left .row-col-time { font-weight: bold; width: 15%; float: left; text-align: left; }
+#group-col-left .row-col-time i { font-size: 12px; line-height: 18px; }
+#group-col-left .row-col-data { float: left; width: 85%; }
+.row-title { font-weight: bold; text-transform: uppercase; background-repeat: no-repeat; width: 100%; }
+.cvo-time-wraper { color: rgb(51, 51, 51); font-size: 12px; font-weight: normal; }
+.cvo-experience-company-wraper { color: rgb(51, 51, 51); font-size: 12px; font-weight: normal; }
+.separator-line { height: 1px; background-color: rgb(112, 112, 112); margin-top: 20px; }
+.row-details { margin-top: 8px; }
+#group-col-left .cvo-block .row:last-child .row-details { padding-bottom: 0px; }
+.color-highlight { color: rgb(51, 51, 51); }
+.color-content { color: rgb(51, 51, 51); }
+.cvo-experience-position, .cvo-activity-position, .cvo-education-title { font-weight: normal; }
+.skillgroup-item { margin-bottom: 12px; }
+.cvo-skillgroup-skill-description { margin-top: 4px; }
+.cvo-separator { color: rgb(51, 51, 51); font-weight: normal; }
+.cvo-block-title { margin: 0px 0px 4px; font-size: 20px; line-height: 32px; font-weight: 500; color: rgb(51, 51, 51); }
+#group-col-right .cvo-block { width: 100%; padding: 10px; }
+.interest-item { background-color: rgb(245, 245, 245); padding: 3px 8px; border-radius: 4px; color: rgb(51, 51, 51); margin-right: 6px; margin-bottom: 6px; float: left; }
+.cvo-interest-wrapper { display: inline-block; }
+#cvo-interest { padding-left: 0px; padding-right: 0px; }
+#interest-table { padding-left: 20px; }
+#interest-table .row { margin-bottom: 15px; }
+#interest-table li { width: 100%; list-style-type: circle; }
+.cvo-interest-details { vertical-align: top; }
+.cvo-additional-information-details { margin-top: 20px; }
+.cvo-objective-wrapper { width: 100%; }
+#cvo-objective { background-color: rgb(44, 62, 80); color: rgb(255, 255, 255); padding: 12px 16px 32px !important; }
+#cvo-objective-objective { margin-top: 16px; }
+.row-col-data [contenteditable], #cvo-objective-objective, #cvo-interests-interests, #cvo-additional-information-details { min-width: 100%; }
+.cvo-interest-details { min-width: 90%; }
+#cvo-skillgroup, #cvo-interests, #cvo-reference, #cvo-additional-info { padding-left: 16px !important; padding-right: 16px !important; }
+#reference-table .row { float: left; width: 50%; }
+#reference-table .row:nth-child(2n+1) { padding-right: 10px; }
+#reference-table .row:nth-child(2n) { padding-left: 10px; }
+#reference-table .row:only-child { width: 100%; padding-left: 0px; padding-right: 0px; }
+#reference-table .cvo-reference-content { width: 100%; }
+#cv-watermark { position: absolute; right: 20px; bottom: 10px; font-size: 12px; color: rgb(85, 85, 85); }
+.cvo-experience-company[contenteditable="true"], .cvo-education-school[contenteditable="true"], .cvo-award-time[contenteditable="true"], .cvo-skillgroup-area[contenteditable="true"], .cvo-activity-organization[contenteditable="true"], .cvo-certification-time[contenteditable="true"] { display: inline; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}
+@page { margin: 1cm 0px !important; }

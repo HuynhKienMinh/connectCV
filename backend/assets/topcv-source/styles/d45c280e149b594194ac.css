@@ -1,0 +1,128 @@
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/RobotoCondensed-Light.ttf); font-weight: normal; }
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/RobotoCondensed-Bold.ttf); font-weight: bold; }
+@font-face { font-family: Maitree; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/Maitree-Light.ttf); font-weight: normal; }
+@font-face { font-family: Maitree; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/Maitree-Bold.ttf); font-weight: bold; }
+@font-face { font-family: OpenSans; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/OpenSans-Light.ttf); font-weight: normal; }
+@font-face { font-family: OpenSans; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/OpenSans-Bold.ttf); font-weight: bold; }
+@font-face { font-family: Prompt; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/Prompt-Light.ttf); font-weight: normal; }
+@font-face { font-family: Prompt; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/Prompt-Bold.ttf); font-weight: bold; }
+@font-face { font-family: Fontspring; src: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/fonts/Fontspring.otf); font-weight: bold; }
+.cvo-document .cvo-page { padding: 0mm; position: relative; background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/line-0d79e5.png); background-repeat: repeat-y; color: rgb(72, 73, 74); font-size: 14px; z-index: 1; }
+.cvo-block-content { }
+.cvo-block-content-section { margin-top: 5px; }
+.cvo-document .cvo-subpage { padding: 0mm; }
+.cvo-bold-text { font-weight: bold; text-transform: uppercase; }
+.cvo-top-header-wrapper { padding-bottom: 8mm; width: 100%; display: inline-block; }
+.cvo-top-header-logo-wrapper { float: left; width: 20%; padding-top: 5px; }
+.cvo-top-header-logo { font-family: Fontspring; font-size: 24px; }
+.cvo-top-header-middle-wrapper { float: left; width: 60%; text-align: center; }
+#cvo-footer-image { background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/footer-0d79e5.png); position: absolute; bottom: 0px; background-size: cover; height: 100px; width: 100%; background-repeat: no-repeat; }
+.cvo-top-header-middle-input { width: 60%; height: 30px; border-radius: 12px; background-color: rgb(133, 133, 133); margin-left: 20%; margin-right: 20%; display: inline-block; padding: 6px 16px; text-align: left; overflow: hidden; }
+.cvo-top-header-middle-input-icon { float: left; width: 8%; }
+.cvo-top-header-middle-input-value { float: left; width: 92%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cvo-top-header-right-wrapper { float: left; width: 20%; padding-top: 5px; text-align: right; }
+#group-header [contenteditable="true"]:empty::before { content: attr(cvo-placeholder); color: rgb(187, 187, 187); font-weight: 100; }
+.cvo-experience-company[contenteditable="true"], .cvo-education-school[contenteditable="true"], .cvo-activity-organization[contenteditable="true"] { display: inline; }
+#group-header .cvoInvalidate { color: orange; }
+#cvo-main { padding-bottom: 100px; }
+.cvo-block-body { word-break: break-word; }
+#cvo-body { margin: 0px auto; width: 100%; min-height: 190mm; position: relative; font-family: RobotoCondensed, Arial, sans-serif; font-size: 14px; line-height: 18px; overflow: auto; }
+#group-header { margin: 0px auto; width: 100%; min-height: 60px; display: block; }
+#top-group-header { height: 84px; background-color: rgb(35, 149, 224); display: block; padding: 16px; }
+.avatar-wrapper { text-align: right; min-height: 140px; padding-top: 16px; }
+#cvo-profile-avatar { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; object-fit: cover; margin-right: 15%; }
+.short-profile-info { padding-top: 18px; }
+.right-button { float: left; width: 20%; text-align: right; padding-top: 24px; font-size: 16px; }
+.cvo-objective-block { padding: 0px 40px 10px; }
+.hire-me-button { padding: 6px 30px; border-radius: 100px; border: 2px solid rgb(35, 149, 224); color: rgb(35, 149, 224); font-weight: bold; }
+#profile-contact-wraper { width: 100%; padding: 4px 20px; }
+#profile-contact-wraper div { padding: 5px 0px; }
+#profile-contact-wraper span { vertical-align: top; }
+#profile-contact-wraper span#cvo-profile-email { word-break: break-all; }
+.cvo-profile-info-row { font-weight: 600; font-size: 15px; display: block; padding: 8px 0px; }
+.info-label { float: left; line-height: 26px; padding-left: 8px; padding-right: 3px; }
+#cvo-profile-wrapper { width: 100%; }
+#cvo-profile-info-wrapper { width: 100%; }
+.contact-item { float: left; padding: 4px 12px; background-color: rgb(30, 215, 96); margin: 4px; border-radius: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 275px; }
+.background-block-icon { width: 26px; height: 26px; text-align: center; padding-top: 1px; float: left; margin-right: 4px; }
+.cvo-time { font-weight: bold; }
+.cvo-skillgroup-area { color: rgb(154, 154, 154); }
+.cvo-title-wrapper { font-weight: bold; margin-bottom: 4px; line-height: 26px; }
+.cvo-education-school { font-weight: bold; }
+.cvo-experience-wrapper { font-weight: bold; margin-bottom: 4px; line-height: 26px; }
+.cvo-profile-additional-info { display: block; width: 100%; margin-top: 24px; height: 100px; }
+#cvo-header-left { padding-top: 10px; float: left; text-align: left; width: 46%; }
+#cvo-header-right { padding-top: 10px; float: left; width: 54%; }
+#cvo-name-title-wrapper { margin-bottom: 8px; }
+.cvo-objective { padding: 16px; }
+.row-info-item-icon { width: 20px; margin-right: 10px; }
+.row-info-item-value { font-weight: 500; display: unset !important; }
+.profile-icon { font-size: 20px; }
+#cvo-profile-fullname { font-weight: 600; font-family: RobotoCondensed-Bold, Arial, sans-serif; font-size: 28px; text-transform: uppercase; line-height: 32px; width: 90%; }
+#cvo-profile-title { font-weight: 400; font-family: RobotoCondensed-Bold, Arial, sans-serif; font-size: 18px; text-transform: uppercase; width: 90%; }
+.detail-profile-info { margin-top: 10px; margin-bottom: 30px; width: 100%; }
+.row-info-item { padding: 3px 0px; }
+#cvo-profile-fullname i.fa { font-size: 18px; }
+#group-col-left { width: 50%; float: left; min-height: 560px; padding: 0px 0px 20px 20px; margin-right: -1px; }
+#group-col-right .cvo-block, #group-col-left .cvo-block { padding: 20px; }
+#group-col-right { width: 48%; float: left; padding: 0px 1px 20px 0px; min-height: 560px; }
+.cvo-block-title-underline { width: 100%; height: 5px; }
+.cvo-block-title { font-weight: 500; }
+.row { }
+.cvo-block-title .cvo-block-title-span { display: inline; padding-right: 5px; padding-bottom: 4px; }
+.cvo-block-title { font-size: 18px; line-height: 32px; font-weight: bold; text-transform: uppercase; }
+#group-col-left .cvo-block { width: 100%; padding-left: 0px; padding-top: 0px; padding-bottom: 10px; text-align: right; border-right: 1px solid rgb(51, 51, 51); }
+#group-col-left .row-col-time { font-weight: bold; width: 15%; float: left; text-align: left; }
+#group-col-left .row-col-time i { font-size: 12px; line-height: 18px; }
+#group-col-left .row-col-data { float: left; width: 85%; }
+.row-title { font-weight: bold; text-transform: uppercase; background-repeat: no-repeat; width: 100%; }
+.cvo-time-wraper { color: rgb(161, 161, 161); font-size: 12px; font-weight: normal; }
+.cvo-experience-company-wraper { color: rgb(161, 161, 161); font-size: 12px; font-weight: normal; }
+.separator-line { height: 1px; background-color: rgb(112, 112, 112); margin-top: 20px; }
+.row-details { margin-top: 8px; }
+#group-col-left .cvo-block .row:last-child .row-details { padding-bottom: 10px; }
+#group-col-right .cvo-block .row:last-child .row-details { padding-bottom: 10px; }
+.color-highlight { }
+.color-content { }
+.cvo-experience-position { font-weight: 500; font-size: 15px; }
+.cvo-education-title { font-weight: 500; font-size: 15px; }
+.cvo-activity-position { font-weight: normal; }
+.skillgroup-item { margin-bottom: 12px; }
+.cvo-separator { font-weight: normal; font-size: 14px; }
+#group-col-right .cvo-block { padding-right: 0px; width: 100%; padding-top: 0px; padding-bottom: 10px; text-align: left; border-left: 1px solid rgb(51, 51, 51); }
+.interest-item { background-color: rgb(245, 245, 245); padding: 3px 8px; border-radius: 4px; color: rgb(51, 51, 51); margin-right: 6px; margin-bottom: 6px; float: left; }
+.cvo-interest-wrapper { display: inline-block; }
+#cvo-interest { padding-left: 0px; padding-right: 0px; }
+#interest-table { padding-left: 20px; }
+#interest-table .row { margin-bottom: 15px; }
+#interest-table li { width: 100%; list-style-type: circle; }
+.cvo-interest-details { vertical-align: top; }
+.cvo-additional-information-details { margin-top: 20px; }
+.row-col-data [contenteditable], #cvo-objective-objective, #cvo-interests-interests, #cvo-additional-information-details { min-width: 100%; }
+#cvo-objective-objective { font-weight: 500; }
+.profile-and-objective { padding: 0px 24px; float: left; width: 60%; }
+.cvo-interest-details { min-width: 90%; }
+#reference-table .row { float: left; width: 50%; }
+#reference-table .row:nth-child(2n+1) { padding-right: 10px; }
+#reference-table .row:nth-child(2n) { padding-left: 10px; }
+#reference-table .row:only-child { width: 100%; padding-left: 0px; padding-right: 0px; }
+#reference-table .cvo-reference-content { width: 100%; }
+#cv-watermark { position: absolute; right: 20px; bottom: 10px; font-size: 12px; width: 100%; text-align: right; }
+.change-color { color: rgb(13, 121, 229); }
+.icon-img-1 { padding: 10px 40px 0px 35px; width: 100%; }
+.icon-img-1-wapper { width: 35px; height: 35px; margin-right: auto; margin-left: 0px; background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/icon1_0d79e5.png); background-size: 100% 100%; }
+.icon-img-2 { padding: 0px 40px; width: 100%; }
+.icon-img-2-wapper { width: 35px; height: 35px; margin-right: 0px; margin-left: auto; background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/icon2_0d79e5.png); background-size: 100% 100%; }
+.icon-img-3 { padding: 0px 40px; width: 100%; }
+.icon-img-3-wapper { width: 40px; height: 40px; top: 47%; background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/icon3_0d79e5.png); background-size: 100% 100%; position: absolute; z-index: -1; }
+.icon-img-4 { width: 100%; }
+.icon-img-4-wapper { width: 40px; height: 40px; top: 80%; right: 30px; background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/icon4_0d79e5.png); background-size: 100% 100%; position: absolute; z-index: -1; }
+.icon-img-5 { width: 100%; }
+.icon-img-5-wapper { width: 30px; height: 30px; top: 85%; left: 30px; background-image: url(https://www.topcv.vn/packages/cvo/templates/fresher/assets/images/icon5_0d79e5.png); background-size: 100% 100%; position: absolute; z-index: -1; }
+.block-wrap-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.block-break-word { word-break: break-word; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}

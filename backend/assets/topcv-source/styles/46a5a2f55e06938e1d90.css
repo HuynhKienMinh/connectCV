@@ -1,0 +1,61 @@
+@font-face { font-family: Roboto; src: url(https://www.topcv.vn/packages/cvo/templates/vintage/assets/fonts/Roboto-Regular.ttf); font-weight: normal; }
+@font-face { font-family: Roboto; src: url(https://www.topcv.vn/packages/cvo/templates/vintage/assets/fonts/Roboto-Bold.ttf); font-weight: bold; }
+.cvo-document .cvo-page { padding: 0px; position: relative; background-image: url(https://www.topcv.vn/packages/cvo/templates/vintage/assets/images/bg.png); background-repeat: no-repeat; background-size: 100% 100%; color: rgb(51, 51, 51); }
+.cvo-document .cvo-subpage { padding: 0mm; }
+#cvo-body { padding: 0mm 0mm 10mm; font-size: 14px; line-height: 1.4em; color: rgb(73, 73, 73); font-family: Roboto, Arial, sans-serif; position: relative; }
+.change-color { color: rgb(0, 177, 79); }
+#cvo-body::after, #group-header::after, #group-top::after, #cvo-profile::after { display: block; content: " "; clear: both; height: 0px; width: 0px; }
+.cvo-col-5 { float: left; width: 45%; }
+.cvo-col-7 { float: left; width: 55%; position: relative; z-index: 1; }
+#group-header { min-height: 200px; padding: 30px; color: rgb(255, 255, 255); }
+#group-header .cvo-col-3 { text-align: right; }
+#cvo-profile-fullname-wraper { margin: 30px 0px 20px; padding-left: 10px; }
+#cvo-profile-title-wraper { margin: 0px 0px 20px; padding-left: 10px; }
+#cvo-profile-fullname { font-size: 38px; line-height: 1.2em; font-weight: 500; text-transform: capitalize; max-width: 100%; }
+#cvo-profile-title { font-size: 16px; text-transform: uppercase; font-weight: 200; max-width: 100%; }
+#cvo-profile-avatar-wraper { background-image: url(https://www.topcv.vn/packages/cvo/templates/vintage/assets/images/avatar_00b14f.png); background-size: 100% 100%; background-repeat: no-repeat; width: 85%; margin-bottom: 20px; margin-left: auto; margin-right: 0px; }
+#cvo-profile-avatar { width: 200px; height: 200px; border-radius: 50%; margin-right: 16%; margin-top: 50px; }
+.block-profile { line-height: 3; margin: 20px 0px 20px 30px; }
+#intro-section { background-image: url(https://www.topcv.vn/packages/cvo/templates/vintage/assets/images/profile_00b14f.png); background-size: 100% 100%; background-repeat: no-repeat; margin-right: 20px; margin-top: 40px; }
+#group-left .cvo-block:last-child, #group-right .cvo-block:last-child { margin-bottom: 0px; }
+#cvo-profile .contact-item { width: 50%; float: left; margin: 4px 0px; position: relative; padding-left: 10px; }
+#cvo-profile .contact-item-label { font-weight: 500; color: rgb(51, 51, 51); }
+#group-left { padding: 20px 0px 20px 20px; }
+#group-right { padding: 20px 20px 20px 0px; }
+#group-left .cvo-block, #group-right .cvo-block { padding: 10px; }
+.cvo-block-header { position: relative; margin-bottom: 5px; }
+.cvo-block-header span { text-transform: uppercase; font-size: 16px; font-weight: 600; }
+.cvo-block-body { word-break: break-word; }
+.cvo-no-wrap { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cvo-education-title, .cvo-experience-position, .cvo-activity-position { font-weight: 500; }
+.cvo-education-school, .cvo-experience-company, .cvo-activity-organization { font-weight: 600; font-size: 14px; color: rgb(51, 51, 51); display: unset !important; }
+.cvo-skillrate-bar { background-color: rgb(238, 238, 238); width: 100%; height: 7px; position: relative; margin-top: 3px; }
+.cvo-skillrate-value { width: 80%; height: 7px; position: absolute; top: 0px; left: 0px; background-color: rgb(51, 51, 51); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-value { width: 20%; }
+.cvo-skillrate-bar[bval="2"] .cvo-skillrate-value { width: 40%; }
+.cvo-skillrate-bar[bval="3"] .cvo-skillrate-value { width: 60%; }
+.cvo-skillrate-bar[bval="4"] .cvo-skillrate-value { width: 80%; }
+.cvo-skillrate-bar[bval="5"] .cvo-skillrate-value { width: 100%; }
+#interest-table { padding-top: 12px; list-style: none; margin-left: 0px; }
+#interest-table li::before { content: "-"; font-size: 16px; color: inherit; margin-right: 12px; }
+#interest-table .row { margin-bottom: 12px; }
+#cvo-education .row, #cvo-activity .row, #cvo-experience .row { margin-bottom: 15px; }
+#cvo-certification .row, #cvo-award .row, #cvo-skillrate .row, #cvo-reference .row { margin-bottom: 10px; }
+#cvo-education .row:last-child, #cvo-activity .row:last-child, #cvo-experience .row:last-child, #cvo-certification .row:last-child, #cvo-award .row:last-child, #cvo-skillrate .row:last-child, #cvo-reference .row:last-child { margin-bottom: 0px; }
+#cvo-profile-phone, #cvo-profile-email { min-width: 180px; }
+#cv-watermark { position: absolute; right: 20px; bottom: 10px; font-size: 12px; color: rgb(85, 85, 85); }
+.title-underline { background-color: rgb(0, 177, 79); width: 80px; height: 3px; margin-top: 5px; }
+#cvo-skillgroup-blocktitle { font-weight: 600; text-transform: uppercase; font-size: 18px; }
+.profile-icon { width: 25px; height: 25px; text-align: center; margin-right: 10px; }
+.dot { height: 8px; width: 8px; background-color: rgb(51, 51, 51); border-radius: 50%; display: inline-block; margin-right: 10px; }
+.cvo-profile-info-value[contenteditable="true"] { display: inline !important; }
+.cvo-block-content { padding-top: 10px; line-height: 2; }
+.cvo-skillgroup-area, .cvo-award-time, .cvo-certification-time { font-weight: 600; display: unset !important; }
+.cvo-experience-time, .cvo-education-time, .cvo-activity-time { font-style: italic; }
+.block-avatar { text-align: right; }
+.sub-image { background-image: url(https://www.topcv.vn/packages/cvo/templates/vintage/assets/images/d_00b14f.png); width: 80px; height: 160px; background-size: 100% 100%; background-repeat: no-repeat; position: absolute; top: 40%; right: 0px; z-index: 0; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-body { break-after: page; }
+  .cvo-block .row, .cvo-block-header { break-inside: avoid; }
+}

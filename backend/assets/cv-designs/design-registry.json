@@ -1,0 +1,4571 @@
+{
+  "schemaVersion": 1,
+  "page": {
+    "widthMm": 210,
+    "heightMm": 297
+  },
+  "templates": {
+    "ambitious": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#EC8F00",
+            "side": "#343b3d",
+            "w": 33.306,
+            "photo": "square",
+            "left": [
+              "contact",
+              "skills",
+              "interests",
+              "references",
+              "additional",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "education",
+              "activities"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "986676f898e6df17163675ee5148fde13a1bcc6edaebe5aa29f0cd983d189a25",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#EC8F00",
+            "side": "#343b3d",
+            "w": 33.306,
+            "photo": "square",
+            "left": [
+              "contact",
+              "skills",
+              "interests",
+              "references",
+              "additional",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "education",
+              "activities"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "4ceb18dd2894b2d441a6898e25a33ae9e58e5f4ed4dbe6f448d47c257fbf562c",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "ambitious_1": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#e58f30",
+            "side": "#212e3e",
+            "w": 33.387,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "awards",
+              "activities"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "826d3e196a94dc17085948b147897fab86711d786c9331f2277fce49e847dc34",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#e58f30",
+            "side": "#212e3e",
+            "w": 33.306,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "awards",
+              "activities"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "60023caddd51b1328d955da011f060ae70d28580891d625238203f6e0cc844cf",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "basic_1_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "bannerSide",
+            "a": "#5b6570",
+            "side": "#505c68",
+            "hero": "#a2abb8",
+            "w": 35,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "certifications",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "6c5e5be988887f6cbf292fb8da3281b6a86b3f10a1db4c26c3aaf0f3a5828fc0",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "bannerSide",
+            "a": "#5b6570",
+            "side": "#505c68",
+            "hero": "#a2abb8",
+            "w": 35,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "certifications",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "57656bec79f9b89e17d2e14c61b12dcaf2fefb1b58cb4a4aa832811230803d9e",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "basic_2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#4999c5",
+            "w": 60,
+            "photo": "circle",
+            "header": "right",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications",
+              "interests"
+            ],
+            "heading": "rule",
+            "topBorder": true,
+            "font": "Roboto",
+            "nameColor": "#4999c5"
+          },
+          "referenceSha256": "6fdbb1cd9bf7aa65083f26cbb4d81fb34b505a4a2b7716a161e9cfb487dcdaff",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#4999c5",
+            "w": 60,
+            "photo": "circle",
+            "header": "right",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications",
+              "interests"
+            ],
+            "heading": "rule",
+            "topBorder": true,
+            "font": "Roboto",
+            "nameColor": "#4999c5"
+          },
+          "referenceSha256": "387c47f3d0465cf58282da8bd900fa01b2171461b5d3fb1253fa4529de65816a",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "basic_3_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#e8a62d",
+            "pale": "#dff1e4",
+            "w": 40,
+            "photo": "circle",
+            "header": "left",
+            "hero": "#dff1e4",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "awards"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "heading": "pill",
+            "cards": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "2c468482ee1fba0191aac8a135146e0a3b920964f5dc6d8d0ba509d532cbdf84",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#e8a62d",
+            "pale": "#dff1e4",
+            "w": 40,
+            "photo": "circle",
+            "header": "left",
+            "hero": "#dff1e4",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "awards"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "heading": "pill",
+            "cards": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "5b42f1246539bc4a93fe06b2e2219e1c67aef28f53311f7b640b1fe717ef2721",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "basic_4_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#0A7EB5",
+            "pale": "#f2f9fb",
+            "w": 58,
+            "photo": "circle",
+            "header": "none",
+            "left": [
+              "identity",
+              "summary",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "heading": "icon",
+            "rightBg": "#f2f9fb",
+            "font": "Roboto"
+          },
+          "referenceSha256": "4ab61c17b53cc661dfa06e0ec0b3ee4a36d0f85fe741f3596c7e3f1d637eb757",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#0A7EB5",
+            "pale": "#f2f9fb",
+            "w": 58,
+            "photo": "circle",
+            "header": "none",
+            "left": [
+              "identity",
+              "summary",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "heading": "icon",
+            "rightBg": "#f2f9fb",
+            "font": "Roboto"
+          },
+          "referenceSha256": "4f3041a88f2e842f5ea68194815510370dc9a66df74a5da5c07446d693325114",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "basic_5_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "rightSide",
+            "a": "#D07438",
+            "w": 40.968,
+            "photo": "circle",
+            "side": "#ffffff",
+            "align": "right",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "pill",
+            "font": "Roboto"
+          },
+          "referenceSha256": "1e35033ae3714af03c58519ed3f80fb2a7263d1c155fc3c9f0f1b88d09782f81",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "rightSide",
+            "a": "#D07438",
+            "w": 34,
+            "photo": "circle",
+            "side": "#ffffff",
+            "align": "right",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "pill",
+            "font": "Roboto"
+          },
+          "referenceSha256": "885f6c4ff8d85641dac288c8fb6d0dd05cdd93cf9be4d421ba9ab589b247c5e5",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "bright": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "bright",
+            "a": "#4B5346",
+            "side": "#e8ded3",
+            "hero": "#4a5445",
+            "font": "Roboto"
+          },
+          "referenceSha256": "6c39fc525f1aa29393bc456c9ee7bd19946a1869aadf68e16b2ae6e2ce374471",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "bright",
+            "a": "#4B5346",
+            "side": "#e8ded3",
+            "hero": "#4a5445",
+            "font": "Roboto"
+          },
+          "referenceSha256": "5ed273d4a3834d2aa43ae789a280aaff93ec96596cd658f92ee88ba442d82f4c",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "chrome": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "browser",
+            "a": "#0797ed",
+            "pale": "#e7f4fd",
+            "w": 58,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "interests",
+              "certifications"
+            ],
+            "heading": "icon",
+            "cards": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "97e3d0e71aa1c9a09bfdf682f446b75ee4e5997cc6a71c58275c93f3518f8cec",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "browser",
+            "a": "#0797ed",
+            "pale": "#e7f4fd",
+            "w": 58,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "interests",
+              "certifications"
+            ],
+            "heading": "icon",
+            "cards": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "cc729c4b69ef7ab3c38eb3b7599f3140fcd2a047f466cf3b230c14ca578f7526",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "clarity": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#292929",
+            "side": "#eaeaea",
+            "sideText": "#2f2f2f",
+            "w": 40.484,
+            "photo": "circle",
+            "nameFirst": true,
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "references",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "d1dc23d60eacab99b321b71981b866df0dda2adb53316e4a462aa0a8d4b9601a",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#292929",
+            "side": "#eaeaea",
+            "sideText": "#2f2f2f",
+            "w": 40.484,
+            "photo": "circle",
+            "nameFirst": true,
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "references",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "d717284c31f0459bf86a8e0ebcfe6ffe4c3e6dae19a20b24feb9035ba67246a7",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "classic_1": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "font": "Tinos",
+            "header": "centerPhoto",
+            "photo": "square",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "skills",
+              "awards"
+            ],
+            "heading": "rule"
+          },
+          "referenceSha256": "fd269027ab5ad8d65d8662ae087501df345e6437118b3018c3e81cfc6aa2f7a7",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "font": "Tinos",
+            "header": "centerPhoto",
+            "photo": "square",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "skills",
+              "awards"
+            ],
+            "heading": "rule"
+          },
+          "referenceSha256": "fe2982007feef77efd8ecf323de729bc36836c814275bc30c08299ad8a7ee948",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "creative": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "creative",
+            "a": "#b78c47",
+            "w": 35,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "plain",
+            "summaryInHero": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "7a1153bd2b8da9cb215e69073913c02d96df7dfa40bc11352eaf389184fe11c0",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "creative",
+            "a": "#b78c47",
+            "w": 35,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "plain",
+            "summaryInHero": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "620e7a4a291fe069effcfe7cb9e442090d5eab10ff8a2a127da4bdac33b72424",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "cv_color": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#85c7b6",
+            "side": "#ffffff",
+            "sideText": "#333",
+            "w": 39,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "awards",
+              "certifications"
+            ],
+            "heading": "colorRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "5113f11d1d3005a216bf2ae9210d5a919c5d6892a7a141c463d0d3a023fa3921",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#85c7b6",
+            "side": "#ffffff",
+            "sideText": "#333",
+            "w": 39,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "awards",
+              "certifications"
+            ],
+            "heading": "colorRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "9f0f7f33864789792cd7c549fedc8ea7ec9bbc46ab21722d2cf90f3dd50532c8",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "default_junior": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#354958",
+            "header": "left",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "activities",
+              "experience",
+              "skills",
+              "certifications"
+            ],
+            "heading": "centerBar",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "2050b57c0fb19d883a92e88d3ddfb0746e7b7dc85b9790043da5c243f6b7f256",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#354958",
+            "header": "left",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "activities",
+              "experience",
+              "skills",
+              "certifications"
+            ],
+            "heading": "centerBar",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "8c3caa493688bec9271642e8d026ab8dc96fbd4f13d2c45476d3441124ebe489",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "default_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "header": "left",
+            "photo": "square",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "e835f4449461a17ec43ae12e3e81249cb3a390319822d714678de9be189b9578",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "header": "left",
+            "photo": "square",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "69df14f6962266f9279d0d7e89be736adb9a7d8a9eb9be0e2b32ee26f43cdd3d",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "delicate_1": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#3099d0",
+            "w": 60,
+            "header": "right",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "decor": "rings",
+            "contactStrip": true,
+            "font": "Roboto",
+            "nameColor": "#3099d0"
+          },
+          "referenceSha256": "e9356c1d450a1dbc98b8d84c5e738968c5983c655e832a1d9b75620749c8610e",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#3099d0",
+            "w": 60,
+            "header": "right",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "decor": "rings",
+            "contactStrip": true,
+            "font": "Roboto",
+            "nameColor": "#3099d0"
+          },
+          "referenceSha256": "12b5ca7562f2abba6a0c382d3c453bb10788b95cda4c3fc940121794ce2e6746",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "dev_1": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "developer",
+            "a": "#999",
+            "font": "Roboto Mono",
+            "w": 56,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "experience"
+            ],
+            "right": [
+              "activities",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "heading": "hash",
+            "timeline": true
+          },
+          "referenceSha256": "efb6acc61d2b7807ffee4a8eb9d8ab9d713eda17a41e6542fcfbd052036fcc09",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "developer",
+            "a": "#999",
+            "font": "Roboto Mono",
+            "w": 56,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "experience"
+            ],
+            "right": [
+              "activities",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "heading": "hash",
+            "timeline": true
+          },
+          "referenceSha256": "5dbc5de687fe2afa957a359275327292a004e97324e434837ee8156e4d692b41",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "dev_2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#6995ab",
+            "pale": "#f9fbfa",
+            "side": "#ffffff",
+            "sideText": "#52849b",
+            "w": 37,
+            "photo": "square",
+            "left": [
+              "contact",
+              "awards",
+              "certifications",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "hash",
+            "cards": true,
+            "font": "Roboto",
+            "nameColor": "#6995ab"
+          },
+          "referenceSha256": "0310144e10747bc5b99fd7006a1a56090a8caa4b054165cb916b73b732f76510",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#6995ab",
+            "pale": "#f9fbfa",
+            "side": "#fafafa",
+            "sideText": "#52849b",
+            "w": 37,
+            "photo": "square",
+            "left": [
+              "contact",
+              "awards",
+              "certifications",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "hash",
+            "cards": true,
+            "font": "Roboto",
+            "nameColor": "#6995ab"
+          },
+          "referenceSha256": "b8ae24179aa709efe8f16f09df8ade76a979c3a92d09991273f05f8ab300e785",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "elegant": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "threeHeader",
+            "a": "#B82A38",
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "contact",
+              "education",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "babf536287d84bef2ac282133c736c895495d6fdcc6f17e3f85b33c64e336849",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "threeHeader",
+            "a": "#B82A38",
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "contact",
+              "education",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "cfc4703b8dc971120cd6186c4b1930f8ed653cb63b2615d8508e2831fadde070",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "experts": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "photo": "none",
+            "header": "split",
+            "left": [
+              "summary",
+              "experience"
+            ],
+            "bottom": [
+              "education",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "9351d4e77c9e8341c53ee380182f6a5d9521d860fbf2f8440db8d7ed5b5744b6",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "photo": "none",
+            "header": "split",
+            "left": [
+              "summary",
+              "experience"
+            ],
+            "bottom": [
+              "education",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "6557e7fe52fb1e2b17738afec962eac76e573bdabceb610d09fd0ad36b04d65a",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "formal": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "formal",
+            "a": "#6c3d2f",
+            "pale": "#e7e3e0",
+            "photo": "square",
+            "header": "right",
+            "left": [
+              "summary",
+              "experience"
+            ],
+            "bottom": [
+              "education",
+              "awards",
+              "certifications",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "7b6a7ac4159abe07c18ba38368fee0c4e336fbc0bf27710c736a493ba76b65c9",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "formal",
+            "a": "#6c3d2f",
+            "pale": "#e7e3e0",
+            "photo": "square",
+            "header": "right",
+            "left": [
+              "summary",
+              "experience"
+            ],
+            "bottom": [
+              "education",
+              "awards",
+              "certifications",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "47ae0368737dc3d19a6648a7d3c3f445d8af7bdeeadf018d960b594840174773",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "fresher": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#78a8ba",
+            "w": 46,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "activities",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "skills",
+              "additional"
+            ],
+            "heading": "plain",
+            "decor": "grid",
+            "alignLeft": "right",
+            "summaryTop": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "6e4a1c09fa8e12352a2d3ddcfbd868dfc5e005c79cab2d6ebfeb2591d2202dad",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#78a8ba",
+            "w": 46,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "activities",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "skills",
+              "additional"
+            ],
+            "heading": "plain",
+            "decor": "grid",
+            "alignLeft": "right",
+            "summaryTop": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "9b0a6341d56c398c3bb8f6c3e8ab773b8fbfa1b7cc975679b58ddd2a8331e68f",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "graceful": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "graceful",
+            "a": "#661d1d",
+            "pale": "#e0d2d2",
+            "font": "Roboto"
+          },
+          "referenceSha256": "b69cf721aca97b6c9ea52aeead985c7794f0c0233d97dffe31fc8161456e7e65",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "graceful",
+            "a": "#661d1d",
+            "pale": "#e0d2d2",
+            "font": "Roboto"
+          },
+          "referenceSha256": "69b2cd124d40d57c8be76420f0c2f91ff17a1c709152281ab04fcebb7b05e0e0",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "gradient_1_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#337aa6",
+            "w": 36,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "awards",
+              "interests"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "heading": "dualRule",
+            "decor": "wave",
+            "summaryTop": true,
+            "font": "Roboto",
+            "nameColor": "#337aa6"
+          },
+          "referenceSha256": "5d69f894f5e0f34766b26d83e7d8e757e72b5abb70f511f5db435aa2a9a83cc1",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#337aa6",
+            "w": 36,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "awards",
+              "interests"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "heading": "dualRule",
+            "decor": "wave",
+            "summaryTop": true,
+            "font": "Roboto",
+            "nameColor": "#337aa6"
+          },
+          "referenceSha256": "75dbcb444a21858761498ad7cbae5af934eda09f5410a430a4e46dc36f15080b",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "hello": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "hello",
+            "a": "#22b9cb",
+            "w": 30,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "experience",
+              "education",
+              "activities",
+              "certifications"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "9da6facd91a172a68e38c6a333e876b6a1c4d6f5d902d9100e0b170359fb13bf",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "hello",
+            "a": "#22b9cb",
+            "w": 30,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "experience",
+              "education",
+              "activities",
+              "certifications"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "31c48f73d51bc10e72801fdef13fe0e912f0a223fc6735f3a448e1b1307027f0",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "impressive_3_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#7a5c53",
+            "w": 42,
+            "photo": "circle",
+            "header": "right",
+            "hero": "#7a5c54",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "experience",
+              "education",
+              "activities"
+            ],
+            "heading": "plain",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "21d0075213b32acdab9a5738d02444f479b4d74fc507fd8155654d745de0a165",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#7a5c53",
+            "w": 42,
+            "photo": "circle",
+            "header": "right",
+            "hero": "#7a5c54",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "experience",
+              "education",
+              "activities"
+            ],
+            "heading": "plain",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "1975ad41719c66a90389a13888a0e3cf26c6bd0cd9e6d170b4cb567ca33fe859",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "impressive_5": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#c5a34e",
+            "w": 60,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "52b1321a97451cc57e51b68004cb426688f34fc2bae803afdc1a8b14e0cd2e25",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#c5a34e",
+            "w": 60,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "cbaf937c2c445b6946b0f4a7253a966adcfad4944e50ef43d65b894e06c9e73b",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "impressive_6_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#574040",
+            "side": "#342626",
+            "w": 36.935,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "interests",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "pill",
+            "font": "Roboto"
+          },
+          "referenceSha256": "828108b26104e1a6ce0b8d2268eafb94357efbbc0b59ffa542b437ce198a08d2",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#574040",
+            "side": "#342626",
+            "w": 36.935,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "interests",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "pill",
+            "font": "Roboto"
+          },
+          "referenceSha256": "764587e6b71dc662abe88e5062e163aa8c9b1cb868f3c0f0d49107af624aacae",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "impressive_pro": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "rightSide",
+            "a": "#489695",
+            "side": "#3f949a",
+            "w": 34.678,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "icon",
+            "font": "Roboto"
+          },
+          "referenceSha256": "f43354f0b57c8412afd4abc7994d38cb88d593abe0023a8d040b54c841e5d55c",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "rightSide",
+            "a": "#489695",
+            "side": "#409699",
+            "w": 34.3,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "icon",
+            "font": "Roboto"
+          },
+          "referenceSha256": "0d599201c69937f6736d9eea72fa593504e919d10d30b52662603a559976d796",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "landing": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "landing",
+            "a": "#35648b",
+            "w": 60,
+            "photo": "circle",
+            "header": "right",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "summaryTop": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "5c56a27e70b0cc4869369efb9a7670521ec76890732df5b9cb3281c54b1d88b9",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "landing",
+            "a": "#35648b",
+            "w": 60,
+            "photo": "circle",
+            "header": "right",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "summaryTop": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "e184a033dc20a5900e2f93a9f0c7009ccd7401bec4737a47175550a0c64d488c",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "minimalism_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "minimal",
+            "a": "#263A4D",
+            "w": 64,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "skills",
+              "certifications",
+              "references",
+              "interests"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "ec8e477fc8bd8a3cca18cf83a9a1f0a85ae825967790d5abb6e89a95f3477b34",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "minimal",
+            "a": "#263A4D",
+            "w": 64,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "skills",
+              "certifications",
+              "references",
+              "interests"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "f328f05475a54b7de507e3637c4e25b615e7980ad080e03f7886064724e7d7fa",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "modern_1_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#a94a4b",
+            "header": "left",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "4efb653fb265285ecc0dbb35e933439020d07ae42f0d40775586d141dbd48786",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#a94a4b",
+            "header": "left",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "2b3cfdfb0bc018f6ac188fff2216291b893b82b4ea5d0947fc5f32d467768edf",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "modern_2_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#ef476f",
+            "side": "#ffffff",
+            "sideText": "#000000",
+            "w": 35,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "7183f2477f04ff57b4a5c4f40dfd8f57d5f7ef83d98c1898fc57e3ca1a049fd1",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#ef476f",
+            "side": "#ffffff",
+            "sideText": "#292929",
+            "w": 35,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "eee1d2c3f35d1f5a57b6014b38e8f45a7938c8c32554a53b2c005cea7b0bbd48",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "modern_3": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#222",
+            "hero": "#222222",
+            "w": 48,
+            "header": "right",
+            "photo": "square",
+            "left": [
+              "summary",
+              "certifications",
+              "awards",
+              "additional"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills"
+            ],
+            "heading": "plain",
+            "contactStrip": true,
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "88438105c77674106a2c71c6debd61f5a0b2fd02ba739849e8fdd906f1405fd3",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#222",
+            "hero": "#222222",
+            "w": 48,
+            "header": "right",
+            "photo": "square",
+            "left": [
+              "summary",
+              "certifications",
+              "awards",
+              "additional"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills"
+            ],
+            "heading": "plain",
+            "contactStrip": true,
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "f586aded1504d7e7e9e01c3fdc7fdbc268efea7b368b9659ad815dba041c83c2",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "modern_4_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#F0B043",
+            "hero": "#f0b044",
+            "w": 48,
+            "header": "left",
+            "photo": "square",
+            "left": [
+              "education",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "experience",
+              "skills",
+              "interests"
+            ],
+            "heading": "plain",
+            "summaryTop": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "032473ca7fc73d9e8a04d5b5e7c04b6ebb57508aa8ea70dabcd6f8eda84c6429",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#F0B043",
+            "hero": "#f0b044",
+            "w": 48,
+            "header": "left",
+            "photo": "square",
+            "left": [
+              "education",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "experience",
+              "skills",
+              "interests"
+            ],
+            "heading": "plain",
+            "summaryTop": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "c97131ab59a5bec526372800dbed5dde2fb97b6c7213e3ab8bf7e697da3289d7",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "modern_5": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#19a650",
+            "hero": "#f2f2f2",
+            "w": 38,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "plain",
+            "topBorder": true,
+            "contactStrip": true,
+            "font": "Roboto",
+            "nameColor": "#19a650"
+          },
+          "referenceSha256": "718267528dabd84863a158add5c512523f9449a233c50fdd1ff18b0a5dc3c859",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#19a650",
+            "hero": "#f2f2f2",
+            "w": 38,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications",
+              "awards"
+            ],
+            "heading": "plain",
+            "topBorder": true,
+            "contactStrip": true,
+            "font": "Roboto",
+            "nameColor": "#19a650"
+          },
+          "referenceSha256": "dc316418cbca96800cdb66c95b31df86a332cae932c573bbbfb863eed9c96ae8",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "modern_6_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#7a415a",
+            "side": "#eae3e5",
+            "sideText": "#322a2a",
+            "w": 36,
+            "photo": "circle",
+            "nameFirst": true,
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "awards",
+              "certifications"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "ea131c16165775d9183c351a130e34accf53f6e5e8f2556322a410fed209a6dd",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#7a415a",
+            "side": "#eae3e5",
+            "sideText": "#322a2a",
+            "w": 37.258,
+            "photo": "circle",
+            "nameFirst": true,
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "awards",
+              "certifications"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "a52827cd0d82ea60aa59466c0c33e549c291d8c85b9b9b5dd49b95c7c5b9b10e",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "onepage_classic": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#555",
+            "header": "right",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "9c14ebea8cdc430b9f791af47f87050569909c898682514596a14b22b70c2938",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#555",
+            "header": "right",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "4302e8574c2c8d3abe06c2be61256154a85be8bbd3702d9ce5e9edfbdbee1674",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "onepage_elegant_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#556E8E",
+            "hero": "#556d8e",
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "skills",
+              "awards"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "slant": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "74c39ecd0f7c776748480476cbebbe26124419e392bc490ce48bd7f1ea9e5be0",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#556E8E",
+            "hero": "#556d8e",
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "skills",
+              "awards"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "slant": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "5a498249ed78c83a60fbee77b981fd8724a181a861a57b497cc0b0769093fd72",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "onepage_impressive_2_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#bbbfb0",
+            "side": "#303830",
+            "w": 33.306,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests",
+              "certifications"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "icon",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "b7cee31c7fad2bc281ba8ec5e748a7dd9746f3efb698ff630df2f177d8b03601",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#bbbfb0",
+            "side": "#303830",
+            "w": 33.226,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests",
+              "certifications"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "icon",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "59d38c81bd45ae9430944920647a4cae414cae5bba5e6440fba07104b183a533",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "onepage_impressive_3_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#316160",
+            "side": "#ffffff",
+            "sideText": "#253e37",
+            "w": 34,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "vertical",
+            "skillDots": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "d708fc31277f443a74522839eb15a76c22c431510652fa5ab92828532420703b",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#316160",
+            "side": "#ffffff",
+            "sideText": "#253e37",
+            "w": 34,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "vertical",
+            "skillDots": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "c84c47052c328d6768454086ca5ac24833d1e9ae1bb647a68a8cf50ca7fb80e7",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "onepage_impressive_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "rightSide",
+            "a": "#EC8F00",
+            "side": "#343b3d",
+            "w": 33.226,
+            "photo": "circle",
+            "mainBg": "#fdfae2",
+            "left": [
+              "contact",
+              "skills",
+              "awards",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "heading": "icon",
+            "hero": "#7c7a78",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "c8d8f1d2b55f8aac2cd52f200add888c6a3343b90ace8051de0888be3faf6154",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "rightSide",
+            "a": "#EC8F00",
+            "side": "#343b3d",
+            "w": 33.145,
+            "photo": "circle",
+            "mainBg": "#fdfae2",
+            "left": [
+              "contact",
+              "skills",
+              "awards",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "heading": "icon",
+            "hero": "#7c7a78",
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "88a7e5872c2482feeea42c210f1f8734354e7afea668b544a85ab74ed2c03cc3",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "socialCards",
+            "a": "#47a8e2",
+            "page": "#333333",
+            "pale": "#565656",
+            "text": "#fff",
+            "w": 48,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "experience",
+              "education",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "plain",
+            "cards": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "7ea7cc4d8574006413db41f484788adae3f6f33ebc94a0367dfed08ee892a6f7",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "socialCards",
+            "a": "#47a8e2",
+            "page": "#333333",
+            "pale": "#565656",
+            "text": "#fff",
+            "w": 48,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "experience",
+              "education",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "plain",
+            "cards": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "970281c8adff88062322414b0a6cdb0276d1b36b0abff9ec58b17e8fcef59705",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_10_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "bannerSide",
+            "a": "#879e84",
+            "side": "#2c3844",
+            "w": 34,
+            "hero": "#80997e",
+            "photo": "circle",
+            "header": "right",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "rule",
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "d9eec20ce3a251c4f9b52977ce9574ed55bfd3b032a088bd07e143ca5140fb51",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "bannerSide",
+            "a": "#879e84",
+            "side": "#2b3743",
+            "w": 34,
+            "hero": "#80997e",
+            "photo": "circle",
+            "header": "right",
+            "left": [
+              "contact",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "rule",
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "481ff53b02596ed8691132d1caafd7b930825cded5221d88e6a7e5ef67471bea",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_11": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#67aeb5",
+            "hero": "#66afbf",
+            "w": 58,
+            "photo": "square",
+            "header": "right",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications",
+              "interests"
+            ],
+            "heading": "rule",
+            "summaryInHero": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "5789606e1f2f19c89f3332ee20b976fa48997610ff2c72e673813787dd4868d6",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#67aeb5",
+            "hero": "#66afbf",
+            "w": 58,
+            "photo": "square",
+            "header": "right",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "skills",
+              "awards",
+              "certifications",
+              "interests"
+            ],
+            "heading": "rule",
+            "summaryInHero": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "359ba1026c5d3e000bb8c3234bf8dfc7139bef63da6932f688d38eedf91ec36e",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#d4dc68",
+            "w": 60,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "experience",
+              "certifications",
+              "awards",
+              "additional"
+            ],
+            "right": [
+              "education",
+              "activities",
+              "skills",
+              "references"
+            ],
+            "heading": "shortRule",
+            "summaryInHero": true,
+            "pillContacts": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "bad93c553476e85e9a0b2748233e401de43606113ff3719bb51db745059fc083",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#d4dc68",
+            "w": 60,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "experience",
+              "certifications",
+              "awards",
+              "additional"
+            ],
+            "right": [
+              "education",
+              "activities",
+              "skills",
+              "references"
+            ],
+            "heading": "shortRule",
+            "summaryInHero": true,
+            "pillContacts": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "7abefcab52e8155a363f2849c9b92201c93cc72a42c36a83fb62b2a85f025770",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_3": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#05b15a",
+            "w": 38,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "contactStrip": true,
+            "headerPhotoBg": "#2d414b",
+            "font": "Roboto"
+          },
+          "referenceSha256": "8e054ce27cbd06b2c2feed5aa267dd460aa1f3be3cce8df77455b8203d92ef58",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#05b15a",
+            "w": 38,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "rule",
+            "contactStrip": true,
+            "headerPhotoBg": "#2d414b",
+            "font": "Roboto"
+          },
+          "referenceSha256": "7469c9c057290b316d844680780b93cd2c4b635f5d8648e3f1fc5899f1c3e9cd",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_5": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "bannerSide",
+            "a": "#f58227",
+            "hero": "#ff7424",
+            "side": "#ffffff",
+            "sideText": "#333",
+            "w": 36,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "skills",
+              "interests",
+              "awards"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "certifications",
+              "experience",
+              "activities"
+            ],
+            "heading": "pill",
+            "font": "Roboto"
+          },
+          "referenceSha256": "2eb7fa4756bbdbe0c1ab2c01b8c31db8c9352409f507264e35508a4ee97e93ef",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "bannerSide",
+            "a": "#f58227",
+            "hero": "#ff8029",
+            "side": "#ffffff",
+            "sideText": "#333",
+            "w": 36,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "skills",
+              "interests",
+              "awards"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "certifications",
+              "experience",
+              "activities"
+            ],
+            "heading": "pill",
+            "font": "Roboto"
+          },
+          "referenceSha256": "d030fc10fb5899232a6fb930eec5eb15e694faf972e3c9d67663743b63337341",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_7": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#8db8a0",
+            "pale": "#bbdfc7",
+            "hero": "#37404f",
+            "w": 40,
+            "header": "center",
+            "photo": "circle",
+            "left": [
+              "portrait",
+              "summary",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "references"
+            ],
+            "heading": "centerBar",
+            "contactStrip": true,
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "562170058c2302d6fce6d8cd08a52864c3b84262c32aea2fba19741a42877295",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#8db8a0",
+            "pale": "#bae0c7",
+            "hero": "#37404f",
+            "w": 40,
+            "header": "center",
+            "photo": "circle",
+            "left": [
+              "portrait",
+              "summary",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "references"
+            ],
+            "heading": "centerBar",
+            "contactStrip": true,
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "1a49fc5ff66c9922b45519581bb871db4763535dc1541a9b6797f141f6ab0d9f",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "outstanding_9": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#5a989e",
+            "hero": "#8fd6e3",
+            "w": 38,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "contact",
+              "skills",
+              "awards",
+              "certifications",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "references"
+            ],
+            "heading": "shortRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "bf5be0614c8a1fb795470ff10f0c6048741bdc906a6fce70ab15963d1b781777",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#5a989e",
+            "hero": "#8fd6e3",
+            "w": 38,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "contact",
+              "skills",
+              "awards",
+              "certifications",
+              "interests"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities",
+              "references"
+            ],
+            "heading": "shortRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "1f5fdb61dce61f0c75150da353b0f9f092b114aa949356087c4758f8ce826d49",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "passion": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#353535",
+            "side": "#f2f9f9",
+            "sideText": "#111",
+            "w": 33,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "awards",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications"
+            ],
+            "heading": "box",
+            "decor": "peach",
+            "font": "Roboto"
+          },
+          "referenceSha256": "5af2ea216cb9e9fac23ffe38f7b2cf173cc76f62058bc7d7662708996dbe06dc",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#353535",
+            "side": "#ffffff",
+            "sideText": "#111",
+            "w": 33,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "awards",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills",
+              "certifications"
+            ],
+            "heading": "box",
+            "decor": "peach",
+            "font": "Roboto"
+          },
+          "referenceSha256": "96d50dbc5d413d649f99be7468dffebc8f756da8e63910082402ba58327d9c0a",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "premium_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "hero": "#000000",
+            "w": 34,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "skills",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "timeline",
+            "timeline": true,
+            "decor": "lilac",
+            "font": "Roboto"
+          },
+          "referenceSha256": "c1e0ac38821c3794351ce2a85f37df203ceb505bca359a476e577fd7d799f8b6",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "hero": "#000000",
+            "w": 34,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "skills",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "timeline",
+            "timeline": true,
+            "decor": "lilac",
+            "font": "Roboto"
+          },
+          "referenceSha256": "09b59125de0efb27d564bd0aeb7c1a618a089b64d5b4fa6b35a5d8a822c07bbc",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "pro_1_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#6b4e37",
+            "side": "#6a4e38",
+            "w": 33.952,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "plain",
+            "photoFull": true,
+            "nameAbove": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "dc7b776039291558acb36034fac8eb4d15d8ffe1b167192a623d2d4dc82c4578",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#6b4e37",
+            "side": "#6a4e38",
+            "w": 33.871,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "education",
+              "skills",
+              "certifications"
+            ],
+            "right": [
+              "experience",
+              "activities",
+              "awards"
+            ],
+            "heading": "plain",
+            "photoFull": true,
+            "nameAbove": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "e9c7d09b80fc2c60b53204d5c6bec26d25d86abe35acf7b2a9799715c1a0987c",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "pro_2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#359da8",
+            "hero": "#20abd1",
+            "w": 32,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "summary",
+              "awards",
+              "certifications",
+              "skills"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "plain",
+            "font": "Roboto"
+          },
+          "referenceSha256": "8db0174175a6b7361cb005c5e34aa89c522e4359b8cc7ada48a729be93430d06",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#359da8",
+            "hero": "#21abcf",
+            "w": 32,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "summary",
+              "awards",
+              "certifications",
+              "skills"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "plain",
+            "font": "Roboto"
+          },
+          "referenceSha256": "202a4accb843a0a283bf19b5647cab2067b999cfe70499f950c3ef611bd0d939",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "pro_3": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#444",
+            "hero": "#514e4f",
+            "w": 42,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "summary",
+              "certifications",
+              "awards",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills"
+            ],
+            "heading": "rule",
+            "contactStrip": true,
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "794d07006ba927d77861e4f719781e0209f91b9617cd20829b050131f22bfd6d",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#444",
+            "hero": "#514e4f",
+            "w": 42,
+            "photo": "square",
+            "header": "left",
+            "left": [
+              "summary",
+              "certifications",
+              "awards",
+              "references"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "skills"
+            ],
+            "heading": "rule",
+            "contactStrip": true,
+            "font": "Roboto",
+            "heroText": "#ffffff"
+          },
+          "referenceSha256": "8567422e4af67dbbc24a3a556f7f2eab357af3d761468fc25defce80acc5fb7f",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "pro_4": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#119ec0",
+            "side": "#dbdbdb",
+            "sideText": "#252525",
+            "w": 42.623,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "awards",
+              "references",
+              "certifications"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "1c5775ab22656ba225e4952c8fef6c1b6c733f3191a3dea54c7caef2822a36a3",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#119ec0",
+            "side": "#dbdbdb",
+            "sideText": "#252525",
+            "w": 40,
+            "photo": "circle",
+            "left": [
+              "contact",
+              "summary",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "awards",
+              "references",
+              "certifications"
+            ],
+            "heading": "bar",
+            "font": "Roboto"
+          },
+          "referenceSha256": "16b8c1624749b87b65bf6949a5929282cd5b0da3dd691f544856e7752ac404b5",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "pro_5": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#168cb7",
+            "side": "#158dc7",
+            "w": 43.632,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "references",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "icon",
+            "mainBg": "#eeeee9",
+            "font": "Roboto"
+          },
+          "referenceSha256": "8025b5fd62670dec8db41c6ea00fa3ecfcc2330cc5828403aa5f817a9001c2f2",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#168cb7",
+            "side": "#158dc7",
+            "w": 43.884,
+            "photo": "square",
+            "left": [
+              "contact",
+              "summary",
+              "references",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "icon",
+            "mainBg": "#eeeee9",
+            "font": "Roboto"
+          },
+          "referenceSha256": "da766bc04d8a390455de7a12447a41dd9debc2d8b8e0e294b9dc0f8d717a18aa",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "prosper": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#FFB156",
+            "side": "#626262",
+            "w": 33.306,
+            "photo": "square",
+            "left": [
+              "contact",
+              "skills",
+              "certifications",
+              "awards",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "education",
+              "activities"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "c888bfdf5a3169ed80d342a52ca8e7e529de359f3dc4a169dec6cc28d2c215af",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#FFB156",
+            "side": "#626262",
+            "w": 33.306,
+            "photo": "square",
+            "left": [
+              "contact",
+              "skills",
+              "certifications",
+              "awards",
+              "interests",
+              "references"
+            ],
+            "right": [
+              "summary",
+              "experience",
+              "education",
+              "activities"
+            ],
+            "heading": "rule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "c9417dc9bbe7a2f711200790849a9e50bee6f0b3e508242521693c5c5d59fd8f",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "schoolarship_standard": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "font": "Tinos",
+            "photo": "none",
+            "header": "center",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "certifications",
+              "awards",
+              "skills",
+              "activities"
+            ],
+            "heading": "rule",
+            "justify": true
+          },
+          "referenceSha256": "d5fa432f835228aaab94fd03c7268c0e5bac8371867a35c28d5a1bf650cb6fa0",
+          "referenceDimensions": [
+            1192,
+            1686
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "font": "Tinos",
+            "photo": "none",
+            "header": "center",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "certifications",
+              "awards",
+              "skills",
+              "activities"
+            ],
+            "heading": "rule",
+            "justify": true
+          },
+          "referenceSha256": "d5fa432f835228aaab94fd03c7268c0e5bac8371867a35c28d5a1bf650cb6fa0",
+          "referenceDimensions": [
+            1192,
+            1686
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "senior_2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "senior_2",
+            "a": "#000000",
+            "font": "Tinos"
+          },
+          "referenceSha256": "8744ab711a10096fd4ffb08901191490d4eaec13a39881f6250b99a8db76674e",
+          "referenceDimensions": [
+            893,
+            1263
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "senior_2",
+            "a": "#000000",
+            "font": "Tinos"
+          },
+          "referenceSha256": "35e6f1657c2173d8903e7919133122e68ddef4867e25266cecdbe50f80f51fba",
+          "referenceDimensions": [
+            1193,
+            1686
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "senior_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "font": "Tinos",
+            "photo": "none",
+            "header": "center",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "skills",
+              "certifications",
+              "awards",
+              "activities"
+            ],
+            "heading": "rule",
+            "justify": true
+          },
+          "referenceSha256": "df65f96572aabd82f244a7dc0b2974fb38c6dea56937728665e4cce71dc0e434",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#000",
+            "font": "Tinos",
+            "photo": "none",
+            "header": "center",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "skills",
+              "certifications",
+              "awards",
+              "activities"
+            ],
+            "heading": "rule",
+            "justify": true
+          },
+          "referenceSha256": "91bd1c1612b1dad4705cfe2a89ceb223b121f0cf2e81db5dc15a921002a401a0",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "software_engineer": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "single",
+            "a": "#333",
+            "photo": "square",
+            "header": "right",
+            "left": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "e28672d17d2573bc0b072c9c86301fcfdaf92f8ba0dc335d0163b985f3939993",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "single",
+            "a": "#333",
+            "photo": "square",
+            "header": "right",
+            "left": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "029e66a6b9a1af4e4e252844f8286395aa7f6a41b1199a95609acb283a5a1d58",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "student_3": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "side",
+            "a": "#0359AB",
+            "side": "#ffffff",
+            "sideText": "#222",
+            "w": 50.887,
+            "photo": "circle",
+            "nameFirst": true,
+            "left": [
+              "contact",
+              "summary",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "pill",
+            "cards": true,
+            "pale": "#e6eef6",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "82bd1898e5d214c4bd1d6d012ac9349d78a5d5c7ee96f8d73922539af2419490",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "side",
+            "a": "#0359AB",
+            "side": "#ffffff",
+            "sideText": "#222",
+            "w": 50.887,
+            "photo": "circle",
+            "nameFirst": true,
+            "left": [
+              "contact",
+              "summary",
+              "skills"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "pill",
+            "cards": true,
+            "pale": "#e6eef6",
+            "timeline": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "9810b5eb8fb1a0cf611449a41993f60b9b0cd3cd6602bda09cc86a27f269401c",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "sun": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#d28881",
+            "page": "#f5feff",
+            "w": 60,
+            "header": "right",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "rocket",
+            "decor": "orbits",
+            "font": "Roboto",
+            "nameColor": "#d28881"
+          },
+          "referenceSha256": "d8bf1f2d70d7060264a7406ecd68080255b4ca25913a772385606b9b8de60e0a",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#d28881",
+            "page": "#f5feff",
+            "w": 60,
+            "header": "right",
+            "photo": "circle",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "heading": "rocket",
+            "decor": "orbits",
+            "font": "Roboto",
+            "nameColor": "#d28881"
+          },
+          "referenceSha256": "50dd219f4bb6cdb1984356670c051c402ebf934cf9f8bd30d76912a0f2b58400",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "tiktop": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "tiktop",
+            "a": "#000000",
+            "font": "Roboto"
+          },
+          "referenceSha256": "2e426ee84af3d6609e1cce7276c5b783e40ec02ba2d1e6581c1e253c7cac4429",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "tiktop",
+            "a": "#000000",
+            "font": "Roboto"
+          },
+          "referenceSha256": "c030709d25fc67022b4561c36c28f01e8055555ec15540cb3ce422f75470a15b",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "time": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "three",
+            "a": "#FFE800",
+            "photo": "square",
+            "w": 32,
+            "left": [
+              "summary",
+              "contact",
+              "references"
+            ],
+            "right": [
+              "education",
+              "awards",
+              "interests",
+              "activities",
+              "additional",
+              "skills"
+            ],
+            "heading": "thickRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "16d43d34feffc9d0c0330864819e28915714c5b0a3ee3bed194b2688465f623b",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "three",
+            "a": "#FFE800",
+            "photo": "square",
+            "w": 32,
+            "left": [
+              "summary",
+              "contact",
+              "references"
+            ],
+            "right": [
+              "education",
+              "awards",
+              "interests",
+              "activities",
+              "additional",
+              "skills"
+            ],
+            "heading": "thickRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "7b56e35e6a63b2f47cd442947d91aff3654fa86b9c222baf83b051073c3d95f7",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "timeline_clean_2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#4eaf88",
+            "pale": "#e6f7ed",
+            "hero": "#e6f7ed",
+            "w": 62,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "right": [
+              "additional",
+              "references",
+              "skills",
+              "awards"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "font": "Roboto",
+            "nameColor": "#4eaf88"
+          },
+          "referenceSha256": "9f790178584afd32161841a2b6af3d334ef2d5672eb3d3362c504ccc4a3f8793",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#4eaf88",
+            "pale": "#e3f7ec",
+            "hero": "#e3f7ec",
+            "w": 62,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities",
+              "certifications"
+            ],
+            "right": [
+              "additional",
+              "references",
+              "skills",
+              "awards"
+            ],
+            "heading": "plain",
+            "timeline": true,
+            "font": "Roboto",
+            "nameColor": "#4eaf88"
+          },
+          "referenceSha256": "e13755ab5d120a80facde6e5f0f5e3a4e590331ba5276189eeae3010b059cac3",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "timeline_clean_v2": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#EC8F00",
+            "w": 66,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "summary",
+              "certifications",
+              "awards",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "21e18d591ef0e44678a5c772a115f3b8d18a7dbeb55ea452aa2cf4425e7bba45",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#EC8F00",
+            "w": 66,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "summary",
+              "certifications",
+              "awards",
+              "skills"
+            ],
+            "heading": "rule",
+            "timeline": true,
+            "skillBars": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "73cb59e58b86580b87074951a061c4d4d6f1f58644c34a16a3a5845fdb850fce",
+          "referenceDimensions": [
+            1240,
+            1755
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "tiny_1": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#5c8674",
+            "w": 60,
+            "photo": "circle",
+            "header": "center",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "certifications",
+              "awards",
+              "skills",
+              "references"
+            ],
+            "heading": "vertical",
+            "font": "Roboto"
+          },
+          "referenceSha256": "a4ee600f2d2dab6abf48554cc2d637e2c2127c08f0a119c428c83966ead28311",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#5c8674",
+            "w": 60,
+            "photo": "circle",
+            "header": "center",
+            "left": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "right": [
+              "contact",
+              "certifications",
+              "awards",
+              "skills",
+              "references"
+            ],
+            "heading": "vertical",
+            "font": "Roboto"
+          },
+          "referenceSha256": "7cc6f117c031eb7e05df2b68b2beb2ef66588a4db8deb7fcf0a4c8cb89b0a3fa",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "topinstar": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "instagram",
+            "a": "#aca0ee",
+            "page": "#000000",
+            "text": "#fff",
+            "w": 58,
+            "photo": "circle",
+            "left": [
+              "experience",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "education",
+              "activities",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "heading": "socialRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "2e2acd642743d1a12d86ac80e935ee4dabbc010008d17723a38218af0b338998",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "instagram",
+            "a": "#aca0ee",
+            "page": "#000000",
+            "text": "#fff",
+            "w": 58,
+            "photo": "circle",
+            "left": [
+              "experience",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "education",
+              "activities",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "heading": "socialRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "e316760271110737f3cdc9b204457b5541c4db19a622284420c49a7a79628bd2",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "toppier": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "pinterest",
+            "a": "#ec6079",
+            "w": 40,
+            "photo": "portrait",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "shortRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "ddf0bff140d747c828d7e36720feadb94320ae86b0c394e39444c26625c685c8",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "pinterest",
+            "a": "#ec6079",
+            "w": 40,
+            "photo": "portrait",
+            "left": [
+              "contact",
+              "summary",
+              "skills",
+              "interests"
+            ],
+            "right": [
+              "education",
+              "experience",
+              "activities",
+              "certifications",
+              "awards"
+            ],
+            "heading": "shortRule",
+            "font": "Roboto"
+          },
+          "referenceSha256": "283d492824dda0ad1aca7de414241209bc423ac706897a0f1657ccae39d4616d",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "toptify": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "spotify",
+            "a": "#39d873",
+            "page": "#3f3f3f",
+            "text": "#fff",
+            "w": 62,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "experience",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "education",
+              "activities",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "heading": "shortRule",
+            "summaryInHero": true,
+            "pillContacts": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "285e25548aaab0b361f7dfc7a5434f407adcd99f9e615ac2011844b131c60d55",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "spotify",
+            "a": "#39d873",
+            "page": "#3e3e3e",
+            "text": "#fff",
+            "w": 62,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "experience",
+              "certifications",
+              "awards"
+            ],
+            "right": [
+              "education",
+              "activities",
+              "skills",
+              "interests",
+              "references"
+            ],
+            "heading": "shortRule",
+            "summaryInHero": true,
+            "pillContacts": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "d5151a829dcb1ecf5fcd381ec105117ec9e4b5ad73639648998e9005e2f043ff",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "twittop": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "twitter",
+            "a": "#219cda",
+            "page": "#323232",
+            "text": "#fff",
+            "w": 50,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "activities",
+              "awards"
+            ],
+            "right": [
+              "experience",
+              "certifications",
+              "references",
+              "skills"
+            ],
+            "heading": "hashRule",
+            "summaryTop": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "1529673cabed29b123f28e03299b608d3a84be095565a98aca78018541bef56e",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "twitter",
+            "a": "#219cda",
+            "page": "#333431",
+            "text": "#fff",
+            "w": 50,
+            "photo": "circle",
+            "header": "left",
+            "left": [
+              "education",
+              "activities",
+              "awards"
+            ],
+            "right": [
+              "experience",
+              "certifications",
+              "references",
+              "skills"
+            ],
+            "heading": "hashRule",
+            "summaryTop": true,
+            "contactStrip": true,
+            "font": "Roboto"
+          },
+          "referenceSha256": "28fc14c4eb9439ce96cccfda543cf5f0c3e855f48316c448bf79a2477e0ba584",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    },
+    "vintage": {
+      "variants": {
+        "vi": {
+          "style": {
+            "type": "columns",
+            "a": "#51ae83",
+            "pale": "#c6f4d7",
+            "w": 38,
+            "photo": "portrait",
+            "header": "right",
+            "left": [
+              "contact",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "shortRule",
+            "decor": "organic",
+            "font": "Roboto"
+          },
+          "referenceSha256": "6876c0db7cd7a75f55218076168740cd4f84a25b9d740842f598e10b100c855e",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        },
+        "en": {
+          "style": {
+            "type": "columns",
+            "a": "#51ae83",
+            "pale": "#c6f4d7",
+            "w": 38,
+            "photo": "portrait",
+            "header": "right",
+            "left": [
+              "contact",
+              "skills",
+              "awards",
+              "certifications"
+            ],
+            "right": [
+              "summary",
+              "education",
+              "experience",
+              "activities"
+            ],
+            "heading": "shortRule",
+            "decor": "organic",
+            "font": "Roboto"
+          },
+          "referenceSha256": "c9968269bfafb72d899d534879c96d0b53a0b17eacfa4f8d47e7390e64f773f5",
+          "referenceDimensions": [
+            793,
+            1122
+          ]
+        }
+      },
+      "referenceStatus": "colors_sampled_geometry_requires_visual_review"
+    }
+  }
+}

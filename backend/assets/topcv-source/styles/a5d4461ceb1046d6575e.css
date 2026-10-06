@@ -1,0 +1,86 @@
+@font-face { font-family: Judson-Regular; src: url(https://www.topcv.vn/packages/cvo/templates/software_engineer/assets/fonts/Judson-Regular.ttf); }
+.cvo-document { font-family: arial, sans-serif, tahoma; font-size: 10pt; }
+.cvo-document .cvo-page { position: relative; padding: 0px !important; }
+.cvo-document .cvo-subpage { padding: 0px; }
+.cvo-document div.cvo-block { padding: 0px 4mm 1cm; word-break: break-word; }
+.cvo-document div.cvo-block:last-child { padding-bottom: 0px; }
+.cvo-document .cvo-block-title { color: rgb(0, 0, 0); font-size: 12pt; line-height: 18pt; margin-bottom: 5pt; border-bottom: 1pt solid rgb(51, 51, 51); text-transform: uppercase; font-weight: bold; }
+#cvo-main { padding: 1cm; }
+.cvo-document .cvo-block-title span { width: 100%; }
+.cvo-document #cvo-profile { padding-bottom: 1cm; }
+.cvo-document #cvo-profile table { margin: 0px; border-collapse: collapse; width: 100%; }
+.cvo-document #cvo-profile th, .cvo-document #cvo-profile td { padding: 0.1cm; line-height: 16pt; font-size: 10pt; vertical-align: middle; }
+.cvo-document #cvo-profile td.avatar-wraper { width: 3cm; text-align: right; min-height: 4cm; vertical-align: top; }
+.cvo-document #cvo-profile td.avatar-wraper img { border: 0px; width: 3cm; margin: 0px auto; }
+.cvo-document #cvo-profile #cvo-profile-fullname { display: block; font-size: 24pt; line-height: 24pt; font-weight: bold; color: rgb(14, 36, 82); text-transform: capitalize; }
+.cvo-document #cvo-profile #title { display: block; font-size: 12pt; line-height: 12pt; color: rgb(29, 61, 129); vertical-align: top; }
+.cvo-document #cvo-profile span.icon { vertical-align: top; margin-right: 0.2cm; }
+.cvo-document #cvo-profile span.profile-field { display: inline-block; min-width: 3cm; max-width: 8.6cm; vertical-align: top; }
+.cvo-document #cvo-profile span.profile-label { display: inline-block; width: 2.5cm; font-weight: bold; font-style: normal; }
+#cvo-body { font-family: arial, sans-serif, tahoma; }
+.cvo-document #education-table { width: 100%; margin: 0.2cm auto 0px; }
+.cvo-document #education-table { }
+.cvo-document #education-table .row { display: block; vertical-align: top; border-bottom: 1px solid rgb(238, 238, 238); padding: 0.15cm 0px; }
+.cvo-document #education-table .time { padding: 0px 2mm 0px 0px; width: 30%; float: left; }
+.cvo-document #education-table .school { width: 70%; float: left; }
+.cvo-document #education-table .cvo-education-school { font-size: 10pt; width: 100%; font-weight: bold; display: block; }
+.cvo-document #education-table .cvo-education-details { padding-top: 1mm; font-size: 10pt; width: 100%; display: block; }
+.cvo-document #award-table, .cvo-document #certification-table { width: 100%; margin: 0.2cm auto 0px; }
+.cvo-document #award-table .row, .cvo-document #certification-table .row { display: block; vertical-align: top; border-bottom: 1px solid rgb(238, 238, 238); }
+.cvo-document #award-table .time, .cvo-document #certification-table .time { padding: 1mm 1mm 1mm 0px; width: 30%; float: left; }
+.cvo-document #award-table .details, .cvo-document #certification-table .details { width: 70%; float: left; }
+.cvo-document #award-table .cvo-award-title, .cvo-document #certification-table .cvo-certification-title { padding: 1mm; font-size: 10pt; min-width: 5cm; display: block; }
+.cvo-document #cvo-objective .block-body, .cvo-document #cvo-additional-info .block-body { padding-top: 0.5cm; }
+.cvo-document #cvo-objective .block-body #cvo-objective-objective, .cvo-document #cvo-additional-info .block-body #cvo-additional-info-details { line-height: 15pt; text-align: justify; }
+.cvo-document #experience-table .row { vertical-align: top; }
+.cvo-document #experience-table { width: 100%; margin: 0.2cm auto 0px; }
+.cvo-document #experience-table .row { border-bottom: 0.05cm solid rgb(238, 238, 238); font-size: 10pt; line-height: 15pt; padding: 0.15cm 0px; }
+.cvo-document #experience-table .time { padding: 0px 2mm 0px 0px; width: 30%; float: left; }
+.cvo-document #experience-table .company { width: 70%; float: left; }
+.cvo-document #experience-table .row.hidden-time .company { width: 100%; }
+.cvo-document #experience-table .cvo-experience-company { font-size: 10pt; font-weight: bold; min-width: 5cm; display: block; }
+.cvo-document #experience-table .cvo-experience-position { font-size: 10pt; min-width: 5cm; display: block; }
+.cvo-document #activity-table .row { vertical-align: top; }
+.cvo-document #activity-table { width: 100%; margin: 0.2cm auto 0px; }
+.cvo-document #activity-table .row { border-bottom: 0.05cm solid rgb(238, 238, 238); font-size: 10pt; line-height: 15pt; padding: 0.15cm 0px; }
+.cvo-document #activity-table .time { padding: 0px 2mm 0px 0px; width: 30%; float: left; }
+.cvo-document #activity-table .organization { width: 70%; float: left; }
+.cvo-document #activity-table .row.hidden-time .organization { width: 100%; }
+.cvo-document #activity-table .cvo-activity-organization { font-size: 10pt; font-weight: bold; min-width: 5cm; display: block; }
+.cvo-document #activity-table .cvo-activity-position { font-size: 10pt; min-width: 5cm; display: block; }
+.cvo-document #skill-table .row { vertical-align: top; }
+.cvo-document #skill-table { width: 100%; margin: 0.2cm auto 0px; }
+.cvo-document #skill-table .row { border-bottom: 0.05cm solid rgb(238, 238, 238); font-size: 10pt; line-height: 15pt; padding: 0.15cm 0px; }
+.cvo-document #skill-table .cvo-skillgroup-area { width: 30%; color: rgb(0, 0, 0); float: left; font-weight: bold; padding-right: 5px; }
+.cvo-document #skill-table .cvo-skillgroup-skill-description { font-size: 10pt; float: left; width: 70%; }
+.start, .end { min-width: 30px; display: inline-block; }
+.projects .row { margin-bottom: 8pt; }
+.project_title { padding: 10px 0px; }
+.project_title h4 { font-size: 12pt; line-height: 16pt; font-weight: bold; color: black; width: 100%; margin-bottom: 1px; }
+.project_details table { width: 100%; }
+.project_details table, .project_details th, .project_details td { border: 1px solid rgb(153, 153, 153); }
+.project_details th, .project_details td { padding: 3pt; }
+.project_details th { width: 24%; font-weight: bold; text-align: left; }
+.project_details td { width: 100%; }
+.project_details .cvo-project-customer { }
+.project_details .cvo-project-description { }
+#project-table .start.cvoInvalidate, #project-table .end.cvoInvalidate { min-width: 70px; text-align: center; }
+.project_details th { vertical-align: middle; }
+.cvo-document #reference-table .row { vertical-align: top; }
+.cvo-document #reference-table { width: 100%; margin: 0.2cm auto 0px; }
+.cvo-document #reference-table .row { border-bottom: 0.05cm solid rgb(238, 238, 238); line-height: 15pt; padding: 0.15cm 0px; }
+.cvo-document #reference-table .cvo-reference-content { width: 100%; }
+#reference-table .row { float: left; width: 50%; }
+#reference-table .row:nth-child(2n+1) { padding-right: 10px; }
+#reference-table .row:nth-child(2n) { padding-left: 10px; }
+#reference-table .row:only-child { width: 100%; padding-left: 0px; padding-right: 0px; }
+#cvo-additional-info #cvo-additional-information-details { width: 100%; display: inline-block; }
+.cvo-education-title, .cvo-experience-details, .cvo-activity-details { width: 100%; margin: 1px 0px; }
+#cv-watermark { position: absolute; right: 15mm; bottom: 5mm; font-size: 13px; color: rgb(85, 85, 85); }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}
+@page { margin: 1cm 0px !important; }
+@page :first { margin-top: 0px !important; }

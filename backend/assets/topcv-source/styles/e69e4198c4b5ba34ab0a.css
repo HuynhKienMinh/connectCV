@@ -1,0 +1,83 @@
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/pro_5/assets/fonts/RobotoCondensed-Regular.ttf); font-weight: normal; }
+@font-face { font-family: RobotoCondensed; src: url(https://www.topcv.vn/packages/cvo/templates/pro_5/assets/fonts/RobotoCondensed-Bold.ttf); font-weight: bold; }
+@font-face { font-family: Kanit; src: url(https://www.topcv.vn/packages/cvo/templates/pro_5/assets/fonts/Kanit-Light.ttf); font-weight: normal; }
+@font-face { font-family: Kanit; src: url(https://www.topcv.vn/packages/cvo/templates/pro_5/assets/fonts/Kanit-SemiBold.ttf); font-weight: bold; }
+@font-face { font-family: Kanit-Regular; src: url(https://www.topcv.vn/packages/cvo/templates/pro_5/assets/fonts/Kanit-Regular.ttf); }
+.cvo-document .cvo-page { padding: 0mm; }
+.cvo-document .cvo-subpage { padding: 5mm; }
+#cvo-body { margin: 0px auto; width: 100%; position: relative; font-family: Kanit, Arial, sans-serif; font-size: 14px; line-height: 18px; background-image: url(https://www.topcv.vn/packages/cvo/templates/pro_5/assets/images/bg_default.png); background-size: 100% 100%; background-repeat: no-repeat; }
+#col-right { width: 56%; float: right; color: rgb(68, 68, 68); min-height: 560px; padding-top: 1px; }
+#col-left { width: 44%; color: rgb(255, 255, 255); min-height: 560px; float: left; }
+#col-left .cvo-block { width: 90%; margin: 30px auto; }
+#cvo-profile-avatar-wraper { text-align: center; margin-bottom: 30px; }
+#col-left .cvo-block-title { margin: 0px 0px 10px; font-size: 19px; line-height: 32px; text-transform: uppercase; font-weight: bold; }
+#col-left .cvo-block-title span.block-title-content { display: inline-block; padding-right: 5px; width: 230px; vertical-align: middle; margin-left: 20px; font-size: 19px; margin-top: -5px; }
+#col-right .cvo-block-title span.block-title-content { display: inline-block; padding-right: 5px; width: 285px; vertical-align: middle; margin-left: 20px; font-size: 19px; margin-top: -5px; color: rgb(22, 141, 199); }
+#profile-contact-wraper span.profile-content { width: 270px; margin-left: 7px; }
+#profile-contact-wraper i.profile-icon { width: 14px; height: 14px; text-align: center; margin-left: 5px; vertical-align: top; }
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  #col-left .cvo-block-title span { font-weight: bold; }
+}
+#col-left #cvo-profile { width: 100%; padding: 43px 0px 0px; margin-top: 0px; }
+#profile-title-wrapper { text-align: center; padding: 0px 3px 10px; }
+#cvbuilder-container #cvo-profile:hover #profile-title-wrapper { box-shadow: rgb(204, 204, 204) 0px 2px 0px 2px inset; }
+#profile-title-wrapper [contenteditable="true"]:empty::before { content: attr(cvo-placeholder); color: rgb(187, 187, 187); }
+#profile-title-wrapper .cvoInvalidate { color: orange; }
+#cvo-profile-fullname { font-size: 33px; font-weight: bold; width: 100%; line-height: 40px; display: inline-block; text-transform: capitalize; }
+#cvo-profile-title { width: 100%; font-size: 19px; margin-top: 5px; }
+#cvo-profile-avatar { width: 170px; height: 170px; border-radius: 20px 0px; }
+#cvo-profile-website { width: 170px; word-break: break-all; }
+#profile-contact-wraper { width: 90%; margin: 10px auto; }
+#profile-contact-wraper div { padding: 3px 0px; }
+#profile-contact-wraper span#cvo-profile-email { word-break: break-all; }
+#col-left i.block-title-icon { width: 40px; height: 40px; text-align: center; display: inline-block; font-size: 25px; line-height: 40px; background-color: white; color: rgb(22, 141, 199); border-radius: 6px 0px; }
+#col-right i.block-title-icon { width: 40px; height: 40px; text-align: center; display: inline-block; font-size: 25px; line-height: 40px; background-color: rgb(22, 141, 199); color: white; border-radius: 6px 0px; }
+#cvo-objective-objective { width: 100%; text-align: justify; }
+#cvo-skillrate { padding-left: 0px; padding-right: 0px; }
+#cvo-skillrate { padding-left: 0px; }
+#skillrate-table .row { padding: 3px 0px; }
+#skillrate-table .row:last-child { padding-bottom: 0px; }
+#skillrate-table .row::after { content: "."; visibility: hidden; display: block; height: 0px; clear: both; }
+.cvo-skillrate-title { display: inline-block; float: left; text-transform: uppercase; font-weight: bold; }
+.cvo-skillrate-title-wraper { width: 56%; float: left; word-break: break-all; }
+.cvo-skillrate-bar { position: relative; margin-top: 3px; margin-left: 20px; overflow: hidden; width: 37%; float: left; }
+.cvo-skillrate-value { width: 80%; height: 6px; position: absolute; top: 0px; left: 0px; background-color: rgb(80, 78, 78); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-value { width: 20%; }
+.cvo-skillrate-bar[bval="2"] .cvo-skillrate-value { width: 40%; }
+.cvo-skillrate-bar[bval="3"] .cvo-skillrate-value { width: 60%; }
+.cvo-skillrate-bar[bval="4"] .cvo-skillrate-value { width: 80%; }
+.cvo-skillrate-bar[bval="5"] .cvo-skillrate-value { width: 100%; }
+.cvo-skillrate-cell { height: 15px; width: 15px; background: white; display: block; margin-right: 8px; float: left; }
+.cvo-skillrate-bar .cvo-skillrate-cell:last-child { margin-right: 0px; }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-cell:nth-child(2) { background: rgb(16, 84, 131); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-cell:nth-child(3), .cvo-skillrate-bar[bval="2"] .cvo-skillrate-cell:nth-child(3) { background: rgb(16, 84, 131); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-cell:nth-child(4), .cvo-skillrate-bar[bval="2"] .cvo-skillrate-cell:nth-child(4), .cvo-skillrate-bar[bval="3"] .cvo-skillrate-cell:nth-child(4) { background: rgb(16, 84, 131); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-cell:nth-child(5), .cvo-skillrate-bar[bval="2"] .cvo-skillrate-cell:nth-child(5), .cvo-skillrate-bar[bval="3"] .cvo-skillrate-cell:nth-child(5), .cvo-skillrate-bar[bval="4"] .cvo-skillrate-cell:nth-child(5) { background: rgb(16, 84, 131); }
+#cvo-interest { padding-left: 0px; padding-right: 0px; }
+#interest-table { padding-left: 20px; }
+#interest-table .row { margin-bottom: 6px; color: rgb(255, 255, 255); }
+#interest-table li { width: 100%; list-style-type: circle; }
+.cvo-interest-details { width: 100%; vertical-align: top; }
+#col-right { padding: 40px 5px 0px; }
+#col-right .cvo-block { width: 100%; padding: 3px 15px; }
+#col-right .cvo-block-title { margin: 0px 0px 10px 8px; font-size: 19px; line-height: 32px; text-transform: uppercase; font-weight: bold; }
+#col-right .row { margin: 15px 0px; }
+.row-title { margin-bottom: 5px; width: 100%; }
+.row-details { margin-top: 8px; }
+.row-details [cvo-form-field] { width: 100%; }
+.cvo-education-school-wraper, .cvo-experience-company-wraper, .cvo-activity-organization-wraper { width: 100%; text-transform: uppercase; text-align: left; font-weight: bold; color: rgb(65, 65, 66); word-break: break-word; }
+.cvo-education-school, .cvo-experience-company { width: 100%; }
+.cvo-education-time, .cvo-experience-time, .cvo-activity-time, .cvo-award-time-wraper, .cvo-certification-time-wraper { width: 59px; font-size: 11px; float: left; line-height: 16px; }
+.cvo-education-time span, .cvo-experience-time span, .cvo-activity-time span, .cvo-award-time-wraper span, .cvo-certification-time-wraper span { width: 100%; display: inline-block; text-align: center; }
+.cvo-education-time .default_min_width { min-width: 15pt; }
+.cvo-education-title, .cvo-experience-position, .cvo-activity-position { color: rgb(65, 65, 66); width: 100%; font-weight: bold; }
+.cvo-education-wraper, .cvo-experience-wraper, .cvo-activity-wraper, .cvo-award-title, .cvo-certification-title-wraper { float: left; width: 310px; margin-left: 10px; word-break: break-word; }
+#reference-table { padding-left: 7px; }
+#reference-table .cvo-reference-content { width: 100%; word-break: break-word; }
+#cvo-additional-info #cvo-additional-information-details { width: 100%; display: inline-block; padding-left: 7px; word-break: break-word; }
+.hidden-time .cvo-education-school-wraper, .hidden-time .cvo-activity-organization-wraper, .hidden-time .cvo-experience-company-wraper, .hidden-time .cvo-award-title-wraper, .hidden-time .cvo-cerrtification-title-wraper { width: 100%; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}

@@ -1,0 +1,12 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td { border-width: medium; border-style: none; border-color: currentcolor; border-image: none; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 100%; vertical-align: baseline; text-decoration: none; margin: 0px; padding: 0px; }
+table { border-collapse: separate; border-spacing: 0px; }
+blockquote::before, blockquote::after, q::before, q::after { content: ""; }
+* { margin: 0px; padding: 0px; box-sizing: border-box; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { margin-left: 20px; }
+blockquote, q { quotes: none; }
+:focus { outline: 0px; }
+table { border-collapse: collapse; border-spacing: 0px; }
+img { border: 0px; vertical-align: middle; }
+a { text-decoration: none; position: relative; color: rgb(0, 0, 0); }
+audio, video, canvas { max-width: 100%; }

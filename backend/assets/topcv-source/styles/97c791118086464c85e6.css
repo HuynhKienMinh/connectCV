@@ -1,0 +1,57 @@
+@font-face { font-family: Roboto; src: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/fonts/Roboto-Regular.ttf); font-weight: normal; }
+@font-face { font-family: Roboto; src: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/fonts/Roboto-Bold.ttf); font-weight: bold; }
+.cvo-document .cvo-page { padding: 0mm; position: relative; background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Background-10.png); background-repeat: no-repeat; background-size: 100% 100%; word-break: break-all; }
+.circle { width: 345px; height: 325px; background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/circle-10.png); background-size: 100% 100%; background-repeat: no-repeat; position: absolute; top: 0px; right: 0px; }
+.cvo-document .cvo-subpage { padding: 0mm; }
+#cvo-body { padding: 0mm; font-size: 14px; line-height: 1.4em; color: rgb(73, 73, 73); font-family: Roboto, Arial, sans-serif; }
+#cvo-main { padding-bottom: 10px; }
+#cvo-body::after, #group-header::after, #group-top::after, #cvo-profile::after { display: block; content: " "; clear: both; height: 0px; width: 0px; }
+.cvo-col-5 { float: left; width: 41.6667%; }
+.cvo-col-6 { float: left; width: 50%; }
+.cvo-col-7 { float: left; width: 58.3333%; }
+.cvo-col-9 { float: left; width: 75%; }
+.cvo-col-8 { float: left; width: 66.6667%; }
+.cvo-col-4 { float: left; width: 33.3333%; }
+.cvo-col-3 { float: left; width: 25%; }
+#group-header { padding: 30px; min-height: 240px; }
+#group-header .avatar { text-align: right; padding-right: 30px; padding-top: 9px; }
+#cvo-profile-fullname-wraper { margin-top: 40px; margin-bottom: 15px; word-break: break-all; }
+#cvo-profile-title-wraper { word-break: break-all; }
+#cvo-profile-fullname { font-size: 40px; line-height: 1em; font-weight: normal; text-transform: capitalize; color: rgb(203, 105, 89); }
+#cvo-profile-title { font-size: 16px; text-transform: uppercase; font-weight: bold; color: rgb(85, 85, 85); }
+#cvo-profile-avatar-wraper { z-index: 100; position: relative; display: inline-block; height: 170px; width: 170px; }
+#cvo-profile-avatar { width: 100%; height: 100%; border-radius: 50%; }
+#group-top { background-color: rgb(246, 246, 246); padding: 15px 25px; }
+#group-left .cvo-block:last-child, #group-right .cvo-block:last-child { margin-bottom: 0px; }
+#cvo-profile .contact-item { position: relative; margin-bottom: 10px; }
+#cvo-profile .contact-item > span { display: inline-block; }
+#contact-item-label::after { display: block; content: " "; clear: both; height: 0px; width: 0px; }
+#cvo-profile .contact-item-label { font-weight: normal; color: rgb(51, 51, 51); width: 39%; float: left; padding-right: 5px; }
+#cvo-profile .contact-item > span { width: 51%; padding-left: 10px; word-break: break-word; }
+#group-left { padding: 20px 5px 20px 20px; }
+#group-right { padding: 110px 20px 20px 5px; }
+#group-left .cvo-block, #group-right .cvo-block { padding: 10px; margin-bottom: 10px; }
+.cvo-block-header { position: relative; margin-bottom: 15px; }
+.cvo-block-header span { font-size: 17px; color: rgb(203, 105, 89); font-weight: bold; text-transform: uppercase; padding-left: 30px; word-break: break-word; }
+.cvo-block-header::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-04.png); background-size: 14px 25px; display: inline-block; width: 25px; height: 25px; content: ""; background-repeat: no-repeat; position: absolute; top: -8px; }
+#cvo-profile .contact-item .box-gender::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-05.png); background-size: 15px 14px; display: inline-block; width: 30px; height: 14px; content: ""; background-repeat: no-repeat; }
+#cvo-profile .contact-item .box-dob::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-03.png); background-size: 15px 14px; display: inline-block; width: 30px; height: 14px; content: ""; background-repeat: no-repeat; }
+#cvo-profile .contact-item .box-phone::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-06.png); background-size: 15px 14px; display: inline-block; width: 30px; height: 14px; content: ""; background-repeat: no-repeat; }
+#cvo-profile .contact-item .box-email::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-07.png); background-size: 15px 14px; display: inline-block; width: 30px; height: 14px; content: ""; background-repeat: no-repeat; }
+#cvo-profile .contact-item .box-address::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-08.png); background-size: 15px 14px; display: inline-block; width: 30px; height: 14px; content: ""; background-repeat: no-repeat; }
+#cvo-profile .contact-item .box-website::before { background-image: url(https://www.topcv.vn/packages/cvo/templates/sun/assets/images/Accest-09.png); background-size: 15px 14px; display: inline-block; width: 30px; height: 14px; content: ""; background-repeat: no-repeat; }
+.cvo-block-body { word-break: break-word; }
+.cvo-education-title, .cvo-experience-position, .cvo-activity-position { font-weight: normal; }
+.cvo-education-school, .cvo-experience-company, .cvo-activity-organization, .cvo-skillgroup-area { font-weight: bold; font-size: 14px; color: rgb(51, 51, 51); }
+#interest-table .row { width: 50%; float: left; margin-bottom: 5px; }
+#cvo-certification .row, #cvo-award .row, #cvo-skillrate .row, #cvo-reference .row { margin-bottom: 10px; }
+#cv-watermark { position: absolute; right: 10mm; bottom: 5mm; font-size: 13px; color: rgb(85, 85, 85); }
+.cvo-education-school-wraper, .cvo-education-time, .cvo-education-details, .cvo-experience-company-wraper, .cvo-experience-time, .cvo-experience-details, .cvo-activity-organization-wraper, .cvo-activity-time, .cvo-activity-details, .cvo-skillgroup-wraper { margin-bottom: 10px; }
+#experience-table .row, #skill-table .row, #activity-table .row { margin-bottom: 10px; }
+.time-background .cvo-education-start, .time-background .cvo-education-end, .time-background .cvo-experience-start, .time-background .cvo-experience-end, .time-background .cvo-activity-start, .time-background .cvo-activity-end { font-style: italic; }
+.cvo-time-transparent .cvo-award-time { font-weight: bold; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}

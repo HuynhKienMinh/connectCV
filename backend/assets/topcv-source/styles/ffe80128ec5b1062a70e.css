@@ -1,0 +1,95 @@
+@font-face { font-family: Roboto; src: url(https://www.topcv.vn/packages/cvo/templates/impressive_pro/assets/fonts/Roboto-Light.ttf); font-weight: normal; }
+@font-face { font-family: Roboto; src: url(https://www.topcv.vn/packages/cvo/templates/impressive_pro/assets/fonts/Roboto-Bold.ttf); font-weight: bold; }
+.cvo-document .cvo-page { padding: 3mm; }
+.cvo-document .cvo-subpage { padding: 0mm; }
+#cvo-body { margin: 0px auto; width: 100%; min-height: 190mm; position: relative; font-family: Roboto, Arial, sans-serif; font-size: 14px; line-height: 1.4; }
+#profile-top { background-color: rgb(255, 255, 255); padding: 20px 0px; text-align: center; }
+#cvo-profile-fullname { margin-top: 0px; font-size: 26px; line-height: 1.2; margin-bottom: 10px; display: inline-block; width: 57mm; font-weight: bold; text-align: center; color: rgb(63, 149, 153); text-transform: capitalize; }
+#cvo-profile-title { width: 57mm; text-transform: capitalize; font-size: 14px; }
+#cvo-main { }
+#col-left { width: 67%; float: left; color: rgb(68, 68, 68); min-height: 560px; }
+#col-right { width: 33%; min-height: 270mm; float: right; background-color: rgb(63, 149, 153); }
+#col-left { padding: 0px 5px 0px 0px; }
+#col-left .cvo-block { width: 100%; padding: 0px 15px 5px 4mm; }
+#col-left .cvo-block-title { margin: 0px 0px 10px; font-size: 19px; line-height: 32px; text-transform: uppercase; font-weight: bold; border-bottom: 1px solid rgb(204, 204, 204); }
+#col-left .cvo-block-title.no-horizontal-line { background-image: none; }
+#col-left .cvo-block-title i.fa { background-color: rgb(255, 255, 255); color: rgb(63, 149, 153); border-radius: 50%; text-align: center; width: 20px; height: 21px; font-size: 20px; vertical-align: middle; }
+#col-left .cvo-block-title span { color: rgb(85, 85, 85); display: inline; padding-right: 10px; vertical-align: middle; }
+#col-left .cvo-block-title span[contenteditable] { display: inline-block; }
+#col-left .row { margin: 15px 0px; }
+.row-title { width: 100%; }
+.row-details { margin-top: 3px; word-break: break-word; }
+.cvo-education-school-wraper { width: 70%; padding-right: 5px; text-transform: uppercase; text-align: left; font-weight: bold; color: rgb(63, 149, 153); float: left; font-size: 15px; }
+.cvo-education-school { width: 100%; }
+.cvo-education-time { width: 30%; font-size: 0.9em; text-align: right; float: right; }
+.cvo-education-time .default_min_width { min-width: 15pt; }
+.cvo-education-title { font-weight: bold; width: 100%; }
+.cvo-experience-company-wraper { width: 70%; padding-right: 5px; text-transform: uppercase; text-align: left; font-size: 15px; font-weight: bold; color: rgb(65, 65, 66); float: left; }
+.cvo-experience-company { width: 100%; color: rgb(63, 149, 153); }
+.cvo-experience-time { width: 30%; font-size: 0.9em; text-align: right; float: right; }
+.cvo-experience-time .default_min_width { min-width: 15pt; }
+.cvo-experience-position { color: rgb(65, 65, 66); width: 100%; font-weight: bold; }
+.cvo-activity-organization-wraper { width: 73%; padding-right: 5px; text-transform: uppercase; text-align: left; font-weight: bold; color: rgb(65, 65, 66); float: left; }
+.cvo-activity-organization { width: 100%; }
+.cvo-activity-time { width: 27%; font-size: 0.9em; text-align: right; float: right; }
+.cvo-activity-time .default_min_width { min-width: 15pt; }
+.cvo-activity-position { color: rgb(65, 65, 66); width: 100%; }
+.cvo-certification-title-wraper, .cvo-award-title-wraper { width: 75%; padding-right: 5px; text-align: left; float: left; }
+.cvo-certification-title, .cvo-award-title { width: 80%; }
+.cvo-certification-time-wraper, .cvo-award-time-wraper { width: 20%; font-size: 0.9em; text-align: right; float: right; }
+#col-right { padding: 0px 2px; }
+#col-right .cvo-block { width: 100%; padding: 5px; }
+#cvo-profile-avatar-wraper { padding: 10px 0px; text-align: center; }
+#col-right .cvo-block-title { margin: 0px 0px 10px; font-size: 18px; line-height: 32px; text-transform: uppercase; font-weight: bold; }
+#col-right .cvo-block-title span { display: inline; padding-right: 5px; vertical-align: middle; color: rgb(255, 255, 255); }
+#col-right .cvo-block-title span[contenteditable] { display: inline-block; }
+#cvo-profile-avatar { width: 170px; height: 170px; border-radius: 50%; }
+#profile-contact-wraper { width: 100%; margin: 10px auto; padding: 10px; }
+#profile-contact-wraper div { padding: 5px 0px; }
+#profile-contact-wraper i.fa { width: 14px; height: 20px; color: rgb(255, 255, 255); border-radius: 50%; display: inline-block; text-align: center; font-size: 14px; line-height: 20px; }
+#profile-contact-wraper span { padding-left: 5px; width: 185px; color: rgb(255, 255, 255); vertical-align: top; display: inline-block; }
+#profile-contact-wraper span#cvo-profile-email, #profile-contact-wraper span#cvo-profile-website { word-break: break-all; }
+#group-bottom-right { }
+#cvo-skillrate { }
+#cvo-interest-blocktitle { padding: 0px 10px; }
+#skillrate-table { margin-top: 15px; margin-bottom: 15px; }
+#skillrate-table .row { margin: 5px 0px; color: rgb(255, 255, 255); padding: 0px; }
+.skill-rate-col-left, .skill-rate-col-right { float: left; }
+.skill-rate-col-left { width: 40%; padding-right: 10px; }
+.skill-rate-col-right { width: 60%; }
+.cvo-skillrate-title { width: 100%; color: black; display: inline-block; }
+.cvo-skillrate-bar { margin-top: 3px; background-color: rgb(204, 204, 204); display: block; width: 100%; height: 8px; text-align: left; padding: 0px; }
+.cvo-skillrate-value { display: block; height: 8px; background-color: rgb(63, 149, 153); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-value { width: 20%; }
+.cvo-skillrate-bar[bval="2"] .cvo-skillrate-value { width: 40%; }
+.cvo-skillrate-bar[bval="3"] .cvo-skillrate-value { width: 60%; }
+.cvo-skillrate-bar[bval="4"] .cvo-skillrate-value { width: 80%; }
+.cvo-skillrate-bar[bval="5"] .cvo-skillrate-value { width: 100%; }
+#cvo-interest { padding-left: 0px; padding-right: 0px; }
+#interest-table { padding-left: 26px; }
+#interest-table .row { margin-bottom: 15px; color: rgb(255, 255, 255); }
+#interest-table li { list-style: circle; }
+#interest-table li.fa { width: 100%; list-style-type: circle; }
+.cvo-interest-details { vertical-align: top; width: 100%; }
+.row-col-left { width: 32%; float: left; }
+.row-col-left span { width: 100%; font-weight: bold; }
+.row-col-right { padding-left: 10px; width: 68%; float: left; }
+.row-col-right span { width: 100%; }
+#cvo-objective-blocktitle { margin-left: 10px; }
+#cvo-objective-objective { color: rgb(255, 255, 255); padding: 0px 10px; margin-bottom: 10px; }
+#cvo-additional-info { margin-bottom: 10px; }
+#cvo-additional-information-details, #cvo-objective-objective, .cvo-activity-details, .cvo-experience-details, .cvo-education-details, .cvo-certification-title, .cvo-award-title, .cvo-interest-details { width: 100%; }
+#reference-table .row { float: left; width: 50%; margin-bottom: 0px; }
+#reference-table .row:nth-child(2n+1) { padding-right: 10px; }
+#reference-table .row:nth-child(2n) { padding-left: 10px; }
+#reference-table .row:only-child { width: 100%; padding-left: 0px; padding-right: 0px; }
+#reference-table .cvo-reference-content { width: 100%; }
+.hidden-time .cvo-education-school-wraper, .hidden-time .cvo-activity-organization-wraper, .hidden-time .cvo-experience-company-wraper, .hidden-time .cvo-certification-title-wraper, .hidden-time .cvo-award-title-wraper { width: 100%; }
+[contenteditable="true"]:empty::before { color: rgb(175, 175, 175); }
+@media print {
+  #cvo-body { font-weight: lighter; }
+  .cvo-document .cvo-page { background-image: none; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}
+@page { margin: 1cm 1cm 1cm 0.5cm !important; }

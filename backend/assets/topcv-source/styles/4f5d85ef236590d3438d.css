@@ -1,0 +1,5 @@
+.text-primary { color: rgb(10, 132, 255); }
+.bg-primary { background-color: rgb(10, 132, 255); }
+.bg-primary-trans, .cvo-block .cvo-block-header::after { background-color: rgb(231, 243, 255); }
+.cvo-section-info > div:last-child { background-color: rgb(231, 243, 255); color: rgb(10, 132, 255); }
+.cvo-section-info > div:first-child { color: rgb(10, 132, 255); }

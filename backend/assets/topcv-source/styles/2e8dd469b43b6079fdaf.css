@@ -1,0 +1,72 @@
+@font-face { font-family: "Source Code Pro"; src: url(https://www.topcv.vn/packages/cvo/templates/dev_1/assets/fonts/SourceCodePro-Light.ttf); font-weight: 300; }
+@font-face { font-family: "Source Code Pro"; src: url(https://www.topcv.vn/packages/cvo/templates/dev_1/assets/fonts/SourceCodePro-Regular.ttf); font-weight: 400; }
+@font-face { font-family: "Source Code Pro"; src: url(https://www.topcv.vn/packages/cvo/templates/dev_1/assets/fonts/SourceCodePro-Medium.ttf); font-weight: 500; }
+@font-face { font-family: "Source Code Pro"; src: url(https://www.topcv.vn/packages/cvo/templates/dev_1/assets/fonts/SourceCodePro-Semibold.ttf); font-weight: 600; }
+@font-face { font-family: "Source Code Pro"; src: url(https://www.topcv.vn/packages/cvo/templates/dev_1/assets/fonts/SourceCodePro-Bold.ttf); font-weight: 700; }
+.cvo-document .cvo-page { padding: 0mm; position: relative; }
+.cvo-document .cvo-subpage { padding: 0mm; }
+#cvo-body { font-size: 13px; line-height: 1.4em; font-weight: 400; color: rgb(51, 51, 51); font-family: "Source Code Pro", Arial, sans-serif; }
+#cvo-main { padding: 8mm 6mm; }
+#group-header::after, #group-top::after, #cvo-profile::after { display: block; content: " "; clear: both; height: 0px; width: 0px; }
+.cvo-col-6 { float: left; width: 50%; }
+.cvo-col-9 { float: left; width: 75%; }
+.cvo-col-8 { float: left; width: 66.6667%; }
+.cvo-col-4 { float: left; width: 33.3333%; }
+.cvo-col-3 { float: left; width: 25%; }
+#group-header { margin-bottom: 20px; }
+#group-header .cvo-col-3 { text-align: right; }
+#cvo-profile-fullname-wraper { margin-bottom: 5px; padding-top: 30px; }
+#cvo-profile-title-wraper { }
+#cvo-profile-fullname { font-size: 32px; line-height: 1em; font-weight: 500; padding-left: 7px; }
+#cvo-profile-title { font-size: 18px; font-weight: 300; padding-left: 7px; }
+#cvo-profile-avatar-wraper { display: inline-block; height: 110px; width: 110px; border-radius: 50%; border: 2px solid rgb(51, 51, 51); float: left; margin: 7px 0px 0px 7px; }
+#cvo-profile-avatar { width: 100%; height: 100%; border-radius: 50%; }
+#group-top { }
+#group-left .cvo-block:last-child, #group-right .cvo-block:last-child { margin-bottom: 0px; }
+#cvo-profile .contact-item { position: relative; font-weight: 500; margin-bottom: 1px; text-align: right; word-break: break-word; }
+#group-left { padding: 10px 0px 0px; }
+#group-right { padding: 10px 0px 0px; }
+.cvo-block { margin-bottom: 20px; padding: 7px; }
+.cvo-block-header { position: relative; margin-bottom: 3px; font-size: 16px; font-weight: 400; color: rgb(149, 149, 149); }
+.cvo-block-header span { text-transform: uppercase; padding-left: 4px; }
+.cvo-block-body { word-break: break-word; padding-left: 0px; }
+.cvo-education-title, .cvo-experience-position, .cvo-activity-position { font-weight: 600; font-size: 15px; }
+.cvo-education-school, .cvo-experience-company, .cvo-activity-organization { font-weight: 700; font-size: 15px; }
+.cvo-skillrate-bar { width: 100%; height: 7px; position: relative; }
+.cvo-skillrate-value { width: 80%; height: 5px; position: absolute; top: 0px; left: 0px; background-color: rgb(51, 51, 51); }
+.cvo-skillrate-bar[bval="1"] .cvo-skillrate-value { width: 20%; }
+.cvo-skillrate-bar[bval="2"] .cvo-skillrate-value { width: 40%; }
+.cvo-skillrate-bar[bval="3"] .cvo-skillrate-value { width: 60%; }
+.cvo-skillrate-bar[bval="4"] .cvo-skillrate-value { width: 80%; }
+.cvo-skillrate-bar[bval="5"] .cvo-skillrate-value { width: 100%; }
+#interest-table .row { margin-bottom: 5px; }
+#cvo-education .row, #cvo-activity .row, #cvo-experience .row { margin-bottom: 15px; }
+#cvo-experience .row::after { display: block; content: " "; clear: both; height: 0px; width: 0px; }
+#cvo-certification .row, #cvo-award .row, #cvo-skillrate .row, #cvo-reference .row { margin-bottom: 13px; }
+#cvo-education .row:last-child, #cvo-activity .row:last-child, #cvo-experience .row:last-child, #cvo-certification .row:last-child, #cvo-award .row:last-child, #cvo-skillrate .row:last-child, #cvo-reference .row:last-child { margin-bottom: 0px; }
+#cvo-profile { margin-bottom: 0px; }
+#cvo-profile-phone, #cvo-profile-email { min-width: 180px; }
+#project-table .row { margin-bottom: 20px; }
+#project-table .row:last-child { margin-bottom: 0px; }
+.project_title { padding-bottom: 2px; }
+.project_title h4 { font-size: 15px; font-weight: 700; display: inline-block; }
+.project_title .time { display: inline-block; }
+.project_details table { width: 100%; border-top: 1px dashed rgb(204, 204, 204); }
+.project_details th { border-bottom: 1px dashed rgb(204, 204, 204); border-right: 1px dashed rgb(204, 204, 204); }
+.project_details td { border-bottom: 1px dashed rgb(204, 204, 204); }
+.project_details th, .project_details td { padding: 5px; }
+.project_details th { width: 33.3333%; font-weight: 600; text-align: left; }
+.project_details td { width: 100%; }
+.project_details .cvo-project-customer { }
+.project_details .cvo-project-description { }
+#project-table .start.cvoInvalidate, #project-table .end.cvoInvalidate { min-width: 70px; text-align: center; }
+.project_details th { vertical-align: middle; }
+.cvo-skillrate-title { font-weight: 600; }
+#cv-watermark { position: absolute; right: 10px; bottom: 10px; font-size: 13px; color: rgb(85, 85, 85); }
+#cvo-document { margin-bottom: 0px; }
+@media print {
+  .cvo-document .cvo-page { position: initial; }
+  #cvo-main { break-after: page; }
+  .cvo-block .row { break-inside: avoid; }
+}
+@page { margin: 8mm !important; }
