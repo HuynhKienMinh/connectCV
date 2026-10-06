@@ -14,6 +14,19 @@
   <!-- Supabase Auth JS SDK v2 -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
+    #cv-template-header { display: grid; grid-template-columns: minmax(0, 1fr); }
+    #cv-template-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    #cv-template-actions > div { flex-shrink: 0; }
+    #btn-generate-cv { white-space: nowrap; flex-shrink: 0; }
+    @media (min-width: 1280px) {
+      #cv-template-header { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+      #cv-template-actions { flex-wrap: nowrap; justify-content: flex-end; }
+    }
+    @media (max-width: 639px) {
+      #cv-template-actions { flex-direction: column; align-items: stretch; }
+      #cv-template-actions > div { align-self: flex-start; }
+      #btn-generate-cv { width: 100%; white-space: normal; }
+    }
     body { font-family: 'Inter', sans-serif; }
     .tab-active { border-bottom: 3px solid #2563eb; color: #2563eb; font-weight: 600; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -473,9 +486,6 @@
       <button onclick="switchTab('tab-debrief')" id="btn-tab-debrief" class="tab-btn text-slate-600 hover:bg-slate-100 px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center">
         <i class="fa-solid fa-gift mr-1.5 text-pink-500"></i> 4. Cộng Đồng Chia Sẻ (+5 Credits)
       </button>
-      <button onclick="toggleChatbotWidget(true)" id="btn-open-chatbot-top" class="ml-auto bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center shadow-sm">
-        <i class="fa-solid fa-robot mr-1.5"></i> Chatbot AI Copilot <span class="ml-1.5 w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      </button>
     </div>
   </div>
 
@@ -487,36 +497,24 @@
     <!-- ======================================================== -->
     <div id="tab-cv-module" class="tab-content block space-y-6">
       
-      <!-- Submode Selector -->
-      <div class="flex items-center space-x-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200 w-fit">
-        <button type="button" onclick="switchCVSubMode('generate')" id="subtab-cv-generate" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-white text-blue-700 shadow-sm border border-slate-200">
-          <i class="fa-solid fa-wand-magic-sparkles text-blue-600"></i>
-          <span>Tạo & Tối Ưu CV Chuẩn ATS</span>
-        </button>
-        <button type="button" onclick="switchCVSubMode('score')" id="subtab-cv-score" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900">
-          <i class="fa-solid fa-chart-simple text-indigo-600"></i>
-          <span>Chẩn Đoán & Đo Điểm ATS Nhanh</span>
-        </button>
-      </div>
-
       <!-- Submode 1: Tạo CV ATS -->
       <div id="cv-submode-generate" class="block">
 
       <!-- TOP STRATEGIC BAR: CHỌN MẪU CV & NGÔN NGỮ & NÚT TẠO CV (HIỂN THỊ NGAY ĐẦU TRANG) -->
       <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <div id="cv-template-header" class="gap-4 pb-4 border-b border-slate-100">
           <div>
             <div class="flex items-center gap-2">
               <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 uppercase tracking-wider">Bước 1</span>
               <h2 class="text-base sm:text-lg font-extrabold text-slate-800 flex items-center gap-2">
-                <i class="fa-solid fa-palette text-blue-600"></i> Lựa Chọn Mẫu CV ATS Chuẩn Doanh Nghiệp & Ngôn Ngữ
+                <i class="fa-solid fa-palette text-blue-600"></i> Chọn Mẫu CV & Ngôn Ngữ
               </h2>
             </div>
-            <p class="text-xs text-slate-500 mt-1">Chọn phong cách CV ưng ý từ 20 mẫu TopCV — AI sẽ tự động may đo thông tin của bạn vào mẫu này.</p>
+            <p class="text-xs text-slate-500 mt-1">Chọn mẫu và ngôn ngữ cho CV của bạn. AI chỉ điều chỉnh nội dung theo profile.</p>
           </div>
 
           <!-- Ngôn ngữ đầu ra & CTA Button Trên Cùng -->
-          <div class="flex flex-wrap items-center gap-3">
+          <div id="cv-template-actions">
             <!-- Bộ chọn ngôn ngữ -->
             <div class="inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200 text-xs">
               <button type="button" onclick="setCVLanguage('vi')" id="btn-cv-lang-vi" class="px-3 py-1.5 rounded-lg font-bold transition flex items-center space-x-1.5 bg-white text-blue-700 shadow-sm border border-slate-200" title="Tạo CV bằng Tiếng Việt">
@@ -548,7 +546,7 @@
                     <div class="text-[10px] text-slate-500 font-mono flex items-center gap-1 flex-wrap">
                       <span>Kho: <b class="text-emerald-600 font-semibold" title="D:\TL_CN\K_7\EXE_101\mau_CV">mau_CV</b></span>
                       <span>•</span>
-                      <span class="text-slate-600 font-medium">20 mẫu ATS chuẩn TopCV</span>
+                      <span class="text-slate-600 font-medium">74 mẫu ATS chuẩn TopCV</span>
                     </div>
                   </div>
                 </div>
@@ -600,7 +598,7 @@
                           <i class="fa-regular fa-eye mr-1"></i> Xem chi tiết mẫu này
                         </button>
                         <button type="button" onclick="setTemplateMode('manual')" class="text-slate-500 hover:text-blue-600 font-semibold text-[11px] flex items-center space-x-0.5 transition">
-                          <span>Xem tất cả 20 mẫu thủ công</span>
+                          <span>Xem tất cả 74 mẫu thủ công</span>
                           <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
                         </button>
                       </div>
@@ -656,7 +654,7 @@
                     <input type="text" id="tmpl-search-input" oninput="filterManualTemplates()" placeholder="Tìm mẫu CV theo từ khóa, ngành nghề..." class="w-full pl-8 pr-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none" />
                   </div>
                   <div class="flex items-center space-x-2 flex-shrink-0">
-                    <span id="tmpl-count-indicator" class="text-[11px] text-slate-400 font-medium">20 mẫu</span>
+                    <span id="tmpl-count-indicator" class="text-[11px] text-slate-400 font-medium">74 mẫu</span>
                     <span id="tmpl-selected-badge" class="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 truncate max-w-[210px]">
                       <i class="fa-solid fa-check mr-1 text-emerald-600"></i>Đang chọn: Mẫu IT
                     </span>
@@ -759,7 +757,7 @@
                 <!-- Thanh Công Cụ Chọn All & Thống Kê Match Score >= 85% -->
                 <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-2">
                   <label class="flex items-center gap-2 cursor-pointer select-none">
-                    <input type="checkbox" id="chk-select-all-jobs" checked onchange="toggleSelectAllJobs(this.checked)" class="w-4 h-4 text-blue-600 bg-white border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
+                    <input type="checkbox" id="chk-select-all-jobs" onchange="toggleSelectAllJobs(this.checked)" class="w-4 h-4 text-blue-600 bg-white border-slate-300 rounded focus:ring-blue-500 cursor-pointer">
                     <span class="text-xs font-bold text-slate-800">
                       Chọn tất cả việc làm phù hợp (&ge; 85%)
                     </span>
@@ -824,10 +822,10 @@ Yêu cầu:
                 </div>
                 <div class="flex items-center flex-wrap gap-1.5 text-xs">
                   <button type="button" onclick="loadSampleProfile('backend')" class="px-2.5 py-1 bg-white border border-blue-200 text-blue-700 hover:bg-blue-50 rounded-lg font-medium shadow-xs transition flex items-center space-x-1" title="Nạp nhanh mẫu ứng viên Lập trình viên Backend">
-                    <i class="fa-solid fa-code text-xs"></i><span>Mẫu IT</span>
+                    <i class="fa-solid fa-code text-xs"></i><span>Dữ liệu ví dụ IT</span>
                   </button>
                   <button type="button" onclick="loadSampleProfile('business')" class="px-2.5 py-1 bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-50 rounded-lg font-medium shadow-xs transition flex items-center space-x-1" title="Nạp nhanh mẫu ứng viên Kinh Doanh / Marketing">
-                    <i class="fa-solid fa-briefcase text-xs"></i><span>Mẫu Business</span>
+                    <i class="fa-solid fa-briefcase text-xs"></i><span>Dữ liệu ví dụ Business</span>
                   </button>
                   <button type="button" onclick="clearProfileForm()" class="px-2 py-1 bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 rounded-lg font-medium shadow-xs transition" title="Xóa trắng form nhập liệu">
                     <i class="fa-solid fa-trash-can"></i>
@@ -847,27 +845,27 @@ Yêu cầu:
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <label class="block text-[11px] font-semibold text-slate-600 mb-1">Họ và tên <span class="text-rose-500">*</span></label>
-                    <input type="text" id="prof-fullname" placeholder="VD: Huỳnh Kiên Minh" value="Huỳnh Kiên Minh" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input type="text" id="prof-fullname" placeholder="VD: Huỳnh Kiên Minh" value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                   <div>
                     <label class="block text-[11px] font-semibold text-slate-600 mb-1">Vị trí / Chức danh mục tiêu <span class="text-rose-500">*</span></label>
-                    <input type="text" id="prof-role" placeholder="VD: Lập trình viên Backend Node.js" value="Lập trình viên Backend Node.js" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input type="text" id="prof-role" placeholder="VD: Lập trình viên Backend Node.js" value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                   <div>
                     <label class="block text-[11px] font-semibold text-slate-600 mb-1">Số điện thoại <span class="text-rose-500">*</span></label>
-                    <input type="text" id="prof-phone" placeholder="VD: (+84) 912 345 678" value="(+84) 912 345 678" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input type="text" id="prof-phone" placeholder="VD: (+84) 912 345 678" value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                   <div>
                     <label class="block text-[11px] font-semibold text-slate-600 mb-1">Email liên hệ <span class="text-rose-500">*</span></label>
-                    <input type="email" id="prof-email" placeholder="VD: kienminh.dev@gmail.com" value="kienminh.dev@gmail.com" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input type="email" id="prof-email" placeholder="VD: kienminh.dev@gmail.com" value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                   <div>
                     <label class="block text-[11px] font-semibold text-slate-600 mb-1">Địa chỉ / Khu vực</label>
-                    <input type="text" id="prof-address" placeholder="VD: Cần Thơ, Việt Nam" value="Cần Thơ, Việt Nam" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input type="text" id="prof-address" placeholder="VD: Cần Thơ, Việt Nam" value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                   <div>
                     <label class="block text-[11px] font-semibold text-slate-600 mb-1">Ngày sinh / Năm sinh</label>
-                    <input type="text" id="prof-birth" placeholder="VD: 24/08/1998" value="24/08/1998" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input type="text" id="prof-birth" placeholder="VD: 24/08/1998" value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                 </div>
 
@@ -917,7 +915,7 @@ Yêu cầu:
                   <i class="fa-solid fa-bullseye text-blue-500 text-[11px]"></i>
                   <span>2. Mục tiêu nghề nghiệp / Tóm tắt bản thân</span>
                 </div>
-                <textarea id="prof-summary" rows="2" placeholder="Tóm tắt ngắn gọn thế mạnh, số năm kinh nghiệm và mục tiêu sự nghiệp..." oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">Kỹ sư phần mềm giàu nhiệt huyết với nền tảng vững chắc về phát triển hệ thống Backend, thiết kế cơ sở dữ liệu và tối ưu hóa hiệu năng ứng dụng. Mục tiêu trở thành Senior Backend Engineer đóng góp vào các giải pháp công nghệ quy mô lớn.</textarea>
+                <textarea id="prof-summary" rows="2" placeholder="Tóm tắt ngắn gọn thế mạnh, số năm kinh nghiệm và mục tiêu sự nghiệp..." oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"></textarea>
               </div>
 
               <!-- 3. Kỹ năng chuyên môn -->
@@ -926,7 +924,7 @@ Yêu cầu:
                   <span class="flex items-center gap-1.5"><i class="fa-solid fa-screwdriver-wrench text-blue-500 text-[11px]"></i> 3. Kỹ năng chuyên môn (Skills)</span>
                   <span class="text-[10px] text-slate-400 font-normal">Cách nhau bằng dấu phẩy</span>
                 </div>
-                <input type="text" id="prof-skills" placeholder="VD: Node.js, Express, PostgreSQL, Docker, Git, RESTful API..." value="Node.js, Express, JavaScript, TypeScript, PostgreSQL, Docker, Git, RESTful API" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                <input type="text" id="prof-skills" placeholder="VD: Node.js, Express, PostgreSQL, Docker, Git, RESTful API..." value="" oninput="syncProfileFormToJSON()" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                 <!-- Chip gợi ý nhanh -->
                 <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
                   <span class="text-[10px] text-slate-500 font-semibold"><i class="fa-solid fa-wand-magic-sparkles mr-0.5 text-amber-500"></i> Gợi ý nhanh:</span>
@@ -983,36 +981,7 @@ Yêu cầu:
                     Áp dụng JSON vào biểu mẫu &rarr;
                   </button>
                 </div>
-                <textarea id="cv-profile" rows="5" oninput="syncJSONToProfileForm()" class="w-full px-3 py-2 bg-slate-900 text-emerald-400 font-mono text-xs rounded-lg border border-slate-700 focus:outline-none">{
-  "fullName": "Huỳnh Kiên Minh",
-  "targetRole": "Lập trình viên Backend Node.js",
-  "phone": "(+84) 912 345 678",
-  "email": "kienminh.dev@gmail.com",
-  "address": "Cần Thơ, Việt Nam",
-  "birth": "24/08/1998",
-  "summary": "Kỹ sư phần mềm giàu nhiệt huyết với nền tảng vững chắc về phát triển hệ thống Backend, thiết kế cơ sở dữ liệu và tối ưu hóa hiệu năng ứng dụng. Mục tiêu trở thành Senior Backend Engineer đóng góp vào các giải pháp công nghệ quy mô lớn.",
-  "skills": ["Node.js", "Express", "JavaScript", "TypeScript", "PostgreSQL", "Docker", "Git", "RESTful API"],
-  "education": [
-    {
-      "school": "Đại học FPT Cần Thơ",
-      "degree": "Kỹ sư Kỹ thuật Phần mềm",
-      "time": "2019 - 2023",
-      "highlight": "Tốt nghiệp loại Giỏi - GPA 3.6/4.0"
-    }
-  ],
-  "experience": [
-    {
-      "company": "ConnectCV (Nền tảng AI Career)",
-      "role": "Lập trình viên Backend",
-      "time": "06/2023 - Hiện tại",
-      "bullets": [
-        "Phát triển nền tảng AI ConnectCV hỗ trợ tối ưu hóa CV và luyện phỏng vấn phục vụ 500+ người dùng.",
-        "Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi.",
-        "Ứng dụng PostgreSQL và Docker để chuẩn hóa quy trình triển khai và bảo mật dữ liệu."
-      ]
-    }
-  ]
-}</textarea>
+                <textarea id="cv-profile" rows="5" oninput="syncJSONToProfileForm()" class="w-full px-3 py-2 bg-slate-900 text-emerald-400 font-mono text-xs rounded-lg border border-slate-700 focus:outline-none">{}</textarea>
                 <p class="text-[10px] text-slate-500 mt-1 italic">
                   * Biểu mẫu trực quan và mã JSON tự động đồng bộ theo thời gian thực. Bất kỳ mã script độc hại (XSS) nào nhập vào đều được hệ thống tự động bóc tách và vô hiệu hóa an toàn.
                 </p>
@@ -1043,12 +1012,16 @@ Yêu cầu:
                 </h3>
               </div>
               <div class="flex items-center space-x-2">
-                <span id="cv-badge" class="hidden px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg shadow-2xs">Điểm ATS: --</span>
+                <span id="cv-badge" class="hidden px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg shadow-2xs">Khớp kỹ năng: --</span>
                 <div id="cv-download-actions" class="hidden flex items-center space-x-1.5">
-                  <button type="button" onclick="downloadCVPDF()" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition shadow-xs flex items-center">
+                  <button type="button" onclick="downloadCVPDF()" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg transition shadow-xs flex items-center" title="Tải file PDF Vector A4 chuẩn ATS">
                     <i class="fa-solid fa-file-pdf mr-1"></i> Tải PDF
                   </button>
-                  <button type="button" onclick="printCV()" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition" title="In trực tiếp">
+                  <button type="button" onclick="downloadCVDoc()" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition shadow-xs flex items-center" title="Tải Word giữ thiết kế đã chọn">
+                    <i class="fa-solid fa-file-word mr-1"></i> Tải Word
+                  </button>
+
+                  <button type="button" onclick="printCV()" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition" title="In hoặc lưu PDF theo mẫu (có lớp văn bản)">
                     <i class="fa-solid fa-print"></i>
                   </button>
                   <button type="button" onclick="toggleCVFullscreen()" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition" title="Toàn màn hình">
@@ -1102,41 +1075,6 @@ Yêu cầu:
       </div>
 
     </div>
-
-    <!-- Submode 2: Chẩn Đoán & Đo Điểm ATS Nhanh -->
-      <div id="cv-submode-score" class="hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
-              <i class="fa-solid fa-stethoscope text-indigo-600 mr-2"></i> Kiểm Tra Độ Tương Thích ATS Cho CV
-            </h2>
-            <div class="space-y-4">
-              <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Nội Dung Bản CV Hiện Có</label>
-                <textarea id="score-cv-text" rows="7" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">Huỳnh Kiên Minh - Lập trình viên Backend
-Học vấn: Đại học FPT Cần Thơ
-Kỹ năng: JavaScript, Node.js, Express, PostgreSQL, Git.
-Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</textarea>
-              </div>
-              <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Bản Mô Tả Công Việc (JD)</label>
-                <textarea id="score-jd-text" rows="5" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">Yêu cầu Backend Engineer: Thành thạo Node.js, Express, PostgreSQL, Docker, Redis, CI/CD, Microservices.</textarea>
-              </div>
-              <button onclick="scoreATS()" id="btn-score-ats" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md transition flex items-center justify-center">
-                <span>📊 Chấm Điểm ATS Bằng AI</span>
-              </button>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-            <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
-              <i class="fa-solid fa-square-poll-vertical text-emerald-600 mr-2"></i> Báo Cáo Chấm Điểm ATS
-            </h2>
-            <div id="score-result" class="h-[460px] overflow-y-auto bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm text-slate-700">
-              <p class="text-slate-400 italic text-center py-20">Kết quả phân tích từ khóa và điểm ATS sẽ xuất hiện tại đây...</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
 
@@ -1869,7 +1807,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             </div>
             <div>
               <div class="font-bold text-sm tracking-tight flex items-center">
-                ConnectCV Copilot
+                ConnectCV chatbot
                 <span class="ml-2 px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-emerald-400/20 text-emerald-200 border border-emerald-400/40">24/7</span>
               </div>
               <div class="text-[10px] text-purple-200 font-medium">Tư vấn viên AI • Gemini 2.5 Flash</div>
@@ -1911,7 +1849,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         <div class="px-3 py-2 bg-slate-100/90 border-b border-slate-200 flex items-center space-x-1.5 overflow-x-auto no-scrollbar text-[11px] flex-shrink-0 select-none">
           <span class="text-slate-400 font-bold text-[10px] flex-shrink-0 mr-0.5"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>Gợi ý:</span>
           <button type="button" onclick="askChatbotPrompt('Làm sao để CV của tôi đạt điểm ATS trên 90%?')" class="flex-shrink-0 px-2.5 py-1 bg-white hover:bg-purple-100 hover:text-purple-800 text-slate-700 border border-slate-200 hover:border-purple-300 rounded-full font-medium transition text-[11px] shadow-2xs">
-            🎯 Điểm ATS >90%?
+            🎯 Đối chiếu kỹ năng với JD
           </button>
           <button type="button" onclick="askChatbotPrompt('Tính năng Gemini Live Studio hoạt động như thế nào?')" class="flex-shrink-0 px-2.5 py-1 bg-white hover:bg-purple-100 hover:text-purple-800 text-slate-700 border border-slate-200 hover:border-purple-300 rounded-full font-medium transition text-[11px] shadow-2xs">
             🎙️ Live Studio
@@ -1933,7 +1871,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             </div>
             <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200/90 shadow-sm max-w-[88%] text-slate-800 leading-relaxed space-y-2">
               <div class="font-bold text-purple-700 text-xs">Xin chào Huỳnh Kiên Minh! 👋</div>
-              <p>Tôi là <b>ConnectCV Copilot</b>, tư vấn viên AI của bạn. Tôi có thể hỗ trợ bạn:</p>
+              <p>Tôi là <b>ConnectCV chatbot</b>, tư vấn viên AI của bạn. Tôi có thể hỗ trợ bạn:</p>
               <ul class="list-disc list-inside space-y-1 text-slate-600 text-[11px]">
                 <li>Tối ưu hóa CV chuẩn ATS theo từng JD cụ thể.</li>
                 <li>Luyện phỏng vấn thực chiến giọng nói <b>Gemini Live</b>.</li>
@@ -1967,11 +1905,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         <!-- Teaser Callout Badge -->
         <div id="chatbot-teaser" onclick="toggleChatbotWidget(true)" class="cursor-pointer bg-white/95 backdrop-blur-md hover:bg-white text-slate-800 text-xs font-bold px-3 py-2 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200 flex items-center space-x-2 transition-all duration-300 hover:scale-105 select-none">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-[11px] text-slate-700">Chat với AI Copilot ✨</span>
+          <span class="text-[11px] text-slate-700">ConnectCV chatbot</span>
         </div>
 
         <!-- Circular Launcher Button -->
-        <button type="button" onclick="toggleChatbotWidget()" id="chatbot-launcher-btn" class="relative w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-500 hover:from-purple-700 hover:to-indigo-700 active:scale-95 text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none ring-4 ring-purple-400/25 cursor-pointer" title="Mở Chatbot Tư Vấn ConnectCV Copilot">
+        <button type="button" onclick="toggleChatbotWidget()" id="chatbot-launcher-btn" class="relative w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-500 hover:from-purple-700 hover:to-indigo-700 active:scale-95 text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none ring-4 ring-purple-400/25 cursor-pointer" title="Mở Chatbot Tư Vấn ConnectCV chatbot">
           <i id="chatbot-icon-open" class="fa-solid fa-comments text-2xl transition-transform duration-300"></i>
           <i id="chatbot-icon-close" class="fa-solid fa-xmark text-2xl hidden transition-transform duration-300"></i>
           <!-- Glowing Online Indicator Dot -->
@@ -2051,10 +1989,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       // Backward compatibility aliases
       if (tabId === 'tab-generate-cv') {
         tabId = 'tab-cv-module';
-        switchCVSubMode('generate');
       } else if (tabId === 'tab-ats-score') {
         tabId = 'tab-cv-module';
-        switchCVSubMode('score');
+        if (latestCVData) switchCVTab('ats');
       } else if (tabId === 'tab-interview-questions') {
         tabId = 'tab-interview-module';
         switchIntSubMode('practice');
@@ -2098,26 +2035,6 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     // ========================================================
     // BỘ CHUYỂN SUBMODE 4 MODULE CỐT LÕI
     // ========================================================
-
-    // Module 1: Tối Ưu CV Chuẩn ATS vs Đo Điểm ATS
-    function switchCVSubMode(mode) {
-      const genSec = document.getElementById('cv-submode-generate');
-      const scoreSec = document.getElementById('cv-submode-score');
-      const btnGen = document.getElementById('subtab-cv-generate');
-      const btnScore = document.getElementById('subtab-cv-score');
-
-      if (mode === 'generate') {
-        if (genSec) { genSec.classList.remove('hidden'); genSec.classList.add('block'); }
-        if (scoreSec) { scoreSec.classList.add('hidden'); scoreSec.classList.remove('block'); }
-        if (btnGen) btnGen.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-white text-blue-700 shadow-sm border border-slate-200';
-        if (btnScore) btnScore.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900';
-      } else {
-        if (genSec) { genSec.classList.add('hidden'); genSec.classList.remove('block'); }
-        if (scoreSec) { scoreSec.classList.remove('hidden'); scoreSec.classList.add('block'); }
-        if (btnGen) btnGen.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900';
-        if (btnScore) btnScore.className = 'px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-white text-indigo-700 shadow-sm border border-slate-200';
-      }
-    }
 
     // Module 2: Luyện Phỏng Vấn (Script + Live AI) vs Đánh Giá STAR
     function switchIntSubMode(mode) {
@@ -2169,9 +2086,15 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     // ========================================================
     let currentCVLanguage = 'vi'; // Mặc định là Tiếng Việt
     let latestCVData = null;      // Lưu trữ dữ liệu CV gần nhất
+    // Song bản ngôn ngữ độc lập: Lưu trữ riêng biệt bản Tiếng Việt và Tiếng Anh để chuyển đổi tức thì 0ms
+    let cvLanguageCache = {
+      vi: null, // { cvData, renderedHtml }
+      en: null  // { cvData, renderedHtml }
+    };
 
     // Chuyển đổi ngôn ngữ CV đầu ra (🇻🇳 Tiếng Việt hoặc 🇺🇸 English)
-    function setCVLanguage(lang) {
+    async function setCVLanguage(lang) {
+      if (cvGenerationInProgress) { showToastWarning('Vui lòng đợi tạo CV hoàn tất trước khi đổi ngôn ngữ.', 'Đang tạo CV'); return; }
       currentCVLanguage = lang;
 
       const btnVi = document.getElementById('btn-cv-lang-vi');
@@ -2191,9 +2114,20 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         if (resBtnEn) resBtnEn.className = 'px-2 py-1 rounded-md text-xs font-bold transition flex items-center space-x-1.5 bg-white text-blue-700 shadow-xs border border-slate-200';
       }
 
+      // Tải lại danh sách mẫu theo ngôn ngữ đã chọn
+      loadCVTemplates(lang);
+
+      // Nếu đã có bản CV của ngôn ngữ này trong cache, khôi phục ngay lập tức (0ms)
+      if (cvLanguageCache[lang] && cvLanguageCache[lang].cvData) {
+        latestCVData = cvLanguageCache[lang].cvData;
+        latestRenderedHtml = cvLanguageCache[lang].renderedHtml;
+        renderCVResult(latestCVData, latestRenderedHtml);
+        return;
+      }
+
       // Nếu đã có CV trên màn hình và ngôn ngữ khác với lựa chọn mới, tự động dịch
       if (latestCVData && latestCVData.language !== lang) {
-        switchCVLanguageLive(lang);
+        await switchCVLanguageLive(lang);
       }
     }
 
@@ -2253,6 +2187,12 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             console.warn('Lỗi re-render template sau khi dịch:', e);
           }
 
+          // Lưu bản dịch vào cache để chuyển đổi tức thời
+          cvLanguageCache[targetLang] = {
+            cvData: latestCVData,
+            renderedHtml: latestRenderedHtml
+          };
+
           renderCVResult(latestCVData, latestRenderedHtml);
         } else {
           resultDiv.innerHTML = oldHtml;
@@ -2274,6 +2214,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     let currentAppliedTemplate = null;
 
     function setTemplateMode(mode) {
+      if (cvGenerationInProgress) return;
       currentTemplateMode = mode;
       const btnAuto = document.getElementById('btn-tmpl-mode-auto');
       const btnManual = document.getElementById('btn-tmpl-mode-manual');
@@ -2296,9 +2237,10 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       }
     }
 
-    async function loadCVTemplates() {
+    async function loadCVTemplates(lang) {
       try {
-        const res = await fetch('/api/cv/templates');
+        const selectedLang = lang || currentCVLanguage || 'vi';
+        const res = await fetch(`/api/cv/templates?lang=${selectedLang}`);
         const data = await res.json();
         if (data.success && data.templates) {
           cvTemplatesList = data.templates;
@@ -2325,7 +2267,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       filterManualTemplates();
     }
 
+    let recommendationVersion = 0;
+    let cvGenerationInProgress = false;
     async function updateAutoRecommendation() {
+      const version = ++recommendationVersion;
+      const language = currentCVLanguage;
       const company = document.getElementById('cv-company')?.value || 'FPT Software';
       const jd = document.getElementById('cv-jd')?.value || '';
       const profile = document.getElementById('cv-profile')?.value || '';
@@ -2335,6 +2281,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
+            language,
             targetRole: 'Backend Developer',
             companyName: company,
             jdText: jd,
@@ -2342,6 +2289,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           })
         });
         const data = await res.json();
+        if (version !== recommendationVersion || language !== currentCVLanguage || cvGenerationInProgress) return;
         if (data.success && data.data) {
           currentAutoRecommended = data.data;
           if (currentTemplateMode === 'auto') {
@@ -2392,7 +2340,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       container.innerHTML = list.map(tmpl => {
         const isSelected = tmpl.id === currentSelectedTemplateId;
         const thumbUrl = tmpl.thumbnailUrl || `/images/templates/${tmpl.baseHtmlFile.replace('.html', '.png')}`;
-        const cleanTitle = tmpl.title.replace(/^Mẫu CV ATS\s*(-|Cho)?\s*/i, '').trim();
+        const cleanTitle = (tmpl.title || tmpl.slug).replace(/^Mẫu CV ATS\s*(-|Cho)?\s*/i, '').trim();
+        const styleText = (tmpl.style || 'TopCV ATS').split('(')[0].trim();
 
         return `
           <div onclick="selectManualTemplate('${tmpl.id}')" 
@@ -2404,8 +2353,17 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                    alt="${tmpl.title}" 
                    class="w-full h-full object-cover object-top transition duration-300 group-hover:scale-105" 
                    loading="lazy" 
-                   onerror="this.onerror=null; this.src='/images/templates/01_CV_ATS_Tieu_Chuan_default_v2.png';" />
+                   onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+              <div class="hidden absolute inset-0 flex items-center justify-center p-5 text-center text-sm text-slate-500">Không tải được ảnh mẫu. Bấm Xem Chi Tiết để xem CV.</div>
               
+              <!-- HUY HIỆU PRO / CAO CẤP -->
+              ${tmpl.isPro ? `
+                <div class="absolute top-2 left-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm flex items-center space-x-1 z-20">
+                  <i class="fa-solid fa-crown text-[9px]"></i>
+                  <span>${currentCVLanguage === 'en' ? 'PRO' : 'Cao cấp'}</span>
+                </div>
+              ` : ''}
+
               <!-- HUY HIỆU ĐÃ CHỌN -->
               ${isSelected ? `
                 <div class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm flex items-center space-x-1 z-20">
@@ -2449,7 +2407,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               <!-- Tags / Bố cục -->
               <div class="flex items-center space-x-1 mt-1 flex-wrap gap-y-1">
                 <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">ATS</span>
-                <span class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 truncate max-w-[110px]">${tmpl.style.split('(')[0].trim()}</span>
+                <span class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 truncate max-w-[110px]">${styleText}</span>
               </div>
             </div>
           </div>
@@ -2496,6 +2454,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     }
 
     function selectManualTemplate(tmplId) {
+      if (cvGenerationInProgress) { showToastWarning('Đang tạo CV với mẫu đã chọn. Vui lòng đợi hoàn tất.', 'Đang tạo CV'); return; }
+      setTemplateMode('manual');
       currentSelectedTemplateId = tmplId;
       const found = cvTemplatesList.find(t => t.id === tmplId);
       const badge = document.getElementById('tmpl-selected-badge');
@@ -2513,29 +2473,22 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     function openTemplatePreview(tmplId) {
       const modal = document.getElementById('modal-template-preview');
-      const iframe = document.getElementById('iframe-template-preview');
+      const image = document.getElementById('image-template-preview');
       const title = document.getElementById('modal-preview-title');
       const applyBtn = document.getElementById('btn-modal-apply');
       const found = cvTemplatesList.find(t => t.id === tmplId);
       const docxBtn = document.getElementById('btn-modal-download-docx');
 
-      if (modal && iframe) {
-        iframe.onload = () => {
-          try {
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            if (doc) {
-              const tb = doc.querySelector('.cv-toolbar');
-              if (tb) tb.style.setProperty('display', 'none', 'important');
-              if (doc.body) doc.body.classList.add('in-iframe');
-            }
-          } catch(e) {}
-        };
-        iframe.src = `/api/cv/templates/${tmplId}/preview`;
+      if (modal && image && found) {
+        const currentLang = currentCVLanguage || 'vi';
+        image.src = found.thumbnailUrl;
+        image.alt = found.title;
+        const reference=document.getElementById('btn-modal-reference');if(reference){reference.href=found.sourceThumbnailUrl;reference.classList.remove('hidden');}
         if (title && found) {
           title.innerHTML = `<i class="fa-solid fa-palette text-blue-600 mr-2"></i> ${found.title}`;
         }
         if (docxBtn) {
-          docxBtn.href = `/api/cv/templates/${tmplId}/download-docx`;
+          docxBtn.href = `/api/cv/templates/${tmplId}/download-docx?lang=${currentLang}`;
         }
         if (applyBtn) {
           applyBtn.onclick = () => {
@@ -2558,9 +2511,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     function closeTemplatePreviewModal() {
       const modal = document.getElementById('modal-template-preview');
-      const iframe = document.getElementById('iframe-template-preview');
       if (modal) modal.classList.add('hidden');
-      if (iframe) iframe.src = 'about:blank';
     }
 
     let recommendDebounceTimer = null;
@@ -2599,27 +2550,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
-    let currentEducationList = [
-      {
-        school: "Đại học FPT Cần Thơ",
-        degree: "Kỹ sư Kỹ thuật Phần mềm",
-        time: "2019 - 2023",
-        highlight: "Tốt nghiệp loại Giỏi - GPA 3.6/4.0"
-      }
-    ];
-
-    let currentExperienceList = [
-      {
-        company: "ConnectCV (Nền tảng AI Career)",
-        role: "Lập trình viên Backend",
-        time: "06/2023 - Hiện tại",
-        bullets: [
-          "Phát triển nền tảng AI ConnectCV hỗ trợ tối ưu hóa CV và luyện phỏng vấn phục vụ 500+ người dùng.",
-          "Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi.",
-          "Ứng dụng PostgreSQL và Docker để chuẩn hóa quy trình triển khai và bảo mật dữ liệu."
-        ]
-      }
-    ];
+    let currentEducationList = [];
+    let currentExperienceList = [];
 
     const SAMPLE_PROFILES = {
       backend: {
@@ -2878,7 +2810,12 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       const rawSkills = document.getElementById('prof-skills')?.value || '';
       const skills = rawSkills.split(',').map(s => sanitizeInput(s.trim())).filter(Boolean);
 
+      let previousProfile = {};
+      try {previousProfile=JSON.parse(document.getElementById('cv-profile')?.value || '{}');} catch {}
+      const optionalKeys=['projects','certifications','activities','awards','interests','references','languages','website','linkedin','github','gender','avatarCrop'];
+      const optional=Object.fromEntries(optionalKeys.filter(k=>previousProfile && previousProfile[k]!==undefined).map(k=>[k,previousProfile[k]]));
       const profileObj = {
+        ...optional,
         fullName,
         targetRole,
         phone,
@@ -2900,11 +2837,6 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           role: sanitizeInput(exp.role || ''),
           time: sanitizeInput(exp.time || ''),
           bullets: (Array.isArray(exp.bullets) ? exp.bullets : []).map(b => sanitizeInput(b)).filter(Boolean)
-        })),
-        projects: currentExperienceList.map(exp => ({
-          name: sanitizeInput(exp.company || ''),
-          role: sanitizeInput(exp.role || ''),
-          description: (Array.isArray(exp.bullets) ? exp.bullets : []).map(b => sanitizeInput(b)).join('; ')
         }))
       };
 
@@ -2919,66 +2851,25 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     function syncJSONToProfileForm() {
       try {
-        const rawVal = document.getElementById('cv-profile')?.value || '';
-        const obj = JSON.parse(rawVal);
-        if (!obj || typeof obj !== 'object') return;
-
-        if (obj.fullName && document.getElementById('prof-fullname')) document.getElementById('prof-fullname').value = obj.fullName;
-        if ((obj.targetRole || obj.role) && document.getElementById('prof-role')) document.getElementById('prof-role').value = obj.targetRole || obj.role;
-        if (obj.phone && document.getElementById('prof-phone')) document.getElementById('prof-phone').value = obj.phone;
-        if (obj.email && document.getElementById('prof-email')) document.getElementById('prof-email').value = obj.email;
-        if (obj.address && document.getElementById('prof-address')) document.getElementById('prof-address').value = obj.address;
-        if (obj.birth && document.getElementById('prof-birth')) document.getElementById('prof-birth').value = obj.birth;
-        if (obj.summary && document.getElementById('prof-summary')) document.getElementById('prof-summary').value = obj.summary;
-
-        // Khôi phục avatar preview nếu có trong JSON
-        const av = obj.avatarUrl || obj.avatarDataUrl;
-        if (av && typeof av === 'string' && av.trim()) {
-          window.currentCvAvatarDataUrl = av;
-          const pImg = document.getElementById('cv-avatar-preview-img');
-          const pEmpty = document.getElementById('cv-avatar-empty-icon');
-          const pBtn = document.getElementById('cv-avatar-remove-btn');
-          const pLabel = document.getElementById('cv-avatar-btn-label');
-          if (pImg) { pImg.src = av; pImg.classList.remove('hidden'); }
-          if (pEmpty) pEmpty.classList.add('hidden');
-          if (pBtn) pBtn.classList.remove('hidden');
-          if (pLabel) pLabel.textContent = 'Thay ảnh';
+        const obj = JSON.parse(document.getElementById('cv-profile')?.value || '{}');
+        if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return;
+        for (const [id,key] of [['prof-fullname','fullName'],['prof-role','targetRole'],['prof-phone','phone'],['prof-email','email'],['prof-address','address'],['prof-birth','birth'],['prof-summary','summary']]) {
+          const input=document.getElementById(id);
+          if(input) input.value=typeof obj[key]==='string'?obj[key]:'';
         }
-
-        if (Array.isArray(obj.skills) && document.getElementById('prof-skills')) {
-          document.getElementById('prof-skills').value = obj.skills.join(', ');
-        }
-
-        if (Array.isArray(obj.education) && obj.education.length > 0) {
-          currentEducationList = obj.education.map(e => ({
-            school: typeof e === 'string' ? e : (e.school || ''),
-            degree: e.degree || '',
-            time: e.time || e.duration || '',
-            highlight: e.highlight || e.highlights || ''
-          }));
-          renderEducationList();
-        }
-
-        if (Array.isArray(obj.experience) && obj.experience.length > 0) {
-          currentExperienceList = obj.experience.map(e => ({
-            company: e.company || e.organization || '',
-            role: e.role || e.position || '',
-            time: e.time || e.duration || '',
-            bullets: Array.isArray(e.bullets) ? e.bullets : (Array.isArray(e.achievements) ? e.achievements : [e.description || ''])
-          }));
-          renderExperienceList();
-        } else if (Array.isArray(obj.projects) && obj.projects.length > 0) {
-          currentExperienceList = obj.projects.map(p => ({
-            company: p.name || 'Dự án',
-            role: obj.targetRole || 'Thành viên phát triển',
-            time: '2023 - Hiện tại',
-            bullets: [p.description || '']
-          }));
-          renderExperienceList();
-        }
-      } catch (err) {
-        // Bỏ qua lỗi cú pháp JSON khi người dùng đang nhập dở
-      }
+        const skillInput=document.getElementById('prof-skills');
+        if(skillInput)skillInput.value=Array.isArray(obj.skills)?obj.skills.filter(s=>typeof s==='string').join(', '):(typeof obj.skills==='string'?obj.skills:'');
+        currentEducationList=(Array.isArray(obj.education)?obj.education:[]).filter(e=>e && typeof e==='object').map(e=>({school:e.school||'',degree:e.degree||'',time:e.time||e.duration||'',highlight:e.highlight||e.highlights||''}));
+        currentExperienceList=(Array.isArray(obj.experience)?obj.experience:[]).filter(e=>e && typeof e==='object').map(e=>({company:e.company||e.organization||'',role:e.role||e.position||'',time:e.time||e.duration||'',bullets:Array.isArray(e.bullets)?e.bullets:(Array.isArray(e.achievements)?e.achievements:[])}));
+        // Projects can be imported as projects without inventing job titles or dates.
+        if(!currentExperienceList.length && Array.isArray(obj.projects))currentExperienceList=obj.projects.filter(p=>p && typeof p==='object').map(p=>({company:p.name||'',role:p.role||'',time:p.time||p.duration||'',bullets:Array.isArray(p.bullets)?p.bullets:[p.description||''].filter(Boolean)}));
+        renderEducationList();renderExperienceList();
+        const av=typeof obj.avatarUrl==='string'?obj.avatarUrl:(typeof obj.avatarDataUrl==='string'?obj.avatarDataUrl:'');
+        window.currentCvAvatarDataUrl=av;
+        const img=document.getElementById('cv-avatar-preview-img'),empty=document.getElementById('cv-avatar-empty-icon'),btn=document.getElementById('cv-avatar-remove-btn'),label=document.getElementById('cv-avatar-btn-label');
+        if(img){if(av)img.src=av;else img.removeAttribute('src');img.classList.toggle('hidden',!av)}
+        if(empty)empty.classList.toggle('hidden',!!av);if(btn)btn.classList.toggle('hidden',!av);if(label)label.textContent=av?'Thay ảnh':'Tải ảnh';
+      } catch { /* Keep unfinished JSON input editable. */ }
     }
 
     function applyJsonToProfileForm() {
@@ -3138,11 +3029,10 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           window.availableMatchedJobs = availableMatchedJobs;
           window.selectedJobIds = selectedJobIds;
 
-          // Mặc định: Tick all tất cả các job >= 85%
+          // Mặc định không chọn việc làm; người dùng chủ động chọn các vị trí muốn tạo CV.
           selectedJobIds.clear();
-          availableMatchedJobs.forEach(j => selectedJobIds.add(j.id));
           const chkAll = document.getElementById('chk-select-all-jobs');
-          if (chkAll) chkAll.checked = true;
+          if (chkAll) chkAll.checked = false;
 
           renderAutoMatchJobs();
           updateSelectedJobsCounter();
@@ -3238,7 +3128,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                   `).join('')}
                 </div>
               </div>
-              <button type="button" onclick="viewJobDetails('${job.id}')" class="px-2.5 py-1 bg-white hover:bg-blue-50 border border-blue-200 text-blue-700 font-bold rounded-lg text-[11px] transition shadow-2xs flex items-center gap-1 shrink-0">
+              <button type="button" onclick="viewJobDetails(decodeURIComponent('${encodeURIComponent(job.id).replace(/'/g,'%27')}'))" class="px-2.5 py-1 bg-white hover:bg-blue-50 border border-blue-200 text-blue-700 font-bold rounded-lg text-[11px] transition shadow-2xs flex items-center gap-1 shrink-0">
                 <i class="fa-solid fa-circle-info text-blue-600"></i>
                 <span>Chi tiết</span>
               </button>
@@ -3372,7 +3262,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       container.innerHTML = batchCVResults.map((item, idx) => {
         const isActive = idx === activeBatchIndex;
         const compName = item.job ? item.job.company : (item.cvData?.company || `CV #${idx+1}`);
-        const score = item.cvData?.atsScore || item.job?.matchScore || 90;
+        const score = item.cvData?.atsScore ?? 0;
         return `
           <button type="button" onclick="selectBatchCV(${idx})" class="px-3 py-1.5 rounded-xl font-bold transition shrink-0 flex items-center gap-1.5 border cursor-pointer ${
             isActive 
@@ -3401,7 +3291,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       const badge = document.getElementById('cv-badge');
       if (badge && latestCVData) {
         const isEn = latestCVData.language === 'en';
-        badge.innerText = isEn ? `ATS Score: ${latestCVData.atsScore}/100` : `Điểm ATS: ${latestCVData.atsScore}/100`;
+        badge.innerText = isEn ? `Skill overlap: ${latestCVData.atsScore}/100` : `Khớp kỹ năng: ${latestCVData.atsScore}/100`;
       }
       renderBatchTabs();
       renderCVResult(latestCVData, latestRenderedHtml);
@@ -3425,6 +3315,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
     // Tạo CV bằng Gemini AI theo ngôn ngữ & mẫu CV đã chọn (Hỗ trợ May đo Đơn chiếc & May đo Hàng loạt theo Job)
     async function generateCV() {
+      if (cvGenerationInProgress) return;
+      recommendationVersion++;
       const btnTop = document.getElementById('btn-generate-cv');
       const btnBottom = document.getElementById('btn-generate-cv-bottom');
       const btnTopText = document.getElementById('btn-generate-cv-text');
@@ -3433,6 +3325,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       const badge = document.getElementById('cv-badge');
       const actions = document.getElementById('cv-download-actions');
       const isEn = currentCVLanguage === 'en';
+      const generationTemplateId = currentSelectedTemplateId;
+      const generationMode = currentTemplateMode;
+      const generationLanguage = currentCVLanguage;
 
       let profileObj;
       try {
@@ -3442,6 +3337,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       }
 
       function setButtonState(isLoading, text) {
+        cvGenerationInProgress = isLoading;
         if (btnTop) btnTop.disabled = isLoading;
         if (btnBottom) btnBottom.disabled = isLoading;
         if (btnTopText) btnTopText.innerHTML = text;
@@ -3471,6 +3367,10 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         try {
           for (let i = 0; i < selectedJobs.length; i++) {
             const job = selectedJobs[i];
+            if (i > 0) {
+              setButtonState(true, `<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Nghỉ nhịp AI (${i + 1}/${selectedJobs.length})...`);
+              await new Promise(r => setTimeout(r, 1200));
+            }
             setButtonState(true, `<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> May đo CV (${i + 1}/${selectedJobs.length}): ${job.company.substring(0, 16)}...`);
 
             const res = await fetch('/api/cv/generate', {
@@ -3482,9 +3382,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 companyCulture: job.cultureDetails || job.culture,
                 jdText: job.jdText || job.description,
                 profile: profileObj,
-                language: currentCVLanguage,
-                templateMode: currentTemplateMode,
-                selectedTemplateId: currentSelectedTemplateId
+                language: generationLanguage,
+                templateMode: generationMode,
+                selectedTemplateId: generationTemplateId
               })
             });
 
@@ -3500,6 +3400,10 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               });
             } else {
               lastErrorMessage = data.message || (data.details && data.details.join(', ')) || 'Không thể tạo CV qua AI';
+              if (data.isRateLimit) {
+                console.warn('[Batch CV] Chạm hạn mức Quota, tạm dừng các job tiếp theo để hạ nhiệt API');
+                break;
+              }
             }
           }
 
@@ -3510,21 +3414,30 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
             if (badge) {
               badge.classList.remove('hidden');
-              badge.innerText = `Điểm ATS: ${latestCVData.atsScore}/100`;
+              badge.innerText = `Khớp kỹ năng: ${latestCVData.atsScore}/100`;
             }
             if (actions) actions.classList.remove('hidden');
+
+            // Cập nhật song bản vào cache ngôn ngữ
+            cvLanguageCache = { vi: null, en: null };
+            cvLanguageCache[currentCVLanguage] = {
+              cvData: latestCVData,
+              renderedHtml: latestRenderedHtml
+            };
 
             renderBatchTabs();
             renderCVResult(latestCVData, latestRenderedHtml);
             showToastSuccess(`Đã tạo thành công ${batchCVResults.length} bản CV chuẩn ATS theo từng công ty!`, 'Hoàn tất');
           } else {
-            resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl space-y-1">
-              <div class="font-bold flex items-center"><i class="fa-solid fa-circle-exclamation mr-2"></i> Không thể tạo CV</div>
-              <div class="text-sm">${lastErrorMessage || 'Vui lòng kiểm tra lại thông tin hồ sơ hoặc thử lại.'}</div>
+            const isRateLimit = lastErrorMessage.includes('chạm hạn mức') || lastErrorMessage.includes('Quota') || lastErrorMessage.includes('giây');
+            resultDiv.innerHTML = `<div class="p-6 ${isRateLimit ? 'bg-amber-50 border-amber-200 text-amber-900' : 'bg-red-50 border-red-200 text-red-700'} border rounded-2xl space-y-2">
+              <div class="font-bold flex items-center text-base"><i class="fa-solid ${isRateLimit ? 'fa-hourglass-half text-amber-600' : 'fa-circle-exclamation text-red-600'} mr-2.5"></i> ${isRateLimit ? 'Hạn Mức AI Đang Hạ Nhiệt' : 'Không thể tạo CV qua AI'}</div>
+              <div class="text-sm text-slate-700 leading-relaxed">${escapeHTML(lastErrorMessage || 'Vui lòng kiểm tra lại thông tin hồ sơ hoặc thử lại.')}</div>
+              ${isRateLimit ? `<div class="pt-2"><button type="button" onclick="generateCV()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm"><i class="fa-solid fa-arrow-rotate-right mr-1.5"></i> Thử Lại Ngay</button></div>` : ''}
             </div>`;
           }
         } catch (err) {
-          resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl">Lỗi kết nối: ${err.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl">Lỗi kết nối: ${escapeHTML(err.message)}</div>`;
         } finally {
           setButtonState(false, `🚀 Bắt Đầu Tạo ${selectedJobs.length} CV Chuẩn ATS`);
         }
@@ -3548,9 +3461,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               companyName: document.getElementById('cv-company')?.value || '',
               jdText: document.getElementById('cv-jd')?.value || '',
               profile: profileObj,
-              language: currentCVLanguage,
-              templateMode: currentTemplateMode,
-              selectedTemplateId: currentSelectedTemplateId
+              language: generationLanguage,
+              templateMode: generationMode,
+              selectedTemplateId: generationTemplateId
             })
           });
 
@@ -3559,13 +3472,21 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             latestCVData = data.data;
             latestCVData.language = currentCVLanguage;
             currentAppliedTemplate = data.appliedTemplate;
+            currentSelectedTemplateId = data.appliedTemplate.id;
             latestRenderedHtml = data.renderedHtml;
 
             if (badge) {
               badge.classList.remove('hidden');
-              badge.innerText = `Điểm ATS: ${latestCVData.atsScore}/100`;
+              badge.innerText = `Khớp kỹ năng: ${latestCVData.atsScore}/100`;
             }
             if (actions) actions.classList.remove('hidden');
+
+            // Cập nhật song bản vào cache ngôn ngữ
+            cvLanguageCache = { vi: null, en: null };
+            cvLanguageCache[currentCVLanguage] = {
+              cvData: latestCVData,
+              renderedHtml: latestRenderedHtml
+            };
 
             document.getElementById('batch-cv-switcher-container')?.classList.add('hidden');
             batchCVResults = [];
@@ -3573,13 +3494,15 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             renderCVResult(latestCVData, latestRenderedHtml);
           } else {
             const errorMsg = data.message || (data.details && data.details.join(', ')) || data.error || 'Vui lòng thử lại.';
-            resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl space-y-1">
-              <div class="font-bold flex items-center"><i class="fa-solid fa-circle-exclamation mr-2"></i> Không thể tạo CV</div>
-              <div class="text-sm">${errorMsg}</div>
+            const isRateLimit = data.isRateLimit || errorMsg.includes('chạm hạn mức') || errorMsg.includes('Quota') || errorMsg.includes('giây');
+            resultDiv.innerHTML = `<div class="p-6 ${isRateLimit ? 'bg-amber-50 border-amber-200 text-amber-900' : 'bg-red-50 border-red-200 text-red-700'} border rounded-2xl space-y-2">
+              <div class="font-bold flex items-center text-base"><i class="fa-solid ${isRateLimit ? 'fa-hourglass-half text-amber-600' : 'fa-circle-exclamation text-red-600'} mr-2.5"></i> ${isRateLimit ? 'Hạn Mức AI Đang Hạ Nhiệt' : 'Không thể tạo CV'}</div>
+              <div class="text-sm text-slate-700 leading-relaxed">${errorMsg}</div>
+              ${isRateLimit ? `<div class="pt-2"><button type="button" onclick="generateCV()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm"><i class="fa-solid fa-arrow-rotate-right mr-1.5"></i> Thử Lại Ngay</button></div>` : ''}
             </div>`;
           }
         } catch (err) {
-          resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl">Không thể kết nối đến API: ${err.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-5 bg-red-50 border border-red-200 text-red-700 rounded-xl">Không thể kết nối đến API: ${escapeHTML(err.message)}</div>`;
         } finally {
           setButtonState(false, '🚀 Bắt Đầu Tạo CV Chuẩn ATS');
         }
@@ -3615,8 +3538,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     }
 
     // Đổi mẫu hiển thị trực tiếp khi người dùng chọn mẫu khác mà không cần gọi lại Gemini AI
+    let templateRenderVersion = 0;
     async function switchRenderedTemplate(tmplId) {
       if (!latestCVData) return;
+      const renderVersion = ++templateRenderVersion;
+      const renderLanguage = currentCVLanguage;
       const iframe = document.getElementById('cv-rendered-iframe');
       if (iframe) iframe.style.opacity = '0.5';
 
@@ -3640,9 +3566,17 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         });
 
         const data = await res.json();
+        // A slower response for an earlier choice must not replace the latest one.
+        if (renderVersion !== templateRenderVersion || tmplId !== currentSelectedTemplateId || renderLanguage !== currentCVLanguage) return;
         if (data.success && data.renderedHtml) {
           latestRenderedHtml = data.renderedHtml;
           currentAppliedTemplate = cvTemplatesList.find(t => t.id === tmplId) || data.template;
+          cvLanguageCache = { vi: null, en: null };
+          cvLanguageCache[renderLanguage] = { cvData: latestCVData, renderedHtml: latestRenderedHtml };
+          if (batchCVResults[activeBatchIndex]) {
+            batchCVResults[activeBatchIndex].appliedTemplate = currentAppliedTemplate;
+            batchCVResults[activeBatchIndex].renderedHtml = latestRenderedHtml;
+          }
           renderCVResult(latestCVData, latestRenderedHtml);
         }
       } catch (err) {
@@ -3659,7 +3593,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       const mainIframe = document.getElementById('cv-rendered-iframe');
       if (modal && fsIframe) {
         if (mainIframe && mainIframe.srcdoc) {
-          fsIframe.srcdoc = mainIframe.srcdoc;
+          fsIframe.srcdoc = getCurrentCVHtml(mainIframe) || latestRenderedHtml || mainIframe.srcdoc;
         } else if (latestRenderedHtml) {
           fsIframe.srcdoc = latestRenderedHtml;
         }
@@ -3676,11 +3610,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         fsBtns.forEach(btn => {
           const fn = btn.getAttribute('onclick');
           if (fn === 'downloadCVPDF()') {
-            btn.innerHTML = `<i class="fa-solid fa-download mr-1.5"></i> ${isEn ? 'Download PDF' : 'Tải PDF'}`;
+            btn.innerHTML = `<i class="fa-solid fa-download mr-1.5"></i> ${isEn ? 'Download PDF (HD)' : 'Tải PDF (Siêu Nét)'}`;
           } else if (fn === 'printCV()') {
-            btn.innerHTML = `<i class="fa-solid fa-print mr-1.5"></i> ${isEn ? 'Print CV' : 'In CV'}`;
+            btn.innerHTML = `<i class="fa-solid fa-print mr-1.5"></i> ${isEn ? 'Print / Vector PDF' : 'In / Lưu PDF Vector'}`;
           } else if (fn === 'downloadCVDoc()') {
-            btn.innerHTML = `<i class="fa-solid fa-file-word mr-1.5"></i> ${isEn ? 'Download Doc' : 'Tải Doc'}`;
+            btn.innerHTML = `<i class="fa-solid fa-file-word mr-1.5"></i> ${isEn ? 'Download Word (.docx)' : 'Tải Word (.docx)'}`;
           }
         });
         modal.classList.remove('hidden');
@@ -3688,6 +3622,14 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     }
 
     function closeCVFullscreen() {
+      const edited = getCurrentCVHtml(document.getElementById('iframe-cv-fullscreen'));
+      if (edited) {
+        latestRenderedHtml = edited;
+        const main = document.getElementById('cv-rendered-iframe');
+        if (main) main.srcdoc = edited;
+        if (cvLanguageCache[currentCVLanguage]) cvLanguageCache[currentCVLanguage].renderedHtml = edited;
+        if (batchCVResults[activeBatchIndex]) batchCVResults[activeBatchIndex].renderedHtml = edited;
+      }
       const modal = document.getElementById('modal-cv-fullscreen');
       if (modal) modal.classList.add('hidden');
     }
@@ -3707,7 +3649,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       const isEn = cv.language === 'en';
 
       if (badge) {
-        badge.innerText = isEn ? `ATS Score: ${cv.atsScore}/100` : `Điểm ATS: ${cv.atsScore}/100`;
+        badge.innerText = isEn ? `Skill overlap: ${cv.atsScore}/100` : `Khớp kỹ năng: ${cv.atsScore}/100`;
       }
 
       // Nếu chưa có renderedHtml thì gọi API render
@@ -3730,7 +3672,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               </button>
               <button type="button" onclick="switchCVTab('ats')" id="tab-btn-ats" class="px-3 py-1 rounded-md transition flex items-center space-x-1.5 ${currentCVTab === 'ats' ? 'bg-blue-600 text-white shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900 font-semibold'}">
                 <i class="fa-solid fa-chart-pie text-xs"></i>
-                <span>${isEn ? `ATS Benchmark (${cv.atsScore}/100)` : `Phân Tích ATS (${cv.atsScore}/100)`}</span>
+                <span>${isEn ? `Skill overlap (${cv.atsScore}/100)` : `Đối chiếu kỹ năng (${cv.atsScore}/100)`}</span>
               </button>
             </div>
 
@@ -3762,26 +3704,27 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             <iframe id="cv-rendered-iframe" class="w-full h-full border-0 bg-transparent" title="Bản CV hoàn chỉnh"></iframe>
           </div>
 
+          <div class="px-4 py-2 bg-blue-50 text-xs text-blue-800">${isEn ? 'Facts are preserved from your profile. English translations are checked against the source before publication.' : 'Dữ kiện được giữ theo profile. Bản dịch tiếng Anh được đối chiếu với nguồn trước khi tạo CV.'}</div>
           <!-- Tab 2: ATS Benchmark Breakdown -->
           <div id="cv-tab-ats" class="${currentCVTab === 'ats' ? '' : 'hidden'} flex-1 w-full overflow-y-auto p-4 space-y-4 bg-slate-50">
             <!-- ATS Score Banner -->
             <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl flex items-center justify-between shadow-2xs">
               <div>
                 <div class="text-xs text-emerald-800 font-bold uppercase tracking-wide">
-                  ${isEn ? 'ATS Compatibility Score' : 'Mức độ tương thích ATS'}
+                  ${isEn ? 'Profile skills found in JD' : 'Kỹ năng profile xuất hiện trong JD'}
                 </div>
                 <div class="text-xs text-emerald-700 mt-1">
                   ${isEn ? `Optimized for ${cv.company || 'Target Employer'}` : `Đã tối ưu hóa từ khóa khớp chuẩn với JD công ty ${cv.company}`}
                 </div>
                 <div class="text-[11px] text-emerald-600 mt-0.5 font-medium flex items-center">
                   <img src="${isEn ? '/images/flag_us.svg' : '/images/flag_vn.svg'}" alt="flag" class="w-3.5 h-2.5 rounded-2xs object-cover mr-1.5 inline-block border border-emerald-300/60">
-                  <span>${isEn ? 'Language: Professional English' : 'Ngôn ngữ: Tiếng Việt chuẩn mực'}</span>
+                  <span>${isEn ? 'Language: English' : 'Ngôn ngữ: Tiếng Việt chuẩn mực'}</span>
                 </div>
               </div>
               <div class="text-right">
                 <div class="text-3xl font-black text-emerald-600">${cv.atsScore} <span class="text-sm font-semibold text-emerald-700">/ 100</span></div>
                 <span class="inline-block mt-1 px-2 py-0.5 text-[10px] font-bold rounded bg-emerald-200/60 text-emerald-800">
-                  ${cv.atsScore >= 90 ? (isEn ? 'Excellent Fit' : 'Xuất Sắc') : (isEn ? 'Good Fit' : 'Đạt Chuẩn')}
+                  ${isEn ? 'Reference only — not ATS certification' : 'Tham khảo — không phải chứng nhận ATS'}
                 </span>
               </div>
             </div>
@@ -3886,8 +3829,43 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       }
     }
 
-    // 1. TẢI XUỐNG BẢN PDF CHUẨN ATS (ĐÚNG THEO MẪU ĐÃ CHỌN, GIỮ MÀU SẮC, KHÔNG RỚT TRANG)
-    function downloadCVPDF() {
+    function getCurrentCVHtml(iframe) {
+      if (!iframe) {
+        const modal = document.getElementById('modal-cv-fullscreen');
+        iframe = document.getElementById(modal && !modal.classList.contains('hidden') ? 'iframe-cv-fullscreen' : 'cv-rendered-iframe');
+      }
+      const doc = iframe?.contentDocument;
+      if (!doc?.querySelector('.cv-page-container')) return '';
+      const clone = doc.documentElement.cloneNode(true);
+      clone.querySelectorAll('.cv-toolbar, .cv-photo-editor').forEach(el=>el.remove());
+      return '<!DOCTYPE html>' + clone.outerHTML;
+    }
+
+    window.addEventListener('message', event => {
+      if (event.data?.type !== 'connectcv-photo-change') return;
+      const frames = ['cv-rendered-iframe', 'iframe-cv-fullscreen'].map(id=>document.getElementById(id));
+      const frame = frames.find(f=>f?.contentWindow === event.source);
+      if (!frame) return;
+      const html = getCurrentCVHtml(frame);
+      if (!html) return;
+      const photo = frame.contentDocument?.querySelector('.cv-page-container img[data-photo-zoom]');
+      if (photo) {
+        try {
+          const profileField = document.getElementById('cv-profile');
+          const profile = JSON.parse(profileField.value);
+          if (profile && typeof profile === 'object') {
+            profile.avatarCrop = { zoom:Number(photo.dataset.photoZoom), x:Number(photo.dataset.photoX), y:Number(photo.dataset.photoY) };
+            profileField.value = JSON.stringify(profile);
+          }
+        } catch {}
+      }
+      latestRenderedHtml = html;
+      if (cvLanguageCache[currentCVLanguage]) cvLanguageCache[currentCVLanguage].renderedHtml = html;
+      if (batchCVResults[activeBatchIndex]) batchCVResults[activeBatchIndex].renderedHtml = html;
+    });
+
+    // Export the actual edited document for both formats.
+    async function downloadCVPDF(format = 'design') {
       if (!latestCVData) {
         showToastWarning('Vui lòng tạo CV trước khi tải xuống.', 'Chưa có CV');
         return;
@@ -3904,43 +3882,68 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         return;
       }
 
-      let profileName = 'CV_ATS';
+      let profileName = 'CV';
       try {
         const p = JSON.parse(document.getElementById('cv-profile').value);
         if (p.fullName) profileName = p.fullName.trim().replace(/\s+/g, '_') + '_CV_ATS';
       } catch {
-        profileName = 'Huynh_Kien_Minh_CV_ATS';
+        if (latestCVData && latestCVData.fullName) {
+          profileName = latestCVData.fullName.trim().replace(/\s+/g, '_') + '_CV_ATS';
+        }
       }
 
-      // Ưu tiên 1: Gọi hàm downloadAsPdf ngay trong window context của Iframe
-      if (iframe.contentWindow && typeof iframe.contentWindow.downloadAsPdf === 'function') {
-        iframe.contentWindow.downloadAsPdf();
-        return;
-      }
+      showToastSuccess('Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...', 'Tải PDF');
 
-      // Ưu tiên 2: Sử dụng html2pdf trên thẻ cv-content của Iframe
-      const cvDoc = iframe.contentDocument || (iframe.contentWindow ? iframe.contentWindow.document : null);
-      const cvElement = cvDoc ? cvDoc.getElementById('cv-content') : null;
-      const h2p = window.html2pdf || (iframe.contentWindow ? iframe.contentWindow.html2pdf : null);
-      if (cvElement && h2p) {
-        const opt = {
-          margin: 0,
-          filename: `${profileName}.pdf`,
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true, letterRendering: true, scrollX: 0, scrollY: 0 },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      try {
+        const cvDoc = iframe.contentDocument || (iframe.contentWindow ? iframe.contentWindow.document : null);
+        let htmlContent = '';
+        if (cvDoc && cvDoc.documentElement) {
+          const clone = cvDoc.documentElement.cloneNode(true);
+          const tb = clone.querySelector('.cv-toolbar');
+          if (tb) tb.remove();
+          htmlContent = '<!DOCTYPE html>' + clone.outerHTML;
+        }
+
+        const payload = {
+          format,
+          userProfile: latestCVData.sourceProfile || {},
+          html: htmlContent || latestRenderedHtml || '',
+          templateId: currentSelectedTemplateId || 'default_v2',
+          cvData: latestCVData,
+          language: currentCVLanguage || 'vi',
+          fileName: profileName + (format === 'ats' ? '_ATS_1col' : '')
         };
-        h2p().set(opt).from(cvElement).toPdf().get('pdf').then(function(pdf) {
-          const totalPages = pdf.internal.getNumberOfPages();
-          for (let i = totalPages; i > 1; i--) {
-            pdf.deletePage(i);
-          }
-        }).save();
-        return;
-      }
 
-      // Dự phòng: Mở in trình duyệt
-      printCV();
+        const res = await fetch('/api/cv/export-pdf', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          throw new Error('Lỗi server: HTTP ' + res.status);
+        }
+
+        const blob = await res.blob();
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = downloadUrl;
+        a.download = `${profileName}${format === 'ats' ? '_ATS_1col' : ''}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(downloadUrl);
+        }, 200);
+
+        showToastSuccess('Đã tải xuống bản PDF Vector siêu nét thành công!', 'Hoàn tất');
+      } catch (err) {
+        console.error('Lỗi tải PDF từ máy chủ:', err);
+        showToastWarning('Đang chuyển sang chế độ in trực tiếp của trình duyệt...', 'Dự phòng');
+        if (format === 'design') printCV();
+        else showToastWarning('Không thể xuất PDF ATS. Vui lòng thử lại.', 'Lỗi');
+      }
     }
 
     // 2. IN TRÌNH DUYỆT (CHỈNH SẴN MARGIN 0, GIỮ NGUYÊN MÀU NỀN, KHÔNG BỊ RỚT SANG TRANG 2)
@@ -3949,6 +3952,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         showToastWarning('Vui lòng tạo CV trước khi in.', 'Chưa có CV');
         return;
       }
+
+      showToastSuccess('Đang mở hộp thoại in. Chọn "Lưu dưới dạng PDF" (Save as PDF) để nhận bản PDF Vector sắc nét có lớp văn bản!', 'In / Lưu PDF Vector');
 
       const fullscreenModal = document.getElementById('modal-cv-fullscreen');
       const isFullscreen = fullscreenModal && !fullscreenModal.classList.contains('hidden');
@@ -3981,147 +3986,64 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
       }
     }
 
-    // TẢI FILE WORD/DOC CHUẨN ATS (ĐÚNG THEO NGÔN NGỮ ĐÃ CHỌN)
-    function downloadCVDoc() {
+    // TẢI FILE WORD (.DOCX) CHUẨN MẪU CV (ĐÚNG MÀU SẮC, ĐÚNG THEO MẪU ĐÃ CHỌN, ĐIỀN DỮ LIỆU ỨNG VIÊN)
+    async function downloadCVDoc(format = 'design') {
       if (!latestCVData) {
         showToastWarning('Vui lòng tạo CV trước khi tải xuống.', 'Chưa có CV');
         return;
       }
       const cv = latestCVData;
-      const isEn = cv.language === 'en';
+      const isEn = cv.language === 'en' || currentCVLanguage === 'en';
 
-      let profileName = 'Huynh_Kien_Minh';
+      let profileName = 'CV';
+      let userProf = {};
       try {
-        const p = JSON.parse(document.getElementById('cv-profile').value);
-        if (p.fullName) profileName = p.fullName.replace(/\s+/g, '_');
-      } catch {}
+        userProf = JSON.parse(document.getElementById('cv-profile').value);
+        if (userProf.fullName) profileName = userProf.fullName.trim().replace(/\s+/g, '_') + '_CV_ATS';
+      } catch {
+        if (cv && cv.fullName) profileName = cv.fullName.trim().replace(/\s+/g, '_') + '_CV_ATS';
+      }
 
-      const docContent = `
-      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
-      <head>
-        <meta charset='utf-8'>
-        <title>CV_${profileName}</title>
-        <style>
-          body { font-family: Arial, sans-serif; font-size: 11pt; color: #1e293b; line-height: 1.4; }
-          h1 { font-size: 18pt; text-align: center; margin: 0; color: #0f172a; text-transform: uppercase; }
-          .role { text-align: center; font-size: 12pt; color: #2563eb; font-weight: bold; margin-top: 3pt; }
-          .sub { text-align: center; font-size: 9.5pt; color: #64748b; margin-bottom: 12pt; }
-          h2 { font-size: 12pt; color: #0f172a; border-bottom: 1.5pt solid #0f172a; padding-bottom: 2pt; margin-top: 14pt; margin-bottom: 6pt; text-transform: uppercase; }
-          p { margin: 0 0 6pt 0; text-align: justify; }
-          ul { margin: 3pt 0 8pt 18pt; padding: 0; }
-          li { margin-bottom: 2pt; }
-          .exp-header { font-weight: bold; }
-          .exp-sub { font-style: italic; color: #475569; }
-        </style>
-      </head>
-      <body>
-        <h1>${profileName.replace(/_/g, ' ')}</h1>
-        <div class="role">${cv.targetRole || 'Professional Candidate'}</div>
-        <div class="sub">${cv.company ? `${isEn ? 'Target' : 'Công ty'}: ${cv.company} | ` : ''}ATS Score: ${cv.atsScore}/100 | ${isEn ? 'Language: English (US)' : 'Ngôn ngữ: Tiếng Việt (VN)'}</div>
-
-        <h2>${isEn ? 'Professional Summary' : 'Tóm Tắt Năng Lực'}</h2>
-        <p>${cv.summary || ''}</p>
-
-        <h2>${isEn ? 'Core Competencies & Keywords' : 'Kỹ Năng Then Chốt & Từ Khóa ATS'}</h2>
-        <p>${(cv.matchedKeywords || []).concat(cv.highlightedSkills?.technical || []).join(' • ')}</p>
-
-        <h2>${isEn ? 'Professional Work Experience' : 'Kinh Nghiệm Làm Việc'}</h2>
-        ${(cv.tailoredExperience || []).map(exp => `
-          <div class="exp-header">${exp.role} - <span style="color:#2563eb;">${exp.organization}</span> (${exp.duration})</div>
-          <ul>
-            ${(exp.achievements || []).map(a => `<li>${a}</li>`).join('')}
-          </ul>
-        `).join('')}
-
-        ${cv.education && cv.education.length > 0 ? `
-          <h2>${isEn ? 'Education & Qualifications' : 'Học Vấn & Bằng Cấp'}</h2>
-          ${cv.education.map(edu => `
-            <div class="exp-header">${edu.degree} - ${edu.school}</div>
-            <div class="exp-sub">${edu.highlights || ''}</div>
-          `).join('')}
-        ` : ''}
-
-        ${cv.atsRecommendations && cv.atsRecommendations.length > 0 ? `
-          <h2>${isEn ? 'ATS Recommendations' : 'Lời Khuyên Tối Ưu ATS'}</h2>
-          <ul>
-            ${cv.atsRecommendations.map(r => `<li>${r}</li>`).join('')}
-          </ul>
-        ` : ''}
-      </body>
-      </html>
-      `;
-
-      const blob = new Blob(['\ufeff', docContent], { type: 'application/msword' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `CV_${profileName}_ATS_${isEn ? 'EN' : 'VI'}.doc`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-
-    // 2. SCORE ATS
-    async function scoreATS() {
-      const btn = document.getElementById('btn-score-ats');
-      const resultDiv = document.getElementById('score-result');
-
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Đang phân tích...';
+      showToastSuccess('Đang xuất file Word (.docx)...', 'Tải Word');
 
       try {
-        const res = await fetch('/api/cv/ats-score', {
+        const payload = {
+          format,
+          html: getCurrentCVHtml() || latestRenderedHtml || '',
+          templateId: currentAppliedTemplate?.id || currentSelectedTemplateId || 'default_v2',
+          cvData: cv,
+          userProfile: userProf,
+          language: isEn ? 'en' : 'vi',
+          fileName: `${profileName}_${isEn ? 'EN' : 'VI'}${format === 'ats' ? '_ATS_1col' : ''}`
+        };
+
+        const res = await fetch('/api/cv/export-docx', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            cvText: document.getElementById('score-cv-text').value,
-            jdText: document.getElementById('score-jd-text').value
-          })
+          body: JSON.stringify(payload)
         });
-        const data = await res.json();
-        if (data.success) {
-          const s = data.data;
-          resultDiv.innerHTML = `
-            <div class="space-y-4">
-              <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-xl flex items-center justify-between">
-                <div>
-                  <div class="text-xs text-indigo-800 font-bold uppercase">Điểm tương thích ATS</div>
-                  <div class="text-xs text-indigo-600 mt-0.5">Tỷ lệ quét đạt yêu cầu</div>
-                </div>
-                <div class="text-3xl font-black text-indigo-600">${s.atsScore} / 100</div>
-              </div>
 
-              <div>
-                <div class="font-bold text-xs uppercase text-slate-600 mb-1">Từ khóa đã khớp (Matched)</div>
-                <div class="flex flex-wrap gap-1.5">
-                  ${(s.matchedKeywords || []).map(k => `<span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded font-medium"><i class="fa-solid fa-check mr-1"></i>${k}</span>`).join('')}
-                </div>
-              </div>
-
-              <div>
-                <div class="font-bold text-xs uppercase text-slate-600 mb-1">Từ khóa còn thiếu (Missing - Cần bổ sung)</div>
-                <div class="flex flex-wrap gap-1.5">
-                  ${(s.missingKeywords || []).map(k => `<span class="bg-red-100 text-red-800 text-xs px-2.5 py-1 rounded font-medium"><i class="fa-solid fa-xmark mr-1"></i>${k}</span>`).join('')}
-                </div>
-              </div>
-
-              <div>
-                <div class="font-bold text-xs uppercase text-slate-600 mb-1">Hành động cần làm để tăng điểm</div>
-                <ul class="list-disc list-inside space-y-1 text-slate-600 text-xs bg-white p-3 rounded-lg border border-slate-200">
-                  ${(s.actionableRecommendations || []).map(a => `<li>${a}</li>`).join('')}
-                </ul>
-              </div>
-            </div>
-          `;
-        } else {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message}</div>`;
+        if (!res.ok) {
+          throw new Error('Lỗi server: HTTP ' + res.status);
         }
+
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = `${profileName}_${isEn ? 'EN' : 'VI'}${format === 'ats' ? '_ATS_1col' : ''}.docx`;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }, 200);
+
+        showToastSuccess('Đã tải xuống file Word (.docx) chuẩn mẫu thành công!', 'Hoàn tất');
       } catch (err) {
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${err.message}</div>`;
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = '<span>📊 Chấm Điểm ATS Bằng AI</span>';
+        console.error('Lỗi tải file Word từ máy chủ:', err);
+        showToastWarning('Không thể tải file Word tự động. Vui lòng thử lại.', 'Lỗi');
       }
     }
 
@@ -4182,34 +4104,34 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm transition hover:shadow-md">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-md font-bold">
-                  Câu hỏi #${idx + 1} (${q.category})
+                  Câu hỏi #${idx + 1} (${escapeHTML(q.category)})
                 </span>
                 <span class="text-xs font-bold px-2 py-0.5 rounded ${q.difficulty === 'Hard' ? 'bg-red-100 text-red-700' : (q.difficulty === 'Medium' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700')}">
-                  Độ khó: ${q.difficulty}
+                  Độ khó: ${escapeHTML(q.difficulty)}
                 </span>
               </div>
-              <h4 class="font-bold text-slate-800 text-sm mb-3 leading-snug">${q.question}</h4>
+              <h4 class="font-bold text-slate-800 text-sm mb-3 leading-snug">${escapeHTML(q.question)}</h4>
 
               <!-- Chỉ hiển thị Câu trả lời mẫu STAR chuẩn mực -->
               <div class="bg-emerald-50 border border-emerald-200 p-3.5 rounded-lg text-xs text-emerald-950 leading-relaxed">
                 <div class="font-bold text-emerald-800 mb-1 flex items-center">
                   <i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> Câu trả lời mẫu chuẩn mô hình STAR:
                 </div>
-                <div class="whitespace-pre-line text-emerald-900">${q.winningAnswerSample}</div>
+                <div class="whitespace-pre-line text-emerald-900">${escapeHTML(q.winningAnswerSample)}</div>
               </div>
 
               <div class="mt-3 pt-2 border-t border-slate-100 flex justify-end">
-                <button onclick="practiceQuestionLive('${encodeURIComponent(q.question)}')" class="text-xs font-semibold text-red-600 hover:text-red-700 flex items-center">
+                <button onclick="practiceQuestionLive('${encodeURIComponent(q.question).replace(/'/g,'%27')}')" class="text-xs font-semibold text-red-600 hover:text-red-700 flex items-center">
                   <i class="fa-solid fa-headset mr-1"></i> Thực hành câu hỏi này trực tiếp với AI &rarr;
                 </button>
               </div>
             </div>
           `).join('');
         } else {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${escapeHTML(data.message)}</div>`;
         }
       } catch (err) {
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${err.message}</div>`;
+        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${escapeHTML(err.message)}</div>`;
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<i class="fa-solid fa-file-signature mr-1.5"></i> Tạo Script Mẫu STAR';
@@ -4325,11 +4247,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
     function updateLiveCaption(speaker, text) {
       const box = document.getElementById('live-caption-text');
       if (speaker === 'interviewer') {
-        box.innerHTML = `<span class="text-cyan-400 font-bold mr-1.5"><i class="fa-solid fa-headset mr-1"></i>AI:</span> <span class="text-white">${text}</span>`;
+        box.innerHTML = `<span class="text-cyan-400 font-bold mr-1.5"><i class="fa-solid fa-headset mr-1"></i>AI:</span> <span class="text-white">${escapeHTML(text)}</span>`;
       } else if (speaker === 'candidate') {
-        box.innerHTML = `<span class="text-emerald-400 font-bold mr-1.5"><i class="fa-solid fa-user mr-1"></i>Bạn:</span> <span class="text-emerald-100">${text}</span>`;
+        box.innerHTML = `<span class="text-emerald-400 font-bold mr-1.5"><i class="fa-solid fa-user mr-1"></i>Bạn:</span> <span class="text-emerald-100">${escapeHTML(text)}</span>`;
       } else {
-        box.innerHTML = `<span class="italic text-slate-400">${text}</span>`;
+        box.innerHTML = `<span class="italic text-slate-400">${escapeHTML(text)}</span>`;
       }
     }
 
@@ -4358,7 +4280,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         <div class="font-bold text-[11px] mb-1 ${role === 'interviewer' ? 'text-cyan-400' : 'text-emerald-400'}">
           ${role === 'interviewer' ? '👔 AI Interviewer' : '👤 Bạn (Ứng viên)'}
         </div>
-        <div class="text-slate-200 leading-relaxed">${text}</div>
+        <div class="text-slate-200 leading-relaxed">${escapeHTML(text)}</div>
       `;
       container.appendChild(item);
       container.scrollTop = container.scrollHeight;
@@ -5238,12 +5160,12 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         if (resData.success && resData.data) {
           renderLiveSummaryReport(resData.data);
         } else {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Không thể lập báo cáo: ${resData.message || 'Lỗi hệ thống'}</div>`;
+          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Không thể lập báo cáo: ${escapeHTML(resData.message || 'Lỗi hệ thống')}</div>`;
         }
       } catch (err) {
         loading.classList.add('hidden');
         resultDiv.classList.remove('hidden');
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Lỗi kết nối: ${err.message}</div>`;
+        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Lỗi kết nối: ${escapeHTML(err.message)}</div>`;
       }
     }
 
@@ -5262,14 +5184,14 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             <div class="flex items-center justify-center md:justify-start space-x-2">
               <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Xếp loại chung:</span>
               <span class="px-3 py-0.5 rounded-full text-xs font-black bg-${scoreColor}-100 text-${scoreColor}-700 border border-${scoreColor}-200">
-                ${data.rating || 'Rất Tốt'}
+                ${escapeHTML(data.rating || 'Rất Tốt')}
               </span>
             </div>
-            <p class="text-xs text-slate-700 leading-relaxed font-medium">${data.summary}</p>
+            <p class="text-xs text-slate-700 leading-relaxed font-medium">${escapeHTML(data.summary)}</p>
           </div>
           <div class="flex flex-col items-center justify-center bg-white px-6 py-4 rounded-2xl border border-slate-200 shadow-sm flex-shrink-0">
             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Điểm Tổng Thể</span>
-            <div class="text-4xl font-black text-${scoreColor}-600 my-1">${data.overallScore}<span class="text-lg text-slate-400 font-medium">/10</span></div>
+            <div class="text-4xl font-black text-${scoreColor}-600 my-1">${escapeHTML(data.overallScore)}<span class="text-lg text-slate-400 font-medium">/10</span></div>
             <span class="text-[10px] text-slate-400 font-medium">Chuẩn năng lực phỏng vấn</span>
           </div>
         </div>
@@ -5281,7 +5203,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               <i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i> Điểm Mạnh Nổi Bật
             </h5>
             <ul class="space-y-1.5 text-xs text-emerald-950">
-              ${(data.strengths || []).map(s => `<li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-0.5 mr-2 flex-shrink-0"></i><span>${s}</span></li>`).join('')}
+              ${(data.strengths || []).map(s => `<li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-0.5 mr-2 flex-shrink-0"></i><span>${escapeHTML(s)}</span></li>`).join('')}
             </ul>
           </div>
           <div class="bg-amber-50/60 border border-amber-200/80 p-4 rounded-2xl space-y-2">
@@ -5289,7 +5211,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
               <i class="fa-solid fa-triangle-exclamation text-amber-600 mr-2"></i> Kỹ Năng Cần Trau Dồi Thêm
             </h5>
             <ul class="space-y-1.5 text-xs text-amber-950">
-              ${(data.improvements || []).map(imp => `<li class="flex items-start"><i class="fa-solid fa-arrow-right text-amber-600 mt-0.5 mr-2 flex-shrink-0"></i><span>${imp}</span></li>`).join('')}
+              ${(data.improvements || []).map(imp => `<li class="flex items-start"><i class="fa-solid fa-arrow-right text-amber-600 mt-0.5 mr-2 flex-shrink-0"></i><span>${escapeHTML(imp)}</span></li>`).join('')}
             </ul>
           </div>
         </div>
@@ -5312,11 +5234,11 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                     </span>
                     <div>
                       <div class="text-[11px] font-bold uppercase text-slate-400">Câu hỏi của Nhà tuyển dụng</div>
-                      <div class="font-bold text-slate-800 text-xs mt-0.5">${qa.question}</div>
+                      <div class="font-bold text-slate-800 text-xs mt-0.5">${escapeHTML(qa.question)}</div>
                     </div>
                   </div>
                   <span class="px-2.5 py-1 rounded-xl text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200 flex-shrink-0">
-                    ${qa.score || 8}/10 điểm
+                    ${escapeHTML(qa.score || 8)}/10 điểm
                   </span>
                 </div>
 
@@ -5325,9 +5247,9 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                   <div class="text-[10px] font-bold uppercase text-slate-400 mb-1 flex items-center">
                     <i class="fa-solid fa-user text-slate-500 mr-1.5"></i> Câu trả lời thực tế của bạn:
                   </div>
-                  <p class="text-slate-700 italic">"${qa.candidateAnswer}"</p>
+                  <p class="text-slate-700 italic">"${escapeHTML(qa.candidateAnswer)}"</p>
                   <div class="mt-2 text-slate-600 font-medium border-t border-slate-200 pt-1.5">
-                    <span class="font-bold text-indigo-700">💡 Nhận xét:</span> ${qa.critique}
+                    <span class="font-bold text-indigo-700">💡 Nhận xét:</span> ${escapeHTML(qa.critique)}
                   </div>
                 </div>
 
@@ -5341,19 +5263,19 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                       <div class="bg-white/90 p-2.5 rounded-lg border border-purple-100">
                         <span class="font-bold text-blue-700">[S - Situation]:</span>
-                        <span class="text-slate-700"> ${qa.suggestedStarAnswer.situation}</span>
+                        <span class="text-slate-700"> ${escapeHTML(qa.suggestedStarAnswer.situation)}</span>
                       </div>
                       <div class="bg-white/90 p-2.5 rounded-lg border border-purple-100">
                         <span class="font-bold text-teal-700">[T - Task]:</span>
-                        <span class="text-slate-700"> ${qa.suggestedStarAnswer.task}</span>
+                        <span class="text-slate-700"> ${escapeHTML(qa.suggestedStarAnswer.task)}</span>
                       </div>
                       <div class="bg-white/90 p-2.5 rounded-lg border border-purple-100">
                         <span class="font-bold text-indigo-700">[A - Action]:</span>
-                        <span class="text-slate-700"> ${qa.suggestedStarAnswer.action}</span>
+                        <span class="text-slate-700"> ${escapeHTML(qa.suggestedStarAnswer.action)}</span>
                       </div>
                       <div class="bg-white/90 p-2.5 rounded-lg border border-purple-100">
                         <span class="font-bold text-emerald-700">[R - Result]:</span>
-                        <span class="text-slate-700"> ${qa.suggestedStarAnswer.result}</span>
+                        <span class="text-slate-700"> ${escapeHTML(qa.suggestedStarAnswer.result)}</span>
                       </div>
                     </div>
                   </div>
@@ -5369,7 +5291,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             <i class="fa-solid fa-lightbulb text-amber-400 text-xl mt-0.5 flex-shrink-0"></i>
             <div class="space-y-1 text-xs">
               <div class="font-bold text-amber-300 uppercase tracking-wider text-[11px]">Lời khuyên chiến lược cho buổi phỏng vấn thật:</div>
-              <p class="text-slate-200 leading-relaxed">${data.finalAdvice}</p>
+              <p class="text-slate-200 leading-relaxed">${escapeHTML(data.finalAdvice)}</p>
             </div>
           </div>
         ` : ''}
@@ -5483,36 +5405,36 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                   <div class="text-xs text-teal-800 font-bold uppercase">Điểm Đánh Giá Tổng Thể</div>
                   <div class="text-xs text-teal-600 mt-0.5">Mô hình STAR & Tư duy phản xạ</div>
                 </div>
-                <div class="text-3xl font-black text-teal-600">${ev.score} / 10</div>
+                <div class="text-3xl font-black text-teal-600">${escapeHTML(ev.score)} / 10</div>
               </div>
 
               <!-- STAR Details -->
               <div class="bg-white p-3.5 rounded-lg border border-slate-200 space-y-2 text-xs">
                 <div class="font-bold text-slate-800 mb-1">Phân tích 4 thành phần STAR:</div>
-                <div><span class="font-semibold text-blue-700">[S] Bối cảnh:</span> ${ev.starEvaluation.situation}</div>
-                <div><span class="font-semibold text-blue-700">[T] Nhiệm vụ:</span> ${ev.starEvaluation.task}</div>
-                <div><span class="font-semibold text-blue-700">[A] Hành động:</span> ${ev.starEvaluation.action}</div>
-                <div><span class="font-semibold text-blue-700">[R] Kết quả:</span> ${ev.starEvaluation.result}</div>
+                <div><span class="font-semibold text-blue-700">[S] Bối cảnh:</span> ${escapeHTML(ev.starEvaluation.situation)}</div>
+                <div><span class="font-semibold text-blue-700">[T] Nhiệm vụ:</span> ${escapeHTML(ev.starEvaluation.task)}</div>
+                <div><span class="font-semibold text-blue-700">[A] Hành động:</span> ${escapeHTML(ev.starEvaluation.action)}</div>
+                <div><span class="font-semibold text-blue-700">[R] Kết quả:</span> ${escapeHTML(ev.starEvaluation.result)}</div>
               </div>
 
               <!-- Hooking feedback -->
               <div class="bg-amber-50 border border-amber-200 p-3 rounded-lg text-xs">
                 <div class="font-bold text-amber-900 mb-1">Đánh giá kỹ thuật Gài mồi tích cực:</div>
-                <div class="text-amber-800">${ev.intentionalHookingEvaluation.feedback}</div>
+                <div class="text-amber-800">${escapeHTML(ev.intentionalHookingEvaluation.feedback)}</div>
               </div>
 
               <!-- Improved Answer -->
               <div>
                 <div class="font-bold text-xs uppercase text-slate-600 mb-1">Phiên bản câu trả lời nâng cấp</div>
-                <p class="text-slate-700 text-xs bg-white p-3 rounded-lg border border-slate-200">${ev.improvedAnswer}</p>
+                <p class="text-slate-700 text-xs bg-white p-3 rounded-lg border border-slate-200">${escapeHTML(ev.improvedAnswer)}</p>
               </div>
             </div>
           `;
         } else {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${escapeHTML(data.message)}</div>`;
         }
       } catch (err) {
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${err.message}</div>`;
+        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${escapeHTML(err.message)}</div>`;
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<span>⭐ Chấm Điểm STAR & Phân Tích Kỹ Thuật Gài Mồi</span>';
@@ -5558,10 +5480,10 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             </div>
           `;
         } else {
-          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${data.message}</div>`;
+          resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">Lỗi: ${escapeHTML(data.message)}</div>`;
         }
       } catch (err) {
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${err.message}</div>`;
+        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg">${escapeHTML(err.message)}</div>`;
       } finally {
         btn.disabled = false;
         btn.innerHTML = '<span>✍️ Sinh Bản Proposal Sắc Bén</span>';
@@ -5781,7 +5703,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           localStorage.setItem(DEBRIEF_COOLDOWN_KEY, Date.now().toString());
 
           if (typeof updateCredits === 'function') {
-            updateCredits(data.data?.awardedCredits || 5);
+            if(Number(data.data?.awardedCredits)>0)updateCredits(Number(data.data.awardedCredits));
           }
 
           notify(data.message || 'Chia sẻ thành công! Bạn nhận được +5 Credits.', '🎉 Đăng bài thành công!', 'success');
@@ -5978,14 +5900,14 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
 
         if (json.success && Array.isArray(json.data) && json.data.length > 0) {
           if (statsLabel) {
-            statsLabel.innerHTML = `Hiển thị <strong>${json.data.length}</strong> bài chia sẻ thực tế ${currentDebriefSearchQuery ? `(kết quả cho "${currentDebriefSearchQuery}")` : ''}`;
+            statsLabel.innerHTML = `Hiển thị <strong>${json.data.length}</strong> bài chia sẻ thực tế ${currentDebriefSearchQuery ? `(kết quả cho "${escapeHTML(currentDebriefSearchQuery)}")` : ''}`;
           }
 
           feed.innerHTML = json.data.map(item => {
             const author = item.anonymous ? 'Ứng viên Ẩn danh' : (item.authorName || 'Huỳnh Kiên Minh');
             const role   = item.anonymous ? 'Ứng viên' : (item.authorRole || item.position || 'Software Engineer');
             const avatar = (!item.anonymous && item.authorAvatar)
-              ? item.authorAvatar
+              ? (/^https:\/\//.test(item.authorAvatar)?item.authorAvatar:'')
               : `https://ui-avatars.com/api/?name=${encodeURIComponent(author)}&background=ec4899&color=fff&size=100`;
 
             const diff = item.difficultyRating || 3;
@@ -6004,19 +5926,19 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 <!-- Header Bài Viết: Tác giả, Thời gian, Badge -->
                 <div class="flex items-start justify-between gap-3">
                   <div class="flex items-center gap-3">
-                    <img src="${avatar}" alt="${author}" class="w-11 h-11 rounded-full object-cover border-2 border-pink-100 shadow-2xs bg-slate-100">
+                    <img src="${escapeHTML(avatar)}" alt="${escapeHTML(author)}" class="w-11 h-11 rounded-full object-cover border-2 border-pink-100 shadow-2xs bg-slate-100">
                     <div>
                       <div class="flex items-center gap-1.5 font-bold text-slate-800 text-xs sm:text-sm">
-                        ${author}
+                        ${escapeHTML(author)}
                         ${item.anonymous
                           ? '<span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-100 text-slate-500 border border-slate-200"><i class="fa-solid fa-user-secret mr-0.5"></i> Ẩn danh</span>'
                           : '<span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200"><i class="fa-solid fa-circle-check mr-0.5"></i> Đã xác thực</span>'
                         }
                       </div>
                       <div class="text-[11px] text-slate-500 font-medium flex items-center gap-2">
-                        <span>${role}</span>
+                        <span>${escapeHTML(role)}</span>
                         <span>•</span>
-                        <span class="text-slate-400">${timeAgo}</span>
+                        <span class="text-slate-400">${escapeHTML(timeAgo)}</span>
                       </div>
                     </div>
                   </div>
@@ -6024,7 +5946,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                   <!-- Badge Credits & Độ khó -->
                   <div class="flex flex-col items-end gap-1">
                     <span class="text-[10px] bg-pink-50 text-pink-700 px-2.5 py-0.5 rounded-full font-extrabold border border-pink-200">
-                      +${item.awardedCredits || 5} Credits
+                      Đóng góp cộng đồng
                     </span>
                     <div class="flex items-center gap-0.5 text-xs" title="Độ khó: ${diff}/5">
                       ${starsHtml}
@@ -6036,15 +5958,15 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 <div class="bg-slate-50/80 p-3.5 rounded-2xl border border-slate-200/80 flex flex-wrap items-center justify-between gap-2">
                   <div class="space-y-0.5">
                     <div class="font-extrabold text-slate-900 text-sm sm:text-base flex items-center gap-2">
-                      <i class="fa-solid fa-building text-pink-600"></i> ${item.companyName}
+                      <i class="fa-solid fa-building text-pink-600"></i> ${escapeHTML(item.companyName)}
                     </div>
                     <div class="text-xs font-bold text-indigo-600 flex items-center gap-1.5">
-                      <i class="fa-solid fa-briefcase text-slate-400"></i> ${item.position}
+                      <i class="fa-solid fa-briefcase text-slate-400"></i> ${escapeHTML(item.position)}
                     </div>
                   </div>
                   <!-- Tags kỹ năng -->
                   <div class="flex flex-wrap gap-1">
-                    ${tags.map(t => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">#${t}</span>`).join('')}
+                    ${tags.map(t => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">#${escapeHTML(t)}</span>`).join('')}
                   </div>
                 </div>
 
@@ -6052,7 +5974,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 ${item.reviewText ? `
                   <div class="p-3.5 bg-gradient-to-r from-pink-50/60 to-purple-50/60 rounded-2xl border border-pink-100 text-xs text-slate-700 leading-relaxed italic flex items-start gap-2.5">
                     <i class="fa-solid fa-quote-left text-pink-400 text-sm mt-0.5 flex-shrink-0"></i>
-                    <div>${item.reviewText}</div>
+                    <div>${escapeHTML(item.reviewText)}</div>
                   </div>
                 ` : ''}
 
@@ -6060,7 +5982,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 <div class="space-y-2">
                   <div class="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider flex items-center justify-between">
                     <span><i class="fa-solid fa-circle-question text-pink-500 mr-1"></i> Các câu hỏi nhà tuyển dụng đã hỏi (${questions.length})</span>
-                    <button type="button" onclick="copyAllQuestions(${JSON.stringify(questions).replace(/"/g, '&quot;')}, '${item.companyName}', '${item.position}')" class="text-indigo-600 hover:text-indigo-700 font-bold normal-case text-[10px] flex items-center gap-1">
+                    <button type="button" onclick="copyAllQuestions(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify(questions)).replace(/'/g,'%27')}')), decodeURIComponent('${encodeURIComponent(item.companyName).replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.position).replace(/'/g,'%27')}'))" class="text-indigo-600 hover:text-indigo-700 font-bold normal-case text-[10px] flex items-center gap-1">
                       <i class="fa-regular fa-copy"></i> Chép toàn bộ
                     </button>
                   </div>
@@ -6071,13 +5993,13 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                           <span class="w-5 h-5 rounded-full bg-slate-100 group-hover:bg-indigo-600 group-hover:text-white transition text-slate-500 text-[10px] font-extrabold flex items-center justify-center flex-shrink-0 mt-0.5">
                             ${idx + 1}
                           </span>
-                          <span>${q}</span>
+                          <span>${escapeHTML(q)}</span>
                         </div>
                         <div class="flex items-center gap-1 flex-shrink-0 opacity-80 group-hover:opacity-100 transition">
-                          <button type="button" onclick="copyQuestionText('${q.replace(/'/g, "\\'")}')" class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg text-xs" title="Sao chép câu hỏi">
+                          <button type="button" onclick="copyQuestionText(decodeURIComponent('${encodeURIComponent(q).replace(/'/g,'%27')}'))" class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg text-xs" title="Sao chép câu hỏi">
                             <i class="fa-regular fa-copy"></i>
                           </button>
-                          <button type="button" onclick="practiceQuestionWithAI('${q.replace(/'/g, "\\'")}', '${item.companyName}', '${item.position}')" class="px-2 py-1 bg-indigo-50 hover:bg-indigo-600 text-indigo-700 hover:text-white rounded-lg text-[10px] font-bold transition flex items-center gap-1" title="Luyện trả lời câu này với AI">
+                          <button type="button" onclick="practiceQuestionWithAI(decodeURIComponent('${encodeURIComponent(q).replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.companyName).replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.position).replace(/'/g,'%27')}'))" class="px-2 py-1 bg-indigo-50 hover:bg-indigo-600 text-indigo-700 hover:text-white rounded-lg text-[10px] font-bold transition flex items-center gap-1" title="Luyện trả lời câu này với AI">
                             <i class="fa-solid fa-robot"></i> Luyện tập
                           </button>
                         </div>
@@ -6090,18 +6012,18 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                 <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div class="flex items-center gap-2">
                     <button type="button"
-                            id="deb-like-btn-${item.id}"
-                            onclick="toggleLikeDebrief('${item.id}', event)"
+                            id="deb-like-btn-${escapeHTML(item.id)}"
+                            onclick="toggleLikeDebrief(decodeURIComponent('${encodeURIComponent(item.id).replace(/'/g,'%27')}'), event)"
                             class="px-3 py-1.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-bold transition flex items-center gap-1.5 text-slate-600">
-                      <i id="deb-like-icon-${item.id}" class="fa-regular fa-heart text-slate-400"></i>
+                      <i id="deb-like-icon-${escapeHTML(item.id)}" class="fa-regular fa-heart text-slate-400"></i>
                       <span>Hữu ích</span>
-                      <span id="deb-like-count-${item.id}" class="text-[11px] font-extrabold px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-700 ml-0.5">
-                        ${item.likesCount || 0}
+                      <span id="deb-like-count-${escapeHTML(item.id)}" class="text-[11px] font-extrabold px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-700 ml-0.5">
+                        ${Number(item.likesCount) || 0}
                       </span>
                     </button>
                   </div>
 
-                  <button type="button" onclick="practiceQuestionWithAI('${questions[0] ? questions[0].replace(/'/g, "\\'") : ''}', '${item.companyName}', '${item.position}')" class="px-3.5 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl font-bold shadow-xs transition flex items-center gap-1.5 text-[11px]">
+                  <button type="button" onclick="practiceQuestionWithAI(decodeURIComponent('${encodeURIComponent(questions[0] || '').replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.companyName).replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.position).replace(/'/g,'%27')}'))" class="px-3.5 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl font-bold shadow-xs transition flex items-center gap-1.5 text-[11px]">
                     <i class="fa-solid fa-play"></i> Luyện Bộ Đề Này Với AI Copilot
                   </button>
                 </div>
@@ -6124,7 +6046,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           `;
         }
       } catch (err) {
-        feed.innerHTML = `<div class="p-6 bg-red-50 text-red-600 text-xs rounded-2xl border border-red-200 text-center">Không thể tải bài viết: ${err.message}</div>`;
+        feed.innerHTML = `<div class="p-6 bg-red-50 text-red-600 text-xs rounded-2xl border border-red-200 text-center">Không thể tải bài viết: ${escapeHTML(err.message)}</div>`;
       }
     }
 
@@ -6270,7 +6192,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         skills: skillsArray,
         projects: projectsArray,
         experience: expArray,
-        atsScore: latestCVData ? (latestCVData.atsScore || 94) : 95
+        atsScore: latestCVData ? (latestCVData.atsScore ?? 0) : 0
       };
 
       btn.disabled = true;
@@ -6434,7 +6356,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           </div>
           <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200/90 shadow-sm max-w-[88%] text-slate-800 leading-relaxed space-y-2">
             <div class="font-bold text-purple-700 text-xs">Xin chào ${userName}! 👋</div>
-            <p>Tôi là <b>ConnectCV Copilot</b>, tư vấn viên AI của bạn. Tôi sẵn sàng hỗ trợ bạn bất cứ lúc nào!</p>
+            <p>Tôi là <b>ConnectCV chatbot</b>, tư vấn viên AI của bạn. Tôi sẵn sàng hỗ trợ bạn bất cứ lúc nào!</p>
           </div>
         </div>
       `;
@@ -6572,7 +6494,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           <i class="fa-solid fa-robot text-sm"></i>
         </div>
         <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-slate-400 italic flex items-center">
-          <i class="fa-solid fa-circle-notch fa-spin text-purple-500 mr-2"></i> ConnectCV Copilot đang suy nghĩ...
+          <i class="fa-solid fa-circle-notch fa-spin text-purple-500 mr-2"></i> ConnectCV chatbot đang suy nghĩ...
         </div>
       `;
       container.appendChild(typingBubble);
@@ -6606,7 +6528,7 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
             </div>
             <div class="bg-white p-4 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm max-w-[88%] text-slate-800 leading-relaxed space-y-2.5">
               <div class="font-bold text-purple-700 text-[11px] flex items-center justify-between border-b border-slate-100 pb-1.5">
-                <span class="flex items-center"><i class="fa-solid fa-sparkles text-purple-500 mr-1.5"></i> ConnectCV Copilot</span>
+                <span class="flex items-center"><i class="fa-solid fa-sparkles text-purple-500 mr-1.5"></i> ConnectCV chatbot</span>
                 <span class="text-[9px] font-normal text-slate-400">Gemini AI</span>
               </div>
               <div class="text-xs text-slate-800 leading-relaxed">${renderMarkdownSafe(reply)}</div>
@@ -6618,8 +6540,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
                   </div>
                   <div class="flex flex-wrap gap-1.5">
                     ${suggestions.map(s => `
-                      <button onclick="askChatbotPrompt('${s.replace(/'/g, "\\'")}')" class="px-2.5 py-1 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-lg text-[11px] font-medium transition text-left border border-purple-200">
-                        ${s} &rarr;
+                      <button onclick="askChatbotPrompt(decodeURIComponent('${encodeURIComponent(s).replace(/'/g,'%27')}'))" class="px-2.5 py-1 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-lg text-[11px] font-medium transition text-left border border-purple-200">
+                        ${escapeHTML(s)} &rarr;
                       </button>
                     `).join('')}
                   </div>
@@ -6672,7 +6594,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           <p id="modal-preview-sub" class="text-[11px] text-slate-500 font-mono">Nguồn mẫu: D:\TL_CN\K_7\EXE_101\mau_CV</p>
         </div>
         <div class="flex items-center space-x-2">
-          <a id="btn-modal-download-docx" href="#" download class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="Tải mẫu Word (.docx) gốc để chỉnh sửa">
+          <a id="btn-modal-reference" href="#" target="_blank" rel="noopener" class="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold">Ảnh mẫu gốc</a>
+          <a id="btn-modal-download-docx" href="#" download class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="Tải mẫu Word đúng bản xem trước để chỉnh sửa">
             <i class="fa-solid fa-file-word mr-1.5"></i> Tải File Mẫu (.docx)
           </a>
           <button type="button" id="btn-modal-apply" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs">
@@ -6683,8 +6606,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           </button>
         </div>
       </div>
-      <div class="flex-1 bg-slate-200 p-2">
-        <iframe id="iframe-template-preview" class="w-full h-full bg-white rounded-lg border-0 shadow-inner" src="about:blank"></iframe>
+      <div class="flex-1 min-h-0 overflow-auto bg-slate-200 p-2">
+        <img id="image-template-preview" class="block w-full h-auto bg-white rounded-lg" alt="Mẫu CV sử dụng">
       </div>
     </div>
   </div>
@@ -6702,15 +6625,16 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
           </span>
         </div>
         <div class="flex items-center space-x-2">
-          <button type="button" onclick="downloadCVPDF()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="Tải file PDF trực tiếp chuẩn A4, đầy đủ màu sắc & thiết kế">
-            <i class="fa-solid fa-download mr-1.5"></i> Tải PDF
+          <button type="button" onclick="downloadCVPDF()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="Tải file PDF trực tiếp chuẩn A4, độ nét cao 300 DPI, không mờ nhòe">
+            <i class="fa-solid fa-download mr-1.5"></i> Tải PDF (Siêu Nét)
           </button>
-          <button type="button" onclick="printCV()" class="px-3.5 py-1.5 bg-slate-700 hover:bg-slate-800 active:scale-95 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="In trực tiếp hoặc Lưu qua hộp thoại in trình duyệt">
-            <i class="fa-solid fa-print mr-1.5"></i> In CV
+          <button type="button" onclick="printCV()" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="In hoặc lưu PDF theo mẫu (có lớp văn bản)">
+            <i class="fa-solid fa-print mr-1.5"></i> In / Lưu PDF Vector
           </button>
-          <button type="button" onclick="downloadCVDoc()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="Tải file Word/Doc">
-            <i class="fa-solid fa-file-word mr-1.5"></i> Tải Doc
+          <button type="button" onclick="downloadCVDoc()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white rounded-lg text-xs font-bold transition flex items-center shadow-xs" title="Tải Word giữ thiết kế đã chọn">
+            <i class="fa-solid fa-file-word mr-1.5"></i> Tải Word (.docx)
           </button>
+
           <button type="button" onclick="closeCVFullscreen()" class="w-8 h-8 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-600 flex items-center justify-center font-bold text-sm">
             ✕
           </button>
@@ -6922,7 +6846,8 @@ Kinh nghiệm: 1 năm lập trình xây dựng API và làm việc nhóm.</texta
         let [resource, config] = args;
         config = config || {};
         const token = localStorage.getItem(AUTH_STORAGE_KEY);
-        if (token) {
+        const targetUrl = new URL(resource instanceof Request ? resource.url : String(resource), window.location.href);
+        if (token && targetUrl.origin === window.location.origin && targetUrl.pathname.startsWith('/api/')) {
           config.headers = config.headers || {};
           if (config.headers instanceof Headers) {
             if (!config.headers.has('Authorization')) {

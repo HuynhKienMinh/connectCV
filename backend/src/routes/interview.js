@@ -1,3 +1,4 @@
+const {safeError}=require('../services/securityError');
 // interview.js v2 — Security hardened
 // ✅ Prompt injection sanitization trên tất cả AI prompts
 // ✅ Audio base64 size limit (5MB max)
@@ -8,44 +9,15 @@ const express = require('express');
 const router = express.Router();
 const { callGeminiJSON, callGeminiText, genAI } = require('../services/geminiService');
 
-// ─── Persistent Debrief Store: Lưu vào backend/data/debrief_questions.json ──
-const fs = require('fs');
 const path = require('path');
-const DEBRIEF_FILE = path.resolve(__dirname, '../../data/debrief_questions.json');
-const MAX_DEBRIEF_ENTRIES = 500;
-
-let communityDebriefQuestions = [];
-
-function loadDebriefStore() {
-  try {
-    if (fs.existsSync(DEBRIEF_FILE)) {
-      const raw = fs.readFileSync(DEBRIEF_FILE, 'utf8');
-      communityDebriefQuestions = JSON.parse(raw);
-      console.log(`[Debrief Store] Loaded ${communityDebriefQuestions.length} entries from disk.`);
-    } else {
-      console.log('[Debrief Store] Initializing empty or default store.');
-      communityDebriefQuestions = [];
-    }
-  } catch (e) {
-    console.error('[Debrief Store] Error reading debrief file:', e.message);
-    communityDebriefQuestions = [];
-  }
+const {CommunityStore,publicEntry}=require('../services/communityStore');
+const communityStore=new CommunityStore(process.env.COMMUNITY_STORE_FILE||path.resolve(process.env.FEATURE_STATE_DIR||path.resolve(__dirname,'../../data'),'community-secure.json'));
+const legacyFile=path.resolve(__dirname,'../../data/debrief_questions.json');
+// Legacy posts can be read without exposing private metadata; they earn no new reward.
+if(!communityStore.entries.length&&require('fs').existsSync(legacyFile)){
+ const old=JSON.parse(require('fs').readFileSync(legacyFile,'utf8'));
+ if(Array.isArray(old))communityStore.state.entries=old.map(e=>({...publicEntry(e),contentHash:e.contentHash}));
 }
-
-async function saveDebriefStore() {
-  try {
-    const dir = path.dirname(DEBRIEF_FILE);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    await fs.promises.writeFile(DEBRIEF_FILE, JSON.stringify(communityDebriefQuestions, null, 2), 'utf8');
-  } catch (e) {
-    console.error('[Debrief Store] Error saving debrief file:', e.message);
-  }
-}
-
-// Khởi động nạp dữ liệu từ file
-loadDebriefStore();
-
-
 // ─── Helper: Sanitize user input trước khi nhúng vào AI prompt ──
 function sanitizeForPrompt(input, maxLength = 3000) {
   if (!input) return '';
@@ -89,7 +61,7 @@ router.post('/start', async (req, res) => {
 
     const safeTitle   = escStr(jobTitle, 150);
     const safeJD      = sanitizeForPrompt(jdText, 4000);
-    const safeProfile = sanitizeForPrompt(typeof profile === 'object' ? JSON.stringify(profile) : (profile || 'Chưa cung cấp hồ sơ'), 2000);
+    const safeProfile = sanitizeForPrompt(require('../services/aiProfilePrivacy').planningProfile(profile), 2000);
 
     const prompt = `
 Bạn là chuyên gia phỏng vấn tuyển dụng hàng đầu.
@@ -122,7 +94,7 @@ BẮT BUỘC trả về duy nhất JSON:
     const result = await callGeminiJSON(prompt);
     return res.status(200).json({ success: true, message: 'Tạo bộ câu hỏi phỏng vấn thành công!', data: result });
   } catch (error) {
-    console.error('[Interview /start]', error.message);
+    console.error('[Interview /start]', safeError(error));
     return res.status(500).json({ success: false, message: 'Không thể tạo bộ câu hỏi. Vui lòng thử lại.' });
   }
 });
@@ -161,7 +133,7 @@ router.post('/tts', async (req, res) => {
 router.post('/transcribe', async (req, res) => {
   try {
     const { audioBase64, mimeType = 'audio/webm' } = req.body;
-    if (!audioBase64) {
+    if (typeof audioBase64!=='string' || !/^[A-Za-z0-9+/]*={0,2}$/.test(audioBase64) || typeof mimeType!=='string') {
       return res.status(400).json({ success: false, message: 'Vui lòng cung cấp dữ liệu âm thanh (audioBase64)!' });
     }
 
@@ -210,7 +182,7 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
     }
     return res.status(200).json({ success: true, transcript, data: { transcript } });
   } catch (error) {
-    console.error('[Interview /transcribe]', error.message);
+    console.error('[Interview /transcribe]', safeError(error));
     return res.status(500).json({ success: false, transcript: '[Không nghe rõ]', data: { transcript: '[Không nghe rõ]' }, message: 'Lỗi xử lý âm thanh.' });
   }
 });
@@ -235,7 +207,7 @@ router.post('/live-chat', async (req, res) => {
     const rawHistory   = history || conversationHistory || [];
     const safeTitle    = escStr(jobTitle || 'Software Engineer', 100);
     const safeJD       = sanitizeForPrompt(jdText || '', 2500);
-    const safeProfile  = sanitizeForPrompt(candidateProfile || '', 1500);
+    const safeProfile  = sanitizeForPrompt(require('../services/aiProfilePrivacy').planningProfile(candidateProfile) || '', 1500);
 
     const isStart = action === 'start' || (!currentMsg && rawHistory.length === 0);
 
@@ -335,7 +307,7 @@ Trả về DUY NHẤT một JSON hợp lệ:
       }
     });
   } catch (error) {
-    console.error('[Interview /live-chat]', error.message);
+    console.error('[Interview /live-chat]', safeError(error));
     return res.status(500).json({ success: false, message: 'Lỗi kết nối phỏng vấn AI. Vui lòng thử lại.' });
   }
 });
@@ -353,7 +325,7 @@ router.post('/live-summary', async (req, res) => {
 
     const safeTitle   = escStr(jobTitle || 'Software Engineer', 100);
     const safeJD      = sanitizeForPrompt(jdText || '', 2000);
-    const safeProfile = sanitizeForPrompt(candidateProfile || '', 1000);
+    const safeProfile = sanitizeForPrompt(require('../services/aiProfilePrivacy').planningProfile(candidateProfile) || '', 1000);
 
     const safeHistStr = rawHist.slice(-20).map(h => {
       const r = h.role === 'interviewer' ? 'Interviewer' : 'Candidate';
@@ -416,7 +388,7 @@ BẮT BUỘC trả về DUY NHẤT một JSON hợp lệ theo cấu trúc:
     const result = await callGeminiJSON(prompt);
     return res.status(200).json({ success: true, data: result });
   } catch (error) {
-    console.error('[Interview /live-summary]', error.message);
+    console.error('[Interview /live-summary]', safeError(error));
     return res.status(500).json({ success: false, message: 'Không thể tạo tóm tắt phỏng vấn.' });
   }
 });
@@ -466,7 +438,7 @@ Trả về DUY NHẤT JSON:
     const result = await callGeminiJSON(prompt);
     return res.status(200).json({ success: true, message: 'Đánh giá câu trả lời thành công!', data: result });
   } catch (error) {
-    console.error('[Interview /evaluate]', error.message);
+    console.error('[Interview /evaluate]', safeError(error));
     return res.status(500).json({ success: false, message: 'Không thể đánh giá câu trả lời lúc này.' });
   }
 });
@@ -508,7 +480,7 @@ Trả về DUY NHẤT JSON:
     const result = await callGeminiJSON(prompt);
     return res.status(200).json({ success: true, message: 'Tạo Proposal/Cover Letter thành công!', data: result });
   } catch (error) {
-    console.error('[Interview /proposal]', error.message);
+    console.error('[Interview /proposal]', safeError(error));
     return res.status(500).json({ success: false, message: 'Không thể tạo Proposal lúc này.' });
   }
 });
@@ -611,7 +583,7 @@ function validateQuestionList(questions) {
 // ─────────────────────────────────────────────────────────────────────
 router.post('/debrief', async (req, res) => {
   try {
-    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
+    if(!req.user?.id)return res.status(401).json({success:false,code:'AUTH_REQUIRED'});
     const { companyName, position, interviewQuestions, difficultyRating = 3, reviewText, anonymous = false } = req.body;
 
     // ─── 1. Required fields ───────────────────────────────────────
@@ -620,20 +592,6 @@ router.post('/debrief', async (req, res) => {
         success: false,
         message: 'Vui lòng điền đầy đủ: Tên công ty, Vị trí và ít nhất 1 câu hỏi phỏng vấn.'
       });
-    }
-
-    // ─── 2. Per-IP Rate Limit: 1 lần / 6 giờ ────────────────────
-    const lastSubmit = ipDebriefCooldown.get(ip);
-    if (lastSubmit) {
-      const elapsed = Date.now() - lastSubmit;
-      if (elapsed < DEBRIEF_COOLDOWN_MS) {
-        const remaining = Math.ceil((DEBRIEF_COOLDOWN_MS - elapsed) / 60000);
-        return res.status(429).json({
-          success: false,
-          message: `Bạn đã chia sẻ gần đây. Vui lòng chờ thêm ${remaining} phút trước khi chia sẻ tiếp.`,
-          retryAfterMinutes: remaining
-        });
-      }
     }
 
     // ─── 3. Content Quality Validation ──────────────────────────
@@ -664,18 +622,6 @@ router.post('/debrief', async (req, res) => {
       questions.slice(0, 5) // hash 5 câu đầu đủ để detect trùng
     );
 
-    if (submittedContentHashes.has(hash)) {
-      return res.status(409).json({
-        success: false,
-        message: 'Nội dung này đã được chia sẻ trước đó. Mỗi bài chia sẻ phải là thông tin phỏng vấn thực tế mới và độc đáo.'
-      });
-    }
-
-    // ─── 5. Store entry ──────────────────────────────────────────
-    if (communityDebriefQuestions.length >= MAX_DEBRIEF_ENTRIES) {
-      communityDebriefQuestions.splice(MAX_DEBRIEF_ENTRIES - 1);
-    }
-
     // Tự động nhận diện tags từ câu hỏi và vị trí
     const combinedText = `${position} ${questions.join(' ')}`.toLowerCase();
     const potentialTags = [
@@ -692,12 +638,12 @@ router.post('/debrief', async (req, res) => {
     const category = isIT ? 'IT' : 'Business';
 
     const isAnon = Boolean(anonymous);
-    const authorName = isAnon ? 'Ứng viên Ẩn danh' : String(req.body.authorName || 'Huỳnh Kiên Minh').substring(0, 50).trim();
-    const authorRole = isAnon ? 'Ứng viên' : String(req.body.authorRole || position).substring(0, 60).trim();
-    const authorAvatar = isAnon ? '' : String(req.body.authorAvatar || '').substring(0, 500);
+    const authorName = isAnon ? 'Ứng viên Ẩn danh' : String(req.user.fullName || req.user.name || 'Ứng viên').substring(0, 50).trim();
+    const authorRole = isAnon ? 'Ứng viên' : String(position).substring(0, 60).trim();
+    const authorAvatar = isAnon ? '' : '';
 
     const debriefEntry = {
-      id: 'deb-' + Date.now(),
+      id: '',
       authorName,
       authorRole,
       authorAvatar,
@@ -710,35 +656,16 @@ router.post('/debrief', async (req, res) => {
       reviewText: String(reviewText || '').substring(0, 1000).trim() || 'Phỏng vấn thực tế',
       anonymous: isAnon,
       sharedAt: new Date().toISOString(),
-      likesCount: 1, // Khởi tạo 1 like động viên
-      likedIps: [ip],
-      awardedCredits: 5,
+      likesCount: 0,
       contentHash: hash
     };
 
-    communityDebriefQuestions.unshift(debriefEntry);
-
-    // Lưu bền vững vào file JSON
-    await saveDebriefStore();
-
-    // ─── 6. Ghi nhận IP cooldown & hash ─────────────────────────
-    ipDebriefCooldown.set(ip, Date.now());
-
-    // Dọn dẹp hash store nếu quá lớn
-    if (submittedContentHashes.size >= MAX_HASH_STORE) {
-      const first = submittedContentHashes.values().next().value;
-      submittedContentHashes.delete(first);
-    }
-    submittedContentHashes.add(hash);
-
-    console.log(`[Debrief] ✅ New entry: "${debriefEntry.companyName}" / "${debriefEntry.position}" — IP: ${ip}`);
-
+    const reward=await communityStore.submit(req.user,debriefEntry,hash);
     return res.status(201).json({
       success: true,
-      message: '🎉 Chia sẻ thành công! Bạn đã nhận +5 Credits. Cảm ơn đóng góp cho cộng đồng!',
+      message: 'Chia sẻ thành công. Yêu cầu thưởng +5 Credits đã được ghi nhận; chờ tích hợp vào số dư tài khoản.',
       data: {
-        awardedCredits: 5,
-        debriefId: debriefEntry.id,
+        ...reward,
         companyName: debriefEntry.companyName,
         totalQuestionsContributed: debriefEntry.interviewQuestions.length,
         nextShareAvailableIn: '6 giờ'
@@ -746,8 +673,8 @@ router.post('/debrief', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('[Interview /debrief]', error.message);
-    return res.status(500).json({ success: false, message: 'Không thể lưu bài chia sẻ. Vui lòng thử lại.' });
+    console.error('[Interview /debrief]', safeError(error));
+    return res.status(error.status||500).json({ success: false, message: error.status?error.message:'Không thể lưu bài chia sẻ. Vui lòng thử lại.' });
   }
 });
 
@@ -759,7 +686,7 @@ router.get('/community-questions', (req, res) => {
     const { q, company, position, category, minDifficulty, sort = 'newest' } = req.query;
     const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 20));
 
-    let filtered = [...communityDebriefQuestions];
+    let filtered = [...communityStore.entries];
 
     // 1. Tìm kiếm tổng quát (q): khớp trong company, position, câu hỏi, review, tags
     if (q && typeof q === 'string' && q.trim()) {
@@ -804,17 +731,17 @@ router.get('/community-questions', (req, res) => {
 
     // Danh sách công ty nổi bật để gợi ý tìm kiếm
     const companiesSet = new Set();
-    communityDebriefQuestions.forEach(i => { if (i.companyName) companiesSet.add(i.companyName); });
+    communityStore.entries.forEach(i => { if (i.companyName) companiesSet.add(i.companyName); });
 
     return res.status(200).json({
       success: true,
       totalEntries: filtered.length,
-      allTotalCount: communityDebriefQuestions.length,
+      allTotalCount: communityStore.entries.length,
       topCompanies: Array.from(companiesSet).slice(0, 10),
-      data: filtered.slice(0, limit)
+      data: filtered.slice(0, limit).map(publicEntry)
     });
   } catch (error) {
-    console.error('[Community Questions GET]', error.message);
+    console.error('[Community Questions GET]', safeError(error));
     return res.status(500).json({ success: false, message: 'Lỗi lấy danh sách câu hỏi cộng đồng.' });
   }
 });
@@ -822,45 +749,10 @@ router.get('/community-questions', (req, res) => {
 // ─────────────────────────────────────────────────────────────────────
 // POST /api/interview/community-questions/:id/like — Thả tim / Bỏ thích bài viết
 // ─────────────────────────────────────────────────────────────────────
-router.post('/community-questions/:id/like', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
-
-    const item = communityDebriefQuestions.find(i => i.id === id);
-    if (!item) {
-      return res.status(404).json({ success: false, message: 'Không tìm thấy bài chia sẻ.' });
-    }
-
-    if (!Array.isArray(item.likedIps)) item.likedIps = [];
-    if (typeof item.likesCount !== 'number') item.likesCount = item.likedIps.length;
-
-    const hasLiked = item.likedIps.includes(ip);
-    if (hasLiked) {
-      // Bỏ like
-      item.likedIps = item.likedIps.filter(x => x !== ip);
-      item.likesCount = Math.max(0, item.likesCount - 1);
-    } else {
-      // Like
-      item.likedIps.push(ip);
-      item.likesCount = (item.likesCount || 0) + 1;
-    }
-
-    // Lưu lại trạng thái
-    await saveDebriefStore();
-
-    return res.status(200).json({
-      success: true,
-      data: {
-        id: item.id,
-        likesCount: item.likesCount,
-        hasLiked: !hasLiked
-      }
-    });
-  } catch (error) {
-    console.error('[Community Like POST]', error.message);
-    return res.status(500).json({ success: false, message: 'Không thể thả tim lúc này.' });
-  }
+router.post('/community-questions/:id/like',async(req,res)=>{
+ if(!req.user?.id)return res.status(401).json({success:false,code:'AUTH_REQUIRED'});
+ try{return res.json({success:true,data:await communityStore.like(req.user,req.params.id)});}
+ catch(error){return res.status(error.status||500).json({success:false,message:error.status?error.message:'Không thể thả tim lúc này.'});}
 });
 
 module.exports = router;

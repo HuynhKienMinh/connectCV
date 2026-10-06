@@ -1,3 +1,4 @@
+const {safeError}=require('../services/securityError');
 // [Route - Minh] AI Tư Vấn Viên, Hỗ Trợ & Hướng Dẫn Hệ Thống ConnectCV (chatbot.js)
 const express = require('express');
 const router = express.Router();
@@ -18,7 +19,7 @@ const SYSTEM_FAQS = [
   {
     category: "Credits & Tài Khoản",
     question: "Làm thế nào để nhận thêm Credits miễn phí?",
-    answer: "Bạn có thể vào tính năng 'Chia Sẻ Phỏng Vấn (+5 Credits)' để đóng góp những câu hỏi phỏng vấn thực tế bạn từng gặp tại các công ty. Mỗi bài chia sẻ được duyệt sẽ cộng ngay +5 Credits miễn phí vào tài khoản của bạn!"
+    answer: "Bạn có thể vào tính năng 'Chia Sẻ Phỏng Vấn (+5 Credits)' để đóng góp những câu hỏi phỏng vấn thực tế bạn từng gặp tại các công ty. Bài hợp lệ sẽ ghi nhận yêu cầu thưởng +5 Credits. Số dư chỉ tăng khi hệ thống credits xác nhận."
   },
   {
     category: "Freelance & Proposal",
@@ -57,7 +58,7 @@ router.post('/message', async (req, res) => {
   try {
     let { message, history = [], userProfile } = req.body;
 
-    if (!message || !message.trim()) {
+    if (typeof message !== 'string' || !message.trim() || !Array.isArray(history)) {
       return res.status(400).json({
         success: false,
         message: 'Vui lòng cung cấp nội dung câu hỏi (message)!'
@@ -109,10 +110,10 @@ router.post('/message', async (req, res) => {
     }
 
     // 3. Rút gọn lịch sử chat tối đa 4 tin nhắn gần nhất để AI xử lý siêu nhanh (<1.5s)
-    const recentHistory = (history || []).slice(-4);
+    const recentHistory = history.slice(-4).filter(h=>h&&typeof h.message==='string').map(h=>({role:h.role==='assistant'?'assistant':'user',message:h.message.slice(0,1000)}));
 
     const prompt = `
-Bạn là "ConnectCV Copilot" - Tư Vấn Viên Nghề Nghiệp & Trợ Lý Hỗ Trợ 24/7 của nền tảng ConnectCV.
+Bạn là "ConnectCV chatbot" - Tư Vấn Viên Nghề Nghiệp & Trợ Lý Hỗ Trợ 24/7 của nền tảng ConnectCV.
 Tính cách: Nhiệt tình, chuyên nghiệp, thông thái, am hiểu sâu sắc về tuyển dụng và hệ sinh thái ConnectCV.
 
 QUY TẮC AN TOÀN BẮT BUỘC (CISO GUARDRAILS):
@@ -124,14 +125,14 @@ VĂN PHONG & HIỆU NĂNG:
 - Định dạng markdown chuẩn (dùng in đậm, gạch đầu dòng hợp lý, KHÔNG để lỗi ký tự).
 
 KIẾN THỨC NỀN TẢNG CONNECTCV:
-1. Tạo CV ATS (/api/cv/generate): May đo CV độc bản theo JD, tối ưu từ khóa chuẩn ATS (>90% pass rate).
+1. Tạo CV ATS (/api/cv/generate): May đo CV độc bản theo JD, đối chiếu từ khóa và cải thiện trình bày; không bảo đảm vượt mọi hệ thống ATS.
 2. Đo Điểm ATS (/api/cv/ats-score): Chấm điểm CV so với JD, chỉ ra từ khóa thiếu và gợi ý hành động.
 3. Phỏng Vấn Live AI: Phỏng vấn giọng nói tiếng Việt thời gian thực (Microsoft Neural Voice), mô hình STAR, hỗ trợ ngắt lời.
 4. Viết Proposal Freelance: Tạo thư chào thầu Upwork/Fiverr cuốn hút.
 5. Chia sẻ nhận Credits: Chia sẻ câu hỏi phỏng vấn thực tế nhận +5 Credits.
 
 Hồ sơ người dùng:
-${typeof userProfile === 'object' ? JSON.stringify(userProfile) : (userProfile || 'Huỳnh Kiên Minh - Backend Developer')}
+${require('../services/aiProfilePrivacy').planningProfile(userProfile)}
 
 Lịch sử trò chuyện gần nhất:
 ${recentHistory.map(h => `${h.role === 'assistant' ? 'AI' : 'User'}: ${h.message}`).join('\n')}
@@ -155,10 +156,10 @@ BẮT BUỘC trả về duy nhất định dạng JSON:
 
     return res.status(200).json({
       success: true,
-      data: result
+      data: {reply: typeof result.reply==='string'?result.reply.slice(0,6000):'Không nhận được câu trả lời hợp lệ.',suggestedQuestions: Array.isArray(result.suggestedQuestions)?result.suggestedQuestions.filter(s=>typeof s==='string').slice(0,3).map(s=>s.slice(0,200)):[],relevantFeature:['cv','interview','proposal','debrief','general'].includes(result.relevantFeature)?result.relevantFeature:'general'}
     });
   } catch (error) {
-    console.error('Lỗi API /api/chatbot/message:', error.message);
+    console.error('Lỗi API /api/chatbot/message:', safeError(error));
     return res.status(500).json({
       success: false,
       message: 'Không thể kết nối với Tư Vấn Viên AI. Vui lòng thử lại.'
@@ -178,3 +179,4 @@ router.get('/faq', (req, res) => {
 });
 
 module.exports = router;
+

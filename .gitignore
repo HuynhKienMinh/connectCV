@@ -17,3 +17,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Private module state (community posts, reward identities, IP-free ledger)
+backend/data/
+
+# User-uploaded portfolios (không push lên git)
+backend/portfolios/

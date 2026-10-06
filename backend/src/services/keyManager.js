@@ -1,3 +1,4 @@
+const {safeError}=require('./securityError');
 // [KeyManager] In-Memory Multi-Key Pool & Auto-Failover Service
 // Designed for ConnectCV AI Core — High Availability & Zero-Downtime Key Rotation
 const fs = require('fs');
@@ -34,7 +35,7 @@ class KeyManager {
     let loadedList = [];
 
     // Ưu tiên 1: File backend/.keys.json
-    if (fs.existsSync(this.keyFilePath)) {
+    if (process.env.NODE_ENV !== 'production' && fs.existsSync(this.keyFilePath)) {
       try {
         const raw = fs.readFileSync(this.keyFilePath, 'utf8');
         const parsed = JSON.parse(raw);
@@ -45,7 +46,7 @@ class KeyManager {
           })).filter(k => k.apiKey.length > 10);
         }
       } catch (err) {
-        console.error('❌ [KeyManager] Lỗi đọc file .keys.json:', err.message);
+        console.error('Key storage read failed:', safeError(err));
       }
     }
 
@@ -174,16 +175,27 @@ class KeyManager {
     if (!keyObj) return;
 
     keyObj.totalErrors++;
-    keyObj.lastError = err ? err.message : 'Unknown error';
+    keyObj.lastError = safeError(err);
 
     if (this.isRateLimitError(err)) {
       keyObj.status = 'COOLING_DOWN';
       keyObj.consecutiveRateLimits++;
-      keyObj.coolingUntil = Date.now() + this.cooldownDurationMs;
 
-      const durationMin = Math.round(this.cooldownDurationMs / 60000);
-      console.warn(`🚨 [KeyManager] [AUTO-FAILOVER TRIGGERED] Key [${keyObj.id}] dính 429 Quota Exceeded! Cách ly ${durationMin} phút.`);
-      this.sendTelegramAlert(`🚨 [ConnectCV AI Alert]\nKey: ${keyObj.id} (${this.maskKey(keyObj.apiKey)})\nLỗi: Chạm hạn mức Quota (429 Too Many Requests)\nTrạng thái: Đang cách ly ${durationMin} phút. Hệ thống tự động chuyển sang Key dự phòng.`);
+      // Trích xuất retryDelay từ thông báo lỗi của Google nếu có (ví dụ: "retry in 33.39s" hoặc "retryDelay": "33s")
+      let dynamicCooldownMs = this.cooldownDurationMs;
+      const errMsg = String(err ? err.message : '');
+      const retryMatch = errMsg.match(/retry in ([\d\.]+)s/i) || errMsg.match(/"retryDelay":\s*"(\d+)s"/i);
+      if (retryMatch && retryMatch[1]) {
+        dynamicCooldownMs = Math.max(10000, Math.ceil(parseFloat(retryMatch[1]) * 1000) + 2000);
+      } else if (this.keys.length === 1) {
+        // Nếu chỉ có 1 key duy nhất trong pool, chỉ cách ly 45 giây để phục hồi theo chu kỳ RPM của Google
+        dynamicCooldownMs = 45000;
+      }
+
+      keyObj.coolingUntil = Date.now() + dynamicCooldownMs;
+      const durationSec = Math.round(dynamicCooldownMs / 1000);
+      console.warn(`🚨 [KeyManager] [AUTO-FAILOVER TRIGGERED] Key [${keyObj.id}] dính 429 Quota Exceeded! Cách ly ${durationSec}s.`);
+      this.sendTelegramAlert(`🚨 [ConnectCV AI Alert]\nKey: ${keyObj.id} (${this.maskKey(keyObj.apiKey)})\nLỗi: Chạm hạn mức Quota (429 Too Many Requests)\nTrạng thái: Đang cách ly ${durationSec}s. Hệ thống tự động chuyển sang Key dự phòng.`);
     } else if (this.isAuthError(err)) {
       keyObj.status = 'REVOKED';
       console.error(`❌ [KeyManager] Key [${keyObj.id}] không hợp lệ hoặc bị Google khóa vĩnh viễn. Đã thu hồi khỏi Pool.`);
@@ -243,7 +255,7 @@ class KeyManager {
       }
     }
 
-    throw new Error(`Hệ thống AI tạm thời quá tải sau ${maxRetries} lần chuyển key dự phòng: ${lastError?.message}`);
+    throw new Error(`Hệ thống AI tạm thời quá tải sau ${maxRetries} lần chuyển key dự phòng: ${safeError(lastError)}`);
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -302,7 +314,7 @@ class KeyManager {
       const dataToSave = this.keys.map(k => ({ id: k.id, apiKey: k.apiKey }));
       fs.writeFileSync(this.keyFilePath, JSON.stringify(dataToSave, null, 2), { mode: 0o600 });
     } catch (e) {
-      console.error('❌ [KeyManager] Lỗi lưu .keys.json:', e.message);
+      console.error('Key storage write failed:', safeError(e));
     }
   }
 

@@ -63,6 +63,7 @@ const upload = multer({
   fileFilter,
   limits: {
     fileSize: 3 * 1024 * 1024,  // 3MB max
+    parts: 1, fields: 0, fieldNameSize: 100,
     files: 1,                    // Chỉ 1 file mỗi lần
     fieldSize: 1024,             // Field name/value max 1KB
   }

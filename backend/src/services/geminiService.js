@@ -1,3 +1,4 @@
+const {safeError}=require('./securityError');
 // geminiService.js v3 — Hardened Multi-Key Pool & Auto-Failover
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const keyManager = require('./keyManager');
@@ -58,9 +59,7 @@ function withTimeout(promise, ms = 45000, label = 'Gemini') {
 // ─────────────────────────────────────────────────────────
 const MODEL_CHAIN = [
   'gemini-2.5-flash-lite',
-  'gemini-2.5-flash',
-  'gemini-flash-lite-latest',
-  'gemini-flash-latest'
+  'gemini-2.5-flash'
 ];
 
 /**
@@ -88,17 +87,21 @@ async function callGeminiJSON(prompt, preferredModel = 'gemini-2.5-flash-lite') 
         const text = result.response.text();
         return extractJSON(text);
       } catch (error) {
-        // Nếu lỗi do Quota / Rate limit (429) hoặc Auth (403), ném lỗi ra ngoài ngay
-        // để keyManager kích hoạt chuyển sang Key dự phòng
-        if (keyManager.isRateLimitError(error) || keyManager.isAuthError(error)) {
+        // Nếu lỗi do Auth (403, key hỏng), ném ra ngay để thu hồi key
+        if (keyManager.isAuthError(error)) {
           throw error;
         }
-        console.warn(`[Gemini] Model ${modelName} lỗi: ${error.message}`);
+        // Nếu lỗi 429 (hạn mức model), ghi log và thử model tiếp theo trong chuỗi
+        if (keyManager.isRateLimitError(error)) {
+          console.warn(`[Gemini] Model ${modelName} chạm hạn mức (429), tự động chuyển sang model dự phòng tiếp theo...`);
+        } else {
+          console.warn(`[Gemini] Model ${modelName} lỗi: ${safeError(error)}`);
+        }
         lastError = error;
       }
     }
 
-    console.error('[Gemini] Toàn bộ model đều thất bại:', lastError?.message);
+    console.error('[Gemini] Toàn bộ model đều thất bại:', safeError(lastError));
     throw lastError || new Error('AI tạm thời không khả dụng. Vui lòng thử lại sau ít phút.');
   }, 'callGeminiJSON');
 }
@@ -118,10 +121,14 @@ async function callGeminiText(prompt, preferredModel = 'gemini-2.5-flash-lite') 
         const result = await withTimeout(model.generateContent(prompt), 45000, modelName);
         return result.response.text();
       } catch (error) {
-        if (keyManager.isRateLimitError(error) || keyManager.isAuthError(error)) {
+        if (keyManager.isAuthError(error)) {
           throw error;
         }
-        console.warn(`[Gemini] Model ${modelName} lỗi: ${error.message}`);
+        if (keyManager.isRateLimitError(error)) {
+          console.warn(`[Gemini] Model ${modelName} chạm hạn mức (429), tự động chuyển sang model dự phòng tiếp theo...`);
+        } else {
+          console.warn(`[Gemini] Model ${modelName} lỗi: ${safeError(error)}`);
+        }
         lastError = error;
       }
     }

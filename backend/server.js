@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Hỗ trợ Nginx reverse proxy (giúp express-rate-limit nhận diện đúng client IP)
-app.set('trust proxy', 1);
+app.set('trust proxy', process.env.TRUSTED_PROXY_CIDRS ? process.env.TRUSTED_PROXY_CIDRS.split(',').map(x=>x.trim()) : false);
 
 // =========================================================
 // 1. SECURITY HEADERS — Helmet (chặn XSS, clickjacking, MIME sniff...)
@@ -22,6 +22,15 @@ app.set('trust proxy', 1);
 app.use(helmet({
   contentSecurityPolicy: false, // Tắt CSP ở backend vì front-end tự quản lý CSP qua Nginx
   crossOriginEmbedderPolicy: false
+}));
+
+// Public, immutable design resources also serve srcdoc/headless PDF pages.
+// These files contain only TopCV fonts and template images, never user data.
+app.use('/api/cv/source-assets',express.static(require('path').join(__dirname,'assets/topcv-source/assets'),{
+  maxAge:'1y',immutable:true,setHeaders:res=>{
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Cross-Origin-Resource-Policy','cross-origin');
+  }
 }));
 
 // =========================================================
@@ -34,6 +43,8 @@ const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
       'http://localhost:80',
       'http://connectcv.io.vn',
       'https://connectcv.io.vn',
+      'https://connectcv.id.vn',
+      'https://www.connectcv.id.vn',
       'http://www.connectcv.io.vn'
     ];
 
@@ -63,7 +74,10 @@ const globalLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: 'Quá nhiều yêu cầu từ IP này. Vui lòng thử lại sau 15 phút.' },
-  skip: (req) => req.path === '/health' // Bỏ qua health check
+  // Browsing the 74-template gallery must not consume the API/AI request budget.
+  skip: (req) => req.path === '/health' || (req.method === 'GET' &&
+    (/^\/api\/cv\/templates\/[a-zA-Z0-9_-]+\/(thumbnail|preview)$/.test(req.path) ||
+     /^\/api\/cv\/snapshots\/(vi|en)\/[a-zA-Z0-9_-]+\.webp$/.test(req.path)))
 });
 app.use(globalLimiter);
 
@@ -93,8 +107,10 @@ const ttsLimiter = rateLimit({
 // Transcribe audio: 7MB base64 ≈ 5MB audio (+ JSON overhead)
 // Mọi route khác: 2MB
 app.use((req, res, next) => {
-  const isTranscribe = req.path === '/api/interview/transcribe' || req.url === '/api/interview/transcribe';
-  const limit = isTranscribe ? '10mb' : '2mb';
+  const isLargeBody = req.path.startsWith('/api/interview/transcribe') || req.url.startsWith('/api/interview/transcribe')
+    || req.path.startsWith('/api/cv/export-pdf') || req.url.startsWith('/api/cv/export-pdf')
+    || req.path.startsWith('/api/cv/export-docx') || req.url.startsWith('/api/cv/export-docx');
+  const limit = isLargeBody ? '15mb' : '2mb';
   express.json({ limit })(req, res, next);
 });
 app.use(express.urlencoded({ extended: true, limit: '2mb' }));
@@ -104,7 +120,7 @@ app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 // =========================================================
 app.use((req, res, next) => {
   const start = Date.now();
-  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+  const ip = req.socket.remoteAddress || 'unknown';
   res.on('finish', () => {
     const duration = Date.now() - start;
     if (process.env.NODE_ENV !== 'test') {
@@ -167,6 +183,7 @@ const aiInputGuard = (req, res, next) => {
 
 // Auth middleware: Trích xuất danh tính người dùng (nếu có)
 const { optionalAuth } = require('./src/middlewares/authMiddleware');
+const { featureSecurity } = require('./src/middlewares/featureSecurity');
 
 // Auth routes: Đăng ký, Đăng nhập, Profile me, Admin set-role (Supabase / Dev)
 const authRouter = require('./src/routes/auth');
@@ -174,7 +191,7 @@ app.use('/api/auth', authRouter);
 
 // CV routes: generate, translate, ats-score dùng AI limiter + Input Guard + Optional Auth
 const cvRouter = require('./src/routes/cv');
-app.use('/api/cv', optionalAuth, aiInputGuard);
+app.use('/api/cv', optionalAuth, featureSecurity, aiInputGuard);
 app.use('/api/cv/generate', aiLimiter);
 app.use('/api/cv/translate', aiLimiter);
 app.use('/api/cv/ats-score', aiLimiter);
@@ -182,7 +199,7 @@ app.use('/api/cv', cvRouter);
 
 // Interview routes: start, live-chat, evaluate, proposal, transcribe dùng AI/TTS limiter + Optional Auth
 const interviewRouter = require('./src/routes/interview');
-app.use('/api/interview', optionalAuth, aiInputGuard);
+app.use('/api/interview', optionalAuth, featureSecurity, aiInputGuard);
 app.use('/api/interview/tts', ttsLimiter);
 app.use('/api/interview/transcribe', aiLimiter);
 app.use('/api/interview/start', aiLimiter);
@@ -193,7 +210,7 @@ app.use('/api/interview', interviewRouter);
 
 // Chatbot: AI limiter + Optional Auth
 const chatbotRouter = require('./src/routes/chatbot');
-app.use('/api/chatbot', optionalAuth, aiInputGuard);
+app.use('/api/chatbot', optionalAuth, featureSecurity, aiInputGuard);
 app.use('/api/chatbot/message', aiLimiter);
 app.use('/api/chatbot', chatbotRouter);
 
@@ -208,14 +225,14 @@ const uploadLimiter = rateLimit({
   legacyHeaders: false,
   message: { success: false, message: 'Bạn đã upload quá nhiều ảnh. Vui lòng thử lại sau 15 phút.' }
 });
-app.use('/api/upload', uploadLimiter);
+app.use('/api/upload', optionalAuth, (req,res,next)=>req.user?.id?next():res.status(401).json({success:false,code:'AUTH_REQUIRED',message:'Vui lòng đăng nhập để tải ảnh CV.'}), uploadLimiter);
 // Upload route cần body parser riêng cho multipart (multer tự xử lý)
 // KHÔNG dùng express.json() cho route này
 app.use('/api/upload', require('./src/routes/upload'));
 
 // Quản trị nội bộ In-Memory Key Pool (Bảo vệ bởi X-Internal-Secret)
 const internalKeysRouter = require('./src/routes/internalKeys');
-app.use('/api/internal/keys', internalKeysRouter);
+if(process.env.NODE_ENV!=='production')app.use('/api/internal/keys', internalKeysRouter);
 
 // =========================================================
 // 9. GLOBAL ERROR HANDLER — Không leak stack trace ra client
@@ -255,6 +272,7 @@ process.on('unhandledRejection', (reason) => {
   console.error('[FATAL] Unhandled Promise Rejection:', reason);
 });
 
+
 // =========================================================
 // 11. START SERVER
 // =========================================================
@@ -266,4 +284,24 @@ app.listen(PORT, () => {
   console.log(`🔒  Rate Limit: 200 req/15min (global), 15 req/5min (AI)`);
   console.log(`📍  Health: http://localhost:${PORT}/health`);
   console.log('=============================================');
+
+  // ── Anti-sleep: tự ping /health mỗi 12 phút để Render Free không ngủ ──
+  // Bổ sung UptimeRobot (uptime.robot.com) ping từ bên ngoài để chắc chắn hơn.
+  const selfPingUrl = process.env.SELF_PING_URL; // ví dụ: https://connectcv-api-minh.onrender.com
+  if (selfPingUrl) {
+    const https = require('https');
+    const http = require('http');
+    const PING_INTERVAL_MS = 12 * 60 * 1000; // 12 phút
+    setInterval(() => {
+      const url = new URL('/health', selfPingUrl);
+      const client = url.protocol === 'https:' ? https : http;
+      const req = client.get(url.href, { timeout: 10000 }, (res) => {
+        console.log(`[Self-Ping] /health → HTTP ${res.statusCode}`);
+        res.resume();
+      });
+      req.on('error', (err) => console.warn('[Self-Ping] Lỗi:', err.message));
+      req.end();
+    }, PING_INTERVAL_MS);
+    console.log(`⏰  Anti-sleep self-ping: ${selfPingUrl}/health mỗi 12 phút`);
+  }
 });

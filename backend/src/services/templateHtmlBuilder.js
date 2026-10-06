@@ -1,9 +1,13 @@
 /**
  * templateHtmlBuilder.js
- * Bộ máy render giao diện HTML trực quan cho 20 mẫu CV ATS chuẩn TopCV.
+ * Bộ máy render 74 bố cục CV theo kho ảnh gốc TopCV.
  * Điền toàn bộ thông tin ứng viên (Họ tên, Vị trí, Liên hệ, Mục tiêu, Kinh nghiệm, Học vấn, Kỹ năng)
  * vào đúng cấu trúc layout, bảng màu và phong cách thiết kế thực tế của từng mẫu CV.
  */
+
+const {getDesign,designCss,designVersion}=require('./designRegistry');
+const { groundCv } = require('./cvGroundingService');
+const { renderCatalogBody } = require('./templateCatalogLayouts');
 
 function escapeHtml(str) {
   if (!str) return '';
@@ -15,12 +19,75 @@ function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
+function normalizeAcademicSchool(school, isEn) {
+  if (!school) return '';
+  if (!isEn) return school;
+  return String(school)
+    .replace(/Đại học FPT Cần Thơ|FPT Cần Thơ/gi, 'FPT University Can Tho')
+    .replace(/Đại học FPT/gi, 'FPT University')
+    .replace(/Đại học Bách Khoa/gi, 'Bach Khoa University')
+    .replace(/Đại học Quốc gia/gi, 'Vietnam National University')
+    .replace(/Đại học Cần Thơ/gi, 'Can Tho University')
+    .replace(/Đại học Kinh tế/gi, 'University of Economics')
+    .replace(/Đại học/gi, 'University');
+}
+
+function normalizeAcademicDegree(degree, isEn) {
+  if (!degree) return '';
+  if (!isEn) return degree;
+  return String(degree)
+    .replace(/Kỹ sư Kỹ thuật Phần mềm/gi, 'Engineer in Software Engineering')
+    .replace(/Kỹ thuật Phần mềm/gi, 'Software Engineering')
+    .replace(/Kỹ sư Công nghệ Thông tin/gi, 'Engineer in Information Technology')
+    .replace(/Công nghệ Thông tin/gi, 'Information Technology')
+    .replace(/Khoa học Máy tính/gi, 'Computer Science')
+    .replace(/Hệ thống Thông tin/gi, 'Information Systems')
+    .replace(/An toàn Thông tin/gi, 'Information Security')
+    .replace(/Kỹ sư/gi, 'Engineer in')
+    .replace(/Cử nhân/gi, 'Bachelor of');
+}
+
+function normalizeAcademicHighlight(highlight, isEn) {
+  if (!highlight) return '';
+  if (!isEn) return highlight;
+  return String(highlight)
+    .replace(/Tốt nghiệp loại Xuất sắc/gi, 'Graduated with High Distinction')
+    .replace(/Tốt nghiệp loại Giỏi/gi, 'Graduated with Honors')
+    .replace(/Tốt nghiệp loại Khá/gi, 'Graduated with Distinction')
+    .replace(/Tốt nghiệp/gi, 'Graduated');
+}
+
+function normalizeJobRole(role, isEn) {
+  if (!role) return '';
+  if (!isEn) return role;
+  return String(role)
+    .replace(/Lập trình viên Backend Node\.js/gi, 'Backend Node.js Developer')
+    .replace(/Lập trình viên Backend/gi, 'Backend Developer')
+    .replace(/Lập trình viên Frontend/gi, 'Frontend Developer')
+    .replace(/Lập trình viên Fullstack/gi, 'Fullstack Developer')
+    .replace(/Lập trình viên/gi, 'Software Developer')
+    .replace(/Kỹ sư Phần mềm/gi, 'Software Engineer')
+    .replace(/Kỹ sư Hệ thống/gi, 'Systems Engineer')
+    .replace(/Chuyên viên/gi, 'Specialist');
+}
+
+function normalizeCompanyName(company, isEn) {
+  if (!company) return '';
+  if (!isEn) return company;
+  return String(company)
+    .replace(/Nền tảng AI Career/gi, 'AI Career Platform')
+    .replace(/Nền tảng/gi, 'Platform')
+    .replace(/Dự án/gi, 'Project');
+}
+
 function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi') {
+  if (Object.keys(userProfile).length) cvData = groundCv(userProfile, cvData, language, cvData.sourceContext || {targetRole:cvData.targetRole});
+  return require('./topcvSourceRenderer').renderTopcvSource(tmpl,cvData,userProfile,language);
   // ── i18n labels — dịch section headers theo ngôn ngữ CV
   const isEn = language === 'en' || cvData.language === 'en';
 
   const formatAddress = (addr, enMode) => {
-    if (!addr) return enMode ? 'Can Tho, Vietnam' : 'Cần Thơ, Việt Nam';
+    if (!addr) return '';
     if (!enMode) return addr;
     return addr
       .replace(/Việt Nam|Viet Nam/gi, 'Vietnam')
@@ -60,22 +127,21 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     addressUpper:         isEn ? 'ADDRESS'                    : 'ĐỊA CHỈ',
     present:              isEn ? 'Present'                    : 'Hiện tại',
   };
-  const color = tmpl.themeColor || '#00B14F';
+  const design=getDesign(tmpl.slug || tmpl.id,language);
+  const color = design.style.a;
   const layout = tmpl.layout || 'single_column_classic';
   const slug = tmpl.slug || 'default_v2';
 
   // 1. Chuẩn hóa thông tin ứng viên (Đã lọc & vô hiệu hóa triệt để XSS và ký tự độc hại)
-  const candidate = escapeHtml(cvData.fullName || userProfile.fullName || (isEn ? 'Huynh Kien Minh' : 'Huỳnh Kiên Minh'));
-  const role = escapeHtml(cvData.targetRole || userProfile.targetRole || (isEn ? 'Backend Node.js Developer' : 'Lập trình viên Backend Node.js'));
-  const phone = escapeHtml(userProfile.phone || cvData.phone || '(+84) 912 345 678');
-  const email = escapeHtml(userProfile.email || cvData.email || 'kienminh.dev@gmail.com');
-  const rawAddr = cvData.address || userProfile.address || (isEn ? 'Can Tho, Vietnam' : 'Cần Thơ, Việt Nam');
-  const address = escapeHtml(formatAddress(rawAddr, isEn));
-  const birth = escapeHtml(userProfile.birth || '24/08/1998');
-  const gender = escapeHtml(userProfile.gender || (isEn ? 'Male' : 'Nam'));
-  const summary = escapeHtml(cvData.summary || userProfile.summary || (isEn
-    ? 'Dedicated Software Engineer with over 4 years of expertise in Backend development, database architecture, and high-performance system optimization. Proficient in Node.js, TypeScript, and cloud-native environments. Proven track record of designing scalable RESTful APIs and improving system latency by 35% using MongoDB and PostgreSQL.'
-    : 'Kỹ sư phần mềm giàu nhiệt huyết với nền tảng vững chắc về phát triển hệ thống Backend, thiết kế cơ sở dữ liệu và tối ưu hóa hiệu năng ứng dụng. Mục tiêu trở thành Senior Backend Engineer đóng góp vào các giải pháp công nghệ quy mô lớn.'));
+  const candidate = escapeHtml(userProfile.fullName || cvData.fullName || '');
+  const rawRole = cvData.targetRole || userProfile.targetRole || '';
+  const role = escapeHtml(rawRole);
+  const phone = escapeHtml(userProfile.phone || cvData.phone || '');
+  const email = escapeHtml(userProfile.email || cvData.email || '');
+  const address = escapeHtml(formatAddress(cvData.address || userProfile.address || '', isEn));
+  const birth = escapeHtml(userProfile.birth || cvData.birth || '');
+  const gender = escapeHtml(cvData.gender || userProfile.gender || '');
+  const summary = escapeHtml(cvData.summary || userProfile.summary || '');
 
   // Avatar cá nhân của người dùng (hỗ trợ base64 upload hoặc link ảnh đã sanitize)
   let rawAvatar = userProfile.avatarUrl || userProfile.avatarDataUrl || cvData.avatarUrl || cvData.avatarDataUrl || '';
@@ -94,17 +160,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     if (Array.isArray(cvData.highlightedSkills.technical)) technicalSkills.push(...cvData.highlightedSkills.technical);
     if (Array.isArray(cvData.highlightedSkills.soft)) softSkills.push(...cvData.highlightedSkills.soft);
   }
-  if (technicalSkills.length === 0 && Array.isArray(cvData.matchedKeywords) && cvData.matchedKeywords.length > 0) {
-    technicalSkills = cvData.matchedKeywords;
-  }
-  if (technicalSkills.length === 0 && Array.isArray(userProfile.skills) && userProfile.skills.length > 0) {
-    technicalSkills = userProfile.skills;
-  }
-  if (technicalSkills.length === 0) {
-    technicalSkills = isEn
-      ? ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Redis']
-      : ['Node.js', 'Express', 'JavaScript / TypeScript', 'PostgreSQL', 'Docker', 'RESTful API', 'Git & CI/CD', 'Redis'];
-  }
+  if (technicalSkills.length === 0 && Array.isArray(userProfile.skills)) technicalSkills = userProfile.skills;
 
   // Danh sách kỹ năng: Bắt buộc giữ vững kỹ năng kỹ thuật cốt lõi, không để slogan văn hóa lấn át
   let skills = [...technicalSkills];
@@ -114,92 +170,21 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
   }
   skills = skills.map(sk => escapeHtml(sk));
 
-  // 3. Chuẩn hóa kinh nghiệm làm việc (Ground Truth First: Bảo toàn 100% công ty/dự án thật của ứng viên)
+  // 3. Chuẩn hóa kinh nghiệm làm việc (Ground Truth First: Bảo toàn 100% công ty/dự án thật của ứng viên & chuẩn hóa ngôn ngữ)
   let rawExpList = [];
-  if (Array.isArray(userProfile.experience) && userProfile.experience.length > 0) {
-    rawExpList = userProfile.experience;
-  } else if (Array.isArray(cvData.tailoredExperience) && cvData.tailoredExperience.length > 0) {
+  if (Array.isArray(cvData.tailoredExperience) && cvData.tailoredExperience.length > 0) {
     rawExpList = cvData.tailoredExperience;
+  } else if (Array.isArray(userProfile.experience) && userProfile.experience.length > 0) {
+    rawExpList = userProfile.experience;
   }
 
-  let experience = rawExpList.map((exp, idx) => {
-    const profileExp = (Array.isArray(userProfile.experience) && userProfile.experience[idx]) || null;
-    const aiExp = (Array.isArray(cvData.tailoredExperience) && cvData.tailoredExperience[idx]) || {};
-
-    const company = (profileExp && (profileExp.company || profileExp.organization)) || aiExp.organization || exp.organization || exp.company || (isEn ? 'ConnectCV Project (AI Career Platform)' : 'ConnectCV (Nền tảng AI Career)');
-    const role = (profileExp && (profileExp.role || profileExp.position)) || aiExp.role || exp.role || exp.position || (isEn ? 'Backend Developer' : 'Lập trình viên Backend');
-    const time = (profileExp && (profileExp.time || profileExp.duration)) || aiExp.duration || exp.duration || exp.time || (isEn ? '06/2023 - Present' : '06/2023 - Hiện tại');
-
-    // Bullets ưu tiên thành tích được AI may đo theo JD và văn hóa công ty mục tiêu
-    let bullets = [];
-    if (Array.isArray(aiExp.achievements) && aiExp.achievements.length > 0) {
-      bullets = aiExp.achievements;
-    } else if (Array.isArray(exp.achievements) && exp.achievements.length > 0) {
-      bullets = exp.achievements;
-    } else if (Array.isArray(exp.bullets) && exp.bullets.length > 0) {
-      bullets = exp.bullets;
-    } else if (profileExp && Array.isArray(profileExp.bullets)) {
-      bullets = profileExp.bullets;
-    }
-
-    return {
-      company: escapeHtml(company),
-      role: escapeHtml(role),
-      time: escapeHtml(String(time).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại')),
-      bullets: (bullets || []).map(b => escapeHtml(b))
-    };
-  });
-
-  if (experience.length === 0) {
-    experience = [
-      {
-        company: escapeHtml(isEn ? 'ConnectCV (AI Career Platform)' : 'ConnectCV (Nền tảng AI Career)'),
-        role: escapeHtml(role),
-        time: escapeHtml(isEn ? '06/2023 - Present' : '06/2023 - Hiện tại'),
-        bullets: [
-          escapeHtml(isEn ? "Architected and engineered high-performance RESTful APIs using Node.js & Express, reducing latency by 25%." : "Phát triển nền tảng AI ConnectCV hỗ trợ tối ưu hóa CV và luyện phỏng vấn phục vụ 500+ người dùng."),
-          escapeHtml(isEn ? "Built resilient data access layer with PostgreSQL and Redis cache, ensuring ACID integrity." : "Thiết kế và xây dựng hệ thống RESTful API hiệu năng cao bằng Node.js và Express, giảm 25% thời gian phản hồi."),
-          escapeHtml(isEn ? "Standardized CI/CD containerization pipeline using Docker and Git, improving deployment safety." : "Ứng dụng PostgreSQL và Docker để chuẩn hóa quy trình triển khai và bảo mật dữ liệu.")
-        ]
-      }
-    ];
-  }
-
-  // 4. Chuẩn hóa học vấn (Ground Truth First: Bảo toàn 100% Trường học, Ngành học từ Profile của người dùng)
-  let rawEduList = [];
-  if (Array.isArray(userProfile.education) && userProfile.education.length > 0) {
-    rawEduList = userProfile.education;
-  } else if (Array.isArray(cvData.education) && cvData.education.length > 0) {
-    rawEduList = cvData.education;
-  }
-
-  let education = rawEduList.map((edu, idx) => {
-    const profileEdu = (Array.isArray(userProfile.education) && userProfile.education[idx]) || null;
-    const aiEdu = (Array.isArray(cvData.education) && cvData.education[idx]) || {};
-
-    const school = (profileEdu && profileEdu.school) || edu.school || aiEdu.school || (isEn ? 'FPT University Can Tho' : 'Đại học FPT Cần Thơ');
-    const degree = (profileEdu && profileEdu.degree) || edu.degree || aiEdu.degree || (isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm');
-    const time = (profileEdu && (profileEdu.time || profileEdu.duration)) || edu.duration || edu.time || '2019 - 2023';
-    const highlight = (profileEdu && (profileEdu.highlight || profileEdu.highlights)) || aiEdu.highlights || edu.highlights || edu.highlight || (isEn ? 'Graduated with Honors - GPA 3.6/4.0' : 'Tốt nghiệp loại Giỏi - GPA 3.6/4.0');
-
-    return {
-      school: escapeHtml(school),
-      degree: escapeHtml(degree),
-      time: escapeHtml(String(time).replace(/Hiện tại/gi, isEn ? 'Present' : 'Hiện tại')),
-      highlight: escapeHtml(highlight)
-    };
-  });
-
-  if (education.length === 0) {
-    education = [
-      {
-        school: escapeHtml(isEn ? 'FPT University Can Tho' : 'Đại học FPT Cần Thơ'),
-        degree: escapeHtml(isEn ? 'Bachelor of Software Engineering' : 'Kỹ sư Kỹ thuật Phần mềm'),
-        time: '2019 - 2023',
-        highlight: escapeHtml(isEn ? 'GPA: 3.6/4.0 (Graduated with Honors)' : 'GPA: 3.6/4.0 (Tốt nghiệp loại Giỏi)')
-      }
-    ];
-  }
+  const experience = rawExpList.map(exp => ({
+    company:escapeHtml(exp.organization || exp.company || ''), role:escapeHtml(exp.role || exp.position || ''),
+    time:escapeHtml(exp.duration || exp.time || ''), bullets:(exp.achievements || exp.bullets || []).map(escapeHtml)
+  }));
+  const rawEduList = Array.isArray(cvData.education) ? cvData.education : (userProfile.education || []);
+  const education = rawEduList.map(edu=>({school:escapeHtml(edu.school || ''),degree:escapeHtml(edu.degree || ''),
+    time:escapeHtml(edu.duration || edu.time || ''),highlight:escapeHtml(edu.highlights || edu.highlight || '')}));
 
   // Toolbar HTML
   const toolbarHtml = `
@@ -207,796 +192,175 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
         <button onclick="downloadAsPdf()" style="background:#00B14F; color:#fff; border:none; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
           ${isEn ? '📥 Download PDF (A4)' : '📥 Tải PDF (Chuẩn A4)'}
         </button>
-        <button onclick="window.print()" style="background:#2563eb; color:#fff; border:none; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
+        <button onclick="downloadAsDocx()" style="background:#2563eb; color:#fff; border:none; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
+          ${isEn ? '📄 Download Word (.docx)' : '📄 Tải Word (.docx)'}
+        </button>
+        <button onclick="window.print()" style="background:#475569; color:#fff; border:none; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
           ${isEn ? '🖨️ Print A4' : '🖨️ In A4'}
         </button>
         <button onclick="saveCurrentCVHtml()" style="background:#fff; border:1px solid #cbd5e1; padding:7px 15px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; display:flex; align-items:center; gap:6px;">
           ${isEn ? '💾 Save HTML' : '💾 Lưu File HTML'}
         </button>
-        <span style="font-size:12px; color:#64748b; font-weight:600;">🎨 ${isEn ? 'Template' : 'Mẫu'}: <b>${escapeHtml(tmpl.title || '')}</b></span>
+        <span style="font-size:12px; color:#64748b; font-weight:700;">🎨 ${isEn ? 'Template' : 'Mẫu'}: <b>${escapeHtml(tmpl.title || '')}</b></span>
     </div>
   `;
 
   // Render Body theo đúng Layout của Mẫu đã chọn
   let bodyContent = '';
 
+  const catalogBody = renderCatalogBody(slug, {candidate,role,phone,email,address,birth,gender,summary,skills,experience,education,L,isEn,userProfile,cvData,candidateAvatar});
+  if (catalogBody) {
+    bodyContent = catalogBody;
+  } else if (slug === 'tiktop') {
+    const section = text => `<h2 class="tiktop-heading" contenteditable="true">${text}</h2>`;
+    const extra = (items) => (Array.isArray(items) ? items : []).map(item => {
+      const text = typeof item === 'string' ? item : [item.name || item.title || item.organization, item.role, item.year || item.date || item.duration, item.description].filter(Boolean).join(' · ');
+      return `<p class="tiktop-extra" contenteditable="true">${escapeHtml(text)}</p>`;
+    }).join('');
+    const activities = extra(cvData.activities || userProfile.activities);
+    const certifications = extra(cvData.certifications || userProfile.certifications);
+    const awards = extra(cvData.awards || userProfile.awards);
+    bodyContent = `<style>
+      .cv-page-container:has(.tiktop-layout){background:#000!important;height:auto!important;max-height:none!important;overflow:visible!important}
+      .tiktop-layout{background:#000;color:#fff;min-height:296mm;padding:20px 22px 30px;font:12px/1.5 Roboto,sans-serif}
+      .tiktop-top{display:grid;grid-template-columns:38% minmax(0,1fr);gap:24px;margin-bottom:32px}
+      .tiktop-photo{height:390px;position:relative;overflow:hidden;border-radius:20px;background:#202020}
+      .tiktop-photo img{width:100%;height:100%;object-fit:cover;display:block}
+      .tiktop-social{position:absolute;right:12px;bottom:15px;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;font-size:25px;text-shadow:0 1px 3px #0006}
+      .tiktop-social span{display:block}.tiktop-social small{font-size:10px;display:block;text-align:center}
+      .tiktop-photo-caption{position:absolute;left:18px;bottom:21px;font-size:10px;text-shadow:0 1px 3px #000}
+      .tiktop-name{font-size:26px;line-height:1.25;font-weight:500;margin:0 0 12px;overflow-wrap:anywhere}
+      .tiktop-contact{display:flex;align-items:baseline;gap:10px;margin:10px 0;font-size:11px;overflow-wrap:anywhere}
+      .tiktop-icon{background:white;color:#111;border:1px solid #63dfcc;border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px}
+      .tiktop-objective{margin-top:17px}.tiktop-objective p{margin-top:12px}
+      .tiktop-columns{display:grid;grid-template-columns:38% minmax(0,1fr);gap:24px}
+      .tiktop-heading{font-size:15px;line-height:1.3;font-weight:700;text-transform:uppercase;position:relative;padding-bottom:10px;margin:0 0 16px}
+      .tiktop-heading:after{content:'';position:absolute;bottom:0;left:0;width:38px;height:3px;background:linear-gradient(90deg,#69e4da 0 16%,white 16% 82%,#ee4271 82%)}
+      .tiktop-item{margin:0 0 26px}.tiktop-item p{margin:5px 0}.tiktop-date{font-size:10px;color:#ccc;text-transform:uppercase;margin:8px 0}
+      .tiktop-item ul{padding-left:16px;margin-top:10px}.tiktop-item li{margin-bottom:4px}.tiktop-extra{margin:0 0 12px}
+    </style><div class="tiktop-layout" data-template="tiktop">
+      <div class="tiktop-top">
+        <div class="tiktop-photo"><img src="${candidateAvatar || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='}" alt="${candidate}">
+          <div style="position:absolute;top:16px;left:0;right:0;text-align:center;font-size:10px;pointer-events:none">${isEn ? 'Following | For you' : 'Đang theo dõi | Dành cho bạn'}</div>
+          <div class="tiktop-photo-caption">${isEn ? 'Your career story' : 'Câu chuyện nghề nghiệp'}</div>
+          <div class="tiktop-social"><span style="color:#ff5a4e">♥</span><span>●<small>•••</small></span><span>↗</span><span style="color:#61d4b5">♫</span></div>
+        </div>
+        <header><h1 class="tiktop-name" contenteditable="true">${candidate}</h1>
+          ${[['✉', 'Email', email], ['☎', L.phone, phone], ['⌖', L.address, address]].map(([icon,label,value])=>`<div class="tiktop-contact"><span class="tiktop-icon">${icon}</span><span contenteditable="true">${label}: &nbsp;${value}</span></div>`).join('')}
+          <div class="tiktop-objective"><div class="tiktop-contact"><span class="tiktop-icon">i</span><span contenteditable="true">${isEn ? 'BACKGROUND/CAREER OBJECTIVES' : 'MỤC TIÊU NGHỀ NGHIỆP'}</span></div><p contenteditable="true">${summary}</p></div>
+        </header>
+      </div>
+      <div class="tiktop-columns"><aside>
+        ${section(L.educationUpper)}${education.map(e=>`<div class="tiktop-item"><p contenteditable="true"><span class="tiktop-icon">▣</span> <b>${e.school}</b>, ${e.degree}</p><p class="tiktop-date" contenteditable="true">${e.time}</p><p contenteditable="true">${e.highlight}</p></div>`).join('')}
+        ${activities ? section(isEn?'ACTIVITIES':'HOẠT ĐỘNG')+activities : ''}
+        ${section(L.skillsUpper)}${skills.map(s=>`<p class="tiktop-extra" contenteditable="true">${s}</p>`).join('')}
+        ${awards ? section(isEn?'HONORS & AWARDS':'DANH HIỆU & GIẢI THƯỞNG')+awards : ''}
+      </aside><main>
+        ${section(L.workExperienceUpper)}${experience.map(e=>`<div class="tiktop-item"><p contenteditable="true"><span class="tiktop-icon">▣</span> <b>${e.company}</b>, ${e.role}</p><p class="tiktop-date" contenteditable="true">${e.time}</p><ul>${e.bullets.map(b=>`<li contenteditable="true">${b}</li>`).join('')}</ul></div>`).join('')}
+        ${certifications ? section(isEn?'CERTIFICATIONS':'CHỨNG CHỈ')+certifications : ''}
+      </main></div>
+    </div>`;
+  } else if (slug === 'senior_2') {
+    const heading = title => `<h2 style="text-align:center;font-size:17px;margin:22px 0 10px;font-weight:700">${title}</h2>`;
+    bodyContent = `<style>.cv-page-container:has(.cv-family) {height:auto!important;max-height:none!important;overflow:visible!important;}</style>
+      <div class="cv-family" data-template="senior_2" style="min-height:296mm;padding:32px 48px;color:#000;font:13px/1.35 Tinos,serif">
+        <header style="text-align:center;border-bottom:1px solid #000;padding-bottom:10px">
+          <h1 style="font-size:21px;margin-bottom:6px" contenteditable="true">${candidate}</h1>
+          <p contenteditable="true">${address}</p><p contenteditable="true">${phone} · ${email}</p>
+        </header>
+        ${heading(isEn ? 'BACKGROUND/CAREER OBJECTIVES' : 'MỤC TIÊU NGHỀ NGHIỆP')}
+        <p contenteditable="true">${summary}</p>
+        ${heading(L.educationUpper)}
+        ${education.map(e=>`<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:12px"><span contenteditable="true"><b>${e.school}</b> — <i>${e.degree}</i></span><span contenteditable="true">${e.time}</span></div><p contenteditable="true">${e.highlight}</p></div>`).join('')}
+        ${heading(L.workExperienceUpper)}
+        ${experience.map(e=>`<div style="margin-bottom:18px"><div style="display:flex;justify-content:space-between;gap:12px"><span contenteditable="true"><b>${e.company}</b> — <i>${e.role}</i></span><span contenteditable="true">${e.time}</span></div><ul style="padding-left:17px">${e.bullets.map(b=>`<li contenteditable="true">${b}</li>`).join('')}</ul></div>`).join('')}
+        ${heading(L.skillsUpper)}${skills.map(s=>`<p contenteditable="true">${s}</p>`).join('')}
+      </div>`;
+  } else if (slug === 'bright') {
+    const title = text => `<h2 style="font-size:20px;font-weight:700;margin:20px 0 16px;border-bottom:1px solid #bbb;padding-bottom:10px">${text}</h2>`;
+    bodyContent = `<style>.cv-page-container:has(.cv-family) {height:auto!important;max-height:none!important;overflow:visible!important;}</style>
+      <div class="cv-family" data-template="bright" style="display:grid;grid-template-columns:38.5% minmax(0,1fr);min-height:296mm;color:#2b3028;font-size:12.5px;line-height:1.5;background:#faf9f7">
+        <aside><div style="background:${design.style.side || '#e8dfd4'};padding:32px 30px 18px">
+          <div style="width:210px;height:210px;max-width:100%;margin:0 auto 28px;border-radius:50%;overflow:hidden;background:white"><img src="${candidateAvatar || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='}" style="width:100%;height:100%;object-fit:cover;display:block" alt="${candidate}"></div>
+          ${[['☎',phone],['✉',email],['◎',escapeHtml(userProfile.website||userProfile.linkedin||'')],['⌖',address],['▣',escapeHtml(userProfile.birth||'')]].filter(([,t])=>t).map(([icon,text])=>`<div style="display:flex;gap:12px;align-items:center;border-top:1px solid #a1a396;padding:10px 0"><span style="display:inline-flex;justify-content:center;align-items:center;border:1px solid ${color};border-radius:50%;width:27px;height:27px;flex-shrink:0">${icon}</span><span contenteditable="true" style="overflow-wrap:anywhere">${text}</span></div>`).join('')}
+        </div><div style="padding:12px 30px 28px">
+          ${title(isEn?'Skills':'Kỹ năng')}${skills.map(s=>`<p style="margin:14px 0" contenteditable="true">✦ ${s}</p>`).join('')}
+          ${title(isEn?'Education':'Học vấn')}${education.map(e=>`<div style="margin-bottom:16px"><p contenteditable="true"><b>${e.school}</b></p><p contenteditable="true">${e.degree}</p><p contenteditable="true">${e.time}</p><p contenteditable="true">${e.highlight}</p></div>`).join('')}
+        </div></aside>
+        <main style="min-width:0"><header style="background:${color};color:white;padding:42px 36px 32px">
+          <h1 style="font-size:31px;line-height:1.3;font-weight:700;margin-bottom:14px;overflow-wrap:anywhere" contenteditable="true">${candidate}</h1>
+          <p style="font-size:16px;margin-bottom:12px" contenteditable="true">${role}</p><div style="width:100px;border-top:1px solid white;margin-bottom:12px"></div><p contenteditable="true">${summary}</p>
+        </header><div style="padding:12px 32px 32px">
+          ${title(isEn?'Work experience':'Kinh nghiệm làm việc')}${experience.map(e=>`<div style="margin-bottom:24px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:6px"><b contenteditable="true">${e.company}</b><span style="background:${color};color:white;border-radius:20px;padding:2px 10px;white-space:nowrap;font-size:11px" contenteditable="true">${e.time}</span></div><p style="text-transform:uppercase;font-size:11px;margin-bottom:12px" contenteditable="true">${e.role}</p><ul style="padding-left:16px">${e.bullets.map(b=>`<li contenteditable="true">${b}</li>`).join('')}</ul></div>`).join('')}
+        </div></main>
+      </div>`;
+  }
+  // Graceful has a pale header and a framed white sidebar, not a solid dark one.
+  else if (layout === 'bordeaux_balanced' || slug === 'graceful') {
+    const sidebarTitle = text => `<h2 class="graceful-sidebar-title">${text}</h2>`;
+    const contact = (icon, text) => text ? `<div class="graceful-contact"><span class="graceful-contact-icon">${icon}</span><span contenteditable="true">${text}</span></div>` : '';
+    const website = escapeHtml(userProfile.website || userProfile.linkedin || cvData.website || cvData.linkedin || '');
+    const certifications = cvData.certifications || userProfile.certifications || [];
+    const awards = cvData.awards || userProfile.awards || [];
+    const extraItems = items => (Array.isArray(items) ? items : []).map(item => {
+      const text = typeof item === 'string' ? item : [item.year || item.date, item.name || item.title, item.issuer || item.organization].filter(Boolean).join(' · ');
+      return `<p contenteditable="true">${escapeHtml(text)}</p>`;
+    }).join('');
+    bodyContent = `
+      <style>
+        .cv-page-container:has(.graceful-layout) { height:auto !important; max-height:none !important; overflow:visible !important; }
+        .graceful-layout { --graceful-accent:${color}; --graceful-pale:color-mix(in srgb, ${color} 20%, white); position:relative; display:grid; grid-template-columns:34% minmax(0,1fr); min-height:296mm; padding:32px 28px 24px; gap:32px; color:#293b47; font-size:12.5px; line-height:1.6; }
+        .graceful-layout:before { content:''; position:absolute; top:0; left:0; right:0; height:168px; background:var(--graceful-pale); }
+        .graceful-sidebar { position:relative; border:2px solid var(--graceful-pale); padding:16px; min-width:0; }
+        .graceful-avatar { display:block; width:100%; aspect-ratio:1; object-fit:cover; border:2px solid var(--graceful-pale); margin:0 0 32px; }
+        .graceful-contact { display:flex; align-items:center; gap:12px; margin-bottom:8px; overflow-wrap:anywhere; }
+        .graceful-contact-icon { display:inline-flex; justify-content:center; align-items:center; flex:0 0 26px; height:26px; border:1px solid var(--graceful-accent); border-radius:50%; color:var(--graceful-accent); }
+        .graceful-sidebar-title { background:var(--graceful-pale); color:var(--graceful-accent); font-size:18px; font-weight:700; padding:6px 14px; margin:24px 0 16px; }
+        .graceful-sidebar p { margin-bottom:10px; overflow-wrap:anywhere; }
+        .graceful-main { position:relative; min-width:0; }
+        .graceful-header { min-height:168px; padding-top:12px; padding-bottom:36px; color:var(--graceful-accent); }
+        .graceful-header h1 { font-size:34px; line-height:1.3; font-weight:700; margin:0 0 20px; overflow-wrap:anywhere; }
+        .graceful-header p { font-size:21px; font-weight:700; line-height:1.35; }
+        .graceful-main h2 { font-size:20px; font-weight:700; margin:0 0 16px; }
+        .graceful-main section { margin-bottom:24px; }
+        .graceful-job { margin-bottom:24px; break-inside:avoid; }
+        .graceful-job h3 { font-size:13px; margin-bottom:8px; }
+        .graceful-job p { margin-bottom:14px; }
+        .graceful-job ol { padding-left:20px; }
+        @media print {
+          html:has(.graceful-layout), body:has(.graceful-layout) { height:auto !important; overflow:visible !important; }
+          .graceful-layout { min-height:296mm; }
+        }
+      </style>
+      <div class="graceful-layout" data-template="graceful">
+        <aside class="graceful-sidebar">
+          <img class="graceful-avatar" src="${candidateAvatar || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='}" alt="${candidate}">
+          ${contact('▣', escapeHtml(userProfile.birth || cvData.birth || ''))}
+          ${contact('☎', phone)}${contact('✉', email)}${contact('◎', website)}${contact('⌖', address)}
+          ${sidebarTitle(isEn ? 'Education' : 'Học vấn')}
+          ${education.map(edu => `<div style="margin-bottom:20px"><p><b contenteditable="true">${edu.school}</b></p><p contenteditable="true">${edu.degree}</p><p contenteditable="true">${edu.time}</p>${edu.highlight ? `<p contenteditable="true">${edu.highlight}</p>` : ''}</div>`).join('')}
+          ${sidebarTitle(isEn ? 'Skills' : 'Kỹ năng')}
+          ${skills.map(sk => `<p style="font-weight:700;margin-bottom:20px" contenteditable="true">${sk}</p>`).join('')}
+          ${Array.isArray(certifications) && certifications.length ? sidebarTitle(isEn ? 'Certifications' : 'Chứng chỉ') + extraItems(certifications) : ''}
+          ${Array.isArray(awards) && awards.length ? sidebarTitle(isEn ? 'Honors & Awards' : 'Danh hiệu & Giải thưởng') + extraItems(awards) : ''}
+        </aside>
+        <main class="graceful-main">
+          <header class="graceful-header"><h1 contenteditable="true">${candidate}</h1><p contenteditable="true">${role}</p></header>
+          <section><h2>${isEn ? 'Objective' : 'Mục tiêu'}</h2><p contenteditable="true">${summary}</p></section>
+          <section><h2>${isEn ? 'Work experience' : 'Kinh nghiệm làm việc'}</h2>
+            ${experience.map(exp => `<div class="graceful-job"><h3 contenteditable="true">${exp.company} ( ${exp.time} )</h3><p contenteditable="true">${exp.role}</p><ol>${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}</ol></div>`).join('')}
+          </section>
+        </main>
+      </div>`;
+  }
   // Layout 1: 1 Cột kinh điển (default_v2)
-  if (layout === "single_column_classic") {
-    bodyContent = `
-      <div class="cv-header" style="display:flex; align-items:center; gap:20px; border-bottom:2px solid ${color}; padding-bottom:15px; margin-bottom:18px;">
-          <div style="width:85px; height:85px; border-radius:50%; background:#e2e8f0; overflow:hidden; border:2px solid ${color}; flex-shrink:0;">
-              <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_v2.jpg';" />
-          </div>
-          <div>
-              <h1 style="font-size:22px; font-weight:800; color:#1e293b; text-transform:uppercase; margin:0;" contenteditable="true">${candidate}</h1>
-              <div style="font-size:13px; font-weight:700; color:${color}; text-transform:uppercase; margin-top:3px;" contenteditable="true">${role}</div>
-              <div style="font-size:11.5px; color:#64748b; margin-top:6px; display:flex; gap:16px; flex-wrap:wrap;">
-                  <span>📞 ${phone}</span>
-                  <span>✉️ ${email}</span>
-                  <span>📍 ${address}</span>
-              </div>
-          </div>
-      </div>
 
-      <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">${L.careerObjective}</h2>
-          <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-      </div>
-
-      <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">${L.workExperience}</h2>
-          ${experience.map(exp => `
-          <div style="margin-bottom:12px;">
-              <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                  <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                  <span style="font-size:11px; color:#64748b; font-style:italic;" contenteditable="true">${exp.time}</span>
-              </div>
-              <div style="font-size:11.5px; font-weight:600; color:${color}; margin-bottom:4px;" contenteditable="true">${exp.role}</div>
-              <ul style="padding-left:16px; font-size:11.5px; color:#334155; line-height:1.45; margin:0;">
-                  ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-              </ul>
-          </div>
-          `).join('')}
-      </div>
-
-      <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">${L.education}</h2>
-          ${education.map(edu => `
-          <div style="margin-bottom:8px;">
-              <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                  <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</span>
-                  <span style="font-size:11px; color:#64748b; font-style:italic;" contenteditable="true">${edu.time}</span>
-              </div>
-              <div style="font-size:11.5px; color:${color}; font-weight:600;" contenteditable="true">${edu.degree}</div>
-              ${edu.highlight ? `<div style="font-size:11px; color:#64748b; margin-top:2px;" contenteditable="true">• ${edu.highlight}</div>` : ''}
-          </div>
-          `).join('')}
-      </div>
-
-      <div>
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1px solid #e2e8f0; padding-bottom:3px; margin-bottom:8px;">${L.skills}</h2>
-          <div style="display:flex; flex-wrap:wrap; gap:6px;">
-              ${skills.map(sk => `<span style="font-size:11px; padding:3px 8px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:4px; color:#334155;" contenteditable="true">${sk}</span>`).join('')}
-          </div>
-      </div>
-    `;
-  }
-  // Layout 2: 1 Cột Căn Giữa Tiêu Chuẩn Ít Kinh Nghiệm (default_junior)
-  else if (layout === "centered_junior") {
-    bodyContent = `
-      <div style="text-align:center; border-bottom:2px solid ${color}; padding-bottom:16px; margin-bottom:18px;">
-          <div style="width:80px; height:80px; border-radius:50%; background:#e2e8f0; overflow:hidden; margin:0 auto 10px auto; border:2px solid ${color};">
-              <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_junior.jpg';" />
-          </div>
-          <h1 style="font-size:22px; font-weight:800; color:#1e293b; text-transform:uppercase; margin:0;" contenteditable="true">${candidate}</h1>
-          <div style="font-size:13px; font-weight:700; color:${color}; margin-top:3px;" contenteditable="true">${role}</div>
-          <div style="font-size:11px; color:#64748b; margin-top:6px; display:flex; justify-content:center; gap:20px;">
-              <span>📞 ${phone}</span>
-              <span>✉️ ${email}</span>
-              <span>📍 ${address}</span>
-          </div>
-      </div>
-
-      <div style="margin-bottom:15px; text-align:center;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">${L.careerObjective.toUpperCase()}</h2>
-          <div style="width:40px; height:2px; background:${color}; margin:0 auto 8px auto;"></div>
-          <p style="font-size:11.5px; color:#334155; line-height:1.55; max-width:90%; margin:0 auto;" contenteditable="true">${summary}</p>
-      </div>
-
-      <div style="margin-bottom:15px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; text-align:center; letter-spacing:1px; margin-bottom:6px;">${L.education.toUpperCase()}</h2>
-          <div style="width:40px; height:2px; background:${color}; margin:0 auto 8px auto;"></div>
-          ${education.map(edu => `
-          <div style="margin-bottom:8px;">
-              <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                  <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</span>
-                  <span style="font-size:11px; color:#64748b;" contenteditable="true">${edu.time}</span>
-              </div>
-              <div style="font-size:11.5px; color:${color}; font-weight:600;" contenteditable="true">${edu.degree}</div>
-              ${edu.highlight ? `<div style="font-size:11px; color:#475569;" contenteditable="true">• ${edu.highlight}</div>` : ''}
-          </div>
-          `).join('')}
-      </div>
-
-      <div style="margin-bottom:15px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; text-align:center; letter-spacing:1px; margin-bottom:6px;">${L.workExperience.toUpperCase()}</h2>
-          <div style="width:40px; height:2px; background:${color}; margin:0 auto 8px auto;"></div>
-          ${experience.map(exp => `
-          <div style="margin-bottom:10px;">
-              <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                  <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                  <span style="font-size:11px; color:#64748b;" contenteditable="true">${exp.time}</span>
-              </div>
-              <div style="font-size:11.5px; color:${color}; font-weight:600;" contenteditable="true">${exp.role}</div>
-              <ul style="padding-left:16px; font-size:11px; color:#334155; line-height:1.45; margin-top:3px;">
-                  ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-              </ul>
-          </div>
-          `).join('')}
-      </div>
-
-      <div>
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; text-align:center; letter-spacing:1px; margin-bottom:6px;">${L.skills.toUpperCase()}</h2>
-          <div style="width:40px; height:2px; background:${color}; margin:0 auto 8px auto;"></div>
-          <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:6px;">
-              ${skills.map(sk => `<span style="font-size:11px; padding:3px 10px; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:12px; color:#334155;" contenteditable="true">${sk}</span>`).join('')}
-          </div>
-      </div>
-    `;
-  }
-  // Layout 3: Sidebar Đen Tối Đỏ Mận (impressive_6_v2)
-  else if (layout === "sidebar_dark_burgundy") {
-    const sidebarBg = "#39283A";
-    const sidebarAccent = "#d4b8d6";
-    bodyContent = `
-      <div style="display:flex; width:100%; height:296mm; min-height:296mm; max-height:296mm; margin:0; box-sizing:border-box; overflow:hidden;">
-          <!-- CỘT TRÁI - SIDEBAR TỐI BURGUNDY -->
-          <div style="width:34%; background:${sidebarBg} !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:#ffffff; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0; height:100%; min-height:296mm; box-sizing:border-box;">
-              <div style="text-align:center; margin-bottom:18px;">
-                  <div style="width:90px; height:90px; border-radius:50%; overflow:hidden; background:#5a3f5b; margin:0 auto 12px auto; border:3px solid ${sidebarAccent};">
-                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/impressive_6_v2.jpg';" />
-                  </div>
-                  <h1 style="font-size:15px; font-weight:800; color:#ffffff; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">${candidate}</h1>
-                  <div style="font-size:10.5px; color:${sidebarAccent}; margin-top:5px;" contenteditable="true">${role}</div>
-              </div>
-
-              <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; margin-bottom:12px;">
-                  <div style="font-size:10px; color:${sidebarAccent}; line-height:1.9;">
-                      <div contenteditable="true">📞 ${phone}</div>
-                      <div contenteditable="true">✉️ ${email}</div>
-                      <div contenteditable="true">📍 ${address}</div>
-                  </div>
-              </div>
-
-              <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px; margin-bottom:12px;">
-                  <h3 style="font-size:10px; font-weight:800; color:${sidebarAccent}; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">${L.skillsUpper}</h3>
-                  ${skills.map(sk => `<div style="font-size:10px; color:#e8d5ea; margin-bottom:5px;" contenteditable="true">▸ ${sk}</div>`).join('')}
-              </div>
-
-              <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:12px;">
-                  <h3 style="font-size:10px; font-weight:800; color:${sidebarAccent}; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:8px;">${L.educationUpper}</h3>
-                  ${education.map(edu => `
-                  <div style="margin-bottom:8px;">
-                      <div style="font-size:10.5px; font-weight:700; color:#ffffff;" contenteditable="true">${edu.school}</div>
-                      <div style="font-size:10px; color:${sidebarAccent};" contenteditable="true">${edu.degree}</div>
-                      <div style="font-size:9.5px; color:#b89abc;" contenteditable="true">${edu.time}</div>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-
-          <!-- CỘT PHẢI - NỘI DUNG -->
-          <div style="flex:1; height:100%; min-height:296mm; padding:24px 22px; box-sizing:border-box; overflow:hidden;">
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${sidebarBg}; text-transform:uppercase; border-bottom:2px solid ${sidebarBg}; padding-bottom:4px; margin-bottom:10px;">${L.careerObjectiveUpper}</h2>
-                  <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-              </div>
-
-              <div>
-                  <h2 style="font-size:13px; font-weight:800; color:${sidebarBg}; text-transform:uppercase; border-bottom:2px solid ${sidebarBg}; padding-bottom:4px; margin-bottom:12px;">${L.workExperienceUpper}</h2>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:14px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                          <span style="font-size:10.5px; color:#64748b;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; font-weight:700; color:${sidebarBg}; margin-bottom:5px;" contenteditable="true">${exp.role}</div>
-                      <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 4: 2 Cột Sidebar Xanh Rêu có Progress Bars (onepage_impressive_2_v2)
-  else if (layout === "sidebar_moss_green_progress_bars") {
-    bodyContent = `
-      <div style="display:flex; width:100%; height:296mm; min-height:296mm; max-height:296mm; margin:0; box-sizing:border-box; overflow:hidden;">
-          <!-- CỘT TRÁI (SIDEBAR SẪM MÀU) -->
-          <div style="width:36%; height:100%; min-height:296mm; background:${color} !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:#ffffff; padding:25px 18px; box-sizing:border-box;">
-              <div style="text-align:center; margin-bottom:18px;">
-                  <div style="position:relative; width:100px; height:100px; border-radius:50%; margin:0 auto 10px auto; overflow:hidden; border:3px solid #ffffff;">
-                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/onepage_impressive_2_v2.jpg';" />
-                  </div>
-                  <h1 style="font-size:19px; font-weight:800; color:#ffffff; margin:0;" contenteditable="true">${candidate}</h1>
-                  <div style="font-size:12px; color:#d1d5db; margin-top:2px;" contenteditable="true">${role}</div>
-              </div>
-
-              <div style="font-size:11px; color:#e5e7eb; margin-bottom:18px; line-height:1.6; border-top:1px solid rgba(255,255,255,0.2); padding-top:10px;">
-                  <div>📞 ${phone}</div>
-                  <div>✉️ ${email}</div>
-                  <div>📍 ${address}</div>
-                  <div>🎂 ${birth}</div>
-              </div>
-
-              <div style="margin-bottom:18px;">
-                  <h3 style="font-size:12px; font-weight:700; color:#ffffff; text-transform:uppercase; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h3>
-                  <p style="font-size:11px; color:#d1d5db; line-height:1.45; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-              </div>
-
-              <div style="margin-bottom:18px;">
-                  <h3 style="font-size:12px; font-weight:700; color:#ffffff; text-transform:uppercase; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:3px; margin-bottom:8px;">${L.skills}</h3>
-                  <div style="display:flex; flex-wrap:wrap; gap:5px;">
-                  ${skills.slice(0, 8).map(sk => `
-                  <span style="display:inline-block; padding:3px 9px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.28); border-radius:20px; font-size:10.5px; color:#e5e7eb;">${sk}</span>
-                  `).join('')}
-                  </div>
-              </div>
-          </div>
-
-          <!-- CỘT PHẢI -->
-          <div style="flex:1; height:100%; min-height:296mm; background:#ffffff; padding:25px 22px; box-sizing:border-box; overflow:hidden;">
-              <div style="margin-bottom:20px;">
-                  <h2 style="font-size:14px; font-weight:800; color:#1e293b; text-transform:uppercase; display:flex; align-items:center; gap:6px; border-bottom:2px solid #e2e8f0; padding-bottom:4px; margin-bottom:10px;">
-                      <span>🎓 ${L.educationUpper}</span>
-                  </h2>
-                  ${education.map(edu => `
-                  <div style="margin-bottom:8px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</span>
-                          <span style="font-size:11px; color:#64748b;" contenteditable="true">${edu.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; color:#475569; font-weight:600;" contenteditable="true">${edu.degree}</div>
-                      ${edu.highlight ? `<div style="font-size:11px; color:#64748b;" contenteditable="true">• ${edu.highlight}</div>` : ''}
-                  </div>
-                  `).join('')}
-              </div>
-
-              <div>
-                  <h2 style="font-size:14px; font-weight:800; color:#1e293b; text-transform:uppercase; display:flex; align-items:center; gap:6px; border-bottom:2px solid #e2e8f0; padding-bottom:4px; margin-bottom:10px;">
-                      <span>💼 ${L.workExperienceUpper}</span>
-                  </h2>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:14px; border-left:2px solid ${color}; padding-left:10px; margin-left:2px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12.5px; font-weight:700; color:#1e293b;" contenteditable="true">${exp.role}</span>
-                          <span style="font-size:11px; color:#64748b;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; color:${color}; font-weight:600; margin-bottom:4px;" contenteditable="true">${exp.company}</div>
-                      <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.45; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 5: Header Ngang + 3 Cột Nhỏ + Timeline Đỏ (elegant)
-  else if (layout === "elegant_3_columns_sub") {
-    bodyContent = `
-      <div style="display:flex; gap:20px; align-items:center; margin-bottom:18px;">
-          <div style="width:110px; height:125px; border-radius:8px; overflow:hidden; background:#e2e8f0; flex-shrink:0;">
-              <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/elegant.jpg';" />
-          </div>
-          <div style="flex:1;">
-              <h1 style="font-size:24px; font-weight:800; color:${color}; margin:0;" contenteditable="true">${candidate}</h1>
-              <div style="font-size:13.5px; font-weight:700; color:#1e293b; text-transform:uppercase; margin-top:3px; margin-bottom:8px;" contenteditable="true">${role}</div>
-              <div style="width:100%; height:2px; background:#1e293b; margin-bottom:8px;"></div>
-              <p style="font-size:11px; color:#475569; line-height:1.45; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-          </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; border-top:2px solid ${color}; border-bottom:2px solid ${color}; padding:10px 0; margin-bottom:20px;">
-          <div>
-              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">${L.personalInfoUpper}</h4>
-              <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.6; margin:0;">
-                  <li contenteditable="true">• ${phone}</li>
-                  <li contenteditable="true">• ${email}</li>
-                  <li contenteditable="true">• ${address}</li>
-              </ul>
-          </div>
-          <div style="border-left:1px solid #e2e8f0; padding-left:12px;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">${L.educationUpper}</h4>
-              <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.6; margin:0;">
-                  ${education.map(edu => `<li contenteditable="true">• ${edu.school} (${edu.time})</li>`).join('')}
-              </ul>
-          </div>
-          <div style="border-left:1px solid #e2e8f0; padding-left:12px;">
-              <h4 style="font-size:11.5px; font-weight:800; color:#1e293b; text-transform:uppercase; margin-bottom:6px;">${L.technicalSkillsUpper}</h4>
-              <ul style="list-style:none; padding:0; font-size:10.5px; color:#475569; line-height:1.6; margin:0;">
-                  ${skills.slice(0, 4).map(sk => `<li contenteditable="true">• ${sk}</li>`).join('')}
-              </ul>
-          </div>
-      </div>
-
-      <div>
-          <h3 style="font-size:13.5px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:14px;">${L.workExperienceUpper}</h3>
-          ${experience.map(exp => `
-          <div style="display:flex; gap:16px; margin-bottom:15px;">
-              <div style="width:130px; font-size:11px; font-weight:700; color:#64748b; flex-shrink:0;">
-                  <div style="color:${color};">● ${exp.time}</div>
-                  <div style="color:#1e293b; margin-top:2px;">${exp.company}</div>
-              </div>
-              <div style="flex:1; border-left:2px solid ${color}; padding-left:14px;">
-                  <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${exp.role}</div>
-                  <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.45; margin-top:4px;">
-                      ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                  </ul>
-              </div>
-          </div>
-          `).join('')}
-      </div>
-    `;
-  }
-  // Layout 6: Sidebar Than Chì & Cam Hổ Phách (ambitious)
-  else if (layout === "sidebar_charcoal_amber_timeline") {
-    bodyContent = `
-      <div style="display:flex; width:100%; height:296mm; min-height:296mm; max-height:296mm; margin:0; box-sizing:border-box; overflow:hidden;">
-          <!-- CỘT TRÁI (THAN CHÌ) -->
-          <div style="width:35%; height:100%; min-height:296mm; background:#242c35 !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:#ffffff; padding:25px 16px; box-sizing:border-box;">
-              <div style="margin-bottom:18px;">
-                  <div style="width:105px; height:120px; border-radius:8px; overflow:hidden; margin:0 auto 10px auto; border:2px solid ${color};">
-                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/ambitious.jpg';" />
-                  </div>
-                  <h1 style="font-size:18px; font-weight:800; color:${color}; text-align:center; margin:0;" contenteditable="true">${candidate}</h1>
-                  <div style="font-size:11px; color:#ffffff; text-align:center; font-weight:600; margin-top:2px;" contenteditable="true">${role}</div>
-              </div>
-
-              <div style="font-size:11px; color:#d1d5db; line-height:1.6; margin-bottom:16px;">
-                  <div style="color:${color}; font-weight:700; margin-bottom:4px;">${L.personalInfoUpper}</div>
-                  <div>📞 ${phone}</div>
-                  <div>✉️ ${email}</div>
-                  <div>📍 ${address}</div>
-              </div>
-
-              <div style="margin-bottom:16px;">
-                  <div style="color:${color}; font-weight:700; font-size:11.5px; margin-bottom:6px;">${L.skillsUpper}</div>
-                  <ul style="padding-left:14px; font-size:11px; color:#e5e7eb; line-height:1.5; margin:0;">
-                      ${skills.map(sk => `<li contenteditable="true">${sk}</li>`).join('')}
-                  </ul>
-              </div>
-          </div>
-
-          <!-- CỘT PHẢI (TIMELINE CAM) -->
-          <div style="flex:1; height:100%; min-height:296mm; background:#ffffff; padding:25px 22px; box-sizing:border-box; overflow:hidden;">
-              <div style="margin-bottom:18px;">
-                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h3>
-                  <p style="font-size:11.5px; color:#334155; line-height:1.5; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-              </div>
-
-              <div style="margin-bottom:18px;">
-                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:10px;">${L.workExperienceUpper}</h3>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:14px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${exp.role}</span>
-                          <span style="font-size:11px; color:#64748b; font-weight:600;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; color:${color}; font-weight:600; margin-bottom:4px;" contenteditable="true">${exp.company}</div>
-                      <ul style="padding-left:16px; font-size:11px; color:#334155; line-height:1.45; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-
-              <div>
-                  <h3 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.educationUpper}</h3>
-                  ${education.map(edu => `
-                  <div style="margin-bottom:8px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</span>
-                          <span style="font-size:11px; color:#64748b;" contenteditable="true">${edu.time}</span>
-                      </div>
-                      <div style="font-size:11px; color:#475569;" contenteditable="true">${edu.degree} • ${edu.highlight}</div>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 7: 2 Cột Tối Giản Viền Xanh Navy Nét Đứt (minimalism_v2)
-  else if (layout === "minimalist_dashed_navy") {
-    bodyContent = `
-      <div style="border-bottom:3px solid ${color}; padding-bottom:14px; margin-bottom:18px;">
-          <div style="display:flex; align-items:center; gap:18px;">
-              <div style="width:90px; height:105px; border-radius:6px; overflow:hidden; background:#f1f5f9; flex-shrink:0; border:1px solid #e2e8f0;">
-                  <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/minimalism_v2.jpg';" />
-              </div>
-              <div>
-                  <h1 style="font-size:23px; font-weight:800; color:#1e293b; text-transform:uppercase; letter-spacing:1px; margin:0;" contenteditable="true">${candidate}</h1>
-                  <div style="font-size:13px; font-weight:700; color:${color}; margin-top:4px; text-transform:uppercase; letter-spacing:0.5px;" contenteditable="true">${role}</div>
-                  <div style="font-size:11px; color:#64748b; margin-top:8px; display:flex; flex-wrap:wrap; gap:14px;">
-                      <span>📞 ${phone}</span>
-                      <span>✉️ ${email}</span>
-                      <span>📍 ${address}</span>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <div style="display:flex; gap:20px;">
-          <div style="flex:2;">
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.workExperienceUpper}</h2>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:12px; padding-left:10px; border-left:2px solid #e2e8f0;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                          <span style="font-size:10.5px; color:#64748b;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; font-weight:600; color:${color}; margin-bottom:4px;" contenteditable="true">${exp.role}</div>
-                      <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.45; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-          <div style="flex:1; border-left:1.5px solid #e2e8f0; padding-left:16px;">
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h2>
-                  <p style="font-size:11px; color:#334155; line-height:1.5; margin:0;" contenteditable="true">${summary}</p>
-              </div>
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.educationUpper}</h2>
-                  ${education.map(edu => `
-                  <div style="margin-bottom:8px;">
-                      <div style="font-size:11.5px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</div>
-                      <div style="font-size:11px; color:${color}; font-weight:600;" contenteditable="true">${edu.degree}</div>
-                      <div style="font-size:10.5px; color:#64748b;" contenteditable="true">${edu.time} • ${edu.highlight}</div>
-                  </div>
-                  `).join('')}
-              </div>
-              <div>
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.skillsUpper}</h2>
-                  <ul style="list-style:none; padding:0; font-size:11px; color:#334155; line-height:1.7; margin:0;">
-                      ${skills.map(sk => `<li contenteditable="true">→ ${sk}</li>`).join('')}
-                  </ul>
-              </div>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 8: Sidebar Coffee Brown (pro_1_v2)
-  else if (layout === "sidebar_coffee_brown") {
-    bodyContent = `
-      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2.5px solid ${color}; padding-bottom:10px; margin-bottom:16px;">
-          <h1 style="font-size:24px; font-weight:800; color:#2c1e14; text-transform:none; margin:0;" contenteditable="true">${candidate}</h1>
-          <div style="background:${color}; color:#ffffff; font-size:12px; font-weight:700; padding:6px 16px; border-radius:4px; text-transform:uppercase;" contenteditable="true">${role}</div>
-      </div>
-
-      <div style="display:flex; gap:20px;">
-          <div style="width:34%; flex-shrink:0;">
-              <div style="width:100%; height:200px; border-radius:4px; overflow:hidden; background:#d4b8a5; margin-bottom:12px; border:1px solid #d4b8a5;">
-                  <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/pro_1_v2.jpg';" />
-              </div>
-              
-              <div style="background:${color}; color:#ffffff; padding:16px 14px; border-radius:4px;">
-                  <div style="font-size:10.5px; line-height:1.8; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:10px;">
-                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700;">${L.phone}</div>
-                      <div contenteditable="true">${phone}</div>
-                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700; margin-top:4px;">Email</div>
-                      <div contenteditable="true">${email}</div>
-                      <div style="color:#d4b8a5; font-size:9.5px; font-weight:700; margin-top:4px;">${L.address}</div>
-                      <div contenteditable="true">${address}</div>
-                  </div>
-
-                  <div style="margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:10px;">
-                      <div style="font-size:11px; font-weight:800; text-transform:uppercase; margin-bottom:6px; color:#f5ebe0;">${L.educationUpper}</div>
-                      ${education.map(edu => `
-                      <div style="margin-bottom:6px;">
-                          <div style="font-size:10.5px; font-weight:700;" contenteditable="true">${edu.school}</div>
-                          <div style="font-size:10px; color:#e0c9b0;" contenteditable="true">${edu.degree}</div>
-                          <div style="font-size:9.5px; color:#c9a882;" contenteditable="true">${edu.time}</div>
-                      </div>
-                      `).join('')}
-                  </div>
-
-                  <div>
-                      <div style="font-size:11px; font-weight:800; text-transform:uppercase; margin-bottom:8px; color:#f5ebe0;">${L.skills}</div>
-                      <div style="display:flex; flex-wrap:wrap; gap:5px;">
-                      ${skills.slice(0, 6).map(sk => `
-                      <span style="display:inline-block; padding:3px 9px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); border-radius:16px; font-size:10px; color:#f5ebe0; margin-bottom:3px;">${sk}</span>
-                      `).join('')}
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div style="flex:1;">
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:8px;">${L.careerObjectiveUpper}</h2>
-                  <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-              </div>
-
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:10px;">${L.workExperienceUpper}</h2>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:14px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                          <span style="font-size:10.5px; color:#64748b; font-style:italic;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; font-weight:700; color:${color}; margin-bottom:5px;" contenteditable="true">${exp.role}</div>
-                      <ul style="padding-left:16px; font-size:11px; color:#334155; line-height:1.5; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 10: Harvard Pure Text ATS (senior_v2 - KHÔNG ẢNH)
-  else if (layout === "harvard" || layout === "harvard_classic_text_only") {
-    bodyContent = `
-      <div style="font-family:'Times New Roman', Times, serif; color:#000000; padding:10px 5px;">
-          <div style="text-align:center; border-bottom:1.5px solid #000000; padding-bottom:10px; margin-bottom:16px;">
-              <h1 style="font-size:24px; font-weight:bold; letter-spacing:1px; margin:0;" contenteditable="true">${candidate.toUpperCase()}</h1>
-              <div style="font-size:12px; margin-top:4px;">
-                  <span>${address}</span> | <span>${phone}</span> | <span>${email}</span>
-              </div>
-          </div>
-
-          <div style="margin-bottom:16px;">
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:6px;">${L.summaryUpper}</h2>
-              <p style="font-size:11.5px; line-height:1.5; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-          </div>
-
-          <div style="margin-bottom:16px;">
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:8px;">${L.workExperienceUpper}</h2>
-              ${experience.map(exp => `
-              <div style="margin-bottom:12px;">
-                  <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:12px;">
-                      <span contenteditable="true">${exp.company}</span>
-                      <span contenteditable="true">${exp.time}</span>
-                  </div>
-                  <div style="font-style:italic; font-size:11.5px; margin-bottom:3px;" contenteditable="true">${exp.role}</div>
-                  <ul style="padding-left:18px; font-size:11.5px; line-height:1.45; margin:0;">
-                      ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                  </ul>
-              </div>
-              `).join('')}
-          </div>
-
-          <div style="margin-bottom:16px;">
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:8px;">${L.educationUpper}</h2>
-              ${education.map(edu => `
-              <div style="margin-bottom:6px;">
-                  <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:12px;">
-                      <span contenteditable="true">${edu.school}</span>
-                      <span contenteditable="true">${edu.time}</span>
-                  </div>
-                  <div style="font-size:11.5px;" contenteditable="true">${edu.degree}</div>
-                  ${edu.highlight ? `<div style="font-size:11px; font-style:italic;" contenteditable="true">${edu.highlight}</div>` : ''}
-              </div>
-              `).join('')}
-          </div>
-
-          <div>
-              <h2 style="font-size:13px; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #000000; padding-bottom:2px; margin-bottom:6px;">${L.technicalSkillsUpper}</h2>
-              <p style="font-size:11px; line-height:1.5; margin:0;" contenteditable="true">${skills.join(' • ')}</p>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 19: Chuyên Gia Executive ATS (experts - KHÔNG ẢNH)
-  else if (layout === "royal_blue_expert") {
-    bodyContent = `
-      <div style="border-bottom:3px solid ${color}; padding-bottom:14px; margin-bottom:18px;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px;">
-              <div>
-                  <h1 style="font-size:24px; font-weight:900; color:#0f172a; margin:0;" contenteditable="true">${candidate}</h1>
-                  <div style="font-size:13px; font-weight:700; color:${color}; margin-top:4px;" contenteditable="true">${role}</div>
-              </div>
-              <div style="text-align:right; font-size:11px; color:#475569; line-height:1.7;">
-                  <div contenteditable="true">📞 ${phone}</div>
-                  <div contenteditable="true">✉️ ${email}</div>
-                  <div contenteditable="true">📍 ${address}</div>
-              </div>
-          </div>
-      </div>
-
-      <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.careerObjectiveUpper}</h2>
-          <p style="font-size:11.5px; color:#334155; line-height:1.6; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-      </div>
-
-      <div style="margin-bottom:16px;">
-          <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:12px;">${L.workExperienceUpper}</h2>
-          ${experience.map(exp => `
-          <div style="display:flex; gap:16px; margin-bottom:14px;">
-              <div style="width:110px; font-size:11px; color:#64748b; flex-shrink:0; text-align:right; padding-top:2px;" contenteditable="true">${exp.time}</div>
-              <div style="width:1px; background:${color}; flex-shrink:0;"></div>
-              <div style="flex:1;">
-                  <div style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">${exp.company}</div>
-                  <div style="font-size:11.5px; font-weight:700; color:${color}; margin-bottom:5px;" contenteditable="true">${exp.role}</div>
-                  <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5; margin:0;">
-                      ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                  </ul>
-              </div>
-          </div>
-          `).join('')}
-      </div>
-
-      <div style="display:flex; gap:20px;">
-          <div style="flex:1;">
-              <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.educationUpper}</h2>
-              ${education.map(edu => `
-              <div style="margin-bottom:8px;">
-                  <div style="font-size:12px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</div>
-                  <div style="font-size:11.5px; color:${color}; font-weight:600;" contenteditable="true">${edu.degree}</div>
-                  <div style="font-size:11px; color:#64748b;" contenteditable="true">${edu.time} • ${edu.highlight}</div>
-              </div>
-              `).join('')}
-          </div>
-          <div style="flex:1;">
-              <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.skillsUpper}</h2>
-              <div style="columns:2; column-gap:10px;">
-                  ${skills.map(sk => `<div style="font-size:11px; color:#334155; margin-bottom:4px; break-inside:avoid;" contenteditable="true">▸ ${sk}</div>`).join('')}
-              </div>
-          </div>
-      </div>
-    `;
-  }
-  // Layout 20: Developer Tech Stack Matrix (dev_1)
-  else if (layout === "tech_stack_matrix") {
-    bodyContent = `
-      <div style="width:100%; height:296mm; min-height:296mm; max-height:296mm; margin:0; box-sizing:border-box; overflow:hidden; display:flex; flex-direction:column;">
-          <!-- HEADER BANNER TỐI -->
-          <div style="background:#0f172a !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; padding:18px 28px 16px 28px; box-sizing:border-box;">
-              <div style="display:flex; gap:18px; align-items:center;">
-                  <div style="width:80px; height:80px; border-radius:50%; overflow:hidden; background:#1e293b; flex-shrink:0; border:2px solid ${color};">
-                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/dev_1.jpg';" />
-                  </div>
-                  <div style="flex:1;">
-                      <h1 style="font-size:20px; font-weight:900; color:#f1f5f9; margin:0; font-family:monospace;" contenteditable="true">${candidate}</h1>
-                      <div style="font-size:12px; color:${color}; font-weight:700; margin-top:4px; font-family:monospace;" contenteditable="true">$ ${role}</div>
-                  </div>
-                  <div style="text-align:right; font-size:10px; color:#94a3b8; font-family:monospace;">
-                      <div contenteditable="true">📞 ${phone}</div>
-                      <div contenteditable="true">✉️ ${email}</div>
-                      <div contenteditable="true">📍 ${address}</div>
-                  </div>
-              </div>
-          </div>
-
-      <div style="flex:1; padding:16px 24px; box-sizing:border-box; overflow:hidden;">
-          <div style="margin-bottom:14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px 16px;">
-              <div style="font-size:10px; color:#94a3b8; font-family:monospace; margin-bottom:4px;">// ${L.careerObjectiveUpper}</div>
-              <p style="font-size:11.5px; color:#334155; line-height:1.55; margin:0;" contenteditable="true">${summary}</p>
-          </div>
-
-          <div style="display:flex; gap:20px; margin-bottom:14px;">
-              <div style="flex:3;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:12px;">// ${L.workExperience.toUpperCase()}</h2>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:14px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                          <span style="font-size:10px; color:#64748b; font-family:monospace;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11px; font-weight:700; color:${color}; margin-bottom:4px; font-family:monospace;" contenteditable="true">// ${exp.role}</div>
-                      <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-              <div style="flex:2;">
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin-bottom:12px;">// ${L.techAndToolsUpper}</h2>
-                  <div style="display:flex; flex-direction:column; gap:5px;">
-                      ${skills.map(sk => `<div style="font-size:10.5px; color:#334155; font-family:monospace; padding:3px 8px; background:#f1f5f9; border-left:3px solid ${color}; border-radius:0 4px 4px 0;" contenteditable="true">${sk}</div>`).join('')}
-                  </div>
-                  <h2 style="font-size:12px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:3px; margin:14px 0 10px 0;">// ${L.education.toUpperCase()}</h2>
-                  ${education.map(edu => `
-                  <div style="margin-bottom:8px;">
-                      <div style="font-size:11px; font-weight:700; color:#1e293b;" contenteditable="true">${edu.school}</div>
-                      <div style="font-size:10.5px; color:${color}; font-family:monospace;" contenteditable="true">${edu.degree}</div>
-                      <div style="font-size:10px; color:#64748b;" contenteditable="true">${edu.time} • ${edu.highlight}</div>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-      </div>
-      </div>
-    `;
-  }
-  // Các layout 2 Cột Sidebar khác (11 clarity, 12 plum wine, 14 corporate grey, 16 teal sidebar, 17 ocean, 18 cyan)
-  else {
-    const isDarkSidebar = ["sidebar_plum_wine", "teal_sidebar_hr", "modern_clarity_tags", "corporate_silver_grey"].includes(layout);
-    const sbBg = layout === "sidebar_plum_wine" ? "#7A415A" 
-               : layout === "teal_sidebar_hr" ? "#2C6E6B"
-               : layout === "corporate_silver_grey" ? "#4A5568"
-               : layout === "modern_clarity_tags" ? "#1A1A2E"
-               : layout === "student_youth_ocean" ? "#EFF6FF"
-               : color;
-    const isLightSidebar = layout === "student_youth_ocean";
-    const sbTextColor = isLightSidebar ? "#1e3a8a" : "#ffffff";
-    const sbAccentColor = isLightSidebar ? color : (layout === "modern_clarity_tags" ? color : "#d4e6f1");
-
-    bodyContent = `
-      <div style="display:flex; width:100%; height:296mm; min-height:296mm; max-height:296mm; margin:0; box-sizing:border-box; overflow:hidden;">
-          <!-- SIDEBAR -->
-          <div style="width:34%; height:100%; min-height:296mm; background:${sbBg} !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color:${sbTextColor}; padding:24px 18px; display:flex; flex-direction:column; gap:0; flex-shrink:0; box-sizing:border-box;">
-              <div style="text-align:center; margin-bottom:18px;">
-                  <div style="width:95px; height:95px; border-radius:50%; overflow:hidden; background:rgba(255,255,255,0.2); margin:0 auto 12px auto; border:3px solid ${sbAccentColor};">
-                      <img src="${candidateAvatar || ('/images/avatars/' + slug + '.jpg')}" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='/images/avatars/default_v2.jpg';" />
-                  </div>
-                  <h1 style="font-size:16px; font-weight:800; color:${sbTextColor}; text-transform:uppercase; line-height:1.3; margin:0;" contenteditable="true">${candidate}</h1>
-                  <div style="font-size:11px; color:${sbAccentColor}; margin-top:5px;" contenteditable="true">${role}</div>
-              </div>
-
-              <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:12px; margin-bottom:12px;">
-                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${L.contactUpper}</h3>
-                  <div style="font-size:10px; color:${sbTextColor}; line-height:1.8;">
-                      <div contenteditable="true">📞 ${phone}</div>
-                      <div contenteditable="true">✉️ ${email}</div>
-                      <div contenteditable="true">📍 ${address}</div>
-                  </div>
-              </div>
-
-              <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:12px; margin-bottom:12px;">
-                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${L.educationUpper}</h3>
-                  ${education.map(edu => `
-                  <div style="margin-bottom:8px;">
-                      <div style="font-size:10.5px; font-weight:700; color:${sbTextColor};" contenteditable="true">${edu.school}</div>
-                      <div style="font-size:10px; color:${sbAccentColor};" contenteditable="true">${edu.degree}</div>
-                      <div style="font-size:9.5px; opacity:0.85;" contenteditable="true">${edu.time}</div>
-                  </div>
-                  `).join('')}
-              </div>
-
-              <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:12px;">
-                  <h3 style="font-size:10.5px; font-weight:800; color:${sbAccentColor}; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${L.skillsUpper}</h3>
-                  ${skills.map(sk => `<div style="font-size:10px; color:${sbTextColor}; margin-bottom:4px;" contenteditable="true">▸ ${sk}</div>`).join('')}
-              </div>
-          </div>
-
-          <!-- NỘI DUNG CHÍNH -->
-          <div style="flex:1; height:100%; padding:24px 22px; box-sizing:border-box; overflow:hidden;">
-              <div style="margin-bottom:16px;">
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:10px;">${L.careerObjectiveUpper}</h2>
-                  <p style="font-size:11.5px; color:#334155; line-height:1.55; text-align:justify; margin:0;" contenteditable="true">${summary}</p>
-              </div>
-
-              <div>
-                  <h2 style="font-size:13px; font-weight:800; color:${color}; text-transform:uppercase; border-bottom:2px solid ${color}; padding-bottom:4px; margin-bottom:12px;">${L.workExperienceUpper}</h2>
-                  ${experience.map(exp => `
-                  <div style="margin-bottom:14px;">
-                      <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                          <span style="font-size:12px; font-weight:800; color:#1e293b;" contenteditable="true">${exp.company}</span>
-                          <span style="font-size:10.5px; color:#64748b;" contenteditable="true">${exp.time}</span>
-                      </div>
-                      <div style="font-size:11.5px; font-weight:700; color:${color}; margin-bottom:5px;" contenteditable="true">${exp.role}</div>
-                      <ul style="padding-left:14px; font-size:11px; color:#334155; line-height:1.5; margin:0;">
-                          ${exp.bullets.map(b => `<li contenteditable="true">${b}</li>`).join('')}
-                      </ul>
-                  </div>
-                  `).join('')}
-              </div>
-          </div>
-      </div>
-    `;
-  }
+  const crop = userProfile.avatarCrop || {};
+  const cropZoom = Math.max(1, Math.min(3, Number(crop.zoom) || 1));
+  const cropLimit = (cropZoom - 1) * 50;
+  const cropX = Math.max(-cropLimit, Math.min(cropLimit, Number(crop.x) || 0));
+  const cropY = Math.max(-cropLimit, Math.min(cropLimit, Number(crop.y) || 0));
+  bodyContent = bodyContent.replace(/<img /g, `<img data-photo-zoom="${cropZoom}" data-photo-x="${cropX}" data-photo-y="${cropY}" `);
 
   // Nếu là layout toàn trang (không có sidebar full bleed), bọc padding đều các cạnh A4
   const isEdgeToEdge = [
@@ -1004,7 +368,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     "sidebar_moss_green_progress_bars",
     "sidebar_charcoal_amber_timeline",
     "tech_stack_matrix"
-  ].includes(layout) || (
+  ].includes(layout) || !!catalogBody || slug === 'tiktop' || (
     !["single_column_classic", "centered_junior", "elegant_3_columns_sub", "minimalist_dashed_navy", "sidebar_coffee_brown", "harvard", "harvard_classic_text_only", "royal_blue_expert"].includes(layout)
   );
 
@@ -1023,9 +387,8 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${candidate} - ${isEn ? 'ATS Standard Resume' : 'CV Chuẩn ATS'} [${tmpl.title}]</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="/js/html2pdf.bundle.min.js"></script>
+    <script src="/js/cv-photo-editor.js" defer></script>
     <style>
         * {
             box-sizing: border-box;
@@ -1044,7 +407,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
             margin: 0;
             padding: 0;
             background: #cbd5e1;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: '${design.style.font}',sans-serif;
             color: #334155;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
@@ -1096,15 +459,15 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
         [contenteditable="true"]:hover { background: rgba(0,0,0,0.03); }
         [contenteditable="true"]:focus { background: rgba(0,0,0,0.05); }
         @media print {
-            html, body {
+            html, body, body.in-iframe {
                 width: 210mm !important;
-                height: 297mm !important;
+                height: auto !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 background: #ffffff !important;
-                overflow: hidden !important;
+                overflow: visible !important;
             }
-            .no-print, .cv-toolbar {
+            .no-print, .cv-toolbar, .cv-photo-editor {
                 display: none !important;
             }
             .cv-page-container {
@@ -1123,6 +486,7 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
             }
         }
     </style>
+    <style id="cv-canonical-design">${designCss(design)}</style>
 </head>
 <body>
     <script>
@@ -1137,29 +501,73 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
     
     ${toolbarHtml}
     
-    <div class="cv-page-container" id="cv-content">
+    <div class="cv-page-container" id="cv-content" data-template="${escapeHtml(slug)}" data-layout="${escapeHtml(layout)}" data-design-version="${designVersion()}">
         ${bodyContent}
     </div>
 
     <script>
-        function downloadAsPdf() {
-            const element = document.getElementById('cv-content');
-            const opt = {
-                margin: 0,
-                filename: '${candidate.replace(/\\s+/g, '_')}_CV_ATS.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, letterRendering: true, scrollX: 0, scrollY: 0 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            if (window.html2pdf) {
-                window.html2pdf().set(opt).from(element).toPdf().get('pdf').then(function(pdf) {
-                    var totalPages = pdf.internal.getNumberOfPages();
-                    for (var i = totalPages; i > 1; i--) {
-                        pdf.deletePage(i);
-                    }
-                }).save();
-            } else {
+        async function downloadAsPdf() {
+            try {
+                const clone = document.documentElement.cloneNode(true);
+                const tb = clone.querySelector('.cv-toolbar');
+                if (tb) tb.remove();
+
+                const response = await fetch('/api/cv/export-pdf', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        html: '<!DOCTYPE html>' + clone.outerHTML,
+                        fileName: '${candidate.replace(/\s+/g, '_')}_CV_ATS'
+                    })
+                });
+
+                if (!response.ok) throw new Error('Server returned ' + response.status);
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '${candidate.replace(/\s+/g, '_')}_CV_ATS.pdf';
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+            } catch (err) {
+                console.warn('Lỗi xuất PDF qua máy chủ, chuyển sang in trình duyệt:', err);
                 window.print();
+            }
+        }
+
+        async function downloadAsDocx() {
+            try {
+                const response = await fetch('/api/cv/export-docx', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        html: '<!DOCTYPE html>' + document.documentElement.outerHTML,
+                        templateId: '${tmpl.id || 'default_v2'}',
+                        language: '${isEn ? 'en' : 'vi'}',
+                        fileName: '${candidate.replace(/\s+/g, '_')}_CV_ATS'
+                    })
+                });
+
+                if (!response.ok) throw new Error('Server returned ' + response.status);
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '${candidate.replace(/\s+/g, '_')}_CV_ATS.docx';
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+            } catch (err) {
+                console.warn('Lỗi xuất file Word (.docx):', err);
             }
         }
 
@@ -1176,5 +584,11 @@ function buildCvTemplateHtml(tmpl, cvData = {}, userProfile = {}, language = 'vi
 }
 
 module.exports = {
-  buildCvTemplateHtml
+  buildCvTemplateHtml,
+  normalizeAcademicSchool,
+  normalizeAcademicDegree,
+  normalizeAcademicHighlight,
+  normalizeJobRole,
+  normalizeCompanyName
 };
+
