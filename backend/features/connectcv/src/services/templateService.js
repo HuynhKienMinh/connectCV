@@ -391,7 +391,7 @@ function buildAvailableTemplates(language = 'vi') {
         themeColor: themeColor,
         tags: Array.from(new Set([...(t.tags || []), ...(meta.tags || []), ...(t.is_pro ? ['Cao cấp', 'Pro'] : [])])),
         isPro: !!t.is_pro,
-        thumbnailUrl: `/ai/cv-design-previews/topcv-f1f8726eae40/${isEn?"en":"vi"}/${slug}.png`,
+        thumbnailUrl: `/ai/cv-design-previews/${PREVIEW_VERSION}/${isEn?"en":"vi"}/${slug}.png`,
         designVersion: PREVIEW_VERSION,
         previewUrl: `/api/cv/templates/${slug}/preview?lang=${isEn ? "en" : "vi"}&v=${PREVIEW_VERSION}`,
         sourceThumbnailUrl: `/api/cv/snapshots/${snapshotLanguage}/${slug}.webp`,

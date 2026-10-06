@@ -48,11 +48,12 @@ function substitute(source,values,t){
  return body.replace(/\{\{([^}]+)\}\}/g,(_,key)=>escape(value(values,key)));
 }
 let version;
-function sourceVersion(){if(version)return version;const hash=crypto.createHash('sha256');for(const dir of ['templates','styles'])for(const file of fs.readdirSync(path.join(ROOT,dir)).sort())hash.update(fs.readFileSync(path.join(ROOT,dir,file)));hash.update(fs.readFileSync(__filename));return version='topcv-'+hash.digest('hex').slice(0,12)}
+function sourceVersion(){if(version)return version;const hash=crypto.createHash('sha256');for(const dir of ['templates','styles'])for(const file of fs.readdirSync(path.join(ROOT,dir)).sort())hash.update(fs.readFileSync(path.join(ROOT,dir,file),'utf8').replace(/\r\n/g,'\n'));hash.update(fs.readFileSync(__filename,'utf8').replace(/\r\n/g,'\n'));return version='topcv-'+hash.digest('hex').slice(0,12)}
 function renderTopcvSource(tmpl,cv,profile={},language='vi',{preview=false}={}){
  const slug=tmpl.slug||tmpl.id,t=load(slug,language),values=valuesFor(cv,profile);
  let body=preview?t.originalBody:substitute(t.body,values,t);
- body=body.replace(/(<div\b[^>]*>)\s*©\s*topcv\.vn\s*(<\/div>)/gi,'$1© ConnectCV$2');
+ // Replace only the copyright label, preserving the native footer geometry.
+ body=body.replace(/(?:©|&copy;|&#169;|&#x0*a9;)\s*topcv\.vn/gi,'© ConnectCV');
  if(!preview){
   // Existing native text boxes remain editable; no wrapper changes their geometry.
   body=body.replace(/<(ul|ol)\b[^>]*>[\s\S]*?<\/\1>/g,list=>list.replace(/<[^>]*>/g,'').replace(/&nbsp;|•|\s/g,'')?list:'');
