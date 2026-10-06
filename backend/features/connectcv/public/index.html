@@ -83,6 +83,7 @@
 
   </style>
 <script src="/ai/runtime.js"></script>
+<script src="/ai/js/profile-autosave.js"></script>
 <script src="/ai/js/account-bridge.js"></script>
 <script>
 // The account team provides this in-memory token hook. No demo login, secret,
@@ -668,7 +669,7 @@ window.fetch=async function(resource,options={}){
 <i class="fa-solid fa-user-pen text-indigo-600"></i> Nhập Thông Tin Ứng Viên &amp; JD
                 </h3>
 </div>
-<span class="text-[11px] text-slate-400 font-medium"><i class="fa-solid fa-floppy-disk text-emerald-500 mr-1"></i>Tự động lưu nháp</span>
+<span class="text-[11px] text-slate-400 font-medium"><i class="fa-solid fa-floppy-disk text-emerald-500 mr-1"></i><span id="profile-save-header-status">Tự động lưu vào tài khoản</span></span>
 </div>
 <!-- KHỐI LỰA CHỌN CÔNG VIỆC MỤC TIÊU & CHẾ ĐỘ MAY ĐO CV (AUTO MATCH vs MANUAL) -->
 <div class="space-y-3.5">
@@ -1903,7 +1904,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             language,
-            targetRole: 'Backend Developer',
+            targetRole: document.getElementById('prof-role')?.value || '',
             companyName: company,
             jdText: jd,
             profile: profile
@@ -2137,10 +2138,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     let recommendDebounceTimer = null;
     function scheduleAutoRecommendation() {
+      if (currentTemplateMode !== 'auto') return;
       clearTimeout(recommendDebounceTimer);
       recommendDebounceTimer = setTimeout(() => {
         updateAutoRecommendation();
-      }, 600);
+      }, 1500);
     }
 
     // ========================================================
@@ -2464,6 +2466,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const rawTextarea = document.getElementById('cv-profile');
       if (rawTextarea) {
         rawTextarea.value = JSON.stringify(profileObj, null, 2);
+        window.dispatchEvent(new Event('connectcv:profile-change'));
       }
 
       scheduleAutoRecommendation();
@@ -2589,6 +2592,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Debounce tự động quét gợi ý việc làm khi profile thay đổi
     function scheduleAutoMatchRefresh() {
+      if (currentJobInputMode !== 'automatch') return;
       if (autoMatchDebounceTimer) clearTimeout(autoMatchDebounceTimer);
       autoMatchDebounceTimer = setTimeout(() => {
         refreshAutoMatchJobs(false);
