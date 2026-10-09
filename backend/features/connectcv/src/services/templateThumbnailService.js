@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const { getTemplatePreviewHtml, getTemplateById, PREVIEW_VERSION } = require('./templateService');
+const { getTemplatePreviewHtml, getTemplateById, PREVIEW_VERSION, PREVIEW_ASSET_VERSION } = require('./templateService');
 const { getBrowser } = require('./pdfService');
 const cacheDir = path.join(os.tmpdir(), 'connectcv-template-previews', PREVIEW_VERSION);
 const {prepareCvPage}=require('./cvRenderRuntime');
@@ -15,7 +15,7 @@ async function withSlot(fn) {
 }
 async function getTemplateThumbnail(id, language = 'vi') {
   const template = getTemplateById(id, language);
-  const immutableFiles=[path.resolve(__dirname,'../../../frontend/public/cv-design-previews',PREVIEW_VERSION,language,template.slug+'.png'),path.resolve(__dirname,'../../public/cv-design-previews',PREVIEW_VERSION,language,template.slug+'.png')];
+  const immutableFiles=[path.resolve(__dirname,'../../../frontend/public/cv-design-previews',PREVIEW_ASSET_VERSION,language,template.slug+'.png'),path.resolve(__dirname,'../../public/cv-design-previews',PREVIEW_ASSET_VERSION,language,template.slug+'.png')];
   for(const candidate of immutableFiles)if(fs.existsSync(candidate))return fs.promises.readFile(candidate);
   const file = path.join(cacheDir, `${template.slug}-${language}.png`);
   if (fs.existsSync(file)) return fs.promises.readFile(file);

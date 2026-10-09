@@ -27,3 +27,14 @@ test('all 148 native variants brand preview and generated copyright consistently
  }
  assert.equal(count,148);
 });
+
+test('generated CVs load the deployed photo editor and previews contain no scripts',()=>{
+ const {getAvailableTemplates}=require('../src/services/templateService');
+ const {renderTopcvSource}=require('../src/services/topcvSourceRenderer');
+ for(const language of ['vi','en'])for(const t of getAvailableTemplates(language)){
+  const html=renderTopcvSource(t,{}, {},language);
+  assert.ok(html.includes('src="/ai/js/cv-photo-editor.js"'),t.id);
+  assert.ok(fs.existsSync(path.resolve(__dirname,'../public/js/cv-photo-editor.js')));
+  assert.doesNotMatch(renderTopcvSource(t,{}, {},language,{preview:true}),/<script\b/i);
+ }
+});

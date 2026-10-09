@@ -3481,6 +3481,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           if (profile && typeof profile === 'object') {
             profile.avatarCrop = { zoom:Number(photo.dataset.photoZoom), x:Number(photo.dataset.photoX), y:Number(photo.dataset.photoY) };
             profileField.value = JSON.stringify(profile);
+            window.dispatchEvent(new Event('connectcv:profile-change'));
           }
         } catch {}
       }

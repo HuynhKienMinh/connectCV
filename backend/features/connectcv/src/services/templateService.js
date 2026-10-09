@@ -25,6 +25,8 @@ function resolveTemplatesDir() {
 }
 const TEMPLATES_DIR = resolveTemplatesDir();
 const PREVIEW_VERSION = require('./topcvSourceRenderer').sourceVersion();
+// Preview PNGs change only when a new visual asset release is generated.
+const PREVIEW_ASSET_VERSION = require('../../public/cv-design-previews/manifest.json').version;
 
 // Định nghĩa thông tin danh mục 20 mẫu CV ATS chuẩn TopCV với 20 layout kiến trúc độc lập
 const TEMPLATE_METADATA = [
@@ -391,7 +393,7 @@ function buildAvailableTemplates(language = 'vi') {
         themeColor: themeColor,
         tags: Array.from(new Set([...(t.tags || []), ...(meta.tags || []), ...(t.is_pro ? ['Cao cấp', 'Pro'] : [])])),
         isPro: !!t.is_pro,
-        thumbnailUrl: `/ai/cv-design-previews/${PREVIEW_VERSION}/${isEn?"en":"vi"}/${slug}.png`,
+        thumbnailUrl: `/ai/cv-design-previews/${PREVIEW_ASSET_VERSION}/${isEn?"en":"vi"}/${slug}.png`,
         designVersion: PREVIEW_VERSION,
         previewUrl: `/api/cv/templates/${slug}/preview?lang=${isEn ? "en" : "vi"}&v=${PREVIEW_VERSION}`,
         sourceThumbnailUrl: `/api/cv/snapshots/${snapshotLanguage}/${slug}.webp`,
@@ -618,6 +620,7 @@ function getTemplateDocxPath(templateId, language = 'vi') {
 module.exports = {
   TEMPLATES_DIR,
   PREVIEW_VERSION,
+  PREVIEW_ASSET_VERSION,
   getAvailableTemplates,
   getTemplateById,
   semanticMatchTemplate,
