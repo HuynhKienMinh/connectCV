@@ -1,0 +1,11 @@
+{
+  "scope": "local fixture/stub; no provider or cloud",
+  "shortQuestion": "product-overview",
+  "pdfCorrectlyUnavailable": true,
+  "injectionDoesNotChangeOwnedReply": true,
+  "helpProviderCalls": 0,
+  "invalidMessageStatus": 400,
+  "careerAdviceProviderStubCalls": 1,
+  "legacyContactLeaked": false,
+  "rolePassed": true
+}

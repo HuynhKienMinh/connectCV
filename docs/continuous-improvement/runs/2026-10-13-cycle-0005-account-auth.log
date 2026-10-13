@@ -1,0 +1,22 @@
+✔ real Firebase verifier rejects a forged legacy HS256 admin token (793.9624ms)
+✔ identity comes only from verified Firebase token; revocation check enabled (0.2608ms)
+✔ missing, malformed, wrong project and revoked tokens fail closed (0.2765ms)
+✔ unverified email cannot enter AI or public write paths (0.1656ms)
+✔ concurrent account initialization grants 15 credits once (2.0907ms)
+✔ profile persistence never modifies another account or balance (0.8438ms)
+✔ daily quota is durable and concurrent overspending is rejected (2.3845ms)
+✔ insufficient credits do not change daily quota or ledger (0.1791ms)
+✔ duplicate community submission awards exactly 5 once and persists cooldown (1.0324ms)
+✔ likes use authenticated UID; retries cannot drive count negative (0.6296ms)
+✔ confirmed missing account moves to signup (0.7429ms)
+✔ protected invalid credentials offer signup without asserting account absence (0.1468ms)
+✔ network failure and rate limits do not redirect to registration (0.1135ms)
+✔ registration errors do not create redirect loops (0.1284ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 889.8857

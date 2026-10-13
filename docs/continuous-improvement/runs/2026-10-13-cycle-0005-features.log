@@ -1,0 +1,54 @@
+
+> connectcv-ai-features@2.0.0 test
+> node --test tests/cvGrounding.test.js tests/runtimeResources.test.js tests/interviewSummaryGrounding.test.js tests/browserConfig.test.js tests/profilePersistence.test.js tests/cvInputValidation.test.js tests/interviewEvaluation.test.js tests/communityPublication.test.js tests/chatbotService.test.js
+
+✔ browser path uses existing configured or pinned executable only (0.7199ms)
+✔ production renderer cannot disable its sandbox using handoff flags (0.4302ms)
+✔ actual chatbot reset escapes the display name and failed requests restore only unchanged input (4.1726ms)
+✔ product guide does not promise ATS acceptance, hands-free support or ready PDF without evidence (1.0359ms)
+✔ short questions ask for direction; natural product variants use owned facts and do not copy injections (1.5281ms)
+✔ chat context is allowlisted; nested legacy contact fields never enter the provider prompt (2.5221ms)
+✔ invalid messages/history/types get actionable safe errors; AI output shape is controlled (2.4249ms)
+✔ invalid or deterministic guidance never consumes AI quota, but career advice and rate limits still do (4.6214ms)
+✔ anonymous sharing requires explicit public consent and strips profile fields (6.0078ms)
+✔ contact guard rejects clear emails and Vietnamese phones without echoing content (0.5325ms)
+✔ publication input cannot be silently truncated or coerced into public facts (0.562ms)
+✔ invalid posts do not enter store or budget; valid non-AI sharing retains action limit (5.4165ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ AI cannot add facts, numbers, skills, degrees or identities in either language (18.2055ms)
+✔ Source IDs allow ordering but duplicate/unknown IDs cannot add or lose history (0.4744ms)
+✔ No hardcoded biographical defaults in all 74 layouts and both languages (452.1871ms)
+✔ 74 layouts retain only supplied facts including accounting and empty GPA (289.3562ms)
+✔ Long profile remains complete or fails explicitly before AI (2.2696ms)
+✔ Empty profile has no fake score, education, experience or skills (0.1719ms)
+✔ ATS Word keeps source text in normal paragraphs, no textbox or graphics (14.4692ms)
+✔ Keyword matching distinguishes Excel from Excellent and handles C++ (0.2371ms)
+✔ Missing degrees, highlights and timelines stay empty after language switch (0.4436ms)
+✔ Translation does not invent bachelor equivalence or honors awards (0.2774ms)
+✔ client and server reject empty, short, whitespace and oversized JD; accept VI/EN boundaries (4.2787ms)
+✔ profile JSON errors are actionable and never expose values, even with hostile content (1.8325ms)
+✔ invalid CV submissions do not consume AI budget or block the next valid request; valid limits remain (4.0001ms)
+✔ STAR scaffold uses complete source quotes and discards invented model biography (2.15ms)
+✔ the entire accepted long answer reaches the prompt, including the final result (1.4179ms)
+✔ a fragment dropping negation and invented result are not published as STAR facts (0.3596ms)
+✔ duplicate evidence is not presented as four verified components and invalid scores fail (0.4516ms)
+✔ invalid interview inputs never consume AI quota; error responses do not echo source (2.8001ms)
+✔ unanswered follow-up is excluded and original answer remains authoritative (2.0244ms)
+✔ missing, duplicated or invalid evaluation scores fail explicitly (1.2762ms)
+✔ AI feedback cannot report new numerical claims outside the supplied answer (0.6039ms)
+✔ slow profile writes are serialized and the latest edit survives (1.376ms)
+✔ failed profile writes never claim success and can be saved again (0.3205ms)
+✔ typing and local matching do not consume AI budget or prevent generation; AI limits still hold (105.2168ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ every advertised VI/EN preview exists in the release (248.643ms)
+✔ malformed AI output does not leak source text in errors (14.2103ms)
+✔ all 148 native variants brand preview and generated copyright consistently (678.7389ms)
+✔ generated CVs load the deployed photo editor and previews contain no scripts (406.6636ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1541.2987

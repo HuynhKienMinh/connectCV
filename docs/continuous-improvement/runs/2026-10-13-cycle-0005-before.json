@@ -1,0 +1,7 @@
+{
+  "scope": "local only, synthetic spy/no provider",
+  "shortCVMatches90PercentClaim": true,
+  "handsFree100Claim": true,
+  "unknownContactKeysEnterPrompt": true,
+  "nameResetSinkUnescaped": true
+}

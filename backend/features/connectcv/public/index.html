@@ -1458,9 +1458,9 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 <div>
 <div class="font-bold text-sm tracking-tight flex items-center">
                 ConnectCV chatbot
-                <span class="ml-2 px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-emerald-400/20 text-emerald-200 border border-emerald-400/40">24/7</span>
+                <span class="ml-2 px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-emerald-400/20 text-emerald-200 border border-emerald-400/40">Hỗ trợ</span>
 </div>
-<div class="text-[10px] text-purple-200 font-medium">Tư vấn viên AI • Gemini 2.5 Flash</div>
+<div class="text-[10px] text-purple-200 font-medium">Hướng dẫn &amp; gợi ý nghề nghiệp</div>
 </div>
 </div>
 <div class="flex items-center space-x-1">
@@ -1478,20 +1478,21 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 <!-- Collapsible Profile Drawer (Cá nhân hóa hồ sơ) -->
 <div class="hidden bg-purple-50/95 border-b border-purple-200/60 p-3 text-xs space-y-2 flex-shrink-0 animate-in fade-in duration-200" id="chatbot-profile-drawer">
 <div class="flex justify-between items-center text-[11px] font-bold text-purple-900">
-<span class="flex items-center"><i class="fa-solid fa-id-card-clip mr-1.5 text-purple-600"></i>Hồ sơ ứng viên (Context cá nhân hóa):</span>
+<span class="flex items-center"><i class="fa-solid fa-id-card-clip mr-1.5 text-purple-600"></i>Cá nhân hóa chatbot:</span>
 <button class="text-purple-600 hover:text-purple-900 text-[10px] font-semibold" onclick="toggleChatbotProfile()" type="button">Đóng ✕</button>
 </div>
 <div class="grid grid-cols-2 gap-2">
 <div>
-<label class="block text-[10px] font-bold text-slate-600 mb-0.5 uppercase">Họ và Tên</label>
-<input class="w-full px-2.5 py-1.5 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-500 focus:outline-none" id="chat-user-name" type="text" value=""/>
+<label class="block text-[10px] font-bold text-slate-600 mb-0.5 uppercase">Tên hiển thị (chỉ trên máy)</label>
+<input class="w-full px-2.5 py-1.5 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-500 focus:outline-none" id="chat-user-name" maxlength="80" type="text" value=""/>
 </div>
 <div>
 <label class="block text-[10px] font-bold text-slate-600 mb-0.5 uppercase">Vị Trí Mục Tiêu</label>
-<input class="w-full px-2.5 py-1.5 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-500 focus:outline-none" id="chat-user-role" type="text" value=""/>
+<input class="w-full px-2.5 py-1.5 bg-white border border-purple-200 rounded-lg text-xs focus:ring-2 focus:ring-purple-500 focus:outline-none" id="chat-user-role" maxlength="150" type="text" value=""/>
 </div>
 </div>
 </div>
+<p class="px-3 py-2 text-[10px] text-slate-600 bg-slate-50">Tên hiển thị không gửi tới AI. Câu hỏi, tối đa 4 tin nhắn gần đây và vị trí bạn nhập được gửi để nhận gợi ý AI; không nhập contact, mật khẩu hoặc bí mật. Hướng dẫn ứng dụng dùng nội dung ConnectCV, không gọi AI.</p>
 <!-- Quick Action Question Chips (Gợi ý câu hỏi nhanh) -->
 <div class="px-3 py-2 bg-slate-100/90 border-b border-slate-200 flex items-center space-x-1.5 overflow-x-auto no-scrollbar text-[11px] flex-shrink-0 select-none">
 <span class="text-slate-400 font-bold text-[10px] flex-shrink-0 mr-0.5"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>Gợi ý:</span>
@@ -1531,7 +1532,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 <!-- Chat Input Footer -->
 <div class="p-3 bg-white border-t border-slate-200 flex-shrink-0">
 <div class="flex items-end space-x-2">
-<textarea class="flex-1 px-3 py-2 bg-slate-50 hover:bg-white focus:bg-white border border-slate-300 focus:border-purple-500 rounded-xl text-xs focus:ring-2 focus:ring-purple-200 focus:outline-none resize-none max-h-24 transition" id="chatbot-input" placeholder="Nhập câu hỏi về CV, phỏng vấn, ATS..." rows="1"></textarea>
+<textarea class="flex-1 px-3 py-2 bg-slate-50 hover:bg-white focus:bg-white border border-slate-300 focus:border-purple-500 rounded-xl text-xs focus:ring-2 focus:ring-purple-200 focus:outline-none resize-none max-h-24 transition" maxlength="1000" id="chatbot-input" placeholder="Nhập câu hỏi về CV, phỏng vấn, ATS..." rows="1"></textarea>
 <button class="h-9 w-9 bg-purple-600 hover:bg-purple-700 active:scale-95 text-white rounded-xl transition flex items-center justify-center text-xs shadow-md flex-shrink-0 disabled:opacity-50" id="btn-chatbot-send" onclick="sendChatbotMessage()" type="button">
 <i class="fa-solid fa-paper-plane"></i>
 </button>
@@ -1539,7 +1540,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 <div class="flex justify-between items-center mt-1.5 text-[10px] text-slate-400">
 <span>Enter để gửi • Shift+Enter xuống dòng</span>
 <span class="text-purple-600 font-semibold flex items-center">
-<i class="fa-solid fa-sparkles mr-1 text-[9px]"></i>Gemini 2.5 Flash
+<i class="fa-solid fa-sparkles mr-1 text-[9px]"></i>Hướng dẫn • Gợi ý AI
             </span>
 </div>
 </div>
@@ -6052,7 +6053,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             <i class="fa-solid fa-robot"></i>
           </div>
           <div class="bg-white p-3.5 rounded-2xl rounded-tl-none border border-slate-200/90 shadow-sm max-w-[88%] text-slate-800 leading-relaxed space-y-2">
-            <div class="font-bold text-purple-700 text-xs">Xin chào ${userName}! 👋</div>
+            <div class="font-bold text-purple-700 text-xs">Xin chào ${escapeHTML(userName)}! 👋</div>
             <p>Tôi là <b>ConnectCV chatbot</b>, tư vấn viên AI của bạn. Tôi sẵn sàng hỗ trợ bạn bất cứ lúc nào!</p>
           </div>
         </div>
@@ -6151,6 +6152,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       return safe;
     }
 
+    function recoverFailedChatMessage(text){
+      const input=document.getElementById('chatbot-input');if(input&&!input.value)input.value=text;
+      const last=chatbotHistory.at(-1);
+      if(last?.role==='user'&&last.message===text)chatbotHistory.pop();
+    }
     // Gửi tin nhắn đến API chatbot
     async function sendChatbotMessage() {
       const input = document.getElementById('chatbot-input');
@@ -6158,7 +6164,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const sendBtn = document.getElementById('btn-chatbot-send');
       const container = document.getElementById('chatbot-messages');
 
-      if (!text) return;
+      if (!text || sendBtn.disabled) return;
+      if(text.length>1000){showToastError('Câu hỏi tối đa 1.000 ký tự.','Câu hỏi quá dài');return;}
 
       const userName = document.getElementById('chat-user-name').value || 'Bạn';
       const userRole = document.getElementById('chat-user-role').value || 'Ứng viên';
@@ -6203,8 +6210,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: text,
-            history: chatbotHistory,
-            userProfile: { fullName: userName, role: userRole }
+            history: chatbotHistory.slice(-4).map(h=>({role:h.role,message:h.message.slice(0,2000)})),
+            context: { targetRole: userRole.trim().slice(0,150) }
           })
         });
 
@@ -6226,7 +6233,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             <div class="bg-white p-4 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm max-w-[88%] text-slate-800 leading-relaxed space-y-2.5">
               <div class="font-bold text-purple-700 text-[11px] flex items-center justify-between border-b border-slate-100 pb-1.5">
                 <span class="flex items-center"><i class="fa-solid fa-sparkles text-purple-500 mr-1.5"></i> ConnectCV chatbot</span>
-                <span class="text-[9px] font-normal text-slate-400">Gemini AI</span>
+                <span class="text-[9px] font-normal text-slate-400">${data.data.responseKind === 'product-guide' ? 'Hướng dẫn ConnectCV' : 'Gợi ý AI'}</span>
               </div>
               <div class="text-xs text-slate-800 leading-relaxed">${renderMarkdownSafe(reply)}</div>
 
@@ -6250,12 +6257,14 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         } else {
           const errBubble = document.createElement('div');
           errBubble.className = 'text-center text-xs text-red-500 py-2';
+          recoverFailedChatMessage(text);
           errBubble.innerText = 'Lỗi: ' + (data.message || 'Không nhận được phản hồi');
           container.appendChild(errBubble);
         }
       } catch (err) {
         const el = document.getElementById(typingId);
         if (el) el.remove();
+        recoverFailedChatMessage(text);
         const errBubble = document.createElement('div');
         errBubble.className = 'text-center text-xs text-red-500 py-2';
         errBubble.innerText = 'Lỗi kết nối: ' + err.message;
