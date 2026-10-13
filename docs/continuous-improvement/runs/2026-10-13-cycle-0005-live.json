@@ -1,0 +1,14 @@
+{
+  "faqStatus": 200,
+  "guideCount": 6,
+  "sourceIdsPresent": true,
+  "pdfUnavailableGuidance": true,
+  "staticUnsupportedClaimsRemoved": true,
+  "studioStatus": 200,
+  "privacyNoticePresent": true,
+  "nameResetEscaped": true,
+  "sourceLabelPresent": true,
+  "anonymousMessageStatus": 401,
+  "liveProviderCalls": 0,
+  "liveProfileWrites": 0
+}

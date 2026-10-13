@@ -53,3 +53,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0004 — 13/10/2026
 
 [Nhật ký cộng đồng/privacy](runs/2026-10-13-cycle-0004.md): preview và consent công khai, chặn contact rõ, không gửi profile thừa, không tính chia sẻ vào AI quota. 48 tests/build/CI đạt; deploy0f28096/live static/UI/auth smoke đạt. Không post public, moderation và data restore chưa đóng. Mục tiếp theo chatbot.
+
+## Cập nhật chu kỳ 0005 — 13/10/2026
+
+[Nhật ký chatbot](runs/2026-10-13-cycle-0005.md): hướng dẫn theo capability có nhãn nguồn, context allowlist, escape tên và giữ câu hỏi khi provider lỗi. 54 tests/build/CI đạt; deploy1fae1bf/live FAQ/static/UI/auth smoke xác nhận. Không có provider call thực trong cycle; CHAT001/eval và copy gói Pro còn cần rà, PDF/backup dữ liệu chưa đóng. Mục kế tiếp portfolio owner/visitor.
