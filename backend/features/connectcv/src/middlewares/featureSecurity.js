@@ -18,6 +18,12 @@ async function featureSecurity(req,res,next){
   if(result.error)return res.status(400).json(validationResponse(result.error));
   req.body=result.value;
  }
+ if(fullPath==='/api/interview/evaluate'){
+  const {validateEvaluation,evaluationError}=require('../services/interviewEvaluationService');
+  const result=validateEvaluation(req.body);
+  if(result.error)return res.status(400).json(evaluationError(result.error));
+  req.body=result.value;
+ }
  const body=req.body;
  if(!body||typeof body!=='object'||Array.isArray(body))return res.status(400).json({success:false,message:'Nội dung yêu cầu không hợp lệ.'});
  for(const key of ['history','messages','conversationHistory'])if(body[key]!==undefined){

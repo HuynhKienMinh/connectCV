@@ -399,49 +399,14 @@ BẮT BUỘC trả về DUY NHẤT một JSON hợp lệ theo cấu trúc:
 // ─────────────────────────────────────────────────────────────────────
 router.post('/evaluate', async (req, res) => {
   try {
-    const { question, candidateAnswer, category = 'General' } = req.body;
-    if (!question || !candidateAnswer) {
-      return res.status(400).json({ success: false, message: 'Vui lòng cung cấp câu hỏi và câu trả lời!' });
-    }
-
-    // Input size limit
-    if (String(candidateAnswer).length > 3000) {
-      return res.status(400).json({ success: false, message: 'Câu trả lời quá dài (tối đa 3000 ký tự).' });
-    }
-
-    const safeQ   = escStr(question, 500);
-    const safeA   = sanitizeForPrompt(candidateAnswer, 2000);
-    const safeCat = escStr(category, 50);
-
-    const prompt = `
-Bạn là giám khảo tuyển dụng cấp cao.
-Câu hỏi: "${safeQ}"
-Phân loại: "${safeCat}"
-Câu trả lời của ứng viên: "${safeA}"
-
-Đánh giá theo: STAR (Situation/Task/Action/Result) + Intentional Hooking.
-Chỉ đánh giá dựa trên câu trả lời đã cung cấp. improvedAnswer phải giữ nguyên dữ kiện, số liệu và công cụ; không tự thêm thành tích, thời gian hay kết quả chưa được xác nhận. Nếu thiếu thông tin, ghi gợi ý cần bổ sung ngoài câu trả lời.
-Trả về DUY NHẤT JSON:
-{
-  "score": 8.5,
-  "starEvaluation": {
-    "situation": "Đánh giá bối cảnh...",
-    "task": "Đánh giá nhiệm vụ...",
-    "action": "Đánh giá hành động...",
-    "result": "Đánh giá kết quả..."
-  },
-  "intentionalHookingEvaluation": { "applied": true, "feedback": "..." },
-  "strengths": ["Điểm mạnh 1"],
-  "improvements": ["Cần cải thiện 1"],
-  "improvedAnswer": "Phiên bản câu trả lời hoàn thiện..."
-}
-`;
-
-    const result = await callGeminiJSON(prompt);
-    return res.status(200).json({ success: true, message: 'Đánh giá câu trả lời thành công!', data: result });
-  } catch (error) {
-    console.error('[Interview /evaluate]', safeError(error));
-    return res.status(500).json({ success: false, message: 'Không thể đánh giá câu trả lời lúc này.' });
+    const {validateEvaluation,evaluationError,buildEvaluationPrompt,groundEvaluation}=require('../services/interviewEvaluationService');
+    const {error,value}=validateEvaluation(req.body);
+    if(error)return res.status(400).json(evaluationError(error));
+    const result=await callGeminiJSON(buildEvaluationPrompt(value));
+    return res.status(200).json({success:true,message:'Đã phân tích câu trả lời dựa trên dữ kiện gốc.',data:groundEvaluation(result,value)});
+  }catch(error){
+    console.error('[Interview /evaluate]',safeError(error));
+    return res.status(500).json({success:false,message:'Chưa xác minh được đánh giá AI. Câu trả lời của bạn vẫn được giữ nguyên; vui lòng thử lại.'});
   }
 });
 

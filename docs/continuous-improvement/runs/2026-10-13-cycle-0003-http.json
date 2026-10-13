@@ -1,0 +1,6 @@
+{
+  "fixtureProvider": "synthetic-stub-no-network",
+  "promptAnswerCharacters": 2422,
+  "tailPreserved": true,
+  "realProviderCalls": 0
+}

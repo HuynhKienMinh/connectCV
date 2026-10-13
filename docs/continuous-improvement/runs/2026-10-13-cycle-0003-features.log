@@ -1,0 +1,40 @@
+✔ browser path uses existing configured or pinned executable only (0.9441ms)
+✔ production renderer cannot disable its sandbox using handoff flags (0.4941ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ AI cannot add facts, numbers, skills, degrees or identities in either language (20.2045ms)
+✔ Source IDs allow ordering but duplicate/unknown IDs cannot add or lose history (0.5861ms)
+✔ No hardcoded biographical defaults in all 74 layouts and both languages (541.691ms)
+✔ 74 layouts retain only supplied facts including accounting and empty GPA (329.8226ms)
+✔ Long profile remains complete or fails explicitly before AI (2.2024ms)
+✔ Empty profile has no fake score, education, experience or skills (0.1856ms)
+✔ ATS Word keeps source text in normal paragraphs, no textbox or graphics (14.9712ms)
+✔ Keyword matching distinguishes Excel from Excellent and handles C++ (0.3068ms)
+✔ Missing degrees, highlights and timelines stay empty after language switch (0.4932ms)
+✔ Translation does not invent bachelor equivalence or honors awards (0.3431ms)
+✔ client and server reject empty, short, whitespace and oversized JD; accept VI/EN boundaries (4.2848ms)
+✔ profile JSON errors are actionable and never expose values, even with hostile content (1.6542ms)
+✔ invalid CV submissions do not consume AI budget or block the next valid request; valid limits remain (4.1681ms)
+✔ STAR scaffold uses complete source quotes and discards invented model biography (2.0446ms)
+✔ the entire accepted long answer reaches the prompt, including the final result (1.3215ms)
+✔ a fragment dropping negation and invented result are not published as STAR facts (0.4687ms)
+✔ duplicate evidence is not presented as four verified components and invalid scores fail (0.4504ms)
+✔ invalid interview inputs never consume AI quota; error responses do not echo source (2.6728ms)
+✔ unanswered follow-up is excluded and original answer remains authoritative (1.5032ms)
+✔ missing, duplicated or invalid evaluation scores fail explicitly (0.9192ms)
+✔ AI feedback cannot report new numerical claims outside the supplied answer (0.6477ms)
+✔ slow profile writes are serialized and the latest edit survives (1.1353ms)
+✔ failed profile writes never claim success and can be saved again (0.2939ms)
+✔ typing and local matching do not consume AI budget or prevent generation; AI limits still hold (108.0429ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ every advertised VI/EN preview exists in the release (253.985ms)
+✔ malformed AI output does not leak source text in errors (14.7427ms)
+✔ all 148 native variants brand preview and generated copyright consistently (770.0741ms)
+✔ generated CVs load the deployed photo editor and previews contain no scripts (433.4654ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1641.4164

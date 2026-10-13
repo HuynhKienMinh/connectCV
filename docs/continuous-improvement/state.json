@@ -6,9 +6,14 @@
   "cadenceMinutes": 15,
   "completedCycles": 2,
   "lastRun": "runs/2026-10-13-cycle-0002.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "IDLE",
+  "activeRun": {
+    "cycle": 3,
+    "startedAt": "2026-10-13T04:24:56.803Z",
+    "module": "interview",
+    "issue": "INT003"
+  },
+  "activeIssue": "INT003",
+  "issueState": "VERIFIED_LOCAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -38,10 +43,10 @@
   "syntheticAccountsConfigured": false,
   "liveAiWritesAllowed": false,
   "aiScenarioCapPerDay": 12,
-  "aiScenariosUsedToday": 0,
+  "aiScenariosUsedToday": 1,
   "aiBudgetDate": "2026-10-13",
   "backup": {
-    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0002",
+    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0003",
     "codeVerified": true,
     "buildCopied": true,
     "restoreCloneVerified": true,

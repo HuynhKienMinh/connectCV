@@ -1,0 +1,8 @@
+{
+  "case": "long-answer-evaluate-before",
+  "answerCharacters": 2422,
+  "acceptedLimit": 3000,
+  "promptCutAt": 2000,
+  "tailPresentBefore": false,
+  "evaluateReturnsRawModelResult": true
+}

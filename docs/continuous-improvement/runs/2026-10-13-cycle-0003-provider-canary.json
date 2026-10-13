@@ -1,0 +1,14 @@
+{
+  "model": "gemini-2.5-flash",
+  "syntheticOnly": true,
+  "providerCalls": 1,
+  "durationMs": 1390,
+  "verifiedComponents": [
+    "situation",
+    "task",
+    "action",
+    "result"
+  ],
+  "scoreValid": true,
+  "groundingPassed": true
+}
