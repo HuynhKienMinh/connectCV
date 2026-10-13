@@ -1,0 +1,6 @@
+{
+  "case": "empty-JD-before-fix",
+  "passedToRoute": true,
+  "aiBudgetConsumed": 1,
+  "expectedAiBudgetConsumed": 0
+}

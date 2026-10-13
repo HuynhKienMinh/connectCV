@@ -83,6 +83,7 @@
 
   </style>
 <script src="/ai/runtime.js"></script>
+<script src="/ai/js/cv-input-validation.js"></script>
 <script src="/ai/js/profile-autosave.js"></script>
 <script src="/ai/js/account-bridge.js"></script>
 <script>
@@ -2939,6 +2940,24 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     }
 
     // Tạo CV bằng Gemini AI theo ngôn ngữ & mẫu CV đã chọn (Hỗ trợ May đo Đơn chiếc & May đo Hàng loạt theo Job)
+    function showCVInputErrors(errors) {
+      const fields={jdText:'cv-jd',profile:'cv-profile',companyName:'cv-company'};
+      for(const [key,id] of Object.entries(fields)){
+        const field=document.getElementById(id),feedbackId=id+'-validation-error';
+        document.getElementById(feedbackId)?.remove();
+        if(!field)continue;
+        field.removeAttribute('aria-invalid');
+        if(field.getAttribute('aria-describedby')===feedbackId)field.removeAttribute('aria-describedby');
+        if(errors[key]){
+          if(key==='profile')document.getElementById('cv-profile-raw-wrapper')?.classList.remove('hidden');
+          const feedback=document.createElement('p');feedback.id=feedbackId;feedback.className='text-xs text-red-700 mt-1.5';feedback.setAttribute('role','alert');feedback.textContent=errors[key];
+          field.after(feedback);field.setAttribute('aria-invalid','true');field.setAttribute('aria-describedby',feedbackId);
+        }
+      }
+      const first=Object.keys(errors).find(key=>fields[key]);
+      if(first)document.getElementById(fields[first])?.focus();
+    }
+
     async function generateCV() {
       if (cvGenerationInProgress) return;
       recommendationVersion++;
@@ -2959,6 +2978,15 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         profileObj = JSON.parse(document.getElementById('cv-profile').value);
       } catch {
         profileObj = document.getElementById('cv-profile').value;
+      }
+
+      const inputErrors=window.connectCVCvInput.validate({
+        profile:profileObj,jdText:document.getElementById('cv-jd')?.value||'',companyName:currentJobInputMode==='manual'?(document.getElementById('cv-company')?.value||''):''
+      },{checkJD:currentJobInputMode==='manual'});
+      showCVInputErrors(inputErrors);
+      if(Object.keys(inputErrors).length){
+        resultDiv.innerHTML='<div class="p-5 bg-red-50 border border-red-200 rounded-xl" role="alert"><p class="font-bold text-red-700">Kiểm tra thông tin trước khi tạo CV</p><p class="text-sm text-slate-700">'+escapeHTML(Object.values(inputErrors).join(' '))+'</p></div>';
+        return;
       }
 
       function setButtonState(isLoading, text) {
@@ -3024,7 +3052,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
                 renderedHtml: data.renderedHtml
               });
             } else {
-              lastErrorMessage = data.message || (data.details && data.details.join(', ')) || 'Không thể tạo CV qua AI';
+              lastErrorMessage = window.connectCVCvInput.errorMessage(data);
+              if(data.fieldErrors)showCVInputErrors(data.fieldErrors);
               if (data.isRateLimit) {
                 console.warn('[Batch CV] Chạm hạn mức Quota, tạm dừng các job tiếp theo để hạ nhiệt API');
                 break;
@@ -3118,11 +3147,12 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
             renderCVResult(latestCVData, latestRenderedHtml);
           } else {
-            const errorMsg = data.message || (data.details && data.details.join(', ')) || data.error || 'Vui lòng thử lại.';
+            const errorMsg = window.connectCVCvInput.errorMessage(data);
+            if(data.fieldErrors)showCVInputErrors(data.fieldErrors);
             const isRateLimit = data.isRateLimit || errorMsg.includes('chạm hạn mức') || errorMsg.includes('Quota') || errorMsg.includes('giây');
             resultDiv.innerHTML = `<div class="p-6 ${isRateLimit ? 'bg-amber-50 border-amber-200 text-amber-900' : 'bg-red-50 border-red-200 text-red-700'} border rounded-2xl space-y-2">
               <div class="font-bold flex items-center text-base"><i class="fa-solid ${isRateLimit ? 'fa-hourglass-half text-amber-600' : 'fa-circle-exclamation text-red-600'} mr-2.5"></i> ${isRateLimit ? 'Hạn Mức AI Đang Hạ Nhiệt' : 'Không thể tạo CV'}</div>
-              <div class="text-sm text-slate-700 leading-relaxed">${errorMsg}</div>
+              <div class="text-sm text-slate-700 leading-relaxed">${escapeHTML(errorMsg)}</div>
               ${isRateLimit ? `<div class="pt-2"><button type="button" onclick="generateCV()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm"><i class="fa-solid fa-arrow-rotate-right mr-1.5"></i> Thử Lại Ngay</button></div>` : ''}
             </div>`;
           }

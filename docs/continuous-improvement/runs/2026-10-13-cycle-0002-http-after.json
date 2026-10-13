@@ -1,0 +1,8 @@
+{
+  "uiGenerateRequests": 0,
+  "directInvalidRequestStatus": 400,
+  "code": "CV_INPUT_INVALID",
+  "fieldErrors": {
+    "jdText": "Mô tả công việc (JD): nhập từ 20 đến 6.000 ký tự, không chỉ khoảng trắng."
+  }
+}

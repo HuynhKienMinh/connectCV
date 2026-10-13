@@ -18,7 +18,7 @@ test('failed profile writes never claim success and can be saved again',async()=
 test('typing and local matching do not consume AI budget or prevent generation; AI limits still hold',async()=>{
  let budget=0;const middleware=createFeatureSecurity({consumeBudget:async()=>budget++,clock:()=>1000});
  async function request(path,id='fixture'){
-  let passed=false,status=200;const req={method:'POST',baseUrl:'/api/cv',path,user:{id},body:{profile:{}},socket:{remoteAddress:'proxy'}};
+  let passed=false,status=200;const req={method:'POST',baseUrl:'/api/cv',path,user:{id},body:{profile:{},jdText:'Synthetic job description for backend testing.'},socket:{remoteAddress:'proxy'}};
   const res={setHeader(){},status(n){status=n;return this;},json(){}};
   await middleware(req,res,()=>passed=true);return {passed,status};
  }

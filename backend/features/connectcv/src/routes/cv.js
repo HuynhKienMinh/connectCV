@@ -36,24 +36,7 @@ const {
 // ─────────────────────────────────────────────────────────
 // HELPER: Validation schemas (Joi)
 // ─────────────────────────────────────────────────────────
-const profileSchema = Joi.alternatives().try(
-  Joi.object().unknown(true),
-  Joi.string().max(1000000).custom((value,helpers)=>{
-    try {const parsed=JSON.parse(value);return parsed && typeof parsed==='object' && !Array.isArray(parsed)?parsed:helpers.error('any.invalid');}
-    catch {return helpers.error('any.invalid');}
-  })
-).required();
-
-const generateSchema = Joi.object({
-  jdText:            Joi.string().min(20).max(6000).required(),
-  profile:           profileSchema,
-  companyName:       Joi.string().max(150).allow('').optional(),
-  targetRole:        Joi.string().max(150).allow('').optional(),
-  companyCulture:    Joi.string().max(1000).allow('').optional(),
-  language:          Joi.string().valid('vi', 'en').default('vi'),
-  templateMode:      Joi.string().valid('auto', 'manual').default('auto'),
-  selectedTemplateId: Joi.string().max(100).allow('').optional()
-});
+const {generateSchema,validationResponse}=require('../services/cvGenerationValidation');
 
 const translateSchema = Joi.object({
   cvData:         Joi.object().required(),
@@ -281,11 +264,7 @@ router.post('/generate', async (req, res) => {
     // ── 1. Validate input với Joi
     const { error, value } = generateSchema.validate(req.body, { abortEarly: false, stripUnknown: true });
     if (error) {
-      return res.status(400).json({
-        success: false,
-        message: 'Dữ liệu đầu vào không hợp lệ',
-        details: error.details.map(d => d.message)
-      });
+      return res.status(400).json(validationResponse(error));
     }
 
     const { jdText, profile, companyName, targetRole, companyCulture, language, templateMode, selectedTemplateId } = value;

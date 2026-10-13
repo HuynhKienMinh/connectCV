@@ -1,0 +1,35 @@
+✔ browser path uses existing configured or pinned executable only (1.0944ms)
+✔ production renderer cannot disable its sandbox using handoff flags (0.7175ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ AI cannot add facts, numbers, skills, degrees or identities in either language (19.1798ms)
+✔ Source IDs allow ordering but duplicate/unknown IDs cannot add or lose history (0.4665ms)
+✔ No hardcoded biographical defaults in all 74 layouts and both languages (578.7544ms)
+✔ 74 layouts retain only supplied facts including accounting and empty GPA (336.9411ms)
+✔ Long profile remains complete or fails explicitly before AI (2.2495ms)
+✔ Empty profile has no fake score, education, experience or skills (0.2058ms)
+✔ ATS Word keeps source text in normal paragraphs, no textbox or graphics (14.3893ms)
+✔ Keyword matching distinguishes Excel from Excellent and handles C++ (0.2375ms)
+✔ Missing degrees, highlights and timelines stay empty after language switch (0.4398ms)
+✔ Translation does not invent bachelor equivalence or honors awards (0.2856ms)
+✔ client and server reject empty, short, whitespace and oversized JD; accept VI/EN boundaries (4.3251ms)
+✔ profile JSON errors are actionable and never expose values, even with hostile content (1.6694ms)
+✔ invalid CV submissions do not consume AI budget or block the next valid request; valid limits remain (4.0151ms)
+✔ unanswered follow-up is excluded and original answer remains authoritative (1.4181ms)
+✔ missing, duplicated or invalid evaluation scores fail explicitly (0.9204ms)
+✔ AI feedback cannot report new numerical claims outside the supplied answer (0.5005ms)
+✔ slow profile writes are serialized and the latest edit survives (1.1163ms)
+✔ failed profile writes never claim success and can be saved again (0.3281ms)
+✔ typing and local matching do not consume AI budget or prevent generation; AI limits still hold (95.9899ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ every advertised VI/EN preview exists in the release (264.6947ms)
+✔ malformed AI output does not leak source text in errors (17.4012ms)
+✔ all 148 native variants brand preview and generated copyright consistently (804.3162ms)
+✔ generated CVs load the deployed photo editor and previews contain no scripts (433.3389ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1672.1043

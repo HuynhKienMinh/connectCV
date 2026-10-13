@@ -6,9 +6,13 @@
   "cadenceMinutes": 15,
   "completedCycles": 1,
   "lastRun": "runs/2026-10-13-cycle-0001.md",
-  "activeRun": null,
+  "activeRun": {
+    "cycle": 2,
+    "startedAt": "2026-10-13T03:58:04.209Z",
+    "issue": "UX001"
+  },
   "activeIssue": "UX001",
-  "issueState": "OPEN",
+  "issueState": "VERIFIED_LOCAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -41,7 +45,7 @@
   "aiScenariosUsedToday": 0,
   "aiBudgetDate": "2026-10-13",
   "backup": {
-    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-baseline",
+    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0002",
     "codeVerified": true,
     "buildCopied": true,
     "restoreCloneVerified": true,

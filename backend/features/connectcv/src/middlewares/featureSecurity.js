@@ -10,6 +10,14 @@ async function featureSecurity(req,res,next){
  if(!req.user||typeof req.user.id!=='string'||!req.user.id||req.user.id.length>200)
   return res.status(401).json({success:false,code:'AUTH_REQUIRED',message:'Vui lòng đăng nhập để sử dụng chức năng này.'});
  res.setHeader('Cache-Control','no-store');
+ // Auth has already passed; invalid CV inputs must not consume the AI bucket or budget.
+ const fullPath=((req.baseUrl||'')+(req.path||'')).replace(/\/+$/,'').toLowerCase();
+ if(fullPath==='/api/cv/generate'){
+  const {validateGeneration,validationResponse}=require('../services/cvGenerationValidation');
+  const result=validateGeneration(req.body);
+  if(result.error)return res.status(400).json(validationResponse(result.error));
+  req.body=result.value;
+ }
  const body=req.body;
  if(!body||typeof body!=='object'||Array.isArray(body))return res.status(400).json({success:false,message:'Nội dung yêu cầu không hợp lệ.'});
  for(const key of ['history','messages','conversationHistory'])if(body[key]!==undefined){
@@ -26,7 +34,6 @@ async function featureSecurity(req,res,next){
  }
  // Account bucket cannot be reset by spoofing X-Forwarded-For. Socket bucket is
  // deliberately conservative behind a proxy; use a shared store for replicas.
- const fullPath=(req.baseUrl||'')+(req.path||'');
  const utility=['/api/cv/templates/recommend','/api/cv/auto-match-jobs','/api/cv/render'].includes(fullPath);
  const ai=['/api/cv/generate','/api/cv/translate','/api/cv/ats-score','/api/chatbot/message','/api/interview/start','/api/interview/transcribe','/api/interview/live-chat','/api/interview/live-summary','/api/interview/evaluate','/api/interview/proposal','/api/interview/debrief'].includes(fullPath);
  const group=utility?'utility':'action';
