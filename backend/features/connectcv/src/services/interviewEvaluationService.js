@@ -31,7 +31,7 @@ function groundEvaluation(result,input){
   improvements:gaps.map(k=>questions[k]),
   followUpQuestions:gaps.map(k=>questions[k]),
   practiceTask:rejected.length?'Có trích dẫn AI không khớp nguồn. Đối chiếu với câu trả lời gốc và chấm lại; chỉ bổ sung nếu đó là thông tin thật.':gaps.length?'Chọn một mục cần làm rõ, bổ sung thông tin thật rồi chấm lại. Không tự thêm số liệu để tăng điểm.':'Kể lại theo thứ tự S–T–A–R bằng lời của bạn; giữ nguyên dữ kiện và số liệu đã nêu.',
-  intentionalHookingEvaluation:{applied:false,feedback:'Nếu muốn mở rộng hội thoại, chọn một chi tiết thực tế mà bạn có thể giải thích sâu khi được hỏi tiếp.'},
+  intentionalHookingEvaluation:{applied:null,feedback:'Nếu muốn mở rộng hội thoại, chọn một chi tiết thực tế mà bạn có thể giải thích sâu khi được hỏi tiếp.'},
   improvedAnswer:keys.map((k,i)=>`[${'STAR'[i]}] ${quotes[k]||'[Cần xác minh/bổ sung '+names[k].toLowerCase()+' thực tế]'}`).join('\n'),
   groundingNote:'Khung STAR chỉ sử dụng đoạn trích có trong câu trả lời gốc. Phần chưa xác minh là câu hỏi gợi ý, không phải thành tích của bạn.'
  };

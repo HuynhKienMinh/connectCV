@@ -7,7 +7,7 @@ test('STAR scaffold uses complete source quotes and discards invented model biog
  const result=groundEvaluation({score:8,suggestedStarAnswer:parts,improvedAnswer:'I used Redis and reduced latency to 5ms.',strengths:['Managed 50 engineers.']},input);
  assert.equal(result.candidateAnswer,input.candidateAnswer);assert.equal(result.verifiedComponents.length,4);
  assert.ok(!result.improvedAnswer.includes('Redis'));assert.ok(!result.improvedAnswer.includes('5ms'));
- assert.deepEqual(result.followUpQuestions,[]);assert.equal(result.score,8);
+ assert.deepEqual(result.followUpQuestions,[]);assert.equal(result.score,8);assert.equal(result.intentionalHookingEvaluation.applied,null);
 });
 test('the entire accepted long answer reaches the prompt, including the final result',()=>{
  const answer='Tôi tham gia dự án học tập. '.repeat(85)+'Kết quả thật ở cuối: từ 200ms xuống 120ms.';
