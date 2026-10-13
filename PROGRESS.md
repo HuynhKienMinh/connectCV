@@ -1,3 +1,7 @@
+# Current work — 2026-10-13
+
+Continuous improvement loop is ACTIVE every 15 minutes in this chat. Owner authorizes tested deployments with verified backups/rollback; all customer segments are in scope with separate acceptance criteria. Read docs/continuous-improvement/README.md, ROADMAP.md, BACKLOG.md, RUNBOOK.md, DECISIONS.md and state.json before continuing. Current release baseline ce4b0ec; next issue UX001. Do not equate code/build backup with Firestore or Auth backup. Preserve member changes and Firebase/Google architecture.
+
 # ConnectCV — Firebase integration handoff (2026-10-06)
 
 User decision: retain Firebase Auth and Google Sign-in. Do not migrate production identity to Supabase or enable demo JWT/password accounts.
