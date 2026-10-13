@@ -24,6 +24,12 @@ async function featureSecurity(req,res,next){
   if(result.error)return res.status(400).json(evaluationError(result.error));
   req.body=result.value;
  }
+ if(fullPath==='/api/interview/debrief'){
+  const publication=require('../../public/js/community-publication');
+  const result=publication.validate(req.body);
+  if(Object.keys(result.fieldErrors).length)return res.status(400).json(publication.errorResponse(result));
+  req.body=result.value;
+ }
  const body=req.body;
  if(!body||typeof body!=='object'||Array.isArray(body))return res.status(400).json({success:false,message:'Nội dung yêu cầu không hợp lệ.'});
  for(const key of ['history','messages','conversationHistory'])if(body[key]!==undefined){
@@ -41,7 +47,7 @@ async function featureSecurity(req,res,next){
  // Account bucket cannot be reset by spoofing X-Forwarded-For. Socket bucket is
  // deliberately conservative behind a proxy; use a shared store for replicas.
  const utility=['/api/cv/templates/recommend','/api/cv/auto-match-jobs','/api/cv/render'].includes(fullPath);
- const ai=['/api/cv/generate','/api/cv/translate','/api/cv/ats-score','/api/chatbot/message','/api/interview/start','/api/interview/transcribe','/api/interview/live-chat','/api/interview/live-summary','/api/interview/evaluate','/api/interview/proposal','/api/interview/debrief'].includes(fullPath);
+ const ai=['/api/cv/generate','/api/cv/translate','/api/cv/ats-score','/api/chatbot/message','/api/interview/start','/api/interview/transcribe','/api/interview/live-chat','/api/interview/live-summary','/api/interview/evaluate','/api/interview/proposal'].includes(fullPath);
  const group=utility?'utility':'action';
  const now=clock(),window=300000,limit=utility?120:15;
  if(buckets.size>10000)for(const [k,v]of buckets)if(v.until<=now)buckets.delete(k);

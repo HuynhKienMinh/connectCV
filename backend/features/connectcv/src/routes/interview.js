@@ -551,7 +551,10 @@ function validateQuestionList(questions) {
 router.post('/debrief', async (req, res) => {
   try {
     if(!req.user?.id)return res.status(401).json({success:false,code:'AUTH_REQUIRED'});
-    const { companyName, position, interviewQuestions, difficultyRating = 3, reviewText, anonymous = false } = req.body;
+    const publication = require('../../public/js/community-publication');
+    const checked = publication.validate(req.body);
+    if(Object.keys(checked.fieldErrors).length)return res.status(400).json(publication.errorResponse(checked));
+    const { companyName, position, interviewQuestions, difficultyRating, reviewText, anonymous } = checked.value;
 
     // ─── 1. Required fields ───────────────────────────────────────
     if (!companyName || !position || !interviewQuestions) {
@@ -630,7 +633,7 @@ router.post('/debrief', async (req, res) => {
     const reward=await communityStore.submit(req.user,debriefEntry,hash);
     return res.status(201).json({
       success: true,
-      message: 'Chia sẻ thành công. Yêu cầu thưởng +5 Credits đã được ghi nhận; chờ tích hợp vào số dư tài khoản.',
+      message: reward.creditStatus === 'awarded' ? 'Đã đăng công khai và cộng 5 Credits vào tài khoản.' : 'Đã đăng công khai. Thưởng 5 Credits đang chờ ghi vào số dư.',
       data: {
         ...reward,
         companyName: debriefEntry.companyName,

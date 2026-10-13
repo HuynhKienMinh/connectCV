@@ -83,6 +83,7 @@
 
   </style>
 <script src="/ai/runtime.js"></script>
+<script src="/ai/js/community-publication.js"></script>
 <script src="/ai/js/cv-input-validation.js"></script>
 <script src="/ai/js/profile-autosave.js"></script>
 <script src="/ai/js/account-bridge.js"></script>
@@ -1272,7 +1273,7 @@ window.fetch=async function(resource,options={}){
 <i class="fa-solid fa-building text-pink-300"></i> FPT, Viettel, VNG, Shopee, MB Bank...
             </span>
 <span class="flex items-center gap-1.5 bg-black/20 px-3 py-1.5 rounded-xl border border-white/10">
-<i class="fa-solid fa-shield-halved text-emerald-300"></i> Kiểm duyệt nội dung tự động chuẩn mực
+<i class="fa-solid fa-shield-halved text-emerald-300"></i> Kiểm tra độ dài, trùng lặp và thông tin liên hệ
             </span>
 <span class="flex items-center gap-1.5 bg-black/20 px-3 py-1.5 rounded-xl border border-white/10">
 <i class="fa-solid fa-clock text-amber-300"></i> Giới hạn 1 bài / 6 giờ
@@ -1302,7 +1303,7 @@ window.fetch=async function(resource,options={}){
 <i class="fa-solid fa-user-secret text-slate-500 text-lg"></i>
 <div>
 <div class="text-xs font-bold text-slate-700">Chế độ Ẩn Danh</div>
-<div class="text-[10px] text-slate-400">Giấu tên và avatar khi đăng bài</div>
+<div class="text-[10px] text-slate-400">Giấu tên/avatar; nội dung bài vẫn công khai</div>
 </div>
 </div>
 <label class="relative inline-flex items-center cursor-pointer">
@@ -1361,9 +1362,17 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
                 </label>
 <textarea class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-pink-500 focus:outline-none transition leading-relaxed" id="deb-review" placeholder="VD: Vòng 1 phỏng vấn hỏi sâu về database, người phỏng vấn rất thân thiện và trọng tư duy..." rows="2"></textarea>
 </div>
+<!-- Public preview uses textContent only; no profile or contact fields are transmitted. -->
+<div id="deb-public-preview" class="hidden p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-3" role="region" aria-label="Bản xem trước công khai">
+<strong>Bản xem trước công khai</strong>
+<p>Ẩn danh chỉ giấu tên/avatar. Chi tiết trong bài có thể nhận diện bạn. Bộ lọc không phát hiện mọi dữ liệu nhạy cảm; hãy tự kiểm tra.</p>
+<pre id="deb-preview-text" class="whitespace-pre-wrap text-xs" style="overflow-wrap:anywhere;font-family:inherit"></pre>
+<label class="flex items-start gap-2"><input id="deb-public-confirm" type="checkbox"/><span>Tôi đã kiểm tra nội dung và đồng ý đăng công khai.</span></label>
+<button type="button" class="px-3 py-2 bg-slate-200 rounded-xl" onclick="closeDebriefPreview()">Quay lại sửa</button>
+</div>
 <!-- Nút đăng bài -->
 <button class="w-full py-3.5 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-extrabold rounded-2xl shadow-md hover:shadow-lg transition flex items-center justify-center text-xs" id="btn-debrief" onclick="submitDebrief()">
-<span>🎁 Gửi Chia Sẻ &amp; Nhận +5 Free Credits</span>
+<span>Xem trước bài công khai</span>
 </button>
 <!-- Cooldown info banner -->
 <div class="hidden p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-800 space-y-1" id="debrief-cooldown-info">
@@ -1373,7 +1382,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 <p class="text-[11px] leading-relaxed">Mỗi tài khoản được nhận thưởng <strong>1 lần / 6 giờ</strong> để đảm bảo thông tin chất lượng cao cho cộng đồng.</p>
 </div>
 <p class="text-[10px] text-slate-400 text-center flex items-center justify-center gap-1">
-<i class="fa-solid fa-lock text-emerald-500"></i> Kiểm duyệt nội dung tự động chống spam nhiều lớp
+<i class="fa-solid fa-lock text-emerald-500"></i> Không đăng tên cá nhân, địa chỉ, bí mật công ty hay thông tin người khác.
               </p>
 </div>
 </div>
@@ -5260,7 +5269,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         btn.disabled = false;
         btn.classList.remove('opacity-60', 'cursor-not-allowed');
         btn.classList.add('hover:from-pink-700', 'hover:to-rose-700');
-        btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+        btn.innerHTML = '<span>Xem trước bài công khai</span>';
         if (infoEl) infoEl.classList.add('hidden');
       }
     }
@@ -5303,10 +5312,21 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       return null;
     }
 
+    let _debriefPreviewSignature = null;
+    let _debriefSubmitting = false;
+    function closeDebriefPreview(){
+      _debriefPreviewSignature = null;
+      document.getElementById('deb-public-preview')?.classList.add('hidden');
+      const confirm=document.getElementById('deb-public-confirm');if(confirm)confirm.checked=false;
+      const btn=document.getElementById('btn-debrief');if(btn&&!_debriefSubmitting){btn.disabled=false;btn.textContent='Xem trước bài công khai';}
+    }
+    for(const id of ['deb-company','deb-pos','deb-questions','deb-review','deb-anonymous','deb-difficulty-val']){
+      document.getElementById(id)?.addEventListener('input',closeDebriefPreview);
+    }
     /** Đăng bài chia sẻ lên Mạng Xã Hội */
     async function submitDebrief() {
       const btn = document.getElementById('btn-debrief');
-      if (!btn) return;
+      if (!btn || _debriefSubmitting) return;
 
       const notify = (msg, title, type = 'error') => {
         if (type === 'success' && typeof showToastSuccess === 'function') showToastSuccess(msg, title);
@@ -5337,32 +5357,33 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         const lines = rawQ.split('\n').map(s => s.trim()).filter(Boolean);
         const isAnon = document.getElementById('deb-anonymous')?.checked ?? true;
 
-        // Lấy thông tin người dùng từ profile nếu không ẩn danh
-        let authorName = 'Ứng viên';
-        let authorRole = document.getElementById('deb-pos')?.value || 'Software Engineer';
-        let authorAvatar = window.currentCvAvatarDataUrl || '';
-
-        try {
-          const profileRaw = document.getElementById('cv-profile')?.value;
-          if (profileRaw) {
-            const p = JSON.parse(profileRaw);
-            if (p.fullName) authorName = p.fullName;
-            if (p.targetRole) authorRole = p.targetRole;
-            if (p.avatarUrl) authorAvatar = p.avatarUrl;
-          }
-        } catch (e) {}
-
         const payload = {
           companyName: (document.getElementById('deb-company')?.value || '').trim(),
-          position:    (document.getElementById('deb-pos')?.value || '').trim(),
+          position: (document.getElementById('deb-pos')?.value || '').trim(),
           interviewQuestions: lines,
-          reviewText:  (document.getElementById('deb-review')?.value || '').trim(),
+          reviewText: (document.getElementById('deb-review')?.value || '').trim(),
           difficultyRating: parseInt(document.getElementById('deb-difficulty-val')?.value || '4', 10),
           anonymous: isAnon,
-          authorName,
-          authorRole,
-          authorAvatar
+          publicAcknowledged: false
         };
+        const checked = ConnectCVCommunityPublication.validate(payload, {requireConsent:false});
+        if(Object.keys(checked.fieldErrors).length){
+          closeDebriefPreview();notify(Object.values(checked.fieldErrors)[0], 'Kiểm tra nội dung công khai');return;
+        }
+        const signature = JSON.stringify(checked.value);
+        if(_debriefPreviewSignature !== signature || !document.getElementById('deb-public-confirm').checked){
+          _debriefPreviewSignature = signature;
+          document.getElementById('deb-preview-text').textContent =
+            (isAnon ? 'Tác giả: Ẩn danh' : 'Tác giả: Tên tài khoản đăng nhập sẽ hiển thị') + '\n' +
+            payload.companyName + ' — ' + payload.position + '\nĐộ khó: ' + payload.difficultyRating + '/5\n\n' +
+            lines.join('\n') + '\n\n' + payload.reviewText;
+          document.getElementById('deb-public-confirm').checked = false;
+          document.getElementById('deb-public-preview').classList.remove('hidden');
+          btn.disabled=false;btn.textContent='Xác nhận đăng công khai';
+          document.getElementById('deb-public-confirm').focus();return;
+        }
+        payload.publicAcknowledged = true;
+        _debriefSubmitting = true;
 
         const res = await fetch('/api/interview/debrief', {
           method: 'POST',
@@ -5382,6 +5403,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
           notify(data.message || 'Chia sẻ thành công! Bạn nhận được +5 Credits.', '🎉 Đăng bài thành công!', 'success');
 
+          closeDebriefPreview();
           // Xóa form
           if (document.getElementById('deb-company'))   document.getElementById('deb-company').value = '';
           if (document.getElementById('deb-pos'))       document.getElementById('deb-pos').value = '';
@@ -5402,24 +5424,25 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           } else if (res.status === 409) {
             notify(data.message || 'Nội dung này đã được chia sẻ trước đó.', '🔁 Bài viết trùng lặp');
             btn.disabled = false;
-            btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+            btn.innerHTML = '<span>Xem trước bài công khai</span>';
           } else {
             notify(data.message || 'Dữ liệu chưa đạt chuẩn kiểm duyệt.', '❌ Kiểm duyệt từ chối');
             btn.disabled = false;
-            btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+            btn.innerHTML = '<span>Xem trước bài công khai</span>';
           }
         }
       } catch (err) {
         console.error('[Debrief Error]', err);
         notify('Không thể kết nối đến máy chủ. Vui lòng thử lại.', 'Lỗi mạng');
         btn.disabled = false;
-        btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+        btn.innerHTML = '<span>Xem trước bài công khai</span>';
       } finally {
+        _debriefSubmitting = false;
         if (!isSuccess) {
           const currentLast = parseInt(sessionStorage.getItem(DEBRIEF_COOLDOWN_KEY) || '0', 10);
-          if (Date.now() - currentLast >= DEBRIEF_COOLDOWN_MS) {
+          if (Date.now() - currentLast >= DEBRIEF_COOLDOWN_MS && !_debriefPreviewSignature) {
             btn.disabled = false;
-            btn.innerHTML = '<span>🎁 Gửi Chia Sẻ & Nhận +5 Free Credits</span>';
+            btn.innerHTML = '<span>Xem trước bài công khai</span>';
           }
         }
       }

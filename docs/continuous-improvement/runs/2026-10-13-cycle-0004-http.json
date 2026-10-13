@@ -1,0 +1,11 @@
+{
+  "scope": "local synthetic actor, file store; no cloud mutation or provider",
+  "noConsent": 400,
+  "contact": 400,
+  "postsBeforeValid": 0,
+  "valid": 201,
+  "duplicate": 409,
+  "publicPostCount": 1,
+  "privateMetadataExcluded": true,
+  "rewardStatus": "pending"
+}
