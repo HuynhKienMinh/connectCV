@@ -41,3 +41,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 - Public: FE/BE trả 200; API profile/tạo CV không đăng nhập bị từ chối 401; origin không tin cậy bị từ chối 403.
 - Public báo `browserConfigured=false`: chưa có renderer PDF phía server hoạt động. Browser Print là phương án hiện có.
 - Chu kỳ đầu đã thử tìm và mở chi tiết mẫu Harvard. Chưa tuyên bố kiểm thử E2E AI/phỏng vấn/thu tiền hoàn tất.
+
+## Cập nhật chu kỳ 0002 — 13/10/2026
+
+[Nhật ký và phản biện UX001](runs/2026-10-13-cycle-0002.md): lỗi CV có field rõ, frontend preflight và server validation trước AI quota đã deploy/verified public tại c9cc05a. 39 tests + build/CI đạt, backup code/build đã thử restore. Không dùng live AI write hay thay profile thật. Mục tiếp theo: đánh giá phỏng vấn trên transcript giả. Kết luận thương mại vẫn chưa sẵn sàng; các release gates chưa thay đổi.

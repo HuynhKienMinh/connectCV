@@ -4,7 +4,7 @@ Trạng thái: OPEN → IN_PROGRESS → VERIFIED_LOCAL → DEPLOYED → VERIFIED
 
 | ID | P | Vấn đề / tác động | Bằng chứng ban đầu | Nghiệm thu | Trạng thái |
 |---|---|---|---|---|---|
-| UX001 | P1 | Lỗi JD/profile chỉ hiện “dữ liệu không hợp lệ”; khách không biết sửa gì | Chu kỳ 2 tái hiện và sửa; bằng chứng runs/2026-10-13-cycle-0002.md | Lỗi rõ trường, preflight trên form, backend độc lập; dữ liệu sai không tiêu AI quota | VERIFIED_LOCAL |
+| UX001 | P1 | Lỗi JD/profile chỉ hiện “dữ liệu không hợp lệ”; khách không biết sửa gì | Chu kỳ 2 tái hiện và sửa; bằng chứng runs/2026-10-13-cycle-0002.md | Lỗi rõ trường, preflight trên form, backend độc lập; dữ liệu sai không tiêu AI quota | VERIFIED_LIVE |
 | DATA001 | P1 | Profile nhiều tab/thiết bị có thể ghi đè | accountStore.saveProfile update không revision | Test conflict hai client, revision/409 và recovery UI | OPEN |
 | OPS001 | P1 | PDF server không hoạt động; khách phải tự chọn tùy chọn in | Public capabilities browserConfigured=false ngày 13/10 | Renderer sandbox/queue đạt; export nhiều trang/crop/text có bằng chứng | OPEN |
 | OPS002 | P1 | Chưa có restore drill dữ liệu | Chưa tìm thấy bằng chứng phục hồi trong audit này | Backup mã hóa/inventory/subcollections; phục hồi và đối chiếu trên staging | OPEN |
