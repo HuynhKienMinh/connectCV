@@ -1,0 +1,15 @@
+{
+  "missingId": "audit-missing-a8dcdb7f-204a-4697-8910-b2c637f74564",
+  "publicMissingStatus": 404,
+  "publicCacheControl": "no-store",
+  "anonymousOwnerStatus": 401,
+  "anonymousCacheControl": "no-store",
+  "frontendStatus": 200,
+  "newFrontendAssetReferenced": true,
+  "assetStatus": 200,
+  "assetSha256": "bfe556231f48c488aa24fb28e3f46980458e1d5056a6e5aa8b4a4bb409e14eb4",
+  "scopeGuardPresent": true,
+  "fixtureAbsent": true,
+  "cloudWrites": 0,
+  "aiCalls": 0
+}

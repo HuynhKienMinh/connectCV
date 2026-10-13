@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 5,
-  "lastRun": "runs/2026-10-13-cycle-0005.md",
-  "activeRun": "runs/2026-10-13-cycle-0006.md",
-  "activeIssue": "PORT002",
-  "issueState": "VERIFIED_LOCAL",
+  "completedCycles": 6,
+  "lastRun": "runs/2026-10-13-cycle-0006.md",
+  "activeRun": null,
+  "activeIssue": null,
+  "issueState": "IDLE",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -17,7 +17,7 @@
     "chatbot",
     "portfolio"
   ],
-  "nextModuleAfterIssue": "portfolio",
+  "nextModuleAfterIssue": "auth-profile",
   "autoDeployAuthorized": true,
   "deployPolicy": "small_verified_changes_with_backup_and_live_check",
   "customerSegments": [
@@ -49,21 +49,25 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Audit portfolio publish/private/owner/visitor boundaries locally using two synthetic actors",
-    "Keep CHAT001 multilingual/freeform advice and unsupported UI copy including Pro plans open",
-    "Continue staging/dedicated accounts and encrypted database restore drill",
-    "Keep community moderation/delete, interview rubric and secure PDF export validation open"
+    "Audit DATA001 multi-tab profile write conflict on local synthetic actors",
+    "Continue Firebase staging/test accounts and encrypted database restore drill",
+    "Keep portfolio public preview/consent and real cloud actor matrix open",
+    "Keep chatbot quality/copy, community moderation, interview rubric and secure PDF export validation open"
   ],
   "deployment": {
-    "commit": "1fae1bf159ebc00dfbc8d1532ac8c82987614ea2",
+    "commit": "926b49f663f8cb6ce6be880280cbd86ab8a02348",
     "ciPassed": true,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38353951649",
-    "rollbackCommit": "0f2809692a73f380cbd4a1218fa07b5488c4c60c",
-    "rollbackRelease": "dep-db6rsgd9fdbs73e4mnm0",
-    "status": "VERIFIED_LIVE",
-    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6sge8u01pc73behhig",
-    "verifiedAt": "2026-10-13T08:24:55.283Z"
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38373061258",
+    "rollbackCommit": "1fae1bf159ebc00dfbc8d1532ac8c82987614ea2",
+    "rollbackRelease": "dep-db6sge8u01pc73behhig",
+    "status": "VERIFIED_LIVE_FE_BE",
+    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6v69mk1f9s73bme8u0",
+    "frontendAsset": "index-C4yNvFGV.js",
+    "frontendRollbackConfig": "work/private/connectcv-backups/2026-10-13-cycle-0006/firebase-rollback.json",
+    "frontendVerified": true,
+    "frontendSha256": "bfe556231f48c488aa24fb28e3f46980458e1d5056a6e5aa8b4a4bb409e14eb4",
+    "verifiedAt": "2026-10-13T09:06:45.520Z"
   },
-  "nextModule": "portfolio",
-  "rotationIndex": 5
+  "nextModule": "auth-profile",
+  "rotationIndex": 0
 }
