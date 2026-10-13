@@ -1,0 +1,32 @@
+✔ browser path uses existing configured or pinned executable only (0.7498ms)
+✔ production renderer cannot disable its sandbox using handoff flags (0.847ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ AI cannot add facts, numbers, skills, degrees or identities in either language (18.993ms)
+✔ Source IDs allow ordering but duplicate/unknown IDs cannot add or lose history (0.4651ms)
+✔ No hardcoded biographical defaults in all 74 layouts and both languages (444.4696ms)
+✔ 74 layouts retain only supplied facts including accounting and empty GPA (305.0677ms)
+✔ Long profile remains complete or fails explicitly before AI (2.47ms)
+✔ Empty profile has no fake score, education, experience or skills (0.1942ms)
+✔ ATS Word keeps source text in normal paragraphs, no textbox or graphics (16.3847ms)
+✔ Keyword matching distinguishes Excel from Excellent and handles C++ (0.2486ms)
+✔ Missing degrees, highlights and timelines stay empty after language switch (0.4304ms)
+✔ Translation does not invent bachelor equivalence or honors awards (0.3121ms)
+✔ unanswered follow-up is excluded and original answer remains authoritative (1.7692ms)
+✔ missing, duplicated or invalid evaluation scores fail explicitly (1.8966ms)
+✔ AI feedback cannot report new numerical claims outside the supplied answer (0.4072ms)
+✔ slow profile writes are serialized and the latest edit survives (1.0694ms)
+✔ failed profile writes never claim success and can be saved again (0.2431ms)
+✔ typing and local matching do not consume AI budget or prevent generation; AI limits still hold (2.4061ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ every advertised VI/EN preview exists in the release (207.8084ms)
+✔ malformed AI output does not leak source text in errors (10.8176ms)
+✔ all 148 native variants brand preview and generated copyright consistently (757.7182ms)
+✔ generated CVs load the deployed photo editor and previews contain no scripts (400.1786ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1502.798

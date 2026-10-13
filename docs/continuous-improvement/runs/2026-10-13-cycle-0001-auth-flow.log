@@ -1,0 +1,12 @@
+✔ confirmed missing account moves to signup (0.7737ms)
+✔ protected invalid credentials offer signup without asserting account absence (0.1387ms)
+✔ network failure and rate limits do not redirect to registration (0.1146ms)
+✔ registration errors do not create redirect loops (0.1236ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.9039

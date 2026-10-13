@@ -1,0 +1,87 @@
+{
+  "cycle": 1,
+  "startedAt": "2026-10-13T03:32:41.779Z",
+  "timezone": "Asia/Saigon",
+  "commit": "ce4b0ec9b9bca7ec67d296f0460547efd7de8d91",
+  "checks": [
+    {
+      "id": "feature-regression",
+      "passed": true,
+      "tests": 22,
+      "durationMs": 1559
+    },
+    {
+      "id": "account-isolation",
+      "passed": true,
+      "tests": 10,
+      "durationMs": 871
+    },
+    {
+      "id": "auth-flow",
+      "passed": true,
+      "tests": 4,
+      "durationMs": 133
+    },
+    {
+      "id": "studio-css",
+      "passed": true,
+      "tests": 0,
+      "durationMs": 50
+    },
+    {
+      "id": "frontend-route",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "durationMs": 247
+    },
+    {
+      "id": "backend-health",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "durationMs": 315
+    },
+    {
+      "id": "runtime-capabilities",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "durationMs": 244,
+      "capabilities": {
+        "authenticationIntegrated": true,
+        "durableStorageConfigured": true,
+        "browserConfigured": false
+      }
+    },
+    {
+      "id": "anonymous-profile-denied",
+      "status": 401,
+      "expected": 401,
+      "passed": true,
+      "durationMs": 82
+    },
+    {
+      "id": "anonymous-generate-denied",
+      "status": 401,
+      "expected": 401,
+      "passed": true,
+      "durationMs": 99
+    },
+    {
+      "id": "untrusted-origin-denied",
+      "status": 403,
+      "expected": 403,
+      "passed": true,
+      "durationMs": 83
+    },
+    {
+      "id": "photo-editor-resource",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "durationMs": 91
+    }
+  ],
+  "finishedAt": "2026-10-13T03:32:45.592Z"
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "timezone": "Asia/Saigon",
+  "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
+  "automationStatus": "ACTIVE",
+  "cadenceMinutes": 15,
+  "completedCycles": 1,
+  "lastRun": "runs/2026-10-13-cycle-0001.md",
+  "activeRun": null,
+  "activeIssue": "UX001",
+  "issueState": "OPEN",
+  "rotation": [
+    "auth-profile",
+    "cv-ats",
+    "interview",
+    "community",
+    "chatbot",
+    "portfolio"
+  ],
+  "nextModuleAfterIssue": "interview",
+  "autoDeployAuthorized": true,
+  "deployPolicy": "small_verified_changes_with_backup_and_live_check",
+  "customerSegments": [
+    "student-new-graduate",
+    "experienced",
+    "career-changer",
+    "freelancer",
+    "recruiter-training"
+  ],
+  "preserveArchitecture": [
+    "Firebase Auth",
+    "Google Sign-in",
+    "Firebase Hosting",
+    "Firestore"
+  ],
+  "allowedRepository": "HuynhKienMinh/connectCV",
+  "publicSmokeOnly": true,
+  "syntheticAccountsConfigured": false,
+  "liveAiWritesAllowed": false,
+  "aiScenarioCapPerDay": 12,
+  "aiScenariosUsedToday": 0,
+  "aiBudgetDate": "2026-10-13",
+  "backup": {
+    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-baseline",
+    "codeVerified": true,
+    "buildCopied": true,
+    "restoreCloneVerified": true,
+    "databaseVerified": false
+  },
+  "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
+  "nextActions": [
+    "Reproduce UX001 on local fixture server without AI calls",
+    "Implement field errors/preflight and prevent invalid requests consuming AI quota",
+    "Build dedicated staging and synthetic accounts before recurring live-write tests",
+    "Evaluate secure PDF renderer and complete database restore drill"
+  ]
+}
