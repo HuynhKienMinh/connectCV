@@ -1,29 +1,31 @@
 'use strict';
 const express = require('express'), Joi = require('joi');
 const { requireAuth, requireVerified } = require('../middlewares/firebaseAuth');
-const { db } = require('../config/firebase');
-const router = express.Router();
-const schema = Joi.object({ title: Joi.string().min(2).max(150).required(), summary: Joi.string().max(6000).allow('').default(''), published: Joi.boolean().default(false), projects: Joi.array().items(Joi.object({ title: Joi.string().max(150).required(), description: Joi.string().max(3000).allow('').default(''), url: Joi.string().uri({ scheme: ['https'] }).allow('').default('') })).max(30).default([]) }).unknown(false);
+const { db: defaultDb } = require('../config/firebase');
+function createPortfolioRouter({database=defaultDb,authenticate=requireAuth,verified=requireVerified,ensureAccount=user=>require('../services/accountStore').store().ensure(user)}={}){
+const db=database,router = express.Router();
+router.use((req,res,next)=>{res.set('Cache-Control','no-store');next();});
+const schema = Joi.object({ title: Joi.string().min(2).max(150).required(), summary: Joi.string().max(6000).allow('').default(''), published: Joi.boolean().strict().default(false), projects: Joi.array().items(Joi.object({ title: Joi.string().max(150).required(), description: Joi.string().max(3000).allow('').default(''), url: Joi.string().max(500).uri({ scheme: ['https'] }).allow('').default('') })).max(30).default([]) }).unknown(false);
 const idValid = id => /^[a-zA-Z0-9-]{1,100}$/.test(id);
 router.get('/public/:id', async (req, res, next) => {
   if (!idValid(req.params.id)) return res.sendStatus(404);
   try {
     const item = await db().collection('portfolios').doc(req.params.id).get();
-    if (!item.exists || !item.data().published) return res.status(404).json({ success: false });
+    if (!item.exists || !item.data().published) return res.status(404).json({ success: false, message: 'Hồ sơ này không tồn tại hoặc không còn công khai.' });
     const { title, summary, projects } = item.data();
     res.json({ success: true, portfolio: { id: item.id, title, summary, projects } });
   } catch (error) { next(error); }
 });
-router.use(requireAuth, express.json({ limit: '200kb' }));
+router.use(authenticate, express.json({ limit: '200kb' }));
 router.use((req, res, next) => { res.set('Cache-Control', 'no-store'); next(); });
 router.get('/', async (req, res, next) => {
   try { const items = await db().collection('portfolios').where('ownerId', '==', req.user.id).limit(30).get(); res.json({ success: true, portfolios: items.docs.map(item => ({ id: item.id, ...item.data(), ownerId: undefined })) }); } catch (error) { next(error); }
 });
-router.post('/', requireVerified, async (req, res, next) => {
+router.post('/', verified, async (req, res, next) => {
   const { value, error } = schema.validate(req.body);
   if (error) return res.status(400).json({ success: false, message: 'Hồ sơ năng lực không hợp lệ.' });
   try {
-    await require('../services/accountStore').store().ensure(req.user);
+    await ensureAccount(req.user);
     const account = db().collection('accounts').doc(req.user.id);
     const item = db().collection('portfolios').doc();
     await db().runTransaction(async tx => {
@@ -35,7 +37,7 @@ router.post('/', requireVerified, async (req, res, next) => {
     res.status(201).json({ success: true, id: item.id });
   } catch (error) { next(error); }
 });
-router.put('/:id', requireVerified, async (req, res, next) => {
+router.put('/:id', verified, async (req, res, next) => {
   const { value, error } = schema.validate(req.body);
   if (error || !idValid(req.params.id)) return res.status(400).json({ success: false });
   try {
@@ -61,4 +63,7 @@ router.delete('/:id', async (req, res, next) => {
     res.json({ success: true });
   } catch (error) { next(error); }
 });
-module.exports = router;
+return router;
+}
+module.exports = createPortfolioRouter();
+module.exports.createPortfolioRouter = createPortfolioRouter;

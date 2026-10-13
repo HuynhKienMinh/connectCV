@@ -23,9 +23,9 @@ jobs:
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
-      - run: node --test tests/authFlow.test.js
+      - run: node --test tests/authFlow.test.js tests/portfolioLoader.test.js
         working-directory: frontend
-      - run: node --test tests/account.test.cjs
+      - run: node --test tests/account.test.cjs tests/portfolio.test.cjs
         working-directory: backend
       - run: npm test
         working-directory: backend/features/connectcv

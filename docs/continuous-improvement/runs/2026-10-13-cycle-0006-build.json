@@ -1,0 +1,9 @@
+{
+  "cssMatchesPreviousProductionBuild": true,
+  "cssAsset": "index-CBGNLTBp.css",
+  "jsAsset": "index-C4yNvFGV.js",
+  "jsSha256": "bfe556231f48c488aa24fb28e3f46980458e1d5056a6e5aa8b4a4bb409e14eb4",
+  "scopeGuardInBuild": true,
+  "syntheticFixtureAbsent": true,
+  "studioGuardPassed": true
+}
