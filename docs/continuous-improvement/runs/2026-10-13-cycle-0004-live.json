@@ -1,0 +1,10 @@
+{
+  "studioStatus": 200,
+  "previewPresent": true,
+  "profilePayloadRemoved": true,
+  "helperStatus": 200,
+  "consentGuardPresent": true,
+  "unauthenticatedPublish": 401,
+  "liveWrites": 0,
+  "aiCalls": 0
+}

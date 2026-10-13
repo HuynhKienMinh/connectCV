@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 3,
-  "lastRun": "runs/2026-10-13-cycle-0003.md",
-  "activeRun": "runs/2026-10-13-cycle-0004.md",
-  "activeIssue": "SOCIAL002",
-  "issueState": "VERIFIED_LOCAL",
+  "completedCycles": 4,
+  "lastRun": "runs/2026-10-13-cycle-0004.md",
+  "activeRun": null,
+  "activeIssue": null,
+  "issueState": "IDLE",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -17,7 +17,7 @@
     "chatbot",
     "portfolio"
   ],
-  "nextModuleAfterIssue": "community",
+  "nextModuleAfterIssue": "chatbot",
   "autoDeployAuthorized": true,
   "deployPolicy": "small_verified_changes_with_backup_and_live_check",
   "customerSegments": [
@@ -49,21 +49,21 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Audit one community publish/reward/privacy scenario locally with synthetic accounts",
-    "Continue staging/dedicated accounts and database restore strategy",
-    "Keep INT001 rubric usefulness and semantic classification evaluation open",
-    "Evaluate secure PDF renderer/export regression matrix"
+    "Audit chatbot product guidance and source/data boundaries with local synthetic fixtures",
+    "Keep SOCIAL001 moderation/report/delete and legacy privacy review open; no bulk action without data backup",
+    "Continue staging/dedicated accounts and encrypted database restore drill",
+    "Keep interview rubric and secure PDF export validation open"
   ],
   "deployment": {
-    "commit": "8bcf1eba98efd66aaea08127aa3f03f9b84144af",
+    "commit": "0f2809692a73f380cbd4a1218fa07b5488c4c60c",
     "ciPassed": true,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38348260790",
-    "rollbackCommit": "c9cc05a961c25e22684dc091e600c1b92173cf0f",
-    "rollbackRelease": "dep-db6qvurl550s739opckg",
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38350291496",
+    "rollbackCommit": "8bcf1eba98efd66aaea08127aa3f03f9b84144af",
+    "rollbackRelease": "dep-db6rh7uk1f9s73b9jsh0",
     "status": "VERIFIED_LIVE",
-    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6rh7uk1f9s73b9jsh0",
-    "verifiedAt": "2026-10-13T04:58:55.252Z"
+    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6rsgd9fdbs73e4mnm0",
+    "verifiedAt": "2026-10-13T05:19:04.708Z"
   },
-  "nextModule": "community",
-  "rotationIndex": 3
+  "nextModule": "chatbot",
+  "rotationIndex": 4
 }

@@ -49,3 +49,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0003 — 13/10/2026
 
 [Nhật ký STAR và phản biện](runs/2026-10-13-cycle-0003.md): đọc đủ câu trả lời 3.000 ký tự, khung STAR theo câu/dòng nguồn, gợi ý luyện tiếp và không hiển thị điểm khi trích dẫn chưa khớp. 44 tests + build/CI đạt; một Gemini canary từ local với dữ liệu giả đạt; deploy 8bcf1eb/public smoke đạt. Chất lượng rubric đa ngành vẫn chưa nghiệm thu. Mục tiếp theo: cộng đồng/privacy/reward.
+
+## Cập nhật chu kỳ 0004 — 13/10/2026
+
+[Nhật ký cộng đồng/privacy](runs/2026-10-13-cycle-0004.md): preview và consent công khai, chặn contact rõ, không gửi profile thừa, không tính chia sẻ vào AI quota. 48 tests/build/CI đạt; deploy0f28096/live static/UI/auth smoke đạt. Không post public, moderation và data restore chưa đóng. Mục tiếp theo chatbot.
