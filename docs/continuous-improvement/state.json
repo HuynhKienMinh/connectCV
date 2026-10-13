@@ -4,16 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 2,
-  "lastRun": "runs/2026-10-13-cycle-0002.md",
-  "activeRun": {
-    "cycle": 3,
-    "startedAt": "2026-10-13T04:24:56.803Z",
-    "module": "interview",
-    "issue": "INT003"
-  },
-  "activeIssue": "INT003",
-  "issueState": "VERIFIED_LOCAL",
+  "completedCycles": 3,
+  "lastRun": "runs/2026-10-13-cycle-0003.md",
+  "activeRun": null,
+  "activeIssue": null,
+  "issueState": "IDLE",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -22,7 +17,7 @@
     "chatbot",
     "portfolio"
   ],
-  "nextModuleAfterIssue": "interview",
+  "nextModuleAfterIssue": "community",
   "autoDeployAuthorized": true,
   "deployPolicy": "small_verified_changes_with_backup_and_live_check",
   "customerSegments": [
@@ -54,21 +49,21 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Review one interview scenario locally with synthetic transcript and assess rubric usefulness",
-    "Prepare dedicated staging/synthetic account strategy before recurring live writes",
-    "Continue OPS002 database backup/restore design without modifying production data",
-    "Evaluate secure PDF renderer and export regression matrix"
+    "Audit one community publish/reward/privacy scenario locally with synthetic accounts",
+    "Continue staging/dedicated accounts and database restore strategy",
+    "Keep INT001 rubric usefulness and semantic classification evaluation open",
+    "Evaluate secure PDF renderer/export regression matrix"
   ],
   "deployment": {
-    "commit": "c9cc05a961c25e22684dc091e600c1b92173cf0f",
+    "commit": "8bcf1eba98efd66aaea08127aa3f03f9b84144af",
     "ciPassed": true,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38345223039",
-    "rollbackCommit": "ce4b0ec9b9bca7ec67d296f0460547efd7de8d91",
-    "rollbackRelease": "dep-db47kjdg1s2s738hh9u0",
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38348260790",
+    "rollbackCommit": "c9cc05a961c25e22684dc091e600c1b92173cf0f",
+    "rollbackRelease": "dep-db6qvurl550s739opckg",
     "status": "VERIFIED_LIVE",
-    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6qvurl550s739opckg",
-    "verifiedAt": "2026-10-13T04:20:53.764Z"
+    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6rh7uk1f9s73b9jsh0",
+    "verifiedAt": "2026-10-13T04:58:55.252Z"
   },
-  "nextModule": "interview",
-  "rotationIndex": 2
+  "nextModule": "community",
+  "rotationIndex": 3
 }

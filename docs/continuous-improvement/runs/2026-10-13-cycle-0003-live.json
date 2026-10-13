@@ -1,0 +1,8 @@
+{
+  "deploymentCommit": "8bcf1eb",
+  "studioStatus": 200,
+  "groundingUiDeployed": true,
+  "preflightDeployed": true,
+  "anonymousEvaluationDenied": 401,
+  "liveAiWrites": 0
+}

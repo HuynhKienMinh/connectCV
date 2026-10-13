@@ -45,3 +45,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0002 — 13/10/2026
 
 [Nhật ký và phản biện UX001](runs/2026-10-13-cycle-0002.md): lỗi CV có field rõ, frontend preflight và server validation trước AI quota đã deploy/verified public tại c9cc05a. 39 tests + build/CI đạt, backup code/build đã thử restore. Không dùng live AI write hay thay profile thật. Mục tiếp theo: đánh giá phỏng vấn trên transcript giả. Kết luận thương mại vẫn chưa sẵn sàng; các release gates chưa thay đổi.
+
+## Cập nhật chu kỳ 0003 — 13/10/2026
+
+[Nhật ký STAR và phản biện](runs/2026-10-13-cycle-0003.md): đọc đủ câu trả lời 3.000 ký tự, khung STAR theo câu/dòng nguồn, gợi ý luyện tiếp và không hiển thị điểm khi trích dẫn chưa khớp. 44 tests + build/CI đạt; một Gemini canary từ local với dữ liệu giả đạt; deploy 8bcf1eb/public smoke đạt. Chất lượng rubric đa ngành vẫn chưa nghiệm thu. Mục tiếp theo: cộng đồng/privacy/reward.

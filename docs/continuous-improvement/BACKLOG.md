@@ -18,7 +18,7 @@ Trạng thái: OPEN → IN_PROGRESS → VERIFIED_LOCAL → DEPLOYED → VERIFIED
 | CV002 | P1 | Export chưa có visual/text regression đầy đủ | Asset test kiểm tra file và HTML, không so toàn bộ PDF export | Matrix 74×2 + profile dài/ngắn; không clipping/đổi font/mất text | OPEN |
 | CV003 | P2 | Cần import/tóm tắt/profile hỗ trợ người thiếu dữ liệu | Chưa nghiệm thu | File validation, extraction preview, sửa trước lưu, nguồn facts | OPEN |
 | INT001 | P1 | Giá trị luyện tập chưa có pilot người dùng | Chưa có user study được cung cấp | Buổi có follow-up/rubric/evidence và bài tập cải thiện | OPEN |
-| INT003 | P1 | Chấm STAR riêng lẻ cắt câu trả lời và trả rewrite AI chưa ground | Chu kỳ 3: 2.422 ký tự được nhận nhưng tail bị cắt ở 2.000; output trả raw model | Full input, khung trích dẫn toàn câu, không bịa tool/số liệu, score chưa xác minh không hiển thị, có bước luyện tiếp | VERIFIED_LOCAL |
+| INT003 | P1 | Chấm STAR riêng lẻ cắt câu trả lời và trả rewrite AI chưa ground | Chu kỳ 3: 2.422 ký tự được nhận nhưng tail bị cắt ở 2.000; output trả raw model | Full input, khung trích dẫn toàn câu, không bịa tool/số liệu, score chưa xác minh không hiển thị, có bước luyện tiếp | VERIFIED_LIVE |
 | INT002 | P2 | Micro lỗi cần đường thay thế tốt | Phản ánh micro lỗi từ lịch sử | Test denied/no-device/lost-stream và tiếp tục bằng văn bản | OPEN |
 | SOCIAL001 | P1 | Cần moderation/report và kiểm soát PII/reward abuse | Chưa nghiệm thu toàn luồng | Preview công khai, report, role actions, idempotency/cooldown | OPEN |
 | CHAT001 | P1 | Cần eval hướng dẫn sản phẩm/prompt injection/PII | Chưa nghiệm thu adversarial bộ riêng | Không bịa capability, không lộ dữ liệu/secret, safe tool boundaries | OPEN |
