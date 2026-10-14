@@ -92,12 +92,12 @@
     "localCopiesDeleted": true
   },
   "delivery": {
-    "reviewCommit": "cc7e27edfd7d83523ff1fa8172ee35d57ef9f364",
-    "status": "PUSHED_REVIEW_CI_SUCCESS",
+    "reviewCommit": "e26e2edfd9be581bbc12f544bdae96d2539bee3b",
+    "status": "PUSHED_REVIEW_CI_IN_PROGRESS",
     "lastPushError": null,
     "nextAction": "Use per-command credential.username=HuynhKienMinh for pushes and username in Git credential lookup; no global config/credential changes",
     "runtimeChanged": false,
     "deployAttempted": false,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38587144008"
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38590248415"
   }
 }
