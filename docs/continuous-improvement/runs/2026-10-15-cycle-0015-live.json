@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-14T19:50:41.518179+00:00",
+  "frontendAsset": "/assets/index-BVFhznbg.js",
+  "frontendSha256": "f6860d0d7414c5a97d05bdfd12ceda64a9a5437a0c930eae4f950d776cea1784",
+  "apiOriginVerified": true,
+  "noLocalhost5000InCompiledClient": true,
+  "anonymousAccountStatus": 401,
+  "corsOriginAllowed": "https://connect-cv.web.app",
+  "profilePreflight": {
+    "status": 204,
+    "headers": "Content-Type,Authorization,If-Match"
+  },
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "authenticatedProfileE2EVerified": false,
+  "backendNewReleaseVerified": false,
+  "existingAccountReadOnlyLoaded": true,
+  "realProfileFieldsEdited": false,
+  "realProfileSavePerformed": false,
+  "googleLoginFlowRetested": false
+}

@@ -1,0 +1,22 @@
+{
+  "status": "VERIFIED",
+  "baselineCommit": "05fc9e979868fc57464495ef2b2c13208163d759",
+  "bundleFile": "connectcv-2026-10-15-cycle-0015-baseline.bundle",
+  "bytes": 239004493,
+  "sha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4",
+  "cloudId": "1pFE3Mu2Ex4csVeBTAym-kTDJE27s0WO_",
+  "cloudUrl": "https://drive.google.com/file/d/1pFE3Mu2Ex4csVeBTAym-kTDJE27s0WO_/view",
+  "cloudUiListed": true,
+  "bundleVerify": true,
+  "bareRestoreHeadVerified": true,
+  "fsckFullPassed": true,
+  "criticalSourceByteMatch": true,
+  "fullWorktreeCheckoutVerified": false,
+  "companionFile": "connectcv-restore-builds-and-manifests-2026-10-14.zip",
+  "companionSha256": "1f3afd5f50451b88d8d42ee8655539255289d3520df6557fcf8a55c40f9a231c",
+  "frontendRollbackJsSha256": "8f67885be54d5224c56527810a256fca73cec0a9062a6f148fd396a743276cd4",
+  "databaseIncluded": false,
+  "authCredentialsIncluded": false,
+  "localRestoreCleanupPending": false,
+  "localCopiesRetained": false
+}

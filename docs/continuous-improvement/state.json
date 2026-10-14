@@ -7,8 +7,8 @@
   "completedCycles": 14,
   "lastRun": "runs/2026-10-14-cycle-0014.md",
   "activeRun": "runs/2026-10-15-cycle-0015.md",
-  "activeIssue": "OPS005",
-  "issueState": "API_ORIGIN_AND_RENDERER_RECOVERY_VERIFIED_LOCAL",
+  "activeIssue": "OPS001",
+  "issueState": "RECONNECT_CI_PASSED_RENDER_DEPLOY_BUILDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -51,13 +51,14 @@
     "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
-    "cloudReadbackVerified": true
+    "cloudReadbackVerified": true,
+    "currentBaselineCatalog": "backup-transfer/cycle0015-baseline.json"
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Complete current CI, verified cloud baseline05fc9e9 and compatible FE/BE deployment for OPS005/OPS001",
-    "Keep CV002 open: no-hinting rejected; other fonts/long/crop/reading order not accepted",
-    "Dedicated Firebase synthetic accounts and encrypted database restore drill remain open"
+    "Resume cycle0015: inspect dep-db7tol4s728c739l4i8g FIRST; do not trigger overlapping deployment/backup. If live verify source15daaa7/canary/auth; if failed retain baseline05fc9e9 and inspect logs before any retry",
+    "OPS005 FE config is verified live; do not claim two-account save E2E, Google fresh login or authenticated PDF download tested",
+    "Keep CV002 font/long/crop/reading-order and encrypted database restore release gates open"
   ],
   "deployment": {
     "commit": "05fc9e979868fc57464495ef2b2c13208163d759",
@@ -67,15 +68,16 @@
     "rollbackRelease": "dep-db7gldg473hc73db5e90",
     "status": "VERIFIED_LIVE_CODE_FONT_ASSETS_AND_CANARY",
     "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db7kppmk1f9s73840ek0",
-    "frontendAsset": "index-DXVsKSbM.js",
+    "frontendAsset": "index-BVFhznbg.js",
     "frontendVerified": true,
-    "frontendSha256": "8f67885be54d5224c56527810a256fca73cec0a9062a6f148fd396a743276cd4",
+    "frontendSha256": "f6860d0d7414c5a97d05bdfd12ceda64a9a5437a0c930eae4f950d776cea1784",
     "verifiedAt": "2026-10-14T09:39:08.435Z",
-    "frontendCommit": "ab9f9b3d6aa65efc89c8027a99223a6e6d1cec25",
+    "frontendCommit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
     "pdfRendererReady": true,
     "livePdfExportVerified": false,
     "pdfCanaryVerified": true,
-    "frontendRollbackCloudPath": "connectcv-restore-builds-and-manifests-2026-10-14.zip/2026-10-14-cycle-0010/firebase-rollback.json"
+    "frontendRollbackCloudPath": "connectcv-restore-builds-and-manifests-2026-10-14.zip/2026-10-14-cycle-0010/firebase-rollback.json",
+    "frontendBackupCatalog": "backup-transfer/cycle0015-frontend.json"
   },
   "nextModule": "cv-ats",
   "rotationIndex": 1,
@@ -90,12 +92,17 @@
     "localCopiesDeleted": true
   },
   "delivery": {
-    "reviewCommit": "e26e2edfd9be581bbc12f544bdae96d2539bee3b",
-    "status": "LOCAL_FIXES_CURRENT_CI_PENDING",
+    "reviewCommit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
+    "status": "FRONTEND_VERIFIED_BACKEND_DEPLOY_PENDING",
     "lastPushError": null,
     "nextAction": "Use per-command credential.username=HuynhKienMinh for pushes and username in Git credential lookup; no global config/credential changes",
     "runtimeChanged": true,
-    "deployAttempted": false,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38590248415"
+    "deployAttempted": true,
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38625620175",
+    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38626162355",
+    "candidateRelease": "dep-db7tol4s728c739l4i8g",
+    "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
+    "backendStatus": "BUILDING_9M04S_AWAITING_LOGS",
+    "autoDeployDisabledBySpecificCommit": true
   }
 }

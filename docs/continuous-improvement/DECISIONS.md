@@ -37,3 +37,7 @@ Ghép subset của đúng font gốc đã kiểm tra license/metadata; không th
 ## D009 — 14/10/2026: chủ dự án yêu cầu backup cloud, dọn local
 
 Lưu bundle/build trên Google Drive riêng, xác minh checksum/khôi phục rồi xóa local, không giữ restore clones lâu dài. Giữ catalog/hướng dẫn nhỏ trong repo; staging upload/download/restore tạm có giới hạn dung lượng và dọn sau xác minh. Drive for Desktop đã có thể dùng để đọc byte file cloud khi browser download lỗi HTTP. Không cấu hình quyền/credential mới, không xóa Drive cache/tài liệu khác, không chia sẻ công khai. Yêu cầu này thay thế quy tắc giữ backup local của các lượt trước.
+
+## D010 — 15/10/2026: production API origin và renderer recovery
+
+Build FE phải khai báo public HTTPS origin; không dùng localhost fallback trong production. Runtime validation độc lập tránh artefact sai env; dev vẫn local. Renderer readiness sau recreate chỉ phục hồi qua fixed trusted PDF canary sau khi user slot được nhả; concurrent callers chia sẻ probe. Không dùng user PDF làm capability proof, không bỏ sandbox/capacity/auth. Lazy recovery qua successful PDF export chưa phải background retry hoặc DOCX-alone recovery.
