@@ -69,3 +69,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0008 — 14/10/2026
 
 [Nhật ký PDF](runs/2026-10-14-cycle-0008.md): sửa pinned Chromium build/runtime, CI69 tests +3 production PDF scenarios đạt trên runner tương thích sandbox. Renderdd35955 live/rendererReady=true; auth export401 giữ nguyên; FE không đổi. Backupab9f9b3/rollback đã verify. Chưa cloud download E2E hoặc matrix148; phát hiện pypdf tách từ tiếng Việt ở native font subsets, giữ CV002 mở. OPS001 tiếp tục synthetic startup canary, không kết luận chuẩn mọi ATS.
+
+## Cập nhật chu kỳ 0009 — 14/10/2026
+
+[Nhật ký startup PDF canary](runs/2026-10-14-cycle-0009.md): readiness chỉ true sau PDF A4/source-text verifier, thu hồi khi disconnect; public health no-store và không kích hoạt render.74 tests +production QA/CI đạt. Render00a7804 actual canary verified1page26980bytes, smokeauth401 giữ nguyên; FE không đổi. Backupdd35955/rollbackverify. Tiếp theoCV002font extraction; downloadE2E/queue/recovery/database restore còn mở.

@@ -25,3 +25,7 @@ Khôi phục niềm tin vào thao tác cơ bản trước: lỗi đầu vào d�
 ## D006 — 14/10/2026: profile version contract
 
 PUT hồ sơ phải mang If-Match của GET account/me. Client cũ nhận428 và cần tải lại; không hỗ trợ ghi vô điều kiện vì nguy cơ mất dữ liệu. Nội dung trùng được retry idempotent, nội dung khác từ client cũ nhận409. ETag là content version account-bound, không phải lịch sử revision đơn điệu; không migration. Sau conflict không tự retry hoặc force overwrite, giữ draft để download/nạp mới. Rollback FE/BE cùng baseline. CI review branch được bật để kiểm chứng trước main.
+
+## D007 — 14/10/2026: readiness PDF cần output có bằng chứng
+
+Mở Chromium không đủ để báo có thể xuất PDF. Startup render mẫu fixed synthetic, xác minh buffer/PDF one-pageA4/source marker, không AI/profile/database. Health chỉ đọcstate/no-store, không thêm public trigger render. Disconnect hoặc fail thu hồi ready; chưa có automatic recovery/backoff, còn trongOPS001. Readiness engine không chứng nhận mẫu/phông/thứ tự đọc ATS hoặc hành trình authenticated download. Journal-only pushes bỏ CI lặp, source/workflow vẫn fullgates.

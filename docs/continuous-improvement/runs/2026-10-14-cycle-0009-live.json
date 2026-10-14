@@ -1,0 +1,19 @@
+{
+  "verifiedAt": "2026-10-14T04:57:56.065Z",
+  "backendCommit": "00a7804adca3658ccc32fd343f7eced7437bab7c",
+  "backendRelease": "dep-db7gldg473hc73db5e90",
+  "pdfCanaryVerified": true,
+  "rendererReady": true,
+  "healthNoStore": true,
+  "anonymousExportDenied": true,
+  "renderLogCanary": {
+    "stage": "verified",
+    "pages": 1,
+    "bytes": 26980,
+    "checkedAt": "2026-10-14T04:55:46.921Z"
+  },
+  "authenticatedDownloadE2E": false,
+  "providerCalls": 0,
+  "cloudUserWrites": false,
+  "frontendChanged": false
+}
