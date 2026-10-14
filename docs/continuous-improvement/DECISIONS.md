@@ -29,3 +29,7 @@ PUT hồ sơ phải mang If-Match của GET account/me. Client cũ nhận428 và
 ## D007 — 14/10/2026: readiness PDF cần output có bằng chứng
 
 Mở Chromium không đủ để báo có thể xuất PDF. Startup render mẫu fixed synthetic, xác minh buffer/PDF one-pageA4/source marker, không AI/profile/database. Health chỉ đọcstate/no-store, không thêm public trigger render. Disconnect hoặc fail thu hồi ready; chưa có automatic recovery/backoff, còn trongOPS001. Readiness engine không chứng nhận mẫu/phông/thứ tự đọc ATS hoặc hành trình authenticated download. Journal-only pushes bỏ CI lặp, source/workflow vẫn fullgates.
+
+## D008 — 14/10/2026: export font giữ nguyên glyph và metric
+
+Ghép subset của đúng font gốc đã kiểm tra license/metadata; không thay family để né lỗi parser. Asset immutable có tên hash mới, source fonts/CSS giữ nguyên, runtime chỉ thay known rules khi render isolated. CI kiểm tra geometry/crop/pagination và pypdf nguyên từ (casefold được, không nối khoảng trắng để che lỗi). Scoped font fix không chứng nhận mọi ATS hoặc toàn148templates; BIZ002 vẫn mở ngoài bốn Be Vietnam Pro weights/OFL.

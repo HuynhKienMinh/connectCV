@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-14T09:39:08.435Z",
+  "browserConfigured": true,
+  "pdfCanaryVerified": true,
+  "healthNoStore": true,
+  "fonts": [
+    {
+      "weight": "400",
+      "file": "98f02a8ab3a62938d9b1.woff2",
+      "sha256": "98f02a8ab3a62938d9b183d428307763032d52c5ee4a9640246c433e00c02a8f",
+      "bytes": 24060,
+      "immutable": true
+    },
+    {
+      "weight": "500",
+      "file": "eb71c660c4ff84d983c6.woff2",
+      "sha256": "eb71c660c4ff84d983c67b532a17a1274587cc1037c944f424358f5b49542710",
+      "bytes": 25160,
+      "immutable": true
+    },
+    {
+      "weight": "600",
+      "file": "edbd291705c69a20a465.woff2",
+      "sha256": "edbd291705c69a20a465048b14a5e2d52972fb088a6131753ba0428f038438d2",
+      "bytes": 25188,
+      "immutable": true
+    },
+    {
+      "weight": "700",
+      "file": "210efa2ef7d2272d7ae2.woff2",
+      "sha256": "210efa2ef7d2272d7ae21dc7e7c6d4d0ba33359ecb982dfb0f377e66b030b781",
+      "bytes": 25268,
+      "immutable": true
+    }
+  ],
+  "anonymousExportStatus": 401,
+  "frontendSha256": "8f67885be54d5224c56527810a256fca73cec0a9062a6f148fd396a743276cd4",
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "authenticatedDownloadVerified": false
+}

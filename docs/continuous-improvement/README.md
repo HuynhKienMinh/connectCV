@@ -73,3 +73,5 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0009 — 14/10/2026
 
 [Nhật ký startup PDF canary](runs/2026-10-14-cycle-0009.md): readiness chỉ true sau PDF A4/source-text verifier, thu hồi khi disconnect; public health no-store và không kích hoạt render.74 tests +production QA/CI đạt. Render00a7804 actual canary verified1page26980bytes, smokeauth401 giữ nguyên; FE không đổi. Backupdd35955/rollbackverify. Tiếp theoCV002font extraction; downloadE2E/queue/recovery/database restore còn mở.
+
+Cycle10 (14/10/2026 16:39VN): commit05fc9e9 live BE, scoped native PDF Be Vietnam Pro normal-weight word extraction fix. Local77tests và CIWindows/Linux geometry/text đạt, 7-page local pixel comparison exact; source assets SHA/livecanary verified. Full148export matrix/authenticated download E2E chưa đạt. Nhật ký runs/2026-10-14-cycle-0010.md. OPS004 capacity gần đầy cần xử lý trước backup/deploy tiếp.

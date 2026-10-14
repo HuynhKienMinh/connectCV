@@ -68,3 +68,7 @@ Run ID; giờ VN và UTC; commit/branch; persona/module; bằng chứng pass/fai
 ## Cổng xác nhận “đủ bán”
 
 Theo bảng release gates trong ROADMAP. Các đầu ra của AI được đánh giá hữu ích bởi người thử thật. Trợ lý có thể đề xuất pilot; không tự thông báo đã có khách hàng, doanh thu hoặc kiểm toán độc lập.
+
+## Capacity và restore mã nguồn — cycle10
+
+Kiểm tra dung lượng trước tạo bundle/restore/build. Full restore checkout có thể cần nhiều hơn bundle vì ảnh lớn; không tiếp tục cho đầy disk. Bare clone từ verified bundle với --branch main, fsck toàn object và git archive critical source là bằng chứng phục hồi object/code, không phải full working-tree hoặc database restore. Với Windows đặt core.autocrlf=false riêng cho archive để đối chiếu byte Git blobs; không sửa global Git config. Nếu thiếu chỗ, chỉ dọn partial restore do chính lượt đang chạy tạo sau khi xác minh path nằm trong backup root và bundle vẫn còn. Không xóa backup cũ/user files; phải xử lý OPS004 trước khi dung lượng không còn đủ backup kế tiếp.
