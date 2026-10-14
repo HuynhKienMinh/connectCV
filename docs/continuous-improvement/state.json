@@ -4,8 +4,8 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 10,
-  "lastRun": "runs/2026-10-14-cycle-0010.md",
+  "completedCycles": 11,
+  "lastRun": "runs/2026-10-14-cycle-0011.md",
   "activeRun": null,
   "activeIssue": "CV002",
   "issueState": "SCOPED_FONT_FIX_RELEASED_MATRIX_OPEN",
@@ -41,18 +41,22 @@
   "aiScenariosUsedToday": 0,
   "aiBudgetDate": "2026-10-14",
   "backup": {
-    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-14-cycle-0010",
     "codeVerified": true,
     "buildCopied": true,
     "restoreCloneVerified": true,
     "databaseVerified": false,
     "restoreMode": "bare_fsck_and_critical_source_archive",
-    "fullWorktreeCheckoutVerified": false
+    "fullWorktreeCheckoutVerified": false,
+    "storageMode": "google-drive",
+    "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
+    "catalog": "backup-transfer/catalog.json",
+    "localCopiesRetained": false,
+    "cloudReadbackVerified": true
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
     "CV002: scoped Be Vietnam Pro normal-weight fix verified on six synthetic scenarios; continue full export/font/long-profile matrix and blank-panel UX; no universal ATS claim",
-    "OPS004: check free disk before further backups; preserve rollback bundles/builds and address capacity before more deployments",
+    "Before next deploy back up its current baseline to verified private Google Drive; bounded temporary artifacts only, remove after verification",
     "Continue OPS001 authenticated download E2E/renderer recovery/queue after synthetic test accounts and export matrix are ready",
     "Dedicated Firebase synthetic accounts and encrypted database restore drill remain open",
     "Keep template rights, AI broad evaluation, moderation and pricing/ledger release gates open"
@@ -66,15 +70,25 @@
     "status": "VERIFIED_LIVE_CODE_FONT_ASSETS_AND_CANARY",
     "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db7kppmk1f9s73840ek0",
     "frontendAsset": "index-DXVsKSbM.js",
-    "frontendRollbackConfig": "work/private/connectcv-backups/2026-10-14-cycle-0009/firebase-rollback.json",
     "frontendVerified": true,
     "frontendSha256": "8f67885be54d5224c56527810a256fca73cec0a9062a6f148fd396a743276cd4",
     "verifiedAt": "2026-10-14T09:39:08.435Z",
     "frontendCommit": "ab9f9b3d6aa65efc89c8027a99223a6e6d1cec25",
     "pdfRendererReady": true,
     "livePdfExportVerified": false,
-    "pdfCanaryVerified": true
+    "pdfCanaryVerified": true,
+    "frontendRollbackCloudPath": "connectcv-restore-builds-and-manifests-2026-10-14.zip/2026-10-14-cycle-0010/firebase-rollback.json"
   },
   "nextModule": "cv-ats",
-  "rotationIndex": 1
+  "rotationIndex": 1,
+  "backupTransfer": {
+    "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
+    "localCleanupAuthorized": true,
+    "destination": "Google Drive private owner folder",
+    "deployBlockedUntilCloudVerified": false,
+    "catalog": "backup-transfer/catalog.json",
+    "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
+    "cloudBundlesVerified": 10,
+    "localCopiesDeleted": true
+  }
 }

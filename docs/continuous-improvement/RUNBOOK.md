@@ -72,3 +72,7 @@ Theo bảng release gates trong ROADMAP. Các đầu ra của AI được đánh
 ## Capacity và restore mã nguồn — cycle10
 
 Kiểm tra dung lượng trước tạo bundle/restore/build. Full restore checkout có thể cần nhiều hơn bundle vì ảnh lớn; không tiếp tục cho đầy disk. Bare clone từ verified bundle với --branch main, fsck toàn object và git archive critical source là bằng chứng phục hồi object/code, không phải full working-tree hoặc database restore. Với Windows đặt core.autocrlf=false riêng cho archive để đối chiếu byte Git blobs; không sửa global Git config. Nếu thiếu chỗ, chỉ dọn partial restore do chính lượt đang chạy tạo sau khi xác minh path nằm trong backup root và bundle vẫn còn. Không xóa backup cũ/user files; phải xử lý OPS004 trước khi dung lượng không còn đủ backup kế tiếp.
+
+## Chính sách backup cloud — có hiệu lực sau yêu cầu 14/10/2026
+
+Backup mã nguồn/build hiện lưu tại Drive theo backup-transfer/catalog.json. Khôi phục: tải bundle mốc phù hợp và ZIP companion về thư mục tạm; kiểm checksum, clone/ref/SHA/fsck; giải nén frontend-dist và firebase-rollback.json đúng mốc. Chỉ giữ catalog nhỏ trên máy. Dọn bundle/build/restore temp sau khi cloud xác minh được; nếu fail, giữ bản duy nhất và chặn deploy. Mỗi đợt mới cần baseline hiện đang live, không dùng bundle cũ sai SHA. Native Google Drive for Desktop stream có thể đọc trực tiếp để so hash, không cần thêm credentials/API permissions. Không xóa cache của provider hoặc dữ liệu người dùng.
