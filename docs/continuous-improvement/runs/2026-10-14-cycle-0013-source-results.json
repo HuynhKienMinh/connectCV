@@ -1,0 +1,269 @@
+{
+  "scope": "official full source, wdth100, retained variable wght axis",
+  "parser": "pypdf",
+  "cases": [
+    {
+      "id": "ambitious-vi-short",
+      "pages": 1,
+      "geometryExact": false,
+      "paginationExact": true,
+      "cropExact": true,
+      "missingFacts": {
+        "baseline": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE"
+        ],
+        "prototype": [
+          "MATRIX_EXPERIENCE_SOURCE"
+        ]
+      },
+      "differences": [
+        {
+          "text": "Kỹ sư kiểm thử",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ năng",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Học vấn",
+          "delta": {
+            "width": -0.125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ thuật phần mềm",
+          "delta": {
+            "width": -0.25
+          },
+          "textUnchanged": true
+        }
+      ],
+      "maxGeometryDeltaPx": 0.3125
+    },
+    {
+      "id": "ambitious-en-short",
+      "pages": 1,
+      "geometryExact": false,
+      "paginationExact": true,
+      "cropExact": true,
+      "missingFacts": {
+        "baseline": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE"
+        ],
+        "prototype": [
+          "MATRIX_EXPERIENCE_SOURCE"
+        ]
+      },
+      "differences": [
+        {
+          "text": "Kỹ sư kiểm thử",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        }
+      ],
+      "maxGeometryDeltaPx": 0.3125
+    },
+    {
+      "id": "ambitious-vi-long",
+      "pages": 2,
+      "geometryExact": false,
+      "paginationExact": true,
+      "cropExact": true,
+      "missingFacts": {
+        "baseline": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "prototype": []
+      },
+      "differences": [
+        {
+          "text": "Kỹ sư kiểm thử",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ năng",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Học vấn",
+          "delta": {
+            "width": -0.125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ thuật phần mềm",
+          "delta": {
+            "width": -0.25
+          },
+          "textUnchanged": true
+        }
+      ],
+      "maxGeometryDeltaPx": 0.3125
+    },
+    {
+      "id": "ambitious-vi-crop",
+      "pages": 1,
+      "geometryExact": false,
+      "paginationExact": true,
+      "cropExact": true,
+      "missingFacts": {
+        "baseline": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE"
+        ],
+        "prototype": [
+          "MATRIX_EXPERIENCE_SOURCE"
+        ]
+      },
+      "differences": [
+        {
+          "text": "Kỹ sư kiểm thử",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ năng",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Học vấn",
+          "delta": {
+            "width": -0.125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ thuật phần mềm",
+          "delta": {
+            "width": -0.25
+          },
+          "textUnchanged": true
+        }
+      ],
+      "maxGeometryDeltaPx": 0.3125
+    },
+    {
+      "id": "default_v2-vi-short",
+      "pages": 1,
+      "geometryExact": false,
+      "paginationExact": true,
+      "cropExact": true,
+      "missingFacts": {
+        "baseline": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE"
+        ],
+        "prototype": [
+          "MATRIX_EXPERIENCE_SOURCE"
+        ]
+      },
+      "differences": [
+        {
+          "text": "Kỹ sư kiểm thử",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Học vấn",
+          "delta": {
+            "width": -0.578125
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ thuật phần mềm",
+          "delta": {
+            "width": -0.25
+          },
+          "textUnchanged": true
+        },
+        {
+          "text": "Kỹ năng",
+          "delta": {
+            "width": 0.140625
+          },
+          "textUnchanged": true
+        }
+      ],
+      "maxGeometryDeltaPx": 0.578125
+    },
+    {
+      "id": "default_v2-en-short",
+      "pages": 1,
+      "geometryExact": false,
+      "paginationExact": true,
+      "cropExact": true,
+      "missingFacts": {
+        "baseline": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE"
+        ],
+        "prototype": [
+          "MATRIX_EXPERIENCE_SOURCE"
+        ]
+      },
+      "differences": [
+        {
+          "text": "Kỹ sư kiểm thử",
+          "delta": {
+            "width": -0.3125
+          },
+          "textUnchanged": true
+        }
+      ],
+      "maxGeometryDeltaPx": 0.3125
+    }
+  ],
+  "allPrototypeFactsExact": false,
+  "allGeometryExact": false
+}

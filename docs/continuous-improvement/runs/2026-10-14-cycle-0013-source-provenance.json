@@ -1,0 +1,77 @@
+{
+  "prototypeOnly": true,
+  "family": "Roboto",
+  "style": "normal",
+  "version": "3.015",
+  "strategy": "official full source, wdth100, retained variable wght axis",
+  "sources": [
+    {
+      "file": "ce075ab86dc1c623078b.woff2",
+      "sha256": "0b60bbe04e9c479444b31270a72179f53e400beee57b7dd176c08e5e2e716831"
+    },
+    {
+      "file": "890de452eac592c62afc.woff2",
+      "sha256": "1404ca348bd75ef836f4dd8b6f2cc719458642d1237c368296b2fc652dca47dc"
+    }
+  ],
+  "officialSources": [
+    {
+      "file": "official-roboto.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/roboto/Roboto%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "d7598e12c5dbef095ff8272cfc55da0250bd07fbdecbac8a530b9b277872a134",
+      "bytes": 488584
+    },
+    {
+      "file": "official-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/roboto/OFL.txt",
+      "sha256": "061402327a96aadb0bfb694a960ed289ecd38d383e396243831ab81feb109c41",
+      "bytes": 4394
+    },
+    {
+      "file": "official-METADATA.pb",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/roboto/METADATA.pb",
+      "sha256": "6fef19da54fb62d152f0c7b21710e6849950db7ecf852ea29511c593dad462f0",
+      "bytes": 1463
+    }
+  ],
+  "proofs": [
+    {
+      "weight": 400,
+      "sourceCodepointsChecked": 342,
+      "outlinesMetricsExact": true
+    },
+    {
+      "weight": 500,
+      "sourceCodepointsChecked": 342,
+      "outlinesMetricsExact": true
+    },
+    {
+      "weight": 600,
+      "sourceCodepointsChecked": 342,
+      "outlinesMetricsExact": true
+    },
+    {
+      "weight": 700,
+      "sourceCodepointsChecked": 342,
+      "outlinesMetricsExact": true
+    }
+  ],
+  "weights": {
+    "400": {
+      "file": "full-source.woff2",
+      "sha256": "01818c94a3c2cde4fa143dca8f3a93af4fb6865be72ca9c9dfb3c7ae3b8a7c6d"
+    },
+    "500": {
+      "file": "full-source.woff2",
+      "sha256": "01818c94a3c2cde4fa143dca8f3a93af4fb6865be72ca9c9dfb3c7ae3b8a7c6d"
+    },
+    "600": {
+      "file": "full-source.woff2",
+      "sha256": "01818c94a3c2cde4fa143dca8f3a93af4fb6865be72ca9c9dfb3c7ae3b8a7c6d"
+    },
+    "700": {
+      "file": "full-source.woff2",
+      "sha256": "01818c94a3c2cde4fa143dca8f3a93af4fb6865be72ca9c9dfb3c7ae3b8a7c6d"
+    }
+  }
+}

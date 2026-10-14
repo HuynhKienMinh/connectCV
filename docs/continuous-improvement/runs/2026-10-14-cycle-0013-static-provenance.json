@@ -1,0 +1,42 @@
+{
+  "prototypeOnly": true,
+  "family": "Roboto",
+  "style": "normal",
+  "version": "3.015",
+  "weights": {
+    "400": {
+      "file": "roboto-400.woff2",
+      "sha256": "2c6b16391729d7adfcfd66de0d7d63e4cf72b83f068de68fb98c75881cf4ce50",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true
+    },
+    "500": {
+      "file": "roboto-500.woff2",
+      "sha256": "679208582792a3cec3aac2a7fc4342f34c800200930dadc04b12497fc5144f03",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true
+    },
+    "600": {
+      "file": "roboto-600.woff2",
+      "sha256": "9e1dcb74c021e6107574dfb33e38830ed395086cdeddbedd833dd0ff908de5f7",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true
+    },
+    "700": {
+      "file": "roboto-700.woff2",
+      "sha256": "0ffb8592a610abe6ed30838e1c4cd700404935e03b51ba568f0f6bc3e6af9f3f",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true
+    }
+  },
+  "sources": [
+    {
+      "file": "ce075ab86dc1c623078b.woff2",
+      "sha256": "0b60bbe04e9c479444b31270a72179f53e400beee57b7dd176c08e5e2e716831"
+    },
+    {
+      "file": "890de452eac592c62afc.woff2",
+      "sha256": "1404ca348bd75ef836f4dd8b6f2cc719458642d1237c368296b2fc652dca47dc"
+    }
+  ]
+}

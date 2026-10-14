@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ambitious-en-short-1",
+    "differentPixels": 18669,
+    "maxChannelDifference": 251,
+    "size": [
+      849,
+      1200
+    ]
+  },
+  {
+    "id": "ambitious-vi-long-1",
+    "differentPixels": 53992,
+    "maxChannelDifference": 238,
+    "size": [
+      849,
+      1200
+    ]
+  },
+  {
+    "id": "ambitious-vi-long-2",
+    "differentPixels": 12386,
+    "maxChannelDifference": 247,
+    "size": [
+      849,
+      1200
+    ]
+  },
+  {
+    "id": "default_v2-vi-short-1",
+    "differentPixels": 21901,
+    "maxChannelDifference": 251,
+    "size": [
+      849,
+      1200
+    ]
+  }
+]

@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 12,
-  "lastRun": "runs/2026-10-14-cycle-0012.md",
+  "completedCycles": 13,
+  "lastRun": "runs/2026-10-14-cycle-0013.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "SHORT_MATRIX_FINDINGS_LOCAL",
+  "issueState": "ROBOTO_PROTOTYPES_REJECTED_FIDELITY",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -55,7 +55,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002: 148 short native exports investigated; 58 cases split words, 8 original title-absent layouts. Prototype Roboto/source font subset fixes with glyph/metric/geometry/pixel proof; long/crop/reading-order/cloud download remain open",
+    "CV002: static Roboto merge reads 6/6 facts but fails pixel fidelity; official variable full source also fails marker/geometry. Investigate preserved hint/layout/embedding before adapter changes. Keep 58 split-word cases and 8 title-absent layouts open",
     "Before next deploy back up its current baseline to verified private Google Drive; bounded temporary artifacts only, remove after verification",
     "Continue OPS001 authenticated download E2E/renderer recovery/queue after synthetic test accounts and export matrix are ready",
     "Dedicated Firebase synthetic accounts and encrypted database restore drill remain open",
@@ -92,10 +92,10 @@
     "localCopiesDeleted": true
   },
   "delivery": {
-    "reviewCommit": "74b3e75",
-    "status": "LOCAL_COMMITTED_PUSH_AUTH_BLOCKED",
-    "lastPushError": "Git cannot obtain password when credential interactivity is disabled",
-    "nextAction": "Owner reauthenticate HuynhKienMinh in Git Credential Manager; preserve both local commits and resume normal non-force push",
+    "reviewCommit": "d8204a4",
+    "status": "PUSH_RESTORED_ACCOUNT_SELECTED",
+    "lastPushError": null,
+    "nextAction": "Use per-command credential.username=HuynhKienMinh for pushes and username in Git credential lookup; no global config/credential changes",
     "runtimeChanged": false,
     "deployAttempted": false
   }

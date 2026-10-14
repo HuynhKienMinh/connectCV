@@ -1,0 +1,5 @@
+{
+  "mergeSucceeded": false,
+  "errorType": "AttributeError",
+  "error": "type object 'VarStore' has no attribute 'mergeMap'"
+}

@@ -76,3 +76,7 @@ Kiểm tra dung lượng trước tạo bundle/restore/build. Full restore check
 ## Chính sách backup cloud — có hiệu lực sau yêu cầu 14/10/2026
 
 Backup mã nguồn/build hiện lưu tại Drive theo backup-transfer/catalog.json. Khôi phục: tải bundle mốc phù hợp và ZIP companion về thư mục tạm; kiểm checksum, clone/ref/SHA/fsck; giải nén frontend-dist và firebase-rollback.json đúng mốc. Chỉ giữ catalog nhỏ trên máy. Dọn bundle/build/restore temp sau khi cloud xác minh được; nếu fail, giữ bản duy nhất và chặn deploy. Mỗi đợt mới cần baseline hiện đang live, không dùng bundle cũ sai SHA. Native Google Drive for Desktop stream có thể đọc trực tiếp để so hash, không cần thêm credentials/API permissions. Không xóa cache của provider hoặc dữ liệu người dùng.
+
+## Git account selector — cycle13
+
+GCM có nhiều account nên command không-interactive có thể fail dù account đã đăng nhập. Repo này phải dùng per-command `git -c credential.username=HuynhKienMinh -c credential.interactive=false push origin <review-branch>`; credential lookup cho API cùng username. Không log credential, không đổi global config hoặc force-push. Chỉ yêu cầu chủ dự án đăng nhập lại sau khi selector đúng vẫn thiếu credential; không suy diễn lỗi account chooser là Render/billing/code.
