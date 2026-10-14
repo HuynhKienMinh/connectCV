@@ -1,0 +1,47 @@
+{
+  "prototypeOnly": true,
+  "family": "Roboto",
+  "style": "normal",
+  "version": "3.015",
+  "weights": {
+    "400": {
+      "file": "roboto-400.woff2",
+      "sha256": "9cb4d67ee249094e56daf07d83c4c23bec02a5dcb0e48b3b43194b9d37bd6f8f",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": true
+    },
+    "500": {
+      "file": "roboto-500.woff2",
+      "sha256": "a68a82277fd9f8e7c6c0b6a7e415f52cd987a9515135421ccf40f078f21802f5",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": true
+    },
+    "600": {
+      "file": "roboto-600.woff2",
+      "sha256": "1e073a6e039c204a837e95c0df38ce424ecc16784d8d304339224a64dc133cbc",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": true
+    },
+    "700": {
+      "file": "roboto-700.woff2",
+      "sha256": "ca4a7fa2aa835d4eecee2bfe36ed7527dd14dd1ceee54b394f37443633c2b517",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": true
+    }
+  },
+  "sources": [
+    {
+      "file": "ce075ab86dc1c623078b.woff2",
+      "sha256": "0b60bbe04e9c479444b31270a72179f53e400beee57b7dd176c08e5e2e716831"
+    },
+    {
+      "file": "890de452eac592c62afc.woff2",
+      "sha256": "1404ca348bd75ef836f4dd8b6f2cc719458642d1237c368296b2fc652dca47dc"
+    }
+  ],
+  "strategy": "instantiated subsets; restore byte-identical shared hint programs after merge"
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "one synthetic Ambitious VI; Type3 units normalization counterexample",
+  "missingFacts": [
+    "Ứng viên thử nghiệm",
+    "Kỹ sư kiểm thử",
+    "Công ty giả",
+    "Kiểm thử viên",
+    "Trường thử nghiệm",
+    "MATRIX_EXPERIENCE_SOURCE"
+  ],
+  "differentPixels": 0,
+  "maxChannelDifference": 0,
+  "accepted": false
+}
