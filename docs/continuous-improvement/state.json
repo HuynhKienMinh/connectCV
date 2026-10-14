@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 6,
-  "lastRun": "runs/2026-10-13-cycle-0006.md",
-  "activeRun": "runs/2026-10-14-cycle-0007.md",
-  "activeIssue": "DATA001",
-  "issueState": "VERIFIED_LOCAL",
+  "completedCycles": 7,
+  "lastRun": "runs/2026-10-14-cycle-0007.md",
+  "activeRun": null,
+  "activeIssue": null,
+  "issueState": "IDLE",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -17,7 +17,7 @@
     "chatbot",
     "portfolio"
   ],
-  "nextModuleAfterIssue": "auth-profile",
+  "nextModuleAfterIssue": "interview",
   "autoDeployAuthorized": true,
   "deployPolicy": "small_verified_changes_with_backup_and_live_check",
   "customerSegments": [
@@ -38,8 +38,8 @@
   "syntheticAccountsConfigured": false,
   "liveAiWritesAllowed": false,
   "aiScenarioCapPerDay": 12,
-  "aiScenariosUsedToday": 1,
-  "aiBudgetDate": "2026-10-13",
+  "aiScenariosUsedToday": 0,
+  "aiBudgetDate": "2026-10-14",
   "backup": {
     "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0007",
     "codeVerified": true,
@@ -49,25 +49,25 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Deploy DATA001 only after CI and verified FE/BE rollback; old tabs must reload for version-aware saving",
-    "Continue Firebase staging/test accounts and encrypted database restore drill",
-    "Keep portfolio public preview/consent and real cloud actor matrix open",
-    "Keep chatbot quality/copy, community moderation, interview rubric and secure PDF export validation open"
+    "Prioritize OPS001 sandboxed server PDF readiness and export workflow; do not disable browser sandbox",
+    "Dedicated Firebase synthetic accounts for cloud conflict/isolation E2E and OPS002 encrypted database restore drill",
+    "Keep profile field merge/history/offline persistence and real customer pilot open",
+    "Keep portfolio consent, AI broad evaluation, moderation and pricing/ledger release gates open"
   ],
   "deployment": {
-    "commit": "926b49f663f8cb6ce6be880280cbd86ab8a02348",
+    "commit": "ab9f9b3d6aa65efc89c8027a99223a6e6d1cec25",
     "ciPassed": true,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38373061258",
-    "rollbackCommit": "1fae1bf159ebc00dfbc8d1532ac8c82987614ea2",
-    "rollbackRelease": "dep-db6sge8u01pc73behhig",
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38510491965",
+    "rollbackCommit": "926b49f663f8cb6ce6be880280cbd86ab8a02348",
+    "rollbackRelease": "dep-db6v69mk1f9s73bme8u0",
     "status": "VERIFIED_LIVE_FE_BE",
-    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db6v69mk1f9s73bme8u0",
-    "frontendAsset": "index-C4yNvFGV.js",
-    "frontendRollbackConfig": "work/private/connectcv-backups/2026-10-13-cycle-0006/firebase-rollback.json",
+    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db7g40bbc2fs73f39nr0",
+    "frontendAsset": "index-DXVsKSbM.js",
+    "frontendRollbackConfig": "work/private/connectcv-backups/2026-10-13-cycle-0007/firebase-rollback.json",
     "frontendVerified": true,
-    "frontendSha256": "bfe556231f48c488aa24fb28e3f46980458e1d5056a6e5aa8b4a4bb409e14eb4",
-    "verifiedAt": "2026-10-13T09:06:45.520Z"
+    "frontendSha256": "8f67885be54d5224c56527810a256fca73cec0a9062a6f148fd396a743276cd4",
+    "verifiedAt": "2026-10-14T04:19:13.481Z"
   },
-  "nextModule": "auth-profile",
-  "rotationIndex": 0
+  "nextModule": "cv-ats",
+  "rotationIndex": 1
 }

@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-14T04:19:13.481Z",
+  "commit": "ab9f9b3d6aa65efc89c8027a99223a6e6d1cec25",
+  "backendRelease": "dep-db7g40bbc2fs73f39nr0",
+  "preflightAllowsIfMatch": true,
+  "anonymousWriteDenied": true,
+  "studioRecoveryServed": true,
+  "frontendAsset": "/assets/index-DXVsKSbM.js",
+  "frontendSha256": "8f67885be54d5224c56527810a256fca73cec0a9062a6f148fd396a743276cd4",
+  "profileWrites": false,
+  "scope": "production contracts/static/auth only; conflict transaction/UI local synthetic"
+}

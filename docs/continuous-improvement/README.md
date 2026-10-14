@@ -61,3 +61,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0006 — 13/10/2026
 
 [Nhật ký portfolio](runs/2026-10-13-cycle-0006.md): scope/race guard, không giữ nội dung cũ khi tải lỗi, public no-store và matrix actor/owner. 62 tests/build/CI đạt, FE/BE926b49f đã verify live/asset checksum. Backup code/build/rollback cả FE và BE đã chuẩn bị; không có DB restore drill hoặc E2E hai Firebase accounts. Mục kế tiếp auth-profile/DATA001.
+
+## Cập nhật chu kỳ 0007 — 14/10/2026
+
+[Nhật ký profile conflict](runs/2026-10-14-cycle-0007.md): chống stale-tab overwrite bằng content version/If-Match trong transaction, giữ draft và recovery ở CV/Account;67 tests/build/CI đạt; FE/BEab9f9b3 verified live với backup code/build926b49f. Cloud two-account E2E, database restore và full revision history vẫn chưa nghiệm thu. Tiếp theo CV/PDF OPS001.
