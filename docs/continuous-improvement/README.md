@@ -65,3 +65,7 @@ Nguồn: [tài liệu chính thức về scheduled tasks](https://learn.chatgpt.
 ## Cập nhật chu kỳ 0007 — 14/10/2026
 
 [Nhật ký profile conflict](runs/2026-10-14-cycle-0007.md): chống stale-tab overwrite bằng content version/If-Match trong transaction, giữ draft và recovery ở CV/Account;67 tests/build/CI đạt; FE/BEab9f9b3 verified live với backup code/build926b49f. Cloud two-account E2E, database restore và full revision history vẫn chưa nghiệm thu. Tiếp theo CV/PDF OPS001.
+
+## Cập nhật chu kỳ 0008 — 14/10/2026
+
+[Nhật ký PDF](runs/2026-10-14-cycle-0008.md): sửa pinned Chromium build/runtime, CI69 tests +3 production PDF scenarios đạt trên runner tương thích sandbox. Renderdd35955 live/rendererReady=true; auth export401 giữ nguyên; FE không đổi. Backupab9f9b3/rollback đã verify. Chưa cloud download E2E hoặc matrix148; phát hiện pypdf tách từ tiếng Việt ở native font subsets, giữ CV002 mở. OPS001 tiếp tục synthetic startup canary, không kết luận chuẩn mọi ATS.

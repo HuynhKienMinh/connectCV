@@ -1,0 +1,13 @@
+{
+  "verifiedAt": "2026-10-14T04:40:29.766Z",
+  "backendCommit": "dd35955da8c74ecf2bd8887c44b9520fd0513715",
+  "backendRelease": "dep-db7ge6ivcj2c73dig390",
+  "runtimePdfReady": true,
+  "anonymousExportDenied": true,
+  "authenticationIntegrated": true,
+  "durableStorageConfigured": true,
+  "livePdfExportWithTestAccount": false,
+  "providerCalls": 0,
+  "cloudWrites": false,
+  "frontendChanged": false
+}
