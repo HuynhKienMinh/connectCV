@@ -1,0 +1,29 @@
+{
+  "scope": "local Windows synthetic documents; pypdf independent parser",
+  "rows": [
+    {
+      "id": "short",
+      "pages": 1,
+      "sha256": "b1c18677ee8c21eb8a3d6ace04a61839303deb3e1266fb4969105642b3ae8513",
+      "pypdfWholeVietnameseName": true,
+      "pypdfFinalSourceMarker": true
+    },
+    {
+      "id": "long",
+      "pages": 3,
+      "sha256": "e505f3940bd4ae497920f0f11612b2c32818d31b3fe09a3ef61f15ac30bb2f9d",
+      "pypdfWholeVietnameseName": true,
+      "pypdfFinalSourceMarker": true
+    },
+    {
+      "id": "native-formal",
+      "pages": 1,
+      "sha256": "fcb6fc018a4235105a7b2d38fe635ce9470559e6ca4a2d02574e27d2284dd721",
+      "pypdfWholeVietnameseName": false,
+      "pypdfFinalSourceMarker": true
+    }
+  ],
+  "providerCalls": 0,
+  "cloudWrites": false,
+  "allTemplatesVerified": false
+}

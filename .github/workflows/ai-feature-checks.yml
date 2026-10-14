@@ -29,6 +29,24 @@ jobs:
         working-directory: backend
       - run: npm test
         working-directory: backend/features/connectcv
+      - run: npm audit --audit-level=moderate
+        working-directory: backend
+      - run: npm audit --audit-level=moderate
+        working-directory: frontend
+      - run: npm audit --audit-level=moderate
+        working-directory: backend/features/connectcv
+  pdf-renderer:
+    # Chromium's user namespace sandbox needs a compatible host policy.
+    # Keep sandbox enabled; do not disable AppArmor or change host sysctls.
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci --omit=dev
+        working-directory: backend/features/connectcv
       - name: Install pinned Chromium for sandboxed PDF verification
         run: node node_modules/playwright-core/cli.js install --with-deps --no-shell chromium
         working-directory: backend/features/connectcv
@@ -40,9 +58,3 @@ jobs:
         env:
           NODE_ENV: production
           PLAYWRIGHT_BROWSERS_PATH: '0'
-      - run: npm audit --audit-level=moderate
-        working-directory: backend
-      - run: npm audit --audit-level=moderate
-        working-directory: frontend
-      - run: npm audit --audit-level=moderate
-        working-directory: backend/features/connectcv
