@@ -100,8 +100,8 @@ Hai ngôn ngữ VI/EN hiện có là phạm vi kiểm thử ban đầu. Những 
 |---|---|---|
 | Bảo mật dữ liệu | Không còn P0/P1 đã xác nhận; test cách ly account/tenant và redaction | Có baseline, thiếu kiểm chứng sâu |
 | Kết quả AI | Không bịa dữ kiện trong bộ eval; review văn phong/hữu ích riêng | Có regression, thiếu bộ eval rộng |
-| Export | PDF/Word đúng mô tả, nhiều trang, Unicode, crop/text sửa | PDF server chưa sẵn sàng |
-| Backup/restore | Backup code + dữ liệu phù hợp, diễn tập rollback/restore | Backup code khởi tạo; dữ liệu chưa diễn tập |
+| Export | PDF/Word đúng mô tả, nhiều trang, Unicode, crop/text sửa | Renderer live canary đạt; cycle12 short matrix còn58split-word/8title-absent, long/crop/E2E chưa đủ |
+| Backup/restore | Backup code + dữ liệu phù hợp, diễn tập rollback/restore | Code/build10mốc Drive verified, local copies đã dọn; dữ liệu chưa diễn tập |
 | Vận hành | Quan sát ≥7 ngày, lỗi được giải thích; có incident runbook | Chưa có chuỗi đo |
 | UX thực tế | Nhiều nhóm khách hoàn thành tác vụ, tối thiểu 10 người pilot | Chưa có user study |
 | Thương mại | Chi phí/unit và ledger nhất quán; thanh toán sandbox đạt | Chưa kiểm chứng |

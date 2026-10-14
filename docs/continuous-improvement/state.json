@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 11,
-  "lastRun": "runs/2026-10-14-cycle-0011.md",
+  "completedCycles": 12,
+  "lastRun": "runs/2026-10-14-cycle-0012.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "SCOPED_FONT_FIX_RELEASED_MATRIX_OPEN",
+  "issueState": "SHORT_MATRIX_FINDINGS_LOCAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -55,7 +55,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002: scoped Be Vietnam Pro normal-weight fix verified on six synthetic scenarios; continue full export/font/long-profile matrix and blank-panel UX; no universal ATS claim",
+    "CV002: 148 short native exports investigated; 58 cases split words, 8 original title-absent layouts. Prototype Roboto/source font subset fixes with glyph/metric/geometry/pixel proof; long/crop/reading-order/cloud download remain open",
     "Before next deploy back up its current baseline to verified private Google Drive; bounded temporary artifacts only, remove after verification",
     "Continue OPS001 authenticated download E2E/renderer recovery/queue after synthetic test accounts and export matrix are ready",
     "Dedicated Firebase synthetic accounts and encrypted database restore drill remain open",
