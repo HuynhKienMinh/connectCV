@@ -1,0 +1,15 @@
+
+> exe-ai-career-copilot-frontend@1.0.0 build
+> node build-studio.cjs --check && vite build
+
+Studio layout/style CSS verified (local-compatible Tailwind 3).
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 1615 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.44 kB │ gzip:   0.31 kB
+dist/assets/index-Djd5raAF.css   63.75 kB │ gzip:  11.62 kB
+dist/assets/index-DXVsKSbM.js   442.60 kB │ gzip: 129.61 kB
+
+✓ built in 1.27s

@@ -1,6 +1,6 @@
 'use strict';
 process.env.FEATURE_STORE_BACKEND = 'firestore';
-if(process.env.RENDER==='true'&&process.env.INSTALL_CHROMIUM_ON_RENDER==='true'&&!process.env.PLAYWRIGHT_BROWSERS_PATH)process.env.PLAYWRIGHT_BROWSERS_PATH=require('path').join(__dirname,'.render-browsers');
+require('./scripts/render-browser-config.cjs').configureRenderBrowser(process.env);
 if(process.env.NODE_ENV === 'production' && (process.env.FIREBASE_AUTH_EMULATOR_HOST || process.env.FIRESTORE_EMULATOR_HOST)) throw new Error('Emulators are forbidden in production');
 const { createApp } = require('./app');
 const app = createApp();

@@ -6,7 +6,7 @@ Trạng thái: OPEN → IN_PROGRESS → VERIFIED_LOCAL → DEPLOYED → VERIFIED
 |---|---|---|---|---|---|
 | UX001 | P1 | Lỗi JD/profile chỉ hiện “dữ liệu không hợp lệ”; khách không biết sửa gì | Chu kỳ 2 tái hiện và sửa; bằng chứng runs/2026-10-13-cycle-0002.md | Lỗi rõ trường, preflight trên form, backend độc lập; dữ liệu sai không tiêu AI quota | VERIFIED_LIVE |
 | DATA001 | P1 | Profile nhiều tab/thiết bị có thể ghi đè | Chu kỳ 7: tái hiện và bảo vệ If-Match trong transaction; hai chiều Account/CV trên fixture | 409 giữ draft, dừng retry, download/reload; content version không phải lịch sử revision | VERIFIED_LIVE (scoped; cloud actor E2E còn ở OPS003/SEC001) |
-| OPS001 | P1 | PDF server không hoạt động; khách phải tự chọn tùy chọn in | Public capabilities browserConfigured=false ngày 13/10 | Renderer sandbox/queue đạt; export nhiều trang/crop/text có bằng chứng | OPEN |
+| OPS001 | P1 | PDF server không hoạt động; khách phải tự chọn tùy chọn in | Public capabilities browserConfigured=false ngày 13/10 | Renderer sandbox/queue đạt; export nhiều trang/crop/text có bằng chứng | IN_PROGRESS (cycle8 pinned binary/install; CI/Render pending) |
 | OPS002 | P1 | Chưa có restore drill dữ liệu | Chưa tìm thấy bằng chứng phục hồi trong audit này | Backup mã hóa/inventory/subcollections; phục hồi và đối chiếu trên staging | OPEN |
 | OPS003 | P1 | Thiếu staging và account test cho ghi dữ liệu liên tục | Lịch mới chưa có fixture account chuyên dụng | Hai account giả, reset staging, không chạm profile thật | OPEN |
 | BIZ001 | P1 | Credits không chứng minh mô hình chi phí/thu tiền | consume mặc định cost=0; chưa thấy caller truyền cost trong lượt tìm kiếm | Feature pricing/cost mapping, atomic debit/refund, idempotency và sandbox | OPEN |
@@ -15,7 +15,7 @@ Trạng thái: OPEN → IN_PROGRESS → VERIFIED_LOCAL → DEPLOYED → VERIFIED
 | UX003 | P2 | Tên kỹ thuật cv.js/interview.js/backend lộ trong luồng khách | Browser UI chu kỳ 1 | Nội dung dễ hiểu, không mất định hướng; so sánh trước/sau | OPEN |
 | UX004 | P2 | “AI” được dùng cho gợi ý chạy heuristic, có thể gây hiểu sai | auto-match-jobs và template matcher dùng dữ liệu/heuristic | Giải thích nguồn gợi ý, không hứa kết quả chưa kiểm chứng | OPEN |
 | CV001 | P1 | Thiếu bộ eval chất lượng rộng ngoài regression grounding | 22 feature tests chủ yếu invariants | Fixture nhiều ngành/seniority; đánh giá trung thực và hữu ích riêng | OPEN |
-| CV002 | P1 | Export chưa có visual/text regression đầy đủ | Asset test kiểm tra file và HTML, không so toàn bộ PDF export | Matrix 74×2 + profile dài/ngắn; không clipping/đổi font/mất text | OPEN |
+| CV002 | P1 | Export chưa có visual/text regression đầy đủ | Asset test kiểm tra file và HTML, không so toàn bộ PDF export | Matrix 74×2 + profile dài/ngắn; không clipping/đổi font/mất text | OPEN (cycle8: Formal pypdf chèn khoảng trắng giữa font runs tiếng Việt) |
 | CV003 | P2 | Cần import/tóm tắt/profile hỗ trợ người thiếu dữ liệu | Chưa nghiệm thu | File validation, extraction preview, sửa trước lưu, nguồn facts | OPEN |
 | INT001 | P1 | Giá trị luyện tập chưa có pilot người dùng | Chưa có user study được cung cấp | Buổi có follow-up/rubric/evidence và bài tập cải thiện | OPEN |
 | INT003 | P1 | Chấm STAR riêng lẻ cắt câu trả lời và trả rewrite AI chưa ground | Chu kỳ 3: 2.422 ký tự được nhận nhưng tail bị cắt ở 2.000; output trả raw model | Full input, khung trích dẫn toàn câu, không bịa tool/số liệu, score chưa xác minh không hiển thị, có bước luyện tiếp | VERIFIED_LIVE |

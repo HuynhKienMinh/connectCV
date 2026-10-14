@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 7,
   "lastRun": "runs/2026-10-14-cycle-0007.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "IDLE",
+  "activeRun": "runs/2026-10-14-cycle-0008.md",
+  "activeIssue": "OPS001",
+  "issueState": "VERIFIED_LOCAL_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -41,7 +41,7 @@
   "aiScenariosUsedToday": 0,
   "aiBudgetDate": "2026-10-14",
   "backup": {
-    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0007",
+    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-14-cycle-0008",
     "codeVerified": true,
     "buildCopied": true,
     "restoreCloneVerified": true,
