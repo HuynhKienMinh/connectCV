@@ -90,5 +90,13 @@
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
     "cloudBundlesVerified": 10,
     "localCopiesDeleted": true
+  },
+  "delivery": {
+    "reviewCommit": "74b3e75",
+    "status": "LOCAL_COMMITTED_PUSH_AUTH_BLOCKED",
+    "lastPushError": "Git cannot obtain password when credential interactivity is disabled",
+    "nextAction": "Owner reauthenticate HuynhKienMinh in Git Credential Manager; preserve both local commits and resume normal non-force push",
+    "runtimeChanged": false,
+    "deployAttempted": false
   }
 }
