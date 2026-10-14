@@ -15,6 +15,13 @@ test('failed profile writes never claim success and can be saved again',async()=
  saver.change({fullName:'Retained'});await saver.flush();assert.equal(states.at(-1),'error');
  failing=false;await saver.flush();assert.equal(writes[0].fullName,'Retained');assert.equal(states.at(-1),'saved');saver.dispose();
 });
+test('a conflict keeps the latest draft, stops retries and resumes only after explicit replacement',async()=>{
+ let calls=0,fail=true;const states=[];const saver=createProfileAutosave({delay:60000,status:s=>states.push(s),write:async()=>{calls++;if(fail)throw Object.assign(Error('conflict'),{conflict:true,retryable:true});}});
+ saver.seed({summary:'Initial'});saver.change({summary:'Local draft'});await saver.flush();assert.equal(states.at(-1),'conflict');
+ for(let i=0;i<5;i++){saver.change({summary:'Preserved '+i});await saver.flush();}
+ assert.equal(calls,1);assert.equal(saver.draft().summary,'Preserved 4');
+ saver.replace({summary:'Latest account'});fail=false;saver.change({summary:'Merged manually'});await saver.flush();assert.equal(calls,2);assert.equal(states.at(-1),'saved');saver.dispose();
+});
 test('typing and local matching do not consume AI budget or prevent generation; AI limits still hold',async()=>{
  let budget=0;const middleware=createFeatureSecurity({consumeBudget:async()=>budget++,clock:()=>1000});
  async function request(path,id='fixture'){

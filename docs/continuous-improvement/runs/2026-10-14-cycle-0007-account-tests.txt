@@ -1,0 +1,27 @@
+✔ real Firebase verifier rejects a forged legacy HS256 admin token (702.1656ms)
+✔ identity comes only from verified Firebase token; revocation check enabled (0.2589ms)
+✔ missing, malformed, wrong project and revoked tokens fail closed (0.2598ms)
+✔ unverified email cannot enter AI or public write paths (0.1886ms)
+✔ concurrent account initialization grants 15 credits once (1.4971ms)
+✔ profile persistence never modifies another account or balance (1.3365ms)
+✔ daily quota is durable and concurrent overspending is rejected (2.1757ms)
+✔ insufficient credits do not change daily quota or ledger (0.1826ms)
+✔ duplicate community submission awards exactly 5 once and persists cooldown (1.0434ms)
+✔ likes use authenticated UID; retries cannot drive count negative (0.59ms)
+✔ drafts stay private, lists isolate actors, client owner spoof is rejected (646.3477ms)
+✔ second account cannot overwrite or delete the owner document (13.9643ms)
+✔ publish exposes allowlisted content; hide immediately returns 404/no-store (10.9695ms)
+✔ owner deletion updates count once, and invalid publication/link inputs fail (9.5035ms)
+✔ concurrent creation respects the account limit in the transaction fixture (12.5098ms)
+✔ two stale-tab writes cannot overwrite each other and credits remain separate (4.2268ms)
+✔ same-content retry is safe; versions ignore key order and unrelated credit changes (0.7836ms)
+✔ missing or wildcard versions fail before writes, and concurrent different drafts allow one winner (1.222ms)
+✔ HTTP contract exposes own opaque version, rejects stale/legacy saves without source echo (138.2296ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 903.3026

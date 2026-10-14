@@ -4,5 +4,5 @@ export async function api(path,options={}){
  const token=await auth.currentUser?.getIdToken();
  const response=await fetch(API_BASE+path,{...options,headers:{'Content-Type':'application/json',...options.headers,...(token?{Authorization:`Bearer ${token}`}:{})}});
  const body=await response.json();
- if(!response.ok)throw new Error(body.message||'Không thể thực hiện yêu cầu.');return body;
+ if(!response.ok){const error=new Error(body.message||'Không thể thực hiện yêu cầu.');error.status=response.status;error.code=body.code;throw error;}return body;
 }

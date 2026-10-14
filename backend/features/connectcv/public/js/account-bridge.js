@@ -41,14 +41,33 @@
   toolbar.append(save,status);
   const wrapper=document.getElementById('cv-profile-raw-wrapper');
   (wrapper?.parentElement||textarea.parentElement).insertBefore(toolbar,wrapper||textarea);
-  let edited=false,ready=false;
+  const conflict=document.createElement('div');conflict.className='hidden p-3 rounded-xl border border-amber-200 bg-amber-50 text-xs text-amber-800 space-y-2';conflict.setAttribute('role','alert');
+  const explanation=document.createElement('p');explanation.textContent='Hồ sơ trên tài khoản đã thay đổi. Bản nháp trong tab này vẫn được giữ; tự động lưu đã dừng. Tải bản nháp trước khi nạp hồ sơ mới.';
+  const download=document.createElement('button');download.type='button';download.textContent='Tải bản nháp dự phòng';download.className='px-3 py-2 rounded-lg border';
+  const reload=document.createElement('button');reload.type='button';reload.textContent='Nạp hồ sơ mới từ tài khoản';reload.className='px-3 py-2 rounded-lg border';
+  conflict.append(explanation,download,reload);toolbar.after(conflict);
+  let edited=false,ready=false,version=null;
   const saver=window.createProfileAutosave({
    write:async source=>{
-    const response=await fetch('/api/account/profile',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(source)});
-    if(!response.ok){const error=new Error(response.status===400?'Dữ liệu hồ sơ không hợp lệ.':response.status===413?'Ảnh hoặc hồ sơ vượt kích thước cho phép.':'Chưa lưu được hồ sơ.');error.retryable=response.status===429||response.status>=500;error.retryAfter=Number(response.headers.get('Retry-After')||5)*1000;throw error;}
+    const response=await fetch('/api/account/profile',{method:'PUT',headers:{'Content-Type':'application/json','If-Match':version||''},body:JSON.stringify(source)});
+    if(!response.ok){const error=new Error(response.status===409||response.status===428?'Hồ sơ đã thay đổi; bản nháp đang được giữ.':response.status===400?'Dữ liệu hồ sơ không hợp lệ.':response.status===413?'Ảnh hoặc hồ sơ vượt kích thước cho phép.':'Chưa lưu được hồ sơ.');error.conflict=response.status===409||response.status===428;error.retryable=response.status===429||response.status>=500;error.retryAfter=Number(response.headers.get('Retry-After')||5)*1000;throw error;}
+    const result=await response.json();version=result.profileVersion;
    },
-   status:(state,error)=>{status.textContent={pending:'Có thay đổi chưa lưu…',saving:'Đang lưu vào tài khoản…',saved:'Đã lưu vào tài khoản.'}[state]||(error?.message||'Chưa lưu được hồ sơ.');const header=document.getElementById('profile-save-header-status');if(header)header.textContent=status.textContent;}
+   status:(state,error)=>{conflict.classList.toggle('hidden',state!=='conflict');status.textContent=state==='conflict'?'Xung đột hồ sơ: chưa ghi đè.':{pending:'Có thay đổi chưa lưu…',saving:'Đang lưu vào tài khoản…',saved:'Đã lưu vào tài khoản.'}[state]||(error?.message||'Chưa lưu được hồ sơ.');const header=document.getElementById('profile-save-header-status');if(header)header.textContent=status.textContent;}
   });
+  download.onclick=()=>{
+   const url=URL.createObjectURL(new Blob([textarea.value],{type:'application/json'}));
+   const link=document.createElement('a');link.href=url;link.download='connectcv-profile-draft.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  };
+  reload.onclick=async()=>{
+   if(!confirm('Nạp hồ sơ mới sẽ thay nội dung đang nhập trong tab này. Hãy tải bản nháp dự phòng trước nếu muốn giữ. Tiếp tục?'))return;
+   const before=textarea.value;reload.disabled=true;
+   try{const result=await window.connectCVRefreshAccount();
+    if(textarea.value!==before){status.textContent='Bạn vừa sửa bản nháp; chưa áp dụng hồ sơ mới. Hãy thử nạp lại khi sẵn sàng.';return;}
+    if(!result.profileVersion)throw Error('Không nhận được phiên bản hồ sơ. Hãy tải lại trang.');
+    version=result.profileVersion;textarea.value=JSON.stringify(result.profile||{},null,2);syncJSONToProfileForm();saver.replace(result.profile||{});edited=false;
+   }catch(error){status.textContent=error.message||'Chưa nạp được hồ sơ mới; bản nháp vẫn giữ.';}finally{reload.disabled=false;}
+  };
   function changed(){edited=true;if(!ready)return;try{saver.change(JSON.parse(textarea.value));}catch{status.textContent='JSON chưa hợp lệ; hồ sơ chưa được lưu.';}}
   window.addEventListener('connectcv:profile-change',changed);
   textarea.addEventListener('input',changed);
@@ -58,7 +77,8 @@
   try{
    const result=await window.connectCVRefreshAccount();
    if(!edited&&Object.keys(result.profile).length){const profile={...result.profile,birth:result.profile.birth||result.profile.dateOfBirth||''};textarea.value=JSON.stringify(profile,null,2);syncJSONToProfileForm();}
-   saver.seed(result.profile);ready=true;
+   if(!result.profileVersion)throw Error('Missing profile version');
+   version=result.profileVersion;saver.seed(result.profile);ready=true;
    if(edited)changed();else status.textContent=Object.keys(result.profile).length?'Đã tải hồ sơ tài khoản.':'Hồ sơ sẽ tự động lưu khi nhập.';
   }catch{status.textContent='Không thể tải tài khoản. Vui lòng kiểm tra kết nối rồi mở lại công cụ.';save.disabled=true;}
  });

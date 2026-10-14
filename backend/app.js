@@ -16,7 +16,7 @@ function createApp({ frontendDistPath = path.join(__dirname, '../frontend/dist')
     if(origin && !origins.has(origin))return res.status(403).json({success:false,code:'ORIGIN_DENIED'});
     if(origin){res.set('Access-Control-Allow-Origin',origin);res.vary('Origin');}
     res.set('Access-Control-Allow-Methods','GET,POST,PUT,DELETE,OPTIONS');
-    res.set('Access-Control-Allow-Headers','Content-Type,Authorization');
+    res.set('Access-Control-Allow-Headers','Content-Type,Authorization,If-Match');
     if(req.method==='OPTIONS')return res.sendStatus(204);
     next();
   });

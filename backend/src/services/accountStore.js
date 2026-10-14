@@ -1,5 +1,6 @@
 'use strict';
 const crypto = require('node:crypto');
+const {profileVersion,requireVersion}=require('./profileVersion');
 const fail = (status, message) => Object.assign(new Error(message), { status });
 class AccountStore {
   constructor(db) { this.db = db; }
@@ -14,10 +15,22 @@ class AccountStore {
       return data;
     });
   }
-  async saveProfile(user, profile) {
+  async saveProfile(user, profile, expectedVersion) {
+    requireVersion(expectedVersion);
     await this.ensure(user);
-    await this.ref(user.id).update({ profile, updatedAt: new Date().toISOString() });
-    return profile;
+    const ref=this.ref(user.id);
+    return this.db.runTransaction(async tx=>{
+      const snapshot=await tx.get(ref);
+      if(!snapshot.exists)throw fail(403,'Tài khoản chưa khởi tạo.');
+      const currentVersion=profileVersion(user.id,snapshot.data().profile||{});
+      const nextVersion=profileVersion(user.id,profile);
+      // A lost response can be retried safely when the exact desired content is already current.
+      if(nextVersion!==currentVersion){
+        if(expectedVersion!==currentVersion)throw Object.assign(fail(409,'Hồ sơ đã được sửa ở tab hoặc thiết bị khác. Bản nháp của bạn vẫn được giữ; hãy kiểm tra trước khi lưu tiếp.'),{code:'PROFILE_CONFLICT'});
+        tx.update(ref,{profile,updatedAt:new Date().toISOString()});
+      }
+      return {profile,profileVersion:nextVersion};
+    });
   }
   async consume(uid, cost = 0) {
     const ref = this.ref(uid), day = new Date().toISOString().slice(0, 10);

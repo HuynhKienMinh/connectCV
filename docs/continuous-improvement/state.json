@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 6,
   "lastRun": "runs/2026-10-13-cycle-0006.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "IDLE",
+  "activeRun": "runs/2026-10-14-cycle-0007.md",
+  "activeIssue": "DATA001",
+  "issueState": "VERIFIED_LOCAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -41,7 +41,7 @@
   "aiScenariosUsedToday": 1,
   "aiBudgetDate": "2026-10-13",
   "backup": {
-    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0006",
+    "path": "C:/Users/huynh/Documents/Codex/2026-10-04/new-chat/work/private/connectcv-backups/2026-10-13-cycle-0007",
     "codeVerified": true,
     "buildCopied": true,
     "restoreCloneVerified": true,
@@ -49,7 +49,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Audit DATA001 multi-tab profile write conflict on local synthetic actors",
+    "Deploy DATA001 only after CI and verified FE/BE rollback; old tabs must reload for version-aware saving",
     "Continue Firebase staging/test accounts and encrypted database restore drill",
     "Keep portfolio public preview/consent and real cloud actor matrix open",
     "Keep chatbot quality/copy, community moderation, interview rubric and secure PDF export validation open"

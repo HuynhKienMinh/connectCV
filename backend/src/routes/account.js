@@ -1,9 +1,11 @@
 'use strict';
 const express = require('express'), Joi = require('joi');
 const { requireAuth } = require('../middlewares/firebaseAuth');
-const { store } = require('../services/accountStore');
-const router = express.Router();
-router.use(requireAuth);
+const { store: defaultStore } = require('../services/accountStore');
+const {profileVersion}=require('../services/profileVersion');
+function createAccountRouter({accountStore=defaultStore,authenticate=requireAuth,revokeSessions=uid=>require('../config/firebase').auth().revokeRefreshTokens(uid)}={}){
+const store=accountStore,router = express.Router();
+router.use(authenticate);
 router.use((req, res, next) => { res.set('Cache-Control', 'no-store'); next(); });
 router.use(express.json({ limit: '900kb' }));
 const profileSchema = Joi.object({
@@ -15,14 +17,17 @@ const profileSchema = Joi.object({
   education: Joi.array().items(Joi.object({ school: Joi.string().max(200).allow(''), degree: Joi.string().max(200).allow(''), period: Joi.string().max(100).allow(''), time:Joi.string().max(100).allow(''), highlight: Joi.string().max(1000).allow('') })).max(20)
 }).unknown(false);
 router.get('/me', async (req, res, next) => {
-  try { const account = await store().ensure(req.user); res.json({ success: true, user: req.user, profile: account.profile || {}, credits: account.credits || 0 }); } catch (error) { next(error); }
+  try { const account = await store().ensure(req.user); const version=profileVersion(req.user.id,account.profile||{}); res.set('ETag',version).json({ success: true, user: req.user, profile: account.profile || {}, profileVersion:version, credits: account.credits || 0 }); } catch (error) { next(error); }
 });
 router.put('/profile', async (req, res, next) => {
   const { value, error } = profileSchema.validate(req.body);
   if (error) return res.status(400).json({ success: false, message: 'Hồ sơ không hợp lệ.' });
-  try { await store().saveProfile(req.user, value); res.json({ success: true, profile: value }); } catch (error) { next(error); }
+  try { const result=await store().saveProfile(req.user, value, req.headers['if-match']); res.set('ETag',result.profileVersion).json({ success: true, ...result }); } catch (error) { if(['PROFILE_CONFLICT','PROFILE_VERSION_REQUIRED'].includes(error.code))return res.status(error.status).json({success:false,code:error.code,message:error.message});next(error); }
 });
 router.post('/logout-all', async (req, res, next) => {
-  try { await require('../config/firebase').auth().revokeRefreshTokens(req.user.id); res.json({ success: true }); } catch (error) { next(error); }
+  try { await revokeSessions(req.user.id); res.json({ success: true }); } catch (error) { next(error); }
 });
-module.exports = router;
+return router;
+}
+module.exports = createAccountRouter();
+module.exports.createAccountRouter=createAccountRouter;
