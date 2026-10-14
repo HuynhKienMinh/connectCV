@@ -4,7 +4,7 @@ const { getTemplateById, renderCVDataToTemplateHtml } = require('./templateServi
 
 let browserInstance = null;
 let browserLaunchingPromise = null;
-let rendererReady=false;
+const rendererProbe=require('./rendererReadiness').createRendererProbe({render:html=>generateCvPdf({html})});
 
 /**
  * Khởi tạo hoặc tái sử dụng Chromium browser singleton
@@ -38,14 +38,13 @@ async function getBrowser() {
       browser.on('disconnected', () => {
         console.warn('Chromium browser disconnected, will recreate on next request.');
         browserInstance = null;
-        rendererReady=false;
+        rendererProbe.invalidate();
       });
 
       browserInstance = browser;
-      rendererReady=true;
       return browser;
     } catch (err) {
-      rendererReady=false;
+      rendererProbe.invalidate();
       console.error('Không thể khởi chạy Chromium browser:', err.message);
       throw err;
     }
@@ -190,6 +189,7 @@ async function generateCvPdf(options){return require('./renderCapacity').withRen
 module.exports = {
   getBrowser,
   generateCvPdf,
-  isRendererReady:()=>rendererReady,
-  async probeRenderer(){try{await getBrowser();return true;}catch{return false;}}
+  isRendererReady:()=>rendererProbe.status().ready&&!!browserInstance?.isConnected(),
+  getRendererStatus:()=>({...rendererProbe.status(),ready:rendererProbe.status().ready&&!!browserInstance?.isConnected()}),
+  probeRenderer:()=>rendererProbe.probe()
 };

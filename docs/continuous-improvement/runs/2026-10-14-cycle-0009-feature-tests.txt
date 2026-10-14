@@ -1,0 +1,61 @@
+
+> connectcv-ai-features@2.0.0 test
+> node --test tests/cvGrounding.test.js tests/runtimeResources.test.js tests/interviewSummaryGrounding.test.js tests/browserConfig.test.js tests/profilePersistence.test.js tests/cvInputValidation.test.js tests/interviewEvaluation.test.js tests/communityPublication.test.js tests/chatbotService.test.js tests/rendererReadiness.test.js
+
+✔ browser path uses existing configured or pinned executable only (0.7541ms)
+✔ production renderer cannot disable its sandbox using handoff flags (0.5416ms)
+✔ actual chatbot reset escapes the display name and failed requests restore only unchanged input (4.0539ms)
+✔ product guide does not promise ATS acceptance, hands-free support or ready PDF without evidence (0.8375ms)
+✔ short questions ask for direction; natural product variants use owned facts and do not copy injections (1.5119ms)
+✔ chat context is allowlisted; nested legacy contact fields never enter the provider prompt (2.3917ms)
+✔ invalid messages/history/types get actionable safe errors; AI output shape is controlled (2.6143ms)
+✔ invalid or deterministic guidance never consumes AI quota, but career advice and rate limits still do (4.2205ms)
+✔ anonymous sharing requires explicit public consent and strips profile fields (7.9395ms)
+✔ contact guard rejects clear emails and Vietnamese phones without echoing content (0.5488ms)
+✔ publication input cannot be silently truncated or coerced into public facts (0.24ms)
+✔ invalid posts do not enter store or budget; valid non-AI sharing retains action limit (5.0098ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ AI cannot add facts, numbers, skills, degrees or identities in either language (17.2242ms)
+✔ Source IDs allow ordering but duplicate/unknown IDs cannot add or lose history (0.7286ms)
+✔ No hardcoded biographical defaults in all 74 layouts and both languages (389.1088ms)
+✔ 74 layouts retain only supplied facts including accounting and empty GPA (291.4838ms)
+✔ Long profile remains complete or fails explicitly before AI (1.649ms)
+✔ Empty profile has no fake score, education, experience or skills (0.1733ms)
+✔ ATS Word keeps source text in normal paragraphs, no textbox or graphics (13.7577ms)
+✔ Keyword matching distinguishes Excel from Excellent and handles C++ (0.3ms)
+✔ Missing degrees, highlights and timelines stay empty after language switch (0.4803ms)
+✔ Translation does not invent bachelor equivalence or honors awards (0.3281ms)
+✔ client and server reject empty, short, whitespace and oversized JD; accept VI/EN boundaries (5.3868ms)
+✔ profile JSON errors are actionable and never expose values, even with hostile content (1.6504ms)
+✔ invalid CV submissions do not consume AI budget or block the next valid request; valid limits remain (4.629ms)
+✔ STAR scaffold uses complete source quotes and discards invented model biography (2.6162ms)
+✔ the entire accepted long answer reaches the prompt, including the final result (1.9532ms)
+✔ a fragment dropping negation and invented result are not published as STAR facts (0.4057ms)
+✔ duplicate evidence is not presented as four verified components and invalid scores fail (0.4004ms)
+✔ invalid interview inputs never consume AI quota; error responses do not echo source (3.0214ms)
+✔ unanswered follow-up is excluded and original answer remains authoritative (1.2041ms)
+✔ missing, duplicated or invalid evaluation scores fail explicitly (0.8412ms)
+✔ AI feedback cannot report new numerical claims outside the supplied answer (0.5108ms)
+✔ slow profile writes are serialized and the latest edit survives (1.9216ms)
+✔ failed profile writes never claim success and can be saved again (0.5094ms)
+✔ a conflict keeps the latest draft, stops retries and resumes only after explicit replacement (0.5804ms)
+✔ typing and local matching do not consume AI budget or prevent generation; AI limits still hold (70.9053ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ canary validates actual PDF format, A4 page and source text, not just browser launch (219.7818ms)
+✔ concurrent startup probes share one render and stay unready until PDF verification succeeds (1.2426ms)
+✔ engine failures stay unready and diagnostics do not expose error text or document content (0.4156ms)
+✔ disconnect invalidates readiness and a late probe cannot restore stale success (0.2618ms)
+✔ public readiness reports an unverified PDF as false without triggering a render or caching the result (671.5075ms)
+🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.
+✔ every advertised VI/EN preview exists in the release (135.5008ms)
+✔ malformed AI output does not leak source text in errors (11.8774ms)
+✔ all 148 native variants brand preview and generated copyright consistently (679.2438ms)
+✔ generated CVs load the deployed photo editor and previews contain no scripts (386.5478ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 46
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1395.9956

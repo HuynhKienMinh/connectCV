@@ -1,0 +1,15 @@
+✔ confirmed missing account moves to signup (0.7882ms)
+✔ protected invalid credentials offer signup without asserting account absence (0.1442ms)
+✔ network failure and rate limits do not redirect to registration (0.1121ms)
+✔ registration errors do not create redirect loops (0.1135ms)
+✔ late owner-A results cannot replace owner-B documents (1.955ms)
+✔ a failed public request removes previous content, including when an older success arrives later (0.3016ms)
+✔ unmount or sign-out invalidates pending completion and loading state (0.1849ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.6972

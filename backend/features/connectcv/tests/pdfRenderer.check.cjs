@@ -1,7 +1,7 @@
 'use strict';
 // Production browser smoke with synthetic documents only. Never uses cloud data or AI.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http');
-const {getBrowser,generateCvPdf,isRendererReady}=require('../src/services/pdfService');
+const {getBrowser,generateCvPdf,isRendererReady,probeRenderer,getRendererStatus}=require('../src/services/pdfService');
 const {prepareCvPage}=require('../src/services/cvRenderRuntime');
 const {getTemplateById,renderCVDataToTemplateHtml}=require('../src/services/templateService');
 const {groundCv}=require('../src/services/cvGroundingService');
@@ -19,7 +19,7 @@ async function inspect(buffer,marker){
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const port=server.address().port;let browser,page;const rows=[];
  try{
- browser=await getBrowser();assert.equal(isRendererReady(),true);page=await browser.newPage();
+ browser=await getBrowser();assert.equal(isRendererReady(),false,'Opening Chromium alone must not claim PDF readiness');assert.equal(await probeRenderer(),true);assert.equal(getRendererStatus().stage,'verified');assert.equal(isRendererReady(),true);page=await browser.newPage();
  const prefix='<html><head><style>@page{size:A4;margin:0}body{font:16px Arial}.cv-page-container{box-sizing:border-box;padding:30px}</style></head><body><div class="cv-page-container"><h1>Ứng viên thử nghiệm</h1>';
  const unsafe=`${prefix}<p>SHORT_FINAL_SOURCE</p><style>@import url('http://127.0.0.1:${port}/css');body{background:url('http://127.0.0.1:${port}/background')}</style><img src="http://127.0.0.1:${port}/image" onerror="document.body.innerHTML='EXECUTED'"><iframe src="http://127.0.0.1:${port}/frame"></iframe><script>document.body.innerHTML='EXECUTED';fetch('http://127.0.0.1:${port}/script')</script></div></body></html>`;
  await prepareCvPage(page,unsafe);const safe=await page.evaluate(()=>({text:document.body.innerText,unsafe:document.querySelectorAll('script,iframe,[onerror]').length}));assert.equal(safe.unsafe,0);assert.ok(!safe.text.includes('EXECUTED'));assert.equal(networkHits,0);
@@ -31,6 +31,6 @@ async function inspect(buffer,marker){
  const native=await generateCvPdf({html});
  if(process.env.CV_PDF_QA_OUTPUT){fs.mkdirSync(process.env.CV_PDF_QA_OUTPUT,{recursive:true});for(const [name,buffer] of [['short',short],['long',long],['native-formal',native]])fs.writeFileSync(path.join(process.env.CV_PDF_QA_OUTPUT,name+'.pdf'),buffer);}
  rows.push({id:'native-formal',...await inspect(native,'NATIVE_FINAL_SOURCE')});assert.equal(networkHits,0);
- console.log(JSON.stringify({productionPolicy:true,documentScriptsBlocked:true,externalFixtureHits:networkHits,rows}));
- }finally{if(page)await page.close();if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
+ console.log(JSON.stringify({productionPolicy:true,startupCanary:getRendererStatus(),documentScriptsBlocked:true,externalFixtureHits:networkHits,rows}));
+ }finally{if(page)await page.close();if(browser){await browser.close();assert.equal(isRendererReady(),false,'Disconnected renderer must withdraw readiness');}await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error.message);process.exitCode=1;});

@@ -2,6 +2,7 @@ name: ConnectCV independent checks
 'on':
   push:
     branches: [main, 'improvement/**']
+    paths-ignore: ['docs/**']
   workflow_dispatch:
 permissions:
   contents: read
