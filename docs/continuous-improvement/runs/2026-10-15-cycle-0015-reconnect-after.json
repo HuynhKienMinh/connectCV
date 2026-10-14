@@ -1,0 +1,30 @@
+{
+  "scope": "production sandbox local lifecycle; invalid output then two concurrent fresh valid outputs",
+  "startup": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-14T19:29:20.117Z",
+    "pages": 1,
+    "bytes": 26986
+  },
+  "relaunchedConnected": true,
+  "invalidOutputKeptUnready": true,
+  "concurrentExports": 2,
+  "output": [
+    {
+      "pages": 1,
+      "bytes": 26986
+    },
+    {
+      "pages": 1,
+      "bytes": 26986
+    }
+  ],
+  "afterRelaunch": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-14T19:29:21.245Z",
+    "pages": 1,
+    "bytes": 26986
+  }
+}

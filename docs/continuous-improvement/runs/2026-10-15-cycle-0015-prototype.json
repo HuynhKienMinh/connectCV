@@ -1,0 +1,51 @@
+{
+  "prototypeOnly": true,
+  "family": "Roboto",
+  "style": "normal",
+  "version": "3.015",
+  "weights": {
+    "400": {
+      "file": "roboto-400.woff2",
+      "sha256": "cb8c9f4c53464c3a8512cc0018139beac90db501cdc16fbd6c54e64a15a093e3",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": false,
+      "allHintingRemoved": true
+    },
+    "500": {
+      "file": "roboto-500.woff2",
+      "sha256": "47b81d8577983de4ff02ca8e6f4fdce5d98e813fe676e97a3e016b23efee3e16",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": false,
+      "allHintingRemoved": true
+    },
+    "600": {
+      "file": "roboto-600.woff2",
+      "sha256": "f65de5e11de4467e451bbf052d9ad78ff467519d736cc2d85990c8c8de07c286",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": false,
+      "allHintingRemoved": true
+    },
+    "700": {
+      "file": "roboto-700.woff2",
+      "sha256": "cec0807332ca8d18d59a5558b197c330eac657c9cb7abf46ad164ee4a647e56c",
+      "glyphCodepoints": 332,
+      "instantiatedSourceOutlinesMetricsExact": true,
+      "sharedHintingRestored": false,
+      "allHintingRemoved": true
+    }
+  },
+  "sources": [
+    {
+      "file": "ce075ab86dc1c623078b.woff2",
+      "sha256": "0b60bbe04e9c479444b31270a72179f53e400beee57b7dd176c08e5e2e716831"
+    },
+    {
+      "file": "890de452eac592c62afc.woff2",
+      "sha256": "1404ca348bd75ef836f4dd8b6f2cc719458642d1237c368296b2fc652dca47dc"
+    }
+  ],
+  "strategy": "instantiated subsets; remove all TrueType hinting to compare with painted Type3 glyphs"
+}

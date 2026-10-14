@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 14,
   "lastRun": "runs/2026-10-14-cycle-0014.md",
-  "activeRun": null,
-  "activeIssue": "CV002",
-  "issueState": "HINTING_AND_TYPE3_HYPOTHESES_FALSIFIED_LOCAL",
+  "activeRun": "runs/2026-10-15-cycle-0015.md",
+  "activeIssue": "OPS005",
+  "issueState": "API_ORIGIN_AND_RENDERER_RECOVERY_VERIFIED_LOCAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -55,11 +55,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002: preserving shared glyph hint programs does not change pixel differences. Type3 units normalization keeps one image exact but still fails text. Inspect variable/Type3 versus static/Type0 glyph representation and no-hinting counterexample with measured fidelity; no runtime candidate accepted",
-    "Before next deploy back up its current baseline to verified private Google Drive; bounded temporary artifacts only, remove after verification",
-    "Continue OPS001 authenticated download E2E/renderer recovery/queue after synthetic test accounts and export matrix are ready",
-    "Dedicated Firebase synthetic accounts and encrypted database restore drill remain open",
-    "Keep template rights, AI broad evaluation, moderation and pricing/ledger release gates open"
+    "Complete current CI, verified cloud baseline05fc9e9 and compatible FE/BE deployment for OPS005/OPS001",
+    "Keep CV002 open: no-hinting rejected; other fonts/long/crop/reading order not accepted",
+    "Dedicated Firebase synthetic accounts and encrypted database restore drill remain open"
   ],
   "deployment": {
     "commit": "05fc9e979868fc57464495ef2b2c13208163d759",
@@ -93,10 +91,10 @@
   },
   "delivery": {
     "reviewCommit": "e26e2edfd9be581bbc12f544bdae96d2539bee3b",
-    "status": "PUSHED_REVIEW_CI_IN_PROGRESS",
+    "status": "LOCAL_FIXES_CURRENT_CI_PENDING",
     "lastPushError": null,
     "nextAction": "Use per-command credential.username=HuynhKienMinh for pushes and username in Git credential lookup; no global config/credential changes",
-    "runtimeChanged": false,
+    "runtimeChanged": true,
     "deployAttempted": false,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38590248415"
   }

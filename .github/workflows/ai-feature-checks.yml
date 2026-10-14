@@ -24,7 +24,9 @@ jobs:
         working-directory: frontend
       - run: npm run build
         working-directory: frontend
-      - run: node --test tests/authFlow.test.js tests/portfolioLoader.test.js
+        env:
+          VITE_API_BASE_URL: 'https://connectcv-api-minh.onrender.com'
+      - run: node --test tests/authFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js
         working-directory: frontend
       - run: node --test tests/account.test.cjs tests/portfolio.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs
         working-directory: backend
@@ -55,6 +57,12 @@ jobs:
           PLAYWRIGHT_BROWSERS_PATH: '0'
       - name: Verify production sandbox, isolated resources and PDF text
         run: node tests/pdfRenderer.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          NODE_ENV: production
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+      - name: Verify readiness recovery after browser re-creation
+        run: node tests/rendererReconnect.check.cjs
         working-directory: backend/features/connectcv
         env:
           NODE_ENV: production

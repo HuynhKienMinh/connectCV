@@ -35,8 +35,12 @@ def main():
               'version': '3.015', 'weights': {},
               'sources': [{'file': file, 'sha256': sha(ASSETS / file)} for file in SOURCES]}
     preserve_hints = '--preserve-hinting' in sys.argv[2:]
+    no_hints = '--no-hinting' in sys.argv[2:]
+    assert not (preserve_hints and no_hints), 'Choose one hinting experiment'
     if preserve_hints:
         report['strategy'] = 'instantiated subsets; restore byte-identical shared hint programs after merge'
+    elif no_hints:
+        report['strategy'] = 'instantiated subsets; remove all TrueType hinting to compare with painted Type3 glyphs'
     for weight in [400, 500, 600, 700]:
         intermediate = []
         for file in SOURCES:
@@ -77,6 +81,12 @@ def main():
                 offset += len(original.getGlyphOrder())
             for original in originals:
                 original.close()
+        if no_hints:
+            for glyph in font['glyf'].glyphs.values():
+                glyph.removeHinting()
+            for tag in ['fpgm', 'prep', 'cvt ', 'gasp']:
+                if tag in font:
+                    del font[tag]
         first = TTFont(intermediate[0], recalcTimestamp=False)
         font['head'].created = first['head'].created
         font['head'].modified = first['head'].modified
@@ -88,6 +98,10 @@ def main():
         font.close()
         merged = TTFont(output, recalcTimestamp=False)
         cmap = merged.getBestCmap()
+        if no_hints:
+            assert not any(tag in merged for tag in ['fpgm', 'prep', 'cvt ', 'gasp'])
+            assert not any(getattr(glyph, 'program', None) and glyph.program.getBytecode()
+                           for glyph in merged['glyf'].glyphs.values())
         assert 'fvar' not in merged, 'Prototype must be a fully instantiated face'
         for path in intermediate:
             original = TTFont(path, recalcTimestamp=False)
@@ -108,7 +122,7 @@ def main():
         merged.close()
         report['weights'][str(weight)] = {'file': output.name, 'sha256': sha(output),
                                           'glyphCodepoints': len(cmap), 'instantiatedSourceOutlinesMetricsExact': True,
-                                          'sharedHintingRestored': preserve_hints}
+                                          'sharedHintingRestored': preserve_hints, 'allHintingRemoved': no_hints}
     (out / 'prototype.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'weights': len(report['weights']), 'instantiatedSourceOutlinesMetricsExact': True}))
 

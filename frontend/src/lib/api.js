@@ -1,5 +1,8 @@
 import { auth } from './firebase';
-export const API_BASE=(import.meta.env.VITE_API_BASE_URL||'http://localhost:5000').replace(/\/$/,'');
+import { productionApiBase } from '../../config/productionApi.js';
+export const API_BASE=import.meta.env.PROD
+ ? productionApiBase(import.meta.env.VITE_API_BASE_URL)
+ : (import.meta.env.VITE_API_BASE_URL||'http://localhost:5000').replace(/\/$/,'');
 export async function api(path,options={}){
  const token=await auth.currentUser?.getIdToken();
  const response=await fetch(API_BASE+path,{...options,headers:{'Content-Type':'application/json',...options.headers,...(token?{Authorization:`Bearer ${token}`}:{})}});

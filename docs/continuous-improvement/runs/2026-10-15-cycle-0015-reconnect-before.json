@@ -1,0 +1,20 @@
+{
+  "scope": "production sandbox local lifecycle; owned test browser closed, fresh valid output",
+  "startup": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-14T19:26:24.529Z",
+    "pages": 1,
+    "bytes": 26986
+  },
+  "relaunchedConnected": true,
+  "output": {
+    "pages": 1,
+    "bytes": 26986
+  },
+  "afterRelaunch": {
+    "ready": false,
+    "stage": "unverified",
+    "checkedAt": null
+  }
+}

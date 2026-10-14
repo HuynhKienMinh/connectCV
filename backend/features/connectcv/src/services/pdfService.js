@@ -4,7 +4,9 @@ const { getTemplateById, renderCVDataToTemplateHtml } = require('./templateServi
 
 let browserInstance = null;
 let browserLaunchingPromise = null;
-const rendererProbe=require('./rendererReadiness').createRendererProbe({render:html=>generateCvPdf({html})});
+// Keep the trusted probe outside the public export wrapper: recovery exports
+// verify readiness after releasing their slot, so the probe must not await itself.
+const rendererProbe=require('./rendererReadiness').createRendererProbe({render:html=>require('./renderCapacity').withRenderSlot(()=>generateCvPdfUnchecked({html}))});
 
 /**
  * Khởi tạo hoặc tái sử dụng Chromium browser singleton
@@ -185,7 +187,14 @@ async function generateCvPdfUnchecked({ html, templateId, cvData, userProfile, l
   }
 }
 
-async function generateCvPdf(options){return require('./renderCapacity').withRenderSlot(()=>generateCvPdfUnchecked(options));}
+async function generateCvPdf(options){
+ const buffer=await require('./renderCapacity').withRenderSlot(()=>generateCvPdfUnchecked(options));
+ // A new browser may export successfully after a disconnect while its old
+ // readiness was invalidated. Recheck with the fixed canary, never user content.
+ // The user slot is already released and concurrent callers share one probe.
+ if(!rendererProbe.status().ready)await rendererProbe.probe();
+ return buffer;
+}
 module.exports = {
   getBrowser,
   generateCvPdf,
