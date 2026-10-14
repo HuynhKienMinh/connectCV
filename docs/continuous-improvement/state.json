@@ -56,10 +56,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Resume cycle0015: inspect dep-db7tol4s728c739l4i8g FIRST; do not trigger overlapping deployment/backup. If live verify source15daaa7/canary/auth; if failed retain baseline05fc9e9 and inspect logs before any retry",
-    "Review client recovery CI separately; do not replace/push/deploy main while15daaa7 Render candidate remains unresolved",
-    "OPS005 FE config is verified live; do not claim two-account save E2E, Google fresh login or authenticated PDF download tested",
-    "Keep CV002 font/long/crop/reading-order and encrypted database restore release gates open"
+    "Resume cycle0015: inspect current Renderdep-db7tol4s728c739l4i8g/source15daaa7/status/log first; do not redeploy while Building. Baseline05fc9e9 remains live; if candidate failed inspect evidence before retry",
+    "Client recovery94e4418 reviewCI38631276843 SUCCESS; only release after current deployment resolved, current-live cloud code/build backup verified, mainCI and rollback gates passed. BE static change only; no extra Firebase deploy required",
+    "OPS005 FE API origin verified live; dedicated synthetic accounts/save/export E2E still missing",
+    "Keep CV002/full font matrix, DOCX/labels recovery, queue and encrypted database restore release gates open"
   ],
   "deployment": {
     "commit": "05fc9e979868fc57464495ef2b2c13208163d759",
@@ -103,10 +103,12 @@
     "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38626162355",
     "candidateRelease": "dep-db7tol4s728c739l4i8g",
     "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
-    "backendStatus": "BUILDING_28M_AWAITING_BUILD_LOGS_LAST_HOUR",
+    "backendStatus": "BUILDING_36M23S_NO_USABLE_BUILD_LOGS",
     "autoDeployDisabledBySpecificCommit": true,
-    "lastCandidateCheckedAt": "2026-10-14T20:20:40.084509+00:00",
+    "lastCandidateCheckedAt": "2026-10-14T20:25:03.286748+00:00",
     "remainingFrontendRecovery": "LOCAL_VERIFIED: design PDF rechecks stale false on click with 3s read-only canary status; DOCX/labels/full browser E2E still pending",
-    "nextReviewStatus": "CLIENT_RECOVERY_LOCAL_VERIFIED_CI_PENDING"
+    "nextReviewStatus": "CLIENT_RECOVERY_CI_SUCCESS_WAITING_CURRENT_RELEASE",
+    "nextReviewCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38631276843"
   }
 }

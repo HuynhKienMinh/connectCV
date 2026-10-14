@@ -16,5 +16,9 @@
   },
   "productionDeployed": false,
   "cloudUserWrites": 0,
-  "aiCalls": 0
+  "aiCalls": 0,
+  "reviewCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+  "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38631276843",
+  "ciConclusion": "success",
+  "unitTestsInFullCI": 84
 }
