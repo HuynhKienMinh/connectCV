@@ -102,7 +102,9 @@
     "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38626162355",
     "candidateRelease": "dep-db7tol4s728c739l4i8g",
     "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
-    "backendStatus": "BUILDING_9M04S_AWAITING_LOGS",
-    "autoDeployDisabledBySpecificCommit": true
+    "backendStatus": "BUILDING_13M20S_AWAITING_LOGS",
+    "autoDeployDisabledBySpecificCommit": true,
+    "lastCandidateCheckedAt": "2026-10-14T20:02:09.722582+00:00",
+    "remainingFrontendRecovery": "SOURCE_ONLY: runtime PDF capability cached at page load; design false uses BrowserPrint, ATS still calls server; UI refresh not verified"
   }
 }
