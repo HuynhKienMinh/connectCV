@@ -59,3 +59,20 @@ jobs:
         env:
           NODE_ENV: production
           PLAYWRIGHT_BROWSERS_PATH: '0'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install independent PDF text verifier
+        run: python -m pip install pypdf==6.10.0
+      - name: Compare native font geometry, crop and pagination
+        run: node tests/nativeFontPdf.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          NODE_ENV: production
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_FONT_QA_OUTPUT: '${{ runner.temp }}/connectcv-font-qa'
+      - name: Verify exact Vietnamese words with independent parser
+        run: python tests/nativeFontText.check.py "$CV_FONT_QA_OUTPUT"
+        working-directory: backend/features/connectcv
+        env:
+          CV_FONT_QA_OUTPUT: '${{ runner.temp }}/connectcv-font-qa'

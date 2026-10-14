@@ -1,0 +1,73 @@
+{
+  "family": "Be Vietnam Pro",
+  "style": "normal",
+  "version": "1.002",
+  "license": "font-licenses/be-vietnam-pro/OFL.txt",
+  "tools": {
+    "fonttools": "4.66.1",
+    "brotli": "1.2.0",
+    "zopfli": "0.4.3"
+  },
+  "weights": {
+    "400": {
+      "file": "98f02a8ab3a62938d9b1.woff2",
+      "sha256": "98f02a8ab3a62938d9b183d428307763032d52c5ee4a9640246c433e00c02a8f",
+      "glyphCodepoints": 325,
+      "sources": [
+        {
+          "file": "192831e68d5da19beeea.woff2",
+          "sha256": "03d1b589cff172e1a670b3573e731d3380bc326f80cf83b0d3504e3188e2e074"
+        },
+        {
+          "file": "15cdfa1fd883cec29715.woff2",
+          "sha256": "dc085e2fba3414e5c5bf1e6172f921a9f81c5859946a4ed3d63c1e470d96a9e2"
+        }
+      ]
+    },
+    "500": {
+      "file": "eb71c660c4ff84d983c6.woff2",
+      "sha256": "eb71c660c4ff84d983c67b532a17a1274587cc1037c944f424358f5b49542710",
+      "glyphCodepoints": 325,
+      "sources": [
+        {
+          "file": "4c25826416358c17312d.woff2",
+          "sha256": "b621f77d35f777023aa11ca524462d511b4b28a813adbc0e9d15a10fc61dfe4e"
+        },
+        {
+          "file": "24af766ee9bbfc8b6f84.woff2",
+          "sha256": "86341610cbe907eecf461c9159c168d5efb52bb1a33963813a08f520555d8e66"
+        }
+      ]
+    },
+    "600": {
+      "file": "edbd291705c69a20a465.woff2",
+      "sha256": "edbd291705c69a20a465048b14a5e2d52972fb088a6131753ba0428f038438d2",
+      "glyphCodepoints": 325,
+      "sources": [
+        {
+          "file": "1f09cf2cad8deace5af5.woff2",
+          "sha256": "9503dec2a7c532c8331e9600bcafea287a4fd208573b8668d85ab8d8de1863c7"
+        },
+        {
+          "file": "a4a19814300ef353dcec.woff2",
+          "sha256": "97658c6f9a384f29a3005c3d96e2a0d1c810192cf68979071c290f5a377a9f99"
+        }
+      ]
+    },
+    "700": {
+      "file": "210efa2ef7d2272d7ae2.woff2",
+      "sha256": "210efa2ef7d2272d7ae21dc7e7c6d4d0ba33359ecb982dfb0f377e66b030b781",
+      "glyphCodepoints": 325,
+      "sources": [
+        {
+          "file": "d0a722dfe679d853f5d2.woff2",
+          "sha256": "a193dd87699bd2e18ddf72dc271493ea82a23dad9f5c334d9f2a257b1e05fc30"
+        },
+        {
+          "file": "cc213dd9a52f29568177.woff2",
+          "sha256": "4f58af2d1c3e28a9ba14c51c82db2751d78344b75bdcb34de24a1031ebe59da6"
+        }
+      ]
+    }
+  }
+}

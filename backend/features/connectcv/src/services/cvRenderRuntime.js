@@ -1,5 +1,6 @@
  'use strict';
 const fs=require('fs'),path=require('path');
+const {unifyNativePdfFonts}=require('./nativePdfFonts');
 const assetRoot=path.resolve(__dirname,'../../assets/topcv-source/assets');
 const handlers=new WeakMap();
 const offlineAssets=JSON.parse(fs.readFileSync(path.resolve(assetRoot,'../offline-assets.json'),'utf8'));
@@ -27,7 +28,7 @@ async function prepareCvPage(page,html,{scale=2}={}){
    await request.abort();
   }catch{if(!request.isInterceptResolutionHandled())await request.abort().catch(()=>{});}
  };handlers.set(page,handler);page.on('request',handler);
- let source=html.replace(/<base\b[^>]*>/gi,'');
+ let source=unifyNativePdfFonts(html).replace(/<base\b[^>]*>/gi,'');
  source=source.replace(/<head[^>]*>/i,'$&<base href="https://cv-resources.invalid/">');
  await page.setViewport({width:794,height:1123,deviceScaleFactor:scale});
  await page.emulateMediaType(html.includes('data-native-topcv=')?'screen':'print');
