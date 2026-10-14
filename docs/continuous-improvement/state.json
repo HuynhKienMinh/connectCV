@@ -57,6 +57,7 @@
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
     "Resume cycle0015: inspect dep-db7tol4s728c739l4i8g FIRST; do not trigger overlapping deployment/backup. If live verify source15daaa7/canary/auth; if failed retain baseline05fc9e9 and inspect logs before any retry",
+    "Review client recovery CI separately; do not replace/push/deploy main while15daaa7 Render candidate remains unresolved",
     "OPS005 FE config is verified live; do not claim two-account save E2E, Google fresh login or authenticated PDF download tested",
     "Keep CV002 font/long/crop/reading-order and encrypted database restore release gates open"
   ],
@@ -102,9 +103,10 @@
     "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38626162355",
     "candidateRelease": "dep-db7tol4s728c739l4i8g",
     "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
-    "backendStatus": "BUILDING_13M20S_AWAITING_LOGS",
+    "backendStatus": "BUILDING_28M_AWAITING_BUILD_LOGS_LAST_HOUR",
     "autoDeployDisabledBySpecificCommit": true,
-    "lastCandidateCheckedAt": "2026-10-14T20:02:09.722582+00:00",
-    "remainingFrontendRecovery": "SOURCE_ONLY: runtime PDF capability cached at page load; design false uses BrowserPrint, ATS still calls server; UI refresh not verified"
+    "lastCandidateCheckedAt": "2026-10-14T20:20:40.084509+00:00",
+    "remainingFrontendRecovery": "LOCAL_VERIFIED: design PDF rechecks stale false on click with 3s read-only canary status; DOCX/labels/full browser E2E still pending",
+    "nextReviewStatus": "CLIENT_RECOVERY_LOCAL_VERIFIED_CI_PENDING"
   }
 }

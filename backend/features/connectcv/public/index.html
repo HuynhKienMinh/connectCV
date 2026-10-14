@@ -3530,6 +3530,26 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       if (batchCVResults[activeBatchIndex]) batchCVResults[activeBatchIndex].renderedHtml = html;
     });
 
+    // Recheck only a stale unavailable flag on an explicit design download.
+    // Public readiness is read-only; only the server's verified canary can clear it.
+    async function refreshPdfReadinessForExport() {
+      if (window.connectCVServerPdf !== false) return;
+      const controller = new AbortController();
+      const deadline = setTimeout(() => controller.abort(), 3000);
+      try {
+        const response = await fetch('/api/features/health', { cache: 'no-store', signal: controller.signal });
+        if (!response.ok) return;
+        const status = await response.json();
+        if (status.browserConfigured === true && status.pdfCanaryVerified === true) {
+          window.connectCVServerPdf = true;
+        }
+      } catch {
+        // Offline/unverified engines keep the existing print fallback.
+      } finally {
+        clearTimeout(deadline);
+      }
+    }
+
     // Export the actual edited document for both formats.
     async function downloadCVPDF(format = 'design') {
       if (!latestCVData) {
@@ -3537,6 +3557,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         return;
       }
 
+      if (format === 'design') await refreshPdfReadinessForExport();
       if (format === 'design' && window.connectCVServerPdf === false) {
         showToastWarning('Chọn Lưu thành PDF trong hộp thoại in. Bật đồ họa nền và tắt đầu trang/chân trang để giữ thiết kế mẫu.', 'Lưu PDF bằng trình duyệt');
         printCV();
