@@ -12,6 +12,10 @@ async function featureSecurity(req,res,next){
  res.setHeader('Cache-Control','no-store');
  // Auth has already passed; invalid CV inputs must not consume the AI bucket or budget.
  const fullPath=((req.baseUrl||'')+(req.path||'')).replace(/\/+$/,'').toLowerCase();
+ if(fullPath==='/api/interview/live-summary'){
+  const error=require('../services/interviewSummaryGrounding').summaryVersionError(req.body);
+  if(error)return res.status(409).json(error);
+ }
  if(fullPath==='/api/cv/generate'){
   const {validateGeneration,validationResponse}=require('../services/cvGenerationValidation');
   const result=validateGeneration(req.body);

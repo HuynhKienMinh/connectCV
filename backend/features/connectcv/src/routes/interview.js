@@ -318,6 +318,8 @@ Trả về DUY NHẤT một JSON hợp lệ:
 // ─────────────────────────────────────────────────────────────────────
 router.post('/live-summary', async (req, res) => {
   try {
+    const versionError=require('../services/interviewSummaryGrounding').summaryVersionError(req.body);
+    if(versionError)return res.status(409).json(versionError);
     const { history, conversationHistory, jobTitle, jdText, candidateProfile } = req.body;
     const rawHist = history || conversationHistory || [];
     if(!Array.isArray(rawHist)||rawHist.slice(-20).some(turn=>!turn||typeof turn!=='object'||String(turn.message||turn.content||'').length>3000))return res.status(400).json({success:false,message:'Lịch sử phỏng vấn không hợp lệ hoặc câu trả lời vượt 3000 ký tự.'});

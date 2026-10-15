@@ -1,4 +1,7 @@
 'use strict';
+function summaryVersionError(body){
+ return body?.reportVersion===2?null:{success:false,code:'INTERVIEW_REPORT_CLIENT_OUTDATED',message:'Bản luyện phỏng vấn đã được cập nhật. Hãy lưu hoặc sao chép hội thoại hiện tại trước khi tải lại trang để nhận báo cáo mới.'};
+}
 function answeredPairs(history) {
  const pairs=[];let question='';
  for(const turn of history.slice(-20)){
@@ -35,4 +38,4 @@ function groundSummary(result,pairs){
   rating:overallScore===null?'Chưa xác minh':overallScore>=8.5?'Xuất Sắc':overallScore>=7?'Rất Tốt':'Cần Trau Dồi Thêm',
   summary:`Đã ghi nhận ${pairs.length} câu trả lời. Khung STAR giữ các câu/dòng nguyên văn từ đúng lượt; điểm chưa xác minh được để trống. Câu hỏi chưa trả lời không được chấm.`};
 }
-module.exports={answeredPairs,groundSummary};
+module.exports={answeredPairs,groundSummary,summaryVersionError};

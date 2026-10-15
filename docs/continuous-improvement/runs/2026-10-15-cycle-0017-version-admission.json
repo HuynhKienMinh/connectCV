@@ -1,0 +1,13 @@
+{
+  "scope": "Local old actual renderer with new guarded summary; no real provider",
+  "legacyUiMisrepresentsNullAsEight": true,
+  "mitigation": "reportVersion2 enforced in middleware before budget/action buckets and in handler before provider; new request declares2",
+  "olderClientStatus": 409,
+  "olderRequestsBeforeValid": 25,
+  "olderRequestsAiBudget": 0,
+  "currentRequestAiBudget": 1,
+  "transcriptPreservedInActualEndFunction": true,
+  "afterFeatureTests": 63,
+  "cloudWrites": 0,
+  "realAiCalls": 0
+}

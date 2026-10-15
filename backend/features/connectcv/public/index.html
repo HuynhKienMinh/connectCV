@@ -4841,6 +4841,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
+            reportVersion: 2,
             jobTitle: document.getElementById('int-title').value,
             jdText: document.getElementById('int-jd').value,
             candidateProfile: document.getElementById('int-exp').value,

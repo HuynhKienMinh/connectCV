@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-15T03:00:56.926954+00:00",
+  "backendCommit": "884a52cb0dcc6ea59747694d21f020f90e9d8f73",
+  "renderRelease": "dep-db84266q1p3s739g75cg",
+  "renderUiStatus": "Deploy succeeded|Live",
+  "renderDuration": "2m46s",
+  "checks": {
+    "health200": true,
+    "canaryVerified": true,
+    "healthNoStore": true,
+    "studio200": true,
+    "studioMatchesGitByteForByte": true,
+    "zeroFallbackRemoved": true,
+    "unknownScoreAndPracticeLabels": true,
+    "anonymousSummary401": true,
+    "anonymousAccount401": true,
+    "frontendCors": true,
+    "frontend200": true,
+    "frontendAssetUnchanged": true,
+    "frontendShaUnchanged": true,
+    "apiOriginCorrect": true
+  },
+  "studioHtmlSha256": "0e53f3ce12c86e40c4dcb5910f7d11af6f93330cf551afdaf3342f7c8e4b0311",
+  "frontendAsset": "/assets/index-BVFhznbg.js",
+  "frontendSha256": "f6860d0d7414c5a97d05bdfd12ceda64a9a5437a0c930eae4f950d776cea1784",
+  "startupCanary": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-15T03:00:04.344Z",
+    "pages": 1,
+    "bytes": 26980
+  },
+  "cloudUserWrites": 0,
+  "realAiCalls": 0,
+  "authenticatedInterviewSummaryVerified": false,
+  "microphoneVerified": false,
+  "humanPilotVerified": false,
+  "rollbackCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
+  "scope": "Live source/static/version/auth/readiness only; semantic evidence and zero/null behavior verified local+CI with synthetic model fixture"
+}
