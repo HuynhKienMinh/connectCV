@@ -1,0 +1,18 @@
+[
+  {
+    "id": 38695618918,
+    "head_sha": "a276dadb09e614ba37262d8520277ab972b22344",
+    "head_branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38695618918"
+  },
+  {
+    "id": 38695365266,
+    "head_sha": "a276dadb09e614ba37262d8520277ab972b22344",
+    "head_branch": "improvement/continuous-review-20261013",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38695365266"
+  }
+]

@@ -15,18 +15,18 @@ if(!ci)old._compile(execFileSync('git',['show','b3ca417:backend/features/connect
 const image='data:image/png;base64,'+fs.readFileSync(path.join(__dirname,'fixtures/avatar-portrait.png')).toString('base64');
 const profile={fullName:'Ứng viên giả lập',targetRole:'Backend Developer Node.js',avatarDataUrl:image,skills:['Node.js','SQL'],summary:'Hồ sơ giả để test, không phải người thật.',education:[{school:'Trường giả lập',degree:'Công nghệ thông tin',time:'2020 - 2024'}],experience:[{company:'Công ty giả lập',role:'Developer',time:'2024 - 2025',bullets:['Kiểm thử dữ liệu giả.']} ]};
 const cv={...groundCv(profile,{},'en'),atsScore:50,language:'en'};
-const native=phase=>(phase==='before'?old.exports.renderTopcvSource:renderTopcvSource)(getTemplateById('basic_1_v2','en'),cv,profile,'en');
+const native=phase=>{const html=(phase==='before'?old.exports.renderTopcvSource:renderTopcvSource)(getTemplateById('basic_1_v2','en'),cv,profile,'en');return phase==='saved'?html.replace('<script src="/ai/js/cv-photo-layout.js" defer></script>','').replace(/ data-photo-fit="[^"]*"/g,''):html;};
 function pageHtml(phase){
  const src=phase==='before'?beforeStudio:studio;
  const funcs=src.slice(src.indexOf('    function toggleCVFullscreen()'),src.indexOf("    window.addEventListener('message', event => {"));
  const a=src.indexOf('function escapeHTML('),b=src.indexOf('\n    }',a)+6;
  const modal=src.slice(src.indexOf('<div class="fixed inset-0 bg-slate-900/80'),src.indexOf('<!-- MODAL XEM CHI TIẾT CÔNG VIỆC'));
- return '<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/ai/css/studio.css">'+(phase==='after'?'<script src="/ai/js/cv-preview.js"></script>':'')+'</head><body><main class="p-4"><h1>CV test '+phase+' · Hồ sơ/ảnh giả</h1><button onclick="toggleCVFullscreen()" id="open">Mở toàn màn hình</button><div id="cv-result" style="height:720px"></div></main>'+modal+'<script>let latestRenderedHtml='+JSON.stringify(phase==='before'?native(phase).replace('/ai/js/cv-photo-editor.js','/ai/js/cv-photo-editor.js?phase=before'):native(phase)).replace(/</g,'\\u003c')+';let latestCVData='+JSON.stringify(cv)+';let currentCVLanguage="en", currentCVTab="visual", currentAppliedTemplate={title:"Basic 1",id:"basic_1_v2"},currentSelectedTemplateId="basic_1_v2",batchCVResults=[],activeBatchIndex=0,cvLanguageCache={en:null,vi:null};'+src.slice(a,b)+'\n'+funcs+'\nrenderCVResult(latestCVData,latestRenderedHtml);</script></body></html>';
+ return '<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/ai/css/studio.css">'+(phase!=='before'?'<script src="/ai/js/cv-preview.js"></script>':'')+'</head><body><main class="p-4"><h1>CV test '+phase+' · Hồ sơ/ảnh giả</h1><button onclick="toggleCVFullscreen()" id="open">Mở toàn màn hình</button><div id="cv-result" style="height:720px"></div></main>'+modal+'<script>let latestRenderedHtml='+JSON.stringify(phase==='before'?native(phase).replace('/ai/js/cv-photo-editor.js','/ai/js/cv-photo-editor.js?phase=before'):native(phase)).replace(/</g,'\\u003c')+';let latestCVData='+JSON.stringify(cv)+';let currentCVLanguage="en", currentCVTab="visual", currentAppliedTemplate={title:"Basic 1",id:"basic_1_v2"},currentSelectedTemplateId="basic_1_v2",batchCVResults=[],activeBatchIndex=0,cvLanguageCache={en:null,vi:null};'+src.slice(a,b)+'\n'+funcs+'\nrenderCVResult(latestCVData,latestRenderedHtml);</script></body></html>';
 }
 const types={'.js':'text/javascript','.css':'text/css','.png':'image/png','.woff2':'font/woff2','.woff':'font/woff','.ttf':'font/ttf'};
 const server=http.createServer((req,res)=>{
  const url=new URL(req.url,'http://localhost');let file;
- if(url.pathname==='/before'||url.pathname==='/after'){res.setHeader('Content-Type','text/html; charset=utf-8');return res.end(pageHtml(url.pathname.slice(1)));}
+ if(url.pathname==='/before'||url.pathname==='/after'||url.pathname==='/saved'){res.setHeader('Content-Type','text/html; charset=utf-8');return res.end(pageHtml(url.pathname.slice(1)));}
  if(url.pathname==='/ai/js/cv-photo-editor.js'&&url.searchParams.get('phase')==='before'){res.setHeader('Content-Type','text/javascript');return res.end(execFileSync('git',['show','b3ca417:backend/features/connectcv/public/js/cv-photo-editor.js'],{cwd:repo}));}
  if(/^\/ai\/(js\/(cv-photo-layout|cv-photo-editor|cv-preview)\.js|css\/studio\.css)$/.test(url.pathname))file=path.join(root,'public',url.pathname.slice(4));
  const asset=/^\/api\/cv\/source-assets\/([a-zA-Z0-9_-]+\.[a-z0-9]+)$/.exec(url.pathname);if(asset)file=path.join(root,'assets/topcv-source/assets',asset[1]);
@@ -49,8 +49,7 @@ async function geometry(frame){return frame.locator('html').evaluate(()=>{const 
    const exported=await page.evaluate(()=>getCurrentCVHtml(document.getElementById('iframe-cv-fullscreen')));assert.ok(!exported.includes('data-cv-preview'));assert.ok(!exported.includes('--cv-preview-scale'));assert.ok(exported.includes('data-photo-fit="cover"'));assert.ok(exported.includes('data-photo-zoom="1.4"'));
    await page.getByRole('button',{name:'✕',exact:true}).click();await page.locator('#cv-rendered-iframe').contentFrame().locator('[data-cv-preview]').waitFor({state:'attached'});assert.equal(await page.locator('#cv-rendered-iframe').contentFrame().locator('img[data-photo-fit]').getAttribute('data-photo-fit'),'cover');
   }
+  await page.goto(base+'/saved'); f=page.locator('#cv-rendered-iframe').contentFrame(); await f.locator('.cv-photo-frame').waitFor(); const saved=await geometry(f);assert.equal(saved.photo.fit,'contain');assert.equal(saved.photo.frameWidth,264);rows.push({phase:'saved-without-companion',...saved});
   assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'report.json'),JSON.stringify({synthetic:true,cloudWrites:0,realAiCalls:0,rows,errors},null,2));console.log(JSON.stringify({rows,errors}));
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e.stack);server.close();process.exitCode=1;});
-
-

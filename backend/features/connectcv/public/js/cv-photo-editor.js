@@ -1,6 +1,15 @@
 (async () => {
   if (window.__cvPhotoEditor) return;
   window.__cvPhotoEditor = true;
+  // Previously saved CV HTML includes only this editor script. Load the trusted
+  // companion for those documents as well, without regenerating the candidate CV.
+  if (typeof window.connectCVPreparePhotos !== 'function') {
+    await new Promise((resolve, reject) => {
+      const script=document.createElement('script'); script.src='/ai/js/cv-photo-layout.js';
+      script.onload=resolve; script.onerror=()=>reject(new Error('Photo layout unavailable'));
+      document.head.appendChild(script);
+    });
+  }
   await Promise.all([...document.images].map(img => img.decode().catch(() => {})));
   window.connectCVPreparePhotos();
   let active = null, drag = null;

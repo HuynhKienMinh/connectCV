@@ -78,6 +78,24 @@
         "naturalHeight": 400
       },
       "previewStyles": 1
+    },
+    {
+      "phase": "saved-without-companion",
+      "viewport": 358,
+      "page": {
+        "x": 16.0625,
+        "width": 325.875
+      },
+      "photo": {
+        "width": 108.390625,
+        "height": 69.375,
+        "fit": "contain",
+        "frameWidth": 264,
+        "frameHeight": 169,
+        "naturalWidth": 240,
+        "naturalHeight": 400
+      },
+      "previewStyles": 1
     }
   ],
   "errors": []
