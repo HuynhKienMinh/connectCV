@@ -61,3 +61,8 @@ Avatar mặc địnhcontain để giữ toàn ảnh; cover/zoom chỉ do ngườ
 ## D014 — 15/10/2026: đăng nhập Google từ Zalo/iPhone
 
 User xác nhận web.app mở trong Zalo. Không bắt đầu OAuth trong detected embeddedWebView; hướng dẫn Safari/Chrome và fixed clean project-ownedURL. Ordinary mobile chuyển từ web.app sang existing firebaseapp.com (đã phục vụ cùngapp, BE CORS đãallow), rồi user bấm Google lần nữa để same-origin redirect. Không đổi authDomain/OAuth callbacks/IAM, không thêm browserprivacy exceptions. Phiên Firebase ở mỗi origin riêng nên sau login giữ app tại firebaseapp.com. Desktop giữ popup; current user/onIdTokenChanged vẫn là authority, không session/JWT giả. Unit/browser với SDK giả không chứng nhận actual iPhone OAuth; original incident còn mở tới user replay.
+
+
+## D015 — 16/10/2026: avatar lưu hồ sơ phải vừa hợp đồng account
+
+Upload nhận tối đa3MB nhưng account field350kchars/body900KiB; giữ các giới hạn server. Client xuất ảnh toànkhung/proportional≤768px, JPEG≤240kchars, nền trắng cho transparency; original localfile không đổi. Chỉ lưu avatarUrl, vẫn đọc aliasavatarDataUrl để tương thích draftcũ; compact trước PUT và UTF8≤850KiB. Không âm thầm cắt nội dung hoặc bỏ ảnh khi lỗi; giữ draft/retry/If-Match. Đây là nén ảnh có mất chất lượng có chủ đích cho avatar, không phải nơi lưu ảnh gốc. Không migration/bulk rewrite account, không đưa ảnh vào AI.

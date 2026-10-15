@@ -1,0 +1,99 @@
+{
+  "status": "VERIFIED_CLOUD_LOCAL_RESTORE_DELETED",
+  "baselineCommit": "f438d16320142b0b81b1b5c2578eda7ea97649e3",
+  "candidateCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
+  "protectedCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
+  "requiresCommit": "aa537024f4578b5795f308c8ae6b7893b215042c",
+  "parentCatalog": "cycle0019-candidate-aa53702.json",
+  "baseBundle": "connectcv-2026-10-15-cycle-0015-baseline.bundle",
+  "baseSha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4",
+  "orderedDeltasSha256": {
+    "connectcv-2026-10-15-cycle-0015-baseline-15daaa7.incremental.bundle": "65a560742884437feede36588f4cb6f4827472f2dd8557671c81bcdc7bfdbf45",
+    "connectcv-2026-10-15-cycle-0016-baseline-94e4418.incremental.bundle": "d7bdc239bada9da0c60fb2bcd01bf069566023f354f455ccaed211ffbb12b8e5",
+    "connectcv-2026-10-15-cycle-0017-baseline-b1a2279.incremental.bundle": "575cad4f4ba64c41578b7d2d0a4914f4e7c1a97d85a714b2d21642fe36adec07",
+    "connectcv-2026-10-15-cycle-0017-baseline-884a52c.incremental.bundle": "9a4cf7b749f18748e9020f74df5d707092748748a94ca3fee085b0a0a69e1f24",
+    "connectcv-2026-10-15-cycle-0018-baseline-b3ca417.incremental.bundle": "ebf108592f68ace5264bf870ca148a6113934764ed8b96ff776e84fd29b49a8a",
+    "connectcv-2026-10-15-cycle-0019-baseline-f438d16.incremental.bundle": "535f5c7bfe99571b4f6bd9b6f25e5871da1a0cb0e1afc84ad5d6ec770f79d7bd",
+    "connectcv-2026-10-15-cycle-0019-candidate-be7a52a.incremental.bundle": "b053baaacb37447d7ce2a95d680eae58a564043ee3db155f76cd09da8517fb1b",
+    "connectcv-2026-10-15-cycle-0019-candidate-aa53702.incremental.bundle": "2c6ce17b8583e63798b0f5fd56aa472fd1e3b81c319bc4dd93575e846879102a",
+    "connectcv-2026-10-16-cycle-0020-candidate-1bf75b9.incremental.bundle": "76f758450174aa653c0e242f5ed5ac3d85751d5d1a6d701ca17088b6c72eb79a"
+  },
+  "newBundles": [
+    {
+      "file": "connectcv-2026-10-16-cycle-0020-candidate-1bf75b9.incremental.bundle",
+      "bytes": 205135,
+      "sha256": "76f758450174aa653c0e242f5ed5ac3d85751d5d1a6d701ca17088b6c72eb79a",
+      "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
+      "ref": "refs/backup/cycle0020-candidate-1bf75b9",
+      "cloudId": "1xNAzb2bAbY5wSA_aufZae1QK3RRW5jH0",
+      "cloudUrl": "https://drive.google.com/file/d/1xNAzb2bAbY5wSA_aufZae1QK3RRW5jH0/view"
+    }
+  ],
+  "freshBareRestore": true,
+  "fullFsckPassed": true,
+  "criticalSourceByteMatch": true,
+  "criticalFiles": [
+    "frontend/src/pages/AuthPage.jsx",
+    "frontend/src/lib/googleAuthFlow.js",
+    "frontend/src/lib/firebase.js",
+    "frontend/src/context/AuthContext.jsx",
+    "frontend/src/lib/api.js",
+    "frontend/package-lock.json",
+    "frontend/src/pages/FeaturePage.jsx",
+    "firebase.json",
+    "backend/features/connectcv/public/js/cv-photo-layout.js",
+    "backend/features/connectcv/public/js/cv-preview.js",
+    "backend/features/connectcv/src/services/jobService.js",
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json",
+    "backend/features/connectcv/package-lock.json",
+    "backend/package-lock.json",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/public/js/profile-image.js",
+    "backend/features/connectcv/public/js/account-bridge.js",
+    "backend/features/connectcv/public/js/profile-autosave.js",
+    "backend/src/routes/account.js",
+    "backend/features/connectcv/src/routes/upload.js"
+  ],
+  "fullWorktreeCheckoutVerified": false,
+  "databaseIncluded": false,
+  "frontendUnchanged": true,
+  "frontendFile": "connectcv-2026-10-15-cycle-0019-frontend-aa53702.zip",
+  "frontendSha256": "1f5d3aaab64b6b77be5fe909a757d79fbfc6d7846cf982bb1f03480574c02af2",
+  "frontendMembers": {
+    "frontend/dist/.gitkeep": {
+      "bytes": 87,
+      "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 441,
+      "sha256": "46c2f7c930be57c63be662ccc403166e9fba0c72fe554610eb212da1e784cc96"
+    },
+    "frontend/dist/assets/index-B5BHDfKL.css": {
+      "bytes": 62358,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664"
+    },
+    "frontend/dist/assets/index-C5ZSXnnd.js": {
+      "bytes": 447717,
+      "sha256": "1ef752eb574674021173460cc88b097084b67fed647372a44ade2eec6eb09052"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    }
+  },
+  "frontendCloudId": "1xUMk7ShlqMS0kw6AL88aNWIPewGnAXSq",
+  "frontendRestoreVerified": true,
+  "frontendVersionUnchanged": "7cca55f6a3f836b9",
+  "rollbackRenderRelease": "dep-db87nqqvcj2c738hi8pg",
+  "rollbackCommit": "f438d16320142b0b81b1b5c2578eda7ea97649e3",
+  "rollbackReleaseObservedLive": true,
+  "restoreDirectory": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\restore-cycle20-1bf75b9",
+  "restoreFinalRef": "refs/heads/restore-8",
+  "restoreBytes": 241903879,
+  "localCopiesRetained": false,
+  "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
+  "restoreInstructions": "Verify base and ordered deltas SHA from private Drive, clone --bare --branch main into bounded TEMP, verify/fetch each listed ref in order, assert final protectedCommit, fsck and critical source bytes. Current FEaa ZIP unchanged; verify CRC/all member hashes. Roll back Render to dep-db87nqqvcj2c738hi8pg or redeploy exactf438. No database restore included. Delete TEMP after cloud verified. Next delta exclude candidateCommit, not baselineCommit.",
+  "cloudUiListed": true,
+  "catalogCloudId": "1udb8HbqCuec1btubpFykDhI1ZxJB04AD",
+  "restoreBytesDeleted": 241903879.0
+}

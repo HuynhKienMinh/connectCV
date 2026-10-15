@@ -97,3 +97,6 @@ Cycle18 hoàn tất (15/10/2026): [Avatar, căn giữa và job giả](runs/2026-
 
 
 Cycle19 (15/10/2026): [Google login từ Zalo/iPhone](runs/2026-10-15-cycle-0019.md). Chủ dự án xác nhận Zalo/web.app. WebView có hướng dẫn mở Safari/Chrome/copylink; mobile chuyển tới existing Firebaseapp same-origin để redirect, desktop giữ popup.104units+10mockbrowser+review/mainCI đạt; Hostingaa53702/version7cca55f6a3f836b9 live9checks hash/guard/handoff/auth401/CORS, BE giữf438. Drive code/build checksum+restore verified, dọn mọi staging/build trênC. Actual iPhone/Google OAuth chưa replay; AUTH002 originalincident cònOPEN tới userconfirmation.
+
+
+Cycle20 (16/10/2026): [Lưu hồ sơ có ảnh lớn](runs/2026-10-16-cycle-0020.md). Upload3MB nhưng field350k/body900KiB và duplicatebase64 gây413. Nén toànảnh768px/≤240kchars, mộtavatar, xử lý draftcũ và lỗi giữdraft/If-Match/race. Synthetic1.85MBJPEG: JSON4.94MB413→165KBsavePASS;108units+6integrationphases LinuxCI đạt. BE1bf75b9/dep-db8h2lu89jmc73dol4rg live7source/auth/canary/FEhashchecks; FEHostingaa không đổi. Drivechecksum/restore verified, dọn241.9MB staging, không giữ backup/buildlocal. ActualuserproductionSave chưa thử; giữDATA002 pendinguserretry và các commercialgates OPEN.
