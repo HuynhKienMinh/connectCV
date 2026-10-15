@@ -1,0 +1,11 @@
+{
+  "scope": "Local actual report renderer/CSS; synthetic model, no login/audio/provider/store",
+  "beforeZeroBecomesEight": true,
+  "afterZeroPreserved": true,
+  "afterUnverified": true,
+  "negationRetained": true,
+  "followupGuidanceShown": true,
+  "fullPageScreenshotUnavailable": true,
+  "fixtureServerStopped": true,
+  "viewportScreenshotSaved": true
+}

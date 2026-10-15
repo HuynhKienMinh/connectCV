@@ -4,7 +4,7 @@ const history=[{role:'interviewer',message:'How did you improve the query?'},{ro
 test('unanswered follow-up is excluded and original answer remains authoritative',()=>{
  const pairs=answeredPairs(history);assert.equal(pairs.length,1);
  const result=groundSummary({overallScore:10,qaBreakdown:[{answerId:'answer-1',question:'Invented question',candidateAnswer:'Used Redis and reached 5ms',score:8,suggestedStarAnswer:{action:'I added an index.',result:'Reached 5ms'}},{answerId:'answer-2',score:10}]},pairs);
- assert.equal(result.qaBreakdown.length,1);assert.equal(result.overallScore,8);
+ assert.equal(result.qaBreakdown.length,1);assert.equal(result.overallScore,null,'rejected invented result must invalidate the estimate');
  assert.equal(result.qaBreakdown[0].candidateAnswer,history[1].message);
  assert.equal(result.qaBreakdown[0].question,history[0].message);
  assert.equal(result.qaBreakdown[0].suggestedStarAnswer.action,'I added an index.');

@@ -1,0 +1,145 @@
+{
+  "scope": "Synthetic transcript and deliberately unsupported model fixture; not a real customer or provider response",
+  "baselineCommit": "b1a2279",
+  "sourcePairs": [
+    {
+      "answerId": "answer-1",
+      "question": "Bạn đã cải tiến công việc cửa hàng như thế nào?",
+      "candidateAnswer": "Trong cửa hàng bán lẻ, tôi tổng hợp phản hồi khách hàng. Tôi đề xuất đổi vị trí kệ hàng. Doanh số tăng 12% trong một tháng."
+    },
+    {
+      "answerId": "answer-2",
+      "question": "Bạn đã sử dụng phần mềm kế toán nào?",
+      "candidateAnswer": "Tôi chưa sử dụng SAP trong công việc. Tôi chỉ học cách đối chiếu hóa đơn bằng bảng tính. Tôi chưa đo kết quả bằng số liệu."
+    }
+  ],
+  "before": {
+    "overallScore": 8,
+    "strengths": [
+      "Ứng viên đã triển khai SAP thành thạo."
+    ],
+    "improvements": [
+      "Hãy nêu mức tăng doanh số 12% khi làm kế toán."
+    ],
+    "finalAdvice": "Khẳng định đã quản lý phòng kế toán.",
+    "qaBreakdown": [
+      {
+        "answerId": "answer-1",
+        "score": 7,
+        "suggestedStarAnswer": {
+          "situation": "",
+          "task": "",
+          "action": "Tôi đề xuất đổi vị trí kệ hàng.",
+          "result": "Doanh số tăng 12% trong một tháng."
+        },
+        "question": "Bạn đã cải tiến công việc cửa hàng như thế nào?",
+        "candidateAnswer": "Trong cửa hàng bán lẻ, tôi tổng hợp phản hồi khách hàng. Tôi đề xuất đổi vị trí kệ hàng. Doanh số tăng 12% trong một tháng.",
+        "critique": ""
+      },
+      {
+        "answerId": "answer-2",
+        "score": 9,
+        "critique": "Ứng viên dùng SAP và tăng doanh số 12%.",
+        "suggestedStarAnswer": {
+          "situation": "",
+          "task": "",
+          "action": "sử dụng SAP trong công việc.",
+          "result": ""
+        },
+        "inventedAchievement": "Managed accounting department",
+        "question": "Bạn đã sử dụng phần mềm kế toán nào?",
+        "candidateAnswer": "Tôi chưa sử dụng SAP trong công việc. Tôi chỉ học cách đối chiếu hóa đơn bằng bảng tính. Tôi chưa đo kết quả bằng số liệu."
+      }
+    ],
+    "rating": "Rất Tốt",
+    "summary": "Đánh giá dựa trên 2 câu trả lời đã được ghi nhận. Các câu hỏi chưa trả lời không được chấm điểm."
+  },
+  "after": {
+    "qaBreakdown": [
+      {
+        "answerId": "answer-1",
+        "question": "Bạn đã cải tiến công việc cửa hàng như thế nào?",
+        "candidateAnswer": "Trong cửa hàng bán lẻ, tôi tổng hợp phản hồi khách hàng. Tôi đề xuất đổi vị trí kệ hàng. Doanh số tăng 12% trong một tháng.",
+        "score": 7,
+        "scoreNote": "Điểm chỉ là ước lượng của AI cho câu trả lời này, không xác nhận năng lực hoặc kết quả tuyển dụng.",
+        "suggestedStarAnswer": {
+          "situation": "",
+          "task": "",
+          "action": "Tôi đề xuất đổi vị trí kệ hàng.",
+          "result": "Doanh số tăng 12% trong một tháng."
+        },
+        "verifiedComponents": [
+          "action",
+          "result"
+        ],
+        "rejectedComponents": [],
+        "strengths": [
+          "Có trích dẫn nguồn cho phần hành động.",
+          "Có trích dẫn nguồn cho phần kết quả."
+        ],
+        "followUpQuestions": [
+          "Tình huống xảy ra trong dự án/công việc nào, và vấn đề thực tế là gì?",
+          "Bạn chịu trách nhiệm cụ thể phần nào, mục tiêu cần đạt là gì?"
+        ],
+        "practiceTask": "Chọn một mục cần làm rõ, bổ sung thông tin thật rồi chấm lại. Không tự thêm số liệu để tăng điểm.",
+        "critique": "Chọn một mục cần làm rõ, bổ sung thông tin thật rồi chấm lại. Không tự thêm số liệu để tăng điểm."
+      },
+      {
+        "answerId": "answer-2",
+        "question": "Bạn đã sử dụng phần mềm kế toán nào?",
+        "candidateAnswer": "Tôi chưa sử dụng SAP trong công việc. Tôi chỉ học cách đối chiếu hóa đơn bằng bảng tính. Tôi chưa đo kết quả bằng số liệu.",
+        "score": null,
+        "scoreNote": "Điểm chỉ là ước lượng của AI cho câu trả lời này, không xác nhận năng lực hoặc kết quả tuyển dụng.",
+        "suggestedStarAnswer": {
+          "situation": "",
+          "task": "",
+          "action": "",
+          "result": ""
+        },
+        "verifiedComponents": [],
+        "rejectedComponents": [
+          "action",
+          "result"
+        ],
+        "strengths": [],
+        "followUpQuestions": [
+          "Tình huống xảy ra trong dự án/công việc nào, và vấn đề thực tế là gì?",
+          "Bạn chịu trách nhiệm cụ thể phần nào, mục tiêu cần đạt là gì?",
+          "Bạn trực tiếp làm những bước nào và vì sao chọn cách đó?",
+          "Bạn quan sát được kết quả gì? Chỉ nêu số liệu có bằng chứng; nếu chưa đo, mô tả kết quả thực tế."
+        ],
+        "practiceTask": "Có trích dẫn AI không khớp nguồn. Đối chiếu với câu trả lời gốc và chấm lại; chỉ bổ sung nếu đó là thông tin thật.",
+        "critique": "Có trích dẫn AI không khớp nguồn. Đối chiếu với câu trả lời gốc và chấm lại; chỉ bổ sung nếu đó là thông tin thật."
+      }
+    ],
+    "overallScore": null,
+    "scoreNote": "Điểm là ước lượng của AI để luyện tập dựa trên trích dẫn đã kiểm tra. Chất lượng rubric vẫn cần đánh giá bởi người thử.",
+    "strengths": [
+      "Câu 1: có trích dẫn nguồn cho 2 phần STAR."
+    ],
+    "improvements": [
+      "Câu 1: Tình huống xảy ra trong dự án/công việc nào, và vấn đề thực tế là gì?",
+      "Câu 1: Bạn chịu trách nhiệm cụ thể phần nào, mục tiêu cần đạt là gì?",
+      "Câu 2: Tình huống xảy ra trong dự án/công việc nào, và vấn đề thực tế là gì?",
+      "Câu 2: Bạn chịu trách nhiệm cụ thể phần nào, mục tiêu cần đạt là gì?",
+      "Câu 2: Bạn trực tiếp làm những bước nào và vì sao chọn cách đó?",
+      "Câu 2: Bạn quan sát được kết quả gì? Chỉ nêu số liệu có bằng chứng; nếu chưa đo, mô tả kết quả thực tế."
+    ],
+    "finalAdvice": "Chọn một câu cần làm rõ, bổ sung thông tin thực tế rồi luyện lại. Giữ nguyên phủ định và chỉ dùng số liệu có bằng chứng.",
+    "rating": "Chưa xác minh",
+    "summary": "Đã ghi nhận 2 câu trả lời. Khung STAR giữ các câu/dòng nguyên văn từ đúng lượt; điểm chưa xác minh được để trống. Câu hỏi chưa trả lời không được chấm."
+  },
+  "beforeUnitTests": {
+    "passed": 0,
+    "failed": 3
+  },
+  "afterFeatureTests": {
+    "passed": 61,
+    "failed": 0
+  },
+  "beforeUiZeroBecomesEight": true,
+  "afterUiZeroPreserved": true,
+  "afterUiUnknownLabel": true,
+  "realProviderCalls": 0,
+  "cloudWrites": 0
+}

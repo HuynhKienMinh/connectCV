@@ -4870,7 +4870,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     function renderLiveSummaryReport(data) {
       const resultDiv = document.getElementById('live-summary-result');
-      const scoreColor = data.overallScore >= 8.5 ? 'emerald' : (data.overallScore >= 7 ? 'blue' : 'amber');
+      const hasScore = Number.isFinite(data.overallScore) && data.overallScore >= 0 && data.overallScore <= 10;
+      const scoreColor = hasScore && data.overallScore >= 8.5 ? 'emerald' : (hasScore && data.overallScore >= 7 ? 'blue' : 'amber');
 
       resultDiv.innerHTML = `
         <!-- Card 1: Điểm tổng quan & Nhận định chung -->
@@ -4879,17 +4880,18 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             <div class="flex items-center justify-center md:justify-start space-x-2">
               <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Xếp loại chung:</span>
               <span class="px-3 py-0.5 rounded-full text-xs font-black bg-${scoreColor}-100 text-${scoreColor}-700 border border-${scoreColor}-200">
-                ${escapeHTML(data.rating || 'Rất Tốt')}
+                ${escapeHTML(hasScore ? (data.rating || 'Ước lượng AI') : 'Chưa xác minh')}
               </span>
             </div>
             <p class="text-xs text-slate-700 leading-relaxed font-medium">${escapeHTML(data.summary)}</p>
           </div>
           <div class="flex flex-col items-center justify-center bg-white px-6 py-4 rounded-2xl border border-slate-200 shadow-sm flex-shrink-0">
             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Điểm Tổng Thể</span>
-            <div class="text-4xl font-black text-${scoreColor}-600 my-1">${escapeHTML(data.overallScore)}<span class="text-lg text-slate-400 font-medium">/10</span></div>
-            <span class="text-[10px] text-slate-400 font-medium">Chuẩn năng lực phỏng vấn</span>
+            <div class="text-4xl font-black text-${scoreColor}-600 my-1">${hasScore ? escapeHTML(String(data.overallScore)) + '<span class="text-lg text-slate-400 font-medium">/10</span>' : '<span class="text-base">Chưa xác minh</span>'}</div>
+            <span class="text-[10px] text-slate-400 font-medium">Ước lượng AI để luyện tập</span>
           </div>
         </div>
+        <p class="text-xs text-slate-500">${escapeHTML(data.scoreNote || 'Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.')}</p>
 
         <!-- Card 2: 2 Cột Điểm Mạnh & Cần Cải Thiện -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -4915,7 +4917,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         <div class="space-y-4 pt-2">
           <h4 class="font-bold text-sm text-slate-800 flex items-center border-b border-slate-200 pb-2">
             <i class="fa-solid fa-clipboard-check text-purple-600 mr-2"></i>
-            Chi Tiết Từng Câu Hỏi & Gợi Ý Trả Lời Xuất Sắc (STAR)
+            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc
           </h4>
 
           <div class="space-y-4">
@@ -4933,7 +4935,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
                     </div>
                   </div>
                   <span class="px-2.5 py-1 rounded-xl text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200 flex-shrink-0">
-                    ${escapeHTML(qa.score || 8)}/10 điểm
+                    ${Number.isFinite(qa.score) && qa.score >= 0 && qa.score <= 10 ? escapeHTML(String(qa.score)) + '/10 điểm' : 'Chưa xác minh'}
                   </span>
                 </div>
 

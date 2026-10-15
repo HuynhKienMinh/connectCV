@@ -1,0 +1,55 @@
+{
+  "scope": "Synthetic transcript and deliberately unsupported model fixture; not a real customer or provider response",
+  "history": [
+    {
+      "role": "interviewer",
+      "message": "Bạn đã cải tiến công việc cửa hàng như thế nào?"
+    },
+    {
+      "role": "candidate",
+      "message": "Trong cửa hàng bán lẻ, tôi tổng hợp phản hồi khách hàng. Tôi đề xuất đổi vị trí kệ hàng. Doanh số tăng 12% trong một tháng."
+    },
+    {
+      "role": "interviewer",
+      "message": "Bạn đã sử dụng phần mềm kế toán nào?"
+    },
+    {
+      "role": "candidate",
+      "message": "Tôi chưa sử dụng SAP trong công việc. Tôi chỉ học cách đối chiếu hóa đơn bằng bảng tính. Tôi chưa đo kết quả bằng số liệu."
+    },
+    {
+      "role": "interviewer",
+      "message": "Bạn muốn học thêm điều gì?"
+    }
+  ],
+  "proposed": {
+    "overallScore": 9,
+    "strengths": [
+      "Ứng viên đã triển khai SAP thành thạo."
+    ],
+    "improvements": [
+      "Hãy nêu mức tăng doanh số 12% khi làm kế toán."
+    ],
+    "finalAdvice": "Khẳng định đã quản lý phòng kế toán.",
+    "qaBreakdown": [
+      {
+        "answerId": "answer-1",
+        "score": 7,
+        "suggestedStarAnswer": {
+          "action": "Tôi đề xuất đổi vị trí kệ hàng.",
+          "result": "Doanh số tăng 12% trong một tháng."
+        }
+      },
+      {
+        "answerId": "answer-2",
+        "score": 9,
+        "critique": "Ứng viên dùng SAP và tăng doanh số 12%.",
+        "suggestedStarAnswer": {
+          "action": "sử dụng SAP trong công việc.",
+          "result": "Doanh số tăng 12% trong một tháng."
+        },
+        "inventedAchievement": "Managed accounting department"
+      }
+    ]
+  }
+}

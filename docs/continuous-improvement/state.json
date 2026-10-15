@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 16,
   "lastRun": "runs/2026-10-15-cycle-0016.md",
-  "activeRun": null,
-  "activeIssue": "INT001",
-  "issueState": "NEXT_LOCAL_NON_IT_INTERVIEW_EVIDENCE_SCENARIO",
+  "activeRun": "runs/2026-10-15-cycle-0017.md",
+  "activeIssue": "INT004",
+  "issueState": "SUMMARY_GROUNDING_LOCAL_VERIFIED_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,7 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "INT001: review non-IT/career-change interview transcript flow with synthetic answers; verify evidence and unsupported claims, not another repeat of the passed single-answer STAR scenario. Human pilot remains missing",
+    "INT004: full CI for per-answer whole-sentence summary grounding and null/zero UI. Local61feature tests + actual browser fixture pass; actual provider/human pilot remain unverified",
     "CV002 stays open: title field fix deployed for four layouts/VI+EN; eight PDF facts and four long-title DOM cases passed local+LinuxCI, runtime version verified live.58split-word cases/full long/crop/order matrix unresolved",
     "Before next deployment create a verified private Drive backup of liveb1a2279. Current verified chain protects rollback94e4418, not the new live version; no persistent local bundles/build/restore clones",
     "Dedicated synthetic accounts, authenticated profile/PDF two-actor E2E, encrypted database restore, commercial rights/customer pilot gates remain open; no real profile writes or repeated AI calls"
