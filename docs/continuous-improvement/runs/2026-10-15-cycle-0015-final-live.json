@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-15T02:14:31.006744+00:00",
+  "backendCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+  "renderRelease": "dep-db83ce0m7kps73csu91g",
+  "renderUiStatus": "Deploy succeeded|Live",
+  "studioHtmlSha256": "107a6323cafe714e6a2506aaaf1eaa8cad26872a9dbd36b2d576f90106135cfa",
+  "studioMatchesGitByteForByte": true,
+  "clientCapabilityRefreshPresent": true,
+  "pdfRendererReady": true,
+  "pdfCanaryVerified": true,
+  "healthNoStore": true,
+  "anonymousPdfExportStatus": 401,
+  "anonymousAccountStatus": 401,
+  "allowedFrontendCors": "https://connect-cv.web.app",
+  "frontendAsset": "/assets/index-BVFhznbg.js",
+  "frontendSha256": "f6860d0d7414c5a97d05bdfd12ceda64a9a5437a0c930eae4f950d776cea1784",
+  "frontendApiOriginVerified": true,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "authenticatedPdfDownloadVerified": false,
+  "liveDisconnectDrill": false,
+  "renderDuration": "2m50s",
+  "startupCanary": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-15T02:13:47.375Z",
+    "pages": 1,
+    "bytes": 26980
+  },
+  "renderProof": "2026-10-15-cycle-0015-client-render-live.png",
+  "rollbackCommit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
+  "backupCatalog": "../backup-transfer/cycle0015-baseline-15daaa7.json"
+}
