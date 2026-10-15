@@ -56,3 +56,8 @@ Live-summary yêu cầu reportVersion số2 trong JSON. Request thiếu/sai tr�
 ## D013 — 15/10/2026: avatar, viewport và catalog job giả theo yêu cầu trực tiếp
 
 Avatar mặc địnhcontain để giữ toàn ảnh; cover/zoom chỉ do người dùng chọn. Kích thước export dùng layoutoffset, không dùng boundingrect đã zoom. Preview căn giữa/thu vừa chỉ @media screen, loại style/scale khi export; PDF trustedrenderer dùng chung photo helper, không chạy JS từ HTML người dùng. Catalog100job hưcấu,10/ngành cho10nhóm chuyên môn hiện có; nhãn Đa ngành/Chuyên nghiệp là style, không tạo ngành giả. Không dùng doanhnghiệp/logo thật hoặc seedDB. Matcher70keyword+30role, ngưỡng40, không épmin85, không quảng cáo xác suất tuyển dụng/semantic AI. Bộpositive100profile là regression tựkhớp, không phải đánh giá thịtrường/laođộng.
+
+
+## D014 — 15/10/2026: đăng nhập Google từ Zalo/iPhone
+
+User xác nhận web.app mở trong Zalo. Không bắt đầu OAuth trong detected embeddedWebView; hướng dẫn Safari/Chrome và fixed clean project-ownedURL. Ordinary mobile chuyển từ web.app sang existing firebaseapp.com (đã phục vụ cùngapp, BE CORS đãallow), rồi user bấm Google lần nữa để same-origin redirect. Không đổi authDomain/OAuth callbacks/IAM, không thêm browserprivacy exceptions. Phiên Firebase ở mỗi origin riêng nên sau login giữ app tại firebaseapp.com. Desktop giữ popup; current user/onIdTokenChanged vẫn là authority, không session/JWT giả. Unit/browser với SDK giả không chứng nhận actual iPhone OAuth; original incident còn mở tới user replay.

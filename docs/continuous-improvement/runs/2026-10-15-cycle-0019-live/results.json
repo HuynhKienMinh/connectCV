@@ -1,0 +1,72 @@
+{
+  "candidateCommit": "aa537024f4578b5795f308c8ae6b7893b215042c",
+  "verifiedAt": "2026-10-15T07:40:56.669Z",
+  "publicSmokeOnly": true,
+  "realOAuthVerified": false,
+  "realDeviceVerified": false,
+  "checks": [
+    {
+      "host": "connect-cv.web.app",
+      "asset": "/assets/index-C5ZSXnnd.js",
+      "sha256": "1ef752eb574674021173460cc88b097084b67fed647372a44ade2eec6eb09052",
+      "passed": true
+    },
+    {
+      "host": "connect-cv.web.app",
+      "asset": "/assets/index-B5BHDfKL.css",
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664",
+      "passed": true
+    },
+    {
+      "host": "connect-cv.firebaseapp.com",
+      "asset": "/assets/index-C5ZSXnnd.js",
+      "sha256": "1ef752eb574674021173460cc88b097084b67fed647372a44ade2eec6eb09052",
+      "passed": true
+    },
+    {
+      "host": "connect-cv.firebaseapp.com",
+      "asset": "/assets/index-B5BHDfKL.css",
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664",
+      "passed": true
+    },
+    {
+      "type": "zalo",
+      "url": "https://connect-cv.web.app/login",
+      "viewport": "390x844",
+      "noHorizontalOverflow": true,
+      "noPageErrors": true,
+      "oauthRequests": 0,
+      "passed": true
+    },
+    {
+      "type": "safari-handoff",
+      "url": "https://connect-cv.firebaseapp.com/login",
+      "viewport": "390x844",
+      "noHorizontalOverflow": true,
+      "noPageErrors": true,
+      "oauthRequests": 0,
+      "passed": true
+    },
+    {
+      "type": "desktop",
+      "url": "https://connect-cv.web.app/login",
+      "viewport": "1366x900",
+      "noHorizontalOverflow": true,
+      "noPageErrors": true,
+      "oauthRequests": 0,
+      "passed": true
+    },
+    {
+      "anonymousAccountOrigin": "https://connect-cv.web.app",
+      "status": 401,
+      "matchingCors": true,
+      "passed": true
+    },
+    {
+      "anonymousAccountOrigin": "https://connect-cv.firebaseapp.com",
+      "status": 401,
+      "matchingCors": true,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "projects/connect-cv/sites/connect-cv/channels/live",
+  "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792049909571000",
+  "version": "projects/connect-cv/sites/connect-cv/versions/7cca55f6a3f836b9",
+  "releaseTime": "2026-10-15T07:38:29.571Z",
+  "candidateCommit": "aa537024f4578b5795f308c8ae6b7893b215042c",
+  "reviewCi": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38699557293",
+  "mainCi": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38699819956"
+}

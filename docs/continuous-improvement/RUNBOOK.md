@@ -80,3 +80,10 @@ Backup mã nguồn/build hiện lưu tại Drive theo backup-transfer/catalog.js
 ## Git account selector — cycle13
 
 GCM có nhiều account nên command không-interactive có thể fail dù account đã đăng nhập. Repo này phải dùng per-command `git -c credential.username=HuynhKienMinh -c credential.interactive=false push origin <review-branch>`; credential lookup cho API cùng username. Không log credential, không đổi global config hoặc force-push. Chỉ yêu cầu chủ dự án đăng nhập lại sau khi selector đúng vẫn thiếu credential; không suy diễn lỗi account chooser là Render/billing/code.
+
+
+## Mobile Google login — cycle19
+
+Repro triage: hỏi browser/app và exact domain, không kết luận redirect chỉ từ helper error; source trước cycle19 dùng popup. Trong Zalo/WebView hướng dẫn menu mở Safari/Chrome hoặc copy fixed https://connect-cv.firebaseapp.com/login; anchor tự mở không được hứa là sẽ thoát WebView. Existing Firebaseapp domain là same-origin với authDomain; account persistence theo từng origin, giữ signed-in app ở domain đó. Không thêm callback/IAM hay yêu cầu tắt browser privacy. Không clear session/localStorage hay tự lặp redirect. UA không luôn nhận diện app nên mobile hint luôn hiện. Test browser có SDK giả chỉ chứng minh flow/UI; đóng AUTH002 sau user xác nhận iPhone thực.
+
+Hosting-only rollback cycle19: baseline versioncaed1696d4a4fa98, exact command ở backup-transfer/cycle0019-firebase-rollback.json. Nếu provider version không còn, restore verified FE15ZIP từ Drive, kiểm CRC/tất cả memberSHA, giữ firebase.json đúng mốc và deploy hosting-only; xác minh index-BVFhznbg.js SHA trong cycle0015-frontend.json. Đường rollback code/build đã kiểm; chưa thực hiện live rollback vì không có deployment failure. Code backup không phải DB backup. Latest restore chain candidateaa có cả baselinef438/be7/aa; exclude candidateCommit khi tạo delta kế tiếp, không dùng baselineCommitf438 làm current FE source.

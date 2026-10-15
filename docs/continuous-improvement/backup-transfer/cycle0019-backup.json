@@ -1,0 +1,98 @@
+{
+  "status": "VERIFIED_CLOUD_LOCAL_RESTORE_DELETED",
+  "baselineCommit": "f438d16320142b0b81b1b5c2578eda7ea97649e3",
+  "candidateCommit": "be7a52adbe00f87a174517cd5c9ff9e7eed96cc4",
+  "parentCatalog": "cycle0018-baseline-b3ca417.json",
+  "baseBundle": "connectcv-2026-10-15-cycle-0015-baseline.bundle",
+  "baseSha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4",
+  "orderedDeltasSha256": {
+    "connectcv-2026-10-15-cycle-0015-baseline-15daaa7.incremental.bundle": "65a560742884437feede36588f4cb6f4827472f2dd8557671c81bcdc7bfdbf45",
+    "connectcv-2026-10-15-cycle-0016-baseline-94e4418.incremental.bundle": "d7bdc239bada9da0c60fb2bcd01bf069566023f354f455ccaed211ffbb12b8e5",
+    "connectcv-2026-10-15-cycle-0017-baseline-b1a2279.incremental.bundle": "575cad4f4ba64c41578b7d2d0a4914f4e7c1a97d85a714b2d21642fe36adec07",
+    "connectcv-2026-10-15-cycle-0017-baseline-884a52c.incremental.bundle": "9a4cf7b749f18748e9020f74df5d707092748748a94ca3fee085b0a0a69e1f24",
+    "connectcv-2026-10-15-cycle-0018-baseline-b3ca417.incremental.bundle": "ebf108592f68ace5264bf870ca148a6113934764ed8b96ff776e84fd29b49a8a",
+    "connectcv-2026-10-15-cycle-0019-baseline-f438d16.incremental.bundle": "535f5c7bfe99571b4f6bd9b6f25e5871da1a0cb0e1afc84ad5d6ec770f79d7bd",
+    "connectcv-2026-10-15-cycle-0019-candidate-be7a52a.incremental.bundle": "b053baaacb37447d7ce2a95d680eae58a564043ee3db155f76cd09da8517fb1b"
+  },
+  "newBundles": [
+    {
+      "file": "connectcv-2026-10-15-cycle-0019-baseline-f438d16.incremental.bundle",
+      "bytes": 242941,
+      "sha256": "535f5c7bfe99571b4f6bd9b6f25e5871da1a0cb0e1afc84ad5d6ec770f79d7bd",
+      "commit": "f438d16320142b0b81b1b5c2578eda7ea97649e3",
+      "ref": "refs/backup/cycle0019-baseline-f438d16",
+      "cloudId": "1e6llDaC94Xq09hD3qe8dSBViwflmQYtU",
+      "cloudUrl": "https://drive.google.com/file/d/1e6llDaC94Xq09hD3qe8dSBViwflmQYtU/view",
+      "cloudUiListed": true
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0019-candidate-be7a52a.incremental.bundle",
+      "bytes": 246161,
+      "sha256": "b053baaacb37447d7ce2a95d680eae58a564043ee3db155f76cd09da8517fb1b",
+      "commit": "be7a52adbe00f87a174517cd5c9ff9e7eed96cc4",
+      "ref": "refs/backup/cycle0019-candidate-be7a52a",
+      "cloudId": "1tIJX3LWd2Hx0ObZMZbmk2wCvp_f1YGb_",
+      "cloudUrl": "https://drive.google.com/file/d/1tIJX3LWd2Hx0ObZMZbmk2wCvp_f1YGb_/view",
+      "cloudUiListed": true
+    }
+  ],
+  "freshBareRestore": true,
+  "fullFsckPassed": true,
+  "criticalSourceByteComparisons": 27,
+  "criticalFiles": [
+    "frontend/src/pages/AuthPage.jsx",
+    "frontend/src/lib/googleAuthFlow.js",
+    "frontend/src/lib/firebase.js",
+    "frontend/src/context/AuthContext.jsx",
+    "frontend/src/lib/api.js",
+    "frontend/package-lock.json",
+    "frontend/src/pages/FeaturePage.jsx",
+    "firebase.json",
+    "backend/features/connectcv/public/js/cv-photo-layout.js",
+    "backend/features/connectcv/public/js/cv-preview.js",
+    "backend/features/connectcv/src/services/jobService.js",
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json",
+    "backend/features/connectcv/package-lock.json",
+    "backend/package-lock.json"
+  ],
+  "fullWorktreeCheckoutVerified": false,
+  "databaseIncluded": false,
+  "frontendRollbackCatalog": "cycle0015-frontend.json",
+  "hostingRollbackCatalog": "cycle0019-firebase-rollback.json",
+  "frontendFile": "connectcv-2026-10-15-cycle-0019-frontend-be7a52a.zip",
+  "frontendBytes": 141916,
+  "frontendSha256": "4eff9defd946b4cf8bbdd0082af8425ddac4ebdeb5779298cd8159685a9de85a",
+  "frontendCommit": "be7a52adbe00f87a174517cd5c9ff9e7eed96cc4",
+  "frontendMembers": {
+    "frontend/dist/.gitkeep": {
+      "bytes": 87,
+      "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 441,
+      "sha256": "8564f0021d255c2aa41316714fa1b5b051370925530b9f0d118bd45ddfe07c5b"
+    },
+    "frontend/dist/assets/index-B5BHDfKL.css": {
+      "bytes": 62358,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664"
+    },
+    "frontend/dist/assets/index-Dmx4H4gX.js": {
+      "bytes": 447521,
+      "sha256": "afa5ddf41bc3008c83abb3a2bcd9d6f2c5ee80b41f9da298ec0d3e6dcb6644b4"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    }
+  },
+  "frontendRestoreVerified": true,
+  "restoreDirectory": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\restore-cycle19-baseline",
+  "restoreBytes": 241394966,
+  "localCopiesRetained": false,
+  "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
+  "transientDriveZipRead": "Immediate read after close returned BadZipFile; stable readback now CRC/all member hashes PASS. No duplicate ZIP or restore clone created.",
+  "frontendCloudId": "1AGtHNxSsr9r4EzL85s_ce-u--L2Tc-BU",
+  "frontendCloudUrl": "https://drive.google.com/file/d/1AGtHNxSsr9r4EzL85s_ce-u--L2Tc-BU/view",
+  "cloudUiListed": true,
+  "restoreBytesDeleted": 241394966.0
+}

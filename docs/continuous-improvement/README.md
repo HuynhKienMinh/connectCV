@@ -94,3 +94,6 @@ Cycle17 hoàn tất (15/10/2026): [Báo cáo phỏng vấn đúng lượt và đ
 
 
 Cycle18 hoàn tất (15/10/2026): [Avatar, căn giữa và job giả](runs/2026-10-15-cycle-0018.md). Yêu cầu trực tiếp chủ dự án: mặc định giữ toànảnh, tùy chọn cover/zoom; preview căn giữa và thu vừa desktop/mobile, export giữ A4; savedCV không companion tự nạp helper.100job giả/10ngành với nhãn rõ, điểm từkeyword/role, khôngfloor85.96unit+UI/PDF/CI đạt; f438d16 live, source/helpers/catalog100/auth/canary/version kiểm chứng. Candidatea276 hủy trước live để sửa saved-CVcompatibility. BackupDriveb3 córestoreproof; xóa240.71MB staging, không backup local lớn. Chưa authenticated production matching/generation/export hoặc toàn148avatar/layoutmatrix. Tiếp theo SOCIAL001local.
+
+
+Cycle19 (15/10/2026): [Google login từ Zalo/iPhone](runs/2026-10-15-cycle-0019.md). Chủ dự án xác nhận Zalo/web.app. WebView có hướng dẫn mở Safari/Chrome/copylink; mobile chuyển tới existing Firebaseapp same-origin để redirect, desktop giữ popup.104units+10mockbrowser+review/mainCI đạt; Hostingaa53702/version7cca55f6a3f836b9 live9checks hash/guard/handoff/auth401/CORS, BE giữf438. Drive code/build checksum+restore verified, dọn mọi staging/build trênC. Actual iPhone/Google OAuth chưa replay; AUTH002 originalincident cònOPEN tới userconfirmation.
