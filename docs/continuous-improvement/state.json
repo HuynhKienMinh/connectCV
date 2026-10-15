@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 20,
-  "lastRun": "runs/2026-10-16-cycle-0020.md",
-  "activeRun": "runs/2026-10-16-cycle-0021.md",
+  "completedCycles": 21,
+  "lastRun": "runs/2026-10-16-cycle-0021.md",
+  "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "LOCAL_FAULT_MATRIX_VERIFIED_PENDING_CI",
+  "issueState": "LOCAL_FAULT_MATRIX_VERIFIED_CI_HTTP_MODERATION_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,7 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "SOCIAL001: five new local transaction/projection tests pass. Verify CI; remaining P1 scope is HTTP actor/publication/reward recovery and moderation/report/role authorization on local synthetic fixtures. Do not claim real Firestore isolation from in-memory transaction model.",
+    "SOCIAL001: five new local transaction/projection tests and review/main CI passed (83f82f8). Next P1 scope: actual HTTP actor/publication/reward outcomes plus moderation/report/role authorization using local synthetic fixtures. No claim of real Firestore distributed isolation from in-memory transaction model.",
     "SOCIAL003 P2: after commit with response lost, same-content retry returns409 with no owner receipt; balance/post remain consistent. Design receipt recovery before changing runtime; no public/reward test writes.",
     "DATA002 and AUTH002 remain pending user real-account save/iPhone login confirmation; do not repeat green smoke or notify unchanged status.",
     "Current liveBE1bf/FEaa and verified Drive backup remain unchanged. No runtime deployment or newlargebackup for test-only cycle21; encrypted DB restore/commercial gates stay OPEN."
@@ -122,6 +122,12 @@
     "candidateCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
     "clientBrowserFixtureVerified": true,
     "frontendRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792049909571000",
-    "remainingProfileRecovery": "Real user production save and full image-format/mobile matrix unverified; local/CI actual controller+router+in-memory DB pass."
+    "remainingProfileRecovery": "Real user production save and full image-format/mobile matrix unverified; local/CI actual controller+router+in-memory DB pass.",
+    "testOnlyReviewCommit": "83f82f89502f471dbfd5910b6aa76eb57acc6cca",
+    "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38781358358",
+    "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
+    "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38781780312",
+    "currentCycleRuntimeChanged": false,
+    "currentCycleDeployAttempted": false
   }
 }
