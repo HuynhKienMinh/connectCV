@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 20,
   "lastRun": "runs/2026-10-16-cycle-0020.md",
-  "activeRun": null,
-  "activeIssue": "DATA002",
-  "issueState": "VERIFIED_LIVE_SCOPED_PENDING_USER_RETRY",
+  "activeRun": "runs/2026-10-16-cycle-0021.md",
+  "activeIssue": "SOCIAL001",
+  "issueState": "LOCAL_FAULT_MATRIX_VERIFIED_PENDING_CI",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "DATA002 scoped avatar/profile-size fix live1bf75b9; local+CI before413/after165KB persist/legacydraft/retry/removalrace/conflict verified; actual user-account production save not exercised. Ask user preserve draft before refresh, select original image again and save; keep incident open until user confirms. If no reply continue independent SOCIAL001 local fault scenario, no repeated green smoke.",
-    "AUTH002 still pending real iPhone external Safari/Chrome login confirmation; no real-account OAuth or repeated polling.",
-    "Latest backup cycle0020-candidate-1bf75b9.json protects liveBE1bf and unchangedFEaa build; next delta exclude candidateCommit1bf, not rollbackCommitf438. No local backup/build/restore clones retained.",
-    "Dedicated synthetic accounts, encryptedDBrestore, authenticated cloudCV/PDF/AI, CV002 fullmatrix, INT001 humanpilot and commercial gates remain OPEN."
+    "SOCIAL001: five new local transaction/projection tests pass. Verify CI; remaining P1 scope is HTTP actor/publication/reward recovery and moderation/report/role authorization on local synthetic fixtures. Do not claim real Firestore isolation from in-memory transaction model.",
+    "SOCIAL003 P2: after commit with response lost, same-content retry returns409 with no owner receipt; balance/post remain consistent. Design receipt recovery before changing runtime; no public/reward test writes.",
+    "DATA002 and AUTH002 remain pending user real-account save/iPhone login confirmation; do not repeat green smoke or notify unchanged status.",
+    "Current liveBE1bf/FEaa and verified Drive backup remain unchanged. No runtime deployment or newlargebackup for test-only cycle21; encrypted DB restore/commercial gates stay OPEN."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
