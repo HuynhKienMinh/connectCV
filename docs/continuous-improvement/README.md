@@ -91,3 +91,6 @@ Cycle16 hoàn tất (15/10/2026): [Giữ chức danh trong bốn mẫu CV](runs/
 
 
 Cycle17 hoàn tất (15/10/2026): [Báo cáo phỏng vấn đúng lượt và điểm](runs/2026-10-15-cycle-0017.md). Giữ nguyên câu/phủ định, không mượn thành tích lượt khác, bỏ model prose chưa kiểm; điểm0/null hiển thị đúng. Tab cũ nhận409 trước quota và giữ transcript qua reportVersion2.93tests, review/mainCI đạt; b3ca417 live, source/static/auth/canary và FEhash xác minh. Drive backup baseline884 có checksum/restore proof; staging240.49MB đã xóa, không giữ backup local. Chưa authenticated production AI/microphone/human pilot; INT001 và commercial gates mở. Tiếp theo SOCIAL001 local privacy/reward retry.
+
+
+Cycle18 hoàn tất (15/10/2026): [Avatar, căn giữa và job giả](runs/2026-10-15-cycle-0018.md). Yêu cầu trực tiếp chủ dự án: mặc định giữ toànảnh, tùy chọn cover/zoom; preview căn giữa và thu vừa desktop/mobile, export giữ A4; savedCV không companion tự nạp helper.100job giả/10ngành với nhãn rõ, điểm từkeyword/role, khôngfloor85.96unit+UI/PDF/CI đạt; f438d16 live, source/helpers/catalog100/auth/canary/version kiểm chứng. Candidatea276 hủy trước live để sửa saved-CVcompatibility. BackupDriveb3 córestoreproof; xóa240.71MB staging, không backup local lớn. Chưa authenticated production matching/generation/export hoặc toàn148avatar/layoutmatrix. Tiếp theo SOCIAL001local.
