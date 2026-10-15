@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-15T02:39:02.209832+00:00",
+  "backendCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
+  "renderRelease": "dep-db83ni0n74is73dlta10",
+  "renderUiStatus": "Deploy succeeded|Live",
+  "renderDuration": "2m34s",
+  "checks": {
+    "health200": true,
+    "ready": true,
+    "canaryVerified": true,
+    "noStore": true,
+    "preview200": true,
+    "rendererVersion": true,
+    "pdfAuth401": true,
+    "accountAuth401": true,
+    "allowedCors": true,
+    "frontend200": true,
+    "frontendAssetUnchanged": true,
+    "frontendShaUnchanged": true,
+    "apiOriginCorrect": true
+  },
+  "previewSourceVersion": "topcv-f3c0b66aab7e",
+  "frontendAsset": "/assets/index-BVFhznbg.js",
+  "frontendSha256": "f6860d0d7414c5a97d05bdfd12ceda64a9a5437a0c930eae4f950d776cea1784",
+  "allowedFrontendCors": "https://connect-cv.web.app",
+  "previewScope": "Original gallery preview attests loaded renderer sourceVersion; actual role generation verified local+LinuxCI, not authenticated production generation",
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "authenticatedPdfDownloadVerified": false,
+  "existingSavedHtmlMigrated": false,
+  "rollbackCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+  "startupCanary": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-15T02:37:17.277Z",
+    "pages": 1,
+    "bytes": 26980
+  },
+  "previousSmokeHarness": "Aborted at assertion without report; rerun persists checks and normalizes HTTP header names before assertions"
+}

@@ -41,3 +41,8 @@ Lưu bundle/build trên Google Drive riêng, xác minh checksum/khôi phục r�
 ## D010 — 15/10/2026: production API origin và renderer recovery
 
 Build FE phải khai báo public HTTPS origin; không dùng localhost fallback trong production. Runtime validation độc lập tránh artefact sai env; dev vẫn local. Renderer readiness sau recreate chỉ phục hồi qua fixed trusted PDF canary sau khi user slot được nhả; concurrent callers chia sẻ probe. Không dùng user PDF làm capability proof, không bỏ sandbox/capacity/auth. Lazy recovery qua successful PDF export chưa phải background retry hoặc DOCX-alone recovery.
+
+
+## D011 — 15/10/2026: chức danh là dữ kiện cần giữ khi dựng CV
+
+Bốn layout classic_1, schoolarship_standard, senior_2, software_engineer không có slot title trong bản nguồn. CV render mới thêm dòng chức danh dưới tên khi có giá trị; editable, escape như các field khác, normal flow để wrap. Giữ template/font nguyên bản và gallery preview; chấp nhận thay đổi có chủ đích về chiều cao header thay vì pixel-exact với bản thiếu field. Không migration hoặc tự sửa HTML đã lưu. Nghiệm thu riêng tám PDF facts/long-title bounds và kiểm version live; không từ đó đóng toàn bộ CV002/ATS/licensing hay authenticated cloud E2E.
