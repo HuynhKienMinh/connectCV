@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 25,
-  "lastRun": "runs/2026-10-16-cycle-0025.md",
+  "completedCycles": 26,
+  "lastRun": "runs/2026-10-16-cycle-0026.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "OFFLINE_SNAPSHOT_ENVELOPE_REVIEW_CI_VERIFIED_KEY_CUSTODY_COLLECTOR_PENDING",
+  "issueState": "SCOPED_SNAPSHOT_COLLECTOR_REVIEW_CI_VERIFIED_EMULATOR_KEY_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "OPS002 dependency of SOCIAL001: offline envelope74d8931, reviewCI38789936152 SUCCESS (132units + existing PDF/report browser gates). Next implement bounded read-only collector with injected fake HTTP transport: fixed readTime across collection/document pagination, showMissing and recursive subcollections, timeout/page/repeated-token/size failures. Never mark incomplete export VERIFIED. No cloud PII reads before key custody/encryption ready.",
-    "Owner question pending: choose existing password manager or separately held offline recovery key; do not request secret in chat, do not assume preselected choice is approval, and do not invent vault/keyfile location. Plan DATABASE-RESTORE-PLAN.md is concrete; no real keyfile/snapshot/cloud restore created. Continue independent local collector/emulator fixtures while awaiting answer.",
-    "Keep backup.databaseVerified=false until real consistent snapshot, isolated Firestore restore and private Drive ciphertext readback/count/type/invariant proof. Envelope+Mapmodel is not a database backup or emulator drill. No IAM/credential/scopes/billing/terms changes if existing Firebase session lacks permission.",
-    "Report API/UI6d6831a remains review verified, main137181d/liveBE1bf/FEaa unchanged. Deployment requires DB schema gate and verified candidate code/build Drive backup. Reader-compatible rollback baseline before future hide/reinstate/audit. SOCIAL003 publication recovery and DATA002/Auth002 user confirmations remain open; do not repeat green smoke/notifications."
+    "OPS002 dependency of SOCIAL001: collector+read transport acbdbd1 reviewCI38792428534 SUCCESS (149units + existing sandbox/PDF/report UI gates),17new tests. Next implement isolated emulator restore/re-export/type/invariant proof with synthetic fixtures; do not repeat completed collector fakeFetch matrix as progress.",
+    "Emulator preflight: installed Firebase CLI15.22.4, Java executable path found but java -version hung in sandbox and own exec cancelled; no cached Firestore jar found. Verify actual Java runtime and compatible pinned emulator with bounded calls before installing/starting anything. No terms/billing/IAM/credential changes; no unknown cleanup of user cache.",
+    "Owner custody question from cycle25 remains pending; do not ask again or infer preselected answer. No cloud PII reads/exports until encryption and recovery-key custody ready. Collector/read transport requires explicit token/Fetch injection; CLI credential adapter and trusted readTime acquisition not implemented. No actual keys/snapshots/cloud restore created.",
+    "Keep databaseVerified=false until real consistent snapshot + isolated restore + privateDrive ciphertext readback/count/type/invariant proof. Main137181d/liveBE1bf/FEaa unchanged. Report API/UI stay review-only; DBschema and candidate code/build backup gates apply, reader-compatible rollback baseline before future hidden writes. SOCIAL003/DATA002/Auth002 remain open; no repetitive smoke/notifications."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -134,25 +134,37 @@
     "pendingCommunityDeployBlocked": true,
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
     "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
-    "pendingOpsCommit": "74d89317db388545ed5ddfaaa0f32c4dfbfbbb2b",
-    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38789936152"
+    "pendingOpsCommit": "acbdbd14e43bc0506aaae8c38a946915a3186d8f",
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38792428534"
   },
   "blockingDependency": "OPS002",
   "dataBackup": {
-    "status": "OFFLINE_ENVELOPE_ONLY_NOT_DATABASE_BACKUP",
+    "status": "COLLECTOR_TRANSPORT_FAKE_FETCH_VERIFIED_NOT_DATABASE_BACKUP",
     "tool": "backend/ops/snapshotEnvelope.cjs",
     "plan": "DATABASE-RESTORE-PLAN.md",
-    "reviewCommit": "74d89317db388545ed5ddfaaa0f32c4dfbfbbb2b",
-    "localSyntheticTests": 7,
+    "reviewCommit": "acbdbd14e43bc0506aaae8c38a946915a3186d8f",
+    "localSyntheticTests": 24,
     "keyCustodyStatus": "WAITING_OWNER_CHOICE",
     "keyFileCreated": false,
     "realSnapshotCreated": false,
     "realRestoreVerified": false,
     "cloudDataRead": false,
     "maxPlaintextBytes": 33554432,
-    "networkCollectorImplemented": false,
+    "networkCollectorImplemented": true,
     "emulatorRestoreImplemented": false,
-    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38789936152",
-    "reviewCiPassed": true
+    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38792428534",
+    "reviewCiPassed": true,
+    "credentialAdapterImplemented": false,
+    "collector": "backend/ops/snapshotCollector.cjs",
+    "transport": "backend/ops/firestoreReadTransport.cjs",
+    "newCollectorTransportTests": 17,
+    "readTimeAcquisitionImplemented": false,
+    "localEmulatorPreflight": {
+      "firebaseCliVersion": "15.22.4",
+      "firestoreJarCached": false,
+      "javaExecutableFound": true,
+      "javaVersionVerified": false,
+      "note": "java -version did not complete in sandbox; own exec session cancelled, no installation or escalation attempted"
+    }
   }
 }

@@ -114,3 +114,6 @@ Cycle24 (16/10/2026): [Giao diện báo cáo và lỗi mạng](runs/2026-10-16-c
 
 
 Cycle25 (16/10/2026): [Snapshot mã hóa offline](runs/2026-10-16-cycle-0025.md). Prototype74d8931 reviewCI đạt132units vàgateshiệncó;7tests mới vềtype/scope/nonce/tamper/key/capacity. Chỉenvelope+Mapsynthetic, chưaDBsnapshot/Firestoreemulatorrestore; databaseVerified=false. Phươngán DATABASE-RESTORE-PLAN.md đã lưu, chờownerchọnnơigiữkhóariêng; tiếpcollectorfixtures. Main/livekhôngđổi, khôngtạokey/backup/buildlớn.
+
+
+Cycle26 (16/10/2026): [Collector snapshot chỉ đọc](runs/2026-10-16-cycle-0026.md). Candidateacbdbd1 reviewCI đạt149units/gates;17tests mới kiểm fixedreadTime/pagination/missingparent/caps/timeout/failclosed và scopedstreamtransport quafakeFetch. Chưa CLIcredential/timeacquisition/emulator/realDBrestore; chờkeycustody từcâu hỏi cũ, không nhắc lại. Main/livekhôngđổi, không đọccloudPII hay tạo backup lớn.
