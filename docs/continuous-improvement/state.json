@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 22,
-  "lastRun": "runs/2026-10-16-cycle-0022.md",
+  "completedCycles": 23,
+  "lastRun": "runs/2026-10-16-cycle-0023.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "LOCAL_HTTP_ACTOR_MATRIX_VERIFIED_CI_MODERATION_PENDING",
+  "issueState": "REPORT_API_READER_COMPAT_REVIEW_CI_VERIFIED_UI_DB_RESTORE_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -55,14 +55,14 @@
     "currentBaselineCatalog": "backup-transfer/cycle0020-candidate-1bf75b9.json",
     "protectedCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": false
+    "nextDeploymentRequiresNewBaseline": true
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "SOCIAL001 P1: six new actual local HTTP scenarios and review/main CI pass on ea36649. Next implement report/moderation authorization contract with existing trusted admin claim, reversible hide/reinstate and audit, local anonymous/unverified/A/B/admin/forged-admin matrix before runtime delivery. Current feature has no report/moderation route. No IAM change or migration/bulk write; encrypted DB restore gate still applies.",
-    "SOCIAL003 P2: actual local socket loss after committed publication then retry returns409 without own receipt; changed review/question6 also samehash409. Preserve exact-payload/same-owner recovery boundary and no second-owner metadata leak; UI recovery not implemented. Like remains toggle and retry-idempotency unverified.",
-    "DATA002 and AUTH002 remain pending user real-account save/iPhone login confirmation; do not repeat green smoke or notify unchanged status.",
-    "Current liveBE1bf/FEaa and verified private Drive backup unchanged. No runtime deployment or new large backup/build/restoreclone for test-only cycle22; real Firebase/Firestore actor E2E, encrypted DB restore and commercial gates stay OPEN."
+    "SOCIAL001 P1: continue review candidate1c597a1 (CI38785720642 SUCCESS; backend38/features70/FE17 and PDF/UI gates). Implement report UI with private reason-only receipt/retry/accessibility browser fixtures. Actual report/queue APIs + reader compatibility are local/review verified, not on main or live. Do not repeat completed actor test matrix as progress.",
+    "Before report collection/schema activation obey RUNBOOK encrypted DB backup+staging restore gate (still unverified), then private Drive code/build candidate checksum/restore. Current live1bf cannot honor hidden: release/verify reader compatibility as rollback baseline BEFORE any future hide/reinstate/audit action. No main fast-forward/deploy until prerequisites; no IAM/admin-claim/credential/billing change.",
+    "SOCIAL003 P2 remains publication receipt gap: exact same-owner payload recovery must distinguish changed review/question6 hash collision; second owner no receipt metadata. Existing like is toggle. Reports have independent deduped own receipt, publication not fixed.",
+    "DATA002/Auth002 await real user save/iPhone confirmation; no repeated green smoke/notifications. LiveBE1bf/FEaa and verified Drive backup unchanged. No new large backup/build/restoreclone, DB/public/AI writes this cycle; commercial gates OPEN."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -127,7 +127,12 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": false,
-    "currentCycleDeployAttempted": false
+    "currentCycleRuntimeChanged": true,
+    "currentCycleDeployAttempted": false,
+    "pendingCommunityCommit": "1c597a1c8ead1d6160dee915a84ef5a10bea9008",
+    "pendingCommunityStatus": "REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
+    "pendingCommunityDeployBlocked": true,
+    "pendingCommunityRemaining": "Report UI/browser proof; report collection schema backup/restore gate per RUNBOOK; verified private Drive candidate backup; baseline reader compatibility deployed and rollback proven before any hide/reinstate action. No admin claim/IAM change.",
+    "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38785720642"
   }
 }

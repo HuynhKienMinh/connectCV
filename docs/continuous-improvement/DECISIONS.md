@@ -66,3 +66,8 @@ User xác nhận web.app mở trong Zalo. Không bắt đầu OAuth trong detect
 ## D015 — 16/10/2026: avatar lưu hồ sơ phải vừa hợp đồng account
 
 Upload nhận tối đa3MB nhưng account field350kchars/body900KiB; giữ các giới hạn server. Client xuất ảnh toànkhung/proportional≤768px, JPEG≤240kchars, nền trắng cho transparency; original localfile không đổi. Chỉ lưu avatarUrl, vẫn đọc aliasavatarDataUrl để tương thích draftcũ; compact trước PUT và UTF8≤850KiB. Không âm thầm cắt nội dung hoặc bỏ ảnh khi lỗi; giữ draft/retry/If-Match. Đây là nén ảnh có mất chất lượng có chủ đích cho avatar, không phải nơi lưu ảnh gốc. Không migration/bulk rewrite account, không đưa ảnh vào AI.
+
+
+## D016 — 16/10/2026: kế hoạch kỹ thuật report/kiểm duyệt theo hai bước
+
+Đây là lựa chọn triển khai trong phạm vi tựsửa đã giao, không phải xác nhận mới của chủ dự án. Báo cáo dùng reason allowlist, một receipt/verified actor/post, không thưởng hoặc auto-hide. Private queue chỉ trusted verifiedadmin; không tự cấp adminclaim/IAM. Reader hiểu hidden trước khi có bất kỳ actionẩn: verify/backup release đọc tương thích làm rollbackbaseline trước release hide/reinstate/audit, vì rollback1bf sẽ lộ lại bàiẩn. Candidate1c597a1 ở review, không main/deploy. Schema report mới vẫn phải qua encryptedDBsnapshot/restore theo RUNBOOK; code/buildDrive không thay dữliệu backup. Không migration/bulkwrite để né gate. UI/retention/actualadmin/cloudactors còn mở.

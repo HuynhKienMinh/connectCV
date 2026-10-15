@@ -103,3 +103,8 @@ Cycle20 (16/10/2026): [Lưu hồ sơ có ảnh lớn](runs/2026-10-16-cycle-0020
 
 
 Cycle21 (16/10/2026): [Lỗi giao dịch và retry cộng đồng](runs/2026-10-16-cycle-0021.md). Năm regression test mới kiểm tra rollback trước commit, response mất sau commit, callback replay, cooldown giữa draft/owner và metadata public. Local/review/main CI đạt trên83f82f8; mô hình in-memory không chứng minh Firestore cloud isolation. Retry sau response mất trả409 nhưng không thưởng lặp; ghiSOCIAL003P2 về receipt recovery, SOCIAL001 HTTP/moderation vẫnOPEN. Chỉ test/workflow/docs; không đổi production, không ghi cộng đồng/account thật hoặc tạo backup/build lớn.
+
+
+Cycle22 (16/10/2026): [HTTP cộng đồng](runs/2026-10-16-cycle-0022.md). Sáu scenario localHTTP mới, review/mainCIea36649 đạt; tái hiện mất socket sau commit và retry409, không thưởng lặp. Không đổi production.
+
+Cycle23 (16/10/2026): [Report API và read compatibility](runs/2026-10-16-cycle-0023.md). Candidate1c597a1 trên reviewCI đạt125tests cùng PDF/UI gates: receipt dedupe/privateadmin GET/HEAD/no-store, filterhidden, fallbackrestart; không thưởng/auto-hide. Chưa main/deploy: thiếu reportUI/browser và schema encryptedDBrestore gate. Phải có reader-compatible rollbackbaseline trước actionhide/reinstate; production giữ1bf/FEaa, không tạo backup/buildlocal lớn.
