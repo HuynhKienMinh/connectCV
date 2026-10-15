@@ -1,0 +1,58 @@
+{
+  "synthetic": true,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "mockedTransport": true,
+  "requests": 10,
+  "rows": [
+    {
+      "phase": "required-keyboard-cancel",
+      "pass": true
+    },
+    {
+      "phase": "error-401",
+      "pass": true
+    },
+    {
+      "phase": "error-403",
+      "pass": true
+    },
+    {
+      "phase": "error-404",
+      "pass": true
+    },
+    {
+      "phase": "error-429",
+      "pass": true
+    },
+    {
+      "phase": "error-503",
+      "pass": true
+    },
+    {
+      "phase": "lost-response-retry-receipt",
+      "pass": true
+    },
+    {
+      "phase": "untrusted-receipt-not-success",
+      "pass": true
+    },
+    {
+      "phase": "timeout-and-double-submit",
+      "pass": true
+    },
+    {
+      "phase": "logout-discards-late-result",
+      "pass": true
+    },
+    {
+      "phase": "viewport-1366",
+      "pass": true
+    },
+    {
+      "phase": "viewport-390",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

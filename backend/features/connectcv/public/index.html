@@ -85,6 +85,8 @@
   </style>
 <script src="/ai/runtime.js"></script>
 <script src="/ai/js/community-publication.js"></script>
+<script src="/ai/js/community-report.js" defer></script>
+<link rel="stylesheet" href="/ai/css/community-report.css"/>
 <script src="/ai/js/cv-input-validation.js"></script>
 <script src="/ai/js/profile-autosave.js"></script>
 <script src="/ai/js/profile-image.js"></script>
@@ -5755,6 +5757,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
                         ${Number(item.likesCount) || 0}
                       </span>
                     </button>
+                    <button type="button" data-community-report="${escapeHTML(item.id)}" class="px-3 py-2 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 font-bold">Báo cáo</button>
                   </div>
 
                   <button type="button" onclick="practiceQuestionWithAI(decodeURIComponent('${encodeURIComponent(questions[0] || '').replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.companyName).replace(/'/g,'%27')}'), decodeURIComponent('${encodeURIComponent(item.position).replace(/'/g,'%27')}'))" class="px-3.5 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl font-bold shadow-xs transition flex items-center gap-1.5 text-[11px]">
