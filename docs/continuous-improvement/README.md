@@ -88,3 +88,6 @@ Cycle15 hoàn tất (15/10/2026): [API production và phục hồi xuất PDF](r
 
 
 Cycle16 hoàn tất (15/10/2026): [Giữ chức danh trong bốn mẫu CV](runs/2026-10-15-cycle-0016.md). Bốn layout thiếu slot chức danh ở VI/EN đã được thêm dòng editable dưới tên; giá trị rỗng không thêm dòng, dữ liệu được escape.87 unit tests, tám PDF đủ tám facts và bốn ca wrap dài đạt local/LinuxCI. Backendb1a2279 live, sourceVersion/canary/auth và frontend không đổi được xác minh. Chưa authenticated cloud generation/download hoặc tự cập nhật CV đã lưu. Backup Drive delta17KB có restore proof; đã xóa239.59MB restore staging, không giữ backup local. Tiếp theo chuyển vòng phỏng vấn ngoài IT; CV002 và các cổng thương mại còn mở.
+
+
+Cycle17 hoàn tất (15/10/2026): [Báo cáo phỏng vấn đúng lượt và điểm](runs/2026-10-15-cycle-0017.md). Giữ nguyên câu/phủ định, không mượn thành tích lượt khác, bỏ model prose chưa kiểm; điểm0/null hiển thị đúng. Tab cũ nhận409 trước quota và giữ transcript qua reportVersion2.93tests, review/mainCI đạt; b3ca417 live, source/static/auth/canary và FEhash xác minh. Drive backup baseline884 có checksum/restore proof; staging240.49MB đã xóa, không giữ backup local. Chưa authenticated production AI/microphone/human pilot; INT001 và commercial gates mở. Tiếp theo SOCIAL001 local privacy/reward retry.

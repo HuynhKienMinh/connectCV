@@ -99,7 +99,7 @@ Hai ngôn ngữ VI/EN hiện có là phạm vi kiểm thử ban đầu. Những 
 | Điều kiện | Mức đạt cần có | Hiện tại |
 |---|---|---|
 | Bảo mật dữ liệu | Không còn P0/P1 đã xác nhận; test cách ly account/tenant và redaction | Có baseline, thiếu kiểm chứng sâu |
-| Kết quả AI | Không bịa dữ kiện trong bộ eval; review văn phong/hữu ích riêng | Có regression, thiếu bộ eval rộng |
+| Kết quả AI | Không bịa dữ kiện trong bộ eval; review văn phong/hữu ích riêng | Cycle17 giữ phủ định/đúng lượt, điểm0/null và legacy client gate (local+CI, source live); thiếu authenticated AI/pilot và bộ eval rộng |
 | Export | PDF/Word đúng mô tả, nhiều trang, Unicode, crop/text sửa | Renderer live canary đạt; cycle16 sửa tám ca thiếu chức danh (local/LinuxCI PDF + live version verified), còn58split-word và long/crop/authenticated E2E chưa đủ |
 | Backup/restore | Backup code + dữ liệu phù hợp, diễn tập rollback/restore | Code/build10mốc Drive verified, local copies đã dọn; dữ liệu chưa diễn tập |
 | Vận hành | Quan sát ≥7 ngày, lỗi được giải thích; có incident runbook | Chưa có chuỗi đo |
