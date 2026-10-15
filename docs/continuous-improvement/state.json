@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-15-cycle-0015.md",
   "activeRun": "runs/2026-10-15-cycle-0016.md",
   "activeIssue": "CV002",
-  "issueState": "TITLE_LOCAL_VERIFIED_REVIEW_CI_PENDING",
+  "issueState": "TITLE_REVIEW_CI_SUCCESS_MAIN_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,17 +52,17 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0015-baseline-15daaa7.json",
-    "protectedCommit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
-    "liveCommitCovered": false,
-    "nextDeploymentRequiresNewBaseline": true
+    "currentBaselineCatalog": "backup-transfer/cycle0016-baseline-94e4418.json",
+    "protectedCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+    "liveCommitCovered": true,
+    "nextDeploymentRequiresNewBaseline": false
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002: inspect cycle12 reports and reproduce the eight missing-title cases locally with synthetic facts; verify source field mapping before changing templates",
-    "Before any next deployment back up current live backend94e4418 to private Drive and verify checksum/restore chain; existing verified rollback baseline protects15daaa7, not94e4418",
-    "Dedicated synthetic accounts and authenticated PDF/profile two-actor E2E remain unconfigured; no real user writes or repeated AI calls",
-    "Keep full native-font/layout matrix, DOCX/labels, queue/fairness, encrypted database restore, commercial rights and customer pilot gates open"
+    "Read mainCI38671514503 for b1a2279; reviewCI38671205663 SUCCESS. Deploy exact b1a2279 only after main gate succeeds; Render dialog prepared, no deployment yet",
+    "Verified Drive17KB delta protects live94e4418; restore staging239591628bytes deleted. Use baseline94 rollback if release smoke fails",
+    "After Live verify Render source SHA and sourceVersion topcv-f3c0b66aab7e via read-only template preview, PDF canary/no-store, auth401; no authenticated production user writes",
+    "Keep font matrix58split-word, long-profile/crop, two-account E2E, database restore and commercial gates open; new role slot affects newly rendered CVs, existing saved HTML is not migrated"
   ],
   "deployment": {
     "commit": "94e4418b271b879205db716bcbf629674c1e6177",
@@ -103,17 +103,17 @@
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38625620175",
-    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38669446439",
-    "candidateRelease": "dep-db83ce0m7kps73csu91g",
+    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38671514503",
+    "candidateRelease": null,
     "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
     "backendStatus": "VERIFIED_LIVE_SOURCE_CANARY_AUTH_SMOKE",
     "autoDeployDisabledBySpecificCommit": true,
     "lastCandidateCheckedAt": "2026-10-15T02:14:31.006744+00:00",
     "remainingFrontendRecovery": "Design PDF stale-false refresh deployed and browser fixture verified; authenticated production download, DOCX/labels and full browser E2E remain pending",
-    "nextReviewStatus": "RELEASE_COMPLETE",
-    "nextReviewCommit": "94e4418b271b879205db716bcbf629674c1e6177",
-    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38631276843",
-    "candidateCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+    "nextReviewStatus": "REVIEW_SUCCESS_MAIN_IN_PROGRESS",
+    "nextReviewCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
+    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38671205663",
+    "candidateCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
     "clientBrowserFixtureVerified": true
   }
 }
