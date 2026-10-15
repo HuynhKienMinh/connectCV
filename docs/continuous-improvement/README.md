@@ -108,3 +108,6 @@ Cycle21 (16/10/2026): [Lỗi giao dịch và retry cộng đồng](runs/2026-10-
 Cycle22 (16/10/2026): [HTTP cộng đồng](runs/2026-10-16-cycle-0022.md). Sáu scenario localHTTP mới, review/mainCIea36649 đạt; tái hiện mất socket sau commit và retry409, không thưởng lặp. Không đổi production.
 
 Cycle23 (16/10/2026): [Report API và read compatibility](runs/2026-10-16-cycle-0023.md). Candidate1c597a1 trên reviewCI đạt125tests cùng PDF/UI gates: receipt dedupe/privateadmin GET/HEAD/no-store, filterhidden, fallbackrestart; không thưởng/auto-hide. Chưa main/deploy: thiếu reportUI/browser và schema encryptedDBrestore gate. Phải có reader-compatible rollbackbaseline trước actionhide/reinstate; production giữ1bf/FEaa, không tạo backup/buildlocal lớn.
+
+
+Cycle24 (16/10/2026): [Giao diện báo cáo và lỗi mạng](runs/2026-10-16-cycle-0024.md). Candidate6d6831a reviewCI đạt125units+12browserphases mới: requiredreason, safeerrors, retain/retry/dedupreceipt, timeout, logoutlate-result, keyboard/mobilebounds. Chưa main/deploy vì DBschema encryptedbackup/restore và candidatebackup gates; production giữ1bf/FEaa. Ảnh/report giả nhỏ trong output/playwright/community-report; không backup/build/restoreclone lớn.
