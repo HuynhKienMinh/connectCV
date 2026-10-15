@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 19,
   "lastRun": "runs/2026-10-15-cycle-0019.md",
-  "activeRun": null,
-  "activeIssue": "AUTH002",
-  "issueState": "LIVE_MITIGATION_PENDING_IPHONE_CONFIRMATION",
+  "activeRun": "runs/2026-10-16-cycle-0020.md",
+  "activeIssue": "DATA002",
+  "issueState": "VERIFIED_LOCAL_PENDING_CI_BACKUP",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,6 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
+    "DATA002 direct user screenshot save413: upload3MB vs field350k plus duplicate base64. New upload/legacy draft compression and single avatar locally verified. Need review/mainCI, Drive candidate backup/restore, Render-only deploy and static/auth/canary smoke. No real profile writes.",
     "AUTH002 original iPhone/Zalo incident remains OPEN pending user retry in external Safari/Chrome at https://connect-cv.firebaseapp.com/login. Do not repeat passed smoke or attempt real-account OAuth; if no reply, continue independent SOCIAL001 local privacy/reward fault scenario.",
     "Latest cloud chain/build catalog backup-transfer/cycle0019-candidate-aa53702.json protects full source aa53702 and current Hosting build. Next delta exclude candidateCommit aa53702, not baselineCommit f438. BE remains f438; no new BE deployment in cycle19.",
     "Dedicated synthetic accounts, encrypted DB restore, actual authenticated production CV/AI/PDF flows, CV002 matrix, INT001 human pilot and commercial gates remain OPEN."

@@ -1,0 +1,40 @@
+{
+  "syntheticIdentityAndDb": true,
+  "liveUserWrites": 0,
+  "rows": [
+    {
+      "phase": "before",
+      "imageBytes": 1854193,
+      "payloadBytes": 4944681,
+      "status": 413
+    },
+    {
+      "phase": "new-upload",
+      "avatarChars": 164923,
+      "payloadBytes": 165124,
+      "dimensions": {
+        "width": 576,
+        "height": 768
+      },
+      "passed": true
+    },
+    {
+      "phase": "legacy-draft-repaired",
+      "passed": true
+    },
+    {
+      "phase": "413-keeps-draft-and-retry",
+      "passed": true
+    },
+    {
+      "phase": "late-upload-does-not-restore-removed-photo",
+      "passed": true
+    },
+    {
+      "phase": "if-match-conflict-keeps-draft",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "attempts": 7
+}

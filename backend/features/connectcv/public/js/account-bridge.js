@@ -49,9 +49,16 @@
   let edited=false,ready=false,version=null;
   const saver=window.createProfileAutosave({
    write:async source=>{
-    const response=await fetch('/api/account/profile',{method:'PUT',headers:{'Content-Type':'application/json','If-Match':version||''},body:JSON.stringify(source)});
+    const prepared=await window.connectCVProfileImage.prepare(source);
+    const response=await fetch('/api/account/profile',{method:'PUT',headers:{'Content-Type':'application/json','If-Match':version||''},body:JSON.stringify(prepared)});
     if(!response.ok){const error=new Error(response.status===409||response.status===428?'Hồ sơ đã thay đổi; bản nháp đang được giữ.':response.status===400?'Dữ liệu hồ sơ không hợp lệ.':response.status===413?'Ảnh hoặc hồ sơ vượt kích thước cho phép.':'Chưa lưu được hồ sơ.');error.conflict=response.status===409||response.status===428;error.retryable=response.status===429||response.status>=500;error.retryAfter=Number(response.headers.get('Retry-After')||5)*1000;throw error;}
     const result=await response.json();version=result.profileVersion;
+    // A legacy oversized draft may have been compacted. Preserve all newer text edits.
+    try{const current=JSON.parse(textarea.value);if((current.avatarUrl||current.avatarDataUrl||'')===(source.avatarUrl||source.avatarDataUrl||'')){
+     textarea.value=JSON.stringify(window.connectCVProfileImage.canonical(current,prepared.avatarUrl||''),null,2);
+     window.currentCvAvatarDataUrl=prepared.avatarUrl||'';
+     const preview=document.getElementById('cv-avatar-preview-img');if(preview&&prepared.avatarUrl)preview.src=prepared.avatarUrl;
+    }}catch{}
    },
    status:(state,error)=>{conflict.classList.toggle('hidden',state!=='conflict');status.textContent=state==='conflict'?'Xung đột hồ sơ: chưa ghi đè.':{pending:'Có thay đổi chưa lưu…',saving:'Đang lưu vào tài khoản…',saved:'Đã lưu vào tài khoản.'}[state]||(error?.message||'Chưa lưu được hồ sơ.');const header=document.getElementById('profile-save-header-status');if(header)header.textContent=status.textContent;}
   });

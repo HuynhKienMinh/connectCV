@@ -87,6 +87,7 @@
 <script src="/ai/js/community-publication.js"></script>
 <script src="/ai/js/cv-input-validation.js"></script>
 <script src="/ai/js/profile-autosave.js"></script>
+<script src="/ai/js/profile-image.js"></script>
 <script src="/ai/js/account-bridge.js"></script>
 <script>
 // The account team provides this in-memory token hook. No demo login, secret,
@@ -204,8 +205,10 @@ window.fetch=async function(resource,options={}){
 
   /** Upload ảnh lên server và lấy base64 DataURL */
   async function uploadAvatarToServer(file) {
+    const data=await window.connectCVProfileImage.encode(file);
+    const bytes=Uint8Array.from(atob(data.split(',')[1]),c=>c.charCodeAt(0));
     const formData = new FormData();
-    formData.append('avatar', file);
+    formData.append('avatar',new Blob([bytes],{type:'image/jpeg'}),'avatar.jpg');
     const res = await fetch('/api/upload/avatar', { method: 'POST', body: formData });
     const json = await res.json();
     if (!res.ok || !json.success) {
@@ -217,8 +220,10 @@ window.fetch=async function(resource,options={}){
   // ─── CV Avatar Handler ─────────────────────────────────────
 
   window.currentCvAvatarDataUrl = '';
+  let cvAvatarUploadRevision=0;
 
   async function handleCvAvatarUpload(event) {
+    const revision=++cvAvatarUploadRevision;
     const file  = event.target.files?.[0];
     const errEl = document.getElementById('cv-avatar-error');
     const btn   = document.getElementById('cv-avatar-btn-label');
@@ -234,11 +239,12 @@ window.fetch=async function(resource,options={}){
       return;
     }
 
+    let localUrl;
     try {
       btn.textContent = 'Đang xử lý...';
 
       // Preview ngay từ local (nhanh)
-      const localUrl = URL.createObjectURL(file);
+      localUrl = URL.createObjectURL(file);
       const previewImg  = document.getElementById('cv-avatar-preview-img');
       const emptyIcon   = document.getElementById('cv-avatar-empty-icon');
       const removeBtn   = document.getElementById('cv-avatar-remove-btn');
@@ -249,10 +255,10 @@ window.fetch=async function(resource,options={}){
 
       // Upload lên server để validate magic bytes
       const dataUrl = await uploadAvatarToServer(file);
+      if(revision!==cvAvatarUploadRevision)return;
 
       // Cập nhật preview với base64 chính thức từ server
       previewImg.src = dataUrl;
-      URL.revokeObjectURL(localUrl); // Giải phóng memory
 
       // Lưu vào profile JSON
       if (typeof syncProfileFormToJSON === 'function') {
@@ -288,14 +294,18 @@ window.fetch=async function(resource,options={}){
 
       showToastSuccess('Upload ảnh đại diện thành công! CV đã được cập nhật ảnh mới.', 'Avatar CV');
     } catch (err) {
+      if(revision!==cvAvatarUploadRevision)return;
       errEl.textContent = err.message || 'Upload thất bại. Vui lòng thử lại.';
       errEl.classList.remove('hidden');
       btn.textContent = 'Tải ảnh lên';
       event.target.value = '';
-    }
+      const preview=document.getElementById('cv-avatar-preview-img');
+      if(preview){preview.src=window.currentCvAvatarDataUrl||'';preview.classList.toggle('hidden',!window.currentCvAvatarDataUrl);}
+    }finally{if(localUrl)URL.revokeObjectURL(localUrl);}
   }
 
   function removeCvAvatar(event) {
+    cvAvatarUploadRevision++;
     event.stopPropagation();
     const previewImg = document.getElementById('cv-avatar-preview-img');
     const emptyIcon  = document.getElementById('cv-avatar-empty-icon');
@@ -2460,7 +2470,6 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         birth,
         summary,
         avatarUrl: window.currentCvAvatarDataUrl || "",
-        avatarDataUrl: window.currentCvAvatarDataUrl || "",
         skills,
         education: currentEducationList.map(e => ({
           school: sanitizeInput(e.school || ''),

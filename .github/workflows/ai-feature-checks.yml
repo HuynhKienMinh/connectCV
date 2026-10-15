@@ -49,6 +49,8 @@ jobs:
         with:
           node-version: '24'
       - run: npm ci --omit=dev
+        working-directory: backend
+      - run: npm ci --omit=dev
         working-directory: backend/features/connectcv
       - run: npm ci
         working-directory: frontend
@@ -122,3 +124,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           JOB_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-job-qa'
+      - name: Verify large portrait saving, retained drafts and profile conflicts
+        run: node tests/profileImageUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          PROFILE_IMAGE_QA_OUTPUT: '${{ runner.temp }}/connectcv-profile-image-qa'
