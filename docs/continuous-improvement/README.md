@@ -111,3 +111,6 @@ Cycle23 (16/10/2026): [Report API và read compatibility](runs/2026-10-16-cycle-
 
 
 Cycle24 (16/10/2026): [Giao diện báo cáo và lỗi mạng](runs/2026-10-16-cycle-0024.md). Candidate6d6831a reviewCI đạt125units+12browserphases mới: requiredreason, safeerrors, retain/retry/dedupreceipt, timeout, logoutlate-result, keyboard/mobilebounds. Chưa main/deploy vì DBschema encryptedbackup/restore và candidatebackup gates; production giữ1bf/FEaa. Ảnh/report giả nhỏ trong output/playwright/community-report; không backup/build/restoreclone lớn.
+
+
+Cycle25 (16/10/2026): [Snapshot mã hóa offline](runs/2026-10-16-cycle-0025.md). Prototype74d8931 reviewCI đạt132units vàgateshiệncó;7tests mới vềtype/scope/nonce/tamper/key/capacity. Chỉenvelope+Mapsynthetic, chưaDBsnapshot/Firestoreemulatorrestore; databaseVerified=false. Phươngán DATABASE-RESTORE-PLAN.md đã lưu, chờownerchọnnơigiữkhóariêng; tiếpcollectorfixtures. Main/livekhôngđổi, khôngtạokey/backup/buildlớn.

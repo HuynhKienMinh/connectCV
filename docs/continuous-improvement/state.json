@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 24,
-  "lastRun": "runs/2026-10-16-cycle-0024.md",
+  "completedCycles": 25,
+  "lastRun": "runs/2026-10-16-cycle-0025.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "REPORT_UI_API_REVIEW_CI_VERIFIED_DB_RESTORE_ROLLOUT_PENDING",
+  "issueState": "OFFLINE_SNAPSHOT_ENVELOPE_REVIEW_CI_VERIFIED_KEY_CUSTODY_COLLECTOR_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "SOCIAL001: report API+UI candidate6d6831a reviewCI38787901503 SUCCESS (125units plus new12browser phases). Do not repeat completed UI/actor tests. Next dependency: concrete encrypted DB snapshot/restore proposal and local synthetic codec/restore drill; assess existing Firebase CLI session without exposing tokens or reading cloud PII before encryption/key custody is ready.",
-    "Current restore preflight only: Firebase CLI user config and Java exist; no local ADC/application-credentials or backup-key env detected. This does not prove Firebase CLI session freshness/Firestore permissions or absence of owner vault. Key custody/recovery destination is unconfigured, not permission to generate/store secrets in Git/Drive catalog. Prepare reviewable proposal before requesting missing owner choice. No IAM/credential/billing/terms change.",
-    "Keep report schema/activation and main/deploy held until RUNBOOK DB backup+restore plus verified privateDrive candidate code/build backup. Future hide/reinstate needs reader-compatible deployed rollback baseline first; current live1bf ignores hidden. Do not add hidden writes/audit before this rollback plan.",
-    "SOCIAL003 publication receipt gap and DATA002/Auth002 real-user confirmations remain open. Report receipt recovery is separate, not publication fix. LiveBE1bf/FEaa unchanged; no cloud posts/profile/AI writes, no new large backup/build/restoreclone. Commercial gates OPEN."
+    "OPS002 dependency of SOCIAL001: offline envelope74d8931, reviewCI38789936152 SUCCESS (132units + existing PDF/report browser gates). Next implement bounded read-only collector with injected fake HTTP transport: fixed readTime across collection/document pagination, showMissing and recursive subcollections, timeout/page/repeated-token/size failures. Never mark incomplete export VERIFIED. No cloud PII reads before key custody/encryption ready.",
+    "Owner question pending: choose existing password manager or separately held offline recovery key; do not request secret in chat, do not assume preselected choice is approval, and do not invent vault/keyfile location. Plan DATABASE-RESTORE-PLAN.md is concrete; no real keyfile/snapshot/cloud restore created. Continue independent local collector/emulator fixtures while awaiting answer.",
+    "Keep backup.databaseVerified=false until real consistent snapshot, isolated Firestore restore and private Drive ciphertext readback/count/type/invariant proof. Envelope+Mapmodel is not a database backup or emulator drill. No IAM/credential/scopes/billing/terms changes if existing Firebase session lacks permission.",
+    "Report API/UI6d6831a remains review verified, main137181d/liveBE1bf/FEaa unchanged. Deployment requires DB schema gate and verified candidate code/build Drive backup. Reader-compatible rollback baseline before future hide/reinstate/audit. SOCIAL003 publication recovery and DATA002/Auth002 user confirmations remain open; do not repeat green smoke/notifications."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -127,12 +127,32 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": true,
+    "currentCycleRuntimeChanged": false,
     "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
-    "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503"
+    "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
+    "pendingOpsCommit": "74d89317db388545ed5ddfaaa0f32c4dfbfbbb2b",
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38789936152"
+  },
+  "blockingDependency": "OPS002",
+  "dataBackup": {
+    "status": "OFFLINE_ENVELOPE_ONLY_NOT_DATABASE_BACKUP",
+    "tool": "backend/ops/snapshotEnvelope.cjs",
+    "plan": "DATABASE-RESTORE-PLAN.md",
+    "reviewCommit": "74d89317db388545ed5ddfaaa0f32c4dfbfbbb2b",
+    "localSyntheticTests": 7,
+    "keyCustodyStatus": "WAITING_OWNER_CHOICE",
+    "keyFileCreated": false,
+    "realSnapshotCreated": false,
+    "realRestoreVerified": false,
+    "cloudDataRead": false,
+    "maxPlaintextBytes": 33554432,
+    "networkCollectorImplemented": false,
+    "emulatorRestoreImplemented": false,
+    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38789936152",
+    "reviewCiPassed": true
   }
 }
