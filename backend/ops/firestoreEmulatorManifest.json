@@ -1,0 +1,9 @@
+{
+  "version": "1.21.0",
+  "filename": "cloud-firestore-emulator-v1.21.0.jar",
+  "url": "https://storage.googleapis.com/firebase-preview-drop/emulator/cloud-firestore-emulator-v1.21.0.jar",
+  "bytes": 138093843,
+  "sha256": "c3d3680a89d946a90a027365ea14c26c6472a162bcf37f099bbb1ebd66d25e8e",
+  "source": "installed firebase-tools15.22.4/lib/emulator/downloadableEmulatorInfo.json",
+  "javaMajor": 21
+}

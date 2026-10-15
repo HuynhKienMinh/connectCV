@@ -10,6 +10,20 @@ concurrency:
   group: connectcv-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  emulator-restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Restore and re-export synthetic typed snapshot in isolated demo emulator
+        run: node backend/tests/snapshotRestore.check.cjs
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
