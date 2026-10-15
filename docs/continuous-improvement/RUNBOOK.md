@@ -34,7 +34,7 @@ Rotation: auth/profile → CV/ATS → interview → community → chatbot → po
 3. Backup code/build ngoài Git: git bundle, verify, SHA256, commit đang live; package lock và build được ghi.
 4. Backup thay đổi cấu hình cần giữ được giá trị cũ trong kho riêng; không copy secrets vào tài liệu public.
 5. Nếu schema/migration/bulk data: encrypted snapshot đầy đủ collections/subcollections, inventory/count/checksum và restore drill trên staging. Backup code không thay thế bước này. Chưa được thì không migrate.
-6. Test phù hợp + full CI đạt, dependency audit/secret check tương ứng; không có P0/P1 mới đã xác nhận.
+6. Test phù hợp + full CI đạt, dependency audit/secret check tương ứng; không có P0/P1 mới đã xác nhận. Với API đổi kiểu/nullability/ý nghĩa điểm, replay client cũ→server mới và client mới→server cũ trước deploy; nếu cần version gate, chặn trước quota/provider và giữ nội dung người dùng, không tự reload.
 7. Có rollback target cho BE và FE, flags/config và các thay đổi dữ liệu tương thích ngược. Chưa có quyền/phiên hosting thì không ghi “deployed”.
 8. Deploy BE/FE theo thứ tự tương thích API. Xác minh đúng commit và version assets.
 9. Smoke auth/profile và module bị ảnh hưởng; kiểm tra errors/latency. Fail thì rollback theo target, ghi incident, không lặp redeploy mò.

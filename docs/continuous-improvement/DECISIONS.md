@@ -46,3 +46,8 @@ Build FE phải khai báo public HTTPS origin; không dùng localhost fallback t
 ## D011 — 15/10/2026: chức danh là dữ kiện cần giữ khi dựng CV
 
 Bốn layout classic_1, schoolarship_standard, senior_2, software_engineer không có slot title trong bản nguồn. CV render mới thêm dòng chức danh dưới tên khi có giá trị; editable, escape như các field khác, normal flow để wrap. Giữ template/font nguyên bản và gallery preview; chấp nhận thay đổi có chủ đích về chiều cao header thay vì pixel-exact với bản thiếu field. Không migration hoặc tự sửa HTML đã lưu. Nghiệm thu riêng tám PDF facts/long-title bounds và kiểm version live; không từ đó đóng toàn bộ CV002/ATS/licensing hay authenticated cloud E2E.
+
+
+## D012 — 15/10/2026: hợp đồng báo cáo phỏng vấn phiên bản2
+
+Live-summary yêu cầu reportVersion số2 trong JSON. Request thiếu/sai trả409 INTERVIEW_REPORT_CLIENT_OUTDATED trước action buckets/AI budget và trước provider; auth vẫn kiểm trước. Client mới hiểu score number/null, hiển thị0 đúng và Chưa xác minh cho null. Tab cũ phải lưu/sao chép hội thoại trước khi tải lại; không tự reload hoặc xóa liveInterviewHistory. Đây là version negotiation để tránh UI cũ tự chèn8, không thay thế auth hoặc kiểm dữ kiện server. Quote khớp chỉ chứng minh hiện diện nguyên câu trong đúng lượt, không chứng minh đúng semantic STAR, chất lượng rubric hay kết quả tuyển dụng.
