@@ -51,7 +51,15 @@ let version;
 function sourceVersion(){if(version)return version;const hash=crypto.createHash('sha256');for(const dir of ['templates','styles'])for(const file of fs.readdirSync(path.join(ROOT,dir)).sort())hash.update(fs.readFileSync(path.join(ROOT,dir,file),'utf8').replace(/\r\n/g,'\n'));hash.update(fs.readFileSync(__filename,'utf8').replace(/\r\n/g,'\n'));return version='topcv-'+hash.digest('hex').slice(0,12)}
 function renderTopcvSource(tmpl,cv,profile={},language='vi',{preview=false}={}){
  const slug=tmpl.slug||tmpl.id,t=load(slug,language),values=valuesFor(cv,profile);
- let body=preview?t.originalBody:substitute(t.body,values,t);
+ // These four source layouts omit a role field. Keep the immutable originals,
+ // but include the supplied role in the editable name header for actual CVs.
+ // Normal flow allows wrapping and moves contact details instead of overlapping.
+ let source=t.body;
+ if(!preview&&String(values.profile.title).trim()&&['classic_1','schoolarship_standard','senior_2','software_engineer'].includes(slug)&&!source.includes('{{profile.title}}')){
+  source=source.replace(/(<span\b[^>]*\bid="cvo-profile-fullname"[^>]*>[\s\S]*?<\/span>)/,
+   '$1<span id="cvo-profile-title" contenteditable="true" style="display:block;margin-top:4px;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.4;font-weight:400;font-style:normal;text-transform:none">{{profile.title}}</span>');
+ }
+ let body=preview?t.originalBody:substitute(source,values,t);
  // Replace only the copyright label, preserving the native footer geometry.
  body=body.replace(/(?:©|&copy;|&#169;|&#x0*a9;)\s*topcv\.vn/gi,'© ConnectCV');
  if(!preview){

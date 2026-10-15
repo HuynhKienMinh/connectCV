@@ -84,3 +84,14 @@ jobs:
         working-directory: backend/features/connectcv
         env:
           CV_FONT_QA_OUTPUT: '${{ runner.temp }}/connectcv-font-qa'
+      - name: Verify native role fields and long-title wrapping
+        run: node tests/nativeTitlePdf.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          NODE_ENV: production
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_TITLE_QA_PHASE: ci
+          CV_TITLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-title-qa'
+      - name: Verify source facts in all eight role-field PDFs
+        run: python tests/nativeTitleText.check.py "${{ runner.temp }}/connectcv-title-qa"
+        working-directory: backend/features/connectcv

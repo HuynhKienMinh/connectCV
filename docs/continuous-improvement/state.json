@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 15,
   "lastRun": "runs/2026-10-15-cycle-0015.md",
-  "activeRun": null,
+  "activeRun": "runs/2026-10-15-cycle-0016.md",
   "activeIssue": "CV002",
-  "issueState": "NEXT_REPRODUCE_EIGHT_MISSING_TITLE_CASES",
+  "issueState": "TITLE_LOCAL_VERIFIED_REVIEW_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",

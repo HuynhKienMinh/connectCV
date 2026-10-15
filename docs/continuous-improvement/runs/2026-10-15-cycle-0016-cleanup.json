@@ -1,0 +1,10 @@
+{
+  "target": "tmp/pdfs/cycle16-title",
+  "removedBytes": 10596763.0,
+  "removedFiles": 50,
+  "temporaryPdfCopiesRetained": false,
+  "previousPassRemovedBytes": 13699527,
+  "previousEvidenceCaptureFailed": true,
+  "recovery": "Recreated from trusted Git94 baseline and current source; UTF8 explicit; capture guarded before delete",
+  "backupCreated": false
+}

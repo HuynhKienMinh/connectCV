@@ -1,0 +1,413 @@
+{
+  "checkedAt": "2026-10-15T02:28:18.400795+00:00",
+  "scope": "four native layouts, VI/EN short profile; after also long-title DOM; synthetic only",
+  "baselineCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+  "beforeUnitTests": {
+    "passed": 0,
+    "failed": 3
+  },
+  "afterFeatureTests": {
+    "passed": 57,
+    "failed": 0
+  },
+  "requiredFacts": [
+    "Ứng viên thử nghiệm",
+    "Kỹ sư kiểm thử",
+    "Công ty giả",
+    "Kiểm thử viên",
+    "Trường thử nghiệm",
+    "MATRIX_EXPERIENCE_SOURCE",
+    "MATRIX_EDUCATION_SOURCE",
+    "Node.js"
+  ],
+  "before": [
+    {
+      "id": "classic_1-vi",
+      "pages": 1,
+      "bytes": 304179,
+      "title": null
+    },
+    {
+      "id": "schoolarship_standard-vi",
+      "pages": 1,
+      "bytes": 283681,
+      "title": null
+    },
+    {
+      "id": "senior_2-vi",
+      "pages": 1,
+      "bytes": 268771,
+      "title": null
+    },
+    {
+      "id": "software_engineer-vi",
+      "pages": 1,
+      "bytes": 122709,
+      "title": null
+    },
+    {
+      "id": "classic_1-en",
+      "pages": 1,
+      "bytes": 267660,
+      "title": null
+    },
+    {
+      "id": "schoolarship_standard-en",
+      "pages": 1,
+      "bytes": 262576,
+      "title": null
+    },
+    {
+      "id": "senior_2-en",
+      "pages": 1,
+      "bytes": 250095,
+      "title": null
+    },
+    {
+      "id": "software_engineer-en",
+      "pages": 1,
+      "bytes": 121147,
+      "title": null
+    }
+  ],
+  "after": [
+    {
+      "id": "classic_1-vi",
+      "pages": 1,
+      "bytes": 323343,
+      "title": {
+        "x": 192.75,
+        "y": 97.671875,
+        "width": 544.265625,
+        "height": 18.1875,
+        "right": 737.015625,
+        "bottom": 115.859375,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "schoolarship_standard-vi",
+      "pages": 1,
+      "bytes": 302856,
+      "title": {
+        "x": 49.109375,
+        "y": 80.109375,
+        "width": 695.46875,
+        "height": 18.1875,
+        "right": 744.578125,
+        "bottom": 98.296875,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "senior_2-vi",
+      "pages": 1,
+      "bytes": 287967,
+      "title": {
+        "x": 49.109375,
+        "y": 61.78125,
+        "width": 695.46875,
+        "height": 18.1875,
+        "right": 744.578125,
+        "bottom": 79.96875,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "software_engineer-vi",
+      "pages": 1,
+      "bytes": 128385,
+      "title": {
+        "x": 56.65625,
+        "y": 77.546875,
+        "width": 559.46875,
+        "height": 18.1875,
+        "right": 616.125,
+        "bottom": 95.734375,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "classic_1-en",
+      "pages": 1,
+      "bytes": 286827,
+      "title": {
+        "x": 192.75,
+        "y": 97.671875,
+        "width": 544.265625,
+        "height": 18.1875,
+        "right": 737.015625,
+        "bottom": 115.859375,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "schoolarship_standard-en",
+      "pages": 1,
+      "bytes": 281752,
+      "title": {
+        "x": 49.109375,
+        "y": 80.109375,
+        "width": 695.46875,
+        "height": 18.1875,
+        "right": 744.578125,
+        "bottom": 98.296875,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "senior_2-en",
+      "pages": 1,
+      "bytes": 269280,
+      "title": {
+        "x": 49.109375,
+        "y": 61.78125,
+        "width": 695.46875,
+        "height": 18.1875,
+        "right": 744.578125,
+        "bottom": 79.96875,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "software_engineer-en",
+      "pages": 1,
+      "bytes": 126828,
+      "title": {
+        "x": 56.65625,
+        "y": 77.546875,
+        "width": 559.46875,
+        "height": 18.1875,
+        "right": 616.125,
+        "bottom": 95.734375,
+        "text": "Kỹ sư kiểm thử"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "classic_1-vi-long-title",
+      "title": {
+        "x": 192.75,
+        "y": 97.671875,
+        "width": 544.265625,
+        "height": 54.5625,
+        "right": 737.015625,
+        "bottom": 152.234375,
+        "text": "Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "schoolarship_standard-vi-long-title",
+      "title": {
+        "x": 49.109375,
+        "y": 80.109375,
+        "width": 695.46875,
+        "height": 54.5625,
+        "right": 744.578125,
+        "bottom": 134.671875,
+        "text": "Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "senior_2-vi-long-title",
+      "title": {
+        "x": 49.109375,
+        "y": 61.78125,
+        "width": 695.46875,
+        "height": 54.5625,
+        "right": 744.578125,
+        "bottom": 116.34375,
+        "text": "Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    },
+    {
+      "id": "software_engineer-vi-long-title",
+      "title": {
+        "x": 56.65625,
+        "y": 77.546875,
+        "width": 559.46875,
+        "height": 54.5625,
+        "right": 616.125,
+        "bottom": 132.109375,
+        "text": "Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng Chuyên viên kiểm thử phần mềm và quản lý chất lượng"
+      },
+      "titleBoundsVerified": true,
+      "titleOverlapCheckPassed": true
+    }
+  ],
+  "independentText": {
+    "parser": "pypdf6.10.0",
+    "normalization": "casefold and whitespace collapse; never join words",
+    "rows": [
+      {
+        "id": "classic_1-en-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "8b3135f394119922d28f5bb68d8a78c1de1828b5648f891bca334b5c7ff16b72"
+      },
+      {
+        "id": "classic_1-vi-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "784aea7e32ced93432f8deeba6516e33aaf3a51be18bcfb64146cd0136f6d62c"
+      },
+      {
+        "id": "schoolarship_standard-en-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "3beb9fc80e3bf35e69459d4110ec68b69ac7540663cadb677bfaaf9c620fdd0a"
+      },
+      {
+        "id": "schoolarship_standard-vi-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "fa87285562e39e5a7181b617ecde747b09bfeb03144b82bd35b815489707b969"
+      },
+      {
+        "id": "senior_2-en-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "64016a57496631c3dd0e7b2234cbf23b257d950f2ed6aa687db27ffa7a608f62"
+      },
+      {
+        "id": "senior_2-vi-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "b39e60f457ed9dd882be1efa9530075ac2649dfa0c43087107177d43989e29f3"
+      },
+      {
+        "id": "software_engineer-en-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "20e9d32543ce5734aacfdce662ad2ae59d96cc26876205673cdfffc5892b43c0"
+      },
+      {
+        "id": "software_engineer-vi-before",
+        "phase": "before",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [
+          "Kỹ sư kiểm thử"
+        ],
+        "pdfSha256": "d3f4a8872d6dcb8ab1b0737dfae67efa8131f1ccb42e7bc271d11c8970610d1a"
+      },
+      {
+        "id": "classic_1-en-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "1248f7783f78689c30956963cf8b3f6434baa1200f962fba17057d7a2b14f61e"
+      },
+      {
+        "id": "classic_1-vi-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "e3ec9af3a634f9ecf93a9aead18e4f410e931bc2e6cb99f409a8b244506161f5"
+      },
+      {
+        "id": "schoolarship_standard-en-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "38baabe07a665110cf6b8a4b1840feb7355a18eab9446214a2613b511b006dd3"
+      },
+      {
+        "id": "schoolarship_standard-vi-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "1faa45beeb594d03b428d26cddf446c40ce66f7ef73d9798d9ae25eb1f0153ee"
+      },
+      {
+        "id": "senior_2-en-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "2bf87216fa6f3f365ef6459b6c41840cb359e4b0abe7fbd60fc40372dc9cebf7"
+      },
+      {
+        "id": "senior_2-vi-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "2dfe999830d4e6bd2e5312bcd2c4c371016034490568c42f64612fc8bf86921f"
+      },
+      {
+        "id": "software_engineer-en-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "9f6a040b1e0e0bb2a9b29b99f35c35e809819b9d825f64b8df60a1227109e2fd"
+      },
+      {
+        "id": "software_engineer-vi-after",
+        "phase": "after",
+        "pages": 1,
+        "a4": true,
+        "missingFacts": [],
+        "pdfSha256": "fc4364711d83a2043aee82492bd71bc93faeab4112f5bc4d4e2188efdadd9da8"
+      }
+    ]
+  },
+  "cloudWrites": 0,
+  "aiCalls": 0,
+  "authenticatedDownloadVerified": false,
+  "fullFontMatrixVerified": false
+}
