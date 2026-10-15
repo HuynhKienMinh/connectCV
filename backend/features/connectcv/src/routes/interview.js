@@ -11,6 +11,7 @@ const { callGeminiJSON, callGeminiText, genAI } = require('../services/geminiSer
 
 const path = require('path');
 const {CommunityStore,publicEntry}=require('../services/communityStore');
+const moderation=require('../services/communityModeration');
 const communityStore=process.env.FEATURE_STORE_BACKEND==='firestore' ? new (require('../../../../src/services/firestoreCommunity').FirestoreCommunity)(require('../../../../src/config/firebase').db()) : new CommunityStore(process.env.COMMUNITY_STORE_FILE||path.resolve(process.env.FEATURE_STATE_DIR||path.resolve(__dirname,'../../data'),'community-secure.json'));
 const legacyFile=path.resolve(__dirname,'../../data/debrief_questions.json');
 // Legacy posts can be read without exposing private metadata; they earn no new reward.
@@ -615,11 +616,12 @@ router.post('/debrief', async (req, res) => {
 // GET /api/interview/community-questions — MXH: Tìm kiếm & Lọc câu hỏi
 // ─────────────────────────────────────────────────────────────────────
 router.get('/community-questions', async (req, res) => {
+  res.set('Cache-Control','no-store');
   try {
     const { q, company, position, category, minDifficulty, sort = 'newest' } = req.query;
     const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 20));
 
-    const entries = communityStore.list ? await communityStore.list() : communityStore.entries;
+    const entries = (communityStore.list ? await communityStore.list() : communityStore.entries).filter(moderation.isVisible);
     let filtered = [...entries];
 
     // 1. Tìm kiếm tổng quát (q): khớp trong company, position, câu hỏi, review, tags
@@ -689,4 +691,14 @@ router.post('/community-questions/:id/like',async(req,res)=>{
  catch(error){return res.status(error.status||500).json({success:false,message:error.status?error.message:'Không thể thả tim lúc này.'});}
 });
 
+router.post('/community-questions/:id/report',async(req,res)=>{
+ try{return res.json({success:true,data:await communityStore.report(req.user,req.params.id,req.body)});}
+ catch(error){return res.status(error.status||503).json({success:false,message:error.status?error.message:'Không thể gửi báo cáo lúc này. Vui lòng thử lại.'});}
+});
+router.get('/community-reports',async(req,res)=>{
+ res.set('Cache-Control','no-store');
+ if(!req.user?.id||req.featureIdentityVerified!==true)return res.status(401).json({success:false,code:'AUTH_REQUIRED'});
+ try{return res.json({success:true,data:await communityStore.reports(req.user)});}
+ catch(error){return res.status(error.status||503).json({success:false,message:error.status?error.message:'Không thể tải báo cáo lúc này.'});}
+});
 module.exports = router;

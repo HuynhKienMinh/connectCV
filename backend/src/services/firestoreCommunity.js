@@ -1,11 +1,12 @@
 'use strict';
 const crypto = require('node:crypto');
 const { fail } = require('./accountStore');
+const moderation=require('../../features/connectcv/src/services/communityModeration');
 class FirestoreCommunity {
   constructor(db) { this.db = db; }
   async list() {
     const result = await this.db.collection('communityPosts').orderBy('sharedAt', 'desc').limit(200).get();
-    return result.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+    return result.docs.map(doc => ({ ...doc.data(), id: doc.id })).filter(moderation.isVisible);
   }
   async submit(user, entry, hash) {
     const id = crypto.randomUUID(), now = Date.now();
@@ -32,12 +33,28 @@ class FirestoreCommunity {
     const like = post.collection('likes').doc(user.id);
     return this.db.runTransaction(async tx => {
       const [snapshot, liked] = await Promise.all([tx.get(post), tx.get(like)]);
-      if (!snapshot.exists) throw fail(404, 'Không tìm thấy bài chia sẻ.');
+      if (!snapshot.exists || !moderation.isVisible(snapshot.data())) throw fail(404, 'Không tìm thấy bài chia sẻ.');
       const count = Math.max(0, (snapshot.data().likesCount || 0) + (liked.exists ? -1 : 1));
       if (liked.exists) tx.delete(like); else tx.create(like, { at: new Date().toISOString() });
       tx.update(post, { likesCount: count });
       return { id, likesCount: count, hasLiked: !liked.exists };
     });
+  }
+  async report(user,id,body){
+    const input=moderation.reportInput(user,id,body);
+    const post=this.db.collection('communityPosts').doc(id),report=this.db.collection('communityReports').doc(input.id);
+    return this.db.runTransaction(async tx=>{
+      const [entry,previous]=await Promise.all([tx.get(post),tx.get(report)]);
+      if(!entry.exists||!moderation.isVisible(entry.data()))throw fail(404,'Không tìm thấy bài chia sẻ.');
+      if(previous.exists)return moderation.reportReceipt(input.id,true);
+      tx.create(report,{postId:id,reporterId:user.id,reason:input.reason,status:'received',createdAt:new Date().toISOString()});
+      return moderation.reportReceipt(input.id,false);
+    });
+  }
+  async reports(user){
+    moderation.requireAdmin(user);
+    const result=await this.db.collection('communityReports').orderBy('createdAt','desc').limit(100).get();
+    return result.docs.map(doc=>moderation.reviewEntry(doc.data(),doc.id));
   }
 }
 module.exports = { FirestoreCommunity };
