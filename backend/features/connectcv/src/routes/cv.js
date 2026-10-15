@@ -162,7 +162,7 @@ router.post('/templates/recommend', async (req, res) => {
 
 /**
  * @route   POST /api/cv/auto-match-jobs
- * @desc    Gợi ý vị trí, lĩnh vực và khớp nối danh sách việc làm phù hợp >= 85% theo hồ sơ
+ * @desc    Đối chiếu từ khóa hồ sơ với catalog job giả, ngưỡng40; không gọi AI
  */
 router.post('/auto-match-jobs', (req, res) => {
   try {
@@ -182,7 +182,7 @@ router.post('/auto-match-jobs', (req, res) => {
 router.get('/jobs', (req, res) => {
   try {
     const jobs = getAllJobs();
-    return res.status(200).json({ success: true, count: jobs.length, jobs });
+    return res.status(200).json({ success: true, count: jobs.length, isSynthetic: true, dataSource: 'synthetic-test-catalog', jobs });
   } catch (error) {
     return res.status(500).json({ success: false, message: 'Lỗi lấy danh sách việc làm' });
   }

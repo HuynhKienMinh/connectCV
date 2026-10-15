@@ -51,3 +51,8 @@ Bốn layout classic_1, schoolarship_standard, senior_2, software_engineer khôn
 ## D012 — 15/10/2026: hợp đồng báo cáo phỏng vấn phiên bản2
 
 Live-summary yêu cầu reportVersion số2 trong JSON. Request thiếu/sai trả409 INTERVIEW_REPORT_CLIENT_OUTDATED trước action buckets/AI budget và trước provider; auth vẫn kiểm trước. Client mới hiểu score number/null, hiển thị0 đúng và Chưa xác minh cho null. Tab cũ phải lưu/sao chép hội thoại trước khi tải lại; không tự reload hoặc xóa liveInterviewHistory. Đây là version negotiation để tránh UI cũ tự chèn8, không thay thế auth hoặc kiểm dữ kiện server. Quote khớp chỉ chứng minh hiện diện nguyên câu trong đúng lượt, không chứng minh đúng semantic STAR, chất lượng rubric hay kết quả tuyển dụng.
+
+
+## D013 — 15/10/2026: avatar, viewport và catalog job giả theo yêu cầu trực tiếp
+
+Avatar mặc địnhcontain để giữ toàn ảnh; cover/zoom chỉ do người dùng chọn. Kích thước export dùng layoutoffset, không dùng boundingrect đã zoom. Preview căn giữa/thu vừa chỉ @media screen, loại style/scale khi export; PDF trustedrenderer dùng chung photo helper, không chạy JS từ HTML người dùng. Catalog100job hưcấu,10/ngành cho10nhóm chuyên môn hiện có; nhãn Đa ngành/Chuyên nghiệp là style, không tạo ngành giả. Không dùng doanhnghiệp/logo thật hoặc seedDB. Matcher70keyword+30role, ngưỡng40, không épmin85, không quảng cáo xác suất tuyển dụng/semantic AI. Bộpositive100profile là regression tựkhớp, không phải đánh giá thịtrường/laođộng.

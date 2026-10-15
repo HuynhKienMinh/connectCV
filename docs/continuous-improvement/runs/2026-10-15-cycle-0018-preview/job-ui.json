@@ -1,0 +1,69 @@
+{
+  "synthetic": true,
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "localMatchRequests": 11,
+  "rows": [
+    {
+      "industry": "Công nghệ Thông tin",
+      "topJob": "synthetic-it-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Marketing & Truyền thông",
+      "topJob": "synthetic-marketing-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Thương mại Điện tử & Bán lẻ",
+      "topJob": "synthetic-retail-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Sáng tạo & Nghệ thuật",
+      "topJob": "synthetic-creative-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Tài chính & Kế toán",
+      "topJob": "synthetic-finance-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Kinh doanh & Bán hàng",
+      "topJob": "synthetic-sales-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Khách sạn & Nhà hàng",
+      "topJob": "synthetic-hospitality-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Hành chính & Nhân sự",
+      "topJob": "synthetic-hr-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Giáo dục & Đào tạo",
+      "topJob": "synthetic-education-01",
+      "selection": true,
+      "detail": true
+    },
+    {
+      "industry": "Tư vấn & Chăm sóc khách hàng",
+      "topJob": "synthetic-support-01",
+      "selection": true,
+      "detail": true
+    }
+  ],
+  "errors": []
+}

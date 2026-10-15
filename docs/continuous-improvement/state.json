@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 17,
   "lastRun": "runs/2026-10-15-cycle-0017.md",
-  "activeRun": null,
-  "activeIssue": "SOCIAL001",
-  "issueState": "NEXT_COMMUNITY_LOCAL_SCENARIO",
+  "activeRun": "runs/2026-10-15-cycle-0018.md",
+  "activeIssue": "CV003_JOB001",
+  "issueState": "AVATAR_PREVIEW_AND_SYNTHETIC_MATCH_LOCAL_IN_PROGRESS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,6 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
+    "Owner request: avatar fitting + centered responsive preview,100 synthetic jobs (ten per10 concrete industries). Local actual UI/PDF regression then CI, verified Drive baselineb3 before deploy. No real profile writes.",
     "SOCIAL001: local synthetic privacy/reward retry/fault scenario; no public posts or real profile writes. New baseline of liveb3 required before any next deployment.",
     "INT001 stays OPEN: no authenticated production summary, microphone or human pilot verified; INT004 scoped live code/static/auth plus local/CI semantic and client compatibility regression passed.",
     "CV002 stays OPEN:58split-word cases/full long/crop/order matrix and authenticated download unresolved.",

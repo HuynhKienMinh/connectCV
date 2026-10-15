@@ -95,3 +95,22 @@ jobs:
       - name: Verify source facts in all eight role-field PDFs
         run: python tests/nativeTitleText.check.py "${{ runner.temp }}/connectcv-title-qa"
         working-directory: backend/features/connectcv
+
+      - name: Verify responsive preview and edited photo round trip
+        run: node tests/cvPreview.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_PREVIEW_QA_OUTPUT: '${{ runner.temp }}/connectcv-preview-qa'
+      - name: Verify canonical photo layout in sandboxed PDF exports
+        run: node tests/cvPhotoPdf.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          NODE_ENV: production
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+      - name: Verify synthetic matching cards and selection for ten industries
+        run: node tests/jobMatchingUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          JOB_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-job-qa'

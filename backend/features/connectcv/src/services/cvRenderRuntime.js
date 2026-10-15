@@ -35,6 +35,8 @@ async function prepareCvPage(page,html,{scale=2}={}){
  await page.setContent(source,{waitUntil:'load',timeout:20000});
  await page.evaluate(async()=>{
   // Automation evaluation is trusted code; document scripts remain disabled.
+  document.querySelectorAll('[data-cv-preview]').forEach(e=>e.remove());
+  document.documentElement.style.removeProperty('--cv-preview-scale');
   document.querySelectorAll('script,iframe,frame,object,embed,meta[http-equiv],link[rel="prefetch"],link[rel="preload"]').forEach(e=>e.remove());
   for(const e of document.querySelectorAll('*'))for(const a of [...e.attributes])if(/^on/i.test(a.name)||a.name==='srcdoc'||(a.name==='href'&&!a.value.startsWith('#')))e.removeAttribute(a.name);
   for(const item of [...document.querySelectorAll('.cv-page-container section')].reverse())if(!item.textContent.trim()&&!item.querySelector('img,svg,input,textarea'))item.remove();
@@ -44,22 +46,10 @@ async function prepareCvPage(page,html,{scale=2}={}){
    if(failures.length)throw new Error('Original CV fonts failed to load: '+[...new Set(failures)].join(', '));
   }
   await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));
-  // Reapply saved candidate crop with trusted code; never execute the photo editor
-  // script from submitted HTML. Existing edited frames already retain their styles.
-  for(const img of document.querySelectorAll('.cv-page-container img[data-photo-zoom]')){
-   if(!img.src.startsWith('data:image/'))continue;
-   const zoom=Math.max(1,Math.min(3,Number(img.dataset.photoZoom)||1)),limit=(zoom-1)*50;
-   const x=Math.max(-limit,Math.min(limit,Number(img.dataset.photoX)||0)),y=Math.max(-limit,Math.min(limit,Number(img.dataset.photoY)||0));
-   let frame=img.closest('.cv-photo-frame');
-   if(!frame&&zoom>1){const rect=img.getBoundingClientRect(),css=getComputedStyle(img);if(!rect.width||!rect.height)continue;
-    frame=document.createElement('div');frame.className='cv-photo-frame';frame.style.cssText=`position:relative;overflow:hidden;width:${rect.width}px;height:${rect.height}px;flex-shrink:0;border-radius:${css.borderRadius};margin:${css.margin};border:${css.border};box-sizing:border-box`;
-    img.before(frame);frame.appendChild(img);img.style.cssText='position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;min-width:0;min-height:0;object-fit:cover;border:0;margin:0;display:block;transform-origin:center';
-   }
-   if(frame)img.style.transform=`translate(${x}%, ${y}%) scale(${zoom})`;
-  }
   const root=document.querySelector('.cv-page-container');if(!root)throw new Error('Missing canonical CV document');
   const family=getComputedStyle(root.querySelector('[data-original-layout],.cv-family,.tiktop-layout,.graceful-layout')||root).fontFamily.split(',')[0].replace(/["']/g,'').trim();
   if(['Roboto','Tinos','Roboto Mono'].includes(family)&&!document.fonts.check('12px "'+family+'"'))throw new Error('CV font failed to load: '+family);
  });
+ await page.evaluate(require('../../public/js/cv-photo-layout'));
 }
 module.exports={prepareCvPage};

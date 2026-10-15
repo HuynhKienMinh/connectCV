@@ -2,6 +2,7 @@
 
 <html lang="vi">
 <head>
+<script src="/ai/js/cv-preview.js" defer></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ConnectCV AI Studio</title>
@@ -695,6 +696,7 @@ window.fetch=async function(resource,options={}){
 </div>
 <!-- CHẾ ĐỘ 1: AUTO MATCH THEO TỪ KHÓA PROFILE (MẶC ĐỊNH) -->
 <div class="space-y-3" id="job-mode-automatch-container">
+<p class="p-3 rounded-xl bg-amber-50 text-amber-900 text-xs border border-amber-200">Dữ liệu thử: 100 job giả định, 10 job/ngành. Công ty, lương và JD đều hư cấu; không phải tin tuyển dụng. Điểm chỉ đo từ khóa trùng, không phải khả năng được tuyển.</p>
 <!-- AI Keyword & Recommendation Banner -->
 <div class="p-3.5 bg-gradient-to-br from-blue-50/80 to-indigo-50/50 border border-blue-100 rounded-2xl space-y-2.5">
 <div class="flex items-center justify-between">
@@ -702,7 +704,7 @@ window.fetch=async function(resource,options={}){
 <div class="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs shadow-xs">
 <i class="fa-solid fa-microchip"></i>
 </div>
-<span class="text-xs font-bold text-slate-800">AI Gợi Ý &amp; Khớp Nối Theo Hồ Sơ (Profile)</span>
+<span class="text-xs font-bold text-slate-800">Đối chiếu từ khóa theo hồ sơ</span>
 </div>
 <button class="text-[11px] text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 transition" onclick="refreshAutoMatchJobs(true)" title="Làm mới phân tích từ khóa theo profile hiện tại" type="button">
 <i class="fa-solid fa-arrows-rotate text-xs"></i> Làm mới
@@ -737,12 +739,12 @@ window.fetch=async function(resource,options={}){
 </div>
 </div>
 </div>
-<!-- Thanh Công Cụ Chọn All & Thống Kê Match Score >= 85% -->
+<!-- Thanh Công Cụ Chọn All & Thống Kê Match Score >= 40 điểm -->
 <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-2">
 <label class="flex items-center gap-2 cursor-pointer select-none">
 <input class="w-4 h-4 text-blue-600 bg-white border-slate-300 rounded focus:ring-blue-500 cursor-pointer" id="chk-select-all-jobs" onchange="toggleSelectAllJobs(this.checked)" type="checkbox"/>
 <span class="text-xs font-bold text-slate-800">
-                      Chọn tất cả việc làm phù hợp (≥ 85%)
+                      Chọn tất cả kết quả đối chiếu (≥ 40 điểm)
                     </span>
 </label>
 <div class="flex items-center gap-2">
@@ -755,8 +757,8 @@ window.fetch=async function(resource,options={}){
 <i class="fa-solid fa-circle-info text-blue-500"></i>
 <span>Tick chọn ô nào thì sẽ tạo CV tương ứng với vị trí và văn hóa công ty đó (tick bao nhiêu ô tạo bấy nhiêu CV).</span>
 </div>
-<!-- Danh Sách Job Phù Hợp (>= 85%) Sắp Xếp Giảm Dần -->
-<div class="space-y-2.5 max-h-[380px] overflow-y-auto pr-1 custom-scrollbar" id="automatch-jobs-list">
+<!-- Danh Sách Job Phù Hợp (>= 40 điểm) Sắp Xếp Giảm Dần -->
+<div class="space-y-2.5 max-h-[380px] overflow-y-auto pr-1 custom-scrollbar" data-synthetic-catalog="100" id="automatch-jobs-list">
 <!-- Sẽ được render động bằng JS -->
 </div>
 </div>
@@ -2562,7 +2564,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     }
 
     // ══════════════════════════════════════════════════════════════════════════════
-    // HỆ THỐNG GỢI Ý VIỆC LÀM & TỰ ĐỘNG KHỚP NỐI (AUTO MATCH >= 85%) & BATCH CV
+    // HỆ THỐNG GỢI Ý VIỆC LÀM & TỰ ĐỘNG KHỚP NỐI (AUTO MATCH >= 40 điểm) & BATCH CV
     // ══════════════════════════════════════════════════════════════════════════════
     let currentJobInputMode = 'automatch'; // 'automatch' | 'manual'
     let availableMatchedJobs = [];
@@ -2610,7 +2612,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       }, 600);
     }
 
-    // Gọi API phân tích Profile và lấy danh sách Jobs phù hợp >= 85%
+    // Gọi API phân tích Profile và lấy danh sách Jobs phù hợp >= 40 điểm
     async function refreshAutoMatchJobs(force = false) {
       try {
         let profileObj;
@@ -2657,9 +2659,9 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             `).join('');
           }
 
-          // Lọc chắc chắn >= 85% và sắp xếp giảm dần theo matchScore
+          // Lọc chắc chắn >= 40 điểm và sắp xếp giảm dần theo matchScore
           availableMatchedJobs = (matchedJobs || [])
-            .filter(j => (j.matchScore || 0) >= 85)
+            .filter(j => (j.matchScore || 0) >= 40)
             .sort((a, b) => (b.matchScore || 0) - (a.matchScore || 0));
 
           window.availableMatchedJobs = availableMatchedJobs;
@@ -2674,7 +2676,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           updateSelectedJobsCounter();
 
           if (force) {
-            showToastSuccess(`Đã tìm thấy ${availableMatchedJobs.length} việc làm có tỷ lệ phù hợp &ge; 85%!`, 'AI Matching');
+            showToastSuccess(`Đã tìm thấy ${availableMatchedJobs.length} việc làm giả có điểm đối chiếu từ 40!`, 'Đối chiếu job giả');
           }
         }
       } catch (err) {
@@ -2682,7 +2684,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       }
     }
 
-    // Render danh sách các Job Cards phù hợp >= 85%
+    // Render danh sách các Job Cards phù hợp >= 40 điểm
     function renderAutoMatchJobs() {
       const container = document.getElementById('automatch-jobs-list');
       if (!container) return;
@@ -2691,7 +2693,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         container.innerHTML = `
           <div class="p-4 bg-slate-50 border border-dashed border-slate-200 rounded-xl text-center text-xs text-slate-500">
             <i class="fa-solid fa-triangle-exclamation text-amber-500 text-base mb-1 block"></i>
-            Chưa tìm thấy việc làm có tỷ lệ tương thích &ge; 85%. Hãy cập nhật thêm kỹ năng hoặc kinh nghiệm trong hồ sơ!
+            Chưa có job giả đủ từ khóa trùng (tối thiểu 40 điểm). Hãy cập nhật thêm kỹ năng hoặc kinh nghiệm trong hồ sơ!
           </div>
         `;
         return;
@@ -2699,7 +2701,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
       container.innerHTML = availableMatchedJobs.map((job) => {
         const isChecked = selectedJobIds.has(job.id);
-        const score = job.matchScore || 90;
+        const score = Number.isFinite(job.matchScore) ? job.matchScore : 0;
         let badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-300';
         let badgeIcon = 'fa-solid fa-star';
         if (score >= 95) {
@@ -2728,7 +2730,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
               </div>
               <span class="px-2 py-0.5 rounded-full text-[11px] font-black border flex items-center gap-1 shrink-0 ${badgeClass}">
                 <i class="${badgeIcon} text-[10px]"></i>
-                <span>${score}% Phù Hợp</span>
+                <span>${score}/100 · từ khóa</span>
               </span>
             </div>
 
@@ -2831,16 +2833,16 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
       const logoImg = document.getElementById('modal-job-logo');
       if (logoImg) {
-        logoImg.src = job.companyLogo || 'https://upload.wikimedia.org/wikipedia/commons/1/11/FPT_logo_2010.svg';
+        logoImg.src = job.companyLogo || 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
       }
-      document.getElementById('modal-job-company').textContent = job.company || '';
+      document.getElementById('modal-job-company').textContent = (job.isSynthetic ? '[GIẢ LẬP] ' : '') + (job.company || '');
       document.getElementById('modal-job-role').textContent = job.role || '';
-      document.getElementById('modal-job-match-badge').textContent = `${job.matchScore || 90}% Phù Hợp`;
+      document.getElementById('modal-job-match-badge').textContent = `${Number.isFinite(job.matchScore) ? job.matchScore : 0}/100 · từ khóa`;
       document.getElementById('modal-job-salary').textContent = job.salary || 'Thỏa thuận';
       document.getElementById('modal-job-location').textContent = job.location || 'Toàn quốc';
       document.getElementById('modal-job-worktype').textContent = job.workType || 'Toàn thời gian';
       document.getElementById('modal-job-culture').textContent = job.cultureDetails || job.culture || '';
-      document.getElementById('modal-job-fitreason').textContent = job.fitReason || 'Hồ sơ có tỷ lệ tương thích cao với yêu cầu tuyển dụng.';
+      document.getElementById('modal-job-fitreason').textContent = (job.matchingReasons || []).join(' ') || 'Job giả định để test; chưa có bằng chứng phù hợp.';
 
       const kwContainer = document.getElementById('modal-job-keywords');
       if (kwContainer) {
@@ -3366,7 +3368,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
           <!-- Tab 1: Live Visual Template CV -->
           <div id="cv-tab-visual" class="${currentCVTab === 'visual' ? '' : 'hidden'} flex-1 w-full h-full relative overflow-hidden bg-slate-200/60">
-            <iframe id="cv-rendered-iframe" class="w-full h-full border-0 bg-transparent" title="Bản CV hoàn chỉnh"></iframe>
+            <iframe onload="window.connectCVPreview?.mount(this)" id="cv-rendered-iframe" class="w-full h-full border-0 bg-transparent" title="Bản CV hoàn chỉnh"></iframe>
           </div>
 
           <div class="px-4 py-2 bg-blue-50 text-xs text-blue-800">${isEn ? 'Facts are preserved from your profile. English translations are checked against the source before publication.' : 'Dữ kiện được giữ theo profile. Bản dịch tiếng Anh được đối chiếu với nguồn trước khi tạo CV.'}</div>
@@ -3503,6 +3505,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       if (!doc?.querySelector('.cv-page-container')) return '';
       const clone = doc.documentElement.cloneNode(true);
       clone.querySelectorAll('.cv-toolbar, .cv-photo-editor').forEach(el=>el.remove());
+      window.connectCVPreview?.clean(clone);
       return '<!DOCTYPE html>' + clone.outerHTML;
     }
 
@@ -3519,7 +3522,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           const profileField = document.getElementById('cv-profile');
           const profile = JSON.parse(profileField.value);
           if (profile && typeof profile === 'object') {
-            profile.avatarCrop = { zoom:Number(photo.dataset.photoZoom), x:Number(photo.dataset.photoX), y:Number(photo.dataset.photoY) };
+            profile.avatarCrop = { zoom:Number(photo.dataset.photoZoom), x:Number(photo.dataset.photoX), y:Number(photo.dataset.photoY), fit:photo.dataset.photoFit === 'cover' ? 'cover' : 'contain' };
             profileField.value = JSON.stringify(profile);
             window.dispatchEvent(new Event('connectcv:profile-change'));
           }
@@ -6343,7 +6346,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 <!-- MODAL XEM TOÀN MÀN HÌNH CV ĐỘC BẢN HOÀN CHỈNH -->
 <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-xs z-50 hidden flex items-center justify-center p-2 sm:p-4" id="modal-cv-fullscreen">
 <div class="bg-white rounded-2xl w-full max-w-5xl h-[94vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
-<div class="px-5 py-3 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
+<div class="px-5 py-3 bg-slate-100 border-b border-slate-200 flex flex-wrap gap-3 items-center justify-between">
 <div class="flex items-center space-x-3">
 <h3 class="text-sm font-bold text-slate-800 flex items-center">
 <i class="fa-solid fa-file-invoice text-blue-600 mr-2"></i> Toàn Màn Hình: Bản CV Độc Bản
@@ -6367,8 +6370,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           </button>
 </div>
 </div>
-<div class="flex-1 bg-slate-300/80 p-2 overflow-hidden">
-<iframe class="w-full h-full bg-white rounded-lg border-0 shadow-inner" id="iframe-cv-fullscreen" src="about:blank"></iframe>
+<div class="flex-1 min-h-0 bg-slate-300/80 p-2 overflow-hidden">
+<iframe class="w-full h-full bg-white rounded-lg border-0 shadow-inner" id="iframe-cv-fullscreen" onload="window.connectCVPreview?.mount(this)" src="about:blank"></iframe>
 </div>
 </div>
 </div>

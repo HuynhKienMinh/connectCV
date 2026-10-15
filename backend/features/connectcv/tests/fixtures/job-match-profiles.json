@@ -1,0 +1,1602 @@
+[
+  {
+    "jobId": "synthetic-it-01",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Backend Developer Node.js",
+      "skills": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-01"
+  },
+  {
+    "jobId": "synthetic-it-02",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Frontend Developer React",
+      "skills": [
+        "React",
+        "TypeScript",
+        "CSS",
+        "Accessibility"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-02"
+  },
+  {
+    "jobId": "synthetic-it-03",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Mobile Developer Flutter",
+      "skills": [
+        "Flutter",
+        "Dart",
+        "Android",
+        "iOS"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-03"
+  },
+  {
+    "jobId": "synthetic-it-04",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kỹ sư QA Automation",
+      "skills": [
+        "Playwright",
+        "Testing",
+        "JavaScript",
+        "CI/CD"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-04"
+  },
+  {
+    "jobId": "synthetic-it-05",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kỹ sư DevOps",
+      "skills": [
+        "Kubernetes",
+        "Linux",
+        "Terraform",
+        "CI/CD"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-05"
+  },
+  {
+    "jobId": "synthetic-it-06",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên An toàn thông tin",
+      "skills": [
+        "Security",
+        "SIEM",
+        "OWASP",
+        "Incident Response"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-06"
+  },
+  {
+    "jobId": "synthetic-it-07",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Data Analyst SQL",
+      "skills": [
+        "SQL",
+        "Power BI",
+        "Python",
+        "Data Analysis"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-07"
+  },
+  {
+    "jobId": "synthetic-it-08",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Data Engineer",
+      "skills": [
+        "Python",
+        "ETL",
+        "Spark",
+        "SQL"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-08"
+  },
+  {
+    "jobId": "synthetic-it-09",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "UX UI Designer",
+      "skills": [
+        "Figma",
+        "Wireframe",
+        "User Research",
+        "Prototyping"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-09"
+  },
+  {
+    "jobId": "synthetic-it-10",
+    "industry": "Công nghệ Thông tin",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "IT Support",
+      "skills": [
+        "Windows",
+        "Networking",
+        "Helpdesk",
+        "Troubleshooting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-it-10"
+  },
+  {
+    "jobId": "synthetic-marketing-01",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Digital Marketing",
+      "skills": [
+        "Google Ads",
+        "SEO",
+        "Analytics",
+        "Campaign"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-01"
+  },
+  {
+    "jobId": "synthetic-marketing-02",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Content Marketing",
+      "skills": [
+        "Copywriting",
+        "Content",
+        "SEO",
+        "Storytelling"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-02"
+  },
+  {
+    "jobId": "synthetic-marketing-03",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Social Media Specialist",
+      "skills": [
+        "Social Media",
+        "Facebook",
+        "TikTok",
+        "Content"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-03"
+  },
+  {
+    "jobId": "synthetic-marketing-04",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "SEO Specialist",
+      "skills": [
+        "SEO",
+        "Search Console",
+        "Keyword Research",
+        "Analytics"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-04"
+  },
+  {
+    "jobId": "synthetic-marketing-05",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Performance Marketing",
+      "skills": [
+        "Google Ads",
+        "Meta Ads",
+        "ROAS",
+        "A/B Testing"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-05"
+  },
+  {
+    "jobId": "synthetic-marketing-06",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên PR",
+      "skills": [
+        "PR",
+        "Media Relations",
+        "Press Release",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-06"
+  },
+  {
+    "jobId": "synthetic-marketing-07",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Brand Executive",
+      "skills": [
+        "Branding",
+        "Market Research",
+        "Campaign",
+        "Positioning"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-07"
+  },
+  {
+    "jobId": "synthetic-marketing-08",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Email Marketing",
+      "skills": [
+        "Email",
+        "CRM",
+        "Automation",
+        "Segmentation"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-08"
+  },
+  {
+    "jobId": "synthetic-marketing-09",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Tổ chức sự kiện",
+      "skills": [
+        "Event Planning",
+        "Budget",
+        "Vendor",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-09"
+  },
+  {
+    "jobId": "synthetic-marketing-10",
+    "industry": "Marketing & Truyền thông",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Marketing Analyst",
+      "skills": [
+        "Analytics",
+        "Excel",
+        "SQL",
+        "Market Research"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-marketing-10"
+  },
+  {
+    "jobId": "synthetic-retail-01",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Vận hành sàn thương mại điện tử",
+      "skills": [
+        "Shopee",
+        "Lazada",
+        "Listing",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-01"
+  },
+  {
+    "jobId": "synthetic-retail-02",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quản lý cửa hàng",
+      "skills": [
+        "Retail",
+        "Inventory",
+        "POS",
+        "Team Management"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-02"
+  },
+  {
+    "jobId": "synthetic-retail-03",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Nhân viên bán lẻ",
+      "skills": [
+        "Retail",
+        "POS",
+        "Customer Service",
+        "Sales"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-03"
+  },
+  {
+    "jobId": "synthetic-retail-04",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Merchandiser",
+      "skills": [
+        "Merchandising",
+        "Planogram",
+        "Inventory",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-04"
+  },
+  {
+    "jobId": "synthetic-retail-05",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Ecommerce Analyst",
+      "skills": [
+        "Ecommerce",
+        "Analytics",
+        "Excel",
+        "Conversion"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-05"
+  },
+  {
+    "jobId": "synthetic-retail-06",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên mua hàng",
+      "skills": [
+        "Purchasing",
+        "Negotiation",
+        "Vendor",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-06"
+  },
+  {
+    "jobId": "synthetic-retail-07",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Điều phối đơn hàng",
+      "skills": [
+        "Order Management",
+        "Inventory",
+        "Excel",
+        "Customer Service"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-07"
+  },
+  {
+    "jobId": "synthetic-retail-08",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên trưng bày",
+      "skills": [
+        "Visual Merchandising",
+        "Display",
+        "Retail",
+        "Design"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-08"
+  },
+  {
+    "jobId": "synthetic-retail-09",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quản lý kho bán lẻ",
+      "skills": [
+        "Warehouse",
+        "Inventory",
+        "WMS",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-09"
+  },
+  {
+    "jobId": "synthetic-retail-10",
+    "industry": "Thương mại Điện tử & Bán lẻ",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên vận hành livestream",
+      "skills": [
+        "Livestream",
+        "TikTok",
+        "Sales",
+        "Content"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-retail-10"
+  },
+  {
+    "jobId": "synthetic-creative-01",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Graphic Designer",
+      "skills": [
+        "Photoshop",
+        "Illustrator",
+        "Typography",
+        "Layout"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-01"
+  },
+  {
+    "jobId": "synthetic-creative-02",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Video Editor",
+      "skills": [
+        "Premiere",
+        "After Effects",
+        "Editing",
+        "Storyboard"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-02"
+  },
+  {
+    "jobId": "synthetic-creative-03",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Motion Designer",
+      "skills": [
+        "After Effects",
+        "Animation",
+        "Illustrator",
+        "Storyboard"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-03"
+  },
+  {
+    "jobId": "synthetic-creative-04",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Nhiếp ảnh sản phẩm",
+      "skills": [
+        "Photography",
+        "Lighting",
+        "Lightroom",
+        "Retouch"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-04"
+  },
+  {
+    "jobId": "synthetic-creative-05",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Thiết kế 3D",
+      "skills": [
+        "Blender",
+        "3D Modeling",
+        "Rendering",
+        "Texturing"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-05"
+  },
+  {
+    "jobId": "synthetic-creative-06",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Illustrator",
+      "skills": [
+        "Illustration",
+        "Drawing",
+        "Photoshop",
+        "Composition"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-06"
+  },
+  {
+    "jobId": "synthetic-creative-07",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Thiết kế bao bì",
+      "skills": [
+        "Packaging",
+        "Illustrator",
+        "Print",
+        "Typography"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-07"
+  },
+  {
+    "jobId": "synthetic-creative-08",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Art Director",
+      "skills": [
+        "Art Direction",
+        "Branding",
+        "Concept",
+        "Team Management"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-08"
+  },
+  {
+    "jobId": "synthetic-creative-09",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Thiết kế nội thất",
+      "skills": [
+        "AutoCAD",
+        "SketchUp",
+        "Interior Design",
+        "Rendering"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-09"
+  },
+  {
+    "jobId": "synthetic-creative-10",
+    "industry": "Sáng tạo & Nghệ thuật",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Biên tập âm thanh",
+      "skills": [
+        "Audio Editing",
+        "Audition",
+        "Mixing",
+        "Sound Design"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-creative-10"
+  },
+  {
+    "jobId": "synthetic-finance-01",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kế toán tổng hợp",
+      "skills": [
+        "Accounting",
+        "Excel",
+        "Financial Statements",
+        "Reconciliation"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-01"
+  },
+  {
+    "jobId": "synthetic-finance-02",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kế toán công nợ",
+      "skills": [
+        "Receivables",
+        "Payables",
+        "Excel",
+        "Reconciliation"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-02"
+  },
+  {
+    "jobId": "synthetic-finance-03",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kế toán thuế",
+      "skills": [
+        "Tax",
+        "VAT",
+        "Accounting",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-03"
+  },
+  {
+    "jobId": "synthetic-finance-04",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Financial Analyst",
+      "skills": [
+        "Financial Analysis",
+        "Excel",
+        "Forecasting",
+        "Modeling"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-04"
+  },
+  {
+    "jobId": "synthetic-finance-05",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kiểm toán viên",
+      "skills": [
+        "Audit",
+        "Internal Control",
+        "Accounting",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-05"
+  },
+  {
+    "jobId": "synthetic-finance-06",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên ngân sách",
+      "skills": [
+        "Budgeting",
+        "Forecasting",
+        "Excel",
+        "Variance Analysis"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-06"
+  },
+  {
+    "jobId": "synthetic-finance-07",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Kế toán tiền lương",
+      "skills": [
+        "Payroll",
+        "Excel",
+        "Accounting",
+        "Social Insurance"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-07"
+  },
+  {
+    "jobId": "synthetic-finance-08",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên quản trị rủi ro",
+      "skills": [
+        "Risk Management",
+        "Excel",
+        "Internal Control",
+        "Reporting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-08"
+  },
+  {
+    "jobId": "synthetic-finance-09",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên tín dụng",
+      "skills": [
+        "Credit Analysis",
+        "Financial Statements",
+        "Excel",
+        "Risk Management"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-09"
+  },
+  {
+    "jobId": "synthetic-finance-10",
+    "industry": "Tài chính & Kế toán",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên kho bạc",
+      "skills": [
+        "Treasury",
+        "Cash Flow",
+        "Banking",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-finance-10"
+  },
+  {
+    "jobId": "synthetic-sales-01",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Sales B2B",
+      "skills": [
+        "B2B",
+        "Sales",
+        "Negotiation",
+        "CRM"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-01"
+  },
+  {
+    "jobId": "synthetic-sales-02",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Account Executive",
+      "skills": [
+        "Account Management",
+        "Sales",
+        "CRM",
+        "Presentation"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-02"
+  },
+  {
+    "jobId": "synthetic-sales-03",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Business Development",
+      "skills": [
+        "Business Development",
+        "Lead Generation",
+        "Negotiation",
+        "CRM"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-03"
+  },
+  {
+    "jobId": "synthetic-sales-04",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Sales Operations",
+      "skills": [
+        "Salesforce",
+        "Excel",
+        "Sales Operations",
+        "Reporting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-04"
+  },
+  {
+    "jobId": "synthetic-sales-05",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Tư vấn bán hàng",
+      "skills": [
+        "Sales",
+        "Consulting",
+        "Customer Service",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-05"
+  },
+  {
+    "jobId": "synthetic-sales-06",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Key Account Manager",
+      "skills": [
+        "Key Account",
+        "Negotiation",
+        "Sales",
+        "Planning"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-06"
+  },
+  {
+    "jobId": "synthetic-sales-07",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên thị trường",
+      "skills": [
+        "Market Research",
+        "Sales",
+        "Excel",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-07"
+  },
+  {
+    "jobId": "synthetic-sales-08",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Inside Sales",
+      "skills": [
+        "Telesales",
+        "CRM",
+        "Lead Qualification",
+        "Sales"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-08"
+  },
+  {
+    "jobId": "synthetic-sales-09",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Sales Engineer",
+      "skills": [
+        "Technical Sales",
+        "Presentation",
+        "Solution Design",
+        "CRM"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-09"
+  },
+  {
+    "jobId": "synthetic-sales-10",
+    "industry": "Kinh doanh & Bán hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quản lý kinh doanh",
+      "skills": [
+        "Sales Management",
+        "Forecasting",
+        "Coaching",
+        "CRM"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-sales-10"
+  },
+  {
+    "jobId": "synthetic-hospitality-01",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Lễ tân khách sạn",
+      "skills": [
+        "Front Office",
+        "Reservation",
+        "English",
+        "Customer Service"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-01"
+  },
+  {
+    "jobId": "synthetic-hospitality-02",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Nhân viên nhà hàng",
+      "skills": [
+        "Food Service",
+        "POS",
+        "Hospitality",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-02"
+  },
+  {
+    "jobId": "synthetic-hospitality-03",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quản lý nhà hàng",
+      "skills": [
+        "Restaurant Management",
+        "Inventory",
+        "Food Safety",
+        "Team Management"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-03"
+  },
+  {
+    "jobId": "synthetic-hospitality-04",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Nhân viên buồng phòng",
+      "skills": [
+        "Housekeeping",
+        "Hospitality",
+        "Quality Control",
+        "Time Management"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-04"
+  },
+  {
+    "jobId": "synthetic-hospitality-05",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Đầu bếp",
+      "skills": [
+        "Cooking",
+        "Food Safety",
+        "Menu Planning",
+        "Inventory"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-05"
+  },
+  {
+    "jobId": "synthetic-hospitality-06",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Barista",
+      "skills": [
+        "Coffee",
+        "Brewing",
+        "Customer Service",
+        "Food Safety"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-06"
+  },
+  {
+    "jobId": "synthetic-hospitality-07",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên đặt phòng",
+      "skills": [
+        "Reservation",
+        "PMS",
+        "English",
+        "Customer Service"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-07"
+  },
+  {
+    "jobId": "synthetic-hospitality-08",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Điều phối tiệc",
+      "skills": [
+        "Banquet",
+        "Event Planning",
+        "Hospitality",
+        "Budget"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-08"
+  },
+  {
+    "jobId": "synthetic-hospitality-09",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quản lý doanh thu phòng",
+      "skills": [
+        "Revenue Management",
+        "Excel",
+        "Forecasting",
+        "PMS"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-09"
+  },
+  {
+    "jobId": "synthetic-hospitality-10",
+    "industry": "Khách sạn & Nhà hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Giám sát dịch vụ",
+      "skills": [
+        "Hospitality",
+        "Quality Control",
+        "Coaching",
+        "Customer Service"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hospitality-10"
+  },
+  {
+    "jobId": "synthetic-hr-01",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên tuyển dụng",
+      "skills": [
+        "Recruitment",
+        "Sourcing",
+        "Interviewing",
+        "ATS"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-01"
+  },
+  {
+    "jobId": "synthetic-hr-02",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "HR Generalist",
+      "skills": [
+        "HR",
+        "Employee Relations",
+        "Payroll",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-02"
+  },
+  {
+    "jobId": "synthetic-hr-03",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên C&B",
+      "skills": [
+        "Compensation",
+        "Benefits",
+        "Payroll",
+        "Excel"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-03"
+  },
+  {
+    "jobId": "synthetic-hr-04",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên đào tạo nội bộ",
+      "skills": [
+        "Training",
+        "Facilitation",
+        "LMS",
+        "Evaluation"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-04"
+  },
+  {
+    "jobId": "synthetic-hr-05",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Nhân viên hành chính",
+      "skills": [
+        "Administration",
+        "Excel",
+        "Document Management",
+        "Scheduling"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-05"
+  },
+  {
+    "jobId": "synthetic-hr-06",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "HR Business Partner",
+      "skills": [
+        "HRBP",
+        "Employee Relations",
+        "Performance Management",
+        "Coaching"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-06"
+  },
+  {
+    "jobId": "synthetic-hr-07",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên nhân sự dữ liệu",
+      "skills": [
+        "HR Analytics",
+        "Excel",
+        "Power BI",
+        "Reporting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-07"
+  },
+  {
+    "jobId": "synthetic-hr-08",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Điều phối văn phòng",
+      "skills": [
+        "Office Management",
+        "Vendor",
+        "Scheduling",
+        "Budget"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-08"
+  },
+  {
+    "jobId": "synthetic-hr-09",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên văn hóa doanh nghiệp",
+      "skills": [
+        "Internal Communication",
+        "Engagement",
+        "Event Planning",
+        "Content"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-09"
+  },
+  {
+    "jobId": "synthetic-hr-10",
+    "industry": "Hành chính & Nhân sự",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên quan hệ lao động",
+      "skills": [
+        "Employee Relations",
+        "Labor Relations",
+        "HR",
+        "Documentation"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-hr-10"
+  },
+  {
+    "jobId": "synthetic-education-01",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Giáo viên tiếng Anh",
+      "skills": [
+        "English",
+        "Lesson Planning",
+        "Teaching",
+        "Assessment"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-01"
+  },
+  {
+    "jobId": "synthetic-education-02",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Giáo viên toán",
+      "skills": [
+        "Mathematics",
+        "Teaching",
+        "Lesson Planning",
+        "Assessment"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-02"
+  },
+  {
+    "jobId": "synthetic-education-03",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Instructional Designer",
+      "skills": [
+        "Instructional Design",
+        "LMS",
+        "Elearning",
+        "Storyboarding"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-03"
+  },
+  {
+    "jobId": "synthetic-education-04",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Tư vấn học tập",
+      "skills": [
+        "Academic Advising",
+        "Communication",
+        "Student Support",
+        "Planning"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-04"
+  },
+  {
+    "jobId": "synthetic-education-05",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Điều phối đào tạo",
+      "skills": [
+        "Training Coordination",
+        "Scheduling",
+        "LMS",
+        "Reporting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-05"
+  },
+  {
+    "jobId": "synthetic-education-06",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Giảng viên công nghệ",
+      "skills": [
+        "Programming",
+        "Teaching",
+        "Curriculum",
+        "Assessment"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-06"
+  },
+  {
+    "jobId": "synthetic-education-07",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Biên soạn học liệu",
+      "skills": [
+        "Curriculum",
+        "Writing",
+        "Research",
+        "Assessment"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-07"
+  },
+  {
+    "jobId": "synthetic-education-08",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên khảo thí",
+      "skills": [
+        "Assessment",
+        "Excel",
+        "Data Analysis",
+        "Quality Assurance"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-08"
+  },
+  {
+    "jobId": "synthetic-education-09",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quản lý học vụ",
+      "skills": [
+        "Academic Operations",
+        "Scheduling",
+        "Student Support",
+        "Reporting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-09"
+  },
+  {
+    "jobId": "synthetic-education-10",
+    "industry": "Giáo dục & Đào tạo",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Đào tạo kỹ năng mềm",
+      "skills": [
+        "Facilitation",
+        "Communication",
+        "Coaching",
+        "Training"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-education-10"
+  },
+  {
+    "jobId": "synthetic-support-01",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Customer Support",
+      "skills": [
+        "Customer Service",
+        "Ticketing",
+        "Communication",
+        "Troubleshooting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-01"
+  },
+  {
+    "jobId": "synthetic-support-02",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Customer Success",
+      "skills": [
+        "Customer Success",
+        "Onboarding",
+        "CRM",
+        "Retention"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-02"
+  },
+  {
+    "jobId": "synthetic-support-03",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên tổng đài",
+      "skills": [
+        "Call Center",
+        "Communication",
+        "CRM",
+        "Customer Service"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-03"
+  },
+  {
+    "jobId": "synthetic-support-04",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Technical Support",
+      "skills": [
+        "Troubleshooting",
+        "Ticketing",
+        "Networking",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-04"
+  },
+  {
+    "jobId": "synthetic-support-05",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Tư vấn giải pháp",
+      "skills": [
+        "Consulting",
+        "Requirements Analysis",
+        "Presentation",
+        "Solution Design"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-05"
+  },
+  {
+    "jobId": "synthetic-support-06",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên trải nghiệm khách hàng",
+      "skills": [
+        "Customer Experience",
+        "Survey",
+        "Analytics",
+        "Journey Mapping"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-06"
+  },
+  {
+    "jobId": "synthetic-support-07",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Quality Analyst dịch vụ",
+      "skills": [
+        "Quality Assurance",
+        "Call Monitoring",
+        "Excel",
+        "Coaching"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-07"
+  },
+  {
+    "jobId": "synthetic-support-08",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Chuyên viên xử lý khiếu nại",
+      "skills": [
+        "Complaint Resolution",
+        "Negotiation",
+        "CRM",
+        "Communication"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-08"
+  },
+  {
+    "jobId": "synthetic-support-09",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Điều phối dịch vụ",
+      "skills": [
+        "Service Operations",
+        "Scheduling",
+        "Ticketing",
+        "Reporting"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-09"
+  },
+  {
+    "jobId": "synthetic-support-10",
+    "industry": "Tư vấn & Chăm sóc khách hàng",
+    "profile": {
+      "fullName": "Ứng viên giả lập",
+      "targetRole": "Trưởng nhóm hỗ trợ",
+      "skills": [
+        "Team Management",
+        "Customer Service",
+        "Coaching",
+        "SLA"
+      ],
+      "summary": "Hồ sơ test, không phải người thật."
+    },
+    "expectedTopJob": "synthetic-support-10"
+  }
+]

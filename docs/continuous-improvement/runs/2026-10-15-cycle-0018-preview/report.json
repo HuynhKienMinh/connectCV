@@ -1,0 +1,84 @@
+{
+  "synthetic": true,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "rows": [
+    {
+      "phase": "after-normal",
+      "width": 1366,
+      "viewport": 1334,
+      "page": {
+        "x": 270.15625,
+        "width": 793.6875
+      },
+      "photo": {
+        "width": 264,
+        "height": 169,
+        "fit": "contain",
+        "frameWidth": 264,
+        "frameHeight": 169,
+        "naturalWidth": 240,
+        "naturalHeight": 400
+      },
+      "previewStyles": 1
+    },
+    {
+      "phase": "after-full",
+      "width": 1366,
+      "viewport": 1006,
+      "page": {
+        "x": 106.15625,
+        "width": 793.6875
+      },
+      "photo": {
+        "width": 264,
+        "height": 169,
+        "fit": "contain",
+        "frameWidth": 264,
+        "frameHeight": 169,
+        "naturalWidth": 240,
+        "naturalHeight": 400
+      },
+      "previewStyles": 1
+    },
+    {
+      "phase": "after-normal",
+      "width": 390,
+      "viewport": 358,
+      "page": {
+        "x": 16.0625,
+        "width": 325.875
+      },
+      "photo": {
+        "width": 108.390625,
+        "height": 69.375,
+        "fit": "contain",
+        "frameWidth": 264,
+        "frameHeight": 169,
+        "naturalWidth": 240,
+        "naturalHeight": 400
+      },
+      "previewStyles": 1
+    },
+    {
+      "phase": "after-full",
+      "width": 390,
+      "viewport": 356,
+      "page": {
+        "x": 16.0625,
+        "width": 323.875
+      },
+      "photo": {
+        "width": 107.71875,
+        "height": 68.953125,
+        "fit": "contain",
+        "frameWidth": 264,
+        "frameHeight": 169,
+        "naturalWidth": 240,
+        "naturalHeight": 400
+      },
+      "previewStyles": 1
+    }
+  ],
+  "errors": []
+}
