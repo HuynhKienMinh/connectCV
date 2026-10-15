@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 21,
-  "lastRun": "runs/2026-10-16-cycle-0021.md",
+  "completedCycles": 22,
+  "lastRun": "runs/2026-10-16-cycle-0022.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "LOCAL_FAULT_MATRIX_VERIFIED_CI_HTTP_MODERATION_PENDING",
+  "issueState": "LOCAL_HTTP_ACTOR_MATRIX_VERIFIED_CI_MODERATION_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "SOCIAL001: five new local transaction/projection tests and review/main CI passed (83f82f8). Next P1 scope: actual HTTP actor/publication/reward outcomes plus moderation/report/role authorization using local synthetic fixtures. No claim of real Firestore distributed isolation from in-memory transaction model.",
-    "SOCIAL003 P2: after commit with response lost, same-content retry returns409 with no owner receipt; balance/post remain consistent. Design receipt recovery before changing runtime; no public/reward test writes.",
+    "SOCIAL001 P1: six new actual local HTTP scenarios and review/main CI pass on ea36649. Next implement report/moderation authorization contract with existing trusted admin claim, reversible hide/reinstate and audit, local anonymous/unverified/A/B/admin/forged-admin matrix before runtime delivery. Current feature has no report/moderation route. No IAM change or migration/bulk write; encrypted DB restore gate still applies.",
+    "SOCIAL003 P2: actual local socket loss after committed publication then retry returns409 without own receipt; changed review/question6 also samehash409. Preserve exact-payload/same-owner recovery boundary and no second-owner metadata leak; UI recovery not implemented. Like remains toggle and retry-idempotency unverified.",
     "DATA002 and AUTH002 remain pending user real-account save/iPhone login confirmation; do not repeat green smoke or notify unchanged status.",
-    "Current liveBE1bf/FEaa and verified Drive backup remain unchanged. No runtime deployment or newlargebackup for test-only cycle21; encrypted DB restore/commercial gates stay OPEN."
+    "Current liveBE1bf/FEaa and verified private Drive backup unchanged. No runtime deployment or new large backup/build/restoreclone for test-only cycle22; real Firebase/Firestore actor E2E, encrypted DB restore and commercial gates stay OPEN."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -123,10 +123,10 @@
     "clientBrowserFixtureVerified": true,
     "frontendRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792049909571000",
     "remainingProfileRecovery": "Real user production save and full image-format/mobile matrix unverified; local/CI actual controller+router+in-memory DB pass.",
-    "testOnlyReviewCommit": "83f82f89502f471dbfd5910b6aa76eb57acc6cca",
-    "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38781358358",
+    "testOnlyReviewCommit": "ea36649011823c2ae204b36da286e1a19ff6b451",
+    "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
-    "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38781780312",
+    "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
     "currentCycleRuntimeChanged": false,
     "currentCycleDeployAttempted": false
   }
