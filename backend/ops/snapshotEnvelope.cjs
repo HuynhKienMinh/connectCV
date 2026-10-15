@@ -34,6 +34,7 @@ function validate(snapshot){
 function checkKey(key){if(!Buffer.isBuffer(key)||key.length!==32)throw new Error('BACKUP_KEY_INVALID');}
 function cap(maxBytes){if(!Number.isSafeInteger(maxBytes)||maxBytes<1||maxBytes>MAX_BYTES)throw new Error('BACKUP_LIMIT_INVALID');return maxBytes;}
 function digest(snapshot){return crypto.createHash('sha256').update(canonical(validate(snapshot))).digest('hex');}
+function serializedSize(snapshot){return Buffer.byteLength(canonical(validate(snapshot)));}
 function seal(snapshot,key,keyId,{maxBytes=MAX_BYTES}={}){
  checkKey(key);cap(maxBytes);validate(snapshot);
  if(typeof keyId!=='string'||keyId.length!==36||!/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(keyId))throw new Error('BACKUP_KEY_ID_INVALID');
@@ -63,4 +64,4 @@ function open(archive,key,{maxBytes=MAX_BYTES}={}){
  }catch{throw new Error('BACKUP_ARCHIVE_INVALID');}
  finally{chunk?.fill(0);plain?.fill(0);}
 }
-module.exports={seal,open,digest,MAX_BYTES};
+module.exports={seal,open,digest,serializedSize,MAX_BYTES};
