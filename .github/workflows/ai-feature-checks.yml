@@ -26,7 +26,7 @@ jobs:
         working-directory: frontend
         env:
           VITE_API_BASE_URL: 'https://connectcv-api-minh.onrender.com'
-      - run: node --test tests/authFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js
+      - run: node --test tests/authFlow.test.js tests/googleAuthFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js
         working-directory: frontend
       - run: node --test tests/account.test.cjs tests/portfolio.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs
         working-directory: backend
@@ -50,6 +50,8 @@ jobs:
           node-version: '24'
       - run: npm ci --omit=dev
         working-directory: backend/features/connectcv
+      - run: npm ci
+        working-directory: frontend
       - name: Install pinned Chromium for sandboxed PDF verification
         run: node node_modules/playwright-core/cli.js install --with-deps --no-shell chromium
         working-directory: backend/features/connectcv
@@ -61,6 +63,12 @@ jobs:
         env:
           NODE_ENV: production
           PLAYWRIGHT_BROWSERS_PATH: '0'
+      - name: Verify mobile Google login guards and recovery with synthetic SDK
+        run: node tests/googleAuthUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          AUTH_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-auth-qa'
       - name: Verify readiness recovery after browser re-creation
         run: node tests/rendererReconnect.check.cjs
         working-directory: backend/features/connectcv

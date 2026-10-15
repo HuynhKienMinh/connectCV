@@ -1,0 +1,7 @@
+{
+  "name": "projects/connect-cv/sites/connect-cv/channels/live",
+  "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792007279698000",
+  "version": "projects/connect-cv/sites/connect-cv/versions/caed1696d4a4fa98",
+  "releaseTime": "2026-10-14T19:47:59.698Z",
+  "rollbackCommand": "firebase hosting:clone connect-cv@caed1696d4a4fa98 connect-cv:live --project connect-cv --non-interactive"
+}

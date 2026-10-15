@@ -1,0 +1,75 @@
+{
+  "syntheticSdk": true,
+  "realOAuthVerified": false,
+  "results": [
+    {
+      "name": "zalo",
+      "passed": true,
+      "calls": []
+    },
+    {
+      "name": "safari-handoff",
+      "passed": true,
+      "calls": [
+        "handoff:https://connect-cv.firebaseapp.com/login"
+      ]
+    },
+    {
+      "name": "same-origin-redirect",
+      "passed": true,
+      "calls": [
+        "recover",
+        "redirect"
+      ]
+    },
+    {
+      "name": "storage-denied",
+      "passed": true,
+      "calls": [
+        "recover"
+      ]
+    },
+    {
+      "name": "missing-initial-state",
+      "passed": true,
+      "calls": [
+        "recover"
+      ]
+    },
+    {
+      "name": "redirect-return-current-user",
+      "passed": true,
+      "calls": [
+        "recover"
+      ]
+    },
+    {
+      "name": "stale-result-after-signout",
+      "passed": true,
+      "calls": [
+        "recover"
+      ]
+    },
+    {
+      "name": "desktop-popup",
+      "passed": true,
+      "calls": [
+        "popup"
+      ]
+    },
+    {
+      "name": "email-still-usable",
+      "passed": true,
+      "calls": [
+        "email"
+      ]
+    },
+    {
+      "name": "reset-still-usable",
+      "passed": true,
+      "calls": [
+        "reset"
+      ]
+    }
+  ]
+}

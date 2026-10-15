@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 18,
   "lastRun": "runs/2026-10-15-cycle-0018.md",
-  "activeRun": null,
-  "activeIssue": "SOCIAL001",
-  "issueState": "NEXT_COMMUNITY_LOCAL_SCENARIO",
+  "activeRun": "runs/2026-10-15-cycle-0019.md",
+  "activeIssue": "AUTH002",
+  "issueState": "VERIFIED_LOCAL_PENDING_CI_BACKUP",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,6 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
+    "AUTH002 direct user request: iPhone Zalo connect-cv.web.app missing initial state. Mobile auth recovery verified locally; await CI, Drive baseline/rollback and Hosting-only deploy; real iPhone OAuth confirmation pending.",
     "SOCIAL001 local privacy/reward retry/fault scenario. Before next deployment verify Drive backup of livef438d16; current verified cloud protectsb3. No real profile writes/public posts.",
     "CV003/JOB001 scoped verification complete: responsive actual UI/avatar saved-CV/PDF and100synthetic profiles local+CI; live source/catalog/auth/canary. Authenticated production generation/export/matching not exercised.",
     "CV002 split-word/full long/crop/order matrix, INT001 human pilot, dedicated synthetic accounts, encrypted database restore, licensing/pricing/tenant gates remain OPEN."
