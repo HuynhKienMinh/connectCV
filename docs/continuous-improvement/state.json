@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-15-cycle-0016.md",
   "activeRun": "runs/2026-10-15-cycle-0017.md",
   "activeIssue": "INT004",
-  "issueState": "SUMMARY_GROUNDING_LOCAL_VERIFIED_CI_PENDING",
+  "issueState": "SUMMARY_REVIEW_CI_SUCCESS_MAIN_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,14 +52,14 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0016-baseline-94e4418.json",
-    "protectedCommit": "94e4418b271b879205db716bcbf629674c1e6177",
-    "liveCommitCovered": false,
-    "nextDeploymentRequiresNewBaseline": true
+    "currentBaselineCatalog": "backup-transfer/cycle0017-baseline-b1a2279.json",
+    "protectedCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
+    "liveCommitCovered": true,
+    "nextDeploymentRequiresNewBaseline": false
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "INT004: full CI for per-answer whole-sentence summary grounding and null/zero UI. Local61feature tests + actual browser fixture pass; actual provider/human pilot remain unverified",
+    "INT004 reviewCI38673202088 SUCCESS exact884a52c; main fast-forwarded, await mainCI before Render deploy. Baseline b1 cloud checksum/restore verified and temp deleted",
     "CV002 stays open: title field fix deployed for four layouts/VI+EN; eight PDF facts and four long-title DOM cases passed local+LinuxCI, runtime version verified live.58split-word cases/full long/crop/order matrix unresolved",
     "Before next deployment create a verified private Drive backup of liveb1a2279. Current verified chain protects rollback94e4418, not the new live version; no persistent local bundles/build/restore clones",
     "Dedicated synthetic accounts, authenticated profile/PDF two-actor E2E, encrypted database restore, commercial rights/customer pilot gates remain open; no real profile writes or repeated AI calls"
@@ -98,23 +98,23 @@
   },
   "delivery": {
     "reviewCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
-    "status": "VERIFIED_LIVE_SCOPED_CYCLE16_COMPLETE",
+    "status": "SUMMARY_PATCH_PENDING_MAIN_CI",
     "lastPushError": null,
-    "nextAction": "Interview rotation: local synthetic non-IT transcript evidence/rubric scenario; keep missing human pilot and dedicated accounts explicit",
+    "nextAction": "Check mainCI exact884a52c before Render specific-commit deploy. Rollbackb1 cloud chain verified; no FE rebuild.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38671205663",
-    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38671514503",
-    "candidateRelease": "dep-db83ni0n74is73dlta10",
+    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38673447978",
+    "candidateRelease": null,
     "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
     "backendStatus": "VERIFIED_LIVE_VERSION_CANARY_AUTH_SMOKE",
     "autoDeployDisabledBySpecificCommit": true,
     "lastCandidateCheckedAt": "2026-10-15T02:39:02.209832+00:00",
     "remainingFrontendRecovery": "Design PDF stale-false refresh deployed and browser fixture verified; authenticated production download, DOCX/labels and full browser E2E remain pending",
-    "nextReviewStatus": "RELEASE_COMPLETE",
-    "nextReviewCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
-    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38671205663",
-    "candidateCommit": "b1a2279a7a9703ce87eb09107481b0bb3e504683",
+    "nextReviewStatus": "REVIEW_SUCCESS_MAIN_PENDING",
+    "nextReviewCommit": "884a52cb0dcc6ea59747694d21f020f90e9d8f73",
+    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38673202088",
+    "candidateCommit": "884a52cb0dcc6ea59747694d21f020f90e9d8f73",
     "clientBrowserFixtureVerified": true
   }
 }
