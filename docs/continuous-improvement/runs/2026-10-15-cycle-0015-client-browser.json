@@ -1,0 +1,56 @@
+{
+  "scope": "real local browser, actual export controller; mock API/print/file saving, not authenticated production E2E",
+  "cases": [
+    {
+      "route": "before",
+      "prints": 1,
+      "downloads": 0,
+      "requests": [],
+      "formats": [],
+      "finished": true,
+      "elapsedMs": 0,
+      "readyFlag": false
+    },
+    {
+      "route": "after",
+      "prints": 0,
+      "downloads": 1,
+      "requests": [
+        "/api/features/health",
+        "/api/cv/export-pdf"
+      ],
+      "formats": [
+        "design"
+      ],
+      "finished": true,
+      "elapsedMs": 7,
+      "readyFlag": true
+    },
+    {
+      "route": "unverified",
+      "prints": 1,
+      "downloads": 0,
+      "requests": [
+        "/api/features/health"
+      ],
+      "formats": [],
+      "finished": true,
+      "elapsedMs": 4,
+      "readyFlag": false
+    },
+    {
+      "route": "hung",
+      "prints": 1,
+      "downloads": 0,
+      "requests": [
+        "/api/features/health"
+      ],
+      "formats": [],
+      "finished": true,
+      "elapsedMs": 3012,
+      "readyFlag": false
+    }
+  ],
+  "cloudUserWrites": 0,
+  "aiCalls": 0
+}

@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-15T02:03:52.679574+00:00",
+  "renderRelease": "dep-db7tol4s728c739l4i8g",
+  "renderUiSource": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
+  "renderUiStatus": "Deploy succeeded | Live",
+  "renderUiDuration": "2h00m13s",
+  "pdfReady": true,
+  "pdfCanaryVerified": true,
+  "healthNoStore": true,
+  "anonymousExportStatus": 401,
+  "studioHtmlSha256": "523c2665297ee77ea4f5404368ab37545f5df0863a219fcb44cbbaf3ac090c42",
+  "studioHtmlMatchesGitSource": true,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "liveDisconnectDrill": false,
+  "authenticatedExportVerified": false,
+  "canaryLog": {
+    "ready": true,
+    "stage": "verified",
+    "checkedAt": "2026-10-14T21:44:58.754Z",
+    "pages": 1,
+    "bytes": 26980
+  }
+}

@@ -52,27 +52,26 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0015-baseline.json"
+    "currentBaselineCatalog": "backup-transfer/cycle0015-baseline-15daaa7.json"
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Resume cycle0015: inspect current Renderdep-db7tol4s728c739l4i8g/source15daaa7/status/log first; do not redeploy while Building. Baseline05fc9e9 remains live; if candidate failed inspect evidence before retry",
-    "Client recovery94e4418 reviewCI38631276843 SUCCESS; only release after current deployment resolved, current-live cloud code/build backup verified, mainCI and rollback gates passed. BE static change only; no extra Firebase deploy required",
-    "OPS005 FE API origin verified live; dedicated synthetic accounts/save/export E2E still missing",
-    "Keep CV002/full font matrix, DOCX/labels recovery, queue and encrypted database restore release gates open"
+    "Inspect new Renderdep-db83ce0m7kps73csu91g/source94e4418 first; do not overlap deployments. When Live verify sourceHTML/canary/auth; rollback baseline15daaa7 if release smoke fails",
+    "Only close cycle15 after client deployment confirmed; UI browser fixtures use mock API/print/save, not authenticated production E2E",
+    "Dedicated synthetic accounts, native fonts/full matrix, DOCX/labels, queue, data restore and commercial gates remain open"
   ],
   "deployment": {
-    "commit": "05fc9e979868fc57464495ef2b2c13208163d759",
+    "commit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
     "ciPassed": true,
-    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38543267663",
-    "rollbackCommit": "00a7804adca3658ccc32fd343f7eced7437bab7c",
-    "rollbackRelease": "dep-db7gldg473hc73db5e90",
-    "status": "VERIFIED_LIVE_CODE_FONT_ASSETS_AND_CANARY",
-    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db7kppmk1f9s73840ek0",
+    "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38626162355",
+    "rollbackCommit": "05fc9e979868fc57464495ef2b2c13208163d759",
+    "rollbackRelease": "dep-db7kppmk1f9s73840ek0",
+    "status": "VERIFIED_LIVE_ENGINE_RECOVERY_SOURCE_AND_CANARY",
+    "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-db7tol4s728c739l4i8g",
     "frontendAsset": "index-BVFhznbg.js",
     "frontendVerified": true,
     "frontendSha256": "f6860d0d7414c5a97d05bdfd12ceda64a9a5437a0c930eae4f950d776cea1784",
-    "verifiedAt": "2026-10-14T09:39:08.435Z",
+    "verifiedAt": "2026-10-15T02:03:52.679574+00:00",
     "frontendCommit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
     "pdfRendererReady": true,
     "livePdfExportVerified": false,
@@ -94,21 +93,23 @@
   },
   "delivery": {
     "reviewCommit": "15daaa7d003afccfa287bed0a7ad2376e0d9fc47",
-    "status": "FRONTEND_VERIFIED_BACKEND_DEPLOY_PENDING",
+    "status": "ENGINE_RECOVERY_LIVE_CLIENT_RECOVERY_DEPLOYING",
     "lastPushError": null,
     "nextAction": "Use per-command credential.username=HuynhKienMinh for pushes and username in Git credential lookup; no global config/credential changes",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38625620175",
-    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38626162355",
-    "candidateRelease": "dep-db7tol4s728c739l4i8g",
+    "mainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38669446439",
+    "candidateRelease": "dep-db83ce0m7kps73csu91g",
     "frontendStatus": "VERIFIED_LIVE_API_ORIGIN_ASSET_CORS_ACCOUNT_READ",
-    "backendStatus": "BUILDING_36M23S_NO_USABLE_BUILD_LOGS",
+    "backendStatus": "CLIENT_PATCH_BUILDING",
     "autoDeployDisabledBySpecificCommit": true,
     "lastCandidateCheckedAt": "2026-10-14T20:25:03.286748+00:00",
     "remainingFrontendRecovery": "LOCAL_VERIFIED: design PDF rechecks stale false on click with 3s read-only canary status; DOCX/labels/full browser E2E still pending",
-    "nextReviewStatus": "CLIENT_RECOVERY_CI_SUCCESS_WAITING_CURRENT_RELEASE",
+    "nextReviewStatus": "MAIN_CI_SUCCESS_DEPLOYING",
     "nextReviewCommit": "94e4418b271b879205db716bcbf629674c1e6177",
-    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38631276843"
+    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38631276843",
+    "candidateCommit": "94e4418b271b879205db716bcbf629674c1e6177",
+    "clientBrowserFixtureVerified": true
   }
 }
