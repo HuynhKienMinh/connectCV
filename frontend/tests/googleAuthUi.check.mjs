@@ -73,10 +73,12 @@ try{
   assert.equal(await p.getByRole('link',{name:'https://connect-cv.firebaseapp.com/login'}).getAttribute('href'),'https://connect-cv.firebaseapp.com/login');
  });
  await scenario('safari-handoff',{},async p=>{
+  await p.getByText('Nếu đang mở từ Zalo, chọn menu',{exact:false}).waitFor();
   await p.getByRole('button',{name:'Tiếp tục với Google'}).click();
   assert.deepEqual(await p.evaluate(()=>window.__calls),['handoff:https://connect-cv.firebaseapp.com/login']);
  });
  await scenario('same-origin-redirect',{host:'connect-cv.firebaseapp.com'},async p=>{
+  await p.getByText('Nếu đang mở từ Zalo, chọn menu',{exact:false}).waitFor();
   await p.waitForFunction(()=>window.__calls.length===1);
   await p.getByRole('button',{name:'Tiếp tục với Google'}).click();
   await p.getByText('Không kết nối được dịch vụ đăng nhập.',{exact:false}).waitFor();

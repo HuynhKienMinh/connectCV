@@ -43,6 +43,7 @@ export default function AuthPage({mode='login'}){
  return <main className="max-w-md mx-auto my-12 p-8 bg-white rounded-2xl border shadow-sm"><h1 className="text-2xl font-bold mb-6">{mode==='signup'?'Tạo tài khoản':mode==='reset'?'Đặt lại mật khẩu':'Đăng nhập'}</h1>
  {mode!=='reset'&&<aside className="mb-5 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-slate-800" aria-label="Đăng nhập trên điện thoại">
  <p>{googleFlow==='external-browser'?'Đang mở trong Zalo hoặc ứng dụng khác? Chọn menu ⋯ → Mở bằng trình duyệt (Safari/Chrome) trước khi đăng nhập Google.':googleFlow==='handoff'?'Đăng nhập Google trên điện thoại sẽ chuyển sang trang ConnectCV tương thích. Tại đó, bấm Tiếp tục với Google một lần nữa.':googleFlow==='redirect'?'Bấm Tiếp tục với Google để đăng nhập. Bạn sẽ quay lại ConnectCV trong trình duyệt này.':'Nếu mở từ Zalo, hãy dùng menu ⋯ → Mở bằng trình duyệt để đăng nhập trên Safari/Chrome.'}</p>
+ {(googleFlow==='handoff'||googleFlow==='redirect')&&<p className="mt-2">Nếu đang mở từ Zalo, chọn menu ⋯ → Mở bằng trình duyệt (Safari/Chrome) trước khi tiếp tục.</p>}
  <a href={GOOGLE_LOGIN_URL} className="mt-2 block break-all text-blue-700 underline">{GOOGLE_LOGIN_URL}</a>
  <button type="button" onClick={copyLoginUrl} className="mt-2 rounded-lg border border-blue-300 px-3 py-2 font-semibold text-blue-800">{copied?'Đã sao chép đường dẫn':'Sao chép đường dẫn'}</button>
  <span role="status" aria-live="polite" className="sr-only">{copied?'Đã sao chép đường dẫn đăng nhập. Mở Safari hoặc Chrome và dán đường dẫn.':''}</span>
