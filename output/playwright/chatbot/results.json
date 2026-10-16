@@ -1,0 +1,61 @@
+{
+  "wholeStudioDocument": true,
+  "syntheticTransport": true,
+  "nativeLoopbackRequests": 1,
+  "deniedBackgroundReadPosts": 26,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "firebaseAuthExercised": false,
+  "iosWebKitExercised": false,
+  "rows": [
+    {
+      "phase": "clear-discards-late-response",
+      "pass": true
+    },
+    {
+      "phase": "old-completion-cannot-unlock-new-request",
+      "pass": true
+    },
+    {
+      "phase": "old-error-cannot-restore-deleted-message",
+      "pass": true
+    },
+    {
+      "phase": "clear-during-json-decode",
+      "pass": true
+    },
+    {
+      "phase": "deadline-retains-draft-no-auto-retry",
+      "pass": true
+    },
+    {
+      "phase": "keyboard-double-send-and-newer-draft",
+      "pass": true
+    },
+    {
+      "phase": "literal-html-and-context-projection",
+      "pass": true
+    },
+    {
+      "phase": "actual-global-logout-reload-clears-local-state",
+      "pass": true
+    },
+    {
+      "phase": "native-fetch-cancellation-to-local-http",
+      "pass": true
+    },
+    {
+      "phase": "viewport-1366",
+      "pass": true
+    },
+    {
+      "phase": "viewport-390",
+      "pass": true
+    },
+    {
+      "phase": "viewport-360",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

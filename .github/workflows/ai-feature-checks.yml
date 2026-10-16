@@ -150,3 +150,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           REPORT_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-report-qa'
+      - name: Verify chatbot clear, logout, late responses and responsive browser lifecycle
+        run: node tests/chatbotUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CHAT_BROWSER_QA_OUTPUT: '${{ runner.temp }}/connectcv-chatbot-qa'
