@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 31,
-  "lastRun": "runs/2026-10-16-cycle-0031.md",
+  "completedCycles": 32,
+  "lastRun": "runs/2026-10-16-cycle-0032.md",
   "activeRun": null,
   "activeIssue": "CHAT001",
-  "issueState": "READY_LOCAL_CAPABILITY_PII_EVAL",
+  "issueState": "CHATBOT_RESET_RACE_REVIEW_CI_VERIFIED_PENDING_HTTP_EVAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CHAT001 next independent P1: inspect actual chatbot service/UI and add one local adversarial capability/PII scenario with fake provider/synthetic context; do not call live AI or write real account. Preserve SOCIAL001/OPS002 as deferred, not closed.",
-    "OPS002: 26227e1 adds3 new real-emulator composition phases: wrapper real zero-query/typed export -> its archive restore to empty demo -> re-export all fields/inventory. Local9phases PASS; CI38866755397 SUCCESS (171 existing unit tests plus9emulator phases and PDF/browser gates). Do not repeat downloads or same green matrices without new change/failure.",
-    "Custody question cycle25 remains pending; no repeat or inferred preselection. Real key/session/ADC/CLI/cloud data/Drive DB ciphertext absent; keep databaseVerified=false until actual consistent export, isolated restore, privateDrive readback/invariants. Emulator historical readTime intentionally omitted in quiescent adapter, provider semantics/IAM unverified.",
-    "Main137181d/liveBE1bf/FEaa unchanged, report API/UI review-only. DB and new candidate code/build Drive gates before deploy; reader-compatible rollback baseline before hidden writes. No unchanged notifications or repetitive public smoke."
+    "CHAT001: privacy eval reproduced CHAT003P2 clear-history/late reply race on c95f15e (6fail/1pass VM);1ec65f3 fixes generation ownership/abort/60sdeadline/safe errors;7new tests PASS,77feature tests local PASS. CI38868560669 SUCCESS (178 units plus existing emulator/PDF/browser gates). Next actual HTTP auth/quota/capability/PII with fake provider, no live AI/real profile.",
+    "CHAT003 client lifecycle remains not deployed; VM is not real browser/mobile/logout E2E. Browser verification before isolated client-only release from main and fresh Drive code/build backup; do not deploy aggregate review branch containing pending report schema. No DB migration in this client patch.",
+    "Custody question cycle25 remains pending; no repeat/inferred answer. SOCIAL001/OPS002 remain deferred and deploy blocked for new schema; real snapshot/session/provider/Drive DB readback not done. Keep databaseVerified=false; no more same emulator/backup green matrix as progress.",
+    "Main137181d/liveBE1bf/FEaa unchanged, report API/UI review-only. Client abort does not prove server/provider cancellation or quota refund. No repeated unchanged notifications/public smoke."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -127,7 +127,7 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": false,
+    "currentCycleRuntimeChanged": true,
     "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
@@ -135,7 +135,10 @@
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
     "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
     "pendingOpsCommit": "26227e17b0039c5e1c9ebf9389622fee224e215c",
-    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38866755397"
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38866755397",
+    "pendingChatbotCommit": "1ec65f3a763fcafd2c968c63234520f08988030a",
+    "pendingChatbotCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38868560669",
+    "pendingChatbotStatus": "LOCAL_CONTROLLER_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED"
   },
   "blockingDependency": null,
   "dataBackup": {

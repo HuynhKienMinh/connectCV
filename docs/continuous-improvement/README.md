@@ -129,3 +129,6 @@ Cycle30 (16/10/2026): [Pipeline snapshot mã hóa trong RAM](runs/2026-10-16-cyc
 
 
 Cycle31 (16/10/2026): [Archive wrapper phục hồi emulator thật](runs/2026-10-16-cycle-0031.md), candidate26227e1 reviewCI đạt; ba pha mới real zero-query/typed export→restore archive wrapper→re-export, tổng chín pha synthetic. JAR/staging dọn ngay. Provider/cloud/key custody thực chưa kiểm chứng; SOCIAL001/OPS002 vẫn deferred/chặn deploy, tiếp CHAT001 local theo rotation. Main/live không đổi.
+
+
+Cycle32 (16/10/2026): [Chatbot reset/late-response](runs/2026-10-16-cycle-0032.md), CHAT003P2 baseline6fail/1pass trên actual controller VM→7/7 sau generation/abort/deadline60s. Candidate1ec65f3 reviewCI đạt178units/gates; chưa browser lifecycle/auth E2E hoặc deploy. CHAT001 tiếp HTTP/provider-stub eval; main/live và gate backup không đổi.
