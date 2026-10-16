@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 27,
-  "lastRun": "runs/2026-10-16-cycle-0027.md",
+  "completedCycles": 28,
+  "lastRun": "runs/2026-10-16-cycle-0028.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "SYNTHETIC_EMULATOR_RESTORE_REVIEW_CI_VERIFIED_CLOUD_KEY_PENDING",
+  "issueState": "SERVER_READ_TIME_REVIEW_CI_VERIFIED_CUSTODY_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "OPS002 dependency SOCIAL001: a4d366d actual isolated Firestore1.21.0 emulator restored and re-exported 3 typed synthetic documents, 1 missing parent; 6 phases passed locally. CI38794642284 SUCCESS (emulator-restore/verify/pdf-renderer). Next scoped credential/readTime acquisition with fake HTTP proof, only real cloud snapshot after owner key custody reply.",
-    "Owner custody question cycle25 remains pending; do not reask or infer preselected answer. No real encryption key file, cloud PII/export, database snapshot or Drive ciphertext created. Keep databaseVerified=false until real consistent export + isolated restore + privateDrive readback/invariant proof.",
-    "Java21.0.12 direct JDK verified; Windows javapath launcher spawned child JVM and left locked stage during initial fixture. Own exact PID stopped; direct executable final run exited0 and own temporary JAR/stages removed. On Windows set JAVA_EXECUTABLE to direct JDK/bin/java.exe or JAVA_HOME; never kill unrelated processes or delete user cache.",
-    "Main137181d/liveBE1bf/FEaa unchanged, report API/UI remain review-only; DB backup and new candidate code/build Drive gates still block deploy. Reader-compatible rollback baseline needed before future hidden writes; no repetitive smoke or notifications."
+    "OPS002: 0accbf5 adds fixed zero-result server readTime probe, 8 new local fake HTTP tests; all32 ops tests PASS. CI38862222926 SUCCESS (157 units and existing emulator/PDF/browser gates). Next credential/session adapter with injection-only tests, then provider validation after owner custody is ready. Do not repeat emulator download or previous green matrices as new progress.",
+    "Owner custody question cycle25 remains pending; do not ask again/infer preselection. No real key, cloud PII/export or Drive DB ciphertext created. Keep databaseVerified=false until real consistent snapshot + isolated restore + privateDrive readback and invariants.",
+    "Production readTime is unverified: zero-result probe follows official REST contract, strict64KiB/10s/one-row/microsecond/freshness bounds, no retry/local-clock fallback. Validate actual provider behavior conservatively once custody ready; never widen query/project or change IAM/credential/scopes to pass.",
+    "Main137181d/liveBE1bf/FEaa unchanged; report API/UI review-only. New candidate code/build Drive backup and DB gate before deploy; reader-compatible rollback baseline before future hide/reinstate. No repeated unchanged user notifications."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -134,16 +134,16 @@
     "pendingCommunityDeployBlocked": true,
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
     "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
-    "pendingOpsCommit": "a4d366d37c054ac565c58c52f6cfe45144eec685",
-    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38794642284"
+    "pendingOpsCommit": "0accbf51733c4ded8b031d88c4a7348823e07595",
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38862222926"
   },
   "blockingDependency": "OPS002",
   "dataBackup": {
-    "status": "SYNTHETIC_FIRESTORE_EMULATOR_RESTORE_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
+    "status": "SERVER_READ_TIME_FAKE_HTTP_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
     "tool": "backend/ops/snapshotEnvelope.cjs",
     "plan": "DATABASE-RESTORE-PLAN.md",
-    "reviewCommit": "a4d366d37c054ac565c58c52f6cfe45144eec685",
-    "localSyntheticTests": 24,
+    "reviewCommit": "0accbf51733c4ded8b031d88c4a7348823e07595",
+    "localSyntheticTests": 32,
     "keyCustodyStatus": "WAITING_OWNER_CHOICE",
     "keyFileCreated": false,
     "realSnapshotCreated": false,
@@ -152,13 +152,13 @@
     "maxPlaintextBytes": 33554432,
     "networkCollectorImplemented": true,
     "emulatorRestoreImplemented": true,
-    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38794642284",
+    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38862222926",
     "reviewCiPassed": true,
     "credentialAdapterImplemented": false,
     "collector": "backend/ops/snapshotCollector.cjs",
     "transport": "backend/ops/firestoreReadTransport.cjs",
     "newCollectorTransportTests": 17,
-    "readTimeAcquisitionImplemented": false,
+    "readTimeAcquisitionImplemented": true,
     "localEmulatorPreflight": {
       "firebaseCliVersion": "15.22.4",
       "javaVersion": "21.0.12",
@@ -174,6 +174,8 @@
     "syntheticRestorePhases": 6,
     "emulatorRestoreTool": "backend/ops/emulatorRestore.cjs",
     "productionReadTimeVerified": false,
-    "sourceSystemMetadataRestored": false
+    "sourceSystemMetadataRestored": false,
+    "readTimeTool": "backend/ops/snapshotReadTime.cjs",
+    "newReadTimeTests": 8
   }
 }

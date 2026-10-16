@@ -26,6 +26,12 @@ Trần plaintext snapshot32MiB/100000documents, recursion40; seal kiểm byte sa
 
 Nơi custody của khóa giải mã là thông tin cần chủ dự án cung cấp, không phải xin lại quyền sửa/deploy đã có. RUNBOOK hiện ghi “mã hóa bằng key lưu riêng, ACL giới hạn” và “Có kế hoạch retention và diễn tập mất key”; tự đặt key cạnh archive hoặc chỉràngbuộcmộtWindowsprofile sẽ làm đường phục hồi không rõ. Cần owner chọn kho hiện có hoặc giữ bản offline; assistant tiếp tục collector/restorefixtures độc lập trong khi chờ. Không có khóa nào được tạo/lưu ở lượt lập phươngán này, chỉ ephemeral randomkey trong unit testsRAM.
 
+## Lấy readTime — cycle28, chỉ kiểm qua fake HTTP
+
+backend/ops/snapshotReadTime.cjs gửi đúng một probe cố định qua callback và scoped transport: accounts, projection __name__, limit 0. Cơ sở: [StructuredQuery cho phép limit bằng 0](https://docs.cloud.google.com/firestore/docs/reference/rest/v1/StructuredQuery), [runQuery trả readTime khi không có kết quả](https://docs.cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/runQuery). Không có default network hoặc credential discovery. Tám test mới chứng minh query không bị mở rộng, timestamp/shape/window/byte bounds, timeout/cancel, input bị sửa trong lúc chờ auth và cùng mốc được truyền cho mọi trang collector. Chưa gọi provider nên readTimeAcquisitionImplemented=true không có nghĩa productionReadTimeVerified=true.
+
+Probe chặn document hoặc response bất ngờ, không retry/fallback giờ máy; 64 KiB/10 giây tối đa bao gồm auth. Không tăng query limit hoặc nới scope để chữa provider error. Còn credential adapter, kiểm quyền phiên thật, behavior server/clock drift và consistent export thật sau khi custody sẵn sàng. Không suy ra backup database từ fixture.
+
 ## Restore fixture thực tế — cycle27
 
 `node backend/tests/snapshotRestore.check.cjs` chạy Java21 và Firestoreemulator1.21.0 trong staging riêng, loopback127.0.0.1/projectdemo-connectcv-backup, không token/cloudcredential. Windows phải cung cấp JAVA_EXECUTABLE là direct JDK/bin/java.exe hoặc JAVA_HOME; không dùng javapath launcher tạo JVM con khó dọn. CI dùng Temurin21. Manifest pin138093843bytes/SHA256c3d3680a89d946a90a027365ea14c26c6472a162bcf37f099bbb1ebd66d25e8e theo FirebaseCLI15.22.4 đãcài; download60s/capexact/hashverify, stage finally cleanup. Có thể truyền FIRESTORE_EMULATOR_JAR đãpin; runner không xóa file bênngoài stage của chính nó.

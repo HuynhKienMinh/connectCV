@@ -117,3 +117,6 @@ Cycle25 (16/10/2026): [Snapshot mã hóa offline](runs/2026-10-16-cycle-0025.md)
 
 
 Cycle26 (16/10/2026): [Collector snapshot chỉ đọc](runs/2026-10-16-cycle-0026.md). Candidateacbdbd1 reviewCI đạt149units/gates;17tests mới kiểm fixedreadTime/pagination/missingparent/caps/timeout/failclosed và scopedstreamtransport quafakeFetch. Chưa CLIcredential/timeacquisition/emulator/realDBrestore; chờkeycustody từcâu hỏi cũ, không nhắc lại. Main/livekhôngđổi, không đọccloudPII hay tạo backup lớn.
+
+
+Cycle27/28 (16/10/2026): [Restore emulator thật](runs/2026-10-16-cycle-0027.md) đạt sáu pha synthetic local/CI a4d366d; staging/JAR đã dọn. [Probe readTime cố định](runs/2026-10-16-cycle-0028.md) thêm tám test fake HTTP, cùng mốc qua collector, chặn query widening và token treo. Candidate0accbf5 review-only; chưa database backup thật, credential/provider proof hoặc custody khóa. Main/live giữ nguyên.
