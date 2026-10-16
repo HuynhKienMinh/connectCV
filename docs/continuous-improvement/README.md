@@ -135,3 +135,8 @@ Cycle32 (16/10/2026): [Chatbot reset/late-response](runs/2026-10-16-cycle-0032.m
 
 
 Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle-0033.md), candidate83826b8 reviewCI đạt184units/gates. Sáu scenario actual mount/auth/quota/owned facts/projection với stub; raw provider error sentinel từng vào route log, đã thay fixed diagnostic. Chưa model/upstream-log/browser E2E hoặc deploy; main/live và gate backup giữ nguyên.
+
+
+## Cập nhật chu kỳ 0034 — 16/10/2026
+
+[Nhật ký upstream diagnostics](runs/2026-10-16-cycle-0034.md): provider exception có thể giữ hội thoại riêng trong Gemini log/pool health/exhaustion. Review389ca36 đổi các sink này sang category cố định, giữ fallback;8new VM tests/85feature PASS, CI38871862503 SUCCESS (192units + existing gates). Không gọi AI/đọc key thật/deploy. Caller khác/SDK/model semantics và browser lifecycle còn mở; cần isolated release từ main vì review còn report schema bị DB gate. Drive baseline VERIFIED, custody pending không hỏi lại.

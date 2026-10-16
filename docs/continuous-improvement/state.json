@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 33,
-  "lastRun": "runs/2026-10-16-cycle-0033.md",
+  "completedCycles": 34,
+  "lastRun": "runs/2026-10-16-cycle-0034.md",
   "activeRun": null,
   "activeIssue": "CHAT001",
-  "issueState": "CHATBOT_HTTP_AND_ROUTE_LOG_REVIEW_CI_VERIFIED_PENDING_BROWSER_UPSTREAM",
+  "issueState": "CHATBOT_UPSTREAM_DIAGNOSTICS_REVIEW_CI_VERIFIED_PENDING_BROWSER",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CHAT001: actual mount/auth/guard/router6new HTTP scenarios local PASS;83826b8 fixes CHAT004P2 route raw provider-error logging (before5pass/1fail ->6pass). CI38870037751 SUCCESS (184 units plus existing emulator/PDF/browser gates). HTTP stub proves auth/budget/projection/owned facts, not model semantic resistance or upstream SDK retry/redaction.",
-    "Next chatbot: real-browser lifecycle QA for CHAT003 and scoped upstream gemini/keyManager diagnostic PII fixture (SEC003), no live AI/account writes. Prepare isolated chatbot-only release from main after QA/CI + fresh verified Drive code/build backup; aggregate review still includes blocked report schema and must not deploy wholesale.",
-    "Custody question cycle25 remains pending, do not repeat/infer selection. SOCIAL001/OPS002 deferred; real provider snapshot/DB restore/Drive data readback absent. databaseVerified=false; do not repeat emulator/backup matrices without new change/failure.",
-    "Main137181d/liveBE1bf/FEaa unchanged. Route log now fixed code only; upstream raw errors remain unverified, no production PII incident observed. CHAT003 client abort does not guarantee server/provider cancellation or quota refund. No repetitive smoke/notifications."
+    "CHAT001/SEC003:389ca36 upstream Gemini/keyManager diagnostic categories;8new VM service regressions PASS (baseline8fail incl missing new helper),85feature tests PASS. CI38871862503 SUCCESS (192 units plus existing PDF/browser/emulator gates). No raw provider exception in scoped logs/lastError/exhaustion; arbitrary terminal exceptions still propagate to other unreviewed callers.",
+    "Next: real-browser lifecycle QA CHAT003, then isolated chatbot+diagnostics release from origin/main including1ec65f3/83826b8/389ca36. Review branch has report schema and must not deploy wholesale. Require isolated full CI and fresh verified private Drive candidate code/build backup before deploy; no live AI/account writes.",
+    "Custody question cycle25 remains pending; no repeat/inferred selection. SOCIAL001/OPS002 deferred; databaseVerified=false. No new provider/DB snapshot/Drive cipher readback. Do not repeat emulator or green backup matrix without new concern.",
+    "Main137181d/liveBE1bf/FEaa unchanged. No observed production PII incident. Model semantics, upstream SDK own diagnostics/other route sinks, browser lifecycle and cloud actors not verified. Client abort does not prove provider cancellation/quota refund."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -141,7 +141,10 @@
     "pendingChatbotStatus": "LOCAL_CONTROLLER_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED",
     "pendingChatbotHttpCommit": "83826b80c6ef71ca6f837d98c5467f448cfb8300",
     "pendingChatbotHttpStatus": "LOCAL_HTTP_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED",
-    "pendingChatbotHttpCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38870037751"
+    "pendingChatbotHttpCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38870037751",
+    "pendingDiagnosticCommit": "389ca36eb9f6fa29963bf3946300e188e81e308b",
+    "pendingDiagnosticCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38871862503",
+    "pendingDiagnosticStatus": "LOCAL_VM_SERVICES_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED"
   },
   "blockingDependency": null,
   "dataBackup": {
