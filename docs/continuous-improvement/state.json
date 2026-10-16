@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 34,
-  "lastRun": "runs/2026-10-16-cycle-0034.md",
+  "completedCycles": 35,
+  "lastRun": "runs/2026-10-16-cycle-0035.md",
   "activeRun": null,
   "activeIssue": "CHAT001",
-  "issueState": "CHATBOT_UPSTREAM_DIAGNOSTICS_REVIEW_CI_VERIFIED_PENDING_BROWSER",
+  "issueState": "CHATBOT_ISOLATED_CANDIDATE_CI_VERIFIED_PENDING_FRESH_DRIVE_BACKUP",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CHAT001/SEC003:389ca36 upstream Gemini/keyManager diagnostic categories;8new VM service regressions PASS (baseline8fail incl missing new helper),85feature tests PASS. CI38871862503 SUCCESS (192 units plus existing PDF/browser/emulator gates). No raw provider exception in scoped logs/lastError/exhaustion; arbitrary terminal exceptions still propagate to other unreviewed callers.",
-    "Next: real-browser lifecycle QA CHAT003, then isolated chatbot+diagnostics release from origin/main including1ec65f3/83826b8/389ca36. Review branch has report schema and must not deploy wholesale. Require isolated full CI and fresh verified private Drive candidate code/build backup before deploy; no live AI/account writes.",
-    "Custody question cycle25 remains pending; no repeat/inferred selection. SOCIAL001/OPS002 deferred; databaseVerified=false. No new provider/DB snapshot/Drive cipher readback. Do not repeat emulator or green backup matrix without new concern.",
-    "Main137181d/liveBE1bf/FEaa unchanged. No observed production PII incident. Model semantics, upstream SDK own diagnostics/other route sinks, browser lifecycle and cloud actors not verified. Client abort does not prove provider cancellation/quota refund."
+    "Isolated release candidate aac8134d5554c468b87ea861856ae6b3ddd4c9bc on improvement/chatbot-release-20261016 from main137181d. CI38873498820 SUCCESS; local85feature+6HTTP+12whole-Studio browser phases PASS. Exact16-file diff excludes report schema/ops tooling; mount/interview/communityStore/featureSecurity blobs match main. Active checkout returned to continuous-review; do NOT deploy aggregate branch.",
+    "Next action: fresh candidate private Drive code/build checksum + restore proof and rollback catalog are required before main merge/exact deployment. Existing baseline1bf/FEaa is verified but not candidate backup. Use bounded staging/free-space preflight (C about2.15GB cycle35), no retained bundle/build/clone after cloud verification.",
+    "CHAT003 browser baseline source1ec65f3^ resurrected old reply after clear; review0224146 CI38873355177 SUCCESS (192units+12browser phases/new gate). Whole document/event/reload/native local HTTP verified; Firebase/React iframe/real iOS and model semantics remain unverified. No live AI/account writes.",
+    "Custody question cycle25 pending, no repeat/inferred answer. SOCIAL001/OPS002 deferred/databaseVerified=false. Main137/liveBE1bf/FEaa unchanged. Other route/SDK diagnostics and multi-instance limits still open SEC003. No repeated health or green backup matrices."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -127,7 +127,7 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": true,
+    "currentCycleRuntimeChanged": false,
     "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
@@ -144,7 +144,15 @@
     "pendingChatbotHttpCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38870037751",
     "pendingDiagnosticCommit": "389ca36eb9f6fa29963bf3946300e188e81e308b",
     "pendingDiagnosticCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38871862503",
-    "pendingDiagnosticStatus": "LOCAL_VM_SERVICES_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED"
+    "pendingDiagnosticStatus": "LOCAL_VM_SERVICES_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED",
+    "pendingChatbotBrowserCommit": "0224146cd3fef26bc1e090d586cee7c554ccaa48",
+    "pendingChatbotBrowserCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38873355177",
+    "pendingChatbotBrowserStatus": "WHOLE_STUDIO_LOCAL_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED",
+    "isolatedChatbotBranch": "improvement/chatbot-release-20261016",
+    "isolatedChatbotCommit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
+    "isolatedChatbotBase": "137181d1f35ca27a2639dbee9d47e7318fd6e7f1",
+    "isolatedChatbotCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38873498820",
+    "isolatedChatbotStatus": "LOCAL_AND_ISOLATED_CI_VERIFIED_BACKUP_REQUIRED_NOT_MAIN_NOT_DEPLOYED"
   },
   "blockingDependency": null,
   "dataBackup": {

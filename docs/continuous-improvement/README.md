@@ -140,3 +140,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0034 — 16/10/2026
 
 [Nhật ký upstream diagnostics](runs/2026-10-16-cycle-0034.md): provider exception có thể giữ hội thoại riêng trong Gemini log/pool health/exhaustion. Review389ca36 đổi các sink này sang category cố định, giữ fallback;8new VM tests/85feature PASS, CI38871862503 SUCCESS (192units + existing gates). Không gọi AI/đọc key thật/deploy. Caller khác/SDK/model semantics và browser lifecycle còn mở; cần isolated release từ main vì review còn report schema bị DB gate. Drive baseline VERIFIED, custody pending không hỏi lại.
+
+
+## Cập nhật chu kỳ 0035 — 16/10/2026
+
+[Nhật ký browser và release tách riêng](runs/2026-10-16-cycle-0035.md): nguyên Studio/local assets trên sandboxed Chromium,12pha lifecycle/keyboard/logout/native HTTP/bounds đạt; source cũ tái hiện reply sống lại sau clear. Review0224146 CI38873355177 SUCCESS. Candidate chatbot-only aac8134 từ main137 có diff16file, không report schema/ops; local85feature+6HTTP+12browser PASS, isolatedCI38873498820 SUCCESS. Cần backup Drive candidate trước merge/deploy; production không đổi. Firebase/React iframe/real iOS/model semantics vẫn chưa nghiệm thu.
