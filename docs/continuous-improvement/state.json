@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 26,
-  "lastRun": "runs/2026-10-16-cycle-0026.md",
+  "completedCycles": 27,
+  "lastRun": "runs/2026-10-16-cycle-0027.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "SCOPED_SNAPSHOT_COLLECTOR_REVIEW_CI_VERIFIED_EMULATOR_KEY_PENDING",
+  "issueState": "SYNTHETIC_EMULATOR_RESTORE_REVIEW_CI_VERIFIED_CLOUD_KEY_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "OPS002 dependency of SOCIAL001: collector+read transport acbdbd1 reviewCI38792428534 SUCCESS (149units + existing sandbox/PDF/report UI gates),17new tests. Next implement isolated emulator restore/re-export/type/invariant proof with synthetic fixtures; do not repeat completed collector fakeFetch matrix as progress.",
-    "Emulator preflight: installed Firebase CLI15.22.4, Java executable path found but java -version hung in sandbox and own exec cancelled; no cached Firestore jar found. Verify actual Java runtime and compatible pinned emulator with bounded calls before installing/starting anything. No terms/billing/IAM/credential changes; no unknown cleanup of user cache.",
-    "Owner custody question from cycle25 remains pending; do not ask again or infer preselected answer. No cloud PII reads/exports until encryption and recovery-key custody ready. Collector/read transport requires explicit token/Fetch injection; CLI credential adapter and trusted readTime acquisition not implemented. No actual keys/snapshots/cloud restore created.",
-    "Keep databaseVerified=false until real consistent snapshot + isolated restore + privateDrive ciphertext readback/count/type/invariant proof. Main137181d/liveBE1bf/FEaa unchanged. Report API/UI stay review-only; DBschema and candidate code/build backup gates apply, reader-compatible rollback baseline before future hidden writes. SOCIAL003/DATA002/Auth002 remain open; no repetitive smoke/notifications."
+    "OPS002 dependency SOCIAL001: a4d366d actual isolated Firestore1.21.0 emulator restored and re-exported 3 typed synthetic documents, 1 missing parent; 6 phases passed locally. CI38794642284 SUCCESS (emulator-restore/verify/pdf-renderer). Next scoped credential/readTime acquisition with fake HTTP proof, only real cloud snapshot after owner key custody reply.",
+    "Owner custody question cycle25 remains pending; do not reask or infer preselected answer. No real encryption key file, cloud PII/export, database snapshot or Drive ciphertext created. Keep databaseVerified=false until real consistent export + isolated restore + privateDrive readback/invariant proof.",
+    "Java21.0.12 direct JDK verified; Windows javapath launcher spawned child JVM and left locked stage during initial fixture. Own exact PID stopped; direct executable final run exited0 and own temporary JAR/stages removed. On Windows set JAVA_EXECUTABLE to direct JDK/bin/java.exe or JAVA_HOME; never kill unrelated processes or delete user cache.",
+    "Main137181d/liveBE1bf/FEaa unchanged, report API/UI remain review-only; DB backup and new candidate code/build Drive gates still block deploy. Reader-compatible rollback baseline needed before future hidden writes; no repetitive smoke or notifications."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -134,15 +134,15 @@
     "pendingCommunityDeployBlocked": true,
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
     "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
-    "pendingOpsCommit": "acbdbd14e43bc0506aaae8c38a946915a3186d8f",
-    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38792428534"
+    "pendingOpsCommit": "a4d366d37c054ac565c58c52f6cfe45144eec685",
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38794642284"
   },
   "blockingDependency": "OPS002",
   "dataBackup": {
-    "status": "COLLECTOR_TRANSPORT_FAKE_FETCH_VERIFIED_NOT_DATABASE_BACKUP",
+    "status": "SYNTHETIC_FIRESTORE_EMULATOR_RESTORE_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
     "tool": "backend/ops/snapshotEnvelope.cjs",
     "plan": "DATABASE-RESTORE-PLAN.md",
-    "reviewCommit": "acbdbd14e43bc0506aaae8c38a946915a3186d8f",
+    "reviewCommit": "a4d366d37c054ac565c58c52f6cfe45144eec685",
     "localSyntheticTests": 24,
     "keyCustodyStatus": "WAITING_OWNER_CHOICE",
     "keyFileCreated": false,
@@ -151,8 +151,8 @@
     "cloudDataRead": false,
     "maxPlaintextBytes": 33554432,
     "networkCollectorImplemented": true,
-    "emulatorRestoreImplemented": false,
-    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38792428534",
+    "emulatorRestoreImplemented": true,
+    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38794642284",
     "reviewCiPassed": true,
     "credentialAdapterImplemented": false,
     "collector": "backend/ops/snapshotCollector.cjs",
@@ -161,10 +161,19 @@
     "readTimeAcquisitionImplemented": false,
     "localEmulatorPreflight": {
       "firebaseCliVersion": "15.22.4",
-      "firestoreJarCached": false,
-      "javaExecutableFound": true,
-      "javaVersionVerified": false,
-      "note": "java -version did not complete in sandbox; own exec session cancelled, no installation or escalation attempted"
-    }
+      "javaVersion": "21.0.12",
+      "javaVersionVerified": true,
+      "firestoreVersion": "1.21.0",
+      "jarSha256": "c3d3680a89d946a90a027365ea14c26c6472a162bcf37f099bbb1ebd66d25e8e",
+      "jarBytes": 138093843,
+      "temporaryJarRemoved": true,
+      "ownStagingRemoved": true,
+      "note": "Direct JDK executable required on Windows; launcher child cleaned by exact verified PID; final runner exited0 and removed own staging."
+    },
+    "syntheticEmulatorRestoreVerified": true,
+    "syntheticRestorePhases": 6,
+    "emulatorRestoreTool": "backend/ops/emulatorRestore.cjs",
+    "productionReadTimeVerified": false,
+    "sourceSystemMetadataRestored": false
   }
 }
