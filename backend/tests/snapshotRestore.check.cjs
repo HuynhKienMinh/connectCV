@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),fsp=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto'),net=require('node:net'),assert=require('node:assert/strict'),{spawn}=require('node:child_process');
 const manifest=require('../ops/firestoreEmulatorManifest.json'),{seal,open}=require('../ops/snapshotEnvelope.cjs'),{collectSnapshot}=require('../ops/snapshotCollector.cjs'),{restoreToEmulator}=require('../ops/emulatorRestore.cjs');
+const {createEncryptedSnapshot}=require('../ops/encryptedSnapshot.cjs');
 const ROOT='projects/connect-cv/databases/(default)/documents',DEMO='projects/demo-connectcv-backup/databases/(default)/documents';
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 async function port(){const s=net.createServer();await new Promise(r=>s.listen(0,'127.0.0.1',r));const n=s.address().port;await new Promise(r=>s.close(r));return n;}
@@ -22,6 +23,7 @@ function fixture(){const at='2026-10-15T19:22:00.123456Z';return {version:1,proj
  const parent=path.resolve(process.env.RUNNER_TEMP||path.join(__dirname,'../..')),stage=await fsp.mkdtemp(path.join(parent,'.tmp-connectcv-restore-'));
  let child,logs='',exit,key;
  try{
+  const disk=await fsp.statfs(stage);assert.ok(disk.bavail*disk.bsize>=512*1024*1024,'EMULATOR_STAGING_CAPACITY_REQUIRED');
   const jar=await binary(stage),p=await port(),web=await port(),socket=await port(),origin='http://127.0.0.1:'+p;
   const rules=path.join(stage,'fixture.rules');await fsp.writeFile(rules,"rules_version = '2'; service cloud.firestore { match /databases/{db}/documents { match /{document=**} { allow read, write: if true; } } }");
   const env={...process.env,GCLOUD_PROJECT:'demo-connectcv-backup',GOOGLE_CLOUD_PROJECT:'demo-connectcv-backup'};delete env.GOOGLE_APPLICATION_CREDENTIALS;delete env.FIREBASE_CONFIG;
@@ -55,7 +57,33 @@ function fixture(){const at='2026-10-15T19:22:00.123456Z';return {version:1,proj
   const copied=await collectSnapshot({request,readTime:new Date(Date.now()-1000).toISOString()});
   const values=s=>Object.fromEntries(s.documents.map(d=>[d.name,d.fields]));assert.deepEqual(values(copied),values(snapshot));assert.deepEqual(copied.missingParents,snapshot.missingParents);assert.deepEqual(copied.collectionPaths,snapshot.collectionPaths);rows.push('reexport-all-paths-types-and-missing-parent');
   const again=open(seal(copied,key,crypto.randomUUID()).archive,key).snapshot;assert.deepEqual(values(again),values(snapshot));rows.push('reexport-encrypt-readback');
-  console.log(JSON.stringify({synthetic:true,cloudReads:0,cloudWrites:0,emulatorVersion:manifest.version,jarSha256:manifest.sha256,documents:copied.documents.length,missingParents:copied.missingParents.length,productionReadTimeVerified:false,sourceSystemMetadataRestored:false,rows,passed:true}));
+  // Exercise the whole wrapper against this owned, quiescent emulator. The
+  // adapter never follows the production URL: it asserts fixed scope then maps
+  // to the loopback instance just spawned above. No real credential is used.
+  let credentialCalls=0,zeroQueries=0;
+  const wrapperFetch=async(address,options)=>{
+   const cloud=new URL(address);assert.equal(cloud.origin,'https://firestore.googleapis.com');assert.ok(cloud.pathname.startsWith('/v1/'+ROOT));
+   assert.equal(options.headers.Authorization,'Bearer SYNTHETIC_WRAPPER_ACCESS_TOKEN');
+   const local=new URL(origin+cloud.pathname.replace('/v1/'+ROOT,'/v1/'+DEMO));
+   for(const [k,v]of cloud.searchParams)if(k!=='readTime')local.searchParams.set(k,v);
+   let body=options.body?JSON.parse(options.body):undefined;if(body)delete body.readTime;
+   if(local.pathname.endsWith(':runQuery')){assert.equal(body.structuredQuery.limit,0);zeroQueries++;}
+   const response=await fetch(local,{...options,headers:{'Content-Type':'application/json',Authorization:'Bearer owner'},...(body?{body:JSON.stringify(body)}:{})});
+   const reader=response.body.getReader(),chunks=[];let size=0;
+   try{for(;;){const part=await reader.read();if(part.done)break;size+=part.value.byteLength;assert.ok(size<=65536,'SYNTHETIC_RESPONSE_CAP');chunks.push(Buffer.from(part.value));}}finally{await reader.cancel();reader.releaseLock();}
+   const data=JSON.parse(Buffer.concat(chunks).toString('utf8'));if(data.documents)for(const doc of data.documents)doc.name=doc.name.replace(DEMO+'/',ROOT+'/');
+   return new Response(JSON.stringify(data),{status:response.status,headers:{'Content-Type':'application/json'}});
+  };
+  const exported=await createEncryptedSnapshot({key,keyId:crypto.randomUUID(),custody:{status:'OWNER_CONFIRMED',method:'owner-offline',recoveryVerified:true},credential:{getAccessToken:async()=>{credentialCalls++;return {access_token:'SYNTHETIC_WRAPPER_ACCESS_TOKEN',expires_in:3600};}},fetchImpl:wrapperFetch});
+  const decoded=open(exported.archive,key).snapshot;
+  assert.equal(zeroQueries,1);assert.equal(credentialCalls,1);assert.deepEqual(values(decoded),values(snapshot));assert.deepEqual(decoded.missingParents,snapshot.missingParents);assert.deepEqual(decoded.collectionPaths,snapshot.collectionPaths);assert.equal(exported.catalog.localReadbackVerified,true);assert.equal(exported.catalog.cloudVerified,false);assert.equal(exported.catalog.restoreVerified,false);rows.push('wrapper-real-zero-query-and-typed-export');
+  // Official emulator-only flush endpoint, only on our child instance and fixed
+  // demo project. No flush helper is exposed by the application/ops modules.
+  assert.equal(child.exitCode,null);assert.equal(child.signalCode,null);
+  const flushed=await fetch(origin+'/emulator/v1/'+DEMO,{method:'DELETE',headers:{Authorization:'Bearer owner'},redirect:'error',signal:AbortSignal.timeout(10000)});assert.equal(flushed.status,200);await flushed.body?.cancel();
+  const second=await restoreToEmulator({archive:exported.archive,key,origin});assert.equal(second.written,3);rows.push('wrapper-archive-restored-to-empty-emulator');
+  const twice=await collectSnapshot({request,readTime:new Date(Date.now()-1000).toISOString()});assert.deepEqual(values(twice),values(decoded));assert.deepEqual(twice.missingParents,decoded.missingParents);assert.deepEqual(twice.collectionPaths,decoded.collectionPaths);rows.push('wrapper-restored-reexport-all-values-and-inventory');
+  console.log(JSON.stringify({synthetic:true,cloudReads:0,cloudWrites:0,emulatorVersion:manifest.version,jarSha256:manifest.sha256,documents:copied.documents.length,missingParents:copied.missingParents.length,wrapperEmulatorCompositionVerified:true,emulatorZeroQueryVerified:true,productionReadTimeVerified:false,sourceSystemMetadataRestored:false,rows,passed:true}));
  }catch(error){console.error(error.stack);if(logs)console.error('SYNTHETIC_EMULATOR_LOG '+logs);process.exitCode=1;}
  finally{
   key?.fill(0);if(child&&child.exitCode===null){child.kill();await Promise.race([exit,delay(5000)]);if(child.exitCode===null){child.kill('SIGKILL');await exit;}}
