@@ -1,4 +1,4 @@
-const {safeError}=require('./securityError');
+const {providerErrorCode}=require('./securityError');
 // [KeyManager] In-Memory Multi-Key Pool & Auto-Failover Service
 // Designed for ConnectCV AI Core — High Availability & Zero-Downtime Key Rotation
 const fs = require('fs');
@@ -46,7 +46,7 @@ class KeyManager {
           })).filter(k => k.apiKey.length > 10);
         }
       } catch (err) {
-        console.error('Key storage read failed:', safeError(err));
+        console.error('[KeyManager] KEY_STORAGE_READ_FAILED');
       }
     }
 
@@ -175,7 +175,7 @@ class KeyManager {
     if (!keyObj) return;
 
     keyObj.totalErrors++;
-    keyObj.lastError = safeError(err);
+    keyObj.lastError = providerErrorCode(err);
 
     if (this.isRateLimitError(err)) {
       keyObj.status = 'COOLING_DOWN';
@@ -255,7 +255,7 @@ class KeyManager {
       }
     }
 
-    throw new Error(`Hệ thống AI tạm thời quá tải sau ${maxRetries} lần chuyển key dự phòng: ${safeError(lastError)}`);
+    throw new Error(`Hệ thống AI tạm thời quá tải sau ${maxRetries} lần chuyển key dự phòng: ${providerErrorCode(lastError)}`);
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -314,7 +314,7 @@ class KeyManager {
       const dataToSave = this.keys.map(k => ({ id: k.id, apiKey: k.apiKey }));
       fs.writeFileSync(this.keyFilePath, JSON.stringify(dataToSave, null, 2), { mode: 0o600 });
     } catch (e) {
-      console.error('Key storage write failed:', safeError(e));
+      console.error('[KeyManager] KEY_STORAGE_WRITE_FAILED');
     }
   }
 
