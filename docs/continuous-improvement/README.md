@@ -150,3 +150,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0036 — 16/10/2026
 
 [Nhật ký backup và blocker runtime](runs/2026-10-16-cycle-0036.md): candidateaac8134 delta368776bytes đã copy Drive stream; fresh bare restore/fsck/28file và FEaaZIP đạt, dọn242.43MB clone. Chưa xác nhận cloud upload vì cả Browser/Computer Use JS kernel báo os error3; giữ bundlelocal369KB, backupTransfer PENDING và chặn deploy. Không đổi live hoặc đọc DB; không tạo thêm backup khi pending. Cần khôi phục tool để xác minh Drive ID/upload rồi tiếp exact release; có thể tiếp portfolio local độc lập nếu outage còn nguyên.
+
+
+## Cập nhật chu kỳ 0037 — 16/10/2026
+
+[Nhật ký giữ bản nháp portfolio](runs/2026-10-16-cycle-0037.md): phát hiện PORT003P1, lưu chậm xóa phần vừa nhập sau submit. Review74e6ed8 giữ edits mới/operation ownership;6actual React browser phases và17FE units đạt, CI38876958919 SUCCESS (192units +6new React browser phases/gates). Chưa deploy. Tool outage cũ giữ nguyên; backupaac còn pending cloud acknowledgement và không bao phủ portfolio fix, nên không tạo backup mới hoặc phát hành candidate cũ như đã gồm P1fix.
