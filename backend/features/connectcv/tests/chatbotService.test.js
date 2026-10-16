@@ -5,7 +5,7 @@ test('actual chatbot reset escapes the display name and failed requests restore 
  const fs=require('fs'),path=require('path'),vm=require('vm');
  const html=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8');
  const container={innerHTML:''},name={value:'<b id="name-injection">Fixture</b>'},input={value:''};
- const scope={document:{getElementById:id=>({'chatbot-messages':container,'chat-user-name':name,'chatbot-input':input})[id]},chatbotHistory:[]};
+ const scope={document:{getElementById:id=>({'chatbot-messages':container,'chat-user-name':name,'chatbot-input':input})[id]},chatbotHistory:[],chatbotGeneration:0,chatbotRequest:null};
  vm.createContext(scope);
  vm.runInContext(html.slice(html.indexOf('    function clearChatHistory()'),html.indexOf('    // Bộ render Markdown')),scope);
  scope.clearChatHistory();assert.ok(container.innerHTML.includes('&lt;b'));assert.ok(!container.innerHTML.includes('<b id="name-injection">'));

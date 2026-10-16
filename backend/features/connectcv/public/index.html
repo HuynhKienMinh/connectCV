@@ -6027,6 +6027,13 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     // 8. CHATBOT TƯ VẤN VIÊN NỔI Ở GÓC MÀN HÌNH (chatbot.js)
     // ========================================================
     let chatbotHistory = [];
+    let chatbotGeneration = 0, chatbotRequest = null;
+    window.addEventListener('connectcv:logout', () => {
+      for (const id of ['chat-user-name','chat-user-role','chatbot-input']) {
+        const field=document.getElementById(id);if(field)field.value='';
+      }
+      clearChatHistory();
+    });
 
     // Điều khiển Bật/Tắt Cửa sổ Chatbot dạng Popup nổi ở góc màn hình
     function toggleChatbotWidget(forceOpen) {
@@ -6079,6 +6086,9 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Xóa lịch sử chat
     function clearChatHistory() {
+      chatbotGeneration++;
+      const previous=chatbotRequest;chatbotRequest=null;previous?.controller.abort();
+      const send=document.getElementById('btn-chatbot-send');if(send)send.disabled=false;
       chatbotHistory = [];
       const container = document.getElementById('chatbot-messages');
       const nameEl = document.getElementById('chat-user-name');
@@ -6203,6 +6213,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       if (!text || sendBtn.disabled) return;
       if(text.length>1000){showToastError('Câu hỏi tối đa 1.000 ký tự.','Câu hỏi quá dài');return;}
 
+      const operation={generation:chatbotGeneration,controller:new AbortController()};
+      chatbotRequest=operation;
+      const current=()=>chatbotRequest===operation&&chatbotGeneration===operation.generation;
+      let timer,cancel;
+
       const userName = document.getElementById('chat-user-name').value || 'Bạn';
       const userRole = document.getElementById('chat-user-role').value || 'Ứng viên';
 
@@ -6241,17 +6256,19 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       container.scrollTop = container.scrollHeight;
 
       try {
-        const res = await fetch('/api/chatbot/message', {
+        const request=async()=>{const res = await fetch('/api/chatbot/message', {
           method: 'POST',
+          signal: operation.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: text,
             history: chatbotHistory.slice(-4).map(h=>({role:h.role,message:h.message.slice(0,2000)})),
             context: { targetRole: userRole.trim().slice(0,150) }
           })
-        });
-
-        const data = await res.json();
+        });return await res.json();};
+        const cancelled=new Promise((_,reject)=>{cancel=()=>reject(new Error('CHAT_CANCELLED'));operation.controller.signal.addEventListener('abort',cancel,{once:true});});
+        const data=await Promise.race([request(),cancelled,new Promise((_,reject)=>{timer=setTimeout(()=>{reject(new Error('CHAT_TIMEOUT'));operation.controller.abort();},60000);})]);
+        if(!current())return;
         const el = document.getElementById(typingId);
         if (el) el.remove();
 
@@ -6298,16 +6315,17 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           container.appendChild(errBubble);
         }
       } catch (err) {
+        if(!current())return;
         const el = document.getElementById(typingId);
         if (el) el.remove();
         recoverFailedChatMessage(text);
         const errBubble = document.createElement('div');
         errBubble.className = 'text-center text-xs text-red-500 py-2';
-        errBubble.innerText = 'Lỗi kết nối: ' + err.message;
+        errBubble.innerText = 'Chưa nhận được phản hồi. Câu hỏi vẫn được giữ; bạn có thể thử lại.';
         container.appendChild(errBubble);
       } finally {
-        sendBtn.disabled = false;
-        container.scrollTop = container.scrollHeight;
+        clearTimeout(timer);operation.controller.signal.removeEventListener('abort',cancel);
+        if(current()){chatbotRequest=null;sendBtn.disabled=false;container.scrollTop=container.scrollHeight;}
       }
     }
 
