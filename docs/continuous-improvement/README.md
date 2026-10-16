@@ -132,3 +132,6 @@ Cycle31 (16/10/2026): [Archive wrapper phục hồi emulator thật](runs/2026-1
 
 
 Cycle32 (16/10/2026): [Chatbot reset/late-response](runs/2026-10-16-cycle-0032.md), CHAT003P2 baseline6fail/1pass trên actual controller VM→7/7 sau generation/abort/deadline60s. Candidate1ec65f3 reviewCI đạt178units/gates; chưa browser lifecycle/auth E2E hoặc deploy. CHAT001 tiếp HTTP/provider-stub eval; main/live và gate backup không đổi.
+
+
+Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle-0033.md), candidate83826b8 reviewCI đạt184units/gates. Sáu scenario actual mount/auth/quota/owned facts/projection với stub; raw provider error sentinel từng vào route log, đã thay fixed diagnostic. Chưa model/upstream-log/browser E2E hoặc deploy; main/live và gate backup giữ nguyên.
