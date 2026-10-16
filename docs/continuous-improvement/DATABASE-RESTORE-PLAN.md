@@ -44,6 +44,12 @@ backend/ops/encryptedSnapshot.cjs ghép Credential/readTime/collector/envelope b
 
 Copy key riêng trước await, seal→open→canonical typed digest so sánh, cuối cùng đóng session/abort/gỡ listener và zero Buffer key riêng. Không ghi plaintext digest/snapshot ra catalog, không trả snapshot; output chỉ archive và catalog với localReadbackVerified=true/cloudVerified=false/restoreVerified=false. Lỗi/hủy/capacity sau partial read không trả archive. Deadline toàn chuỗi≤130s; không hứa timer ngắt CPU đồng bộ hoặc xóa JS strings trước GC. Bảy test mới qua fakeHTTP/provider; cần tiếp actual emulator restore composition từ archive wrapper rồi real credential/provider/DB/Drive sau khi custody sẵn sàng.
 
+## Composition emulator — cycle31
+
+Checker snapshotRestore.check.cjs đã thêm ba pha local: wrapper đọc chính emulator đã seed (real zero-result query/typed reads, fake Credential), archive wrapper restore vào demo rỗng, re-export toàn values/collections/missing parents. Tổng chín pha local đạt; JAR/staging tự dọn. Mapping test luôn chuyển fixed Firestore project URL sang loopback child, không cloud. [Flush endpoint emulator](https://firebase.google.com/docs/emulator-suite/connect_firestore#clear_your_database_between_tests) chỉ dùng với fixture của child vừa tạo, không module runtime/ops production.
+
+Quiescent adapter vẫn bỏ historical readTime; emulator zero-query đạt không chứng minh provider historical consistency/IAM. Ba document giả không thay database backup thật hoặc ledger invariants. Giữ realSnapshotCreated/realRestoreVerified/databaseVerified=false và custody WAITING_OWNER_CHOICE. Phần local độc lập đã có proof; trong khi chờ owner, tiếp CHAT001 theo rotation, không tải lại JAR hoặc lặp cùng matrix làm tiến độ. Chỉ chạy lại khi code/fixture thay đổi hoặc có vấn đề mới.
+
 ## Restore fixture thực tế — cycle27
 
 `node backend/tests/snapshotRestore.check.cjs` chạy Java21 và Firestoreemulator1.21.0 trong staging riêng, loopback127.0.0.1/projectdemo-connectcv-backup, không token/cloudcredential. Windows phải cung cấp JAVA_EXECUTABLE là direct JDK/bin/java.exe hoặc JAVA_HOME; không dùng javapath launcher tạo JVM con khó dọn. CI dùng Temurin21. Manifest pin138093843bytes/SHA256c3d3680a89d946a90a027365ea14c26c6472a162bcf37f099bbb1ebd66d25e8e theo FirebaseCLI15.22.4 đãcài; download60s/capexact/hashverify, stage finally cleanup. Có thể truyền FIRESTORE_EMULATOR_JAR đãpin; runner không xóa file bênngoài stage của chính nó.

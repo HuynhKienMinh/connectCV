@@ -126,3 +126,6 @@ Cycle29 (16/10/2026): [Phiên credential được cấp tường minh](runs/2026
 
 
 Cycle30 (16/10/2026): [Pipeline snapshot mã hóa trong RAM](runs/2026-10-16-cycle-0030.md), candidatec7ecc5b reviewCI đạt171units/gate hiện có. Bảy test mới về preflight custody/key trước I/O, chuỗi typed readback, partial failure và cancel/late token. Chỉ fake provider; chưa custody thật, cloud snapshot/Drive hoặc wrapper-to-emulator proof, main/live không đổi.
+
+
+Cycle31 (16/10/2026): [Archive wrapper phục hồi emulator thật](runs/2026-10-16-cycle-0031.md), candidate26227e1 reviewCI đạt; ba pha mới real zero-query/typed export→restore archive wrapper→re-export, tổng chín pha synthetic. JAR/staging dọn ngay. Provider/cloud/key custody thực chưa kiểm chứng; SOCIAL001/OPS002 vẫn deferred/chặn deploy, tiếp CHAT001 local theo rotation. Main/live không đổi.
