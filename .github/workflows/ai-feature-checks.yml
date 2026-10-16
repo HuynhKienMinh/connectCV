@@ -42,7 +42,7 @@ jobs:
           VITE_API_BASE_URL: 'https://connectcv-api-minh.onrender.com'
       - run: node --test tests/authFlow.test.js tests/googleAuthFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js
         working-directory: frontend
-      - run: node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityHttp.test.cjs tests/portfolio.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs tests/snapshotEnvelope.test.cjs tests/snapshotCollector.test.cjs tests/firestoreReadTransport.test.cjs tests/snapshotReadTime.test.cjs tests/snapshotCredential.test.cjs
+      - run: node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityHttp.test.cjs tests/portfolio.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs tests/snapshotEnvelope.test.cjs tests/snapshotCollector.test.cjs tests/firestoreReadTransport.test.cjs tests/snapshotReadTime.test.cjs tests/snapshotCredential.test.cjs tests/encryptedSnapshot.test.cjs
         working-directory: backend
       - run: npm test
         working-directory: backend/features/connectcv

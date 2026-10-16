@@ -9,10 +9,14 @@ const fail=code=>new Error('SNAPSHOT_'+code);
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
 function segment(value){if(typeof value!=='string'||!value||value==='.'||value==='..'||value.includes('/')||Buffer.byteLength(value)>1500)throw fail('RESPONSE_INVALID');try{encodeURIComponent(value);}catch{throw fail('RESPONSE_INVALID');}return value;}
 function resource(relative){return '/v1/'+ROOT+(relative?'/'+relative.split('/').map(encodeURIComponent).join('/'):'');}
+function validateCollectorLimits(limits={}){
+ if(!object(limits))throw fail('CONFIG_INVALID');const config={...defaults};
+ for(const [name,value]of Object.entries(limits)){if(!Object.hasOwn(defaults,name)||!Number.isSafeInteger(value)||value<1||value>defaults[name])throw fail('LIMIT_INVALID');config[name]=value;}
+ return config;
+}
 async function collectSnapshot({request,readTime,clock=Date.now,limits={},signal}={}){
  if(typeof request!=='function'||typeof clock!=='function'||!object(limits))throw fail('CONFIG_INVALID');
- const config={...defaults};
- for(const [name,value]of Object.entries(limits)){if(!Object.hasOwn(defaults,name)||!Number.isSafeInteger(value)||value<1||value>defaults[name])throw fail('LIMIT_INVALID');config[name]=value;}
+ const config=validateCollectorLimits(limits);
  if(typeof readTime!=='string'||!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d{1,6})?Z$/.test(readTime))throw fail('READ_TIME_INVALID');
  const timestamp=Date.parse(readTime);if(!Number.isFinite(timestamp)||new Date(timestamp).toISOString().slice(0,19)!==readTime.slice(0,19))throw fail('READ_TIME_INVALID');
  const started=performance.now();let pages=0,rawBytes=0;
@@ -89,4 +93,4 @@ async function collectSnapshot({request,readTime,clock=Date.now,limits={},signal
  if(bytes>config.maxBytes)throw fail('CAPACITY_EXCEEDED');
  return snapshot;
 }
-module.exports={collectSnapshot};
+module.exports={collectSnapshot,validateCollectorLimits};
