@@ -145,3 +145,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0035 — 16/10/2026
 
 [Nhật ký browser và release tách riêng](runs/2026-10-16-cycle-0035.md): nguyên Studio/local assets trên sandboxed Chromium,12pha lifecycle/keyboard/logout/native HTTP/bounds đạt; source cũ tái hiện reply sống lại sau clear. Review0224146 CI38873355177 SUCCESS. Candidate chatbot-only aac8134 từ main137 có diff16file, không report schema/ops; local85feature+6HTTP+12browser PASS, isolatedCI38873498820 SUCCESS. Cần backup Drive candidate trước merge/deploy; production không đổi. Firebase/React iframe/real iOS/model semantics vẫn chưa nghiệm thu.
+
+
+## Cập nhật chu kỳ 0036 — 16/10/2026
+
+[Nhật ký backup và blocker runtime](runs/2026-10-16-cycle-0036.md): candidateaac8134 delta368776bytes đã copy Drive stream; fresh bare restore/fsck/28file và FEaaZIP đạt, dọn242.43MB clone. Chưa xác nhận cloud upload vì cả Browser/Computer Use JS kernel báo os error3; giữ bundlelocal369KB, backupTransfer PENDING và chặn deploy. Không đổi live hoặc đọc DB; không tạo thêm backup khi pending. Cần khôi phục tool để xác minh Drive ID/upload rồi tiếp exact release; có thể tiếp portfolio local độc lập nếu outage còn nguyên.

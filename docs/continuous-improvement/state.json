@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 35,
-  "lastRun": "runs/2026-10-16-cycle-0035.md",
+  "completedCycles": 36,
+  "lastRun": "runs/2026-10-16-cycle-0036.md",
   "activeRun": null,
   "activeIssue": "CHAT001",
-  "issueState": "CHATBOT_ISOLATED_CANDIDATE_CI_VERIFIED_PENDING_FRESH_DRIVE_BACKUP",
+  "issueState": "CHATBOT_CANDIDATE_RESTORE_VERIFIED_CLOUD_ACK_BLOCKED_UI_RUNTIME",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Isolated release candidate aac8134d5554c468b87ea861856ae6b3ddd4c9bc on improvement/chatbot-release-20261016 from main137181d. CI38873498820 SUCCESS; local85feature+6HTTP+12whole-Studio browser phases PASS. Exact16-file diff excludes report schema/ops tooling; mount/interview/communityStore/featureSecurity blobs match main. Active checkout returned to continuous-review; do NOT deploy aggregate branch.",
-    "Next action: fresh candidate private Drive code/build checksum + restore proof and rollback catalog are required before main merge/exact deployment. Existing baseline1bf/FEaa is verified but not candidate backup. Use bounded staging/free-space preflight (C about2.15GB cycle35), no retained bundle/build/clone after cloud verification.",
-    "CHAT003 browser baseline source1ec65f3^ resurrected old reply after clear; review0224146 CI38873355177 SUCCESS (192units+12browser phases/new gate). Whole document/event/reload/native local HTTP verified; Firebase/React iframe/real iOS and model semantics remain unverified. No live AI/account writes.",
-    "Custody question cycle25 pending, no repeat/inferred answer. SOCIAL001/OPS002 deferred/databaseVerified=false. Main137/liveBE1bf/FEaa unchanged. Other route/SDK diagnostics and multi-instance limits still open SEC003. No repeated health or green backup matrices."
+    "FIRST: backupTransfer=PENDING_CANDIDATE_CLOUD_VERIFICATION. Do NOT create another backup or deploy. Candidate delta already exists local tmp/backup-cycle0036-aac8134 (368776bytes) and Drive stream, SHA8fbc860a1724826dd34188b66a1db8409819111cf18471fe9895e8adb8e600e8. Catalog backup-transfer/cycle0036-candidate-aac8134.json. Fresh stream restore/fsck/28criticalfiles/FEaaZIP verified; restore.git deleted, local unique bundle retained.",
+    "Browser cua getState fails os error3 kernel assets twice incl reset; Computer Use node_repl Initialize fails identically. Restore UI tools (owner notified once cycle36); then verify new bundle/catalog upload completion and IDs in private Drive folder. Stream readback alone is NOT upload proof. No auth/credential/scopes/IAM change needed/allowed. Do not repeatedly notify unchanged outage.",
+    "Isolated candidate aac8134d5554c468b87ea861856ae6b3ddd4c9bc branch improvement/chatbot-release-20261016 CI38873498820 SUCCESS; exact16-file diff excludes report/ops. Only after candidate cloud VERIFIED, catalog/rollback and local bundle cleanup: main FF/CI then exact Render deploy/live checks, rollback1bf/dep-db8h2lu89jmc73dol4rg. Active checkout review branch must never deploy wholesale.",
+    "If UI remains unavailable, continue independent portfolio owner/visitor local scenario per rotation; do not repeat chatbot/emulator/backup green matrices. SOCIAL001/OPS002 deferred/custody question pending/databaseVerified=false. Main137/liveBE1bf/FEaa unchanged; no live AI/account writes."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -92,14 +92,23 @@
   "nextModule": "chatbot",
   "rotationIndex": 4,
   "backupTransfer": {
-    "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
+    "status": "PENDING_CANDIDATE_CLOUD_VERIFICATION",
     "localCleanupAuthorized": true,
     "destination": "Google Drive private owner folder",
-    "deployBlockedUntilCloudVerified": false,
+    "deployBlockedUntilCloudVerified": true,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
     "cloudBundlesVerified": 10,
-    "localCopiesDeleted": true
+    "localCopiesDeleted": false,
+    "localCopiesRetained": true,
+    "pendingCatalog": "backup-transfer/cycle0036-candidate-aac8134.json",
+    "pendingCandidateCommit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
+    "pendingLocalBundle": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\backup-cycle0036-aac8134\\connectcv-2026-10-16-cycle-0036-candidate-aac8134.incremental.bundle",
+    "blocker": "Browser/ComputerUse JS kernels fail to write kernel assets (os error3); Drive stream checksum does not prove upload completion.",
+    "verifiedBaselineLocalCopiesDeleted": true,
+    "pendingRestoreVerified": true,
+    "pendingRestoreCloneDeleted": true,
+    "pendingRetainedBytes": 368776
   },
   "delivery": {
     "reviewCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -152,7 +161,7 @@
     "isolatedChatbotCommit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
     "isolatedChatbotBase": "137181d1f35ca27a2639dbee9d47e7318fd6e7f1",
     "isolatedChatbotCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38873498820",
-    "isolatedChatbotStatus": "LOCAL_AND_ISOLATED_CI_VERIFIED_BACKUP_REQUIRED_NOT_MAIN_NOT_DEPLOYED"
+    "isolatedChatbotStatus": "LOCAL_AND_ISOLATED_CI_RESTORE_VERIFIED_PENDING_CLOUD_ACK_UI_RUNTIME_BLOCKED_NOT_DEPLOYED"
   },
   "blockingDependency": null,
   "dataBackup": {
@@ -209,5 +218,17 @@
     "dependency": "OPS002",
     "reason": "WAITING_OWNER_KEY_CUSTODY_AND_REAL_DB_BACKUP",
     "deployBlocked": true
+  },
+  "uiToolBlocker": {
+    "status": "OPEN",
+    "firstObservedCycle": 36,
+    "error": "failed to write kernel assets: The system cannot find the path specified. (os error3)",
+    "tools": [
+      "cua_repl",
+      "node_repl Computer Use Initialize"
+    ],
+    "browserResetRetried": true,
+    "ownerNotifiedCycle": 36,
+    "credentialIssueObserved": false
   }
 }
