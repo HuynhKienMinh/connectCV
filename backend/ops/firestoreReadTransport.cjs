@@ -1,8 +1,10 @@
 'use strict';
 // Explicit injection only. No credential discovery or I/O on import.
 const PREFIX='/v1/projects/connect-cv/databases/(default)/documents',ORIGIN='https://firestore.googleapis.com';
+const {isReadTimeSpec}=require('./snapshotReadTime.cjs');
 const fail=()=>new Error('SNAPSHOT_TRANSPORT_FAILED');
 function validate(spec){
+ if(isReadTimeSpec(spec))return {url:new URL(ORIGIN+spec.path),listing:true,input:JSON.parse(JSON.stringify(spec.body))};
  if(!spec||typeof spec.path!=='string'||!spec.path.startsWith(PREFIX))throw fail();
  const suffix=spec.path.slice(PREFIX.length),listing=spec.method==='POST'&&suffix.endsWith(':listCollectionIds');
  if(spec.method!=='GET'&&!listing)throw fail();
@@ -17,23 +19,23 @@ function validate(spec){
  if(input.pageToken!==undefined&&(typeof input.pageToken!=='string'||input.pageToken.length>4096))throw fail();
  if(!Number.isSafeInteger(spec.maxResponseBytes)||spec.maxResponseBytes<1||spec.maxResponseBytes>2*1024*1024)throw fail();
  const url=new URL(ORIGIN+spec.path);if(url.origin!==ORIGIN||url.pathname!==spec.path||url.search||url.hash)throw fail();
- if(!listing)for(const [key,value]of Object.entries(input))url.searchParams.set(key,String(value));return {url,listing,input};
+ if(!listing)for(const [key,value]of Object.entries(input))url.searchParams.set(key,String(value));return {url,listing,input:{...input}};
 }
 function createFirestoreReadTransport({fetchImpl,getAccessToken}={}){
  if(typeof fetchImpl!=='function'||typeof getAccessToken!=='function')throw fail();
  return async spec=>{
   let response,reader,complete=false;
   try{
-   const {url,listing,input}=validate(spec);if(spec.signal?.aborted)throw fail();
-   const token=await getAccessToken();if(spec.signal?.aborted||typeof token!=='string'||!/^[^\s]{20,8192}$/.test(token))throw fail();
-   response=await fetchImpl(url.href,{method:spec.method,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},...(listing?{body:JSON.stringify(input)}:{}),signal:spec.signal,redirect:'error',credentials:'omit',cache:'no-store'});
+   const {url,listing,input}=validate(spec),{method,signal,maxResponseBytes}=spec;if(signal?.aborted)throw fail();
+   const token=await getAccessToken();if(signal?.aborted||typeof token!=='string'||!/^[^\s]{20,8192}$/.test(token))throw fail();
+   response=await fetchImpl(url.href,{method,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},...(listing?{body:JSON.stringify(input)}:{}),signal,redirect:'error',credentials:'omit',cache:'no-store'});
    if(response.status!==200){await response.body?.cancel().catch(()=>{});return {status:response.status,body:Buffer.alloc(0)};}
-   if(spec.signal?.aborted||!response.headers.get('Content-Type')?.toLowerCase().includes('application/json'))throw fail();
-   const length=response.headers.get('Content-Length');if(length!==null&&(!/^\d+$/.test(length)||Number(length)>spec.maxResponseBytes))throw fail();
+   if(signal?.aborted||!response.headers.get('Content-Type')?.toLowerCase().includes('application/json'))throw fail();
+   const length=response.headers.get('Content-Length');if(length!==null&&(!/^\d+$/.test(length)||Number(length)>maxResponseBytes))throw fail();
    reader=response.body?.getReader();if(!reader)throw fail();const chunks=[];let bytes=0;
    for(;;){
-    if(spec.signal?.aborted)throw fail();const {done,value}=await reader.read();if(spec.signal?.aborted)throw fail();if(done)break;
-    bytes+=value.byteLength;if(bytes>spec.maxResponseBytes)throw fail();chunks.push(Buffer.from(value));
+    if(signal?.aborted)throw fail();const {done,value}=await reader.read();if(signal?.aborted)throw fail();if(done)break;
+    bytes+=value.byteLength;if(bytes>maxResponseBytes)throw fail();chunks.push(Buffer.from(value));
    }
    complete=true;return {status:200,body:Buffer.concat(chunks,bytes)};
   }catch{throw fail();}
