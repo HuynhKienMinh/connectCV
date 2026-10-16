@@ -1,4 +1,4 @@
-const {safeError}=require('./securityError');
+const {providerErrorCode}=require('./securityError');
 // geminiService.js v3 — Hardened Multi-Key Pool & Auto-Failover
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const keyManager = require('./keyManager');
@@ -45,12 +45,12 @@ function extractJSON(rawText) {
 // ─────────────────────────────────────────────────────────
 // HELPER: Race giữa Gemini call và timeout (45 giây)
 // ─────────────────────────────────────────────────────────
-async function withTimeout(promise, ms = 45000, label = 'Gemini') {
+async function withTimeout(promise, ms = 45000) {
   let timer;
   try { return await Promise.race([
     promise,
     new Promise((_, reject) =>
-      timer = setTimeout(() => reject(new Error(`[Timeout] ${label} không phản hồi sau ${ms / 1000}s`)), ms)
+      timer = setTimeout(() => reject(Object.assign(new Error('Gemini response deadline exceeded'), {code:'AI_TIMEOUT'})), ms)
     )
   ]); } finally { clearTimeout(timer); }
 }
@@ -81,8 +81,7 @@ async function callGeminiJSON(prompt, preferredModel = 'gemini-2.5-flash-lite') 
 
         const result = await withTimeout(
           model.generateContent(prompt),
-          45000,
-          modelName
+          45000
         );
 
         const text = result.response.text();
@@ -94,15 +93,15 @@ async function callGeminiJSON(prompt, preferredModel = 'gemini-2.5-flash-lite') 
         }
         // Nếu lỗi 429 (hạn mức model), ghi log và thử model tiếp theo trong chuỗi
         if (keyManager.isRateLimitError(error)) {
-          console.warn(`[Gemini] Model ${modelName} chạm hạn mức (429), tự động chuyển sang model dự phòng tiếp theo...`);
+          console.warn('[Gemini] AI_RATE_LIMIT: trying fallback model');
         } else {
-          console.warn(`[Gemini] Model ${modelName} lỗi: ${safeError(error)}`);
+          console.warn('[Gemini] Model fallback failed:', providerErrorCode(error));
         }
         lastError = error;
       }
     }
 
-    console.error('[Gemini] Toàn bộ model đều thất bại:', safeError(lastError));
+    console.error('[Gemini] Toàn bộ model đều thất bại:', providerErrorCode(lastError));
     throw lastError || new Error('AI tạm thời không khả dụng. Vui lòng thử lại sau ít phút.');
   }, 'callGeminiJSON');
 }
@@ -119,16 +118,16 @@ async function callGeminiText(prompt, preferredModel = 'gemini-2.5-flash-lite') 
     for (const modelName of modelsToTry) {
       try {
         const model = client.getGenerativeModel({ model: modelName, generationConfig: { maxOutputTokens: 4096, thinkingConfig: { thinkingBudget: 0 } } }, { timeout: 45000 });
-        const result = await withTimeout(model.generateContent(prompt), 45000, modelName);
+        const result = await withTimeout(model.generateContent(prompt), 45000);
         return result.response.text();
       } catch (error) {
         if (keyManager.isAuthError(error)) {
           throw error;
         }
         if (keyManager.isRateLimitError(error)) {
-          console.warn(`[Gemini] Model ${modelName} chạm hạn mức (429), tự động chuyển sang model dự phòng tiếp theo...`);
+          console.warn('[Gemini] AI_RATE_LIMIT: trying fallback model');
         } else {
-          console.warn(`[Gemini] Model ${modelName} lỗi: ${safeError(error)}`);
+          console.warn('[Gemini] Model fallback failed:', providerErrorCode(error));
         }
         lastError = error;
       }
