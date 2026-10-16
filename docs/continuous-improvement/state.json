@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 29,
-  "lastRun": "runs/2026-10-16-cycle-0029.md",
+  "completedCycles": 30,
+  "lastRun": "runs/2026-10-16-cycle-0030.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "EXPLICIT_CREDENTIAL_ADAPTER_REVIEW_CI_VERIFIED_CUSTODY_PENDING",
+  "issueState": "ENCRYPTED_PIPELINE_REVIEW_CI_VERIFIED_CUSTODY_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "OPS002: 55a7f2b adds lazy explicitly supplied Firebase Admin Credential adapter;7new local tests PASS,22 affected credential/readTime/transport tests PASS. CI38863629427 SUCCESS (164 units and existing emulator/PDF/browser gates). Next compose preflight key/custody -> readTime -> collect -> seal/readback with finally close using synthetic providers only before real cloud.",
-    "Owner custody question cycle25 remains pending, no repeat or inferred preselection. No actual key/session/ADC/CLI credential read, cloud PII/export or Drive DB ciphertext. databaseVerified=false until real consistent export, isolated restore and privateDrive readback/invariants.",
-    "Credential adapter is injected-only, no SDK init/discovery/login/scopes/refresh-token handling; one lookup/session,10s timeout,150s monotonic session,180-3600s remaining TTL, no retry/late revival. Does not prove real token IAM/project identity or cancel underlying SDK network. Existing SDK may refresh its own token only if later explicitly supplied; not exercised.",
-    "Main137181d/liveBE1bf/FEaa unchanged. Report API/UI review-only, real DB and candidate code/build Drive gates before deploy; compatible reader rollback baseline before hidden writes. No repeated green smoke or unchanged notifications."
+    "OPS002: c7ecc5b composes preflight custody/key -> explicit credential -> fixed server readTime -> collector -> seal/authenticated readback;7new local tests+10affected collector tests PASS. CI38865217215 SUCCESS (171 units plus existing emulator/PDF/browser gates). Next actual isolated emulator restore/re-export from wrapper archive (new composition proof, not same old matrix); afterwards retain custody blocker and continue independent P1 if no owner reply.",
+    "Custody question cycle25 still pending; no repeat/inferred selection. Wrapper attestation is caller declaration, not recovery proof. State remains WAITING_OWNER_CHOICE; no real key/session/ADC/CLI/cloud data or Drive DB ciphertext. databaseVerified=false until real consistent snapshot + isolated restore + privateDrive readback/invariants.",
+    "RAM wrapper has no default network/discovery/file/Drive/restore, checks limits before token, copies key before async work, closes session/aborts/zeros owned key finally. Only ciphertext/catalog returned after typed-digest readback; cloudVerified/restoreVerified=false. Actual provider and whole wrapper->emulator composition unverified.",
+    "Main137181d/liveBE1bf/FEaa unchanged; report API/UI review-only. Need real DB gate and candidate code/build Drive backup before deployment, compatible-reader rollback baseline before hidden writes. No repetitive smoke or unchanged notifications."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -134,16 +134,16 @@
     "pendingCommunityDeployBlocked": true,
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
     "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
-    "pendingOpsCommit": "55a7f2b375398971a437179037ffa9bad412d5f3",
-    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38863629427"
+    "pendingOpsCommit": "c7ecc5b9ddc6cb31168363825fec330af9699caa",
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38865217215"
   },
   "blockingDependency": "OPS002",
   "dataBackup": {
-    "status": "CREDENTIAL_ADAPTER_FAKE_PROVIDER_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
+    "status": "ENCRYPTED_PIPELINE_FAKE_HTTP_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
     "tool": "backend/ops/snapshotEnvelope.cjs",
     "plan": "DATABASE-RESTORE-PLAN.md",
-    "reviewCommit": "55a7f2b375398971a437179037ffa9bad412d5f3",
-    "localSyntheticTests": 39,
+    "reviewCommit": "c7ecc5b9ddc6cb31168363825fec330af9699caa",
+    "localSyntheticTests": 46,
     "keyCustodyStatus": "WAITING_OWNER_CHOICE",
     "keyFileCreated": false,
     "realSnapshotCreated": false,
@@ -152,7 +152,7 @@
     "maxPlaintextBytes": 33554432,
     "networkCollectorImplemented": true,
     "emulatorRestoreImplemented": true,
-    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38863629427",
+    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38865217215",
     "reviewCiPassed": true,
     "credentialAdapterImplemented": true,
     "collector": "backend/ops/snapshotCollector.cjs",
@@ -179,6 +179,10 @@
     "newReadTimeTests": 8,
     "credentialAdapter": "backend/ops/snapshotCredential.cjs",
     "credentialSessionVerified": false,
-    "newCredentialTests": 7
+    "newCredentialTests": 7,
+    "encryptedPipelineImplemented": true,
+    "encryptedPipeline": "backend/ops/encryptedSnapshot.cjs",
+    "wrapperEmulatorCompositionVerified": false,
+    "newPipelineTests": 7
   }
 }

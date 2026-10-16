@@ -38,6 +38,12 @@ backend/ops/snapshotCredential.cjs nhận một object theo [Firebase Admin Cred
 
 Tiếp theo ghép acquireReadTime→collectSnapshot→seal/readback trong wrapper có preflight key/custody và finally close, trước mọi I/O. Chưa có custody thì không gọi provider hoặc đọc cloud. SDK Credential do caller cấp có thể tự lấy access token theo cấu hình sẵn có; adapter không thêm scopes/quyền và không bảo đảm hủy network bên trong SDK khi callback không hỗ trợ abort. Không ghi token/raw provider error vào log/catalog; close chỉ bỏ tham chiếu riêng, không tuyên bố secure memory erase.
 
+## Wrapper RAM — cycle30, chưa chạy cloud
+
+backend/ops/encryptedSnapshot.cjs ghép Credential/readTime/collector/envelope bằng dependency tường minh, không default fetch/credential/key/file/Drive. Custody attestation OWNER_CONFIRMED/recoveryVerified=true và key32bytes/keyId phải hợp lệ trước auth/network; không coi attestation là bằng chứng khôi phục khóa. Local tests dùng attestation giả trong RAM, state thực vẫn WAITING_OWNER_CHOICE. Helper validateCollectorLimits dùng chung để chặn cap vượt trước lookup.
+
+Copy key riêng trước await, seal→open→canonical typed digest so sánh, cuối cùng đóng session/abort/gỡ listener và zero Buffer key riêng. Không ghi plaintext digest/snapshot ra catalog, không trả snapshot; output chỉ archive và catalog với localReadbackVerified=true/cloudVerified=false/restoreVerified=false. Lỗi/hủy/capacity sau partial read không trả archive. Deadline toàn chuỗi≤130s; không hứa timer ngắt CPU đồng bộ hoặc xóa JS strings trước GC. Bảy test mới qua fakeHTTP/provider; cần tiếp actual emulator restore composition từ archive wrapper rồi real credential/provider/DB/Drive sau khi custody sẵn sàng.
+
 ## Restore fixture thực tế — cycle27
 
 `node backend/tests/snapshotRestore.check.cjs` chạy Java21 và Firestoreemulator1.21.0 trong staging riêng, loopback127.0.0.1/projectdemo-connectcv-backup, không token/cloudcredential. Windows phải cung cấp JAVA_EXECUTABLE là direct JDK/bin/java.exe hoặc JAVA_HOME; không dùng javapath launcher tạo JVM con khó dọn. CI dùng Temurin21. Manifest pin138093843bytes/SHA256c3d3680a89d946a90a027365ea14c26c6472a162bcf37f099bbb1ebd66d25e8e theo FirebaseCLI15.22.4 đãcài; download60s/capexact/hashverify, stage finally cleanup. Có thể truyền FIRESTORE_EMULATOR_JAR đãpin; runner không xóa file bênngoài stage của chính nó.

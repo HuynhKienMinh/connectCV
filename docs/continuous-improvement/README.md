@@ -123,3 +123,6 @@ Cycle27/28 (16/10/2026): [Restore emulator thật](runs/2026-10-16-cycle-0027.md
 
 
 Cycle29 (16/10/2026): [Phiên credential được cấp tường minh](runs/2026-10-16-cycle-0029.md), candidate55a7f2b reviewCI đạt164units và gate hiện có; bảy test mới về TTL/deadline/dedupe/cancel/late token và composition với readTime/collector. Không đọc credential thật hoặc cloud; custody và database backup thực vẫn chờ, main/live không đổi.
+
+
+Cycle30 (16/10/2026): [Pipeline snapshot mã hóa trong RAM](runs/2026-10-16-cycle-0030.md), candidatec7ecc5b reviewCI đạt171units/gate hiện có. Bảy test mới về preflight custody/key trước I/O, chuỗi typed readback, partial failure và cancel/late token. Chỉ fake provider; chưa custody thật, cloud snapshot/Drive hoặc wrapper-to-emulator proof, main/live không đổi.
