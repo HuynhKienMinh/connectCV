@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 28,
-  "lastRun": "runs/2026-10-16-cycle-0028.md",
+  "completedCycles": 29,
+  "lastRun": "runs/2026-10-16-cycle-0029.md",
   "activeRun": null,
   "activeIssue": "SOCIAL001",
-  "issueState": "SERVER_READ_TIME_REVIEW_CI_VERIFIED_CUSTODY_PENDING",
+  "issueState": "EXPLICIT_CREDENTIAL_ADAPTER_REVIEW_CI_VERIFIED_CUSTODY_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "OPS002: 0accbf5 adds fixed zero-result server readTime probe, 8 new local fake HTTP tests; all32 ops tests PASS. CI38862222926 SUCCESS (157 units and existing emulator/PDF/browser gates). Next credential/session adapter with injection-only tests, then provider validation after owner custody is ready. Do not repeat emulator download or previous green matrices as new progress.",
-    "Owner custody question cycle25 remains pending; do not ask again/infer preselection. No real key, cloud PII/export or Drive DB ciphertext created. Keep databaseVerified=false until real consistent snapshot + isolated restore + privateDrive readback and invariants.",
-    "Production readTime is unverified: zero-result probe follows official REST contract, strict64KiB/10s/one-row/microsecond/freshness bounds, no retry/local-clock fallback. Validate actual provider behavior conservatively once custody ready; never widen query/project or change IAM/credential/scopes to pass.",
-    "Main137181d/liveBE1bf/FEaa unchanged; report API/UI review-only. New candidate code/build Drive backup and DB gate before deploy; reader-compatible rollback baseline before future hide/reinstate. No repeated unchanged user notifications."
+    "OPS002: 55a7f2b adds lazy explicitly supplied Firebase Admin Credential adapter;7new local tests PASS,22 affected credential/readTime/transport tests PASS. CI38863629427 SUCCESS (164 units and existing emulator/PDF/browser gates). Next compose preflight key/custody -> readTime -> collect -> seal/readback with finally close using synthetic providers only before real cloud.",
+    "Owner custody question cycle25 remains pending, no repeat or inferred preselection. No actual key/session/ADC/CLI credential read, cloud PII/export or Drive DB ciphertext. databaseVerified=false until real consistent export, isolated restore and privateDrive readback/invariants.",
+    "Credential adapter is injected-only, no SDK init/discovery/login/scopes/refresh-token handling; one lookup/session,10s timeout,150s monotonic session,180-3600s remaining TTL, no retry/late revival. Does not prove real token IAM/project identity or cancel underlying SDK network. Existing SDK may refresh its own token only if later explicitly supplied; not exercised.",
+    "Main137181d/liveBE1bf/FEaa unchanged. Report API/UI review-only, real DB and candidate code/build Drive gates before deploy; compatible reader rollback baseline before hidden writes. No repeated green smoke or unchanged notifications."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -134,16 +134,16 @@
     "pendingCommunityDeployBlocked": true,
     "pendingCommunityRemaining": "Encrypted DB schema backup/restore gate per RUNBOOK and key custody proposal; verified private Drive candidate code/build backup. Report UI local+Linux CI12phases pass. Reader-compatible rollback baseline required BEFORE future hide/reinstate/audit actions. No admin claim/IAM change.",
     "pendingCommunityCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38787901503",
-    "pendingOpsCommit": "0accbf51733c4ded8b031d88c4a7348823e07595",
-    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38862222926"
+    "pendingOpsCommit": "55a7f2b375398971a437179037ffa9bad412d5f3",
+    "pendingOpsCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38863629427"
   },
   "blockingDependency": "OPS002",
   "dataBackup": {
-    "status": "SERVER_READ_TIME_FAKE_HTTP_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
+    "status": "CREDENTIAL_ADAPTER_FAKE_PROVIDER_LOCAL_AND_CI_VERIFIED_NOT_DATABASE_BACKUP",
     "tool": "backend/ops/snapshotEnvelope.cjs",
     "plan": "DATABASE-RESTORE-PLAN.md",
-    "reviewCommit": "0accbf51733c4ded8b031d88c4a7348823e07595",
-    "localSyntheticTests": 32,
+    "reviewCommit": "55a7f2b375398971a437179037ffa9bad412d5f3",
+    "localSyntheticTests": 39,
     "keyCustodyStatus": "WAITING_OWNER_CHOICE",
     "keyFileCreated": false,
     "realSnapshotCreated": false,
@@ -152,9 +152,9 @@
     "maxPlaintextBytes": 33554432,
     "networkCollectorImplemented": true,
     "emulatorRestoreImplemented": true,
-    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38862222926",
+    "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38863629427",
     "reviewCiPassed": true,
-    "credentialAdapterImplemented": false,
+    "credentialAdapterImplemented": true,
     "collector": "backend/ops/snapshotCollector.cjs",
     "transport": "backend/ops/firestoreReadTransport.cjs",
     "newCollectorTransportTests": 17,
@@ -176,6 +176,9 @@
     "productionReadTimeVerified": false,
     "sourceSystemMetadataRestored": false,
     "readTimeTool": "backend/ops/snapshotReadTime.cjs",
-    "newReadTimeTests": 8
+    "newReadTimeTests": 8,
+    "credentialAdapter": "backend/ops/snapshotCredential.cjs",
+    "credentialSessionVerified": false,
+    "newCredentialTests": 7
   }
 }

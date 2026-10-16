@@ -32,6 +32,12 @@ backend/ops/snapshotReadTime.cjs gửi đúng một probe cố định qua callb
 
 Probe chặn document hoặc response bất ngờ, không retry/fallback giờ máy; 64 KiB/10 giây tối đa bao gồm auth. Không tăng query limit hoặc nới scope để chữa provider error. Còn credential adapter, kiểm quyền phiên thật, behavior server/clock drift và consistent export thật sau khi custody sẵn sàng. Không suy ra backup database từ fixture.
 
+## Credential adapter — cycle29, chưa dùng phiên thật
+
+backend/ops/snapshotCredential.cjs nhận một object theo [Firebase Admin Credential](https://firebase.google.com/docs/reference/admin/node/firebase-admin.app.credential) do caller cấp, projectId=connect-cv. Không tự đọc ADC/CLI/env/keyfile hoặc khởi tạo SDK. Lazy một lookup chia sẻ giữa các caller; expires_in 180–3600 giây, token lookup tối đa 10 giây, phiên cố định tối đa 150 giây bằng đồng hồ monotonic. Lỗi/timeout/abort/close đóng phiên, không retry/refresh trong adapter hoặc dùng token muộn. Wrapper phải close trong finally. Chỉ fakeCredential/fakeHTTP đã được kiểm; chưa actual auth, IAM hoặc session integration. Token không dùng để suy ra quyền theo project, quyền thật do provider quyết định.
+
+Tiếp theo ghép acquireReadTime→collectSnapshot→seal/readback trong wrapper có preflight key/custody và finally close, trước mọi I/O. Chưa có custody thì không gọi provider hoặc đọc cloud. SDK Credential do caller cấp có thể tự lấy access token theo cấu hình sẵn có; adapter không thêm scopes/quyền và không bảo đảm hủy network bên trong SDK khi callback không hỗ trợ abort. Không ghi token/raw provider error vào log/catalog; close chỉ bỏ tham chiếu riêng, không tuyên bố secure memory erase.
+
 ## Restore fixture thực tế — cycle27
 
 `node backend/tests/snapshotRestore.check.cjs` chạy Java21 và Firestoreemulator1.21.0 trong staging riêng, loopback127.0.0.1/projectdemo-connectcv-backup, không token/cloudcredential. Windows phải cung cấp JAVA_EXECUTABLE là direct JDK/bin/java.exe hoặc JAVA_HOME; không dùng javapath launcher tạo JVM con khó dọn. CI dùng Temurin21. Manifest pin138093843bytes/SHA256c3d3680a89d946a90a027365ea14c26c6472a162bcf37f099bbb1ebd66d25e8e theo FirebaseCLI15.22.4 đãcài; download60s/capexact/hashverify, stage finally cleanup. Có thể truyền FIRESTORE_EMULATOR_JAR đãpin; runner không xóa file bênngoài stage của chính nó.

@@ -120,3 +120,6 @@ Cycle26 (16/10/2026): [Collector snapshot chỉ đọc](runs/2026-10-16-cycle-00
 
 
 Cycle27/28 (16/10/2026): [Restore emulator thật](runs/2026-10-16-cycle-0027.md) đạt sáu pha synthetic local/CI a4d366d; staging/JAR đã dọn. [Probe readTime cố định](runs/2026-10-16-cycle-0028.md) thêm tám test fake HTTP, cùng mốc qua collector, chặn query widening và token treo. Candidate0accbf5 review-only; chưa database backup thật, credential/provider proof hoặc custody khóa. Main/live giữ nguyên.
+
+
+Cycle29 (16/10/2026): [Phiên credential được cấp tường minh](runs/2026-10-16-cycle-0029.md), candidate55a7f2b reviewCI đạt164units và gate hiện có; bảy test mới về TTL/deadline/dedupe/cancel/late token và composition với readTime/collector. Không đọc credential thật hoặc cloud; custody và database backup thực vẫn chờ, main/live không đổi.
