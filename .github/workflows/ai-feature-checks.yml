@@ -156,3 +156,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           CHAT_BROWSER_QA_OUTPUT: '${{ runner.temp }}/connectcv-chatbot-qa'
+      - name: Verify portfolio saves preserve newer drafts and ignore obsolete account operations
+        run: node tests/portfolioSaveUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          PORTFOLIO_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-portfolio-save-qa'

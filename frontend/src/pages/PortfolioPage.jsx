@@ -12,15 +12,30 @@ export default function PortfolioPage({publicView=false}){
  const scopeRef=useRef(scope);scopeRef.current=scope;
  const [viewScope,setViewScope]=useState(scope);
  const [form,setForm]=useState({title:'',summary:'',published:false,projects:[]});
+ const formRef=useRef(form);formRef.current=form;
+ const saveOperation=useRef(null);
  async function load(){return loader.current.load(async()=>{const result=await api(publicView?`/api/portfolios/public/${id}`:'/api/portfolios');return publicView?[result.portfolio]:result.portfolios;});}
  useEffect(()=>{
+  saveOperation.current=null;
   setViewScope(scope);loader.current.invalidate();setForm({title:'',summary:'',published:false,projects:[]});setMessage('');setBusy(false);
   if(publicView||(!loading&&user))load();
-  return ()=>loader.current.invalidate();
+  return ()=>{saveOperation.current=null;loader.current.invalidate();};
  },[user?.uid,id,publicView,loading]);
  if(!publicView&&!loading&&!user)return <Navigate to="/login" replace/>;
  if(viewScope!==scope)return <main className="max-w-5xl mx-auto p-6"><p role="status">Đang chuyển hồ sơ năng lực…</p></main>;
- async function save(e){e.preventDefault();setBusy(true);try{await api('/api/portfolios'+(form.id?'/'+form.id:''),{method:form.id?'PUT':'POST',body:JSON.stringify({title:form.title,summary:form.summary,published:form.published,projects:form.projects})});if(scopeRef.current!==scope)return;setForm({title:'',summary:'',published:false,projects:[]});if(await load())setMessage('Đã lưu hồ sơ năng lực.');}catch(e){if(scopeRef.current===scope)setMessage(e.message);}finally{if(scopeRef.current===scope)setBusy(false);}}
+ async function save(e){
+  e.preventDefault();if(saveOperation.current)return;
+  const operation={form};saveOperation.current=operation;setBusy(true);
+  const current=()=>saveOperation.current===operation&&scopeRef.current===scope;
+  try{
+   await api('/api/portfolios'+(form.id?'/'+form.id:''),{method:form.id?'PUT':'POST',body:JSON.stringify({title:form.title,summary:form.summary,published:form.published,projects:form.projects})});
+   if(!current())return;
+   const unchanged=formRef.current===operation.form;
+   if(unchanged)setForm({title:'',summary:'',published:false,projects:[]});
+   if(await load()&&current())setMessage(unchanged?'Đã lưu hồ sơ năng lực.':'Đã lưu phiên bản đã gửi. Bản nháp đang sửa vẫn được giữ.');
+  }catch(error){if(current())setMessage(error.message);}
+  finally{if(current()){saveOperation.current=null;setBusy(false);}}
+ }
  return <main className="max-w-5xl mx-auto p-6"><h1 className="text-2xl font-bold my-6">Hồ sơ năng lực</h1><p role="status">{listBusy?'Đang tải hồ sơ năng lực…':message}</p>
  {!publicView&&<form onSubmit={save} className="p-6 bg-white rounded-2xl border space-y-4 mb-6"><label className="block">Tiêu đề<input required minLength={2} maxLength={150} className="border rounded-lg p-3 w-full block" value={form.title} onChange={e=>setForm({...form,title:e.target.value})}/></label><label className="block">Giới thiệu<textarea className="border rounded-lg p-3 w-full block" maxLength={6000} rows={4} value={form.summary} onChange={e=>setForm({...form,summary:e.target.value})}/></label>
  {form.projects.map((p,i)=><div className="border rounded-lg p-4 space-y-2" key={i}>{['title','description','url'].map(key=><label className="block" key={key}>{{title:'Tên dự án',description:'Mô tả',url:'URL HTTPS'}[key]}<input className="border rounded p-2 w-full" type={key==='url'?'url':'text'} value={p[key]} maxLength={key==='description'?3000:key==='title'?150:500} onChange={e=>setForm({...form,projects:form.projects.map((old,j)=>j===i?{...old,[key]:e.target.value}:old)})}/></label>)}<button type="button" onClick={()=>setForm({...form,projects:form.projects.filter((_,j)=>i!==j)})}>Xóa dự án</button></div>)}
