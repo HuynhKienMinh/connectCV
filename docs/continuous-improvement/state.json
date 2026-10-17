@@ -6,9 +6,13 @@
   "cadenceMinutes": 15,
   "completedCycles": 40,
   "lastRun": "runs/2026-10-17-cycle-0040.md",
-  "activeRun": null,
-  "activeIssue": "CV002",
-  "issueState": "NEXT_CV_ATS_FUNCTIONAL_SCENARIO_AUTH003_DEPLOYED_SCOPED",
+  "activeRun": {
+    "cycle": 41,
+    "stage": "LOCAL_92_PASS_PREPARING_ISOLATED_CI",
+    "startedAt": "2026-10-17T05:33:39.014Z"
+  },
+  "activeIssue": "CV004",
+  "issueState": "ATS_OPTIONAL_TRANSLATION_BASELINE_3FAIL_TO_7PASS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -138,8 +142,8 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleRuntimeChanged": false,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
