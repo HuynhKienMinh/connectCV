@@ -8,11 +8,11 @@
   "lastRun": "runs/2026-10-17-cycle-0039.md",
   "activeRun": {
     "cycle": 40,
-    "stage": "AUTH_FORM_ROUTE_LIFECYCLE_REPRO",
+    "stage": "CI_HARNESS_ROUTER_COMMIT_ORDER_REPAIR",
     "startedAt": "2026-10-17T05:16:38.740Z"
   },
-  "activeIssue": "AUTH002",
-  "issueState": "LIVE_MITIGATION_PENDING_IPHONE_CONFIRMATION_CONTINUE_FUNCTIONAL_ROTATION",
+  "activeIssue": "AUTH003",
+  "issueState": "LOCAL_8_BROWSER_PHASES_PASS_BASELINE_6_FAIL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -101,17 +101,17 @@
     "deployBlockedUntilCloudVerified": false,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-    "cloudBundlesVerified": 12,
+    "cloudBundlesVerified": 13,
     "localCopiesDeleted": true,
     "localCopiesRetained": false,
-    "pendingCatalog": null,
-    "pendingCandidateCommit": null,
+    "pendingCatalog": "backup-transfer/cycle0040-candidate-fdc3afb.json",
+    "pendingCandidateCommit": "fdc3afb44c805d717c07cfc218e884cb2deffac7",
     "blocker": null,
     "verifiedBaselineLocalCopiesDeleted": true,
     "pendingRestoreVerified": true,
     "pendingRestoreCloneDeleted": true,
     "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "6d965e78e595038eb897e9d3789d0ddabeb26905"
+    "lastVerifiedCandidateCommit": "fdc3afb44c805d717c07cfc218e884cb2deffac7"
   },
   "delivery": {
     "reviewCommit": "80982a3f5eefd0404886e7c5a5dd2a0baa0eb36f",
