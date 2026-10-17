@@ -1,0 +1,74 @@
+{
+  "wholeStudio": true,
+  "syntheticDevices": true,
+  "realMicrophoneUsed": false,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "rows": [
+    {
+      "phase": "speech-permission-denied-does-not-reprompt",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "phase": "no-device-allows-text-send",
+      "pass": false,
+      "error": "The input was expected to not match the regular expression /PRIVATE_DEVICE/. Input:\n\n'Không mở được micro: PRIVATE_DEVICE_SENTINEL'\n"
+    },
+    {
+      "phase": "media-permission-denied-preserves-draft",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ ''\n- 'live-quick-input'\n"
+    },
+    {
+      "phase": "explicit-stop-releases-track-and-graph",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "phase": "lost-track-offers-text-without-auto-send",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "phase": "cancel-pending-permission-closes-late-stream",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "phase": "audio-graph-failure-releases-acquired-device",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "phase": "stopped-recognizer-cannot-restart-on-late-end",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+    },
+    {
+      "phase": "duplicate-pending-start-requests-device-once",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+    },
+    {
+      "phase": "late-old-grant-cannot-stop-new-recording",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+    },
+    {
+      "phase": "typed-send-discards-recorded-audio",
+      "pass": false,
+      "error": "page.waitForFunction: Timeout 30000ms exceeded."
+    },
+    {
+      "phase": "explicit-recording-completion-transcribes-once-and-closes-device",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "phase": "stopped-recognizer-cannot-overwrite-text-draft",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'STALE_AUDIO'\n- 'Bản nháp cần giữ'\n"
+    }
+  ]
+}
