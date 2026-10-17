@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 37,
-  "lastRun": "runs/2026-10-16-cycle-0037.md",
+  "completedCycles": 38,
+  "lastRun": "runs/2026-10-16-cycle-0038.md",
   "activeRun": null,
   "activeIssue": "PORT003",
-  "issueState": "PORTFOLIO_SAVE_DRAFT_PRESERVATION_REVIEW_CI_VERIFIED_PENDING_BACKUP_DEPLOY",
+  "issueState": "PORTFOLIO_AUTH_HTTP_AND_RECOVERY_RELEASE_CI_VERIFIED_PENDING_BACKUP",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "PORT003 P1:74e6ed883f2168dbbe964c17b9c39db7257a6b0b preserves portfolio edits during pending save, operation ownership/double submit/A-B-A guards. Actual React browser baseline newer title emptied ->6new phases PASS;17FE units PASS; CI38876958919 SUCCESS (192units plus six new React browser phases and existing gates). No cloud writes/real Auth; live FEaa has same baseline source blob. Pending not deployed.",
-    "backupTransfer remains PENDING_CANDIDATE_CLOUD_VERIFICATION; do NOT create another backup or deploy. Existing tmp/backup-cycle0036-aac8134 bundle368776bytes retained; candidateaac restore28files/FEaaZIP verified but cloud upload acknowledgement/ID absent. Browser getState still os error3 one attempt cycle37; owner notified cycle36, do not repeat unchanged outage.",
-    "Existing isolated chatbot candidateaac/CI38873498820 remains unchanged and ON_HOLD: it does not include new PORT003P1. When UI tools recover, finish old pending cloud acknowledgement/catalog/local bundle cleanup first; then prepare isolated release/build/backup including PORT003 or compatible FE-first release. Never deploy aggregate review report schema/ops or pretend aac backup covers portfolio patch.",
-    "If UI remains unavailable after CI, next independent new scenario: actual Firebase middleware with injected synthetic verifier for portfolio owner/public HTTP matrix; no fake JWT or live accounts. Do not repeat green chatbot/portfolio/emulator/backup matrices. SOCIAL001/OPS002 deferred/custody pending/databaseVerified=false; main137/liveBE1bf/FEaa unchanged."
+    "Combined isolated recovery candidate6d965e78e595038eb897e9d3789d0ddabeb26905 branch improvement/recovery-release-20261016 includes chatbot+PORT003P1+new portfolio actual-auth HTTP. CI38878412001 SUCCESS; exact20-file diff excludes report/ops, locks/app/portfolio/security blobs match main. Supersedes chatbot-only aac for deployment; active checkout remains continuous-review, never deploy aggregate branch.",
+    "New portfolioAuthHttp80982a3:6local PASS through actual createApp/CORS/parser/Firebase middleware with injected opaque verifier, owner/admin/employer boundaries, publicGETHEAD/hide, caps and precommit rollback. ReviewCI38878317873 SUCCESS. No real Firebase/Firestore/AI. PORT00374e6ed8 previous React6phases/CI SUCCESS; do not repeat green matrices.",
+    "backupTransfer still PENDING_CANDIDATE_CLOUD_VERIFICATION for OLD aac only, local368776byte bundle retained. Browser getState once cycle38 still os error3; outage notified36, P1notified37, do not repeat unchanged notifications. No new backup or deploy until old cloud upload acknowledgement/ID/catalog and local cleanup complete. Then fresh candidate6d code+new FEbuild backup/restore/cloud verification/rollback aa+1bf and mainCI required.",
+    "If UI unavailable, continue new auth-profile functional scenario per rotation while release is held; no repeated health/green tests or backup duplicates. SOCIAL001/OPS002 deferred/custody pending/databaseVerified=false. Main137/liveBE1bf/FEaa unchanged; real cloud actor/idempotent postcommit/real iOS/model/human eval remain unverified."
   ],
   "deployment": {
     "commit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -136,7 +136,7 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": true,
+    "currentCycleRuntimeChanged": false,
     "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
@@ -161,11 +161,19 @@
     "isolatedChatbotCommit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
     "isolatedChatbotBase": "137181d1f35ca27a2639dbee9d47e7318fd6e7f1",
     "isolatedChatbotCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38873498820",
-    "isolatedChatbotStatus": "CI_RESTORE_VERIFIED_PENDING_CLOUD_ACK_AND_PORT003_P1_RELEASE_REPLAN_NOT_DEPLOYED",
+    "isolatedChatbotStatus": "SUPERSEDED_BY_COMBINED_6D965E7_OLD_BACKUP_CLOUD_ACK_PENDING_NOT_DEPLOYED",
     "pendingPortfolioCommit": "74e6ed883f2168dbbe964c17b9c39db7257a6b0b",
     "pendingPortfolioCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38876958919",
     "pendingPortfolioStatus": "ACTUAL_REACT_LOCAL_AND_REVIEW_CI_VERIFIED_NOT_DEPLOYED",
-    "pendingPortfolioOwnerNotifiedCycle": 37
+    "pendingPortfolioOwnerNotifiedCycle": 37,
+    "pendingPortfolioHttpCommit": "80982a3f5eefd0404886e7c5a5dd2a0baa0eb36f",
+    "pendingPortfolioHttpCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38878317873",
+    "pendingPortfolioHttpStatus": "ACTUAL_APP_AUTH_LOCAL_AND_REVIEW_CI_VERIFIED",
+    "isolatedRecoveryBranch": "improvement/recovery-release-20261016",
+    "isolatedRecoveryCommit": "6d965e78e595038eb897e9d3789d0ddabeb26905",
+    "isolatedRecoveryBase": "137181d1f35ca27a2639dbee9d47e7318fd6e7f1",
+    "isolatedRecoveryCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38878412001",
+    "isolatedRecoveryStatus": "EXACT_SCOPE_AND_CI_VERIFIED_NO_CURRENT_BACKUP_NOT_MAIN_NOT_DEPLOYED"
   },
   "blockingDependency": null,
   "dataBackup": {
@@ -234,6 +242,6 @@
     "browserResetRetried": true,
     "ownerNotifiedCycle": 36,
     "credentialIssueObserved": false,
-    "lastCheckedCycle": 37
+    "lastCheckedCycle": 38
   }
 }

@@ -155,3 +155,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0037 — 16/10/2026
 
 [Nhật ký giữ bản nháp portfolio](runs/2026-10-16-cycle-0037.md): phát hiện PORT003P1, lưu chậm xóa phần vừa nhập sau submit. Review74e6ed8 giữ edits mới/operation ownership;6actual React browser phases và17FE units đạt, CI38876958919 SUCCESS (192units +6new React browser phases/gates). Chưa deploy. Tool outage cũ giữ nguyên; backupaac còn pending cloud acknowledgement và không bao phủ portfolio fix, nên không tạo backup mới hoặc phát hành candidate cũ như đã gồm P1fix.
+
+
+## Cập nhật chu kỳ 0038 — 16/10/2026
+
+[Nhật ký portfolio auth HTTP và release kết hợp](runs/2026-10-16-cycle-0038.md):6scenario mới qua actual app/CORS/Firebase middleware/router đạt local; verifier/DB vẫn synthetic. Review80982a3 CI38878317873 SUCCESS. Candidate6d965e7 từ main kết hợp chatbot+PORT003, exact20file không report/ops, CI38878412001 SUCCESS. Backupaac cũ vẫn chờ cloud acknowledgement và không bao phủ6d; không tạo backup mới/deploy, không nhắc lại outage/P1 đã báo.
