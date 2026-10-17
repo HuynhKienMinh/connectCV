@@ -50,7 +50,13 @@ try{
  }
  const email=p=>p.getByLabel('Email',{exact:true});
  const button=(p,name)=>p.getByRole('button',{name,exact:true});
- const nav=(p,name)=>p.getByRole('link',{name,exact:true}).click();
+ async function nav(p,name){
+  const link=p.getByRole('link',{name,exact:true}),target=await link.getAttribute('href');
+  await link.click();
+  // Router transitions may commit after click() returns, especially on Linux.
+  // Settle the old SDK promise only after the destination is actually displayed.
+  await p.waitForFunction(target=>document.querySelector('[data-testid="route"]')?.textContent===target,target);
+ }
  async function start(p,kind){await email(p).fill('synthetic@example.invalid');if(kind!=='reset')await p.getByLabel(/^Mật khẩu/).fill('Synthetic-only-123!');if(kind==='signup')await p.getByLabel('Họ tên',{exact:true}).fill('Người dùng giả');await button(p,kind==='reset'?'Gửi hướng dẫn':kind==='signup'?'Tạo tài khoản':'Đăng nhập').click();await p.waitForFunction(()=>__qa.calls.length===1);}
  async function settle(p,index,{code=null}={}){await p.evaluate(({index,code})=>{const c=__qa.calls[index];if(code)c.reject({code,message:'PRIVATE_PROVIDER_SENTINEL'});else c.resolve({user:{uid:'synthetic-created'}});},{index,code});await p.evaluate(()=>new Promise(r=>setTimeout(r,60)));}
  await scenario('pending-reset-does-not-lock-login','/reset-password',async p=>{await start(p,'reset');await nav(p,'Đăng nhập');assert.equal(await button(p,'Đăng nhập').isEnabled(),true);await settle(p,0);assert.equal(await p.getByText('Nếu email hợp lệ, bạn sẽ nhận được hướng dẫn đặt lại mật khẩu.',{exact:true}).count(),0);});
