@@ -1,11 +1,11 @@
 'use strict';
 const AdmZip = require('adm-zip');
-const {groundCv,sourceProfile}=require('./cvGroundingService');
+const {groundCv}=require('./cvGroundingService');
 const esc=s=>String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
 function blocks(cv = {}, profile = {}, language='vi') {
  const source=cv.sourceProfile || (Object.keys(profile || {}).length?profile:null);
  if(!source) {const e=new Error('Bản ATS cần profile nguồn. Vui lòng tạo lại CV.');e.statusCode=400;throw e;}
- const d=groundCv(source,cv,language,cv.sourceContext || {targetRole:cv.targetRole});const p=sourceProfile(source);
+ const d=groundCv(source,cv,language,cv.sourceContext || {targetRole:cv.targetRole});
  const en=language==='en',out=[];
  const add=(text,type='text')=>{if(text)out.push({text:String(text),type})};
  add(d.fullName,'name');add(d.targetRole);add([d.phone,d.email,d.address].filter(Boolean).join(' | '));
@@ -14,7 +14,9 @@ function blocks(cv = {}, profile = {}, language='vi') {
  if(d.education.length){add(en?'Education':'Học vấn','heading');for(const e of d.education){add(e.school,'bold');add(e.degree);add(e.duration);add(e.highlights)}}
  if(d.highlightedSkills.technical.length){add(en?'Skills':'Kỹ năng','heading');add(d.highlightedSkills.technical.join(', '))}
  for(const [key,label] of [['certifications',en?'Certifications':'Chứng chỉ'],['projects',en?'Projects':'Dự án'],['activities',en?'Activities':'Hoạt động'],['awards',en?'Awards':'Giải thưởng'],['languages',en?'Languages':'Ngôn ngữ']]){
-  const vals=p[key];if(!vals || !vals.length)continue;add(label,'heading');
+  // groundCv preserves source facts and applies only a verified translation bundle.
+  // Reading the raw profile here would silently revert these sections to Vietnamese.
+  const vals=d[key];if(!vals || !vals.length)continue;add(label,'heading');
   for(const v of Array.isArray(vals)?vals:[vals]) add(typeof v==='string'?v:Object.entries(v).filter(([k])=>k!=='sourceId').map(([,val])=>Array.isArray(val)?val.join('; '):typeof val==='string'?val:'').filter(Boolean).join(' - '));
  }
  return out;
