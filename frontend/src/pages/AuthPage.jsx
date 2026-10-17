@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useRef} from 'react';
 import {Link,Navigate,useNavigate,useLocation} from 'react-router-dom';
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification,sendPasswordResetEmail,updateProfile,GoogleAuthProvider,signInWithPopup,signInWithRedirect,getRedirectResult} from 'firebase/auth';
 import {auth} from '../lib/firebase';
@@ -9,8 +9,13 @@ export default function AuthPage({mode='login'}){
  const {user}=useAuth(),navigate=useNavigate(),location=useLocation();
  const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[name,setName]=useState(''),[message,setMessage]=useState(''),[busy,setBusy]=useState(false);
  const [copied,setCopied]=useState(false);
+ const operation=useRef(null),scope=useRef(null);
+ scope.current=mode+':'+location.key;
+ function owns(op){return operation.current===op&&scope.current===op.scope;}
+ function begin(){if(operation.current)return null;const op={scope:scope.current};operation.current=op;setBusy(true);setMessage('');return op;}
+ function finish(op){if(owns(op)){operation.current=null;setBusy(false);}}
  const googleFlow=googleBrowserFlow({userAgent:navigator.userAgent,hostname:window.location.hostname,standalone:navigator.standalone||window.matchMedia('(display-mode: standalone)').matches});
- useEffect(()=>{setPassword('');setMessage(location.state?.notice||'');if(location.state?.email)setEmail(location.state.email);},[mode,location.key]);
+ useEffect(()=>{operation.current=null;setBusy(false);setPassword('');setCopied(false);setMessage(location.state?.notice||'');if(location.state?.email)setEmail(location.state.email);return()=>{operation.current=null;};},[mode,location.key]);
  useEffect(()=>{
   if(mode==='reset'||googleFlow!=='redirect')return;
   let active=true;
@@ -21,25 +26,25 @@ export default function AuthPage({mode='login'}){
  async function copyLoginUrl(){try{await navigator.clipboard.writeText(GOOGLE_LOGIN_URL);setCopied(true);}catch{setMessage('Hãy nhấn giữ đường dẫn bên dưới, sao chép và dán vào Safari hoặc Chrome.');}}
  function nextStep(path){return {pathname:path};}
  if(user&&mode==='login')return <Navigate to="/account" replace/>;
- async function googleSignIn(){if(busy)return;
+ async function googleSignIn(){if(operation.current)return;
  if(googleFlow==='external-browser'){setMessage('Bạn đang dùng trình duyệt trong Zalo hoặc ứng dụng khác. Chọn menu ⋯ rồi Mở bằng trình duyệt, hoặc sao chép đường dẫn bên dưới và dán vào Safari/Chrome để đăng nhập Google.');return;}
  if(googleFlow==='handoff'){window.location.assign(GOOGLE_LOGIN_URL);return;}
  if(googleFlow==='redirect'&&!redirectStorageAvailable(()=>window.sessionStorage)){setMessage(googleAuthFailure('auth/web-storage-unsupported'));return;}
- setBusy(true);setMessage('');try{
+ const op=begin();if(!op)return;try{
  const provider=new GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});
  if(googleFlow==='redirect'){await signInWithRedirect(auth,provider);return;}
- await signInWithPopup(auth,provider);navigate('/account');
+ await signInWithPopup(auth,provider);if(owns(op))navigate('/account');
  }catch(error){
- setMessage(googleAuthFailure(error.code));
- }finally{setBusy(false);}}
- async function submit(e){e.preventDefault();setBusy(true);setMessage('');try{
+ if(owns(op))setMessage(googleAuthFailure(error.code));
+ }finally{finish(op);}}
+ async function submit(e){e.preventDefault();const op=begin();if(!op)return;try{
  const enteredEmail=email.trim();
- if(mode==='reset'){await sendPasswordResetEmail(auth,enteredEmail);setMessage('Nếu email hợp lệ, bạn sẽ nhận được hướng dẫn đặt lại mật khẩu.');}
- else if(mode==='signup'){const result=await createUserWithEmailAndPassword(auth,enteredEmail,password);await updateProfile(result.user,{displayName:name.trim()});await sendEmailVerification(result.user);navigate('/account');}
- else{await signInWithEmailAndPassword(auth,enteredEmail,password);navigate('/account');}
- }catch(error){const failure=authFailure(error.code,mode);setPassword('');
+ if(mode==='reset'){await sendPasswordResetEmail(auth,enteredEmail);if(owns(op))setMessage('Nếu email hợp lệ, bạn sẽ nhận được hướng dẫn đặt lại mật khẩu.');}
+ else if(mode==='signup'){const result=await createUserWithEmailAndPassword(auth,enteredEmail,password);await updateProfile(result.user,{displayName:name.trim()});await sendEmailVerification(result.user);if(owns(op))navigate('/account');}
+ else{await signInWithEmailAndPassword(auth,enteredEmail,password);if(owns(op))navigate('/account');}
+ }catch(error){if(!owns(op))return;const failure=authFailure(error.code,mode);setPassword('');
  if(failure.next)navigate('/'+failure.next,{state:{email:email.trim(),notice:failure.message}});else setMessage(failure.message);
- }finally{setBusy(false);}}
+ }finally{finish(op);}}
  return <main className="max-w-md mx-auto my-12 p-8 bg-white rounded-2xl border shadow-sm"><h1 className="text-2xl font-bold mb-6">{mode==='signup'?'Tạo tài khoản':mode==='reset'?'Đặt lại mật khẩu':'Đăng nhập'}</h1>
  {mode!=='reset'&&<aside className="mb-5 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-slate-800" aria-label="Đăng nhập trên điện thoại">
  <p>{googleFlow==='external-browser'?'Đang mở trong Zalo hoặc ứng dụng khác? Chọn menu ⋯ → Mở bằng trình duyệt (Safari/Chrome) trước khi đăng nhập Google.':googleFlow==='handoff'?'Đăng nhập Google trên điện thoại sẽ chuyển sang trang ConnectCV tương thích. Tại đó, bấm Tiếp tục với Google một lần nữa.':googleFlow==='redirect'?'Bấm Tiếp tục với Google để đăng nhập. Bạn sẽ quay lại ConnectCV trong trình duyệt này.':'Nếu mở từ Zalo, hãy dùng menu ⋯ → Mở bằng trình duyệt để đăng nhập trên Safari/Chrome.'}</p>
