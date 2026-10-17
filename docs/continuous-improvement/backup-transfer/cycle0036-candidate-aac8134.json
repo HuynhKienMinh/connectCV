@@ -1,5 +1,5 @@
 {
-  "status": "DRIVE_STREAM_RESTORE_VERIFIED_PENDING_CLOUD_UI",
+  "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
   "candidateCommit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
   "protectedCommit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
   "requiresCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
@@ -25,13 +25,13 @@
       "sha256": "8fbc860a1724826dd34188b66a1db8409819111cf18471fe9895e8adb8e600e8",
       "commit": "aac8134d5554c468b87ea861856ae6b3ddd4c9bc",
       "ref": "refs/backup/cycle0036-candidate-aac8134",
-      "cloudId": null,
-      "cloudUrl": null
+      "cloudId": "1dN6Icmn8dwi3md2W9MVhqacoOL0okxo3",
+      "cloudUrl": "https://drive.google.com/file/d/1dN6Icmn8dwi3md2W9MVhqacoOL0okxo3/view"
     }
   ],
   "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-  "cloudUiListed": false,
-  "cloudUploadVerified": false,
+  "cloudUiListed": true,
+  "cloudUploadVerified": true,
   "driveStreamReadbackVerified": true,
   "freshBareRestore": true,
   "fullFsckPassed": true,
@@ -65,7 +65,7 @@
   "rollbackCommit": "1bf75b9aba9ae4753ddfcb837aa072004c823ea7",
   "rollbackRenderRelease": "dep-db8h2lu89jmc73dol4rg",
   "frontendVersionUnchanged": "7cca55f6a3f836b9",
-  "localCopiesRetained": true,
+  "localCopiesRetained": false,
   "stageDirectory": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\backup-cycle0036-aac8134",
   "createdAt": "2026-10-16T08:36:46.762561+00:00",
   "criticalSourceByteMatch": true,
@@ -107,7 +107,10 @@
   "restoreInstructions": "Verify base plus ordered delta SHA from private Drive. Clone base --bare --branch main to bounded TEMP; bundle verify/fetch each ordered ref. Assert exact candidate aac8134, full fsck, critical source bytes; verify FEaa ZIP CRC/all member SHA. Roll back Render to dep-db8h2lu89jmc73dol4rg (1bf75b9), FE Hosting unchanged7cca55f6a3f836b9. No database backup/restore. Browser cloud listing/upload confirmation still pending: do not deploy/delete local candidate bundle.",
   "restoreLocalDeleted": true,
   "restoreBytesDeleted": 242431223,
-  "localRetainedBytes": 368776,
+  "localRetainedBytes": 0,
   "catalogCloudFile": "connectcv-catalog-cycle-0036-candidate-aac8134.json",
-  "cloudVerificationBlocker": "Browser and Computer Use JS initialization both fail: failed to write kernel assets; os error3. Upload completion/file ID not observed. Stream readback alone is not remote upload proof."
+  "cloudVerificationBlocker": null,
+  "catalogCloudId": "1zP6F2f4Kz67cXjplCJphmWx-jrmFlfnr",
+  "cloudVerifiedAt": "2026-10-17T05:03:13.581601+00:00",
+  "localBundleDeleted": true
 }

@@ -160,3 +160,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0038 — 16/10/2026
 
 [Nhật ký portfolio auth HTTP và release kết hợp](runs/2026-10-16-cycle-0038.md):6scenario mới qua actual app/CORS/Firebase middleware/router đạt local; verifier/DB vẫn synthetic. Review80982a3 CI38878317873 SUCCESS. Candidate6d965e7 từ main kết hợp chatbot+PORT003, exact20file không report/ops, CI38878412001 SUCCESS. Backupaac cũ vẫn chờ cloud acknowledgement và không bao phủ6d; không tạo backup mới/deploy, không nhắc lại outage/P1 đã báo.
+
+
+## Cập nhật chu kỳ 0039 — 17/10/2026
+
+[Nhật ký recovery release](runs/2026-10-17-cycle-0039.md): tool hồi phục, backup36 cloud acknowledgement hoàn tất; candidate6d code/build và rollback Drive có IDs/checksum/bare restore31files/ZIP đạt, dọn own staging. MainCI39005052953 SUCCESS; Renderdep-db9g67ajnfac73c6hb40 Live đúng6d, Hostingb1d6f693fcc9f7e2 live hash hai domain. Phát hành scoped chatbot late-response/diagnostics và PORT003 giữ draft mới khi save chậm. Live source/auth/canary đạt; real iPhone/portfolio/profile writes và model/human eval chưa nghiệm thu. Chuyển auth-profile theo rotation; report/DBrestore/custody vẫn chờ, không deploy aggregate review.

@@ -1,0 +1,10 @@
+{
+  "id": 39005052953,
+  "head_sha": "6d965e78e595038eb897e9d3789d0ddabeb26905",
+  "conclusion": "success",
+  "jobs": [
+    "verify",
+    "pdf-renderer"
+  ],
+  "url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39005052953"
+}

@@ -1,0 +1,52 @@
+{
+  "commit": "6d965e78e595038eb897e9d3789d0ddabeb26905",
+  "renderRelease": "dep-db9g67ajnfac73c6hb40",
+  "checkedAt": "2026-10-17T05:12:58.904125+00:00",
+  "checks": [
+    {
+      "path": "/health",
+      "status": 200,
+      "seconds": 0.547,
+      "noStore": true
+    },
+    {
+      "path": "/api/features/health",
+      "status": 200,
+      "seconds": 0.25,
+      "noStore": true,
+      "authenticationIntegrated": true,
+      "browserConfigured": true,
+      "pdfCanaryVerified": true
+    },
+    {
+      "path": "/ai/",
+      "status": 200,
+      "seconds": 0.375,
+      "sha256": "13d7f199475a6d9614b809f2ceef23a44b085404ecd2740ace4d1f669028e11e",
+      "matchCandidate": true
+    },
+    {
+      "path": "/api/chatbot/message",
+      "status": 401,
+      "seconds": 0.218,
+      "corsAllowedFrontend": true,
+      "providerOrUserWriteReached": false
+    },
+    {
+      "path": "/api/account/me",
+      "status": 401,
+      "seconds": 0.219,
+      "corsAllowedFrontend": true,
+      "providerOrUserWriteReached": false
+    },
+    {
+      "path": "/api/portfolios/me",
+      "status": 401,
+      "seconds": 0.281,
+      "corsAllowedFrontend": true,
+      "providerOrUserWriteReached": false
+    }
+  ],
+  "authenticatedMutations": 0,
+  "aiCalls": 0
+}
