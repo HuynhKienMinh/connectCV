@@ -1,0 +1,135 @@
+{
+  "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
+  "protectedCommit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
+  "candidateCommit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
+  "requiresCommit": "9cbbfe362a7eabbe8471af83c6454ffe7fd0eb34",
+  "parentCatalog": "cycle0041-candidate-9cbbfe3.json",
+  "baseBundle": "connectcv-2026-10-15-cycle-0015-baseline.bundle",
+  "baseSha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4",
+  "orderedDeltasSha256": {
+    "connectcv-2026-10-15-cycle-0015-baseline-15daaa7.incremental.bundle": "65a560742884437feede36588f4cb6f4827472f2dd8557671c81bcdc7bfdbf45",
+    "connectcv-2026-10-15-cycle-0016-baseline-94e4418.incremental.bundle": "d7bdc239bada9da0c60fb2bcd01bf069566023f354f455ccaed211ffbb12b8e5",
+    "connectcv-2026-10-15-cycle-0017-baseline-b1a2279.incremental.bundle": "575cad4f4ba64c41578b7d2d0a4914f4e7c1a97d85a714b2d21642fe36adec07",
+    "connectcv-2026-10-15-cycle-0017-baseline-884a52c.incremental.bundle": "9a4cf7b749f18748e9020f74df5d707092748748a94ca3fee085b0a0a69e1f24",
+    "connectcv-2026-10-15-cycle-0018-baseline-b3ca417.incremental.bundle": "ebf108592f68ace5264bf870ca148a6113934764ed8b96ff776e84fd29b49a8a",
+    "connectcv-2026-10-15-cycle-0019-baseline-f438d16.incremental.bundle": "535f5c7bfe99571b4f6bd9b6f25e5871da1a0cb0e1afc84ad5d6ec770f79d7bd",
+    "connectcv-2026-10-15-cycle-0019-candidate-be7a52a.incremental.bundle": "b053baaacb37447d7ce2a95d680eae58a564043ee3db155f76cd09da8517fb1b",
+    "connectcv-2026-10-15-cycle-0019-candidate-aa53702.incremental.bundle": "2c6ce17b8583e63798b0f5fd56aa472fd1e3b81c319bc4dd93575e846879102a",
+    "connectcv-2026-10-16-cycle-0020-candidate-1bf75b9.incremental.bundle": "76f758450174aa653c0e242f5ed5ac3d85751d5d1a6d701ca17088b6c72eb79a",
+    "connectcv-2026-10-16-cycle-0036-candidate-aac8134.incremental.bundle": "8fbc860a1724826dd34188b66a1db8409819111cf18471fe9895e8adb8e600e8",
+    "connectcv-2026-10-17-cycle-0039-candidate-6d965e7.incremental.bundle": "5f18848aa6bf7960dde3c1421b59b62a8799a98fa904819caee4f13f53add676",
+    "connectcv-2026-10-17-cycle-0040-candidate-fdc3afb.incremental.bundle": "5302fa381fc0560ab3101ff0ed4e82aa8a69427d1d11fb8fd24bb2402d743673",
+    "connectcv-2026-10-17-cycle-0040-candidate-ce5cfe4.incremental.bundle": "54aae324c14fbd3ec2213925bcbfacb84fd7d8e3238f3d788e550e7e84b1268e",
+    "connectcv-2026-10-17-cycle-0041-candidate-9cbbfe3.incremental.bundle": "fe182ee0c245605c3ee43ce1590f0effa4f7c960893ed929fe3573ed1fe3a9db",
+    "connectcv-2026-10-17-cycle-0042-candidate-391fdc3.incremental.bundle": "5d9903207b8d0d07b32ff3de8179bd9cb66d7b6a00adf773a1d94a3779f449c6"
+  },
+  "newBundles": [
+    {
+      "file": "connectcv-2026-10-17-cycle-0042-candidate-391fdc3.incremental.bundle",
+      "bytes": 5819,
+      "sha256": "5d9903207b8d0d07b32ff3de8179bd9cb66d7b6a00adf773a1d94a3779f449c6",
+      "ref": "refs/backup/cycle0042-candidate-391fdc3",
+      "commit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
+      "cloudId": "1sNtkigltWJQgfA7R9KHcZjvgQ9Nhc357",
+      "cloudUrl": "https://drive.google.com/file/d/1sNtkigltWJQgfA7R9KHcZjvgQ9Nhc357/view"
+    }
+  ],
+  "frontendFile": "connectcv-2026-10-17-cycle-0040-frontend-fdc3afb.zip",
+  "frontendBytes": 142495,
+  "frontendSha256": "39451614a6babf3f9d2ef4045e71fc6ca7fa7c8fe9ac5eb9b5e96e4570feed91",
+  "frontendMembers": {
+    "frontend/dist/.gitkeep": {
+      "bytes": 87,
+      "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+    },
+    "frontend/dist/assets/index-B5BHDfKL.css": {
+      "bytes": 62358,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664"
+    },
+    "frontend/dist/assets/index-cQftGPhH.js": {
+      "bytes": 448368,
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 441,
+      "sha256": "b86685182c317b539119a84cbc2ec9fdb9c672385f233707bc89f4456b0d8dbb"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    "firebase-rollback.json": {
+      "bytes": 338,
+      "sha256": "7aa869a2d0dce3f5d5220f4d0da6f07fcf7deb0bad21d1f23a196c82a70039cd"
+    }
+  },
+  "rollback": {
+    "backendCommit": "9cbbfe362a7eabbe8471af83c6454ffe7fd0eb34",
+    "backendRelease": "dep-db9glpbrjlhs73ep0690",
+    "frontendVersion": "projects/connect-cv/sites/connect-cv/versions/9b4f9bcd010b4645",
+    "frontendRollbackCommand": "firebase hosting:clone connect-cv@9b4f9bcd010b4645 connect-cv:live --project connect-cv --non-interactive"
+  },
+  "rollbackFrontendFile": "connectcv-2026-10-17-cycle-0040-frontend-fdc3afb.zip",
+  "rollbackFrontendSha256": "39451614a6babf3f9d2ef4045e71fc6ca7fa7c8fe9ac5eb9b5e96e4570feed91",
+  "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
+  "catalogCloudFile": "connectcv-catalog-cycle-0042-candidate-391fdc3.json",
+  "cloudUploadVerified": true,
+  "localCopiesRetained": false,
+  "databaseIncluded": false,
+  "freshBareRestore": true,
+  "fullFsckPassed": true,
+  "criticalSourceByteMatch": true,
+  "criticalFiles": [
+    "frontend/src/pages/AuthPage.jsx",
+    "frontend/src/lib/googleAuthFlow.js",
+    "frontend/src/lib/firebase.js",
+    "frontend/src/context/AuthContext.jsx",
+    "frontend/src/lib/api.js",
+    "frontend/package-lock.json",
+    "frontend/src/pages/FeaturePage.jsx",
+    "firebase.json",
+    "backend/features/connectcv/public/js/cv-photo-layout.js",
+    "backend/features/connectcv/public/js/cv-preview.js",
+    "backend/features/connectcv/src/services/jobService.js",
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json",
+    "backend/features/connectcv/package-lock.json",
+    "backend/package-lock.json",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/public/js/profile-image.js",
+    "backend/features/connectcv/public/js/account-bridge.js",
+    "backend/features/connectcv/public/js/profile-autosave.js",
+    "backend/src/routes/account.js",
+    "backend/features/connectcv/src/routes/upload.js",
+    "backend/features/connectcv/src/routes/chatbot.js",
+    "backend/features/connectcv/src/services/geminiService.js",
+    "backend/features/connectcv/src/services/keyManager.js",
+    "backend/features/connectcv/src/services/securityError.js",
+    "backend/features/connectcv/package.json",
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/tests/chatbotUi.check.cjs",
+    "backend/tests/chatbotHttp.test.cjs",
+    "frontend/src/pages/PortfolioPage.jsx",
+    "frontend/tests/portfolioSaveUi.check.mjs",
+    "backend/tests/portfolioAuthHttp.test.cjs",
+    "frontend/tests/authRequestUi.check.mjs",
+    "backend/features/connectcv/src/services/atsExportService.js",
+    "backend/features/connectcv/tests/atsOptionalTranslation.test.js",
+    "backend/features/connectcv/tests/interviewMicUi.check.cjs"
+  ],
+  "frontendRestoreVerified": true,
+  "rollbackFrontendRestoreVerified": true,
+  "fullWorktreeCheckoutVerified": false,
+  "restoreBytes": 242594495,
+  "restoreInstructions": "Verify base+15 ordered delta SHA from private Drive, bounded fresh bare restore/fsck+35 critical source blobs; unchanged FEZIP CRC/memberSHA. Rollback Render9cbbfe3/dep-db9glpbrjlhs73ep0690. FE9b unchanged. No database backup.",
+  "frontendCloudId": "1WoZEW4A4C4ZL7yGMoMNzkHnDHMvnGFeS",
+  "frontendBuildCommit": "fdc3afb44c805d717c07cfc218e884cb2deffac7",
+  "runtimeSourceMatchesBuild": true,
+  "frontendUnchanged": true,
+  "createdAt": "2026-10-17T05:55:19.374647+00:00",
+  "cloudUiListed": true,
+  "restoreLocalDeleted": true,
+  "localBuildDeleted": true,
+  "rollbackAuthority": "Use this catalog for current rollback targets; unchanged FE ZIP companion describes its original fdc build history.",
+  "catalogCloudId": "1qCurTupA4DmbV68XS7BjoKn8CnTWr6VU",
+  "cloudVerifiedAt": "2026-10-17T05:56:11.974960+00:00"
+}

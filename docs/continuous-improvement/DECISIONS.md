@@ -71,3 +71,8 @@ Upload nhận tối đa3MB nhưng account field350kchars/body900KiB; giữ các 
 ## D016 — 16/10/2026: kế hoạch kỹ thuật report/kiểm duyệt theo hai bước
 
 Đây là lựa chọn triển khai trong phạm vi tựsửa đã giao, không phải xác nhận mới của chủ dự án. Báo cáo dùng reason allowlist, một receipt/verified actor/post, không thưởng hoặc auto-hide. Private queue chỉ trusted verifiedadmin; không tự cấp adminclaim/IAM. Reader hiểu hidden trước khi có bất kỳ actionẩn: verify/backup release đọc tương thích làm rollbackbaseline trước release hide/reinstate/audit, vì rollback1bf sẽ lộ lại bàiẩn. Candidate1c597a1 ở review, không main/deploy. Schema report mới vẫn phải qua encryptedDBsnapshot/restore theo RUNBOOK; code/buildDrive không thay dữliệu backup. Không migration/bulkwrite để né gate. UI/retention/actualadmin/cloudactors còn mở.
+
+
+## D017 —17/10/2026: dừng micro khác gửi bản ghi
+
+Stop/cancel, gõ Gửi và AI playback phải discard PCM, detach recognizer callbacks, stop tracks/disconnect graph/close context; chỉ explicit recording completion/VAD finish được transcribe. getUserMedia late grant không được sống lại sau cancellation hoặc chiếm phiên mới. Permission denied/audio-capture/mất track đưa người dùng về ô gõ với draft giữ nguyên; không tự prompt engine khác sau denied hoặc hiển thị raw device exception. Service-not-allowed vẫn có fallback engine khi người dùng đã yêu cầu Mic. Không claim physical microphone/iOS/ASR correctness từ synthetic device tests. Những request transcribe/live-chat/TTS đang pending có lifecycle riêng chưa nằm trong scope này.

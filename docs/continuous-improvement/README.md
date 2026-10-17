@@ -175,3 +175,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0041 — 17/10/2026
 
 [Nhật ký ATS optional translations](runs/2026-10-17-cycle-0041.md): CV004P1 Word/PDF ATS quay5optional sections về nguồn tiếng Việt sau khi đã có bundle xác minh. Fix9c dùng grounded+verified fields; baseline3FAIL→7PASS, feature92PASS, independent DOCX XML/7facts/A4; isolated/mainCI39007135587 SUCCESS. Drive code15bundle/34critical+currentFEZIP verified/restore staging dọn. Renderdep-db9glpbrjlhs73ep0690 Live đúng9c, canary/authexport401 và FEhash2domains đạt; không Hosting deploy/liveAI/userwrite. Real Word/model/download và CV002 fullmatrix còn mở; tiếp interview/microphone local scenario mới.
+
+
+## Cập nhật chu kỳ0042–0043 —17/10/2026
+
+[Cycle42 tái hiện và sửa micro](runs/2026-10-17-cycle-0042.md), [cycle43 phát hành](runs/2026-10-17-cycle-0043.md): INT003P1 stop giữ track/graph và callback cũ tự nghe/ghi đè draft. Whole-Studio device stubs13FAIL→13PASS,92featurePASS; isolated391fdc3/mainCI39023493825 SUCCESS. Cloud16bundle/35critical source+FEZIP restore verified, own242.60MB stage dọn. Auto-review quota gián đoạn mainpush (không thực thi), retry qua cùng approval sau reset thành công; không bypass/mua thêm. Renderdep-db9khkjrjlhs73f60aeg Live2m37 đúng391fdc3; sourcebyte/auth401/canary/FEhash2domains PASS, Hosting không đổi. Mic thật/iOS và ASR/late transcription/TTS còn mở. Chuyển community SOCIAL003 theo rotation; DBrestore/custody/report vẫn deferred.

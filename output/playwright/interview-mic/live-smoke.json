@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-17T10:10:28.002491+00:00",
+  "backendCommit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
+  "renderRelease": "dep-db9khkjrjlhs73f60aeg",
+  "checks": [
+    {
+      "path": "/health",
+      "status": 200,
+      "seconds": 0.296,
+      "noStore": true,
+      "corsFrontend": true
+    },
+    {
+      "path": "/api/features/health",
+      "status": 200,
+      "seconds": 0.219,
+      "noStore": true,
+      "corsFrontend": true
+    },
+    {
+      "path": "/ai/",
+      "status": 200,
+      "seconds": 0.422,
+      "noStore": false,
+      "corsFrontend": true,
+      "exactCandidateBytes": true,
+      "sha256": "d868faf617cbfa93131e6eb2f3cdab2f512191a3c008bfb703cadb34ecca4655"
+    },
+    {
+      "path": "/api/interview/live-chat",
+      "status": 401,
+      "seconds": 0.234,
+      "noStore": false,
+      "corsFrontend": true
+    },
+    {
+      "path": "/api/interview/transcribe",
+      "status": 401,
+      "seconds": 0.219,
+      "noStore": false,
+      "corsFrontend": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-cQftGPhH.js",
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4",
+      "frontendUnchanged": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-cQftGPhH.js",
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4",
+      "frontendUnchanged": true
+    }
+  ],
+  "productionUserWrites": 0,
+  "productionAiCalls": 0,
+  "realMicrophoneVerified": false,
+  "pdfCanaryVerified": true,
+  "browserConfigured": true,
+  "authenticationIntegrated": true
+}
