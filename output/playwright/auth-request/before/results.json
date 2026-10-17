@@ -1,0 +1,55 @@
+{
+  "actualReactPage": true,
+  "actualRouter": true,
+  "syntheticSdk": true,
+  "realFirebaseVerified": false,
+  "cloudAuthCalls": 0,
+  "sourceRevision": "6d965e78e595038eb897e9d3789d0ddabeb26905",
+  "passed": 2,
+  "results": [
+    {
+      "name": "pending-reset-does-not-lock-login",
+      "passed": false,
+      "error": "locator.isEnabled: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Đăng nhập', exact: true })\u001b[22m\n",
+      "route": "/login"
+    },
+    {
+      "name": "obsolete-login-error-cannot-redirect-password-recovery",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '/signup'\n- '/reset-password'\n",
+      "route": "/signup"
+    },
+    {
+      "name": "return-to-same-mode-does-not-unlock-new-request",
+      "passed": false,
+      "error": "locator.isEnabled: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Gửi hướng dẫn', exact: true })\u001b[22m\n",
+      "route": "/reset-password"
+    },
+    {
+      "name": "synchronous-duplicate-submit-ignored",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "route": "/reset-password"
+    },
+    {
+      "name": "current-reset-failure-retains-email-and-explicit-retry",
+      "passed": true
+    },
+    {
+      "name": "current-signup-still-updates-name-and-sends-verification",
+      "passed": true
+    },
+    {
+      "name": "late-google-error-cannot-overwrite-reset-page",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "route": "/reset-password"
+    },
+    {
+      "name": "late-email-success-cannot-navigate-after-leaving-form",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '/account'\n- '/outside'\n",
+      "route": "/account"
+    }
+  ]
+}

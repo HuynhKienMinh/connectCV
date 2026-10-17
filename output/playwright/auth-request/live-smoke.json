@@ -1,0 +1,56 @@
+{
+  "candidate": "ce5cfe4f64721545370a2bf9562f6e2d94da2441",
+  "buildSource": "fdc3afb44c805d717c07cfc218e884cb2deffac7",
+  "checkedAt": "2026-10-17T05:31:27.632209+00:00",
+  "checks": [
+    {
+      "url": "https://connect-cv.web.app/assets/index-B5BHDfKL.css",
+      "status": 200,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664",
+      "bytes": 62358,
+      "match": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-cQftGPhH.js",
+      "status": 200,
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4",
+      "bytes": 448368,
+      "match": true
+    },
+    {
+      "url": "https://connect-cv.web.app/index.html",
+      "status": 200,
+      "sha256": "b86685182c317b539119a84cbc2ec9fdb9c672385f233707bc89f4456b0d8dbb",
+      "bytes": 441,
+      "match": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-B5BHDfKL.css",
+      "status": 200,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664",
+      "bytes": 62358,
+      "match": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-cQftGPhH.js",
+      "status": 200,
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4",
+      "bytes": 448368,
+      "match": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/index.html",
+      "status": 200,
+      "sha256": "b86685182c317b539119a84cbc2ec9fdb9c672385f233707bc89f4456b0d8dbb",
+      "bytes": 441,
+      "match": true
+    },
+    {
+      "path": "/api/account/me",
+      "status": 401,
+      "corsFrontend": true
+    }
+  ],
+  "realOAuthVerified": false,
+  "cloudAuthOrEmailWrites": 0
+}

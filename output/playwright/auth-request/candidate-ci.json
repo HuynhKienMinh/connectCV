@@ -1,0 +1,13 @@
+{
+  "initialRun": 39005926607,
+  "initialConclusion": "failure",
+  "initialCandidate": "fdc3afb44c805d717c07cfc218e884cb2deffac7",
+  "initialFailedCases": [
+    "obsolete-login-error-cannot-redirect-password-recovery",
+    "late-email-success-cannot-navigate-after-leaving-form"
+  ],
+  "repair": "Await actual Router destination before resolving old synthetic SDK request; same assertions; no skipped gate",
+  "finalRun": 39006177131,
+  "finalCandidate": "ce5cfe4f64721545370a2bf9562f6e2d94da2441",
+  "finalConclusion": "success"
+}

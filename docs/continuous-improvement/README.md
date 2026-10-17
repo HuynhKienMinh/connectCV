@@ -165,3 +165,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0039 — 17/10/2026
 
 [Nhật ký recovery release](runs/2026-10-17-cycle-0039.md): tool hồi phục, backup36 cloud acknowledgement hoàn tất; candidate6d code/build và rollback Drive có IDs/checksum/bare restore31files/ZIP đạt, dọn own staging. MainCI39005052953 SUCCESS; Renderdep-db9g67ajnfac73c6hb40 Live đúng6d, Hostingb1d6f693fcc9f7e2 live hash hai domain. Phát hành scoped chatbot late-response/diagnostics và PORT003 giữ draft mới khi save chậm. Live source/auth/canary đạt; real iPhone/portfolio/profile writes và model/human eval chưa nghiệm thu. Chuyển auth-profile theo rotation; report/DBrestore/custody vẫn chờ, không deploy aggregate review.
+
+
+## Cập nhật chu kỳ 0040 — 17/10/2026
+
+[Nhật ký AuthPage/reset lifecycle](runs/2026-10-17-cycle-0040.md): AUTH003P1 lỗi login cũ điều hướng reset sang đăng ký, request cũ khóa form mới và submit lặp. Actual React baseline6FAIL/2PASS→8PASS;12auth units/10Google browser đạt. Harness CI đầu sửa thứ tự chờ Router commit, giữ nguyên assertions; isolatedce5/mainCI39006354363 SUCCESS. Drive code14bundle chain/build/rollback verified, staging dọn; Hosting-only9b4f9bcd010b4645 live hashes2domains/publicreset/auth401 đạt. BE giữ6d; actual Firebase/email/iPhone chưa nghiệm thu. Tiếp CV/ATS scenario mới; report/custody/DBrestore vẫn deferred.
