@@ -6,7 +6,11 @@
   "cadenceMinutes": 15,
   "completedCycles": 39,
   "lastRun": "runs/2026-10-17-cycle-0039.md",
-  "activeRun": null,
+  "activeRun": {
+    "cycle": 40,
+    "stage": "AUTH_FORM_ROUTE_LIFECYCLE_REPRO",
+    "startedAt": "2026-10-17T05:16:38.740Z"
+  },
   "activeIssue": "AUTH002",
   "issueState": "LIVE_MITIGATION_PENDING_IPHONE_CONFIRMATION_CONTINUE_FUNCTIONAL_ROTATION",
   "rotation": [
@@ -135,8 +139,8 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleRuntimeChanged": false,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
