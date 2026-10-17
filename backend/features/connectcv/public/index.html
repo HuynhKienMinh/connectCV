@@ -4167,6 +4167,34 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     let hasDetectedSpeech = false;
     let silenceStartTime = 0;
     let preferGeminiTranscribe = false;
+    let micCaptureGeneration = 0;
+    let micCapturePending = false;
+
+    function releaseMicCapture() {
+      cancelAnimationFrame(vadAnimationId);
+      vadAnimationId = null;
+      for (const node of [scriptProcessor, micSource, analyser]) {
+        if (node) { try { node.disconnect(); } catch (e) {} }
+      }
+      scriptProcessor = micSource = analyser = null;
+      if (micStream) {
+        for (const track of micStream.getTracks()) { track.onended = null; track.stop(); }
+        micStream = null;
+      }
+      if (audioContext) {
+        audioContext.close().catch(() => {});
+        audioContext = null;
+      }
+      const meter = document.getElementById('live-mic-meter-container');
+      if (meter) { meter.classList.add('hidden'); meter.classList.remove('flex'); }
+    }
+
+    function offerInterviewTextInput() {
+      stopLiveListening();
+      setLiveOrbState('idle', 'Micro chưa sẵn sàng. Hãy gõ câu trả lời bên dưới');
+      updateLiveCaption('system', 'Không thể tiếp tục dùng micro. Bản nháp vẫn được giữ; bạn có thể gõ và bấm Gửi, hoặc bấm Mic để thử lại.');
+      document.getElementById('live-quick-input')?.focus();
+    }
 
     // Phát hiện trình duyệt để tối ưu hóa Engine nhận diện giọng nói
     (async () => {
@@ -4204,11 +4232,13 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
       try {
         liveRecognizer = new SpeechRecognition();
+        const recognizer = liveRecognizer;
         liveRecognizer.lang = 'vi-VN';
         liveRecognizer.continuous = true;
         liveRecognizer.interimResults = true;
 
         liveRecognizer.onstart = () => {
+          if (liveRecognizer !== recognizer) return;
           if (isAISpeakingOrThinking) {
             try { liveRecognizer.abort(); } catch(e){}
             isListeningActive = false;
@@ -4222,6 +4252,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         };
 
         liveRecognizer.onresult = (event) => {
+          if (liveRecognizer !== recognizer) return;
           // Nếu AI đang nói mà mic bị rò âm thanh từ loa, vứt bỏ ngay lập tức
           if (isAISpeakingOrThinking) {
             currentSpeechBuffer = '';
@@ -4265,12 +4296,17 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         };
 
         liveRecognizer.onerror = (event) => {
+          if (liveRecognizer !== recognizer) return;
           console.warn('Web Speech API error:', event.error);
           if (event.error === 'no-speech' || event.error === 'aborted') {
             return;
           }
-          if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-            console.log('Chuyển đổi sang Gemini Audio Transcribe do quyền micro/service: ' + event.error);
+          if (event.error === 'not-allowed' || event.error === 'audio-capture') {
+            offerInterviewTextInput();
+            return;
+          }
+          if (event.error === 'service-not-allowed') {
+            stopLiveListening();
             preferGeminiTranscribe = true;
             isListeningActive = false;
             startMediaRecorderListening();
@@ -4280,11 +4316,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             console.warn('Web Speech API network warning. Giữ nguyên phiên...');
             return;
           }
-          setLiveOrbState('idle', 'Micro tạm dừng: ' + event.error);
-          isListeningActive = false;
+          offerInterviewTextInput();
         };
 
         liveRecognizer.onend = () => {
+          if (liveRecognizer !== recognizer) return;
           isListeningActive = false;
           // Tuyệt đối không tự bật lại nếu AI đang nói hoặc đang xử lý
           if (isAISpeakingOrThinking) {
@@ -4357,21 +4393,31 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Engine 2: Ghi âm trực tiếp PCM & mã hóa WAV gửi Gemini AI
     async function startMediaRecorderListening() {
+      if (micCapturePending || isMediaRecording || isAISpeakingOrThinking) return;
+      const generation = ++micCaptureGeneration;
+      micCapturePending = true;
       try {
         if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-          setLiveOrbState('idle', 'Không hỗ trợ micro. Hãy gõ vào ô bên dưới');
-          updateLiveCaption('system', 'Trình duyệt không hỗ trợ micro. Hãy dùng ô gõ câu trả lời bên dưới!');
+          offerInterviewTextInput();
           return;
         }
 
         if (!micStream || !micStream.active) {
-          micStream = await navigator.mediaDevices.getUserMedia({
+          const stream = await navigator.mediaDevices.getUserMedia({
             audio: {
               echoCancellation: true,
               noiseSuppression: true,
               autoGainControl: true
             }
           });
+          if (generation !== micCaptureGeneration || isAISpeakingOrThinking) {
+            stream.getTracks().forEach(track => track.stop());
+            return;
+          }
+          micStream = stream;
+          for (const track of stream.getAudioTracks()) {
+            track.onended = () => { if (generation === micCaptureGeneration) offerInterviewTextInput(); };
+          }
         }
 
         pcmChunks = [];
@@ -4386,12 +4432,13 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         if (audioContext.state === 'suspended') {
           await audioContext.resume();
         }
+        if (generation !== micCaptureGeneration || isAISpeakingOrThinking) return;
 
         micSource = audioContext.createMediaStreamSource(micStream);
         scriptProcessor = audioContext.createScriptProcessor(4096, 1, 1);
 
         scriptProcessor.onaudioprocess = (e) => {
-          if (!isMediaRecording) return;
+          if (!isMediaRecording || generation !== micCaptureGeneration) return;
           const inputData = e.inputBuffer.getChannelData(0);
           pcmChunks.push(new Float32Array(inputData));
         };
@@ -4412,7 +4459,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
         const dataArray = new Uint8Array(analyser.frequencyBinCount);
         const checkAudioVolume = () => {
-          if (!isMediaRecording) return;
+          if (!isMediaRecording || generation !== micCaptureGeneration) return;
           analyser.getByteFrequencyData(dataArray);
 
           let speechSum = 0;
@@ -4459,11 +4506,9 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         vadAnimationId = requestAnimationFrame(checkAudioVolume);
 
       } catch (err) {
-        console.error('Lỗi bật micro:', err);
-        setLiveOrbState('idle', 'Không mở được micro: ' + err.message);
-        updateLiveCaption('error', 'Micro bị chặn hoặc chưa cấp quyền. Hãy gõ câu trả lời vào ô bên dưới!');
-        isListeningActive = false;
-        isMediaRecording = false;
+        if (generation === micCaptureGeneration) offerInterviewTextInput();
+      } finally {
+        if (generation === micCaptureGeneration) micCapturePending = false;
       }
     }
 
@@ -4471,17 +4516,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       if (!isMediaRecording) return;
       isMediaRecording = false;
       isListeningActive = false;
-      cancelAnimationFrame(vadAnimationId);
-
-      const meterContainer = document.getElementById('live-mic-meter-container');
-      if (meterContainer) {
-        meterContainer.classList.add('hidden');
-        meterContainer.classList.remove('flex');
-      }
-
-      if (scriptProcessor) {
-        try { scriptProcessor.disconnect(); } catch(e){}
-      }
+      const sampleRate = audioContext ? audioContext.sampleRate : 44100;
+      releaseMicCapture();
 
       if (pcmChunks.length === 0) {
         setLiveOrbState('idle', 'Không có âm thanh thu được');
@@ -4497,7 +4533,6 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       }
       pcmChunks = [];
 
-      const sampleRate = audioContext ? audioContext.sampleRate : 44100;
       if (samples.length < sampleRate * 0.4) {
         setLiveOrbState('idle', 'Âm thanh quá ngắn. Hãy bấm mic nói lại hoặc gõ bên dưới');
         return;
@@ -4570,12 +4605,20 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Dừng toàn bộ micro nhận diện giọng nói
     function stopLiveListening() {
+      ++micCaptureGeneration;
+      micCapturePending = false;
       clearTimeout(vadSilenceTimer);
       if (liveRecognizer) {
-        try { liveRecognizer.abort(); } catch(e){}
-        try { liveRecognizer.stop(); } catch(e){}
+        const recognizer = liveRecognizer;
+        liveRecognizer = null;
+        recognizer.onstart = recognizer.onresult = recognizer.onerror = recognizer.onend = null;
+        try { recognizer.abort(); } catch(e){}
+        try { recognizer.stop(); } catch(e){}
       }
-      stopMediaRecorderListening();
+      // Cancel/typed-send/AI playback discards audio; only explicit recording completion transcribes.
+      isMediaRecording = false;
+      pcmChunks = [];
+      releaseMicCapture();
       isListeningActive = false;
     }
 
