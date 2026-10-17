@@ -148,3 +148,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           PORTFOLIO_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-portfolio-save-qa'
+      - name: Verify interview microphone cancellation, device loss and text fallback
+        run: node tests/interviewMicUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          INTERVIEW_MIC_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-mic-qa'
