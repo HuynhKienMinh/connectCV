@@ -170,3 +170,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ 0040 — 17/10/2026
 
 [Nhật ký AuthPage/reset lifecycle](runs/2026-10-17-cycle-0040.md): AUTH003P1 lỗi login cũ điều hướng reset sang đăng ký, request cũ khóa form mới và submit lặp. Actual React baseline6FAIL/2PASS→8PASS;12auth units/10Google browser đạt. Harness CI đầu sửa thứ tự chờ Router commit, giữ nguyên assertions; isolatedce5/mainCI39006354363 SUCCESS. Drive code14bundle chain/build/rollback verified, staging dọn; Hosting-only9b4f9bcd010b4645 live hashes2domains/publicreset/auth401 đạt. BE giữ6d; actual Firebase/email/iPhone chưa nghiệm thu. Tiếp CV/ATS scenario mới; report/custody/DBrestore vẫn deferred.
+
+
+## Cập nhật chu kỳ 0041 — 17/10/2026
+
+[Nhật ký ATS optional translations](runs/2026-10-17-cycle-0041.md): CV004P1 Word/PDF ATS quay5optional sections về nguồn tiếng Việt sau khi đã có bundle xác minh. Fix9c dùng grounded+verified fields; baseline3FAIL→7PASS, feature92PASS, independent DOCX XML/7facts/A4; isolated/mainCI39007135587 SUCCESS. Drive code15bundle/34critical+currentFEZIP verified/restore staging dọn. Renderdep-db9glpbrjlhs73ep0690 Live đúng9c, canary/authexport401 và FEhash2domains đạt; không Hosting deploy/liveAI/userwrite. Real Word/model/download và CV002 fullmatrix còn mở; tiếp interview/microphone local scenario mới.

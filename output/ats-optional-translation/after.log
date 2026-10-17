@@ -1,0 +1,15 @@
+✔ English ATS Word retains every verified optional-section translation and source number (14.62ms)
+✔ ATS PDF HTML uses the same verified optional content without a second model call (0.4516ms)
+✔ Vietnamese optional facts stay unchanged and unverified client replacements are ignored (1.3106ms)
+✔ forged translation values cannot replace source facts in optional sections (1.4579ms)
+✔ changing optional source facts invalidates the old signed bundle (0.9075ms)
+✔ plain English, missing and escaped optional values remain ordinary editable paragraphs (1.3926ms)
+✔ actual export-docx route preserves signed optional translations in binary response (452.5389ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 563.4999

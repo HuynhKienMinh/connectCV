@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-17T05:46:25.119087+00:00",
+  "backendCommit": "9cbbfe362a7eabbe8471af83c6454ffe7fd0eb34",
+  "renderRelease": "dep-db9glpbrjlhs73ep0690",
+  "checks": [
+    {
+      "path": "/health",
+      "status": 200,
+      "seconds": 0.328,
+      "noStore": true
+    },
+    {
+      "path": "/api/features/health",
+      "status": 200,
+      "seconds": 0.203,
+      "noStore": true,
+      "rendererReady": true,
+      "pdfCanaryVerified": true,
+      "authenticationIntegrated": true
+    },
+    {
+      "path": "/api/cv/export-docx",
+      "status": 401,
+      "corsFrontend": true,
+      "aiOrRenderExportReached": false
+    },
+    {
+      "path": "/api/cv/export-pdf",
+      "status": 401,
+      "corsFrontend": true,
+      "aiOrRenderExportReached": false
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-cQftGPhH.js",
+      "status": 200,
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4",
+      "frontendUnchanged": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-cQftGPhH.js",
+      "status": 200,
+      "sha256": "93b59b9c9314f439571fa486dd336b0b22337248506bf624a6988951a61fb4b4",
+      "frontendUnchanged": true
+    }
+  ],
+  "actualAuthenticatedDownloadVerified": false,
+  "productionAiCalls": 0,
+  "productionUserWrites": 0
+}

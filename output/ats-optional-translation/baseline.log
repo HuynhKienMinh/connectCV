@@ -1,0 +1,60 @@
+✖ English ATS Word retains every verified optional-section translation and source number (14.2801ms)
+✖ ATS PDF HTML uses the same verified optional content without a second model call (0.4842ms)
+✔ Vietnamese optional facts stay unchanged and unverified client replacements are ignored (1.3254ms)
+✔ forged translation values cannot replace source facts in optional sections (1.5704ms)
+✔ changing optional source facts invalidates the old signed bundle (1.3351ms)
+✔ plain English, missing and escaped optional values remain ordinary editable paragraphs (1.0094ms)
+✖ actual export-docx route preserves signed optional translations in binary response (475.1621ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 4
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 586.9109
+
+✖ failing tests:
+
+test at backend\features\connectcv\tests\atsOptionalTranslation.test.js:36:1
+✖ English ATS Word retains every verified optional-section translation and source number (14.2801ms)
+  AssertionError [ERR_ASSERTION]: missing verified optional text: Inventory system
+      at TestContext.<anonymous> (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\atsOptionalTranslation.test.js:39:55)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at backend\features\connectcv\tests\atsOptionalTranslation.test.js:44:1
+✖ ATS PDF HTML uses the same verified optional content without a second model call (0.4842ms)
+  AssertionError [ERR_ASSERTION]: HTML missing: Inventory system
+      at TestContext.<anonymous> (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\atsOptionalTranslation.test.js:45:109)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:785:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at backend\features\connectcv\tests\atsOptionalTranslation.test.js:64:1
+✖ actual export-docx route preserves signed optional translations in binary response (475.1621ms)
+  AssertionError [ERR_ASSERTION]: route missing: Inventory system
+      at TestContext.<anonymous> (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\atsOptionalTranslation.test.js:71:56)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:785:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

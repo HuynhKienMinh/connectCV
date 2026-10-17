@@ -1,0 +1,21 @@
+{
+  "reviewCommit": "683881a",
+  "candidateCommit": "9cbbfe362a7eabbe8471af83c6454ffe7fd0eb34",
+  "serviceBlob": "c082f7f4df04649a78626b89304f7e679e530199",
+  "baseline": {
+    "passed": 4,
+    "failed": 3
+  },
+  "after": {
+    "passed": 7,
+    "failed": 0
+  },
+  "featureSuite": {
+    "passed": 92,
+    "failed": 0
+  },
+  "realProviderCalls": 0,
+  "fakeProviderCallsPerFixture": 2,
+  "realFirebaseVerified": false,
+  "visualWordRenderingVerified": false
+}
