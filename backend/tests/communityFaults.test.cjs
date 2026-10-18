@@ -43,13 +43,13 @@ test('failure at any publication write rolls back post, hash, credit event and b
  }
 });
 
-test('lost response after commit followed by retry cannot award again; current retry returns 409',async()=>{
+test('lost response for an incomplete historical post cannot award again or fabricate a confirmed receipt',async()=>{
  const {db,posts}=await fixture();db.failAfterCommit=true;
  await assert.rejects(posts.submit({id:'A'},entry,'synthetic-hash'),/SYNTHETIC_RESPONSE_LOST_AFTER_COMMIT/);awardedOnce(db);
  const postId=[...db.records.keys()].find(k=>k.startsWith('communityPosts/')).split('/')[1];
  await assert.rejects(posts.submit({id:'A'},entry,'synthetic-hash'),e=>e.status===409);awardedOnce(db);
  assert.ok(db.records.has('communityPosts/'+postId));
- // 409 is an integrity outcome, not a receipt that tells the client its first request succeeded.
+ // Missing historical rating/time evidence must remain 409, not fabricate confirmation.
 });
 
 test('SDK-style callback replay reuses the same post/event IDs and commits one reward',async()=>{

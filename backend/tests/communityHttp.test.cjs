@@ -88,10 +88,13 @@ test('HTTP concurrent drafts enforce account cooldown and second actor duplicate
  assert.equal(count(f.db,'communityPosts'),1);assert.equal(count(f.db,'creditEvents'),1);assert.equal(f.stats().budget,0);
 });
 
-test('HTTP socket loss after committed publication leaves one reward; same-owner retry currently returns 409 without receipt',async t=>{
+test('HTTP socket loss recovers exact owner receipt without another publication or credit award',async t=>{
  const f=await fixture(t);f.dropNextReceipt();await assert.rejects(f.request('/debrief',{actor:'A',body:payload()}),/fetch failed/);
  const view=await f.request('/community-questions',{method:'GET'});assert.equal(view.body.data.length,1);balance(f.db);
- const retry=await f.request('/debrief',{actor:'A',body:payload()});assert.equal(retry.status,409);assert.equal(retry.body.data,undefined);
+ const before=structuredClone([...f.db.records]);
+ const retry=await f.request('/debrief',{actor:'A',body:payload()});assert.equal(retry.status,200);assert.equal(retry.body.data.alreadyShared,true);assert.equal(retry.body.data.awardedCredits,0);assert.equal(retry.body.data.creditStatus,'awarded');assert.equal(retry.body.data.debriefId,view.body.data[0].id);assert.deepEqual([...f.db.records],before);assert.equal(retry.cacheControl,'no-store');assert.equal(f.stats().budget,0);
+ assert.doesNotMatch(JSON.stringify(retry.body),/PRIVATE_|ownerId|contentHash|likedUsers|reporterId/);
+ const concurrent=await Promise.all(Array.from({length:4},()=>f.request('/debrief',{actor:'A',body:payload()})));assert.ok(concurrent.every(r=>r.status===200&&r.body.data.alreadyShared&&r.body.data.awardedCredits===0));assert.deepEqual([...f.db.records],before);
  assert.equal(count(f.db,'communityPosts'),1);assert.equal(count(f.db,'creditEvents'),1);balance(f.db);
 });
 

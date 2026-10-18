@@ -1,6 +1,7 @@
 'use strict';
 const crypto = require('node:crypto');
 const { fail } = require('./accountStore');
+const {validId,samePublication,recoveredReceipt}=require('./communityReceipt');
 class FirestoreCommunity {
   constructor(db) { this.db = db; }
   async list() {
@@ -15,7 +16,20 @@ class FirestoreCommunity {
     const event = this.db.collection('creditEvents').doc('community-' + id);
     return this.db.runTransaction(async tx => {
       const [previous, owner] = await Promise.all([tx.get(duplicate), tx.get(account)]);
-      if (previous.exists) throw fail(409, 'Nội dung đã được chia sẻ.');
+      if (previous.exists) {
+        const previousId=previous.data()?.postId;
+        if(owner.exists&&validId(previousId)){
+          const existingRef=this.db.collection('communityPosts').doc(previousId);
+          const existing=await tx.get(existingRef);
+          // Check ownership and full public content before reading the reward event.
+          if(existing.exists&&existing.data().ownerId===user.id&&samePublication(entry,existing.data())){
+            const reward=await tx.get(this.db.collection('creditEvents').doc('community-'+previousId));
+            const receipt=recoveredReceipt(user,entry,existing.data(),previousId,reward.exists?reward.data():null,'firestore');
+            if(receipt)return receipt; // No writes, no second credit award or cooldown update.
+          }
+        }
+        throw fail(409, 'Nội dung đã được chia sẻ.');
+      }
       if (!owner.exists) throw fail(403, 'Tài khoản chưa khởi tạo.');
       const data = owner.data();
       if (data.lastCommunityAt && now - data.lastCommunityAt < 21600000) throw fail(429, 'Vui lòng chờ 6 giờ trước khi chia sẻ tiếp.');
@@ -23,7 +37,7 @@ class FirestoreCommunity {
       tx.create(duplicate, { postId: id });
       tx.create(event, { uid: user.id, amount: 5, type: 'community', postId: id, at: new Date(now).toISOString() });
       tx.update(account, { credits: (data.credits || 0) + 5, lastCommunityAt: now });
-      return { debriefId: id, awardedCredits: 5, pendingCredits: 0, creditStatus: 'awarded', rewardId: event.id };
+      return { debriefId: id, awardedCredits: 5, pendingCredits: 0, creditStatus: 'awarded', rewardId: event.id, publishedAt:new Date(now).toISOString() };
     });
   }
   async like(user, id) {

@@ -594,9 +594,9 @@ router.post('/debrief', async (req, res) => {
     };
 
     const reward=await communityStore.submit(req.user,debriefEntry,hash);
-    return res.status(201).json({
+    return res.status(reward.alreadyShared?200:201).json({
       success: true,
-      message: reward.creditStatus === 'awarded' ? 'Đã đăng công khai và cộng 5 Credits vào tài khoản.' : 'Đã đăng công khai. Thưởng 5 Credits đang chờ ghi vào số dư.',
+      message: reward.alreadyShared ? 'Bài chia sẻ này đã được lưu từ lần gửi trước. Không đăng thêm bài hoặc cộng thưởng lần nữa.' : (reward.creditStatus === 'awarded' ? 'Đã đăng công khai và cộng 5 Credits vào tài khoản.' : 'Đã đăng công khai. Thưởng 5 Credits đang chờ ghi vào số dư.'),
       data: {
         ...reward,
         companyName: debriefEntry.companyName,
