@@ -1,0 +1,48 @@
+✔ real Firebase verifier rejects a forged legacy HS256 admin token (796.6656ms)
+✔ identity comes only from verified Firebase token; revocation check enabled (0.5198ms)
+✔ missing, malformed, wrong project and revoked tokens fail closed (0.4749ms)
+✔ unverified email cannot enter AI or public write paths (0.243ms)
+✔ concurrent account initialization grants 15 credits once (1.8162ms)
+✔ profile persistence never modifies another account or balance (1.5752ms)
+✔ daily quota is durable and concurrent overspending is rejected (3.4444ms)
+✔ insufficient credits do not change daily quota or ledger (0.2517ms)
+✔ duplicate community submission awards exactly 5 once and persists cooldown (1.4405ms)
+✔ likes use authenticated UID; retries cannot drive count negative (0.6218ms)
+✔ failure at any publication write rolls back post, hash, credit event and balance; retry awards once (18.2398ms)
+✔ lost response for an incomplete historical post cannot award again or fabricate a confirmed receipt (1.596ms)
+✔ SDK-style callback replay reuses the same post/event IDs and commits one reward (0.9059ms)
+✔ different drafts racing on one account obey cooldown; global duplicate does not reward a second owner (2.5609ms)
+✔ public projection excludes ownership, dedupe, likes identities and reward metadata (0.636ms)
+✔ HTTP rejects anonymous, forged-session, unverified and nonconsenting/contact publications before writes or AI quota (312.8779ms)
+✔ HTTP publication binds reward to verified actor and anonymous public GET excludes private and forged metadata (25.791ms)
+[Interview /debrief] Vui lòng chờ 6 giờ trước khi chia sẻ tiếp.
+[Interview /debrief] Vui lòng chờ 6 giờ trước khi chia sẻ tiếp.
+[Interview /debrief] Vui lòng chờ 6 giờ trước khi chia sẻ tiếp.
+[Interview /debrief] Nội dung đã được chia sẻ.
+✔ HTTP concurrent drafts enforce account cooldown and second actor duplicate receives no reward receipt (18.8826ms)
+✔ HTTP socket loss recovers exact owner receipt without another publication or credit award (26.7075ms)
+[Interview /debrief] Nội dung đã được chia sẻ.
+✔ HTTP dedupe omits review and questions after five: edited payload is rejected, never mistaken for exact retry receipt (14.7846ms)
+✔ HTTP cooldown expiry allows a distinct publication; like identities remain private and toggling never changes credits (45.6086ms)
+✔ HTTP reports bind to verified actor, dedupe concurrent retries, reject invalid reasons and never reward or auto-hide (28.3857ms)
+✔ actual mount protects private report GET/HEAD including case and trailing slash; only trusted verified admin sees bounded projection (31.199ms)
+✔ reader compatibility hides synthetic hidden/unknown states from data, totals, search, top companies, likes and reports (26.3124ms)
+✔ HTTP lost report receipt recovers idempotently while a second reporter receives a separate private receipt (18.903ms)
+✔ admin report queue is bounded even when the local model contains more than one hundred reports (7.6055ms)
+✔ local file store retains report receipt across restart and filters hidden content without mutating reward ledger (14.5659ms)
+✔ concurrent exact owner retries return one original receipt and award only once across service restart (8.8689ms)
+✔ coarse hash collisions never confirm edited review, sixth question, privacy, rating or case changes (2.7484ms)
+✔ another actor cannot recover the owner receipt even with full matching public content (0.5493ms)
+✔ missing or inconsistent reward evidence fails closed without repairing data or awarding credits (3.1875ms)
+✔ orphaned/unsafe hash pointers and missing accounts return no receipt and write nothing (1.4344ms)
+✔ hidden/unknown posts and malformed historical records are not treated as confirmed public retries (2.2801ms)
+✔ file fallback recovers pending receipt after restart without duplicating ledger or promising credited balance (19.7533ms)
+✔ profile display metadata changes are not mistaken for edits to publication content; malformed content cannot match (0.4361ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1028.7533

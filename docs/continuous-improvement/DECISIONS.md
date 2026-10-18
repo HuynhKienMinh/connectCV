@@ -76,3 +76,8 @@ Upload nhận tối đa3MB nhưng account field350kchars/body900KiB; giữ các 
 ## D017 —17/10/2026: dừng micro khác gửi bản ghi
 
 Stop/cancel, gõ Gửi và AI playback phải discard PCM, detach recognizer callbacks, stop tracks/disconnect graph/close context; chỉ explicit recording completion/VAD finish được transcribe. getUserMedia late grant không được sống lại sau cancellation hoặc chiếm phiên mới. Permission denied/audio-capture/mất track đưa người dùng về ô gõ với draft giữ nguyên; không tự prompt engine khác sau denied hoặc hiển thị raw device exception. Service-not-allowed vẫn có fallback engine khi người dùng đã yêu cầu Mic. Không claim physical microphone/iOS/ASR correctness từ synthetic device tests. Những request transcribe/live-chat/TTS đang pending có lifecycle riêng chưa nằm trong scope này.
+
+
+## D018 —18/10/2026: receipt retry cộng đồng phải dựa trên bằng chứng lưu thật
+
+Coarse contenthash chỉ lookup, không idempotency proof. Chỉ cùng verifiedowner/fullpubliccontent và persisted post+reward event nhất quán mới trả receipt đã lưu; replayaward0 và timestamp gốc, không sửa balance/cooldown/schema. Crossactor/editedpayload/legacy thiếu evidence trả409 generic. File pending ledger không được hứa credited balance. UI phải refresh account từ server và giữ thời điểm xuất bản gốc; chưa browserverify thì chưa release dù service tests xanh. Không đưa report/ops schema deferred vào candidate.

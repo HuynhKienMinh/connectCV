@@ -1,0 +1,23 @@
+{
+  "baseline": {
+    "actualHttpPassed": 11,
+    "actualHttpFailed": 1,
+    "failedAssertion": "409 != 200 after committed socket loss"
+  },
+  "after": {
+    "tests": 35,
+    "passed": 35,
+    "newReceiptTests": 8,
+    "actualHttpCases": 12
+  },
+  "realFirestoreExercised": false,
+  "syntheticIdentityVerifier": true,
+  "productionUserWrites": 0,
+  "realAiCalls": 0,
+  "browserReceiptFlowVerified": false,
+  "deployed": false,
+  "schemaChanged": false,
+  "reviewCommit": "a0ec7a36fb76e579610c1790103e1a6c8527cdae",
+  "reviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39133820796",
+  "reviewCiPassed": true
+}

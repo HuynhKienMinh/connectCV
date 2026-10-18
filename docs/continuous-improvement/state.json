@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 43,
-  "lastRun": "runs/2026-10-17-cycle-0043.md",
+  "completedCycles": 44,
+  "lastRun": "runs/2026-10-18-cycle-0044.md",
   "activeRun": null,
   "activeIssue": "SOCIAL003",
-  "issueState": "NEXT_COMMUNITY_RECEIPT_RECOVERY_MIC_INT003_DEPLOYED_SCOPED",
+  "issueState": "OWNER_RECEIPT_SERVER_LOCAL_AND_CI_VERIFIED_UI_BROWSER_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -39,7 +39,7 @@
   "liveAiWritesAllowed": false,
   "aiScenarioCapPerDay": 12,
   "aiScenariosUsedToday": 0,
-  "aiBudgetDate": "2026-10-17",
+  "aiBudgetDate": "2026-10-18",
   "backup": {
     "codeVerified": true,
     "buildCopied": true,
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "INT003 released391fdc3: baseline13FAIL→13PASS whole-Studio synthetic devices;92featurePASS; isolatedCI39007956699/mainCI39023493825 SUCCESS. Renderdep-db9khkjrjlhs73f60aeg Live2m37 exactsource; canary/auth2interview401/FEhash2domains verified, no user writes/realAI/microphone.",
-    "Next community SOCIAL003 response-loss owner receipt recovery local synthetic scenario. SOCIAL001 report schema remains gated by real encrypted DBsnapshot/restore and owner key custody; no aggregate review deploy.",
-    "Backupcatalog42:16bundles/35critical blobs/fsck+currentFEZIP Drive verified and242600314bytes own stage removed. Next release needs new candidate/current backup+CI; rollbackcurrentrelease is9c/dep-db9glpbrjlhs73ep0690. Physical mic/iOS, transcribe/live-chat/TTS late-response races, humanAIquality, original AUTH002/DATA002/PORT003 confirmations remain open."
+    "SOCIAL003 a0ec7a3 server receipt: same verified owner/full six public content fields/persisted post+credit event, award0 on replay, no Firestore writes. Local HTTP baseline11PASS1FAIL→12PASS; new8receipt+account/fault total35PASS. Review CI39133820796 SUCCESS (verify/pdf-renderer/emulator-restore); no main/deployment.",
+    "Next actual Studio receipt response-loss/retry browser plus frontend balance/cooldown handling: current code only refreshes account when awardedCredits>0 and uses Date.now for every success, so new recovered200 requires browser validation and scoped UI adjustment before release. No real public posts/AI/accounts.",
+    "Live391fdc3 and FEce5 unchanged. BackupTransfer42 VERIFIED16bundle, no large backup/build/restore created. New isolated candidate/current backup+CI mandatory before release; report schema/realDBrestore/keycustody stays deferred."
   ],
   "deployment": {
     "commit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
@@ -114,10 +114,10 @@
     "lastVerifiedCandidateCommit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047"
   },
   "delivery": {
-    "reviewCommit": "b817f99",
-    "status": "VERIFIED_LIVE_MIC_CAPTURE_LIFECYCLE_SCOPED",
+    "reviewCommit": "a0ec7a3",
+    "status": "COMMUNITY_RECEIPT_SERVER_REVIEW_ONLY",
     "lastPushError": null,
-    "nextAction": "Community SOCIAL003 owner receipt recovery after response loss, local/staging synthetic only. Do not repeat green micro/summary matrices. Report/ops real encrypted DBrestore/custody pending; physical microphone/iOS and real Auth still unverified.",
+    "nextAction": "Receipt server reviewed/local35PASS; next actual Studio response-loss/retry browser: refresh balance even when awardedCredits0 and preserve original publication cooldown instead of starting new6h on recovery. Keep draft and consent; no auto retry. Then isolated main candidate, CI, fresh Drive backup/restore, deploy. Do not include report/ops review.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39007956699",
@@ -140,7 +140,7 @@
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
     "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -194,7 +194,10 @@
     "microphoneCandidateCommit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
     "microphoneMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39023493825",
     "microphoneCandidateStatus": "VERIFIED_ISOLATED_MAIN_CI_CLOUD_RESTORE_RENDER_LIVE_SCOPED",
-    "microphoneCandidateRelease": "dep-db9khkjrjlhs73f60aeg"
+    "microphoneCandidateRelease": "dep-db9khkjrjlhs73f60aeg",
+    "pendingReceiptCommit": "a0ec7a3",
+    "pendingReceiptStatus": "REVIEW_CI_SUCCESS_LOCAL35_PASS_UI_NOT_VERIFIED_NOT_MAIN_NOT_DEPLOYED",
+    "pendingReceiptCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39133820796"
   },
   "blockingDependency": null,
   "dataBackup": {
