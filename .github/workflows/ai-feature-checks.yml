@@ -174,6 +174,12 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           PORTFOLIO_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-portfolio-save-qa'
+      - name: Verify actual public portfolio routes, visitor controls and transport recovery
+        run: node tests/portfolioPublicUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          PORTFOLIO_PUBLIC_QA_OUTPUT: '${{ runner.temp }}/connectcv-portfolio-public-qa'
       - name: Verify interview microphone cancellation, device loss and text fallback
         run: node tests/interviewMicUi.check.cjs
         working-directory: backend/features/connectcv
