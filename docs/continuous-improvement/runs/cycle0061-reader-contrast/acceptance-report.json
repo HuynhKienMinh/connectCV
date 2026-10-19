@@ -1,0 +1,112 @@
+{
+  "scope": "One synthetic native Ambitious VI CV; diagnostic third-reader comparison, no full matrix or public account",
+  "pypdf": "6.10.0",
+  "pdfplumber": "0.11.9",
+  "raster": "Poppler pdftoppm scale-to1200",
+  "allCasesPass": false,
+  "cases": [
+    {
+      "id": "matrix-fold",
+      "pages": 1,
+      "folded": 85,
+      "beforeBytes": 229691,
+      "afterBytes": 233605,
+      "pdfSha256": [
+        "3d15a790d91c541f4898cbb664fb96807fd83affd54163b457e3006328eb5c98",
+        "9d01639c5799ba6dd69237d2c025e57e57ed1501d6651ae1f77a6ebff399b759"
+      ],
+      "fullResourceGraphSha256": [
+        "bf5125d01cd1b62cf49c4dec5ecef55c87b91be39609e156d63b360fefb992e5"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE",
+          "MATRIX_EDUCATION_SOURCE",
+          "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.",
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [
+          "MATRIX_EXPERIENCE_SOURCE",
+          "MATRIX_EDUCATION_SOURCE",
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "positive-grouping",
+      "pages": 1,
+      "folded": 56,
+      "beforeBytes": 233605,
+      "afterBytes": 236269,
+      "pdfSha256": [
+        "9d01639c5799ba6dd69237d2c025e57e57ed1501d6651ae1f77a6ebff399b759",
+        "e924755b0cc7f5293ab90adf33abf2164b62bf25980a5998fef204ce71312162"
+      ],
+      "fullResourceGraphSha256": [
+        "bf5125d01cd1b62cf49c4dec5ecef55c87b91be39609e156d63b360fefb992e5"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "MATRIX_EXPERIENCE_SOURCE",
+          "MATRIX_EDUCATION_SOURCE",
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    }
+  ],
+  "productionRuntimeChanged": false,
+  "structuralComparison": "font-bound glyph byte sequence and non-show/non-position operators; placement checked independently by raster; text extractors unmodified",
+  "full148MatrixVerified": false,
+  "linuxNativePrototypeVerified": false,
+  "actualCloudExportVerified": false
+}

@@ -1,0 +1,54 @@
+{
+  "ownStage": "tmp/pdfs/cycle0061-reader",
+  "files": 80,
+  "bytes": 2287957,
+  "capBytes": 16777216,
+  "retainedEvidence": {
+    "acceptance-report.json": {
+      "sha256": "ae3e165101d932ebdd5581e680c69203e8ca67363dffc1aafcb5ca5b3b479b21",
+      "bytes": 3451
+    },
+    "font-inventory.json": {
+      "sha256": "27cea4ddef077907b2a2b48cf6dd6f30621919aea5d86e183a1556e2459ff518",
+      "bytes": 5226
+    },
+    "pdfjs-inputs.json": {
+      "sha256": "f45037235a0418722d2ad7871c17a769f6755b0369481d2cb2632b83651c4490",
+      "bytes": 2066
+    },
+    "pdfjs-reader-report.json": {
+      "sha256": "3d5d83b4942645139d8cfebdddd33c765c9bc3ccec31154a5af787d57c010edf",
+      "bytes": 8545
+    },
+    "positive-grouping-after-1.png": {
+      "sha256": "2b83fff4b21a76d28b0b84ff0a934b1e5339e0728805fc02dac2b4d88146d3f9",
+      "bytes": 43493
+    },
+    "positive-grouping-before-1.png": {
+      "sha256": "2b83fff4b21a76d28b0b84ff0a934b1e5339e0728805fc02dac2b4d88146d3f9",
+      "bytes": 43493
+    },
+    "provenance.json": {
+      "sha256": "d9a254934d45ddf5b1db6f6957ef19ca049589cd48c81b0c364334aa0b618676",
+      "bytes": 1571
+    },
+    "punctuation-controls.json": {
+      "sha256": "a68ffda111f6cc798af42f4da3d18799f202450ea199529d6d458f062b79a444",
+      "bytes": 4792
+    },
+    "reader-contrast.json": {
+      "sha256": "01f52c36f279c17e014e1a02e20d9b1ba4cee85828f3d481c88ab33c8ef3044e",
+      "bytes": 10889
+    },
+    "render-report.json": {
+      "sha256": "13284b0cc0ec42aa1113a1534bd87ec77e23eb7c79638addeffbd4b1efea395d",
+      "bytes": 919
+    },
+    "synthetic-input-provenance.json": {
+      "sha256": "a8bed2100d239ebe72c4953d48726f56d89f55243bd0fc7404e01c70d38426b0",
+      "bytes": 4580
+    }
+  },
+  "stageDeleted": true,
+  "pathAndReparseChecksPassed": true
+}

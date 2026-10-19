@@ -122,3 +122,8 @@ Pypdf local6.10.0 dùng abs(TJcorrection) cho space threshold nên positive tigh
 ## D027 —20/10/2026: chỉ grouping khi text matrix ở line origin đã biết
 
 Tj advances text matrix; Tf không reset line matrix. Grouping ở continuation chưa reset gây89pixel drift trên3syntheticcases dù text/resource gatePASS. Origin guard sửa cả3 thành0pixel, unsafe cases byte-identical; vẫn hỗ trợ subrun sauTd. Fontspace80 đồng thời bác bỏ generic cap50 (`AB .`), không được lấy Roboto59 để phát hành mọifont. Giữ expected failures và strict native/fulltext gates; còn cần native-domain/font-aware bounds và independent reader evidence, không đổi verifier hoặc nối whitespace.
+
+
+## D028 —20/10/2026: reader thứ ba dùng để đối chiếu, không thay cổng nghiệm thu
+
+PDF.js4.10.38 đã cài đọc đủ10facts trên cùng một native Ambitious VI ở cả bản gốc, matrix-fold và positive-TJ; text cả ba giống nhau. Pypdf vẫn thiếu heading, pdfplumber vẫn interleave tên. Hai phản chứng cap50/narrow-space và split âm mất word-gap vẫn FAIL ở pypdf dù PDF.js đọc đúng. Vì vậy giữ cả kết quả thuận và nghịch, không chọn reader thuận lợi hoặc spatial-sort/ghép từ để đóng CV002. Inventory một PDF có14Type3,7font không có encoded space; không suy ra generic threshold từ một mẫu hay đổi font/ToUnicode để ép parser. Harness mới chỉ opt-in, child timeout/output/V8-old-space không chứng minh totalRSS hoặc hostile-PDF isolation; không đưa public/runtime. Không chạy lại148matrix cho tới khi có intervention mới vượt local fulltext/resource/raster guards.

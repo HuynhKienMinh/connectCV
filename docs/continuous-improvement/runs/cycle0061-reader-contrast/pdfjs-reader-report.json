@@ -1,0 +1,232 @@
+{
+  "scope": "Installed PDF.js third-reader diagnostics; no ATS certification",
+  "node": "v24.13.1",
+  "harnessSha256": "2e7397e0ef40117560bc2776d6dc4397708b95db8aa28c3625ef5d033ffdf4a0",
+  "textAssembly": "Default getTextContent item order; concatenate str and append LF only at hasEOL; no intra-word repair or spatial sorting",
+  "readerOptions": {
+    "isEvalSupported": false,
+    "useSystemFonts": false,
+    "disableFontFace": true,
+    "useWorkerFetch": false
+  },
+  "runtimeChanged": false,
+  "strictAcceptanceGateChanged": false,
+  "cases": [
+    {
+      "id": "native",
+      "file": "native.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "3d15a790d91c541f4898cbb664fb96807fd83affd54163b457e3006328eb5c98",
+      "bytes": 229691,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 162,
+          "text": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nMục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n• Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+          "geometrySha256": "4a0ee8914f15d02d98651a5470f3038abd6781a96ce2817ebfd27f02fa1f562e"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": null,
+      "exactMatch": null
+    },
+    {
+      "id": "native-position",
+      "file": "native-position.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "9d01639c5799ba6dd69237d2c025e57e57ed1501d6651ae1f77a6ebff399b759",
+      "bytes": 233605,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 162,
+          "text": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nMục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n• Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+          "geometrySha256": "c31c0bc9f712a1b88d74451f0d58ce6b0ce91dc30f92922f4c92d0cf312b90c4"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": null,
+      "exactMatch": null
+    },
+    {
+      "id": "native-positive",
+      "file": "native-positive.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "e924755b0cc7f5293ab90adf33abf2164b62bf25980a5998fef204ce71312162",
+      "bytes": 236269,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 162,
+          "text": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nMục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n• Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+          "geometrySha256": "5821c569e94172b90045dfc9fa9f012c2f7d64727c11a6f178e2c6544273d731"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": null,
+      "exactMatch": null
+    },
+    {
+      "id": "punctuation-1000-80-before",
+      "file": "punctuation-1000-80-before.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "84c70ad48fc6902c8b01cae876a2454501dc0dbb02d4e18b47947d35ad0bb990",
+      "bytes": 2065,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "AB.",
+          "geometrySha256": "8b0dac08a188dd63a1696aa0739976aab491c67b624f52b22bd92138ca9b8fcc"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "AB.",
+      "exactMatch": true
+    },
+    {
+      "id": "punctuation-1000-80-after",
+      "file": "punctuation-1000-80-after.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "b1568450e8b25ebaf3fe68abc61def22cf3e1360ae66b7605820b7f813c69d32",
+      "bytes": 2265,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "AB.",
+          "geometrySha256": "fc49e7f05ea389fe6ee3794c7e516634e32465282b8e650b49afb5dba9653712"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "AB.",
+      "exactMatch": true
+    },
+    {
+      "id": "punctuation-2048-600-before",
+      "file": "punctuation-2048-600-before.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "838f127cb7961d7dd549db9a8242e94367cddd64fb336ff4feb72d674b12c3a8",
+      "bytes": 2091,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "AB.",
+          "geometrySha256": "1429e90c7e6ed834f1a261e5716a6e531bce70e432ca1ffff2d51fe16a7cb47f"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "AB.",
+      "exactMatch": true
+    },
+    {
+      "id": "punctuation-2048-600-after",
+      "file": "punctuation-2048-600-after.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "679d2506e29732cd15dbc5f0724433b414a6895330b71c2f3a1f449e85fb2995",
+      "bytes": 2291,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "AB.",
+          "geometrySha256": "85d2e030a20abe175580b369bc1dc9f05e15d980cf0217610a4bf9b4b2b92e2e"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "AB.",
+      "exactMatch": true
+    },
+    {
+      "id": "word-raw-TJ",
+      "file": "word-raw-TJ.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "dcc00563eb8794d0cd32b7a3c05bf11fb8643609d02a3465da328d7f491d4982",
+      "bytes": 32382,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "PDF.",
+          "geometrySha256": "a4007d2efee25a40530250c1c864dbb6f09fcf17904a697b98e2ece2a9f9b306"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "PDF.",
+      "exactMatch": true
+    },
+    {
+      "id": "word-positive-only-split",
+      "file": "word-positive-only-split.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "0e473e643e68a732eb81465697b8c5b4f26a66a3d5c03441e0987105a187cfd9",
+      "bytes": 32413,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "PDF.",
+          "geometrySha256": "07de79c93bbfc026fbfd3b07a98d48efeb8a2e41328ef0fedcc3f8ec9dffa418"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "PDF.",
+      "exactMatch": true
+    },
+    {
+      "id": "gap-raw-TJ",
+      "file": "gap-raw-TJ.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "d3463b427b894496dd8de368a443e6af78d8235cf7b3d2ee9a3f11f5d0868665",
+      "bytes": 32468,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "PDF. PDF.",
+          "geometrySha256": "9dd179be6b5660fdc9a9655c033d60cd3f67d5dbf9b0453506a44f84e8d7a202"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "PDF. PDF.",
+      "exactMatch": true
+    },
+    {
+      "id": "gap-positive-only-split",
+      "file": "gap-positive-only-split.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "35eadde3ea4cfbe7531bbf5c2228850ec9a91b7ae3f71d5dacfc39f702ba04cb",
+      "bytes": 32530,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "PDF. PDF.",
+          "geometrySha256": "f049d623b34e8c14d9a668db0f429c8117b67a3f8df2b55686d7bbec7b6ed4c5"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "PDF. PDF.",
+      "exactMatch": true
+    },
+    {
+      "id": "gap-all-signs-split",
+      "file": "gap-all-signs-split.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "b9ca93b974716290cc0c4fee40e7ad925c70c6bce5a14b9143fcc10b758ed4d7",
+      "bytes": 32631,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 1,
+          "text": "PDF. PDF.",
+          "geometrySha256": "f5749dd21c2a0d6adffbeac074d8044de2529e0c6513c4872a90e3d3b53b2e42"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "PDF. PDF.",
+      "exactMatch": true
+    }
+  ]
+}

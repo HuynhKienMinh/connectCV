@@ -1,0 +1,256 @@
+{
+  "scope": "One generated native Ambitious VI PDF, not all native fonts/templates",
+  "fontCount": 15,
+  "type3Count": 14,
+  "type3WithEncodedSpace": 7,
+  "pdfSha256": "3d15a790d91c541f4898cbb664fb96807fd83affd54163b457e3006328eb5c98",
+  "fonts": [
+    {
+      "name": "/F17",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F18",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        4
+      ],
+      "encodedSpaceWidths": [
+        "509"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F19",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        4
+      ],
+      "encodedSpaceWidths": [
+        "508"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F20",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F21",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        4
+      ],
+      "encodedSpaceWidths": [
+        "509"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F22",
+      "subtype": "/Type0",
+      "matrix": [],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F23",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        4
+      ],
+      "encodedSpaceWidths": [
+        "508"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F24",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F25",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F26",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        4
+      ],
+      "encodedSpaceWidths": [
+        "509"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F27",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F28",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        4
+      ],
+      "encodedSpaceWidths": [
+        "509"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F29",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F30",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [
+        206
+      ],
+      "encodedSpaceWidths": [
+        "576"
+      ],
+      "decodedLiteralSpaceWidthPresent": false
+    },
+    {
+      "name": "/F31",
+      "subtype": "/Type3",
+      "matrix": [
+        "0.00048828125",
+        "0",
+        "0",
+        "-0.00048828125",
+        "0",
+        "0"
+      ],
+      "encodedSpaceCodes": [],
+      "encodedSpaceWidths": [],
+      "decodedLiteralSpaceWidthPresent": false
+    }
+  ],
+  "genericSpaceThresholdProven": false
+}

@@ -1,0 +1,186 @@
+{
+  "pypdf": "6.10.0",
+  "pdfplumber": "0.11.9",
+  "pdfjs": "4.10.38",
+  "scope": "Third reader contrast; original default Python gates kept; expected failures not waived",
+  "cases": [
+    {
+      "id": "native",
+      "pdfSha256": "3d15a790d91c541f4898cbb664fb96807fd83affd54163b457e3006328eb5c98",
+      "pypdfPlain": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th ử  nghi ệ m\nM ATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "pdfplumberDefault": "Mục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nỨng Viên Thử Học vấn\nNghiệm Kỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nKỹ sư kiểm thử\nMATRIX_EDUCATION_SOURCE\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\n© ConnectCV",
+      "pdfjsDefault": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nMục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n• Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "missingFacts": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE",
+          "MATRIX_EDUCATION_SOURCE",
+          "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.",
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ],
+        "pdfjs-default": []
+      },
+      "expectedExact": null
+    },
+    {
+      "id": "native-position",
+      "pdfSha256": "9d01639c5799ba6dd69237d2c025e57e57ed1501d6651ae1f77a6ebff399b759",
+      "pypdfPlain": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nM ục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024- 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. M ATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020- 2024\nTrường thử nghiệm\nM ATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "pdfplumberDefault": "Mục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nỨng Viên Thử Học vấn\nNghiệm Kỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nKỹ sư kiểm thử\nMATRIX_EDUCATION_SOURCE\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\n© ConnectCV",
+      "pdfjsDefault": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nMục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n• Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "missingFacts": {
+        "pypdf-plain": [
+          "MATRIX_EXPERIENCE_SOURCE",
+          "MATRIX_EDUCATION_SOURCE",
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ],
+        "pdfjs-default": []
+      },
+      "expectedExact": null
+    },
+    {
+      "id": "native-positive",
+      "pdfSha256": "e924755b0cc7f5293ab90adf33abf2164b62bf25980a5998fef204ce71312162",
+      "pypdfPlain": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nM ục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024- 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020- 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "pdfplumberDefault": "Mục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nỨng Viên Thử Học vấn\nNghiệm Kỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nKỹ sư kiểm thử\nMATRIX_EDUCATION_SOURCE\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\n© ConnectCV",
+      "pdfjsDefault": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nMục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n• Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "missingFacts": {
+        "pypdf-plain": [
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ],
+        "pdfjs-default": []
+      },
+      "expectedExact": null
+    },
+    {
+      "id": "punctuation-1000-80-before",
+      "pdfSha256": "84c70ad48fc6902c8b01cae876a2454501dc0dbb02d4e18b47947d35ad0bb990",
+      "pypdfPlain": "AB.",
+      "pdfplumberDefault": "AB.",
+      "pdfjsDefault": "AB.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "AB."
+    },
+    {
+      "id": "punctuation-1000-80-after",
+      "pdfSha256": "b1568450e8b25ebaf3fe68abc61def22cf3e1360ae66b7605820b7f813c69d32",
+      "pypdfPlain": "AB .",
+      "pdfplumberDefault": "AB.",
+      "pdfjsDefault": "AB.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "AB."
+    },
+    {
+      "id": "punctuation-2048-600-before",
+      "pdfSha256": "838f127cb7961d7dd549db9a8242e94367cddd64fb336ff4feb72d674b12c3a8",
+      "pypdfPlain": "AB.",
+      "pdfplumberDefault": "AB.",
+      "pdfjsDefault": "AB.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "AB."
+    },
+    {
+      "id": "punctuation-2048-600-after",
+      "pdfSha256": "679d2506e29732cd15dbc5f0724433b414a6895330b71c2f3a1f449e85fb2995",
+      "pypdfPlain": "AB.",
+      "pdfplumberDefault": "AB.",
+      "pdfjsDefault": "AB.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "AB."
+    },
+    {
+      "id": "word-raw-TJ",
+      "pdfSha256": "dcc00563eb8794d0cd32b7a3c05bf11fb8643609d02a3465da328d7f491d4982",
+      "pypdfPlain": "PDF .",
+      "pdfplumberDefault": "PDF.",
+      "pdfjsDefault": "PDF.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "PDF."
+    },
+    {
+      "id": "word-positive-only-split",
+      "pdfSha256": "0e473e643e68a732eb81465697b8c5b4f26a66a3d5c03441e0987105a187cfd9",
+      "pypdfPlain": "PDF.",
+      "pdfplumberDefault": "PDF.",
+      "pdfjsDefault": "PDF.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "PDF."
+    },
+    {
+      "id": "gap-raw-TJ",
+      "pdfSha256": "d3463b427b894496dd8de368a443e6af78d8235cf7b3d2ee9a3f11f5d0868665",
+      "pypdfPlain": "PDF . PDF .",
+      "pdfplumberDefault": "PDF. PDF.",
+      "pdfjsDefault": "PDF. PDF.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "PDF. PDF."
+    },
+    {
+      "id": "gap-positive-only-split",
+      "pdfSha256": "35eadde3ea4cfbe7531bbf5c2228850ec9a91b7ae3f71d5dacfc39f702ba04cb",
+      "pypdfPlain": "PDF. PDF.",
+      "pdfplumberDefault": "PDF. PDF.",
+      "pdfjsDefault": "PDF. PDF.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "PDF. PDF."
+    },
+    {
+      "id": "gap-all-signs-split",
+      "pdfSha256": "b9ca93b974716290cc0c4fee40e7ad925c70c6bce5a14b9143fcc10b758ed4d7",
+      "pypdfPlain": "PDF.PDF.",
+      "pdfplumberDefault": "PDF. PDF.",
+      "pdfjsDefault": "PDF. PDF.",
+      "missingFacts": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [],
+        "pdfjs-default": []
+      },
+      "expectedExact": "PDF. PDF."
+    }
+  ]
+}

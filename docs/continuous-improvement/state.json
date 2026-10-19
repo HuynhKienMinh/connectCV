@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 60,
-  "lastRun": "runs/2026-10-20-cycle-0060.md",
+  "completedCycles": 61,
+  "lastRun": "runs/2026-10-20-cycle-0061.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "LOCAL_TJ_CONTINUATION_PLACEMENT_FIXED_CONSTANT_CAP_GENERIC_REJECTED_REVIEW_CI_SUCCESS",
+  "issueState": "LOCAL_THIRD_READER_CONTRAST_STRICT_NATIVE_FAIL_REVIEW_CI_SUCCESS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002 cycle60 localTJ continuation bug fixed: text matrix must be at known lineorigin before grouping. Same8input/harnessSHAs, three89pixel regressions to0; all8placement0; consecutive/Tfcontinuations byte-identical, subrun afterTd stillgroups. Prototype only, no runtime. Do not repeat these passing cases without code change.",
-    "Fixedpositivecap50 is NOT generic: syntheticFontMatrix1/1000/spaceWidth80 stillpypdf AB . whilepdfplumberAB. andpaintidentical;1/2048/space600passes. Next inspect native-font domain bounds or font-aware correction and independent installed PDF.js reader diagnostics; keep fullsummary/negativegap/heading/name gates. Do not replace strict failures with a more favorable reader result.",
-    "Review076ee11 CI39293201319 SUCCESS all3jobs, checked17:23:37UTC; neweightcase suite opt-in local, notLinuxproof. Native long/crop/fullmatrix forgroupedmode, JSfont/advance parsing, worker/load-time/object-stream bounds remainunverified. LiveFE1bc/Hosting89f BE0bf andDrive53VERIFIED unchanged; future deployment needs new exact backup/rollback proof."
+    "CV002 cycle61: installed PDF.js reads all10facts on original/matrix-fold/positive-TJ native variants, same text across3; pypdf heading and pdfplumber full name still FAIL. Nine tiny variants also read correctly in PDF.js while narrow-space cap50 and all-sign word-gap counterexamples remain FAIL in pypdf. Keep strict gates, no generic integration; do not repeat third-reader/148 sweep without new intervention.",
+    "Next narrow investigation: heading font without encoded space versus pypdf decoded-width/fallback mapping; any font-aware positive correction must preserve negative word gaps, full summary, continuation origin and independent raster/resources. One native inventory14Type3/7with-space is not full domain proof. Prefer one local causal control before broader native long/crop/matrix; no parser patch or whitespace repair.",
+    "Review3f70ca9 CI39295462519 SUCCESS all3jobs checked17:40:43UTC; new PDF.js collector is opt-in local, not workflow coverage. Worker/load-time/object-stream bounds and JSfont/advance parsing remain unverified. LiveFE1bc/Hosting89f BE0bf and Drive53VERIFIED unchanged; future deploy requires fresh exact backup/rollback."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "CV002 cycle60 localTJ continuation bug fixed: text matrix must be at known lineorigin before grouping. Same8input/harnessSHAs, three89pixel regressions to0; all8placement0; consecutive/Tfcontinuations byte-identical, subrun afterTd stillgroups. Prototype only, no runtime. Do not repeat these passing cases without code change.",
+    "nextAction": "CV002 cycle61: installed PDF.js reads all10facts on original/matrix-fold/positive-TJ native variants, same text across3; pypdf heading and pdfplumber full name still FAIL. Nine tiny variants also read correctly in PDF.js while narrow-space cap50 and all-sign word-gap counterexamples remain FAIL in pypdf. Keep strict gates, no generic integration; do not repeat third-reader/148 sweep without new intervention.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -275,7 +275,11 @@
     "pendingContinuationReviewCommit": "076ee11d2e1e73c7a2c9224befbf360b7126ce3d",
     "pendingContinuationReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39293201319",
     "pendingContinuationReviewCiPassed": true,
-    "pendingContinuationStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_PLACEMENT_FIX_CONSTANT_CAP_GENERIC_REJECTED_NO_RUNTIME"
+    "pendingContinuationStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_PLACEMENT_FIX_CONSTANT_CAP_GENERIC_REJECTED_NO_RUNTIME",
+    "pendingPdfJsReaderReviewCommit": "3f70ca9643a6e53ebd5bc008b5d07b20ea3de523",
+    "pendingPdfJsReaderReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39295462519",
+    "pendingPdfJsReaderReviewCiPassed": true,
+    "pendingPdfJsReaderStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_THIRD_READER_CONTRAST_STRICT_NATIVE_FAIL_NO_RUNTIME"
   },
   "blockingDependency": null,
   "dataBackup": {

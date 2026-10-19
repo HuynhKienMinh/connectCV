@@ -1,0 +1,23 @@
+{
+  "reviewSourceCommit": "3f70ca9643a6e53ebd5bc008b5d07b20ea3de523",
+  "localOnly": true,
+  "pdfjsNewCoverage": {
+    "files": 12,
+    "nativeVariants": 3,
+    "syntheticNarrowAndWideFontPairs": 4,
+    "nativeFontPunctuationAndGapVariants": 5
+  },
+  "sourceSha256": {
+    "backend/features/connectcv/tests/nativePdfJsReader.check.cjs": "2e7397e0ef40117560bc2776d6dc4397708b95db8aa28c3625ef5d033ffdf4a0",
+    "backend/features/connectcv/tests/nativeRelativeTjPrototype.check.py": "bb6d829fb0f325c0b6557c59c4883aaa2e88f9573a5f3358e08557b4bc76e5ce",
+    "backend/features/connectcv/tools/pdfTextPositionPrototype.cjs": "76d175ff4d5e57b9038d7d56774c16ccb3f2069b03be6f66da0b7d2087064ee4",
+    "backend/features/connectcv/tests/nativeGroupedPosition.check.py": "cd0be9bb53b9bb213fe5df2e57cd78054dd5412b11d3c53dee0ee3eb0ee621fb",
+    "backend/features/connectcv/node_modules/pdfjs-dist/legacy/build/pdf.mjs": "081d3b6f426d38a8029766f8839f505e9cbf2c81a71d62c26eada142e6c21ae4",
+    "backend/features/connectcv/node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs": "5e9f76bd5e65fbd1602b29fc50e50490aeeacd34a715b2282b73f7e8029242e0",
+    "backend/features/connectcv/node_modules/pdfjs-dist/package.json": "5e6d65964f1d770b4976dedff1f739d08879032bb61a70d3ff692a1fe379cb49"
+  },
+  "strictDefaultPythonGateStillFailed": true,
+  "currentRuntimeChanged": false,
+  "deploymentAttempted": false,
+  "note": "Existing controls regenerated solely to feed the new independent PDF.js comparison; no claim of new coverage from repeating already-passing pixel checks."
+}
