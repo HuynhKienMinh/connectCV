@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 49,
   "lastRun": "runs/2026-10-19-cycle-0049.md",
-  "activeRun": null,
+  "activeRun": "runs/2026-10-19-cycle-0050.md",
   "activeIssue": "PORT001",
-  "issueState": "NEXT_PORTFOLIO_ACTUAL_REACT_PUBLIC_VIEW_NETWORK_AND_ID_LIFECYCLE",
+  "issueState": "PUBLIC_UI_LOCAL8_PASS_PRIOR_IFRAME_HARNESS_RACE_FIXED_RETRY_CI",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Portfolio rotation: actual React publicView route id change, empty/not-found and offline/recovery lifecycle with synthetic API. Prior service loader6HTTP and save6browser already pass; choose a new UI failure scenario, no real profile/portfolio writes.",
-    "AUTH004 deployed964d1af Hosting73a mainCI39210757621 and privateDrive49restore18bundle/44critical/candidateFE+rollback verified. Real Firebase actor/mobile still unverified; do not repeat notification without new evidence.",
-    "BE0bf/dep-dbar56u7bikc73akq250 unchanged. New runtime needs new cloud backup/currentFE rollback gate; codebackup is not database backup. Report/ops and real encryptedDBrestore/custody remain deferred."
+    "PORT001 new actual React publicView eight scenarios PASS local/isolated; review546f20a CI39211954897 and test-only isolated8685eee CI39212018430 running. Complete CI then fast-forward main test/workflow only, mainCI; no runtime deployment/newbackup required.",
+    "LiveFE964/Hosting73a and BE0bf unchanged; catalog49 VERIFIED18chain/currentFE+rollback, database backup remains false. Do not repeat publichealth/oldpassing tests or user notification.",
+    "After acceptance continue auth-profile rotation: actual React AccountPage initial account load/error/actor/lifecycle with fakeAPI, no real profile writes. RealFirebase/cloudportfolioactors remain unverified."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -119,7 +119,7 @@
     "reviewCommit": "6dfff68e9021a22a371ef745e79602508d5fcc7b",
     "status": "IFRAME_SESSION_MAIN_CI_CLOUD_RESTORE_HOSTING_LIVE_SCOPED",
     "lastPushError": null,
-    "nextAction": "Portfolio rotation: actual React publicView route id change, empty/not-found and offline/recovery lifecycle with synthetic API. Prior service loader6HTTP and save6browser already pass; choose a new UI failure scenario, no real profile/portfolio writes.",
+    "nextAction": "PORT001 new actual React publicView eight scenarios PASS local/isolated; review546f20a CI39211954897 and test-only isolated8685eee CI39212018430 running. Complete CI then fast-forward main test/workflow only, mainCI; no runtime deployment/newbackup required.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209897092",
@@ -141,8 +141,8 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
-    "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleRuntimeChanged": false,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -222,7 +222,14 @@
     "pendingIframeMainCiPassed": true,
     "pendingIframeRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792391947825000",
     "pendingIframeVersion": "projects/connect-cv/sites/connect-cv/versions/73a1cc4c31425bea",
-    "remainingIframeVerification": "Actual Firebase actor/OAuth/mobile replay and provider-token revocation unverified. This fix invalidates local completion/document state, not SDK/provider sessions."
+    "remainingIframeVerification": "Actual Firebase actor/OAuth/mobile replay and provider-token revocation unverified. This fix invalidates local completion/document state, not SDK/provider sessions.",
+    "pendingPortfolioPublicReviewCommit": "546f20acc8b443a932472af377b1f57fd7929702",
+    "pendingPortfolioPublicCandidateCommit": "8685eeefaa3824b2088fec38462f0fdef4644146",
+    "pendingPortfolioPublicBranch": "improvement/portfolio-public-checks-20261019",
+    "pendingPortfolioPublicReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39211954897",
+    "pendingPortfolioPublicCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212018430",
+    "pendingPortfolioPublicStatus": "INITIAL_CI_FAILED_PRIOR_IFRAME_FIXTURE_WAIT_HARNESS_ONLY_FIXED_RETRY_PENDING",
+    "pendingPortfolioPublicHarnessReviewCommit": "778ed13"
   },
   "blockingDependency": null,
   "dataBackup": {

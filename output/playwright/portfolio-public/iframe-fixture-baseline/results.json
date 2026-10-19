@@ -1,0 +1,58 @@
+{
+  "actualReactFeaturePage": true,
+  "actualChildBridge": true,
+  "syntheticFirebaseSdk": true,
+  "realFirebaseVerified": false,
+  "cloudAuthCalls": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "sourceRevision": "827540d",
+  "passed": 6,
+  "failed": 4,
+  "results": [
+    {
+      "name": "verified-current-child-gets-correlated-token",
+      "pass": true
+    },
+    {
+      "name": "initial-child-load-request-still-receives-token",
+      "pass": true
+    },
+    {
+      "name": "wrong-origin-source-and-invalid-request-id-ignored",
+      "pass": true
+    },
+    {
+      "name": "current-sdk-failure-returns-null-without-provider-message",
+      "pass": true
+    },
+    {
+      "name": "account-change-discards-child-draft-and-old-token",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Private synthetic A draft'\n- ''\n"
+    },
+    {
+      "name": "module-navigation-cannot-receive-obsolete-token",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   \"Cannot read properties of null (reading 'postMessage')\"\n+ ]\n- []\n"
+    },
+    {
+      "name": "return-to-same-uid-does-not-revive-old-session",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "child-document-navigation-invalidates-pending-token",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   \"Cannot read properties of null (reading 'postMessage')\"\n+ ]\n- []\n"
+    },
+    {
+      "name": "verification-revocation-removes-frame-and-blocks-new-token",
+      "pass": true
+    },
+    {
+      "name": "child-timeout-ignores-late-token-and-retry-is-explicit",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "previousRuns": [
+    {
+      "id": 39211954897,
+      "head_sha": "546f20acc8b443a932472af377b1f57fd7929702",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39211954897"
+    },
+    {
+      "id": 39212018430,
+      "head_sha": "8685eeefaa3824b2088fec38462f0fdef4644146",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212018430"
+    }
+  ],
+  "failedJobIds": [
+    117927107333,
+    117927305302
+  ],
+  "failedStep": "Verify React iframe token boundaries, account changes and obsolete document requests",
+  "failedCase": "module-navigation-cannot-receive-obsolete-token",
+  "observedError": "Cannot read properties of undefined (reading 'waitForFunction')",
+  "featureBridgePassed": 9,
+  "featureBridgeFailed": 1,
+  "publicBrowserStepExecuted": false,
+  "cause": "Harness read child Frame handle after parent src/title changed but before new document navigation completed.",
+  "change": "Wait for Child draft inside the current titled iframe through frameLocator before reading Frame handle. Initial fixture setup waits for same visible child control. Assertions and runtime unchanged.",
+  "runtimeSourceChanged": false,
+  "publicNewLocalCasesPassed": 8
+}
