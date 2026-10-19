@@ -1,0 +1,1 @@
+{"cases": [{"id": "native-two-fonts", "file": "native-two-fonts.pdf", "expectedExact": "M\u1ee5"}, {"id": "synthetic-unknown-names", "file": "synthetic-unknown-names.pdf", "expectedExact": "Mu"}, {"id": "synthetic-adobe-names", "file": "synthetic-adobe-names.pdf", "expectedExact": "Mu"}, {"id": "synthetic-recoded", "file": "synthetic-recoded.pdf", "expectedExact": "Mu"}]}

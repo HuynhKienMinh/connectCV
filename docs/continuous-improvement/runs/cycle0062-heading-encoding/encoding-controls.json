@@ -1,0 +1,197 @@
+{
+  "scope": "Native two-font heading boundary and synthetic encoding-width collision; diagnostic only, resource-changing controls rejected for runtime",
+  "sourcePdfSha256": "ab53ba95aaba8bccd4a342de0eb58c436edf2a987c3147d4dbbb072a9682995e",
+  "nativeMEncodedCode": 49,
+  "nativeEncodedAdvance": 1793,
+  "nativeWidthAtRaw77": 542,
+  "nativeDecodedMWidth": 542,
+  "nativeEncodedSpaceCodePresent": true,
+  "nativeFontObjectSpaceWidthBeforePageOverride": 554,
+  "nativeActualAdvancePoints": 14.0078125,
+  "nativeObservedDisplacementPoints": 14.015625,
+  "nativePypdfAdvancePoints": 8.672,
+  "pageDefaultSpaceWidthOverride": 200,
+  "effectiveHalfSpacePointsAtInsertion": 1.6,
+  "syntheticNameChangeDifferentPixels": 0,
+  "syntheticRecodeDifferentPixels": 0,
+  "maximumChannelDifference": 0,
+  "syntheticFontResourcesEqual": false,
+  "nameOnlyControlSameWidthArrayToUnicodeAndProgramBytes": true,
+  "recodeControlChangesFirstLastCharToUnicodeAndShowCodes": true,
+  "runtimeChanged": false,
+  "verifierUnmodified": true,
+  "cases": [
+    {
+      "id": "native-two-fonts",
+      "pdfSha256": "9db4f4c2d5d7c60a8961530f5b2ba2b6c6df774fdfcdcdd83ab7e44588b17ea1",
+      "expected": "Mụ",
+      "pypdfPlain": "M ụ",
+      "pdfplumberDefault": "Mụ",
+      "encodedMWidth": 1793,
+      "decodedMWidth": 542,
+      "fontObjectSpaceWidthBeforePageOverride": 554,
+      "spaceInsertionEvents": [
+        {
+          "beforeText": "",
+          "afterText": " ",
+          "beforeOutput": "M",
+          "priorStringWidthPoints": 8.672,
+          "effectiveHalfSpacePoints": 1.6,
+          "previousTm": [
+            1.0,
+            0.0,
+            0.0,
+            -1.0,
+            40.0,
+            60.0
+          ],
+          "currentTm": [
+            1.0,
+            0.0,
+            0.0,
+            -1.0,
+            54.015625,
+            60.0
+          ]
+        }
+      ],
+      "fontHasEncodedSpace": true,
+      "firstChar": 0,
+      "lastChar": 248,
+      "widthArraySha256": "c69de0188385dbfd9064b8d6eb7276bcee20a83489212bcedd22f06907cab612",
+      "toUnicodeSha256": "a4deb78aa98949142968930917fee6c4d4937544505d09e0c19a6e2d3b393931",
+      "charProcProgramSha256ByName": {
+        "/g0": "f0e387730237527c817db3f8afbf9b994f493e8f1313148239d4a78130f8a837",
+        "/g4": "acc3c3fd377cd7f94bb52461c38325835a90f7e7ef1cf99819b222bf3390d18d",
+        "/g2C": "0d98f030bb6d5b936aa7bbfaf128dc4a7dfb42b409333635e9d1ac53a7af6d9b",
+        "/g2F": "78702ad9caa22a3f59f0f830c424521b332a9a9bdc6fd6395afac531ea9852f5",
+        "/g31": "bf1cfb59eee3755bc2df86074486cb66144b61cb4ece77ef28e81025ac49b378",
+        "/g38": "3ffa0c4efe242e1888af9bffb9851d640fc9b95b2b3f8fc96ebc6ebb353eb221",
+        "/g47": "769f055bf3d74a4f31a4969eb168bc8ee60652547ec334d8750dbfc143932aac",
+        "/g4B": "bfeff0a9d15d986c8794374349bbde7618698124806abb4c9f71d4941efdb19a",
+        "/g4C": "4aef626b56c512a07925c561e5a69683e46240179b257ae5c96f0070912f0945",
+        "/g4D": "6d2fcf9e1b3c1aff7f09b2ebd1984ead02ac0aae69dab913e8e2381b2c0c5a10",
+        "/g50": "10b2c5d8dbd8f31faf6b14ba1539f46d53697df7e8dd36397f54252502324fd7",
+        "/g51": "52a4415dd35a32bb735c6c1cb5ea0f393eed93bcb5ec42b4d00ec7c0ef3b85aa",
+        "/g52": "fc6c714111e3028fc5e24d936219e4ab64086488725311b9c10273230f53a815",
+        "/g54": "ddd06aa83d6eac284c2086aae39fb8337b2ef999060cdea08ea567e190740eec",
+        "/g58": "7ba6d318b6c762138ebea453d371777026841f801e9c27c0f15412f6e4a39ccb",
+        "/g59": "bada4643f7ed04948187c8d662bcfc50be74c21bf5605f318a6485ae01f794ad",
+        "/g5A": "85236fe021189548a7b576a9a3e9eab763e1b4f7d349376950fb650e79c86e13",
+        "/gE6": "5b4b6db79ebc33dee8286f197cb7f558b8634ad586a932d42216c9ef40f41eae",
+        "/gE7": "53812263620427eecd09be3c4f0f38249265d30241a21810926082d219d30f64",
+        "/gE8": "7cf31c6b1f40433263c7ec99e25826715b4fd3c06dc5647a4eeef66a6cdf0bbd",
+        "/gEF": "1ac24c60a14967ac3f2209140e3e34750c4b06db038c98a30f983b406be27aff",
+        "/gF8": "54da21c5830006589c5c23bb535b1b3287311adf81386183808a3052d7d7a694"
+      }
+    },
+    {
+      "id": "synthetic-unknown-names",
+      "pdfSha256": "aefda5dfaba5ef68f461b84438d5a9535b0e4d2c2244c7f1c30f74232fc0ab29",
+      "expected": "Mu",
+      "pypdfPlain": "M u",
+      "pdfplumberDefault": "Mu",
+      "encodedMWidth": 1793,
+      "decodedMWidth": 542,
+      "fontObjectSpaceWidthBeforePageOverride": 554,
+      "spaceInsertionEvents": [
+        {
+          "beforeText": "",
+          "afterText": " ",
+          "beforeOutput": "M",
+          "priorStringWidthPoints": 8.672,
+          "effectiveHalfSpacePoints": 1.6,
+          "previousTm": [
+            1.0,
+            0.0,
+            0.0,
+            -1.0,
+            40.0,
+            60.0
+          ],
+          "currentTm": [
+            1.0,
+            0.0,
+            0.0,
+            -1.0,
+            54.015625,
+            60.0
+          ]
+        }
+      ],
+      "fontHasEncodedSpace": false,
+      "firstChar": 49,
+      "lastChar": 77,
+      "widthArraySha256": "0abb752c23e91abcb9490198717fb988fedc004b534502aaebdacec5c57aabf3",
+      "toUnicodeSha256": "a109b92c7ca63c5e5353c5d53f65e733e3a97433968d682a3a661cbe88d21d3f",
+      "charProcProgramSha256ByName": {
+        "/g49": "37ba3d5ff1771729c8e451eef621d20f87b853f8ab066dbb4b133c7f3ffcd7fb",
+        "/g77": "ac8c00f4159db415a598e00f6418a62844d8b1fd3b7de49529acd4cc45540f04"
+      }
+    },
+    {
+      "id": "synthetic-adobe-names",
+      "pdfSha256": "2ad97d965cbf15dc0c98d5a6bd89e5ce0191bc580318a3372ccebb7d92e0bf60",
+      "expected": "Mu",
+      "pypdfPlain": "M u",
+      "pdfplumberDefault": "Mu",
+      "encodedMWidth": 1793,
+      "decodedMWidth": 542,
+      "fontObjectSpaceWidthBeforePageOverride": 554,
+      "spaceInsertionEvents": [
+        {
+          "beforeText": "",
+          "afterText": " ",
+          "beforeOutput": "M",
+          "priorStringWidthPoints": 8.672,
+          "effectiveHalfSpacePoints": 1.6,
+          "previousTm": [
+            1.0,
+            0.0,
+            0.0,
+            -1.0,
+            40.0,
+            60.0
+          ],
+          "currentTm": [
+            1.0,
+            0.0,
+            0.0,
+            -1.0,
+            54.015625,
+            60.0
+          ]
+        }
+      ],
+      "fontHasEncodedSpace": false,
+      "firstChar": 49,
+      "lastChar": 77,
+      "widthArraySha256": "0abb752c23e91abcb9490198717fb988fedc004b534502aaebdacec5c57aabf3",
+      "toUnicodeSha256": "a109b92c7ca63c5e5353c5d53f65e733e3a97433968d682a3a661cbe88d21d3f",
+      "charProcProgramSha256ByName": {
+        "/M": "37ba3d5ff1771729c8e451eef621d20f87b853f8ab066dbb4b133c7f3ffcd7fb",
+        "/i": "ac8c00f4159db415a598e00f6418a62844d8b1fd3b7de49529acd4cc45540f04"
+      }
+    },
+    {
+      "id": "synthetic-recoded",
+      "pdfSha256": "957fe6f236eebbe51d69a988ed5a4119e04e661ce3ee6e84ec63d5bfa458d3ab",
+      "expected": "Mu",
+      "pypdfPlain": "Mu",
+      "pdfplumberDefault": "Mu",
+      "encodedMWidth": 1793,
+      "decodedMWidth": 1793,
+      "fontObjectSpaceWidthBeforePageOverride": 554,
+      "spaceInsertionEvents": [],
+      "fontHasEncodedSpace": false,
+      "firstChar": 77,
+      "lastChar": 105,
+      "widthArraySha256": "0abb752c23e91abcb9490198717fb988fedc004b534502aaebdacec5c57aabf3",
+      "toUnicodeSha256": "d187d8fab92008c7eb9157a0606e2befc0c7128a37aeb9fddd1873c43317b25d",
+      "charProcProgramSha256ByName": {
+        "/M": "37ba3d5ff1771729c8e451eef621d20f87b853f8ab066dbb4b133c7f3ffcd7fb",
+        "/i": "ac8c00f4159db415a598e00f6418a62844d8b1fd3b7de49529acd4cc45540f04"
+      }
+    }
+  ]
+}

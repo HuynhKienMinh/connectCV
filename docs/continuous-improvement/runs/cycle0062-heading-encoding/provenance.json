@@ -1,0 +1,27 @@
+{
+  "reviewSourceCommit": "8790b2348bff30d37a2c3589d98dfb88b59b676b",
+  "pypdf": "6.10.0",
+  "sourceSha256": {
+    "_font.py": "50ad53071d7979e53daa4661bf38a0e1823eb6365382007eca20b414b73767bb",
+    "_cmap.py": "0b8eea205808d522a7e4bad3e222b39c6964752b58a3a3b7259904292ee09241",
+    "_page.py": "f93c459a77c433dbd2541e94d1fdfa599e486ca5fe3e3efe9348eaf94552639c",
+    "_text_extractor.py": "b54a9bbc2ebd305706406501b7f63caeab1535ffbcb0c171003c8a9da8b4a232",
+    "__init__.py": "6b7677deb4154e230a1adc2deff6df5e53e8b1b493f2bcc42e8367b74e77fd0c",
+    "nativeHeadingEncodingControls.check.py": "d88b2a225c7690e4cac27157cdd0a12540b102fc67635f3ca03d4a271850b0cf"
+  },
+  "sourceObservations": [
+    "_cmap.get_encoding replaces mapped dictionary entries with byte identity when ToUnicode is present",
+    "_font._collect_tt_t1_character_widths dictionary branch keys widths by encoding without character_map translation",
+    "_page._extract_text overrides space width with default200 when decoded literal-space width missing/zero",
+    "_text_extractor divides accumulated decoded widths by1000 and uses font.space_width/2; read-only original-function observation matches ordinary output"
+  ],
+  "hypothesesRejected": [
+    "Heading M font lacks encoded space: it has code4 space, while decoded literal space width still misses",
+    "Renaming glyph names to Adobe names repairs width lookup: ToUnicode identity override leaves same M u failure"
+  ],
+  "runtimeCandidateRejected": "Recoding changes FirstChar/LastChar, ToUnicode, Encoding/CharProc names and glyph show codes; pixel equality is insufficient for existing resource/glyph invariants",
+  "runtimeChanged": false,
+  "sourceParserFilesEdited": false,
+  "observerDelegatesOriginalAndRestores": true,
+  "broaderNativeMatrixRerun": false
+}

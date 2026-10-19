@@ -1,0 +1,38 @@
+{
+  "ownStage": "tmp\\pdfs\\cycle0062-heading",
+  "files": 15,
+  "bytes": 532170,
+  "capBytes": 8388608,
+  "retainedEvidence": {
+    "encoding-controls.json": {
+      "bytes": 7755,
+      "sha256": "e9804ab381c507a7486b9d0796d6fa440f3574a9f8859f1fe3ef230d5abd9a46"
+    },
+    "native-two-fonts.png": {
+      "bytes": 5332,
+      "sha256": "5c87d0bd7765afb6d49e07ec7467e3937862dad6d49c035b30d3edde1a0aad33"
+    },
+    "pdfjs-inputs.json": {
+      "bytes": 374,
+      "sha256": "5da43e9b3403c19f31d043707f6cd23686f2166cd080c60bbd4d73700dd208c5"
+    },
+    "pdfjs-reader-report.json": {
+      "bytes": 2633,
+      "sha256": "2a3631411f86e8bedf6f19b55c2caccde0d8ccca13a32f0d4a4e74f585e9f486"
+    },
+    "provenance.json": {
+      "bytes": 1818,
+      "sha256": "772ee9baa1aa6acf6483b21e9af4829c1e5cc072caf88b9d3f75c47fb1f1e669"
+    },
+    "synthetic-recoded.png": {
+      "bytes": 4753,
+      "sha256": "3632f1e9fdcccd9820107a2e04e4b4dcc01a3b0bb3c54dffa58ab4e80cee9796"
+    },
+    "synthetic-unknown-names.png": {
+      "bytes": 4753,
+      "sha256": "3632f1e9fdcccd9820107a2e04e4b4dcc01a3b0bb3c54dffa58ab4e80cee9796"
+    }
+  },
+  "stageDeleted": true,
+  "pathAndReparseChecksPassed": true
+}

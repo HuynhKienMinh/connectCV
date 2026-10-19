@@ -1,0 +1,88 @@
+{
+  "scope": "Installed PDF.js third-reader diagnostics; no ATS certification",
+  "node": "v24.13.1",
+  "harnessSha256": "2e7397e0ef40117560bc2776d6dc4397708b95db8aa28c3625ef5d033ffdf4a0",
+  "textAssembly": "Default getTextContent item order; concatenate str and append LF only at hasEOL; no intra-word repair or spatial sorting",
+  "readerOptions": {
+    "isEvalSupported": false,
+    "useSystemFonts": false,
+    "disableFontFace": true,
+    "useWorkerFetch": false
+  },
+  "runtimeChanged": false,
+  "strictAcceptanceGateChanged": false,
+  "cases": [
+    {
+      "id": "native-two-fonts",
+      "file": "native-two-fonts.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "9db4f4c2d5d7c60a8961530f5b2ba2b6c6df774fdfcdcdd83ab7e44588b17ea1",
+      "bytes": 22095,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 2,
+          "text": "Mụ",
+          "geometrySha256": "1eb4236d9424e58fabc5f38abf51630c982b625a0af806de369b722fe531c7b4"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "Mụ",
+      "exactMatch": true
+    },
+    {
+      "id": "synthetic-unknown-names",
+      "file": "synthetic-unknown-names.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "aefda5dfaba5ef68f461b84438d5a9535b0e4d2c2244c7f1c30f74232fc0ab29",
+      "bytes": 2709,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 2,
+          "text": "Mu",
+          "geometrySha256": "dd2479f61866ecb7e51a8295ea3bdd0b19e2b7599c62477474c353c628fe707c"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "Mu",
+      "exactMatch": true
+    },
+    {
+      "id": "synthetic-adobe-names",
+      "file": "synthetic-adobe-names.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "2ad97d965cbf15dc0c98d5a6bd89e5ce0191bc580318a3372ccebb7d92e0bf60",
+      "bytes": 2701,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 2,
+          "text": "Mu",
+          "geometrySha256": "dd2479f61866ecb7e51a8295ea3bdd0b19e2b7599c62477474c353c628fe707c"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "Mu",
+      "exactMatch": true
+    },
+    {
+      "id": "synthetic-recoded",
+      "file": "synthetic-recoded.pdf",
+      "version": "4.10.38",
+      "pdfSha256": "957fe6f236eebbe51d69a988ed5a4119e04e661ce3ee6e84ec63d5bfa458d3ab",
+      "bytes": 2703,
+      "pages": [
+        {
+          "page": 1,
+          "itemCount": 2,
+          "text": "Mu",
+          "geometrySha256": "dd2479f61866ecb7e51a8295ea3bdd0b19e2b7599c62477474c353c628fe707c"
+        }
+      ],
+      "missingFacts": [],
+      "expectedExact": "Mu",
+      "exactMatch": true
+    }
+  ]
+}
