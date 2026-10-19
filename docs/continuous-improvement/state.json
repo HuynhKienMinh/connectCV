@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 64,
   "lastRun": "runs/2026-10-20-cycle-0064.md",
-  "activeRun": null,
+  "activeRun": "runs/2026-10-20-cycle-0065.md",
   "activeIssue": "INT005",
-  "issueState": "VOICE_AND_SESSION_REVIEW_CI_SUCCESS_SCOPED_CANDIDATE_BACKUP_NEXT",
+  "issueState": "ISOLATED_CANDIDATE_CLOUD_RESTORE_VERIFIED_MAIN_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,15 +52,15 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0053-candidate-1bc615f.json",
-    "protectedCommit": "1bc615f1727e9816bc1067c557229b2063760116",
+    "currentBaselineCatalog": "backup-transfer/cycle0065-candidate-7c6c0c7.json",
+    "protectedCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": true
+    "nextDeploymentRequiresNewBaseline": false
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Prepare scoped INT005 release from current remote main, preserving other changes: runtime deltas ea9ca95 + c75845f, new voice/session browser tests, VM report dependency stub and workflow from main plus only corresponding steps. Do not deploy aggregate review or bring deferred report/schema/ops/PDF experiments. Verify candidate tree/scope and run full candidateCI before main/deploy.",
-    "After isolated candidateCI succeeds, create fresh exact privateDrive backup covering candidate/currentBE0bf/currentFE1bc and rollback, verify SHA/checksum/readback/fresh restore with bounded temporary staging, keep catalog only then clean own copies. Read backupTransfer first; no deployment if new cloud baseline not VERIFIED. Existing catalog53 is not the new candidate backup. Then scoped BE deployment and exact-source/live smoke; FE Hosting89f unchanged if BE-only. Rollback to0bf if verification fails.",
+    "Cycle65 isolated7c6c0c7 on main after candidateCI39303385063 SUCCESS and Drive20bundle freshbare/source/FEZIP restore VERIFIED, own242908522byte staging deleted. MainCI39304326834 pending. Render specific7c selected but Deploy commit NOT clicked. Once mainCI SUCCESS, deploy once, verify RenderLive/exactStudioHTML/auth401/canary; rollback0bf/dep-dbar56u7bikc73akq250 onfailure. FE89f/1bc unchanged.",
+    "Catalog backup-transfer/cycle0065-candidate-7c6c0c7.json protects exact7c/currentBE0bf/currentFE1bc, Drive IDs/readback/checksum/freshrestore verified. No need recreate backup for this exact candidate; any differentcandidate needs newbaseline. No DB backup/migration/bulk writes. Shareviewer unavailable; no sharing changed; existing private ownerfolder policy retained.",
     "INT005 reviewc75845f CI39301969781 SUCCESS including15new session cases onLinux: same baseline14FAIL/1PASS to15PASS; voice13/mic13 and feature101PASS. No deployment yet. Owner notified63; do not repeat unchanged P1. Actual Firebase actors/physicalmic/iOS/provider abort/refund and summary-modal lifecycle remain unverified. CV002 remains checkpoint62/P1. AI0, no cloud writes or large backup."
   ],
   "deployment": {
@@ -104,7 +104,7 @@
     "deployBlockedUntilCloudVerified": false,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-    "cloudBundlesVerified": 19,
+    "cloudBundlesVerified": 20,
     "localCopiesDeleted": true,
     "localCopiesRetained": false,
     "pendingCatalog": null,
@@ -114,7 +114,7 @@
     "pendingRestoreVerified": true,
     "pendingRestoreCloneDeleted": true,
     "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "1bc615f1727e9816bc1067c557229b2063760116"
+    "lastVerifiedCandidateCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190"
   },
   "delivery": {
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
@@ -289,12 +289,19 @@
     "pendingInterviewVoiceReviewCiPassed": true,
     "pendingInterviewVoiceStatus": "REVIEW_LOCAL_LINUX_VOICE13_SESSION15_PASS_READY_FOR_SCOPED_CANDIDATE",
     "pendingInterviewVoiceDeployBlocked": true,
-    "pendingInterviewVoiceDeployBlockReason": "ISOLATED_CANDIDATE_CI_AND_FRESH_EXACT_PRIVATE_DRIVE_BASELINE",
+    "pendingInterviewVoiceDeployBlockReason": "MAIN_CI_AND_RENDER_LIVE_VERIFICATION",
     "interviewVoiceOwnerNotifiedCycle": 63,
     "pendingInterviewSessionReviewCommit": "c75845f8bcd1080cc16cecf70d2b7db0ae68f05e",
     "pendingInterviewSessionReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39301969781",
     "pendingInterviewSessionReviewCiPassed": true,
-    "pendingInterviewSessionStatus": "REVIEW_LOCAL_AND_LINUX15_PASS_READY_FOR_SCOPED_CANDIDATE"
+    "pendingInterviewSessionStatus": "REVIEW_LOCAL_AND_LINUX15_PASS_READY_FOR_SCOPED_CANDIDATE",
+    "isolatedInterviewBranch": "improvement/interview-lifecycle-release-20261020",
+    "isolatedInterviewCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+    "isolatedInterviewBase": "1bc615f1727e9816bc1067c557229b2063760116",
+    "isolatedInterviewStatus": "MAIN_7C6C0C7_CI_PENDING_RENDER_NOT_DEPLOYED",
+    "isolatedInterviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39303385063",
+    "isolatedInterviewCiPassed": true,
+    "isolatedInterviewMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39304326834"
   },
   "blockingDependency": null,
   "dataBackup": {

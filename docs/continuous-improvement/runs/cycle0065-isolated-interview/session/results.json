@@ -1,0 +1,70 @@
+{
+  "wholeStudio": true,
+  "syntheticTransport": true,
+  "realMicrophone": false,
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "sourceRef": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "rows": [
+    {
+      "phase": "transcribe-after-end-cannot-auto-send",
+      "pass": true
+    },
+    {
+      "phase": "transcribe-json-after-end-is-ignored",
+      "pass": true
+    },
+    {
+      "phase": "edited-draft-survives-late-transcript",
+      "pass": true
+    },
+    {
+      "phase": "cancel-before-file-reader-callback-prevents-request",
+      "pass": true
+    },
+    {
+      "phase": "new-recording-supersedes-old-transcript",
+      "pass": true
+    },
+    {
+      "phase": "current-transcribe-reply-keeps-happy-path",
+      "pass": true
+    },
+    {
+      "phase": "reply-after-end-cannot-append-or-speak",
+      "pass": true
+    },
+    {
+      "phase": "old-reply-json-cannot-replace-practice-question",
+      "pass": true
+    },
+    {
+      "phase": "reordered-session-starts-keep-latest-history",
+      "pass": true
+    },
+    {
+      "phase": "old-reply-failure-cannot-unlock-new-start",
+      "pass": true
+    },
+    {
+      "phase": "leaving-module-invalidates-pending-reply",
+      "pass": true
+    },
+    {
+      "phase": "eval-submode-invalidates-transcribe",
+      "pass": true
+    },
+    {
+      "phase": "script-mode-invalidates-reply",
+      "pass": true
+    },
+    {
+      "phase": "pagehide-invalidates-pending-start",
+      "pass": true
+    },
+    {
+      "phase": "new-listening-start-invalidates-old-transcript",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "branch": "improvement/interview-lifecycle-release-20261020",
+  "base": "1bc615f1727e9816bc1067c557229b2063760116",
+  "candidate": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "reviewRuntimeCommits": [
+    "ea9ca95",
+    "c75845f"
+  ],
+  "files": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs",
+    "backend/features/connectcv/tests/interviewTranscript.test.js",
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs"
+  ],
+  "frontendUnchanged": true,
+  "mainWorkflowBytePrefixPreserved": true,
+  "workflowNewSteps": 2,
+  "runtimePatchSha256": "b58deaff5ebdf374eb1f72a98d6fe4298c229ea7d82ae85435ae6cf16792807a",
+  "candidateFileSha256": {
+    ".github/workflows/ai-feature-checks.yml": "e392e6fe4059c725a22ac87f0eb8d5d34bac9469fd3d9219b2678f84fa680c8d",
+    "backend/features/connectcv/public/index.html": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc",
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs": "4fc4b75e574a41d5118b2acef770712c6b46d60dddb936e2f6c719ca55d28ec4",
+    "backend/features/connectcv/tests/interviewTranscript.test.js": "4d699474208fe1901abaf1ed77007e8da1b5cd69e767744e7b007cd2763c6bb7",
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs": "af107e51b686563ea1fa2c88dbd00f43ec71bf2041df183fc6b3fffba5e6d9b1"
+  },
+  "newExperimentalPdfToolAbsent": true,
+  "mainUpdated": false,
+  "deployed": false
+}

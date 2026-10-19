@@ -1,0 +1,11 @@
+{
+  "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
+  "cloudBundleId": "11ObYEjrznA2aORsi1uA2x23IaDLXr2ZA",
+  "catalogCloudId": "1HVI8sAbg0m4ghhCkYpXRKwwihKiSPhlz",
+  "bundleSha256": "e4f86f59840516a4c189ef506a3b8d9718a31217b9745efbb999d8bd68588674",
+  "catalogSha256": "0f0f94c2599925598c67d67e33bbcb3ed93abe5b8038a463cc3d108ccc4f4ff6",
+  "deletedOwnRestoreBytes": 242908522,
+  "cloudUiListed": true,
+  "freshBareRestore": true,
+  "databaseIncluded": false
+}

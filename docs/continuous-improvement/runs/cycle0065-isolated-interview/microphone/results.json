@@ -1,0 +1,61 @@
+{
+  "wholeStudio": true,
+  "syntheticDevices": true,
+  "realMicrophoneUsed": false,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "rows": [
+    {
+      "phase": "speech-permission-denied-does-not-reprompt",
+      "pass": true
+    },
+    {
+      "phase": "no-device-allows-text-send",
+      "pass": true
+    },
+    {
+      "phase": "media-permission-denied-preserves-draft",
+      "pass": true
+    },
+    {
+      "phase": "explicit-stop-releases-track-and-graph",
+      "pass": true
+    },
+    {
+      "phase": "lost-track-offers-text-without-auto-send",
+      "pass": true
+    },
+    {
+      "phase": "cancel-pending-permission-closes-late-stream",
+      "pass": true
+    },
+    {
+      "phase": "audio-graph-failure-releases-acquired-device",
+      "pass": true
+    },
+    {
+      "phase": "stopped-recognizer-cannot-restart-on-late-end",
+      "pass": true
+    },
+    {
+      "phase": "duplicate-pending-start-requests-device-once",
+      "pass": true
+    },
+    {
+      "phase": "late-old-grant-cannot-stop-new-recording",
+      "pass": true
+    },
+    {
+      "phase": "typed-send-discards-recorded-audio",
+      "pass": true
+    },
+    {
+      "phase": "explicit-recording-completion-transcribes-once-and-closes-device",
+      "pass": true
+    },
+    {
+      "phase": "stopped-recognizer-cannot-overwrite-text-draft",
+      "pass": true
+    }
+  ]
+}
