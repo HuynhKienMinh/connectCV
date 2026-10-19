@@ -101,7 +101,7 @@ Hai ngôn ngữ VI/EN hiện có là phạm vi kiểm thử ban đầu. Những 
 | Bảo mật dữ liệu | Không còn P0/P1 đã xác nhận; test cách ly account/tenant và redaction | Có baseline, thiếu kiểm chứng sâu |
 | Kết quả AI | Không bịa dữ kiện trong bộ eval; review văn phong/hữu ích riêng | Cycle17 giữ phủ định/đúng lượt, điểm0/null và legacy client gate (local+CI, source live); thiếu authenticated AI/pilot và bộ eval rộng |
 | Export | PDF/Word đúng mô tả, nhiều trang, Unicode, crop/text sửa | Renderer live canary đạt; cycle16 sửa tám ca thiếu chức danh; cycle41 ATS optional translation projection fixed/local+CI/live exactsource; còn58split-word, Word visual và long/crop/authenticated E2E chưa đủ |
-| Backup/restore | Backup code + dữ liệu phù hợp, diễn tập rollback/restore | Cycle42-43 candidate391: code16bundle chain/currentFE/rollback Drive verified, bare fsck35critical files và ZIP restore đạt, staging đã dọn; dữ liệu thật chưa diễn tập |
+| Backup/restore | Backup code + dữ liệu phù hợp, diễn tập rollback/restore | Cycle46 candidate0bf: code17bundle chain/currentFE/rollback391 Drive verified, bare fsck43critical files và ZIP restore đạt, staging đã dọn; dữ liệu thật chưa diễn tập |
 | Vận hành | Quan sát ≥7 ngày, lỗi được giải thích; có incident runbook | Chưa có chuỗi đo |
 | UX thực tế | Nhiều nhóm khách hoàn thành tác vụ, tối thiểu 10 người pilot | Chưa có user study |
 | Thương mại | Chi phí/unit và ledger nhất quán; thanh toán sandbox đạt | Chưa kiểm chứng |

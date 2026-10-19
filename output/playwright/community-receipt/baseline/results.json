@@ -1,0 +1,52 @@
+{
+  "wholeStudio": true,
+  "syntheticTransport": true,
+  "realAuthVerified": false,
+  "realFirestoreVerified": false,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "rows": [
+    {
+      "phase": "lost-receipt-explicit-retry-refreshes-authoritative-balance",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n'15' !== '20'\n"
+    },
+    {
+      "phase": "receipt-keeps-original-publication-cooldown",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 1792387445406\n- 1792383845405\n        ^\n"
+    },
+    {
+      "phase": "old-receipt-honors-newer-account-publication",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 1792387445618\n- 1792383845618\n        ^\n"
+    },
+    {
+      "phase": "expired-receipt-does-not-start-another-six-hour-wait",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "phase": "first-success-still-refreshes-account-and-clears-submitted-form",
+      "pass": true
+    },
+    {
+      "phase": "newer-draft-survives-confirmation-of-previous-submission",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ ''\n- 'Bản nháp mới cần được giữ sau khi gửi bài trước.'\n"
+    },
+    {
+      "phase": "conflict-keeps-draft-and-does-not-refresh-or-auto-retry",
+      "pass": true
+    },
+    {
+      "phase": "incomplete-recovery-receipt-does-not-clear-draft",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ ''\n- 'Công ty Giả Lập'\n"
+    },
+    {
+      "phase": "preview-consent-is-required-again-after-content-edit",
+      "pass": true
+    }
+  ]
+}

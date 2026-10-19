@@ -81,3 +81,8 @@ Stop/cancel, gõ Gửi và AI playback phải discard PCM, detach recognizer cal
 ## D018 —18/10/2026: receipt retry cộng đồng phải dựa trên bằng chứng lưu thật
 
 Coarse contenthash chỉ lookup, không idempotency proof. Chỉ cùng verifiedowner/fullpubliccontent và persisted post+reward event nhất quán mới trả receipt đã lưu; replayaward0 và timestamp gốc, không sửa balance/cooldown/schema. Crossactor/editedpayload/legacy thiếu evidence trả409 generic. File pending ledger không được hứa credited balance. UI phải refresh account từ server và giữ thời điểm xuất bản gốc; chưa browserverify thì chưa release dù service tests xanh. Không đưa report/ops schema deferred vào candidate.
+
+
+## D019 —19/10/2026: receipt giữ nháp mới và cooldown account mới nhất
+
+Response thành công chỉ xóa form nếu cả6field còn giống snapshot trước await; có edit thì giữ nguyên toàn form và yêu cầu preview/consent lại. Recovery nhận award0, refresh balance từ accountGET, không tự cộng5 hoặc retry. publishedAt giữ ngày bài gốc; cooldownStartedAt=max(publishedAt, account.lastCommunityAt) để receipt cũ không bỏ qua bài mới hoặc đặt lại6giờ từ retry. Không thêm DBfield/schema; filefallback đọc latest ownerledger, không hứa balance đã credited. Receipt owner-sensitive no-store. Browser synthetic và actualHTTP/local transaction model không thay realFirebase/cloudactor E2E.

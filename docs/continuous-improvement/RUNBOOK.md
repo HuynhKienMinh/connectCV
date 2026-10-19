@@ -92,3 +92,8 @@ Hosting-only rollback cycle19: baseline versioncaed1696d4a4fa98, exact command �
 ## Hồ sơ/ảnh lớn413 — cycle20
 
 Tái hiện tại local bằng syntheticJPEG≤3MB có entropy cao; trướcfix2alias tạo~4.94MBJSON vượt900KiB. Không tăng parser/field limit hoặc chạy testghi trên accountthật. Nén client trước upload, keeponecanonicalavatar, kiểmUTF8≤850KiB trướcPUT; readonlypublic smoke chỉ sourcehash/auth401/CORS/startupcanary saudeploy. ProfileJSON không phải backupdatabase. Khi yêu cầu user nạp bản mới, nhắc giữ/sao chép nội dung nháp trước tải lại trang; không hứa autosave đã thành công khi nhận413. Sau reload user chọn lại ảnh gốc vàlưu; ảnhgốc trênmáy không thay đổi. Original incident chỉ đóng sau xác nhận phạmvi hiệuquả; authenticated production save và matrixformat/iOS vẫn cần user/dedicatedtestaccount. Rollback Renderf438/dep-db87nqqvcj2c738hi8pg, cloudchaincatalogcycle0020-candidate-1bf75b9.json.
+
+
+## Receipt release —cycle46/47
+
+CurrentRender0bf51ec/dep-dbar56u7bikc73akq250; rollback dùng retained release391fdc3/dep-db9khkjrjlhs73f60aeg qua Render khi có incident, kiểm exactSHA/source/auth/canary saurollback. FEHosting9b4f9bcd010b4645 không đổi. Nếu provider không giữrelease, restore17bundle chain từ catalogcycle0046-candidate-0bf51ec.json vào bounded freshbare, verify SHA/fsck/43critical, lấy391 làm exactrollbackcommit; currentFEZIP/memberSHA cùngcatalog. Dọn ownstage sau verifiedprivatecloud, không xóa bản duy nhất. Không rollbackdatabase bằng codebundle. Receipt newfields additive; tab cũ có thể còn logic clearform/cooldown cũ nên không hứa thay mọi tab, không force-reload làm mất nháp. Tránh publicwrite smoke khi chưa có dedicatedtestaccount.

@@ -1,0 +1,16 @@
+{
+  "baselineRef": "b4e9dc1",
+  "baselineSubmissionFunctionMatchesLive391": true,
+  "baselineFailed": 6,
+  "baselinePassed": 3,
+  "afterBrowserPassed": 9,
+  "isolatedBrowserPassed": 9,
+  "reviewBackendLocalPassed": 36,
+  "isolatedBackendLocalPassed": 30,
+  "candidate": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "reportOpsExcluded": true,
+  "realAuthVerified": false,
+  "realFirestoreVerified": false,
+  "productionUserWrites": 0,
+  "realAiCalls": 0
+}

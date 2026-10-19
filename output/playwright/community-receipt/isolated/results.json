@@ -1,0 +1,46 @@
+{
+  "wholeStudio": true,
+  "syntheticTransport": true,
+  "realAuthVerified": false,
+  "realFirestoreVerified": false,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "rows": [
+    {
+      "phase": "lost-receipt-explicit-retry-refreshes-authoritative-balance",
+      "pass": true
+    },
+    {
+      "phase": "receipt-keeps-original-publication-cooldown",
+      "pass": true
+    },
+    {
+      "phase": "old-receipt-honors-newer-account-publication",
+      "pass": true
+    },
+    {
+      "phase": "expired-receipt-does-not-start-another-six-hour-wait",
+      "pass": true
+    },
+    {
+      "phase": "first-success-still-refreshes-account-and-clears-submitted-form",
+      "pass": true
+    },
+    {
+      "phase": "newer-draft-survives-confirmation-of-previous-submission",
+      "pass": true
+    },
+    {
+      "phase": "conflict-keeps-draft-and-does-not-refresh-or-auto-retry",
+      "pass": true
+    },
+    {
+      "phase": "incomplete-recovery-receipt-does-not-clear-draft",
+      "pass": true
+    },
+    {
+      "phase": "preview-consent-is-required-again-after-content-edit",
+      "pass": true
+    }
+  ]
+}

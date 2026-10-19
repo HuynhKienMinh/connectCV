@@ -1,0 +1,19 @@
+{
+  "candidate": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "files": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/src/routes/interview.js",
+    "backend/features/connectcv/src/services/communityStore.js",
+    "backend/features/connectcv/tests/communityReceiptUi.check.cjs",
+    "backend/src/services/communityReceipt.js",
+    "backend/src/services/firestoreCommunity.js",
+    "backend/tests/communityFaults.test.cjs",
+    "backend/tests/communityHttp.test.cjs",
+    "backend/tests/communityReceipt.test.cjs"
+  ],
+  "reportOpsExcluded": true,
+  "frontendUnchanged": true,
+  "isolatedBackendLocalPassed": 30,
+  "isolatedBrowserPassed": 9
+}
