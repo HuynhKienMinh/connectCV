@@ -1,5 +1,7 @@
 """Local-only Tj/Td-to-TJ stream plan for generated PDFs; use pdf-lib bridge to preserve resource numeric literals. Never a public PDF parser.
 Requires the separate font/glyph/raster/text verifier; unsupported runs stay unchanged.
+Default broad grouping retains the known punctuation regression. The --split-positive option
+is a local parser-compatibility experiment, not general ATS acceptance or runtime integration.
 """
 from decimal import Decimal
 from pathlib import Path
@@ -11,10 +13,10 @@ def raw(value):
     if isinstance(value,(str,bytes)):
         return value.original_bytes if hasattr(value,'original_bytes') else bytes(value)
     raise ValueError('Unsupported text string')
-def transform(source,target):
+def transform(source,target,split_positive=False):
     assert source.stat().st_size<16*1024*1024
     reader=PdfReader(source);assert len(reader.pages)<=64
-    groups=0;glyphs=0;plans=[]
+    groups=0;glyphs=0;plans=[];positive_split_count=0;large_positive_skips=0
     for page_index,page in enumerate(reader.pages):
         content=page.get_contents()
         if content is None:continue
@@ -48,12 +50,19 @@ def transform(source,target):
                 if any(not first<=code<first+len(widths) for code in chunk):valid=False;break
                 width=sum((Decimal(str(widths[code-first])) for code in chunk),Decimal(0))
                 correction=(width*matrix[0]*size-offsets[k])*1000/size
+                assert correction.is_finite()
+                if split_positive and correction>2000:
+                    valid=False;large_positive_skips+=1;break
+                if split_positive and correction>50:
+                    positive_split_count+=1
+                    while correction>50:
+                        values.append(FloatObject(50));correction-=50
                 values.append(FloatObject(format(correction,'.12f')))
             if not valid:out.append((args,op));i+=1;continue
             out.append(([ArrayObject(values)],b'TJ'));groups+=1;glyphs+=sum(map(len,chunks));assert groups<=20000;i=j
         if out!=ops:
             stream.operations=out;plans.append({'page':page_index,'contentBase64':base64.b64encode(stream.get_data()).decode('ascii')})
-    result={'groups':groups,'glyphBytesGrouped':glyphs,'pages':plans,'runtimeIntegrated':False}
+    result={'groups':groups,'glyphBytesGrouped':glyphs,'pages':plans,'runtimeIntegrated':False,'positiveOnlySplitEnabled':split_positive,'positiveCorrectionsSplit':positive_split_count,'largePositiveRunsSkipped':large_positive_skips}
     target.write_text(json.dumps(result),encoding='utf-8');assert target.stat().st_size<16*1024*1024
-    return {'groups':groups,'glyphBytesGrouped':glyphs,'planBytes':target.stat().st_size,'runtimeIntegrated':False}
-if __name__=='__main__':print(json.dumps(transform(Path(sys.argv[1]),Path(sys.argv[2]))))
+    return {k:v for k,v in result.items() if k!='pages'} | {'planBytes':target.stat().st_size}
+if __name__=='__main__':print(json.dumps(transform(Path(sys.argv[1]),Path(sys.argv[2]),'--split-positive' in sys.argv[3:])))
