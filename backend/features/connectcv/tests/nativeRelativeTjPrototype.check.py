@@ -24,15 +24,18 @@ def transform(source,target,split_positive=False):
         stream=ContentStream(content,reader);ops=stream.operations;assert len(ops)<200000
         # Public/runtime safety is not inferred from these owned-artifact bounds.
         if any((op in (b'Tc',b'Tw') and list(map(float,args))!=[0.0]) or (op==b'Tz' and list(map(float,args))!=[100.0]) for args,op in ops):continue
-        fonts=page['/Resources'].get('/Font',{});inside=False;font=None;size=None;out=[];i=0
+        fonts=page['/Resources'].get('/Font',{});inside=False;font=None;size=None;out=[];i=0;at_line_origin=False
         while i<len(ops):
             args,op=ops[i]
-            if op==b'BT':inside=True;font=None;size=None
-            elif op==b'ET':inside=False
+            if op==b'BT':inside=True;font=None;size=None;at_line_origin=True
+            elif op==b'ET':inside=False;at_line_origin=False
             elif op==b'Tf' and inside:
                 font=fonts.get(args[0]);font=font.get_object() if font else None;size=Decimal(str(args[1]))
             elif op in (b'q',b'Q'):font=None;size=None
-            supported=inside and font is not None and size is not None and 0<size<=512 and str(font.get('/Subtype'))=='/Type3'
+            if op in (b'Tm',b'Td',b'TD',b'T*'):at_line_origin=True
+            can_start=at_line_origin
+            if op in (b'Tj',b'TJ',b"'",b'"'):at_line_origin=False
+            supported=can_start and inside and font is not None and size is not None and 0<size<=512 and str(font.get('/Subtype'))=='/Type3'
             if supported:
                 matrix=list(map(Decimal,map(str,font.get('/FontMatrix',[]))))
                 supported=len(matrix)==6 and matrix[0] in (Decimal(1)/2048,Decimal('.001')) and matrix[1:3]==[0,0] and matrix[3]==-matrix[0] and matrix[4:]==[0,0]
