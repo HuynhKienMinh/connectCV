@@ -1,0 +1,14 @@
+[
+  {
+    "name": "projects/connect-cv/sites/connect-cv/channels/live",
+    "url": "https://connect-cv.web.app",
+    "release": {
+      "name": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792391947825000",
+      "version": {
+        "name": "projects/connect-cv/sites/connect-cv/versions/73a1cc4c31425bea",
+        "status": "FINALIZED"
+      },
+      "releaseTime": "2026-10-19T06:39:07.825Z"
+    }
+  }
+]

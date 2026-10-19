@@ -1,0 +1,5 @@
+{
+  "job": "emulator-restore",
+  "id": 118096121601,
+  "diagnostics": "2026-10-19T13:48:24.7218675Z Error: Cannot find module '/home/runner/work/connectCV/connectCV/backend/tests/snapshotRestore.check.cjs'\n2026-10-19T13:48:24.7257492Z ##[error]Process completed with exit code 1."
+}

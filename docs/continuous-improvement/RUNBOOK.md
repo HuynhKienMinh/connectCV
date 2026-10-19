@@ -102,3 +102,8 @@ CurrentRender0bf51ec/dep-dbar56u7bikc73akq250; rollback dùng retained release39
 ## Iframe/session FE release —cycle49
 
 Candidate964d1af đổiFEonly; RenderBE0bf/dep-dbar56u7bikc73akq250 khôngđổi. NewFEZIP/codedelta tạicatalogcycle0049-candidate-964d1af.json:18bundlechain/44critical/ZIPnew+rollback verified, ownbackupstage đãdọn. RollbackFE version9b4f9bcd010b4645 bằng hosting:clone recordedcatalog; nếuproviderrelease khôngcòn, tảiFEZIP40 đãSHA/CRC/memberSHA verified vềownboundedstage vàdeployhosting-only. KhôngredeployBEmain964 chỉvìmainđãcóFEfix. Đừngforce-refresh tabuser chứa nháp; usernhậnbảnFE mới saukhi đãgiữnháp/tảitrangmới. Không xemtokeninvalidation local làproviderrevocation.
+
+
+## AccountPage session release —cycle53
+
+Hosting89f2be9cbff279bd/FE1bc615f chỉ frontend, BE0bf giữ nguyên. Rollback `firebase hosting:clone connect-cv@73a1cc4c31425bea connect-cv:live --project connect-cv --non-interactive`; nếu versionkhông còn, dùng verifiedFE49ZIP/current964 theo catalogcycle0053-candidate-1bc615f.json với CRC/memberSHA và backend0bf. Catalog53 có19bundlechain/fsck/criticalsourcebyte/new+rollbackFEZIP proof, privateDrive IDs; khôngDBbackup. Không tựrefresh tabuser códraft. Session/operation guard ngăn completion và SDKfollow-up cũ, không hứa abort writeđãgửi hoặc revoke providertoken. Khi tạo isolatedcandidate, workflow phải từmain cộng deltađangrelease; không copyfullreviewworkflow kèm deferredops/reportchecks vắngsource.

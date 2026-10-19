@@ -1,0 +1,16 @@
+{
+  "base": "1fb4841215baa90251297dbadc38c55267782556",
+  "review": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
+  "candidate": "1bc615f1727e9816bc1067c557229b2063760116",
+  "branch": "improvement/account-session-release-20261019",
+  "files": [
+    ".github/workflows/ai-feature-checks.yml",
+    "frontend/src/pages/AccountPage.jsx",
+    "frontend/tests/accountLifecycleUi.check.mjs"
+  ],
+  "backendUnchanged": true,
+  "deployed": false,
+  "previousCandidate": "b39837bc5d5fa0e3af9c3afc9a3557be203b1ccd",
+  "workflowScopeCorrection": true,
+  "runtimeSameAsLocalVerified": "b39837bc5d5fa0e3af9c3afc9a3557be203b1ccd"
+}

@@ -1,0 +1,74 @@
+{
+  "candidate": "1bc615f1727e9816bc1067c557229b2063760116",
+  "mainCi": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39264207913",
+  "backupCatalog": "cycle0053-candidate-1bc615f.json",
+  "before": {
+    "name": "projects/connect-cv/sites/connect-cv/channels/live",
+    "url": "https://connect-cv.web.app",
+    "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792391947825000",
+    "version": "projects/connect-cv/sites/connect-cv/versions/73a1cc4c31425bea",
+    "releaseTime": "2026-10-19T06:39:07.825Z"
+  },
+  "startedAt": "2026-10-19T13:57:45.520753+00:00",
+  "status": "VERIFIED_LIVE_ASSET_HASHES_TWO_DOMAINS_AUTH401",
+  "backendChanged": false,
+  "after": {
+    "name": "projects/connect-cv/sites/connect-cv/channels/live",
+    "url": "https://connect-cv.web.app",
+    "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792418275025000",
+    "version": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd",
+    "releaseTime": "2026-10-19T13:57:55.025Z"
+  },
+  "releasedAt": "2026-10-19T13:58:00.322206+00:00",
+  "checks": [
+    {
+      "url": "https://connect-cv.web.app/assets/index-CpvooDH5.js",
+      "status": 200,
+      "bytes": 448887,
+      "sha256": "d916be1e756e9112f21ca010bde64e1ffe7dd3db619e6c20f533e3412946bffb"
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af"
+    },
+    {
+      "url": "https://connect-cv.web.app/index.html",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f"
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-CpvooDH5.js",
+      "status": 200,
+      "bytes": 448887,
+      "sha256": "d916be1e756e9112f21ca010bde64e1ffe7dd3db619e6c20f533e3412946bffb"
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af"
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/index.html",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f"
+    },
+    {
+      "endpoint": "/api/account/me",
+      "status": 401
+    },
+    {
+      "endpoint": "/api/portfolios",
+      "status": 401
+    }
+  ],
+  "verifiedAt": "2026-10-19T13:58:03.524568+00:00",
+  "localDeploymentStageDeleted": true,
+  "localDeploymentStageBytesRemoved": 512867,
+  "rollbackPerformed": false,
+  "realFirebaseVerified": false
+}

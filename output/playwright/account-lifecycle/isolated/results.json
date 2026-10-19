@@ -1,0 +1,87 @@
+{
+  "actualReactAccountPage": true,
+  "actualRouter": true,
+  "actualPortfolioLoader": true,
+  "syntheticAuthAndApi": true,
+  "realFirebaseVerified": false,
+  "cloudWrites": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "sourceRef": "b39837bc5d5fa0e3af9c3afc9a3557be203b1ccd",
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "name": "initial-load-requires-version-before-editing",
+      "pass": true
+    },
+    {
+      "name": "load-error-is-generic-and-explicit-browser-reload-recovers",
+      "pass": true
+    },
+    {
+      "name": "missing-version-never-allows-profile-write",
+      "pass": true
+    },
+    {
+      "name": "old-initial-A-result-cannot-replace-B",
+      "pass": true
+    },
+    {
+      "name": "A-B-A-initial-load-keeps-generation-ownership",
+      "pass": true
+    },
+    {
+      "name": "unmount-ignores-late-initial-load",
+      "pass": true
+    },
+    {
+      "name": "current-save-preserves-version-contract-and-normalizes-skills",
+      "pass": true
+    },
+    {
+      "name": "obsolete-save-A-B-A-cannot-overwrite-or-unlock-new-save",
+      "pass": true
+    },
+    {
+      "name": "obsolete-logout-all-cannot-sign-out-current-B",
+      "pass": true
+    },
+    {
+      "name": "current-logout-all-still-signs-out-once-after-receipt",
+      "pass": true
+    },
+    {
+      "name": "failed-current-save-retains-draft-and-can-retry",
+      "pass": true
+    },
+    {
+      "name": "same-tick-double-submit-sends-one-mutation",
+      "pass": true
+    },
+    {
+      "name": "explicit-conflict-reload-restores-current-version",
+      "pass": true
+    },
+    {
+      "name": "failed-conflict-reload-retains-draft-and-conflict",
+      "pass": true
+    },
+    {
+      "name": "old-conflict-reload-A-B-A-cannot-replace-new-draft",
+      "pass": true
+    },
+    {
+      "name": "old-save-error-A-B-A-cannot-conflict-or-unlock-new-save",
+      "pass": true
+    },
+    {
+      "name": "unmounted-logout-all-cannot-sign-out-another-route",
+      "pass": true
+    },
+    {
+      "name": "obsolete-verification-reload-cannot-start-token-refresh-for-new-session",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "actualReactAccountPage": true,
+  "actualRouter": true,
+  "actualPortfolioLoader": true,
+  "syntheticAuthAndApi": true,
+  "realFirebaseVerified": false,
+  "cloudWrites": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "sourceRef": "964d1af15c3778ed5bee06f8b51e0f5d5da0e139",
+  "passed": 11,
+  "failed": 7,
+  "results": [
+    {
+      "name": "initial-load-requires-version-before-editing",
+      "pass": true
+    },
+    {
+      "name": "load-error-is-generic-and-explicit-browser-reload-recovers",
+      "pass": true
+    },
+    {
+      "name": "missing-version-never-allows-profile-write",
+      "pass": true
+    },
+    {
+      "name": "old-initial-A-result-cannot-replace-B",
+      "pass": true
+    },
+    {
+      "name": "A-B-A-initial-load-keeps-generation-ownership",
+      "pass": true
+    },
+    {
+      "name": "unmount-ignores-late-initial-load",
+      "pass": true
+    },
+    {
+      "name": "current-save-preserves-version-contract-and-normalizes-skills",
+      "pass": true
+    },
+    {
+      "name": "obsolete-save-A-B-A-cannot-overwrite-or-unlock-new-save",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'OBSOLETE A'\n- 'New submitted A'\n"
+    },
+    {
+      "name": "obsolete-logout-all-cannot-sign-out-current-B",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'B'\n+ ]\n- []\n"
+    },
+    {
+      "name": "current-logout-all-still-signs-out-once-after-receipt",
+      "pass": true
+    },
+    {
+      "name": "failed-current-save-retains-draft-and-can-retry",
+      "pass": true
+    },
+    {
+      "name": "same-tick-double-submit-sends-one-mutation",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+    },
+    {
+      "name": "explicit-conflict-reload-restores-current-version",
+      "pass": true
+    },
+    {
+      "name": "failed-conflict-reload-retains-draft-and-conflict",
+      "pass": true
+    },
+    {
+      "name": "old-conflict-reload-A-B-A-cannot-replace-new-draft",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Obsolete reloaded A'\n- 'Current A draft'\n"
+    },
+    {
+      "name": "old-save-error-A-B-A-cannot-conflict-or-unlock-new-save",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "unmounted-logout-all-cannot-sign-out-another-route",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'A'\n+ ]\n- []\n"
+    },
+    {
+      "name": "obsolete-verification-reload-cannot-start-token-refresh-for-new-session",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'reload',\n+   'token'\n  ]\n"
+    }
+  ]
+}

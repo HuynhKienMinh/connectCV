@@ -91,3 +91,8 @@ Response thành công chỉ xóa form nếu cả6field còn giống snapshot tr�
 ## D020 —19/10/2026: token iframe gắn phiên SDK và document
 
 Quyết định kỹ thuật trong quyền tựsửa: FeaturePage dùng keyUID/module để nháp in-memory child không đi sang accountkhác. Message cần origin+source+strictrequestId đúng cảtrướclấy token; completion chỉ gửi nếu effect cònactive, cùngSDKuser đangverified, cùngframe và documentonLoadepoch. SDKfailure trảnull cho currentrequest, không rawerror. Không thayFirebase/Google/IAM/sandbox; invalidatecompletion không được hứa đã revoke token ởprovider. Mobile/actualFirebase cần replaythật, syntheticSDK/browser chỉnghiệmthu scope lifecycle. Đổiaccount cốý bỏnháp ởiframe cũ; không tựrefresh usertab hiện tại khi deploy.
+
+
+## D021 —19/10/2026: AccountPage async action thuộc phiên và thao tác hiện tại
+
+UID string không đủ khi quay A→B→A. Session object mới sau actor transition/effect cleanup và operation object khóa submit đồng bộ; completion chỉ đổi profile/version/conflict/message/busy khi còn ownership. Guard trước logout hoặc bước tiếp theo reload/token/browser reload, không hứa hủy request đã gửi hoặc revoke provider token. Nạp conflict có xác nhận vẫn giữ draft khi thất bại. API If-Match/auth/server không đổi; actual Firebase/account production E2E còn mở. Candidate workflow lấy main gates cộng AccountPage, không mang deferred ops/report checks chỉ có trên review.
