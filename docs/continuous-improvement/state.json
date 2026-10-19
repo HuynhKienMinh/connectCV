@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 44,
-  "lastRun": "runs/2026-10-18-cycle-0044.md",
+  "completedCycles": 45,
+  "lastRun": "runs/2026-10-19-cycle-0045.md",
   "activeRun": null,
   "activeIssue": "SOCIAL003",
-  "issueState": "OWNER_RECEIPT_SERVER_LOCAL_AND_CI_VERIFIED_UI_BROWSER_PENDING",
+  "issueState": "RECEIPT_UI_LOCAL_PREPARED_BROWSER_APPROVAL_CAPACITY_BLOCKED",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -39,7 +39,7 @@
   "liveAiWritesAllowed": false,
   "aiScenarioCapPerDay": 12,
   "aiScenariosUsedToday": 0,
-  "aiBudgetDate": "2026-10-18",
+  "aiBudgetDate": "2026-10-19",
   "backup": {
     "codeVerified": true,
     "buildCopied": true,
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "SOCIAL003 a0ec7a3 server receipt: same verified owner/full six public content fields/persisted post+credit event, award0 on replay, no Firestore writes. Local HTTP baseline11PASS1FAIL→12PASS; new8receipt+account/fault total35PASS. Review CI39133820796 SUCCESS (verify/pdf-renderer/emulator-restore); no main/deployment.",
-    "Next actual Studio receipt response-loss/retry browser plus frontend balance/cooldown handling: current code only refreshes account when awardedCredits>0 and uses Date.now for every success, so new recovered200 requires browser validation and scoped UI adjustment before release. No real public posts/AI/accounts.",
-    "Live391fdc3 and FEce5 unchanged. BackupTransfer42 VERIFIED16bundle, no large backup/build/restore created. New isolated candidate/current backup+CI mandatory before release; report schema/realDBrestore/keycustody stays deferred."
+    "SOCIAL003 server a0ec7a3 CI39133820796 SUCCESS remains review-only. UI2ba73d7 local commit prepares recovery refresh via authoritative accountGET, original timestamp (preserve later local timestamp), receipt guard and pending-edits retention. Syntax-only verified; no browser result or push/deploy.",
+    "Cổng duyệt hai lần báo selected model at capacity; both Chromium actions NOT EXECUTED. Wait for normal approval infrastructure to recover; do not run same action with weaker sandbox/other tool/model as bypass. Baseline refb4e9dc1 and aftercurrent, eight browser phases prepared.",
+    "Before release include server-side latest account cooldown if a later distinct post exists; original publishedAt alone can give stale UI wait after old receipt. Add/verify browser CI gate and preserve newer drafts, no autoretry. Isolate from main391, exclude report/ops; new Drive backup/restore required. Live391/FEce5 and backup42VERIFIED unchanged."
   ],
   "deployment": {
     "commit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047",
@@ -114,10 +114,10 @@
     "lastVerifiedCandidateCommit": "391fdc3bcb4c16f2ac063ea3fb5bd6b1beaf5047"
   },
   "delivery": {
-    "reviewCommit": "a0ec7a3",
-    "status": "COMMUNITY_RECEIPT_SERVER_REVIEW_ONLY",
+    "reviewCommit": "2ba73d7",
+    "status": "RECEIPT_UI_LOCAL_ONLY_UNVERIFIED_APPROVAL_CAPACITY_BLOCKED",
     "lastPushError": null,
-    "nextAction": "Receipt server reviewed/local35PASS; next actual Studio response-loss/retry browser: refresh balance even when awardedCredits0 and preserve original publication cooldown instead of starting new6h on recovery. Keep draft and consent; no auto retry. Then isolated main candidate, CI, fresh Drive backup/restore, deploy. Do not include report/ops review.",
+    "nextAction": "When normal approval reviewer recovers, run receipt browser baseline using RECEIPT_UI_SOURCE_REF=b4e9dc1 and after2ba73d7 with separate output paths. Do not claim baseline failures or browser passes yet. Repair harness/UI as evidence requires; add CI gate. Test newer publication/account cooldown before release. Then exact isolated candidate excluding report/ops, CI, fresh Drive backup/current FE restore and scoped deploy.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39007956699",
@@ -197,9 +197,11 @@
     "microphoneCandidateRelease": "dep-db9khkjrjlhs73f60aeg",
     "pendingReceiptCommit": "a0ec7a3",
     "pendingReceiptStatus": "REVIEW_CI_SUCCESS_LOCAL35_PASS_UI_NOT_VERIFIED_NOT_MAIN_NOT_DEPLOYED",
-    "pendingReceiptCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39133820796"
+    "pendingReceiptCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39133820796",
+    "pendingReceiptUiCommit": "2ba73d7",
+    "pendingReceiptUiStatus": "LOCAL_COMMITTED_SYNTAX_PASS_BROWSER_NOT_RUN_NOT_PUSHED"
   },
-  "blockingDependency": null,
+  "blockingDependency": "AUTO_REVIEW_CAPACITY_FOR_BROWSER_VALIDATION",
   "dataBackup": {
     "status": "WRAPPER_EMULATOR_LOCAL_AND_CI_VERIFIED_REAL_CUSTODY_PENDING",
     "tool": "backend/ops/snapshotEnvelope.cjs",
@@ -271,10 +273,11 @@
     "resolution": "Browser kernel works; authenticated owner Drive folder lists pending bundle/catalog IDs. No new permission or login used."
   },
   "approvalInterruption": {
-    "cycle": 42,
-    "action": "fast-forward main391fdc3",
-    "reason": "auto-review usage limit; action not executed",
-    "resolved": true,
-    "resolution": "Retry after stated17:01VN reset; normal approval succeeded; main pushed."
+    "cycle": 45,
+    "action": "Chromium sandbox whole-Studio synthetic receipt browser regression",
+    "reason": "Automatic approval review failed: Selected model is at capacity; action not executed; not an unsafe-action determination",
+    "attempts": 2,
+    "resolved": false,
+    "bypassUsed": false
   }
 }

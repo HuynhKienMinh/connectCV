@@ -1,0 +1,13 @@
+{
+  "reviewedServerCommit": "a0ec7a3",
+  "localUiCommit": "2ba73d7",
+  "syntaxChecked": true,
+  "inlineScriptsParsed": 3,
+  "browserExecuted": false,
+  "browserApprovalAttempts": 2,
+  "blocker": "Automatic approval reviewer selected model at capacity; actions not executed",
+  "bypassUsed": false,
+  "productionUserWrites": 0,
+  "realAiCalls": 0,
+  "deployed": false
+}
