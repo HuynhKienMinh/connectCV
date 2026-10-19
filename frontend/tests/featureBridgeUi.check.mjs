@@ -50,7 +50,7 @@ try{
    const qa=window.__qa={listeners:new Set(),calls:[],auth:{currentUser:null}};
    qa.setActor=(uid,verified=true)=>{const user=uid?{uid,emailVerified:verified,getIdToken(){return new Promise((resolve,reject)=>qa.calls.push({uid,resolve,reject}));}}:null;qa.auth.currentUser=user;qa.state={user,loading:false};for(const fn of qa.listeners)fn();};qa.setActor('A');
   },{startup});
-  try{await p.goto(parentOrigin+'/qa-feature');await p.locator('iframe[title="ConnectCV chatbot"]').waitFor();await frame(p).waitForFunction(()=>typeof window.ask==='function');await check(p);assert.deepEqual(errors,[]);results.push({name,pass:true});}
+  try{await p.goto(parentOrigin+'/qa-feature');await p.frameLocator('iframe[title="ConnectCV chatbot"]').getByLabel('Child draft').waitFor();await frame(p).waitForFunction(()=>typeof window.ask==='function');await check(p);assert.deepEqual(errors,[]);results.push({name,pass:true});}
   catch(e){results.push({name,pass:false,error:e.message});}
   finally{await context.close();}
  }
@@ -74,7 +74,7 @@ try{
   await frame(p).evaluate(()=>ask('synthetic-request-0002'));await p.waitForFunction(()=>__qa.calls.length===2);await settle(p,1);assert.equal(await frame(p).evaluate(()=>received.length),1);assert.equal(await frame(p).evaluate(()=>received[0].token==='SYNTHETIC_OPAQUE_B'),true);
  });
  await scenario('module-navigation-cannot-receive-obsolete-token',async p=>{
-  await ask(p);await p.evaluate(()=>__qa.setModule('cv'));await p.locator('iframe[title="ConnectCV cv"]').waitFor();await p.waitForFunction(()=>document.querySelector('iframe')?.src.endsWith('module=cv'));await frame(p).waitForFunction(()=>typeof ask==='function');await settle(p);assert.equal(await frame(p).evaluate(()=>received.length),0);
+  await ask(p);await p.evaluate(()=>__qa.setModule('cv'));await p.frameLocator('iframe[title="ConnectCV cv"]').getByLabel('Child draft').waitFor();await frame(p).waitForFunction(()=>typeof ask==='function');await settle(p);assert.equal(await frame(p).evaluate(()=>received.length),0);
  });
  await scenario('return-to-same-uid-does-not-revive-old-session',async p=>{
   await ask(p);await p.evaluate(()=>__qa.setActor('B'));await tick(p);await p.evaluate(()=>__qa.setActor('A'));await tick(p);await frame(p).waitForFunction(()=>typeof ask==='function');await settle(p);assert.equal(await frame(p).evaluate(()=>received.length),0);
