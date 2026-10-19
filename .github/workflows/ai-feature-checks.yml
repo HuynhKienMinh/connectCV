@@ -91,6 +91,12 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           AUTH_REQUEST_QA_OUTPUT: '${{ runner.temp }}/connectcv-auth-request-qa'
+      - name: Verify AccountPage load, version conflicts and actor operation ownership
+        run: node tests/accountLifecycleUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          ACCOUNT_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-account-lifecycle-qa'
       - name: Verify React iframe token boundaries, account changes and obsolete document requests
         run: node tests/featureBridgeUi.check.mjs
         working-directory: frontend
