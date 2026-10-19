@@ -137,3 +137,8 @@ Native M có encoded space nhưng pypdf lookup decodedM lấy width542 tại raw
 ## D030 —20/10/2026: voice completion thuộc operation; không thay thế session guard
 
 Invalidate trước abort/pause/speech cancel; completion sau fetch/blob/play và delayed resume chỉ chạy khi còn ownership. Audio/URL/utterance/timers cùng owner, release không đụng audio mới. Fallback chỉ một lần, respect handsfree kể cả error; empty typed-submit không hủy voice. INT005 ghi TTS race mới vì ID INT003 bị trùng lịch sử. Không nhận guard TTS đã giải quyết pending transcribe/live-chat upstream, module/actor/session departure; kiểm tiếp trước scoped release và fresh exact private Drive backup. Test fake Audio/SpeechRecognition xác nhận lời gọi, không chứng minh mic thật đã bật hoặc fidelity trêniOS.
+
+
+## D031 —20/10/2026: session/request ownership trước auto-send hoặc tạo voice mới
+
+TTS guard không đủ nếu completion upstream tạo operation mới. Phiên dùng scope object, reply/transcribe có object riêng; đổi scope trước abort tại End/new session/practice/departure. Kiểm sau JSON và trước side effect; FileReader + draft snapshot/input cancellation bảo toàn nháp mới. New capture/typed-send/stop hủy transcription cũ; finally không clear operation mới. Local fake transport không tuân abort vẫn phải giữ guard. Không hứa abort đã hủy provider/refund quota, actualactor hay summary-modal lifecycle. Sau review CI tạo isolated runtime63/64 từ main, workflow từ main cộng đúng guards, rồi fresh exact privateDrive backup/restore trước deployment; không deploy aggregate review.

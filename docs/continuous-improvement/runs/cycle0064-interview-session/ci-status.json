@@ -1,0 +1,34 @@
+{
+  "id": 39301969781,
+  "head": "c75845f8bcd1080cc16cecf70d2b7db0ae68f05e",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39301969781",
+  "checkedAt": "2026-10-19T18:26:38.861905+00:00",
+  "jobs": [
+    {
+      "name": "pdf-renderer",
+      "status": "completed",
+      "conclusion": "success",
+      "sessionSteps": [
+        {
+          "name": "Verify interview session ownership across transcription, replies and departure",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "sessionSteps": []
+    },
+    {
+      "name": "emulator-restore",
+      "status": "completed",
+      "conclusion": "success",
+      "sessionSteps": []
+    }
+  ]
+}

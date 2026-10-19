@@ -1,0 +1,289 @@
+{
+  "wholeStudio": true,
+  "syntheticTransport": true,
+  "realMicrophone": false,
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "sourceRef": "13a25f1",
+  "rows": [
+    {
+      "phase": "transcribe-after-end-cannot-auto-send",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "draft": "",
+        "caption": "AI đang lắng nghe và suy luận câu hỏi tiếp theo...",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Câu trả lời giả về dự án đã làm"
+        ],
+        "requests": [
+          "/api/interview/transcribe",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "transcribe-json-after-end-is-ignored",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "draft": "",
+        "caption": "AI đang lắng nghe và suy luận câu hỏi tiếp theo...",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Câu trả lời giả về dự án đã làm"
+        ],
+        "requests": [
+          "/api/interview/transcribe",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "edited-draft-survives-late-transcript",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ ''\n- 'Nội dung mới do ứng viên sửa'\n",
+      "state": {
+        "draft": "",
+        "caption": "AI đang lắng nghe và suy luận câu hỏi tiếp theo...",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Câu trả lời giả về dự án đã làm"
+        ],
+        "requests": [
+          "/api/interview/transcribe",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "cancel-before-file-reader-callback-prevents-request",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "draft": "Nháp cần giữ",
+        "caption": "Cảm ơn bạn đã tham gia phỏng vấn! Đang tạo báo cáo đánh giá...",
+        "thinking": false,
+        "history": [
+          "Câu hỏi hiện tại"
+        ],
+        "requests": [
+          "/api/interview/transcribe"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "new-recording-supersedes-old-transcript",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n3 !== 2\n",
+      "state": {
+        "draft": "",
+        "caption": "AI đang lắng nghe và suy luận câu hỏi tiếp theo...",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Câu trả lời giả về dự án đã làm"
+        ],
+        "requests": [
+          "/api/interview/transcribe",
+          "/api/interview/transcribe",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "current-transcribe-reply-keeps-happy-path",
+      "pass": true
+    },
+    {
+      "phase": "reply-after-end-cannot-append-or-speak",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "draft": "",
+        "caption": "AI: Câu cũ muộn",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Nội dung trả lời giả về công việc",
+          "Câu cũ muộn"
+        ],
+        "requests": [
+          "/api/interview/live-chat"
+        ],
+        "tts": [
+          "Câu cũ muộn"
+        ]
+      }
+    },
+    {
+      "phase": "old-reply-json-cannot-replace-practice-question",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "draft": "",
+        "caption": "AI: Câu cũ muộn",
+        "thinking": true,
+        "history": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Câu hỏi luyện tập mới\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+          "Câu cũ muộn"
+        ],
+        "requests": [
+          "/api/interview/live-chat"
+        ],
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Câu hỏi luyện tập mới\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+          "Câu cũ muộn"
+        ]
+      }
+    },
+    {
+      "phase": "reordered-session-starts-keep-latest-history",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Phiên cũ'\n-   'Phiên mới'\n  ]\n",
+      "state": {
+        "draft": "Nháp cần giữ",
+        "caption": "AI: Phiên cũ",
+        "thinking": true,
+        "history": [
+          "Phiên cũ"
+        ],
+        "requests": [
+          "/api/interview/live-chat",
+          "/api/interview/live-chat"
+        ],
+        "tts": [
+          "Phiên mới",
+          "Phiên cũ"
+        ]
+      }
+    },
+    {
+      "phase": "old-reply-failure-cannot-unlock-new-start",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "draft": "",
+        "caption": "Lỗi kết nối: PRIVATE_SYNTHETIC_ERROR",
+        "thinking": false,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Nội dung trả lời giả về công việc"
+        ],
+        "requests": [
+          "/api/interview/live-chat",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "leaving-module-invalidates-pending-reply",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "draft": "",
+        "caption": "AI: Câu cũ muộn",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Nội dung trả lời giả về công việc",
+          "Câu cũ muộn"
+        ],
+        "requests": [
+          "/api/interview/live-chat"
+        ],
+        "tts": [
+          "Câu cũ muộn"
+        ]
+      }
+    },
+    {
+      "phase": "eval-submode-invalidates-transcribe",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "draft": "",
+        "caption": "AI đang lắng nghe và suy luận câu hỏi tiếp theo...",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Câu trả lời giả về dự án đã làm"
+        ],
+        "requests": [
+          "/api/interview/transcribe",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    },
+    {
+      "phase": "script-mode-invalidates-reply",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "draft": "",
+        "caption": "AI: Câu cũ muộn",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Nội dung trả lời giả về công việc",
+          "Câu cũ muộn"
+        ],
+        "requests": [
+          "/api/interview/live-chat"
+        ],
+        "tts": [
+          "Câu cũ muộn"
+        ]
+      }
+    },
+    {
+      "phase": "pagehide-invalidates-pending-start",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "draft": "Nháp cần giữ",
+        "caption": "AI: Câu cũ muộn",
+        "thinking": true,
+        "history": [
+          "Câu cũ muộn"
+        ],
+        "requests": [
+          "/api/interview/live-chat"
+        ],
+        "tts": [
+          "Câu cũ muộn"
+        ]
+      }
+    },
+    {
+      "phase": "new-listening-start-invalidates-old-transcript",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "draft": "",
+        "caption": "AI đang lắng nghe và suy luận câu hỏi tiếp theo...",
+        "thinking": true,
+        "history": [
+          "Câu hỏi hiện tại",
+          "Câu trả lời giả về dự án đã làm"
+        ],
+        "requests": [
+          "/api/interview/transcribe",
+          "/api/interview/live-chat"
+        ],
+        "tts": []
+      }
+    }
+  ]
+}

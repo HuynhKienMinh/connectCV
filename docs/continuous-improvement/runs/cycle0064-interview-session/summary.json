@@ -1,0 +1,39 @@
+{
+  "sourceCommit": "c75845f8bcd1080cc16cecf70d2b7db0ae68f05e",
+  "baselineRef": "13a25f1",
+  "baseline": {
+    "cases": 15,
+    "pass": 1,
+    "fail": 14
+  },
+  "fixed": {
+    "cases": 15,
+    "pass": 15,
+    "fail": 0
+  },
+  "voiceRegression": {
+    "cases": 13,
+    "pass": 13
+  },
+  "microphoneRegression": {
+    "cases": 13,
+    "pass": 13
+  },
+  "featureTests": {
+    "pass": 101,
+    "fail": 0
+  },
+  "realDevices": false,
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "transportIgnoresAbortSoOwnershipIsRequired": true,
+  "realFirebaseActorReplay": false,
+  "summaryModalAsyncLifecycleVerified": false,
+  "sourceSha256": {
+    "backend/features/connectcv/public/index.html": "57d017ccf14a8ce29893daf915370be2721afa54fd61aa95c3dda82732df3ff1",
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs": "c5ce7ee85640fcd1ee643528bf3f1aa19935e806a3e91a7132526057ae10eaf1",
+    "backend/features/connectcv/tests/interviewTranscript.test.js": "d3538aa14a93145049261bb598d874a03bde2994a96d702584f5a1665137385a",
+    ".github/workflows/ai-feature-checks.yml": "4f2c2c749221c793e08c16cd66aea573e8aed706b9d22188643512abbac204ca"
+  },
+  "harnessRepair": "Awaiting captured async FileReader callback caused fixture hang; fire callback without awaiting its deferred network result, with8s per-phase deadline. Owned helper+Chromium trees15400/21928 (10processes each) stopped after exact command/parent checks. No product fix attributed to harness repair."
+}

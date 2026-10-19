@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 63,
-  "lastRun": "runs/2026-10-20-cycle-0063.md",
+  "completedCycles": 64,
+  "lastRun": "runs/2026-10-20-cycle-0064.md",
   "activeRun": null,
   "activeIssue": "INT005",
-  "issueState": "VOICE_REVIEW_CI_SUCCESS_PENDING_TRANSCRIBE_REPLY_SESSION_GUARDS",
+  "issueState": "VOICE_AND_SESSION_REVIEW_CI_SUCCESS_SCOPED_CANDIDATE_BACKUP_NEXT",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "INT005 reviewea9ca95 TTS operation ownership: actual Studio same13cases baseline12FAIL/1PASS to13PASS, mic13 and feature101PASS; CI39299809148 SUCCESS including new voice browser step onLinux. Source TTS block baseline matches known-live0bf. Owner notified cycle63 about confirmed local P1; do not repeat unchanged notification. No deployment yet.",
-    "Next reproduce pending transcribe or live-chat response after End/new-session or typed draft change using actual Studio and deferred fake transport. TTS guard alone cannot prevent an obsolete upstream completion from starting a NEW voice operation. Verify session/operation ownership and module/actor departure, retain transcript/draft, keep current happy path and text fallback; no real mic, liveAI or real profile writes.",
-    "After related lifecycle guards/tests pass, isolate runtime delta from main; full isolatedCI then fresh exact privateDrive code/build/currentrollback checksum/readback/restore before deploy/live check. Do not deploy aggregate review with deferredschema/report. LiveFE1bc/Hosting89f BE0bf and Drive53VERIFIED unchanged; CV002 remains P1/checkpoint62. AI0, no cloud writes or new large backup."
+    "Prepare scoped INT005 release from current remote main, preserving other changes: runtime deltas ea9ca95 + c75845f, new voice/session browser tests, VM report dependency stub and workflow from main plus only corresponding steps. Do not deploy aggregate review or bring deferred report/schema/ops/PDF experiments. Verify candidate tree/scope and run full candidateCI before main/deploy.",
+    "After isolated candidateCI succeeds, create fresh exact privateDrive backup covering candidate/currentBE0bf/currentFE1bc and rollback, verify SHA/checksum/readback/fresh restore with bounded temporary staging, keep catalog only then clean own copies. Read backupTransfer first; no deployment if new cloud baseline not VERIFIED. Existing catalog53 is not the new candidate backup. Then scoped BE deployment and exact-source/live smoke; FE Hosting89f unchanged if BE-only. Rollback to0bf if verification fails.",
+    "INT005 reviewc75845f CI39301969781 SUCCESS including15new session cases onLinux: same baseline14FAIL/1PASS to15PASS; voice13/mic13 and feature101PASS. No deployment yet. Owner notified63; do not repeat unchanged P1. Actual Firebase actors/physicalmic/iOS/provider abort/refund and summary-modal lifecycle remain unverified. CV002 remains checkpoint62/P1. AI0, no cloud writes or large backup."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "INT005 reviewea9ca95 TTS operation ownership: actual Studio same13cases baseline12FAIL/1PASS to13PASS, mic13 and feature101PASS; CI39299809148 SUCCESS including new voice browser step onLinux. Source TTS block baseline matches known-live0bf. Owner notified cycle63 about confirmed local P1; do not repeat unchanged notification. No deployment yet.",
+    "nextAction": "Prepare scoped INT005 release from current remote main, preserving other changes: runtime deltas ea9ca95 + c75845f, new voice/session browser tests, VM report dependency stub and workflow from main plus only corresponding steps. Do not deploy aggregate review or bring deferred report/schema/ops/PDF experiments. Verify candidate tree/scope and run full candidateCI before main/deploy.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -287,10 +287,14 @@
     "pendingInterviewVoiceReviewCommit": "ea9ca95ccd7f125f8ac599053d994ccc73481698",
     "pendingInterviewVoiceReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39299809148",
     "pendingInterviewVoiceReviewCiPassed": true,
-    "pendingInterviewVoiceStatus": "REVIEW_LOCAL_AND_LINUX13_PASS_RELATED_LIFECYCLE_BEFORE_SCOPED_RELEASE",
+    "pendingInterviewVoiceStatus": "REVIEW_LOCAL_LINUX_VOICE13_SESSION15_PASS_READY_FOR_SCOPED_CANDIDATE",
     "pendingInterviewVoiceDeployBlocked": true,
-    "pendingInterviewVoiceDeployBlockReason": "RELATED_LIFECYCLE_AND_FRESH_EXACT_PRIVATE_DRIVE_BASELINE",
-    "interviewVoiceOwnerNotifiedCycle": 63
+    "pendingInterviewVoiceDeployBlockReason": "ISOLATED_CANDIDATE_CI_AND_FRESH_EXACT_PRIVATE_DRIVE_BASELINE",
+    "interviewVoiceOwnerNotifiedCycle": 63,
+    "pendingInterviewSessionReviewCommit": "c75845f8bcd1080cc16cecf70d2b7db0ae68f05e",
+    "pendingInterviewSessionReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39301969781",
+    "pendingInterviewSessionReviewCiPassed": true,
+    "pendingInterviewSessionStatus": "REVIEW_LOCAL_AND_LINUX15_PASS_READY_FOR_SCOPED_CANDIDATE"
   },
   "blockingDependency": null,
   "dataBackup": {
