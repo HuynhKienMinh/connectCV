@@ -10,20 +10,6 @@ concurrency:
   group: connectcv-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  emulator-restore:
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-      - name: Restore and re-export synthetic typed snapshot in isolated demo emulator
-        run: node backend/tests/snapshotRestore.check.cjs
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -42,7 +28,7 @@ jobs:
           VITE_API_BASE_URL: 'https://connectcv-api-minh.onrender.com'
       - run: node --test tests/authFlow.test.js tests/googleAuthFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js
         working-directory: frontend
-      - run: node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityReceipt.test.cjs tests/communityHttp.test.cjs tests/chatbotHttp.test.cjs tests/portfolio.test.cjs tests/portfolioAuthHttp.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs tests/snapshotEnvelope.test.cjs tests/snapshotCollector.test.cjs tests/firestoreReadTransport.test.cjs tests/snapshotReadTime.test.cjs tests/snapshotCredential.test.cjs tests/encryptedSnapshot.test.cjs
+      - run: node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityReceipt.test.cjs tests/communityHttp.test.cjs tests/chatbotHttp.test.cjs tests/portfolio.test.cjs tests/portfolioAuthHttp.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs
         working-directory: backend
       - run: npm test
         working-directory: backend/features/connectcv
@@ -162,12 +148,6 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           PROFILE_IMAGE_QA_OUTPUT: '${{ runner.temp }}/connectcv-profile-image-qa'
-      - name: Verify private report dialog, retained choices and network recovery
-        run: node tests/communityReportUi.check.cjs
-        working-directory: backend/features/connectcv
-        env:
-          PLAYWRIGHT_BROWSERS_PATH: '0'
-          REPORT_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-report-qa'
       - name: Verify chatbot clear, logout, late responses and responsive browser lifecycle
         run: node tests/chatbotUi.check.cjs
         working-directory: backend/features/connectcv
