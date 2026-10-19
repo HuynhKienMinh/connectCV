@@ -5466,6 +5466,12 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         }
         payload.publicAcknowledged = true;
         _debriefSubmitting = true;
+        const draftFields = ['deb-company','deb-pos','deb-questions','deb-review','deb-anonymous','deb-difficulty-val'];
+        const draftSnapshot = () => JSON.stringify(draftFields.map(id => {
+          const field = document.getElementById(id);
+          return field?.type === 'checkbox' ? field.checked : field?.value;
+        }));
+        const submittedDraft = draftSnapshot();
 
         const res = await fetch('/api/interview/debrief', {
           method: 'POST',
@@ -5476,21 +5482,31 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         const data = await res.json().catch(() => ({ success: false, message: 'Lỗi phản hồi từ máy chủ.' }));
 
         if (res.ok && data.success) {
+          const receipt = data.data;
+          const published = Date.parse(receipt?.publishedAt || '');
+          const recovered = receipt?.alreadyShared === true;
+          if (recovered && (!Number.isFinite(published) || published <= 0 || published > Date.now() + 60000 || receipt.awardedCredits !== 0 || !/^[a-zA-Z0-9-]{1,100}$/.test(receipt.debriefId || '') || !['awarded','pending'].includes(receipt.creditStatus))) {
+            throw new Error('Unconfirmed recovery receipt');
+          }
           isSuccess = true;
-          sessionStorage.setItem(DEBRIEF_COOLDOWN_KEY, Date.now().toString());
+          const existingTime = Number(sessionStorage.getItem(DEBRIEF_COOLDOWN_KEY)) || 0;
+          const publishedTime = Number.isFinite(published) && published > 0 ? Math.min(published, Date.now()) : Date.now();
+          sessionStorage.setItem(DEBRIEF_COOLDOWN_KEY, Math.max(existingTime, publishedTime).toString());
 
-          if (typeof updateCredits === 'function') {
-            if(Number(data.data?.awardedCredits)>0)updateCredits(Number(data.data.awardedCredits));
+          if (recovered || Number(receipt?.awardedCredits) > 0) {
+            // Read the account balance; a receipt never authorizes a local +5 increment.
+            Promise.resolve(window.connectCVRefreshAccount?.()).catch(() => {
+              if (typeof showToastError === 'function') showToastError('Bài đã được lưu; chưa làm mới được số dư. Hãy kiểm tra tài khoản khi kết nối ổn định.', 'Chưa cập nhật số dư');
+            });
           }
 
-          notify(data.message || 'Chia sẻ thành công! Bạn nhận được +5 Credits.', '🎉 Đăng bài thành công!', 'success');
+          const keepNewerDraft = draftSnapshot() !== submittedDraft;
+          notify((data.message || 'Bài chia sẻ đã được xác nhận.') + (keepNewerDraft ? ' Nội dung bạn vừa sửa vẫn được giữ trong form.' : ''), recovered ? 'Đã xác nhận bài đã lưu' : '🎉 Đăng bài thành công!', 'success');
 
           closeDebriefPreview();
-          // Xóa form
-          if (document.getElementById('deb-company'))   document.getElementById('deb-company').value = '';
-          if (document.getElementById('deb-pos'))       document.getElementById('deb-pos').value = '';
-          if (document.getElementById('deb-questions')) document.getElementById('deb-questions').value = '';
-          if (document.getElementById('deb-review'))    document.getElementById('deb-review').value = '';
+          if (!keepNewerDraft) {
+            for (const id of ['deb-company','deb-pos','deb-questions','deb-review']) document.getElementById(id).value = '';
+          }
 
           // Tải lại feed MXH để hiển thị ngay bài mới
           loadCommunityQuestions();
