@@ -512,6 +512,7 @@ function validateQuestionList(questions) {
 // POST /api/interview/debrief — Chia sẻ câu hỏi thực tế nhận Credits
 // ─────────────────────────────────────────────────────────────────────
 router.post('/debrief', async (req, res) => {
+  res.set('Cache-Control','no-store');
   try {
     if(!req.user?.id)return res.status(401).json({success:false,code:'AUTH_REQUIRED'});
     const publication = require('../../public/js/community-publication');
