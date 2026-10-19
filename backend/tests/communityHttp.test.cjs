@@ -54,7 +54,7 @@ async function fixture(t){
  const base='http://127.0.0.1:'+server.address().port+'/api/interview';
  async function request(path,{actor,body,method='POST',headers={}}={}){
   const response=await fetch(base+path,{method,headers:{'Content-Type':'application/json',...(actor?{Authorization:'Bearer '+token(actor)}:{}),...headers},...(body===undefined?{}:{body:JSON.stringify(body)})});
-  return {status:response.status,body:await response.json()};
+  return {status:response.status,body:await response.json(),cacheControl:response.headers.get('cache-control')};
  }
  return {db,request,dropNextReceipt:()=>{dropReceipt=true;},stats:()=>({budget,verifications})};
 }
