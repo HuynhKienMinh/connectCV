@@ -41,15 +41,15 @@ let browser;const results=[];
 try{
  await server.listen();parentOrigin=`http://127.0.0.1:${server.httpServer.address().port}`;
  browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:chromium.executablePath()});
- async function scenario(name,check){
+ async function scenario(name,check,{startup=false}={}){
   const context=await browser.newContext({viewport:{width:390,height:844}}),p=await context.newPage(),errors=[];
   p.setDefaultTimeout(4000);p.on('pageerror',e=>errors.push(e.message));
   await p.route('**/*',r=>[parentOrigin,childOrigin].includes(new URL(r.request().url()).origin)?r.continue():r.abort());
-  await p.addInitScript(()=>{
-   if(window!==parent)return;
+  await p.addInitScript(({startup})=>{
+   if(window!==parent){if(startup)window.addEventListener('load',()=>{void connectCVGetAccessToken().then(token=>answers.push(token));});return;}
    const qa=window.__qa={listeners:new Set(),calls:[],auth:{currentUser:null}};
    qa.setActor=(uid,verified=true)=>{const user=uid?{uid,emailVerified:verified,getIdToken(){return new Promise((resolve,reject)=>qa.calls.push({uid,resolve,reject}));}}:null;qa.auth.currentUser=user;qa.state={user,loading:false};for(const fn of qa.listeners)fn();};qa.setActor('A');
-  });
+  },{startup});
   try{await p.goto(parentOrigin+'/qa-feature');await p.locator('iframe[title="ConnectCV chatbot"]').waitFor();await frame(p).waitForFunction(()=>typeof window.ask==='function');await check(p);assert.deepEqual(errors,[]);results.push({name,pass:true});}
   catch(e){results.push({name,pass:false,error:e.message});}
   finally{await context.close();}
@@ -59,6 +59,7 @@ try{
  async function ask(p,id='synthetic-request-0001'){await frame(p).evaluate(id=>ask(id),id);await p.waitForFunction(()=>__qa.calls.length===1);}
  async function settle(p,index=0,fail=false){await p.evaluate(({index,fail})=>{const c=__qa.calls[index];if(fail)c.reject(Error('SYNTHETIC_PROVIDER_PRIVATE'));else c.resolve('SYNTHETIC_OPAQUE_'+c.uid);},{index,fail});await tick(p);}
  await scenario('verified-current-child-gets-correlated-token',async p=>{await ask(p);await settle(p);assert.equal(await frame(p).evaluate(()=>received.length),1);assert.equal(await frame(p).evaluate(()=>received[0].requestId),'synthetic-request-0001');assert.equal(await frame(p).evaluate(()=>received[0].token==='SYNTHETIC_OPAQUE_A'),true);});
+ await scenario('initial-child-load-request-still-receives-token',async p=>{await p.waitForFunction(()=>__qa.calls.length===1);await settle(p);await frame(p).waitForFunction(()=>answers.length===1);assert.equal(await frame(p).evaluate(()=>answers[0]==='SYNTHETIC_OPAQUE_A'),true);},{startup:true});
  await scenario('wrong-origin-source-and-invalid-request-id-ignored',async p=>{
   await p.evaluate(()=>window.postMessage({type:'connectcv:token-request',requestId:'synthetic-request-0001'},location.origin));
   await frame(p).evaluate(()=>ask('bad!'));
