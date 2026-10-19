@@ -1,0 +1,436 @@
+{
+  "createdAt": "2026-10-19T17:21:14.813975+00:00",
+  "sourceCommit": "076ee11d2e1e73c7a2c9224befbf360b7126ce3d",
+  "ownedStage": "tmp/pdfs/cycle0060-continuation-guards",
+  "bytes": 233938,
+  "files": [
+    {
+      "name": "after/character-spacing-skip-after.pdf",
+      "bytes": 2046,
+      "sha256": "6e108e5751fd1d6ab7b37345218b8286eca8c49dcb35315050997fdf961a0c3a"
+    },
+    {
+      "name": "after/character-spacing-skip-after.png",
+      "bytes": 4753,
+      "sha256": "cc330adb3ee380534e48bae86cca76979f5e83956ea5422abbdf416f2e85e82b"
+    },
+    {
+      "name": "after/character-spacing-skip-before.pdf",
+      "bytes": 2046,
+      "sha256": "6e108e5751fd1d6ab7b37345218b8286eca8c49dcb35315050997fdf961a0c3a"
+    },
+    {
+      "name": "after/character-spacing-skip-before.png",
+      "bytes": 4753,
+      "sha256": "cc330adb3ee380534e48bae86cca76979f5e83956ea5422abbdf416f2e85e82b"
+    },
+    {
+      "name": "after/character-spacing-skip-plan.json",
+      "bytes": 174,
+      "sha256": "668d8ec06ceeec0758a9fe6112a2d12f3bf630f6b65ea222de2e1810b84680e5"
+    },
+    {
+      "name": "after/consecutive-show-after.pdf",
+      "bytes": 2048,
+      "sha256": "c5ef7d9f1af5538f5b9796e689f85d87aeab1a6e62fe078225ec98e39a5d44dd"
+    },
+    {
+      "name": "after/consecutive-show-after.png",
+      "bytes": 4771,
+      "sha256": "4221f8722bf4e17b22cc6aea3187ea142ccba364f7f940f71e61d89a5fc17982"
+    },
+    {
+      "name": "after/consecutive-show-before.pdf",
+      "bytes": 2048,
+      "sha256": "c5ef7d9f1af5538f5b9796e689f85d87aeab1a6e62fe078225ec98e39a5d44dd"
+    },
+    {
+      "name": "after/consecutive-show-before.png",
+      "bytes": 4771,
+      "sha256": "4221f8722bf4e17b22cc6aea3187ea142ccba364f7f940f71e61d89a5fc17982"
+    },
+    {
+      "name": "after/consecutive-show-plan.json",
+      "bytes": 174,
+      "sha256": "668d8ec06ceeec0758a9fe6112a2d12f3bf630f6b65ea222de2e1810b84680e5"
+    },
+    {
+      "name": "after/font-change-continuation-after.pdf",
+      "bytes": 2062,
+      "sha256": "2e533aabb661c488e01240a13658f035c47188af57e829c13a303a482b72dd09"
+    },
+    {
+      "name": "after/font-change-continuation-after.png",
+      "bytes": 4771,
+      "sha256": "4221f8722bf4e17b22cc6aea3187ea142ccba364f7f940f71e61d89a5fc17982"
+    },
+    {
+      "name": "after/font-change-continuation-before.pdf",
+      "bytes": 2062,
+      "sha256": "2e533aabb661c488e01240a13658f035c47188af57e829c13a303a482b72dd09"
+    },
+    {
+      "name": "after/font-change-continuation-before.png",
+      "bytes": 4771,
+      "sha256": "4221f8722bf4e17b22cc6aea3187ea142ccba364f7f940f71e61d89a5fc17982"
+    },
+    {
+      "name": "after/font-change-continuation-plan.json",
+      "bytes": 174,
+      "sha256": "668d8ec06ceeec0758a9fe6112a2d12f3bf630f6b65ea222de2e1810b84680e5"
+    },
+    {
+      "name": "after/guard-report.json",
+      "bytes": 4580,
+      "sha256": "a8bed2100d239ebe72c4953d48726f56d89f55243bd0fc7404e01c70d38426b0"
+    },
+    {
+      "name": "after/large-positive-skip-after.pdf",
+      "bytes": 2043,
+      "sha256": "435faf1907bf7a599ad9309c9f3301c6e75565dbd87daae44a2c2f303354c825"
+    },
+    {
+      "name": "after/large-positive-skip-after.png",
+      "bytes": 4760,
+      "sha256": "9bdd9f15d7021f885d8250feee6bd004ac25df85111848ca5a246d2351bdf5a8"
+    },
+    {
+      "name": "after/large-positive-skip-before.pdf",
+      "bytes": 2043,
+      "sha256": "435faf1907bf7a599ad9309c9f3301c6e75565dbd87daae44a2c2f303354c825"
+    },
+    {
+      "name": "after/large-positive-skip-before.png",
+      "bytes": 4760,
+      "sha256": "9bdd9f15d7021f885d8250feee6bd004ac25df85111848ca5a246d2351bdf5a8"
+    },
+    {
+      "name": "after/large-positive-skip-plan.json",
+      "bytes": 174,
+      "sha256": "38ef14f2883a4b1a6d820e056f63fa1f0bf10c404c3c014bfba02d6a52cfdf98"
+    },
+    {
+      "name": "after/punctuation-1000-80-after.pdf",
+      "bytes": 2265,
+      "sha256": "b1568450e8b25ebaf3fe68abc61def22cf3e1360ae66b7605820b7f813c69d32"
+    },
+    {
+      "name": "after/punctuation-1000-80-after.png",
+      "bytes": 4760,
+      "sha256": "d657081ca9bb65359c27a3e77f58b768f06c4caf8e45013a6e8af310295934ba"
+    },
+    {
+      "name": "after/punctuation-1000-80-before.pdf",
+      "bytes": 2065,
+      "sha256": "84c70ad48fc6902c8b01cae876a2454501dc0dbb02d4e18b47947d35ad0bb990"
+    },
+    {
+      "name": "after/punctuation-1000-80-before.png",
+      "bytes": 4760,
+      "sha256": "d657081ca9bb65359c27a3e77f58b768f06c4caf8e45013a6e8af310295934ba"
+    },
+    {
+      "name": "after/punctuation-1000-80-plan.json",
+      "bytes": 346,
+      "sha256": "c3270a1aca11680ac47ed008e70b525a6e9db56ab3c19bd4bda2d10568647558"
+    },
+    {
+      "name": "after/punctuation-2048-600-after.pdf",
+      "bytes": 2291,
+      "sha256": "679d2506e29732cd15dbc5f0724433b414a6895330b71c2f3a1f449e85fb2995"
+    },
+    {
+      "name": "after/punctuation-2048-600-after.png",
+      "bytes": 4762,
+      "sha256": "f3cdf9e15fca0743fff558ce6b5d33f7a2d1eff43fdf622a4fce0ec1afdedbde"
+    },
+    {
+      "name": "after/punctuation-2048-600-before.pdf",
+      "bytes": 2091,
+      "sha256": "838f127cb7961d7dd549db9a8242e94367cddd64fb336ff4feb72d674b12c3a8"
+    },
+    {
+      "name": "after/punctuation-2048-600-before.png",
+      "bytes": 4762,
+      "sha256": "f3cdf9e15fca0743fff558ce6b5d33f7a2d1eff43fdf622a4fce0ec1afdedbde"
+    },
+    {
+      "name": "after/punctuation-2048-600-plan.json",
+      "bytes": 346,
+      "sha256": "c3270a1aca11680ac47ed008e70b525a6e9db56ab3c19bd4bda2d10568647558"
+    },
+    {
+      "name": "after/relative-reset-after.pdf",
+      "bytes": 2268,
+      "sha256": "cef77bcdf64f3c310c6405dc9f9cb29ebe19c56dbfa31036017a4fca389cf09e"
+    },
+    {
+      "name": "after/relative-reset-after.png",
+      "bytes": 4773,
+      "sha256": "428363742fbcefc8d3432aab7837bdffbc588e5adb67950e0aa63fb031c0603a"
+    },
+    {
+      "name": "after/relative-reset-before.pdf",
+      "bytes": 2063,
+      "sha256": "617c9540ad535b139cd0e06a724877f3f9375a8fa630821446b6171f6f794d94"
+    },
+    {
+      "name": "after/relative-reset-before.png",
+      "bytes": 4773,
+      "sha256": "428363742fbcefc8d3432aab7837bdffbc588e5adb67950e0aa63fb031c0603a"
+    },
+    {
+      "name": "after/relative-reset-plan.json",
+      "bytes": 358,
+      "sha256": "b8905a6fc95a9c0b5321626bcbd465f661b1feaf9b61ddacb9fc8c7ed045a384"
+    },
+    {
+      "name": "after/supported-after.pdf",
+      "bytes": 2246,
+      "sha256": "c410fbd521140b34218e942dc983e6a22f40f32aea943880669121794f811eb1"
+    },
+    {
+      "name": "after/supported-after.png",
+      "bytes": 4752,
+      "sha256": "57080d814040c0af1261727ff6244b8731a9733995815a37a8547f7623106a8b"
+    },
+    {
+      "name": "after/supported-before.pdf",
+      "bytes": 2055,
+      "sha256": "0689f80dea6bee19e2f52e4d6cdf169fb5c7fbf09ce53e884a731ab8b45563be"
+    },
+    {
+      "name": "after/supported-before.png",
+      "bytes": 4752,
+      "sha256": "57080d814040c0af1261727ff6244b8731a9733995815a37a8547f7623106a8b"
+    },
+    {
+      "name": "after/supported-plan.json",
+      "bytes": 350,
+      "sha256": "ba574a71d5e1d4b51e6482677cbd953d93b499c410655a8edb191972ba07aa4a"
+    },
+    {
+      "name": "after-warnings.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "before/character-spacing-skip-after.pdf",
+      "bytes": 2046,
+      "sha256": "6e108e5751fd1d6ab7b37345218b8286eca8c49dcb35315050997fdf961a0c3a"
+    },
+    {
+      "name": "before/character-spacing-skip-after.png",
+      "bytes": 4753,
+      "sha256": "cc330adb3ee380534e48bae86cca76979f5e83956ea5422abbdf416f2e85e82b"
+    },
+    {
+      "name": "before/character-spacing-skip-before.pdf",
+      "bytes": 2046,
+      "sha256": "6e108e5751fd1d6ab7b37345218b8286eca8c49dcb35315050997fdf961a0c3a"
+    },
+    {
+      "name": "before/character-spacing-skip-before.png",
+      "bytes": 4753,
+      "sha256": "cc330adb3ee380534e48bae86cca76979f5e83956ea5422abbdf416f2e85e82b"
+    },
+    {
+      "name": "before/character-spacing-skip-plan.json",
+      "bytes": 174,
+      "sha256": "668d8ec06ceeec0758a9fe6112a2d12f3bf630f6b65ea222de2e1810b84680e5"
+    },
+    {
+      "name": "before/consecutive-show-after.pdf",
+      "bytes": 2243,
+      "sha256": "89c596bad1cb85e08d0acf6f3086590c98e01aee87ad4c162b3819e111cbaf25"
+    },
+    {
+      "name": "before/consecutive-show-after.png",
+      "bytes": 4752,
+      "sha256": "57080d814040c0af1261727ff6244b8731a9733995815a37a8547f7623106a8b"
+    },
+    {
+      "name": "before/consecutive-show-before.pdf",
+      "bytes": 2048,
+      "sha256": "c5ef7d9f1af5538f5b9796e689f85d87aeab1a6e62fe078225ec98e39a5d44dd"
+    },
+    {
+      "name": "before/consecutive-show-before.png",
+      "bytes": 4771,
+      "sha256": "4221f8722bf4e17b22cc6aea3187ea142ccba364f7f940f71e61d89a5fc17982"
+    },
+    {
+      "name": "before/consecutive-show-plan.json",
+      "bytes": 338,
+      "sha256": "7087702d81a86404a59066cb55011da2315615893dd2229b85ad6694ecb47447"
+    },
+    {
+      "name": "before/font-change-continuation-after.pdf",
+      "bytes": 2266,
+      "sha256": "710eb1b36a412b4a94b9a30c46f7ba2b62c51c1da30beb2067fc199624bbbf81"
+    },
+    {
+      "name": "before/font-change-continuation-after.png",
+      "bytes": 4752,
+      "sha256": "57080d814040c0af1261727ff6244b8731a9733995815a37a8547f7623106a8b"
+    },
+    {
+      "name": "before/font-change-continuation-before.pdf",
+      "bytes": 2062,
+      "sha256": "2e533aabb661c488e01240a13658f035c47188af57e829c13a303a482b72dd09"
+    },
+    {
+      "name": "before/font-change-continuation-before.png",
+      "bytes": 4771,
+      "sha256": "4221f8722bf4e17b22cc6aea3187ea142ccba364f7f940f71e61d89a5fc17982"
+    },
+    {
+      "name": "before/font-change-continuation-plan.json",
+      "bytes": 354,
+      "sha256": "1d1381b2ebdb81c9ba883138688ecc60e5d90e382d894cb5e773e592af2b2b18"
+    },
+    {
+      "name": "before/guard-report.json",
+      "bytes": 4592,
+      "sha256": "a1cfe39cfc2812b8b13f52ae2d210608a851d3bcf1d1d4b15b290cadcf7a6233"
+    },
+    {
+      "name": "before/large-positive-skip-after.pdf",
+      "bytes": 2043,
+      "sha256": "435faf1907bf7a599ad9309c9f3301c6e75565dbd87daae44a2c2f303354c825"
+    },
+    {
+      "name": "before/large-positive-skip-after.png",
+      "bytes": 4760,
+      "sha256": "9bdd9f15d7021f885d8250feee6bd004ac25df85111848ca5a246d2351bdf5a8"
+    },
+    {
+      "name": "before/large-positive-skip-before.pdf",
+      "bytes": 2043,
+      "sha256": "435faf1907bf7a599ad9309c9f3301c6e75565dbd87daae44a2c2f303354c825"
+    },
+    {
+      "name": "before/large-positive-skip-before.png",
+      "bytes": 4760,
+      "sha256": "9bdd9f15d7021f885d8250feee6bd004ac25df85111848ca5a246d2351bdf5a8"
+    },
+    {
+      "name": "before/large-positive-skip-plan.json",
+      "bytes": 174,
+      "sha256": "38ef14f2883a4b1a6d820e056f63fa1f0bf10c404c3c014bfba02d6a52cfdf98"
+    },
+    {
+      "name": "before/punctuation-1000-80-after.pdf",
+      "bytes": 2265,
+      "sha256": "b1568450e8b25ebaf3fe68abc61def22cf3e1360ae66b7605820b7f813c69d32"
+    },
+    {
+      "name": "before/punctuation-1000-80-after.png",
+      "bytes": 4760,
+      "sha256": "d657081ca9bb65359c27a3e77f58b768f06c4caf8e45013a6e8af310295934ba"
+    },
+    {
+      "name": "before/punctuation-1000-80-before.pdf",
+      "bytes": 2065,
+      "sha256": "84c70ad48fc6902c8b01cae876a2454501dc0dbb02d4e18b47947d35ad0bb990"
+    },
+    {
+      "name": "before/punctuation-1000-80-before.png",
+      "bytes": 4760,
+      "sha256": "d657081ca9bb65359c27a3e77f58b768f06c4caf8e45013a6e8af310295934ba"
+    },
+    {
+      "name": "before/punctuation-1000-80-plan.json",
+      "bytes": 346,
+      "sha256": "c3270a1aca11680ac47ed008e70b525a6e9db56ab3c19bd4bda2d10568647558"
+    },
+    {
+      "name": "before/punctuation-2048-600-after.pdf",
+      "bytes": 2291,
+      "sha256": "679d2506e29732cd15dbc5f0724433b414a6895330b71c2f3a1f449e85fb2995"
+    },
+    {
+      "name": "before/punctuation-2048-600-after.png",
+      "bytes": 4762,
+      "sha256": "f3cdf9e15fca0743fff558ce6b5d33f7a2d1eff43fdf622a4fce0ec1afdedbde"
+    },
+    {
+      "name": "before/punctuation-2048-600-before.pdf",
+      "bytes": 2091,
+      "sha256": "838f127cb7961d7dd549db9a8242e94367cddd64fb336ff4feb72d674b12c3a8"
+    },
+    {
+      "name": "before/punctuation-2048-600-before.png",
+      "bytes": 4762,
+      "sha256": "f3cdf9e15fca0743fff558ce6b5d33f7a2d1eff43fdf622a4fce0ec1afdedbde"
+    },
+    {
+      "name": "before/punctuation-2048-600-plan.json",
+      "bytes": 346,
+      "sha256": "c3270a1aca11680ac47ed008e70b525a6e9db56ab3c19bd4bda2d10568647558"
+    },
+    {
+      "name": "before/relative-reset-after.pdf",
+      "bytes": 2261,
+      "sha256": "07364cd263eb0c68fafbafc383b32fda3fd20a98d0c975e5a8e82a30d811969f"
+    },
+    {
+      "name": "before/relative-reset-after.png",
+      "bytes": 4753,
+      "sha256": "7b7b56028b2c590041aa42adc1bac5500212b7a0ab7ff651116a55e9915acfb7"
+    },
+    {
+      "name": "before/relative-reset-before.pdf",
+      "bytes": 2063,
+      "sha256": "617c9540ad535b139cd0e06a724877f3f9375a8fa630821446b6171f6f794d94"
+    },
+    {
+      "name": "before/relative-reset-before.png",
+      "bytes": 4773,
+      "sha256": "428363742fbcefc8d3432aab7837bdffbc588e5adb67950e0aa63fb031c0603a"
+    },
+    {
+      "name": "before/relative-reset-plan.json",
+      "bytes": 362,
+      "sha256": "ceafa27fc11a5c3380e9cb88a1ef6dddddcbc4e9c0a782e5849da81a40ee14f7"
+    },
+    {
+      "name": "before/supported-after.pdf",
+      "bytes": 2246,
+      "sha256": "c410fbd521140b34218e942dc983e6a22f40f32aea943880669121794f811eb1"
+    },
+    {
+      "name": "before/supported-after.png",
+      "bytes": 4752,
+      "sha256": "57080d814040c0af1261727ff6244b8731a9733995815a37a8547f7623106a8b"
+    },
+    {
+      "name": "before/supported-before.pdf",
+      "bytes": 2055,
+      "sha256": "0689f80dea6bee19e2f52e4d6cdf169fb5c7fbf09ce53e884a731ab8b45563be"
+    },
+    {
+      "name": "before/supported-before.png",
+      "bytes": 4752,
+      "sha256": "57080d814040c0af1261727ff6244b8731a9733995815a37a8547f7623106a8b"
+    },
+    {
+      "name": "before/supported-plan.json",
+      "bytes": 350,
+      "sha256": "ba574a71d5e1d4b51e6482677cbd953d93b499c410655a8edb191972ba07aa4a"
+    },
+    {
+      "name": "before-warnings.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "stageLimitBytes": 16777216,
+  "cleanupVerified": true,
+  "retainedPdfFontBuildBundleClone": false,
+  "viewedPngs": [
+    "before-placement.png",
+    "after-placement.png"
+  ],
+  "cleanupVerifiedAt": "2026-10-19T17:23:25.376029+00:00"
+}

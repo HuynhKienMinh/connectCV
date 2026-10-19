@@ -118,3 +118,7 @@ Same-native-font MATRIX control cho thấy adjustedTJ có thể giữ kerning/pi
 ## D026 —20/10/2026: không phá word-gap để chữa dấu câu
 
 Pypdf local6.10.0 dùng abs(TJcorrection) cho space threshold nên positive tightening114.257813 tạo `PDF .`. Positive-only fragmentation giữ cùng displacement/pixels và native summary trong một scope; split cả dấu âm làm `PDF.PDF.` mất word-gap nên bị loại. Mode mới là parser-specific diagnostic, chưa universalATS/runtime acceptance. Giữ fullsummary/markers/heading/name/negativegap guards và exact resource/raster; default broadTJ vẫnREJECTED. Cần multi-font/space/continuation/resource proof trước genericintegration hoặc148rerun.
+
+## D027 —20/10/2026: chỉ grouping khi text matrix ở line origin đã biết
+
+Tj advances text matrix; Tf không reset line matrix. Grouping ở continuation chưa reset gây89pixel drift trên3syntheticcases dù text/resource gatePASS. Origin guard sửa cả3 thành0pixel, unsafe cases byte-identical; vẫn hỗ trợ subrun sauTd. Fontspace80 đồng thời bác bỏ generic cap50 (`AB .`), không được lấy Roboto59 để phát hành mọifont. Giữ expected failures và strict native/fulltext gates; còn cần native-domain/font-aware bounds và independent reader evidence, không đổi verifier hoặc nối whitespace.

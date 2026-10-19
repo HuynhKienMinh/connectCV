@@ -1,0 +1,80 @@
+{
+  "scope": "Unshipped local prototype: placement regression fixed; fixed50 cap still fails narrow-space font",
+  "sameHarness": true,
+  "sameInputs": true,
+  "cases": [
+    {
+      "id": "supported",
+      "beforeDifferentPixels": 0,
+      "afterDifferentPixels": 0,
+      "afterGroups": 1,
+      "afterByteIdentity": false,
+      "afterPlainText": "ABC",
+      "afterPdfplumber": "ABC"
+    },
+    {
+      "id": "consecutive-show",
+      "beforeDifferentPixels": 89,
+      "afterDifferentPixels": 0,
+      "afterGroups": 0,
+      "afterByteIdentity": true,
+      "afterPlainText": "ABC",
+      "afterPdfplumber": "ABC"
+    },
+    {
+      "id": "font-change-continuation",
+      "beforeDifferentPixels": 89,
+      "afterDifferentPixels": 0,
+      "afterGroups": 0,
+      "afterByteIdentity": true,
+      "afterPlainText": "ABC",
+      "afterPdfplumber": "ABC"
+    },
+    {
+      "id": "relative-reset",
+      "beforeDifferentPixels": 89,
+      "afterDifferentPixels": 0,
+      "afterGroups": 1,
+      "afterByteIdentity": false,
+      "afterPlainText": "ABCA",
+      "afterPdfplumber": "ABCA"
+    },
+    {
+      "id": "character-spacing-skip",
+      "beforeDifferentPixels": 0,
+      "afterDifferentPixels": 0,
+      "afterGroups": 0,
+      "afterByteIdentity": true,
+      "afterPlainText": "AB",
+      "afterPdfplumber": "AB"
+    },
+    {
+      "id": "large-positive-skip",
+      "beforeDifferentPixels": 0,
+      "afterDifferentPixels": 0,
+      "afterGroups": 0,
+      "afterByteIdentity": true,
+      "afterPlainText": "AB",
+      "afterPdfplumber": "B A"
+    },
+    {
+      "id": "punctuation-1000-80",
+      "beforeDifferentPixels": 0,
+      "afterDifferentPixels": 0,
+      "afterGroups": 1,
+      "afterByteIdentity": false,
+      "afterPlainText": "AB .",
+      "afterPdfplumber": "AB."
+    },
+    {
+      "id": "punctuation-2048-600",
+      "beforeDifferentPixels": 0,
+      "afterDifferentPixels": 0,
+      "afterGroups": 1,
+      "afterByteIdentity": false,
+      "afterPlainText": "AB.",
+      "afterPdfplumber": "AB."
+    }
+  ],
+  "genericAcceptance": false
+}
