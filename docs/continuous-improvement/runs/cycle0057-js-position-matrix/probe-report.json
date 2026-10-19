@@ -1,0 +1,1330 @@
+{
+  "scope": "Ambitious VI short MATRIX markers: localized diagnosis, strict gates unchanged",
+  "dom": {
+    "folded": 85,
+    "reason": null,
+    "dom": [
+      {
+        "text": "Ứng viên thử nghiệm",
+        "fontFamily": "Roboto, serif",
+        "fontWeight": "700",
+        "rects": [
+          {
+            "x": 29,
+            "y": 263,
+            "width": 146.890625,
+            "height": 29
+          },
+          {
+            "x": 29,
+            "y": 299,
+            "width": 84.1875,
+            "height": 29
+          }
+        ]
+      },
+      {
+        "text": "Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE",
+        "fontFamily": "Roboto, serif",
+        "fontWeight": "400",
+        "rects": [
+          {
+            "x": 313.046875,
+            "y": 214.25,
+            "width": 390.515625,
+            "height": 15
+          }
+        ]
+      },
+      {
+        "text": "MATRIX_EDUCATION_SOURCE",
+        "fontFamily": "Roboto, serif",
+        "fontWeight": "400",
+        "rects": [
+          {
+            "x": 293.5625,
+            "y": 357.5,
+            "width": 177.359375,
+            "height": 15
+          }
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "variant": "before",
+      "pypdfPlain": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th ử  nghi ệ m\nM ATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "pdfplumberDefault": "Mục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nỨng Viên Thử Học vấn\nNghiệm Kỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nKỹ sư kiểm thử\nMATRIX_EDUCATION_SOURCE\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\n© ConnectCV",
+      "pdfplumberLeftColumnDiagnosticOnly": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js",
+      "unmodifiedObserverOutputEqual": true,
+      "spacingEvents": [
+        {
+          "operator": "Td",
+          "font": "/F18",
+          "textBefore": "",
+          "outputTail": "Ứ",
+          "movedX": 12.823241465698253,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 2.4,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F17",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th",
+          "movedX": 99.24123711494826,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 2.4,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F17",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi",
+          "movedX": 37.828123423828124,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 2.4,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F18",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ",
+          "movedX": 47.54882651879881,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 2.4,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F19",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ",
+          "movedX": 5.677734138427734,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F20",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s",
+          "movedX": 14.847655631347653,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F19",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư",
+          "movedX": 22.27148382202147,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F20",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki",
+          "movedX": 34.24804582299802,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F19",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể",
+          "movedX": 40.6113268078613,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F20",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể m th",
+          "movedX": 64.64648205639647,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n",
+          "movedX": 21.74999909375,
+          "movedY": 0.7499999687499894,
+          "priorStringWidth": 13.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "Ứ ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉",
+          "movedX": 21.74999909375,
+          "movedY": 0.0,
+          "priorStringWidth": 13.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "ng Viên Th ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n",
+          "movedX": 20.531249144531248,
+          "movedY": 0.0,
+          "priorStringWidth": 9.75,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "h ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph",
+          "movedX": 40.50915356211853,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "ử\nNghi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố",
+          "movedX": 46.06970058042906,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "hi ệ m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi",
+          "movedX": 56.33385965275575,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "m\nKỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ",
+          "movedX": 6.041015373291014,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "ỹ  s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n",
+          "movedX": 15.749999343750002,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": " s ư  ki ể m th ử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă",
+          "movedX": 22.17187407617188,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM",
+          "movedX": 10.511722062011557,
+          "movedY": 0.0,
+          "priorStringWidth": 8.672,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "hông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ",
+          "movedX": 6.7207028449707025,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": " nhân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh",
+          "movedX": 59.67773226342774,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "hân\n 0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề",
+          "movedX": 66.1582007434082,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "0102345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi",
+          "movedX": 92.6191371408691,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "02345678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ",
+          "movedX": 99.09960562084962,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "5678\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH",
+          "movedX": 6.955444060189848,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "78\n✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ",
+          "movedX": 12.515990703500393,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "✉ fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s",
+          "movedX": 19.966551668060333,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "fixture@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ",
+          "movedX": 25.541380935775777,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "ure@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi",
+          "movedX": 35.80554075810241,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "e@example.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả",
+          "movedX": 41.109007287124626,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "ample.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để",
+          "movedX": 54.52477797813415,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "e.test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki",
+          "movedX": 64.25573432267763,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "test\n\n Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể",
+          "movedX": 69.425900357254,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "Thành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu",
+          "movedX": 104.63158739035035,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "ành ph ố  gi ả\nKỹ  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ",
+          "movedX": 109.93505391937256,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "  n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi",
+          "movedX": 177.6185250992278,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "n ă ng\nSQL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ",
+          "movedX": 182.7886873838044,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "QL\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d",
+          "movedX": 216.35668348513784,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "\nNode.js\nM ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự",
+          "movedX": 222.3885432338104,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "M ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki",
+          "movedX": 255.35191936033627,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "ụ c tiêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể",
+          "movedX": 260.5220816449129,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "iêu ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th",
+          "movedX": 280.0506483312224,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "u ngh ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử",
+          "movedX": 286.082508079895,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "h ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph",
+          "movedX": 299.34593502725215,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "ề  nghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ",
+          "movedX": 304.6494023062744,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "ghi ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m",
+          "movedX": 321.00255162489316,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "i ệ p\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề",
+          "movedX": 326.17271390946973,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi",
+          "movedX": 43.08398295483397,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": " gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ",
+          "movedX": 49.56445143481443,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi",
+          "movedX": 95.16796478466796,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ",
+          "movedX": 101.64843326464842,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F27",
+          "textBefore": "",
+          "outputTail": "m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi",
+          "movedX": 8.778808209216294,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F26",
+          "textBefore": "",
+          "outputTail": "tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể",
+          "movedX": 14.044188914825469,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F27",
+          "textBefore": "",
+          "outputTail": "u ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th",
+          "movedX": 33.67272834696962,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F26",
+          "textBefore": "",
+          "outputTail": "ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử",
+          "movedX": 39.59033010040284,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "F. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên",
+          "movedX": 230.08666066305545,
+          "movedY": 2.2499999062499683,
+          "priorStringWidth": 13.364,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "h nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024-",
+          "movedX": 9.445312106445272,
+          "movedY": 2.2499999062499683,
+          "priorStringWidth": 7.241,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": " ự ng và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi",
+          "movedX": 44.12255666156008,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "và ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki",
+          "movedX": 8.488402971316532,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": " ki ể m th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể",
+          "movedX": 13.658568930892955,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "th ử  ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ",
+          "movedX": 44.68432463815304,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": " ph ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d",
+          "movedX": 63.460690855804444,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "h ầ n m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ",
+          "movedX": 68.83556863185117,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": " m ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b",
+          "movedX": 87.5881313504944,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": " ề m.\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ",
+          "movedX": 92.89159787951655,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "\nKinh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d",
+          "movedX": 111.66796409716795,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "inh nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ",
+          "movedX": 117.69982384584046,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "nghi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li",
+          "movedX": 124.85997979750061,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "hi ệ m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ",
+          "movedX": 130.0301495820769,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F24",
+          "textBefore": "",
+          "outputTail": "m làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi",
+          "movedX": 145.66918643045034,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả",
+          "movedX": 150.97265370947247,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": " . M",
+          "outputTail": "làm vi ệ c\nKi ể m th ử  viên 2024- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả",
+          "movedX": 8.597900041754087,
+          "movedY": 0.0,
+          "priorStringWidth": 6.474,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "24- 2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ",
+          "movedX": 6.77343721777342,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "2025\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v",
+          "movedX": 22.083983829833954,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F21",
+          "textBefore": "",
+          "outputTail": "25\nCông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ",
+          "movedX": 28.50585856225581,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": "ông ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK",
+          "movedX": 6.198486041729751,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "g ty gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ",
+          "movedX": 11.106811037216204,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": "gi ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu",
+          "movedX": 27.750364843734786,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": " ả\n•Ki ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ",
+          "movedX": 32.968138626327516,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": "i ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph",
+          "movedX": 49.63549593185425,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ",
+          "movedX": 54.85326896444704,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": "tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m",
+          "movedX": 71.1873750338593,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "a ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề",
+          "movedX": 76.45275581446836,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m",
+          "movedX": 208.43004481541448,
+          "movedY": 1.4999999374999788,
+          "priorStringWidth": 14.248,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": " ụ ng b ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020-",
+          "movedX": 9.445312106445272,
+          "movedY": 2.2499999062499683,
+          "priorStringWidth": 7.241,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": "ằ ng d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr",
+          "movedX": 9.28714333803569,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "g d ữ  li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ",
+          "movedX": 20.870028630415447,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": " li ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th",
+          "movedX": 43.08841170464942,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "i ệ u gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th ử",
+          "movedX": 49.00601345808272,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F29",
+          "textBefore": "",
+          "outputTail": "gi ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th ử  nghi",
+          "movedX": 70.5055245622697,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": " ả . M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th ử  nghi ệ",
+          "movedX": 75.77090534287882,
+          "movedY": 0.0,
+          "priorStringWidth": 0.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "M",
+          "outputTail": ". M ATRIX_EXPERIENCE_SOURCE\nHọ c v ấ n\nK ỹ  thu ậ t ph ầ n m ề m 2020- 2024\nTr ườ ng th ử  nghi ệ m\n",
+          "movedX": 8.597900041754144,
+          "movedY": 0.0,
+          "priorStringWidth": 6.474,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        }
+      ]
+    },
+    {
+      "variant": "after",
+      "pypdfPlain": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nM ục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024- 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. M ATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020- 2024\nTrường thử nghiệm\nM ATRIX_EDUCATION_SOURCE\n© ConnectCV",
+      "pdfplumberDefault": "Mục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024 - 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nỨng Viên Thử Học vấn\nNghiệm Kỹ thuật phần mềm 2020 - 2024\nTrường thử nghiệm\nKỹ sư kiểm thử\nMATRIX_EDUCATION_SOURCE\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\n© ConnectCV",
+      "pdfplumberLeftColumnDiagnosticOnly": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js",
+      "unmodifiedObserverOutputEqual": true,
+      "spacingEvents": [
+        {
+          "operator": "Tm",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n",
+          "movedX": 21.74999909375,
+          "movedY": 0.7499999687499894,
+          "priorStringWidth": 13.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉",
+          "movedX": 21.74999909375,
+          "movedY": 0.0,
+          "priorStringWidth": 13.0,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F23",
+          "textBefore": "",
+          "outputTail": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n",
+          "movedX": 20.531249144531248,
+          "movedY": 0.0,
+          "priorStringWidth": 9.75,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F25",
+          "textBefore": "",
+          "outputTail": "ểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nM",
+          "movedX": 10.511722062011557,
+          "movedY": 0.0,
+          "priorStringWidth": 8.672,
+          "halfSpaceWidth": 1.6,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": " để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên",
+          "movedX": 230.08666066305545,
+          "movedY": 2.2499999062499683,
+          "priorStringWidth": 13.364,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "ểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024-",
+          "movedX": 9.445312106445272,
+          "movedY": 2.2499999062499683,
+          "priorStringWidth": 7.241,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": ". M",
+          "outputTail": "n mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024- 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả",
+          "movedX": 8.597900041754087,
+          "movedY": 0.0,
+          "priorStringWidth": 6.474,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "Công ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. M ATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm",
+          "movedX": 208.43004481541448,
+          "movedY": 1.4999999374999788,
+          "priorStringWidth": 14.248,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Tm",
+          "font": "/F28",
+          "textBefore": "",
+          "outputTail": "y giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. M ATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020-",
+          "movedX": 9.445312106445272,
+          "movedY": 2.2499999062499683,
+          "priorStringWidth": 7.241,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        },
+        {
+          "operator": "Td",
+          "font": "/F23",
+          "textBefore": "M",
+          "outputTail": " bằng dữ liệu giả. M ATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020- 2024\nTrường thử nghiệm\n",
+          "movedX": 8.597900041754144,
+          "movedY": 0.0,
+          "priorStringWidth": 6.474,
+          "halfSpaceWidth": 1.3,
+          "fontType": "/Type3"
+        }
+      ]
+    }
+  ],
+  "readOnlyMResourceInspection": {
+    "type": "/Type3",
+    "fontMatrix": [
+      0.00048828125,
+      0.0,
+      0.0,
+      -0.00048828125,
+      0.0,
+      0.0
+    ],
+    "firstChar": 0,
+    "mappedM": [
+      {
+        "code": 49,
+        "width": 1788.0
+      }
+    ],
+    "remainingRelativeTdExamples": [
+      [
+        {
+          "operator": "Td",
+          "operands": [
+            "3.4277344",
+            "0"
+          ]
+        },
+        {
+          "operator": "Tj",
+          "operands": [
+            "\u0004"
+          ]
+        },
+        {
+          "operator": "Td",
+          "operands": [
+            "3.2246094",
+            "0"
+          ]
+        },
+        {
+          "operator": "Tj",
+          "operands": [
+            "1"
+          ]
+        },
+        {
+          "operator": "Td",
+          "operands": [
+            "11.4638672",
+            "0"
+          ]
+        },
+        {
+          "operator": "Tj",
+          "operands": [
+            "%"
+          ]
+        },
+        {
+          "operator": "Td",
+          "operands": [
+            "7.6616211",
+            "0"
+          ]
+        }
+      ],
+      [
+        {
+          "operator": "BT",
+          "operands": []
+        },
+        {
+          "operator": "Tf",
+          "operands": [
+            "/F23",
+            "13"
+          ]
+        },
+        {
+          "operator": "Tm",
+          "operands": [
+            "1",
+            "0",
+            "0",
+            "-1",
+            "293.5625",
+            "370"
+          ]
+        },
+        {
+          "operator": "Tj",
+          "operands": [
+            "1"
+          ]
+        },
+        {
+          "operator": "Td",
+          "operands": [
+            "11.4638672",
+            "0"
+          ]
+        },
+        {
+          "operator": "Tj",
+          "operands": [
+            "%"
+          ]
+        },
+        {
+          "operator": "Td",
+          "operands": [
+            "7.6616211",
+            "0"
+          ]
+        }
+      ]
+    ],
+    "pypdfCharacterWidthForDecodedM": 498,
+    "pypdfCharacterWidthForEncodedCode49AsString1": 1788,
+    "pypdfDefaultCharacterWidth": 1107,
+    "pypdfSpaceWidth": 553,
+    "interpretation": "Observed code/Unicode width lookup and units mismatch is a hypothesis for remaining Tj/Td spacing, not a proven production fix. Keep verifiers and resources unchanged."
+  }
+}

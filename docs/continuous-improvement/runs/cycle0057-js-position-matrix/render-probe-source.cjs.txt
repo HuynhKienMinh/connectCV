@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'../../../backend/features/connectcv');
+const {getTemplateById,renderCVDataToTemplateHtml}=require(path.join(root,'src/services/templateService'));
+const {groundCv}=require(path.join(root,'src/services/cvGroundingService'));
+const {getBrowser,generateCvPdf}=require(path.join(root,'src/services/pdfService'));
+const {prepareCvPage}=require(path.join(root,'src/services/cvRenderRuntime'));
+const {foldPdf}=require(path.join(root,'tools/pdfTextPositionPrototype.cjs'));
+const profile={fullName:'Ứng viên thử nghiệm',targetRole:'Kỹ sư kiểm thử',summary:'Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.',email:'fixture@example.test',phone:'0102345678',address:'Thành phố giả',skills:['SQL','Node.js'],experience:[{company:'Công ty giả',role:'Kiểm thử viên',time:'2024 - 2025',bullets:['Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE']}],education:[{school:'Trường thử nghiệm',degree:'Kỹ thuật phần mềm',time:'2020 - 2024',highlight:'MATRIX_EDUCATION_SOURCE'}]};
+
+(async()=>{const browser=await getBrowser();try{
+ const html=renderCVDataToTemplateHtml(getTemplateById('ambitious','vi'),groundCv(profile,{},'vi'),profile,'vi');
+ const page=await browser.newPage();await prepareCvPage(page,html);
+ const dom=await page.evaluate(()=>{const out=[],walker=document.createTreeWalker(document.querySelector('.cv-page-container'),NodeFilter.SHOW_TEXT);while(walker.nextNode()){const n=walker.currentNode,text=n.textContent.trim();if(!text||!/(Ứng viên|MATRIX_)/.test(text))continue;const range=document.createRange();range.selectNodeContents(n);const css=getComputedStyle(n.parentElement);out.push({text,fontFamily:css.fontFamily,fontWeight:css.fontWeight,rects:[...range.getClientRects()].map(r=>({x:r.x,y:r.y,width:r.width,height:r.height}))});}return out;});await page.close();
+ const pdf=await generateCvPdf({html}),after=await foldPdf(pdf);fs.writeFileSync(path.join(__dirname,'before.pdf'),pdf);fs.writeFileSync(path.join(__dirname,'after.pdf'),after.bytes);fs.writeFileSync(path.join(__dirname,'dom.json'),JSON.stringify({folded:after.folded,reason:after.reason,dom},null,2));console.log(JSON.stringify({folded:after.folded,bytes:pdf.length+after.bytes.length}));
+ }finally{await browser.close();}})().catch(e=>{console.error(e.message);process.exitCode=1;});

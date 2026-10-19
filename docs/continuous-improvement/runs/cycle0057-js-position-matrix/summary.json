@@ -1,0 +1,150 @@
+{
+  "complete": true,
+  "cases": 148,
+  "pages": 148,
+  "rewritten": 52,
+  "unchanged": 96,
+  "skipReasons": {
+    "form_xobject": 6
+  },
+  "strictBothBeforePass": 78,
+  "strictBothAfterPass": 89,
+  "generatedBytes": 49379458,
+  "peakStageBytes": 1214013,
+  "pixelDifferentPages": 0,
+  "newMissingFacts": [],
+  "parsers": {
+    "pypdf-plain": {
+      "missingFactsBefore": 90,
+      "missingFactsAfter": 103,
+      "humanFiveBeforePass": 90,
+      "humanFiveAfterPass": 136
+    },
+    "pdfplumber-default": {
+      "missingFactsBefore": 126,
+      "missingFactsAfter": 126,
+      "humanFiveBeforePass": 126,
+      "humanFiveAfterPass": 126
+    }
+  },
+  "remainingPlainHumanFactFailures": [
+    {
+      "id": "gradient_1_v2-vi",
+      "missing": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm"
+      ],
+      "skipReason": "form_xobject"
+    },
+    {
+      "id": "impressive_5-vi",
+      "missing": [
+        "Ứng viên thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "landing-vi",
+      "missing": [
+        "Trường thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "outstanding_11-vi",
+      "missing": [
+        "Kiểm thử viên"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "outstanding_9-vi",
+      "missing": [
+        "Ứng viên thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "sun-vi",
+      "missing": [
+        "Ứng viên thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "gradient_1_v2-en",
+      "missing": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm"
+      ],
+      "skipReason": "form_xobject"
+    },
+    {
+      "id": "impressive_5-en",
+      "missing": [
+        "Ứng viên thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "landing-en",
+      "missing": [
+        "Trường thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "outstanding_11-en",
+      "missing": [
+        "Kiểm thử viên"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "outstanding_9-en",
+      "missing": [
+        "Ứng viên thử nghiệm"
+      ],
+      "skipReason": null
+    },
+    {
+      "id": "sun-en",
+      "missing": [
+        "Ứng viên thử nghiệm"
+      ],
+      "skipReason": null
+    }
+  ],
+  "skippedCases": [
+    {
+      "id": "gradient_1_v2-vi",
+      "reason": "form_xobject"
+    },
+    {
+      "id": "outstanding-vi",
+      "reason": "form_xobject"
+    },
+    {
+      "id": "pro_1_v2-vi",
+      "reason": "form_xobject"
+    },
+    {
+      "id": "gradient_1_v2-en",
+      "reason": "form_xobject"
+    },
+    {
+      "id": "outstanding-en",
+      "reason": "form_xobject"
+    },
+    {
+      "id": "pro_1_v2-en",
+      "reason": "form_xobject"
+    }
+  ]
+}

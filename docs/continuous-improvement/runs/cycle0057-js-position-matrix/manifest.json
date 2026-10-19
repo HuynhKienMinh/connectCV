@@ -1,0 +1,61 @@
+{
+  "createdAt": "2026-10-19T14:55:15.013857+00:00",
+  "sourceCommit": "9f06ebbd0cc8d512055228dd404ee65da1a5b4ff",
+  "stages": [
+    {
+      "path": "tmp/pdfs/cycle0057-js-position-matrix",
+      "retainedAtEndBytes": 259913,
+      "files": [
+        {
+          "name": "matrix-report.json",
+          "bytes": 259913,
+          "sha256": "277964079f653c5a5ba13a1cb36ec7d79dc539eabc6ed3d166504078f43ea087"
+        }
+      ],
+      "cleanupVerified": true
+    },
+    {
+      "path": "tmp/pdfs/cycle0057-position-probe",
+      "retainedAtEndBytes": 519879,
+      "files": [
+        {
+          "name": "after.pdf",
+          "bytes": 233605,
+          "sha256": "409e026dfc2147f5c0782710bd2042f0ff0f99b3b2f24f02afdc78df5826450a"
+        },
+        {
+          "name": "before.pdf",
+          "bytes": 229691,
+          "sha256": "90b4927a1c05d7709cbf32e1fd111d0de9ea899b5c6a680c2800c3f3861235c3"
+        },
+        {
+          "name": "dom.json",
+          "bytes": 1003,
+          "sha256": "3b08ffa0c770322cd3f9bf2ea8a9dabd9f2df18f343d36805f6d24b4486f0061"
+        },
+        {
+          "name": "parser-warnings.log",
+          "bytes": 2436,
+          "sha256": "77f6fa2534e214205d1ee69f653be296a3f0ec24adcb039e4993db56c45d7430"
+        },
+        {
+          "name": "probe-report.json",
+          "bytes": 50645,
+          "sha256": "fdf4515665b1248d535618193c47df34762c47c19975ad274199b7e493eb3c96"
+        },
+        {
+          "name": "render-probe.cjs",
+          "bytes": 2499,
+          "sha256": "6dd22e2a7ebb28fda6fe947ba5e205510ead8444defbc6c84dfe17f8ed508b03"
+        }
+      ],
+      "cleanupVerified": true
+    }
+  ],
+  "matrixPeakStageBytes": 1214013,
+  "cumulativeGeneratedPdfBytes": 49379458,
+  "matrixPairArtifactsDeletedAfterEveryCase": true,
+  "probeSourceRetainedAsTextTranscript": true,
+  "retainedPdfFontBuildBundleClone": false,
+  "cleanupVerifiedAt": "2026-10-19T14:56:55.750884+00:00"
+}

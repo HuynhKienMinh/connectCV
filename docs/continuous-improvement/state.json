@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 56,
-  "lastRun": "runs/2026-10-19-cycle-0056.md",
+  "completedCycles": 57,
+  "lastRun": "runs/2026-10-19-cycle-0057.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "JS_OPTIN_LOCAL_PLAIN7_PASS_PIXEL9_EXACT_PLUMBER_ORDER4_FAIL_UNIT_LINUX_CI_SUCCESS",
+  "issueState": "JS_FULL_SHORT148_LOCAL_PARTIAL_STRICT89_PIXEL148_EXACT_REMAINING_RELATIVE_TD_M_WIDTH_HYPOTHESIS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002 cycle56 JavaScript opt-in156d44c: seven native cases pypdf plain facts PASS and nine Poppler page comparisons exact; full resource graph/glyphs/metadata/page boxes unchanged. Ambitious pdfplumber default still loses contiguous full name in four cases, same baseline cross-column interleaving. Preserve strict FAIL; inspect reading order/coordinate evidence before any runtime integration.",
-    "Review156d44c CI39270983378 SUCCESS (all3jobs); npm test includes9 new bounded lexer/wrapper tests, localfeature101PASS. Native Python/Poppler acceptance remains opt-in local FAIL4/7 from existing Ambitious column ordering. Next broaden font/template matrix with bounded sequential staging and record baseline/fixed parser+resource+raster evidence; preserve missing-name failures. Linux native prototype, load-time/object-stream/worker isolation and actual cloud export remain unverified.",
-    "Live FE1bc/Hosting89f andBE0bf/catalog53 VERIFIED unchanged; no backup/deploy or real profile/AI writes. Future runtime deploy requires new exact code/build/rollback Drive verification."
+    "CV002 cycle57 full148 local matrix with156d44c:52rewrites/96identity,148rasterpages exact, fullresources/metadata/glyphs preserved. Whole8facts pypdf90to103, pdfplumber126unchanged, strictboth78to89;59strictfails retained. Do not rerun fullmatrix until a new intervention; no runtime integration/deploy.",
+    "Next localized same-font/glyph M+ATRIX control: legitimate Tj(M) thenrelativeTd still inserts space afterfold; Type3FontMatrix1/2048, code49→M width1788 versus pypdf decodedMwidth498, priorStringWidth6.474 vs movedX8.5979. Verify mapping/units/positioning hypotheses with unmodified parser and exact pixel controls; do not repeat rejected font/units replacements blindly or join verifier text. Ambitious fullpage name order remains FAIL; left-column crop diagnostic is not gate replacement.",
+    "Review9f06ebb CI39272297963 SUCCESS; matrix/probe are opt-in local, not Linux-native acceptance. Six Form XObject cases skipped byte-identically. Long/crop/fulltext/real download/load-time/object-stream/worker isolation still unverified. LiveFE1bc/Hosting89f BE0bf and Drive53VERIFIED unchanged; future runtime deploy requires new exact backup/rollback proof."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "CV002 cycle56 JavaScript opt-in156d44c: seven native cases pypdf plain facts PASS and nine Poppler page comparisons exact; full resource graph/glyphs/metadata/page boxes unchanged. Ambitious pdfplumber default still loses contiguous full name in four cases, same baseline cross-column interleaving. Preserve strict FAIL; inspect reading order/coordinate evidence before any runtime integration.",
+    "nextAction": "CV002 cycle57 full148 local matrix with156d44c:52rewrites/96identity,148rasterpages exact, fullresources/metadata/glyphs preserved. Whole8facts pypdf90to103, pdfplumber126unchanged, strictboth78to89;59strictfails retained. Do not rerun fullmatrix until a new intervention; no runtime integration/deploy.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -259,7 +259,11 @@
     "pendingJsPositionReviewCommit": "156d44c7a4af108b62760a97550384ab550601a3",
     "pendingJsPositionReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39270983378",
     "pendingJsPositionReviewCiPassed": true,
-    "pendingJsPositionStatus": "REVIEW_CI_SUCCESS_9NEW_UNITS_LOCAL_NATIVE_PARTIAL_ORDER4_FAIL_NO_RUNTIME"
+    "pendingJsPositionStatus": "REVIEW_CI_SUCCESS_9NEW_UNITS_LOCAL_NATIVE_PARTIAL_ORDER4_FAIL_NO_RUNTIME",
+    "pendingJsPositionMatrixReviewCommit": "9f06ebbd0cc8d512055228dd404ee65da1a5b4ff",
+    "pendingJsPositionMatrixReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39272297963",
+    "pendingJsPositionMatrixReviewCiPassed": true,
+    "pendingJsPositionMatrixStatus": "LOCAL148_COMPLETE_STRICT89_PASS59_FAIL_PIXEL_EXACT_REVIEW_CI_SUCCESS_NO_RUNTIME"
   },
   "blockingDependency": null,
   "dataBackup": {
