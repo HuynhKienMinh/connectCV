@@ -5482,13 +5482,14 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         if (res.ok && data.success) {
           const receipt = data.data;
           const published = Date.parse(receipt?.publishedAt || '');
+          const cooldown = Date.parse(receipt?.cooldownStartedAt || receipt?.publishedAt || '');
           const recovered = receipt?.alreadyShared === true;
-          if (recovered && (!Number.isFinite(published) || published <= 0 || published > Date.now() + 60000 || receipt.awardedCredits !== 0 || !/^[a-zA-Z0-9-]{1,100}$/.test(receipt.debriefId || '') || !['awarded','pending'].includes(receipt.creditStatus))) {
+          if (recovered && (!Number.isFinite(published) || published <= 0 || published > Date.now() + 60000 || !Number.isFinite(cooldown) || cooldown < published || cooldown > Date.now() + 60000 || receipt.awardedCredits !== 0 || typeof receipt.debriefId !== 'string' || !/^[a-zA-Z0-9-]{1,100}$/.test(receipt.debriefId) || !['awarded','pending'].includes(receipt.creditStatus))) {
             throw new Error('Unconfirmed recovery receipt');
           }
           isSuccess = true;
           const existingTime = Number(sessionStorage.getItem(DEBRIEF_COOLDOWN_KEY)) || 0;
-          const publishedTime = Number.isFinite(published) && published > 0 ? Math.min(published, Date.now()) : Date.now();
+          const publishedTime = Number.isFinite(cooldown) && cooldown > 0 ? Math.min(cooldown, Date.now()) : Date.now();
           sessionStorage.setItem(DEBRIEF_COOLDOWN_KEY, Math.max(existingTime, publishedTime).toString());
 
           if (recovered || Number(receipt?.awardedCredits) > 0) {

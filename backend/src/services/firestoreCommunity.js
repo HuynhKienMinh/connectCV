@@ -24,7 +24,7 @@ class FirestoreCommunity {
           // Check ownership and full public content before reading the reward event.
           if(existing.exists&&existing.data().ownerId===user.id&&samePublication(entry,existing.data())){
             const reward=await tx.get(this.db.collection('creditEvents').doc('community-'+previousId));
-            const receipt=recoveredReceipt(user,entry,existing.data(),previousId,reward.exists?reward.data():null,'firestore');
+            const receipt=recoveredReceipt(user,entry,existing.data(),previousId,reward.exists?reward.data():null,'firestore',owner.data().lastCommunityAt);
             if(receipt)return receipt; // No writes, no second credit award or cooldown update.
           }
         }
@@ -37,7 +37,7 @@ class FirestoreCommunity {
       tx.create(duplicate, { postId: id });
       tx.create(event, { uid: user.id, amount: 5, type: 'community', postId: id, at: new Date(now).toISOString() });
       tx.update(account, { credits: (data.credits || 0) + 5, lastCommunityAt: now });
-      return { debriefId: id, awardedCredits: 5, pendingCredits: 0, creditStatus: 'awarded', rewardId: event.id, publishedAt:new Date(now).toISOString() };
+      return { debriefId: id, awardedCredits: 5, pendingCredits: 0, creditStatus: 'awarded', rewardId: event.id, publishedAt:new Date(now).toISOString(),cooldownStartedAt:new Date(now).toISOString() };
     });
   }
   async like(user, id) {
