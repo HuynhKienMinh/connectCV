@@ -1,0 +1,29 @@
+{
+  "sourceReviewCommit": "6dfff68",
+  "isolatedCandidateCommit": "8cd5294789b640fbbf738670a1d6138c51b4876a",
+  "buildOrigin": "https://connectcv-api-minh.onrender.com",
+  "productionBuildPassed": true,
+  "frontendUnitTestsPassed": 17,
+  "baselinePageMatchesLive0bf": true,
+  "files": {
+    ".gitkeep": {
+      "bytes": 87,
+      "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+    },
+    "index.html": {
+      "bytes": 441,
+      "sha256": "0ff2fd4e757c42d3a13563b9b79bc87fb8786f3bf57d33284695d49b0cdf069b"
+    },
+    "assets/index-B5BHDfKL.css": {
+      "bytes": 62358,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664"
+    },
+    "assets/index-iwKoBuoD.js": {
+      "bytes": 448666,
+      "sha256": "5f1077a8207e7e4eba74e7551eac04b2940c3da1a0c6b876ab3a6f2aff75d60c"
+    }
+  },
+  "notDeployed": true,
+  "validationBuildOnly": true,
+  "backupCatalogUnchanged": "cycle0046-candidate-0bf51ec.json"
+}

@@ -98,7 +98,7 @@ Hai ngôn ngữ VI/EN hiện có là phạm vi kiểm thử ban đầu. Những 
 
 | Điều kiện | Mức đạt cần có | Hiện tại |
 |---|---|---|
-| Bảo mật dữ liệu | Không còn P0/P1 đã xác nhận; test cách ly account/tenant và redaction | Có baseline, thiếu kiểm chứng sâu |
+| Bảo mật dữ liệu | Không còn P0/P1 đã xác nhận; test cách ly account/tenant và redaction | Có baseline; cycle48 AUTH004 iframe/session local9cases fixed, CI/release còn chờ; actualFirebase/tenant/iOS thiếu kiểm chứng |
 | Kết quả AI | Không bịa dữ kiện trong bộ eval; review văn phong/hữu ích riêng | Cycle17 giữ phủ định/đúng lượt, điểm0/null và legacy client gate (local+CI, source live); thiếu authenticated AI/pilot và bộ eval rộng |
 | Export | PDF/Word đúng mô tả, nhiều trang, Unicode, crop/text sửa | Renderer live canary đạt; cycle16 sửa tám ca thiếu chức danh; cycle41 ATS optional translation projection fixed/local+CI/live exactsource; còn58split-word, Word visual và long/crop/authenticated E2E chưa đủ |
 | Backup/restore | Backup code + dữ liệu phù hợp, diễn tập rollback/restore | Cycle46 candidate0bf: code17bundle chain/currentFE/rollback391 Drive verified, bare fsck43critical files và ZIP restore đạt, staging đã dọn; dữ liệu thật chưa diễn tập |

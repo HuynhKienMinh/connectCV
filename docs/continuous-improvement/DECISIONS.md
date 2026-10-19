@@ -86,3 +86,8 @@ Coarse contenthash chỉ lookup, không idempotency proof. Chỉ cùng verifiedo
 ## D019 —19/10/2026: receipt giữ nháp mới và cooldown account mới nhất
 
 Response thành công chỉ xóa form nếu cả6field còn giống snapshot trước await; có edit thì giữ nguyên toàn form và yêu cầu preview/consent lại. Recovery nhận award0, refresh balance từ accountGET, không tự cộng5 hoặc retry. publishedAt giữ ngày bài gốc; cooldownStartedAt=max(publishedAt, account.lastCommunityAt) để receipt cũ không bỏ qua bài mới hoặc đặt lại6giờ từ retry. Không thêm DBfield/schema; filefallback đọc latest ownerledger, không hứa balance đã credited. Receipt owner-sensitive no-store. Browser synthetic và actualHTTP/local transaction model không thay realFirebase/cloudactor E2E.
+
+
+## D020 —19/10/2026: token iframe gắn phiên SDK và document
+
+Quyết định kỹ thuật trong quyền tựsửa: FeaturePage dùng keyUID/module để nháp in-memory child không đi sang accountkhác. Message cần origin+source+strictrequestId đúng cảtrướclấy token; completion chỉ gửi nếu effect cònactive, cùngSDKuser đangverified, cùngframe và documentonLoadepoch. SDKfailure trảnull cho currentrequest, không rawerror. Không thayFirebase/Google/IAM/sandbox; invalidatecompletion không được hứa đã revoke token ởprovider. Mobile/actualFirebase cần replaythật, syntheticSDK/browser chỉnghiệmthu scope lifecycle. Đổiaccount cốý bỏnháp ởiframe cũ; không tựrefresh usertab hiện tại khi deploy.

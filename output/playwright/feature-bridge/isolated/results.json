@@ -1,0 +1,50 @@
+{
+  "actualReactFeaturePage": true,
+  "actualChildBridge": true,
+  "syntheticFirebaseSdk": true,
+  "realFirebaseVerified": false,
+  "cloudAuthCalls": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "sourceRevision": "working-tree",
+  "passed": 9,
+  "failed": 0,
+  "results": [
+    {
+      "name": "verified-current-child-gets-correlated-token",
+      "pass": true
+    },
+    {
+      "name": "wrong-origin-source-and-invalid-request-id-ignored",
+      "pass": true
+    },
+    {
+      "name": "current-sdk-failure-returns-null-without-provider-message",
+      "pass": true
+    },
+    {
+      "name": "account-change-discards-child-draft-and-old-token",
+      "pass": true
+    },
+    {
+      "name": "module-navigation-cannot-receive-obsolete-token",
+      "pass": true
+    },
+    {
+      "name": "return-to-same-uid-does-not-revive-old-session",
+      "pass": true
+    },
+    {
+      "name": "child-document-navigation-invalidates-pending-token",
+      "pass": true
+    },
+    {
+      "name": "verification-revocation-removes-frame-and-blocks-new-token",
+      "pass": true
+    },
+    {
+      "name": "child-timeout-ignores-late-token-and-retry-is-explicit",
+      "pass": true
+    }
+  ]
+}

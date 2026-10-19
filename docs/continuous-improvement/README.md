@@ -200,3 +200,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ0047 —19/10/2026
 
 [Phát hành receipt và giữ nháp](runs/2026-10-19-cycle-0047.md): công cụ hồi phục; Render0bf51ec/dep-dbar56u7bikc73akq250 Live2m35s, exactStudio/auth401/CORS/canary/unchangedFE2domains đạt. MainCI39204873677 và Drive46restore đã đạt trướcdeploy; rollback391/dep-db9khkjrjlhs73f60aeg, không backup lớn trùng. SOCIAL003/004 DEPLOYED_SCOPED, real authenticated community/Firestore/mobile còn mở. Tiếp CHAT001 Reactiframe tokenbridge theo rotation; DBcustody/report/ops vẫn deferred.
+
+
+## Cập nhật chu kỳ0048 —19/10/2026
+
+[React iframe/session isolation](runs/2026-10-19-cycle-0048.md): AUTH004P1 localFeaturePage+actualchildbridge baseline5PASS/4FAIL→9PASS,17frontendunits vàproductionbuild đạt. Frame giữnháp A khiđổiactor, token cũ hồi vềphiênA mới và asyncpostMessage lỗi sau navigation; fixsession/SDKidentity/documentepoch, giữorigin/source/sandbox. Review6dfff68 CI39209351630 SUCCESS; isolated8cd5294 exact3files/9browserPASS, CI39209453993 đangchạy. Chưa main/Hostingdeploy hoặc backupnewcandidate. LiveBE0bf/FEce5 và catalog46VERIFIED giữ nguyên; validationbuild tạm đã dọn.

@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 47,
   "lastRun": "runs/2026-10-19-cycle-0047.md",
-  "activeRun": null,
-  "activeIssue": "CHAT001",
-  "issueState": "NEXT_REACT_IFRAME_TOKEN_BRIDGE_SYNTHETIC_SCENARIO",
+  "activeRun": "runs/2026-10-19-cycle-0048.md",
+  "activeIssue": "AUTH004",
+  "issueState": "IFRAME_SESSION_LOCAL_VERIFIED_ISOLATED_CI_RUNNING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Chatbot rotation: inspect actual React FeaturePage iframe token bridge origin/source/requestId and delayed actor/token lifecycle with synthetic Firebase SDK/local endpoints; do not repeat completed Studio logout tests.",
-    "SOCIAL003/004 deployed0bf51ec: local9browser/30isolatedbackend and exact CI plus live source/auth/canary verified. Real authenticated community/Firestore actor replay remains unverified; no production user writes.",
-    "Report/ops stay excluded/deferred until real encrypted DB snapshot/restore and owner key custody. New runtime candidate needs fresh Drive code/currentbuild/rollback verification; keep catalog only after cleanup."
+    "Finish exact review6dfff68 CI39209351630 and isolated8cd5294 CI39209453993 for AUTH004. Local9React/actualchildbridge and17frontendunits/build PASS. Do not deploy aggregate review.",
+    "Before FE-only deployment8cd5294, create new bounded private Drive code/newFEbuild/currentFE rollback catalog; verify checksum/freshrestore and remove ownlocal artifacts. Existing46 catalog protects LIVE0bf/FEce5 only. Do not merge/deploy before CI+newbackup/rollback gate.",
+    "After gates, fast-forward main8cd5294 and verify mainCI; Hosting-only release with current FE9b rollback. BE0bf remains unchanged. RealFirebase/actualmobile/actorE2E unverified. Report/DBcustody deferred."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -118,7 +118,7 @@
     "reviewCommit": "63f20689490ea7819e23b2f890e5aafdb6ee4d70",
     "status": "RECEIPT_MAIN_CI_CLOUD_RESTORE_RENDER_LIVE_SCOPED",
     "lastPushError": null,
-    "nextAction": "Chatbot rotation: inspect actual React FeaturePage iframe token bridge origin/source/requestId and delayed actor/token lifecycle with synthetic Firebase SDK/local endpoints; do not repeat completed Studio logout tests.",
+    "nextAction": "Finish exact review6dfff68 CI39209351630 and isolated8cd5294 CI39209453993 for AUTH004. Local9React/actualchildbridge and17frontendunits/build PASS. Do not deploy aggregate review.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39204578949",
@@ -141,7 +141,7 @@
     "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
     "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -205,7 +205,13 @@
     "pendingReceiptCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39204578949",
     "pendingReceiptMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39204873677",
     "pendingReceiptRelease": "dep-dbar56u7bikc73akq250",
-    "remainingReceiptVerification": "Real Firebase/Firestore actor replay, production publication and actual mobile interaction unverified; dedicated synthetic account not configured."
+    "remainingReceiptVerification": "Real Firebase/Firestore actor replay, production publication and actual mobile interaction unverified; dedicated synthetic account not configured.",
+    "pendingIframeReviewCommit": "6dfff68e9021a22a371ef745e79602508d5fcc7b",
+    "pendingIframeCandidateCommit": "8cd5294789b640fbbf738670a1d6138c51b4876a",
+    "pendingIframeBranch": "improvement/iframe-session-release-20261019",
+    "pendingIframeReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209351630",
+    "pendingIframeCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209453993",
+    "pendingIframeStatus": "LOCAL9_BROWSER_17_UNITS_BUILD_PASS_CI_IN_PROGRESS_NOT_MAIN_NOT_DEPLOYED"
   },
   "blockingDependency": null,
   "dataBackup": {
