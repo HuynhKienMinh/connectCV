@@ -1,0 +1,65 @@
+{
+  "cycle": 54,
+  "createdAt": "2026-10-19T14:06:56.293063+00:00",
+  "rendererCommit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "sourceReviewCommit": "562057308eea9f2543d717419a3389b5675cd64a",
+  "runtimeSourceDiffAgainstLiveBackendEmpty": true,
+  "stagingCapBytes": 8388608,
+  "actualStagingBytes": 754131,
+  "pdfBytes": 503161,
+  "fourPdfPagesVisuallyInspected": true,
+  "allTextFactsFoundByLayoutAndPdfplumber": true,
+  "plainPypdfRemainsFailing": true,
+  "readabilityOrAtsCertification": false,
+  "cloudWrites": 0,
+  "artifactRows": [
+    {
+      "file": "dev_1-en-short.pdf",
+      "bytes": 158193,
+      "sha256": "2b5ec5a921ff23db2685398c3511645e1f57077ca8f4b5b0e60c41a340f90d4f"
+    },
+    {
+      "file": "dev_1-vi-long.pdf",
+      "bytes": 185417,
+      "sha256": "b28749ef1086fef3dcb23fc3fbf48e3e4235fb078420e72bf1ee62d0d52583e9"
+    },
+    {
+      "file": "dev_1-vi-short.pdf",
+      "bytes": 159551,
+      "sha256": "9999fc357927a47b35a8d711a6d0fbd09126128816ccd95a2f30e2e70da9e8dd"
+    },
+    {
+      "file": "en-short.png",
+      "bytes": 40956,
+      "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+    },
+    {
+      "file": "long-page1.png",
+      "bytes": 106444,
+      "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+    },
+    {
+      "file": "long-page2.png",
+      "bytes": 15099,
+      "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+    },
+    {
+      "file": "parser-report.json",
+      "bytes": 29486,
+      "sha256": "f94db77d493bc23897a2f9817b0d15c6faff6e1a5b11ce9001df12f5e5aed98a"
+    },
+    {
+      "file": "render-report.json",
+      "bytes": 18166,
+      "sha256": "85efac3c220b95d5311b3cfad8a8ae346e5ec89b6ff8ae92f610d1f3b987fe52"
+    },
+    {
+      "file": "short.png",
+      "bytes": 40819,
+      "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+    }
+  ],
+  "stagingDeleted": true,
+  "runtimeChanged": false,
+  "deployAttempted": false
+}

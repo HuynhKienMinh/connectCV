@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 53,
-  "lastRun": "runs/2026-10-19-cycle-0053.md",
+  "completedCycles": 54,
+  "lastRun": "runs/2026-10-19-cycle-0054.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "NEXT_UNVERIFIED_NATIVE_FONT_WORD_BOUNDARY_SCENARIO",
+  "issueState": "SOURCE_CODE_PRO_PARSER_CONTRAST_LOCAL_3CASES_REVIEW_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV/ATS rotation: choose one of remaining CV002 non-BeVietnam native-font split-word cases from prior evidence; inspect actual isolated PDF/text boundary and geometry, preserve original licensed font. Do not repeat all148 shortcases already run or optional translations7 passed.",
-    "AccountPage DATA003 review55494c4/isolated+main1bc615f fullCI39264207913 SUCCESS, Hosting89f2be9cbff279bd live6asset hashes2domains/auth401 verified. Local18PASS vs baseline11PASS7FAIL; actual Firebase/mobile/provider revocation still unverified.",
-    "Backup53 VERIFIED19bundles/candidate47critical/currentFE45/BE44/new+rollbackZIP, all own temporary stages cleaned. Next runtime deployment needs new baseline; rollbackFE73a/current964ZIP. BE0bf unchanged; DBbackup/custody/report/ops deferred without repeated owner question."
+    "Resume exact5620573 review CI39265909853 acceptance; no new main/runtime deployment. New opt-in diagnostic is excluded from baseline CI and preserves pypdfplain failures. Then continue Source Code Pro causal probe, not repeat the three parser comparisons.",
+    "Continue Source Code Pro/dev_1 font-switch diagnostics: controlled300static vs400/500/600/700variable and PDF Tf/Tm/Tj position/width evidence before considering a replacement. Do not repeat Roboto static/hinting/units prototypes already rejected or all148shortmatrix.",
+    "Live FE1bc/Hosting89f andBE0bf unchanged. Backup53 VERIFIED19chain retained only on privateDrive, next runtime deployment requires newbaseline. No AI/userwrites/database backup/custody changes."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -142,8 +142,8 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212547132",
     "testOnlyStatus": "REVIEW_ISOLATED_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39245470562",
-    "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleRuntimeChanged": false,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -247,7 +247,11 @@
     "pendingAccountMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39264207913",
     "pendingAccountMainCiPassed": true,
     "pendingAccountRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792418275025000",
-    "pendingAccountVersion": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd"
+    "pendingAccountVersion": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd",
+    "pendingWordBoundaryReviewCommit": "562057308eea9f2543d717419a3389b5675cd64a",
+    "pendingWordBoundaryStatus": "LOCAL3_RENDERED_EXPECTED_PLAIN_FAIL_LAYOUT_PDFPLUMBER_PASS_REVIEW_CI_PENDING",
+    "pendingWordBoundaryReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39265909853",
+    "pendingWordBoundaryReviewCiPassed": false
   },
   "blockingDependency": null,
   "dataBackup": {

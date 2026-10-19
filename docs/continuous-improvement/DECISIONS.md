@@ -96,3 +96,8 @@ Quyết định kỹ thuật trong quyền tựsửa: FeaturePage dùng keyUID/m
 ## D021 —19/10/2026: AccountPage async action thuộc phiên và thao tác hiện tại
 
 UID string không đủ khi quay A→B→A. Session object mới sau actor transition/effect cleanup và operation object khóa submit đồng bộ; completion chỉ đổi profile/version/conflict/message/busy khi còn ownership. Guard trước logout hoặc bước tiếp theo reload/token/browser reload, không hứa hủy request đã gửi hoặc revoke provider token. Nạp conflict có xác nhận vẫn giữ draft khi thất bại. API If-Match/auth/server không đổi; actual Firebase/account production E2E còn mở. Candidate workflow lấy main gates cộng AccountPage, không mang deferred ops/report checks chỉ có trên review.
+
+
+## D022 —19/10/2026: parser contrast là chẩn đoán, không đổi cổng ATS
+
+Ba dev_1 SourceCodePro cases đọc nguyênfacts bằngpypdf-layout/pdfplumber nhưngpypdfplain vẫnsplit4facts. Giữmọikếtquả vàexpectedfailure, khôngchuyểnmode/ghépwhitespace đểđóngCV002 hayngoạisuy58cases. Chưathayfont/normalizePDF; kiểmTf/Tm/Tj/width/geometry/raster vàactualATS riêng. PDF2trangtestgiả khôngchứngnhậnfullmatrix hoặcdownloadđăngnhập.

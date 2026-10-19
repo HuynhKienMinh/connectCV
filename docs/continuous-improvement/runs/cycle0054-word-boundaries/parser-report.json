@@ -1,0 +1,908 @@
+{
+  "scope": "Source Code Pro/dev_1 short VI+EN and new long VI; parser contrast diagnostic, no acceptance or ATS certification",
+  "pypdf": "6.10.0",
+  "pdfplumber": "0.11.9",
+  "allParsersPass": false,
+  "cases": [
+    {
+      "id": "dev_1-vi-short",
+      "pages": 1,
+      "a4": true,
+      "pdfSha256": "9999fc357927a47b35a8d711a6d0fbd09126128816ccd95a2f30e2e70da9e8dd",
+      "fonts": [
+        {
+          "key": "/F10",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F14",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F15",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F16",
+          "type": "/Type0",
+          "base": "/DAAAAA+SourceCodePro-Light",
+          "matrix": [],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F17",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F18",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F19",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F20",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F21",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F22",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F23",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F24",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F25",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F26",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F27",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00048828125,
+            0.0,
+            0.0,
+            -0.00048828125,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F28",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00048828125,
+            0.0,
+            0.0,
+            -0.00048828125,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        }
+      ],
+      "pdfplumberFontNames": [
+        "AAAAAA+Source-Code-Pro-ExtraLight",
+        "BAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "CAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "DAAAAA+SourceCodePro-Light",
+        "EAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "FAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "GAAAAA+Source-Code-Pro-ExtraLight",
+        "HAAAAA+Source-Code-Pro-ExtraLight",
+        "IAAAAA+Source-Code-Pro-ExtraLight",
+        "JAAAAA+Source-Code-Pro-ExtraLight-Bold",
+        "KAAAAA+Source-Code-Pro-ExtraLight-Bold",
+        "LAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "MAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "NAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "OAAAAA+Inter"
+      ],
+      "checks": {
+        "pypdf-plain": {
+          "exactWordsPass": false,
+          "missingFacts": [
+            "Ứng viên thử nghiệm",
+            "Công ty giả",
+            "Kiểm thử viên",
+            "Trường thử nghiệm"
+          ],
+          "failureKinds": {
+            "Ứng viên thử nghiệm": "whitespace_split",
+            "Công ty giả": "whitespace_split",
+            "Kiểm thử viên": "whitespace_split",
+            "Trường thử nghiệm": "whitespace_split"
+          },
+          "syntheticTextPreview": " - \n - \nỨ ng viên th ử  nghi ệ m\nKỹ sư kiểm thử\n0102345678\nfixture@example.invalid\nThành ph ố  gi ả\n//M Ụ C TIÊU NGH Ề  NGHI Ệ P\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\n//KINH NGHI Ệ M LÀM VI Ệ C\nCông ty gi ả\n2024 2025\nKi ể m th ử  viên\nKi ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . WORD_BOUNDARY_EXPERIENCE\n//K Ỹ  N Ă NG\nSQL\nNode.js\n//H Ọ C V Ấ N\n2020 2024\nTr ườ ng th ử  nghi ệ m\nK ỹ  thu ậ t ph ầ n m ề m\nWORD_BOUNDARY_EDUCATION\n© ConnectCV"
+        },
+        "pypdf-layout": {
+          "exactWordsPass": true,
+          "missingFacts": [],
+          "failureKinds": {},
+          "syntheticTextPreview": "                Ứng viên thử nghiệm                                                          0102345678\n                Kỹ   sư   kiểm   thử                                          fixture@example.invalid\n                                                                                          Thành phố giả\n\n\n\n// MỤC TIÊU NGHỀ NGHIỆP\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\n\n\n// KINH NGHIỆM LÀM VIỆC\nCông ty giả                       Kiểm thử viên\n2024 - 2025                          Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE\n\n\n\n// KỸ NĂNG                                           // HỌC VẤN\nSQL                                                  2020 - 2024\n                                                     Trường thử nghiệm\nNode.js                                              Kỹ thuật phần mềm\n                                          "
+        },
+        "pdfplumber-default": {
+          "exactWordsPass": true,
+          "missingFacts": [],
+          "failureKinds": {},
+          "syntheticTextPreview": "Ứng viên thử nghiệm\n0102345678\nKỹ sư kiểm thử fixture@example.invalid\nThành phố giả\n//MỤC TIÊU NGHỀ NGHIỆP\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\n//KINH NGHIỆM LÀM VIỆC\nCông ty giả Kiểm thử viên\n2024 - 2025 Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE\n//KỸ NĂNG //HỌC VẤN\nSQL 2020 - 2024\nTrường thử nghiệm\nNode.js Kỹ thuật phần mềm\nWORD_BOUNDARY_EDUCATION\n© ConnectCV"
+        }
+      }
+    },
+    {
+      "id": "dev_1-en-short",
+      "pages": 1,
+      "a4": true,
+      "pdfSha256": "2b5ec5a921ff23db2685398c3511645e1f57077ca8f4b5b0e60c41a340f90d4f",
+      "fonts": [
+        {
+          "key": "/F10",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F14",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F15",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F16",
+          "type": "/Type0",
+          "base": "/DAAAAA+SourceCodePro-Light",
+          "matrix": [],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F17",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F18",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F19",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F20",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F21",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F22",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F23",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F24",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F25",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F26",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00048828125,
+            0.0,
+            0.0,
+            -0.00048828125,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F27",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00048828125,
+            0.0,
+            0.0,
+            -0.00048828125,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        }
+      ],
+      "pdfplumberFontNames": [
+        "AAAAAA+Source-Code-Pro-ExtraLight",
+        "BAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "CAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "DAAAAA+SourceCodePro-Light",
+        "EAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "FAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "GAAAAA+Source-Code-Pro-ExtraLight",
+        "HAAAAA+Source-Code-Pro-ExtraLight",
+        "IAAAAA+Source-Code-Pro-ExtraLight-Bold",
+        "JAAAAA+Source-Code-Pro-ExtraLight-Bold",
+        "KAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "LAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "MAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "NAAAAA+Inter"
+      ],
+      "checks": {
+        "pypdf-plain": {
+          "exactWordsPass": false,
+          "missingFacts": [
+            "Ứng viên thử nghiệm",
+            "Công ty giả",
+            "Kiểm thử viên",
+            "Trường thử nghiệm"
+          ],
+          "failureKinds": {
+            "Ứng viên thử nghiệm": "whitespace_split",
+            "Công ty giả": "whitespace_split",
+            "Kiểm thử viên": "whitespace_split",
+            "Trường thử nghiệm": "whitespace_split"
+          },
+          "syntheticTextPreview": " - \n - \nỨ ng viên th ử  nghi ệ m\nKỹ sư kiểm thử\n0102345678\nfixture@example.invalid\nThành ph ố  gi ả\n//CAREER OBJECTIVES\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\n//WORK EXPERIENCE\nCông ty gi ả\n2024 2025\nKi ể m th ử  viên\nKi ể m tra ứ ng d ụ ng b ằ ng d ữ  li ệ u gi ả . WORD_BOUNDARY_EXPERIENCE\n//SKILLS\nSQL\nNode.js\n//EDUCATION\n2020 2024\nTr ườ ng th ử  nghi ệ m\nSoftware Engineering\nWORD_BOUNDARY_EDUCATION\n© ConnectCV"
+        },
+        "pypdf-layout": {
+          "exactWordsPass": true,
+          "missingFacts": [],
+          "failureKinds": {},
+          "syntheticTextPreview": "                Ứng viên thử nghiệm                                                          0102345678\n                Kỹ   sư   kiểm   thử                                           fixture@example.invalid\n                                                                                          Thành phố giả\n\n\n\n// CAREER OBJECTIVES\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\n\n\n// WORK EXPERIENCE\nCông ty giả                       Kiểm thử viên\n2024 - 2025                          Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE\n\n\n\n// SKILLS                                            // EDUCATION\nSQL                                                  2020 - 2024\n                                                     Trường thử nghiệm\nNode.js                                              Software Engineering\n                                            "
+        },
+        "pdfplumber-default": {
+          "exactWordsPass": true,
+          "missingFacts": [],
+          "failureKinds": {},
+          "syntheticTextPreview": "Ứng viên thử nghiệm\n0102345678\nKỹ sư kiểm thử fixture@example.invalid\nThành phố giả\n//CAREER OBJECTIVES\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\n//WORK EXPERIENCE\nCông ty giả Kiểm thử viên\n2024 - 2025 Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE\n//SKILLS //EDUCATION\nSQL 2020 - 2024\nTrường thử nghiệm\nNode.js Software Engineering\nWORD_BOUNDARY_EDUCATION\n© ConnectCV"
+        }
+      }
+    },
+    {
+      "id": "dev_1-vi-long",
+      "pages": 2,
+      "a4": true,
+      "pdfSha256": "b28749ef1086fef3dcb23fc3fbf48e3e4235fb078420e72bf1ee62d0d52583e9",
+      "fonts": [
+        {
+          "key": "/F10",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F14",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F15",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F16",
+          "type": "/Type0",
+          "base": "/DAAAAA+SourceCodePro-Light",
+          "matrix": [],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F17",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F18",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F19",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F20",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F21",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F22",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F23",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F24",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F25",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F10",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F19",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F20",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F22",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F23",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F24",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F25",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F31",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00100000005,
+            0.0,
+            0.0,
+            -0.00100000005,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F32",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00048828125,
+            0.0,
+            0.0,
+            -0.00048828125,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        },
+        {
+          "key": "/F33",
+          "type": "/Type3",
+          "base": "None",
+          "matrix": [
+            0.00048828125,
+            0.0,
+            0.0,
+            -0.00048828125,
+            0.0,
+            0.0
+          ],
+          "hasToUnicode": true
+        }
+      ],
+      "pdfplumberFontNames": [
+        "AAAAAA+Source-Code-Pro-ExtraLight",
+        "BAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "CAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "DAAAAA+SourceCodePro-Light",
+        "EAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "FAAAAA+Source-Code-Pro-ExtraLight-Medium",
+        "GAAAAA+Source-Code-Pro-ExtraLight",
+        "HAAAAA+Source-Code-Pro-ExtraLight",
+        "IAAAAA+Source-Code-Pro-ExtraLight",
+        "JAAAAA+Source-Code-Pro-ExtraLight-Bold",
+        "KAAAAA+Source-Code-Pro-ExtraLight-Bold",
+        "LAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "MAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "NAAAAA+Source-Code-Pro-ExtraLight-SemiBold",
+        "OAAAAA+Inter"
+      ],
+      "checks": {
+        "pypdf-plain": {
+          "exactWordsPass": false,
+          "missingFacts": [
+            "Ứng viên thử nghiệm",
+            "Công ty giả",
+            "Kiểm thử viên",
+            "Trường thử nghiệm"
+          ],
+          "failureKinds": {
+            "Ứng viên thử nghiệm": "whitespace_split",
+            "Công ty giả": "whitespace_split",
+            "Kiểm thử viên": "whitespace_split",
+            "Trường thử nghiệm": "whitespace_split"
+          },
+          "syntheticTextPreview": " - \n - \n - \n - \n - \n - \n - \n - \n - \n - \n - \n - \nỨ ng viên th ử  nghi ệ m\nKỹ sư kiểm thử\n0102345678\nfixture@example.invalid\nThành ph ố  gi ả\n//M Ụ C TIÊU NGH Ề  NGHI Ệ P\nH ồ  s ơ  gi ả  để  ki ể m tra xu ấ t PDF. Kinh nghi ệ m xây d ự ng và ki ể m th ử  ph ầ n m ề m.\n//KINH NGHI Ệ M LÀM VI Ệ C\nCông ty gi ả  0\n2024 2025\nKi ể m th ử  viên\nKi ể m tra d ữ  li ệ u gi ả  và tri ể n khai ph ầ n m ề m.\nWORD_BOUNDARY_LONG_0\nCông ty gi ả  1\n2024 2025\nKi ể m th ử  viên\nKi ể m tra d ữ  li ệ u gi ả  và tri ể n khai ph ầ n m ề m.\nWORD_BOUNDARY_LONG_1\nCông ty gi ả  2\n2024 2025\nKi ể m th ử  viên\nKi ể m tra d ữ  li ệ u gi ả  và tri ể n khai ph ầ n m ề m.\nWORD_BOUNDARY_LONG_2\nCông ty gi ả  3\n2024 2025\nKi ể m th ử  viên\nKi ể m tra d ữ  li ệ u gi ả  và tri ể n khai ph ầ n m ề m.\nWORD_BOUNDARY_LONG_3\nCông ty gi ả  4\n2024 2025\nKi ể m th ử  viên\nKi ể m tra d ữ  li ệ u gi ả  và tri ể n khai ph ầ n m ề m.\nWORD_BO"
+        },
+        "pypdf-layout": {
+          "exactWordsPass": true,
+          "missingFacts": [],
+          "failureKinds": {},
+          "syntheticTextPreview": "                 Ứng viên thử nghiệm                                                               0102345678\n                 Kỹ   sư   kiểm   thử                                              fixture@example.invalid\n                                                                                               Thành phố giả\n\n\n\n// MỤC TIÊU NGHỀ NGHIỆP\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\n\n\n// KINH NGHIỆM LÀM VIỆC\nCông ty giả 0                       Kiểm thử viên\n2024 - 2025                             Kiểm tra dữ liệu giả và triển khai phần mềm.\n                                        WORD_BOUNDARY_LONG_0\n\nCông ty giả 1                       Kiểm thử viên\n2024 - 2025                             Kiểm tra dữ liệu giả và triển khai phần mềm.\n                                        WORD_BOUNDARY_LONG_1\n\nCông ty giả 2                       Kiểm thử viên\n20"
+        },
+        "pdfplumber-default": {
+          "exactWordsPass": true,
+          "missingFacts": [],
+          "failureKinds": {},
+          "syntheticTextPreview": "Ứng viên thử nghiệm\n0102345678\nKỹ sư kiểm thử fixture@example.invalid\nThành phố giả\n//MỤC TIÊU NGHỀ NGHIỆP\nHồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.\n//KINH NGHIỆM LÀM VIỆC\nCông ty giả 0 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu giả và triển khai phần mềm.\nWORD_BOUNDARY_LONG_0\nCông ty giả 1 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu giả và triển khai phần mềm.\nWORD_BOUNDARY_LONG_1\nCông ty giả 2 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu giả và triển khai phần mềm.\nWORD_BOUNDARY_LONG_2\nCông ty giả 3 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu giả và triển khai phần mềm.\nWORD_BOUNDARY_LONG_3\nCông ty giả 4 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu giả và triển khai phần mềm.\nWORD_BOUNDARY_LONG_4\nCông ty giả 5 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu giả và triển khai phần mềm.\nWORD_BOUNDARY_LONG_5\nCông ty giả 6 Kiểm thử viên\n2024 - 2025 Kiểm tra dữ liệu gi"
+        }
+      }
+    }
+  ],
+  "actualCloudExportVerified": false
+}
