@@ -1,0 +1,51 @@
+[
+  {
+    "id": "dev_1-vi-short",
+    "groups": 1,
+    "glyphBytesGrouped": 9,
+    "planBytes": 30278,
+    "runtimeIntegrated": false
+  },
+  {
+    "id": "dev_1-en-short",
+    "groups": 1,
+    "glyphBytesGrouped": 9,
+    "planBytes": 28870,
+    "runtimeIntegrated": false
+  },
+  {
+    "id": "dev_1-vi-long",
+    "groups": 1,
+    "glyphBytesGrouped": 9,
+    "planBytes": 5818,
+    "runtimeIntegrated": false
+  },
+  {
+    "id": "ambitious-vi-short",
+    "groups": 56,
+    "glyphBytesGrouped": 338,
+    "planBytes": 18153,
+    "runtimeIntegrated": false
+  },
+  {
+    "id": "ambitious-en-short",
+    "groups": 51,
+    "glyphBytesGrouped": 333,
+    "planBytes": 16689,
+    "runtimeIntegrated": false
+  },
+  {
+    "id": "ambitious-vi-long",
+    "groups": 222,
+    "glyphBytesGrouped": 1328,
+    "planBytes": 63409,
+    "runtimeIntegrated": false
+  },
+  {
+    "id": "ambitious-vi-crop",
+    "groups": 56,
+    "glyphBytesGrouped": 338,
+    "planBytes": 18165,
+    "runtimeIntegrated": false
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-19T16:51:25.671416+00:00",
+  "runs": [
+    {
+      "id": 39288463307,
+      "head_sha": "188bb8df2f47aa06a4b1f2f9f70470ccaa79433c",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39288463307"
+    }
+  ],
+  "jobs": [
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "emulator-restore",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "pdf-renderer",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "optInControlsOrNativeExperimentsInCi": false
+}

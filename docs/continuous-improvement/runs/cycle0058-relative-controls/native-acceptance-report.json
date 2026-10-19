@@ -1,0 +1,334 @@
+{
+  "scope": "Seven native SourceCodePro+Roboto cases; JavaScript positioning prototype, no ATS certification",
+  "pypdf": "6.10.0",
+  "pdfplumber": "0.11.9",
+  "raster": "Poppler pdftoppm scale-to1200",
+  "allCasesPass": false,
+  "cases": [
+    {
+      "id": "dev_1-vi-short",
+      "pages": 1,
+      "folded": 83,
+      "beforeBytes": 159551,
+      "afterBytes": 170376,
+      "pdfSha256": [
+        "7aaba3c9508624615917beac653f4e5701ce29e7149fe4a35b998e5a4b511c91",
+        "16ca0f6bf4648f4ee5e56a09ec15c55aee103e566fe09ccc6fb1a1a1e41cb37f"
+      ],
+      "fullResourceGraphSha256": [
+        "082e6a462efcc6e91670fdb1f8a5cd60ec2d788cbb09903c829c3ae7b9cbcd64"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": []
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": []
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "dev_1-en-short",
+      "pages": 1,
+      "folded": 57,
+      "beforeBytes": 158193,
+      "afterBytes": 168606,
+      "pdfSha256": [
+        "4b7867bcf1bd4f7515a0acace0b7bbd03e178cd4a79a0493110eeabc39c8c450",
+        "777d2d39a0bb71e703c5dbcac2d5f8f5892dc12006f26f533c56796617d30464"
+      ],
+      "fullResourceGraphSha256": [
+        "a1b918ff8be602a5f3ae460ead65a8d4358e018cadabeafd8e53853f82c584a1"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": []
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": []
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "dev_1-vi-long",
+      "pages": 2,
+      "folded": 304,
+      "beforeBytes": 185417,
+      "afterBytes": 196802,
+      "pdfSha256": [
+        "94230326afdd1491853540aa0de7e36a6fdbacc50efc70d39b1b7f2f1a3a3c18",
+        "bd48a8d4c9a2c61a3fa55f5f61d9d2841d1adc05a679196924127a489d8f5670"
+      ],
+      "fullResourceGraphSha256": [
+        "56656a0f50ba3ab27c2b0969f08eb554801f6363f3386eda4cf6a64837b6e6e0",
+        "a34bdfeb7b14865ca6ee9a48530190c18c5fbed8d04bb34f27c6e9d45c63fcc7"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": []
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": []
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        },
+        {
+          "page": 2,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "ambitious-vi-short",
+      "pages": 1,
+      "folded": 85,
+      "beforeBytes": 230646,
+      "afterBytes": 237264,
+      "pdfSha256": [
+        "1312cc81fa27f1412534118e7d8bf439555de82419e585360f881104e1635c1f",
+        "35a9f96ce853789ad86d181c6aca9b0a3848f748d2211f42c091858521d8b6e0"
+      ],
+      "fullResourceGraphSha256": [
+        "35f0be7b7102fe8b5be2c7f4eff232c151a2a5839764e7c27103e1011690ffff"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "ambitious-en-short",
+      "pages": 1,
+      "folded": 62,
+      "beforeBytes": 223025,
+      "afterBytes": 229224,
+      "pdfSha256": [
+        "58376e92ab15931a7b4d9444795b3ca0c2c6d48a87f14f5c08ed76db091acc42",
+        "47c8d68e95818479af22424e4a8b6fcea468bfd7b925d80785e832ea2b07982a"
+      ],
+      "fullResourceGraphSha256": [
+        "2f70602eef3f85abc8e8d7014cb79760ffa6b3c50046f7a80e7f1d0a953d400b"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "ambitious-vi-long",
+      "pages": 2,
+      "folded": 306,
+      "beforeBytes": 272498,
+      "afterBytes": 284508,
+      "pdfSha256": [
+        "e59718318d11d1f37305dd7d8f9b7caeeff2bf0eeabb9c4ea2fb3fde02e85ab5",
+        "bc13c7c3359a0b140ce15f307ff9f2d97dbcb97e35c13706d4cec7ec46699b5b"
+      ],
+      "fullResourceGraphSha256": [
+        "7b40dae508ed9098559cdda18beee346392a39615c90b4f4e036ebb655ef22fe",
+        "8b2de86945250f465ec967ee13cfaf799899afce485cdc39f8619ad3f9bda3d5"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        },
+        {
+          "page": 2,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "ambitious-vi-crop",
+      "pages": 1,
+      "folded": 85,
+      "beforeBytes": 230450,
+      "afterBytes": 237090,
+      "pdfSha256": [
+        "f743576acee0727d9dffcfedee6ef354378428a7dbf56f739cc8de82ace725e4",
+        "320d0b00db0ea3d33d384db788d85c14ee539e74e004abb749d1fd7b43408977"
+      ],
+      "fullResourceGraphSha256": [
+        "524fc71b537b34fcb8ebcdd8b49692996ae852176d4897f4e26fe738a7b3a9e1"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    }
+  ],
+  "productionRuntimeChanged": false,
+  "structuralComparison": "font-bound glyph byte sequence and non-show/non-position operators; placement checked independently by raster; text extractors unmodified",
+  "full148MatrixVerified": false,
+  "linuxNativePrototypeVerified": false,
+  "actualCloudExportVerified": false
+}

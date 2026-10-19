@@ -110,3 +110,7 @@ SameType3/glyphs/paint controls choCompany:perglyphBT/ET tựnóđọcđúng; Tm
 ## D024 —19/10/2026: giữ cổng thứ tự đọc khi prototype sửa split words
 
 JavaScript narrow matrix fold trên7cases giữ full resource graph/glyphs/metadata và9rasterpages chính xác, pypdf plain facts đều đạt. Pdfplumber default vẫn thiếu nguyên tên ở4Ambitious do interleave hai cột, giống baseline. Giữ strict acceptance FAIL, không nối text/đổi mode/bỏ parser để phát hành. Prototype chỉ offline opt-in; unit được đưa vào npm test, native Python/Poppler chưa chạy CI. Phải kiểm reading order và fullmatrix/Linux/resource isolation trước runtime integration; không dùng kết quả local để chứng nhận ATS hoặc đủ bán.
+
+## D025 —19/10/2026: giữ fulltext và numeric-resource gate cho experiment TJ
+
+Same-native-font MATRIX control cho thấy adjustedTJ có thể giữ kerning/pixels và nguyên từ; absoluteTm/perglyphBT chưa đủ, single-naturalTj khác343pixels nên bị loại. Broad local grouping sau đó làm native summary `PDF.`→`PDF .` dù resource/glyph/raster giữ nguyên. Bác bỏ dùng chung prototype hiện tại, giữ full-summary regression trước mọi native/fullmatrix rerun. Pypdf whole-document writer làm tròn FontMatrix cũng bị loại; chỉ stream-plan+pdf-lib bridge giữ tài nguyên đúng. Structural comparator cho phép Tj/TJ representation khác nhưng phải giữ glyph bytes gắn font/size, other operators và independent raster; text parser không patch/whitespace join. Không tích hợp runtime hoặc deploy chỉ từ tinyword/eightfacts/CIbaseline.

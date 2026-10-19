@@ -1,0 +1,27 @@
+{
+  "scope": "Observed first local pypdf whole-document writer experiment; rejected before acceptance",
+  "case": "dev_1-vi-short",
+  "failure": "Full font/ToUnicode/descendant/font-file/image resource graph changed",
+  "observedFontMatrixValues": {
+    "before": [
+      0.00100000005,
+      -0.00100000005
+    ],
+    "after": [
+      0.0010000001,
+      -0.0010000001
+    ]
+  },
+  "observedAffectedFonts": [
+    "/F21",
+    "/F22",
+    "/F25",
+    "/F14",
+    "/F24",
+    "/F10",
+    "/F23",
+    "/F17"
+  ],
+  "failedPdfRetained": false,
+  "resolution": "Use pypdf solely to produce content-stream plan; existing pdf-lib serializes exact resources. Current independent full-resource comparison passes for8nativecases; no tolerance relaxed."
+}

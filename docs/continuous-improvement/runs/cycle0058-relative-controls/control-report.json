@@ -1,0 +1,261 @@
+{
+  "scope": "Same actual Type3 glyph/font MATRIX controls; native relative positions preserved where claimed; not runtime integration",
+  "nativeOffsets": [
+    "11.4638672",
+    "7.6616211",
+    "7.7568359",
+    "8.0107422",
+    "3.6435547"
+  ],
+  "codes": [
+    49,
+    37,
+    56,
+    54,
+    45,
+    60
+  ],
+  "widths": [
+    "1788",
+    "1336",
+    "1222",
+    "1262",
+    "557",
+    "1284"
+  ],
+  "fontMatrixScale": "0.00048828125",
+  "tjCorrections": [
+    "-8.789063461538461538461538462",
+    "62.98828076923076923076923077",
+    "0.000002884615384615384615384615385",
+    "-9.615384615384615384615384615E-7",
+    "-8.300782211538461538461538462"
+  ],
+  "pypdfDecodedMWidth": 498,
+  "pypdfEncodedCodeWidth": 1788,
+  "cases": [
+    {
+      "variant": "relative-Td",
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm <31> Tj 11.4638672 0 Td <25> Tj 7.6616211 0 Td <38> Tj 7.7568359 0 Td <36> Tj 8.0107422 0 Td <2d> Tj 3.6435547 0 Td <3c> Tj ET Q",
+      "pypdfPlain": "M ATRIX",
+      "pdfplumberDefault": "MATRIX",
+      "plainWholeWord": false,
+      "fullFontResourceEqual": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "positions": [
+        {
+          "text": "M",
+          "x0": 40.0,
+          "top": 47.0
+        },
+        {
+          "text": "A",
+          "x0": 51.463867199999996,
+          "top": 47.0
+        },
+        {
+          "text": "T",
+          "x0": 59.125488299999994,
+          "top": 47.0
+        },
+        {
+          "text": "R",
+          "x0": 66.8823242,
+          "top": 47.0
+        },
+        {
+          "text": "I",
+          "x0": 74.8930664,
+          "top": 47.0
+        },
+        {
+          "text": "X",
+          "x0": 78.53662109999999,
+          "top": 47.0
+        }
+      ],
+      "bytes": 32433,
+      "sha256": "98a1f6eaf16daf6a0659b30b3ccca02f41b0ab23145e61a54be815677d64198b"
+    },
+    {
+      "variant": "absolute-Tm",
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm <31> Tj 1 0 0 -1 51.4638672 60 Tm <25> Tj 1 0 0 -1 59.1254883 60 Tm <38> Tj 1 0 0 -1 66.8823242 60 Tm <36> Tj 1 0 0 -1 74.8930664 60 Tm <2d> Tj 1 0 0 -1 78.5366211 60 Tm <3c> Tj ET Q",
+      "pypdfPlain": "M ATRIX",
+      "pdfplumberDefault": "MATRIX",
+      "plainWholeWord": false,
+      "fullFontResourceEqual": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "positions": [
+        {
+          "text": "M",
+          "x0": 40.0,
+          "top": 47.0
+        },
+        {
+          "text": "A",
+          "x0": 51.4638672,
+          "top": 47.0
+        },
+        {
+          "text": "T",
+          "x0": 59.1254883,
+          "top": 47.0
+        },
+        {
+          "text": "R",
+          "x0": 66.8823242,
+          "top": 47.0
+        },
+        {
+          "text": "I",
+          "x0": 74.8930664,
+          "top": 47.0
+        },
+        {
+          "text": "X",
+          "x0": 78.5366211,
+          "top": 47.0
+        }
+      ],
+      "bytes": 32487,
+      "sha256": "4f0cbdb611ad5f7d0672819e2ecdf062cc19797fb3649a055c79cdad83579d0b"
+    },
+    {
+      "variant": "per-glyph-object",
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm <31> Tj ET\nBT /Probe 13 Tf 1 0 0 -1 51.4638672 60 Tm <25> Tj ET\nBT /Probe 13 Tf 1 0 0 -1 59.1254883 60 Tm <38> Tj ET\nBT /Probe 13 Tf 1 0 0 -1 66.8823242 60 Tm <36> Tj ET\nBT /Probe 13 Tf 1 0 0 -1 74.8930664 60 Tm <2d> Tj ET\nBT /Probe 13 Tf 1 0 0 -1 78.5366211 60 Tm <3c> Tj ET Q",
+      "pypdfPlain": "M ATRIX",
+      "pdfplumberDefault": "MATRIX",
+      "plainWholeWord": false,
+      "fullFontResourceEqual": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "positions": [
+        {
+          "text": "M",
+          "x0": 40.0,
+          "top": 47.0
+        },
+        {
+          "text": "A",
+          "x0": 51.4638672,
+          "top": 47.0
+        },
+        {
+          "text": "T",
+          "x0": 59.1254883,
+          "top": 47.0
+        },
+        {
+          "text": "R",
+          "x0": 66.8823242,
+          "top": 47.0
+        },
+        {
+          "text": "I",
+          "x0": 74.8930664,
+          "top": 47.0
+        },
+        {
+          "text": "X",
+          "x0": 78.5366211,
+          "top": 47.0
+        }
+      ],
+      "bytes": 32582,
+      "sha256": "5a640ed69bd45826906634f5a242b27f4b90d9ec671d9d68a32af3692364cde0"
+    },
+    {
+      "variant": "single-natural-Tj",
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm <312538362d3c> Tj ET Q",
+      "pypdfPlain": "MATRIX",
+      "pdfplumberDefault": "MATRIX",
+      "plainWholeWord": true,
+      "fullFontResourceEqual": true,
+      "differentPixels": 343,
+      "maximumChannelDifference": 234,
+      "positions": [
+        {
+          "text": "M",
+          "x0": 40.0,
+          "top": 47.0
+        },
+        {
+          "text": "A",
+          "x0": 51.349609375,
+          "top": 47.0
+        },
+        {
+          "text": "T",
+          "x0": 59.830078125,
+          "top": 47.0
+        },
+        {
+          "text": "R",
+          "x0": 67.5869140625,
+          "top": 47.0
+        },
+        {
+          "text": "I",
+          "x0": 75.59765625,
+          "top": 47.0
+        },
+        {
+          "text": "X",
+          "x0": 79.13330078125,
+          "top": 47.0
+        }
+      ],
+      "bytes": 32326,
+      "sha256": "cbeefe2ec68975a111f99afa5732f513dfc57c443f38e8a457a7a5bff4596c38"
+    },
+    {
+      "variant": "adjusted-TJ",
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<31> -8.789063461538 <25> 62.988280769231 <38> 0.000002884615 <36> -0.000000961538 <2d> -8.300782211538 <3c>] TJ ET Q",
+      "pypdfPlain": "MATRIX",
+      "pdfplumberDefault": "MATRIX",
+      "plainWholeWord": true,
+      "fullFontResourceEqual": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "positions": [
+        {
+          "text": "M",
+          "x0": 40.0,
+          "top": 47.0
+        },
+        {
+          "text": "A",
+          "x0": 51.463867199999996,
+          "top": 47.0
+        },
+        {
+          "text": "T",
+          "x0": 59.125488299999994,
+          "top": 47.0
+        },
+        {
+          "text": "R",
+          "x0": 66.8823242,
+          "top": 47.0
+        },
+        {
+          "text": "I",
+          "x0": 74.8930664,
+          "top": 47.0
+        },
+        {
+          "text": "X",
+          "x0": 78.53662109999999,
+          "top": 47.0
+        }
+      ],
+      "bytes": 32423,
+      "sha256": "0710513897b21b127c5557ab9c55cec675bab133f50c218e9f072ecd2e85a24f"
+    }
+  ],
+  "fontReplacementPerformed": false,
+  "verifierBehaviorChanged": false,
+  "fullMatrixAccepted": false
+}

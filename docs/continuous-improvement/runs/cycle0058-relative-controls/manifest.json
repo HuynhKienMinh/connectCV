@@ -1,0 +1,371 @@
+{
+  "createdAt": "2026-10-19T16:50:00.402930+00:00",
+  "sourceCommit": "188bb8df2f47aa06a4b1f2f9f70470ccaa79433c",
+  "stages": [
+    {
+      "path": "tmp/pdfs/cycle0058-relative-controls",
+      "bytes": 428868,
+      "files": [
+        {
+          "name": "absolute-Tm.pdf",
+          "bytes": 32487,
+          "sha256": "4f0cbdb611ad5f7d0672819e2ecdf062cc19797fb3649a055c79cdad83579d0b"
+        },
+        {
+          "name": "absolute-Tm.png",
+          "bytes": 5901,
+          "sha256": "67db3a432a45f69e691d958f7d2c460d69ff93560bd050a96465a37790a183b7"
+        },
+        {
+          "name": "adjusted-TJ.pdf",
+          "bytes": 32423,
+          "sha256": "0710513897b21b127c5557ab9c55cec675bab133f50c218e9f072ecd2e85a24f"
+        },
+        {
+          "name": "adjusted-TJ.png",
+          "bytes": 5901,
+          "sha256": "67db3a432a45f69e691d958f7d2c460d69ff93560bd050a96465a37790a183b7"
+        },
+        {
+          "name": "control-report.json",
+          "bytes": 6988,
+          "sha256": "0e58f70b51d5dc1a105210c07de68f845e8d372ad77cb137268daf27216b1363"
+        },
+        {
+          "name": "native.pdf",
+          "bytes": 229691,
+          "sha256": "b0aee0043c1eef9ca2fcb832a7ea16378c00d1d7f7e5544ace3261c56b37cdec"
+        },
+        {
+          "name": "parser-warnings.log",
+          "bytes": 435,
+          "sha256": "4ab9045232a276b1854902a034dc7b36b5833c8645f233e299f26401ba9573a9"
+        },
+        {
+          "name": "per-glyph-object.pdf",
+          "bytes": 32582,
+          "sha256": "5a640ed69bd45826906634f5a242b27f4b90d9ec671d9d68a32af3692364cde0"
+        },
+        {
+          "name": "per-glyph-object.png",
+          "bytes": 5901,
+          "sha256": "67db3a432a45f69e691d958f7d2c460d69ff93560bd050a96465a37790a183b7"
+        },
+        {
+          "name": "relative-Td.pdf",
+          "bytes": 32433,
+          "sha256": "98a1f6eaf16daf6a0659b30b3ccca02f41b0ab23145e61a54be815677d64198b"
+        },
+        {
+          "name": "relative-Td.png",
+          "bytes": 5901,
+          "sha256": "67db3a432a45f69e691d958f7d2c460d69ff93560bd050a96465a37790a183b7"
+        },
+        {
+          "name": "single-natural-Tj.pdf",
+          "bytes": 32326,
+          "sha256": "cbeefe2ec68975a111f99afa5732f513dfc57c443f38e8a457a7a5bff4596c38"
+        },
+        {
+          "name": "single-natural-Tj.png",
+          "bytes": 5899,
+          "sha256": "fe537b143d500e6443100b255943d75221fef7588bd40b49d524242857b52371"
+        }
+      ],
+      "cleanupVerified": true
+    },
+    {
+      "path": "tmp/pdfs/cycle0058-native-grouped",
+      "bytes": 4155495,
+      "files": [
+        {
+          "name": "acceptance-report.json",
+          "bytes": 9497,
+          "sha256": "185d2df7983bac5eb4e4ee988d3695144f386f1ed6ebdf5798dea2e6f0d04681"
+        },
+        {
+          "name": "ambitious-en-short-after-1.png",
+          "bytes": 42546,
+          "sha256": "05e8ec4fc291b8c3176047d5709b2c8e734bbe8b9dd679f76447538f23905cfb"
+        },
+        {
+          "name": "ambitious-en-short-after.pdf",
+          "bytes": 229224,
+          "sha256": "47c8d68e95818479af22424e4a8b6fcea468bfd7b925d80785e832ea2b07982a"
+        },
+        {
+          "name": "ambitious-en-short-before-1.png",
+          "bytes": 42546,
+          "sha256": "05e8ec4fc291b8c3176047d5709b2c8e734bbe8b9dd679f76447538f23905cfb"
+        },
+        {
+          "name": "ambitious-en-short-before.pdf",
+          "bytes": 223025,
+          "sha256": "58376e92ab15931a7b4d9444795b3ca0c2c6d48a87f14f5c08ed76db091acc42"
+        },
+        {
+          "name": "ambitious-en-short-plan.json",
+          "bytes": 16689,
+          "sha256": "f666f6f71db43f2dbdba1260141f4e4ffb1c53979fb77284121f6c276fd6016b"
+        },
+        {
+          "name": "ambitious-vi-crop-after-1.png",
+          "bytes": 43869,
+          "sha256": "4e18d897be1403f0113b87c77c246d5373934c9b2e0b923e467a1a0e8f6586fc"
+        },
+        {
+          "name": "ambitious-vi-crop-after.pdf",
+          "bytes": 237090,
+          "sha256": "320d0b00db0ea3d33d384db788d85c14ee539e74e004abb749d1fd7b43408977"
+        },
+        {
+          "name": "ambitious-vi-crop-before-1.png",
+          "bytes": 43869,
+          "sha256": "4e18d897be1403f0113b87c77c246d5373934c9b2e0b923e467a1a0e8f6586fc"
+        },
+        {
+          "name": "ambitious-vi-crop-before.pdf",
+          "bytes": 230450,
+          "sha256": "f743576acee0727d9dffcfedee6ef354378428a7dbf56f739cc8de82ace725e4"
+        },
+        {
+          "name": "ambitious-vi-crop-plan.json",
+          "bytes": 18165,
+          "sha256": "dd97495b75ec2bbc6308c70d4f8920fe0e9babd37acb40d99b3c6ef225325803"
+        },
+        {
+          "name": "ambitious-vi-long-after-1.png",
+          "bytes": 101573,
+          "sha256": "578c0e47918e17f26d1864d9b92bf295ec42d4cad430c407d1ef2c5328935a5a"
+        },
+        {
+          "name": "ambitious-vi-long-after-2.png",
+          "bytes": 27391,
+          "sha256": "879f990c90db5137e29cf01187ec37dab25c9fc1add1b872f34c5022ff8573b3"
+        },
+        {
+          "name": "ambitious-vi-long-after.pdf",
+          "bytes": 284508,
+          "sha256": "bc13c7c3359a0b140ce15f307ff9f2d97dbcb97e35c13706d4cec7ec46699b5b"
+        },
+        {
+          "name": "ambitious-vi-long-before-1.png",
+          "bytes": 101573,
+          "sha256": "578c0e47918e17f26d1864d9b92bf295ec42d4cad430c407d1ef2c5328935a5a"
+        },
+        {
+          "name": "ambitious-vi-long-before-2.png",
+          "bytes": 27391,
+          "sha256": "879f990c90db5137e29cf01187ec37dab25c9fc1add1b872f34c5022ff8573b3"
+        },
+        {
+          "name": "ambitious-vi-long-before.pdf",
+          "bytes": 272498,
+          "sha256": "e59718318d11d1f37305dd7d8f9b7caeeff2bf0eeabb9c4ea2fb3fde02e85ab5"
+        },
+        {
+          "name": "ambitious-vi-long-plan.json",
+          "bytes": 63409,
+          "sha256": "b9c595e42d1a731e5fae1a71f3d500c907083a1f7336d8f463200c29da64e1fb"
+        },
+        {
+          "name": "ambitious-vi-short-after-1.png",
+          "bytes": 43827,
+          "sha256": "9bf12678621838b137b65ab9d8b32ad7f195ad21dac752d2e29e9650316fcc7b"
+        },
+        {
+          "name": "ambitious-vi-short-after.pdf",
+          "bytes": 237264,
+          "sha256": "35a9f96ce853789ad86d181c6aca9b0a3848f748d2211f42c091858521d8b6e0"
+        },
+        {
+          "name": "ambitious-vi-short-before-1.png",
+          "bytes": 43827,
+          "sha256": "9bf12678621838b137b65ab9d8b32ad7f195ad21dac752d2e29e9650316fcc7b"
+        },
+        {
+          "name": "ambitious-vi-short-before.pdf",
+          "bytes": 230646,
+          "sha256": "1312cc81fa27f1412534118e7d8bf439555de82419e585360f881104e1635c1f"
+        },
+        {
+          "name": "ambitious-vi-short-plan.json",
+          "bytes": 18153,
+          "sha256": "67fc4f5ad07ea778e1e802fbfc55196dd737120b9015f4ab8b9331f6891627fa"
+        },
+        {
+          "name": "dev_1-en-short-after-1.png",
+          "bytes": 40956,
+          "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+        },
+        {
+          "name": "dev_1-en-short-after.pdf",
+          "bytes": 168606,
+          "sha256": "777d2d39a0bb71e703c5dbcac2d5f8f5892dc12006f26f533c56796617d30464"
+        },
+        {
+          "name": "dev_1-en-short-before-1.png",
+          "bytes": 40956,
+          "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+        },
+        {
+          "name": "dev_1-en-short-before.pdf",
+          "bytes": 158193,
+          "sha256": "4b7867bcf1bd4f7515a0acace0b7bbd03e178cd4a79a0493110eeabc39c8c450"
+        },
+        {
+          "name": "dev_1-en-short-plan.json",
+          "bytes": 28870,
+          "sha256": "a40d578cfb0bb29d4d1e3723614cfc15049d313a8823942c42d069d961dbbc2f"
+        },
+        {
+          "name": "dev_1-vi-long-after-1.png",
+          "bytes": 106444,
+          "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+        },
+        {
+          "name": "dev_1-vi-long-after-2.png",
+          "bytes": 15099,
+          "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+        },
+        {
+          "name": "dev_1-vi-long-after.pdf",
+          "bytes": 196802,
+          "sha256": "bd48a8d4c9a2c61a3fa55f5f61d9d2841d1adc05a679196924127a489d8f5670"
+        },
+        {
+          "name": "dev_1-vi-long-before-1.png",
+          "bytes": 106444,
+          "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+        },
+        {
+          "name": "dev_1-vi-long-before-2.png",
+          "bytes": 15099,
+          "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+        },
+        {
+          "name": "dev_1-vi-long-before.pdf",
+          "bytes": 185417,
+          "sha256": "94230326afdd1491853540aa0de7e36a6fdbacc50efc70d39b1b7f2f1a3a3c18"
+        },
+        {
+          "name": "dev_1-vi-long-plan.json",
+          "bytes": 5818,
+          "sha256": "6844030e54f3feb17afb29aa4abbcac162bb9351f42b56d0b55c47249b873fd4"
+        },
+        {
+          "name": "dev_1-vi-short-after-1.png",
+          "bytes": 40819,
+          "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+        },
+        {
+          "name": "dev_1-vi-short-after.pdf",
+          "bytes": 170376,
+          "sha256": "16ca0f6bf4648f4ee5e56a09ec15c55aee103e566fe09ccc6fb1a1a1e41cb37f"
+        },
+        {
+          "name": "dev_1-vi-short-before-1.png",
+          "bytes": 40819,
+          "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+        },
+        {
+          "name": "dev_1-vi-short-before.pdf",
+          "bytes": 159551,
+          "sha256": "7aaba3c9508624615917beac653f4e5701ce29e7149fe4a35b998e5a4b511c91"
+        },
+        {
+          "name": "dev_1-vi-short-plan.json",
+          "bytes": 30278,
+          "sha256": "c316bd0cd54c7aed01e4b1341a26f34a4e74dcda8d1d953c5e662863889be0cc"
+        },
+        {
+          "name": "grouping-report.json",
+          "bytes": 1039,
+          "sha256": "2f64dd308ebdbf6f07ef534373b04eeb5c52f86f8519c6c61d68c942362e3f57"
+        },
+        {
+          "name": "parser-warnings.log",
+          "bytes": 17226,
+          "sha256": "ae49ffb0f3e595f4688f8e252c23cff8304132fcfda68e430eb5a50f60dd61bb"
+        },
+        {
+          "name": "render-report.json",
+          "bytes": 37653,
+          "sha256": "cf74e1d353ee519a8636fa2151e71f1107982ef5504f7baa44b135b0a1b58bd3"
+        }
+      ],
+      "cleanupVerified": true
+    },
+    {
+      "path": "tmp/pdfs/cycle0058-native-matrix",
+      "bytes": 810781,
+      "files": [
+        {
+          "name": "acceptance-report.json",
+          "bytes": 1990,
+          "sha256": "08edc402acfd00942988086450c745a42c2ba0ee95033762f1c75b3d7169dc2c"
+        },
+        {
+          "name": "ambitious-vi-MATRIX-after-1.png",
+          "bytes": 43493,
+          "sha256": "2b83fff4b21a76d28b0b84ff0a934b1e5339e0728805fc02dac2b4d88146d3f9"
+        },
+        {
+          "name": "ambitious-vi-MATRIX-after.pdf",
+          "bytes": 236265,
+          "sha256": "cdd0ae9d408621689f3e9ca31bb6b28c4b561f2c4f091e638df1b77cbbeff207"
+        },
+        {
+          "name": "ambitious-vi-MATRIX-before-1.png",
+          "bytes": 43493,
+          "sha256": "2b83fff4b21a76d28b0b84ff0a934b1e5339e0728805fc02dac2b4d88146d3f9"
+        },
+        {
+          "name": "ambitious-vi-MATRIX-before.pdf",
+          "bytes": 229691,
+          "sha256": "b0aee0043c1eef9ca2fcb832a7ea16378c00d1d7f7e5544ace3261c56b37cdec"
+        },
+        {
+          "name": "parser-warnings.log",
+          "bytes": 2436,
+          "sha256": "77f6fa2534e214205d1ee69f653be296a3f0ec24adcb039e4993db56c45d7430"
+        },
+        {
+          "name": "plain-text.json",
+          "bytes": 598,
+          "sha256": "268c312b462f3eb84ee945dd37d5f857ebcb7b3d7249f86c4582c7427b21677d"
+        },
+        {
+          "name": "plan.json",
+          "bytes": 18073,
+          "sha256": "daafb14197f35a4a969dc4a2d5dab200c0a389228902f79e53c2082eb359b120"
+        },
+        {
+          "name": "punctuation-regression.json",
+          "bytes": 740,
+          "sha256": "d57900ff0104ce5db2f49f3e4c38428ac9f8b8ec12748fbea5c7a760465cda91"
+        },
+        {
+          "name": "render-report.json",
+          "bytes": 397,
+          "sha256": "ffec047d71cea337496babd25fb5c10998f8fd17a3cfe8050305fe276dda11e0"
+        },
+        {
+          "name": "tm-only.pdf",
+          "bytes": 233605,
+          "sha256": "78067b7458e9d296e5e3877c16d0d347061895d67c04f03aa3e9c83f64166c66"
+        }
+      ],
+      "cleanupVerified": true
+    }
+  ],
+  "combinedBytes": 5395144,
+  "combinedCapBytes": 16777216,
+  "retainedPdfFontBuildBundleClone": false,
+  "rasterViewed": [
+    "control-adjusted-TJ.png",
+    "matrix-after.png"
+  ],
+  "acceptance": "REJECTED_FOR_GENERAL_USE_PUNCTUATION_REGRESSION_STRICT_ORDER_AND_HEADING_FAIL",
+  "cleanupVerifiedAt": "2026-10-19T16:51:13.513331+00:00"
+}

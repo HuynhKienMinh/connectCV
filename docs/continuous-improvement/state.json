@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 57,
-  "lastRun": "runs/2026-10-19-cycle-0057.md",
+  "completedCycles": 58,
+  "lastRun": "runs/2026-10-19-cycle-0058.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "JS_FULL_SHORT148_LOCAL_PARTIAL_STRICT89_PIXEL148_EXACT_REMAINING_RELATIVE_TD_M_WIDTH_HYPOTHESIS",
+  "issueState": "ADJUSTED_TJ_TINY_PASS_BROAD_NATIVE_REJECTED_PUNCTUATION_REGRESSION_REVIEW_CI_SUCCESS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002 cycle57 full148 local matrix with156d44c:52rewrites/96identity,148rasterpages exact, fullresources/metadata/glyphs preserved. Whole8facts pypdf90to103, pdfplumber126unchanged, strictboth78to89;59strictfails retained. Do not rerun fullmatrix until a new intervention; no runtime integration/deploy.",
-    "Next localized same-font/glyph M+ATRIX control: legitimate Tj(M) thenrelativeTd still inserts space afterfold; Type3FontMatrix1/2048, code49→M width1788 versus pypdf decodedMwidth498, priorStringWidth6.474 vs movedX8.5979. Verify mapping/units/positioning hypotheses with unmodified parser and exact pixel controls; do not repeat rejected font/units replacements blindly or join verifier text. Ambitious fullpage name order remains FAIL; left-column crop diagnostic is not gate replacement.",
-    "Review9f06ebb CI39272297963 SUCCESS; matrix/probe are opt-in local, not Linux-native acceptance. Six Form XObject cases skipped byte-identically. Long/crop/fulltext/real download/load-time/object-stream/worker isolation still unverified. LiveFE1bc/Hosting89f BE0bf and Drive53VERIFIED unchanged; future runtime deploy requires new exact backup/rollback proof."
+    "CV002 cycle58 broad relative-Tj/Td grouping is REJECTED for general use: native summary exact PASS withTm-only156d44c toFAIL afterTJ (PDF. becomesPDF .). TinyadjustedTJ MATRIX text/pixel PASS is only causal control, not runtime fix. Preserve new full-summary/heading/name-order failures; no full148 rerun until a new intervention passes these local guards.",
+    "Next same-font/glyph PDF. and sentence controls: isolate TJ adjustment/width/space heuristics versus native offsets using unmodified default parsers, exact glyph/font resources and raster. Do not merge blindly, patch verifier, remove punctuation guard or retry rejected font/unit replacements. Current8nativecases/10pages have0pixel/fontresource equality but strict acceptance stillFAIL.",
+    "Review188bb8d CI39288463307 SUCCESS all3jobs, checked16:51:25UTC; new5files are opt-in local, not Linux-native acceptance. Python whole-doc serializer rejected for roundingFontMatrix; content-plan+pdf-lib bridge preserves resources in testedcases. LiveFE1bc/Hosting89f BE0bf andDrive53 VERIFIED unchanged; future runtime deployment requires new exact backup/rollback verification."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "CV002 cycle57 full148 local matrix with156d44c:52rewrites/96identity,148rasterpages exact, fullresources/metadata/glyphs preserved. Whole8facts pypdf90to103, pdfplumber126unchanged, strictboth78to89;59strictfails retained. Do not rerun fullmatrix until a new intervention; no runtime integration/deploy.",
+    "nextAction": "CV002 cycle58 broad relative-Tj/Td grouping is REJECTED for general use: native summary exact PASS withTm-only156d44c toFAIL afterTJ (PDF. becomesPDF .). TinyadjustedTJ MATRIX text/pixel PASS is only causal control, not runtime fix. Preserve new full-summary/heading/name-order failures; no full148 rerun until a new intervention passes these local guards.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -263,7 +263,11 @@
     "pendingJsPositionMatrixReviewCommit": "9f06ebbd0cc8d512055228dd404ee65da1a5b4ff",
     "pendingJsPositionMatrixReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39272297963",
     "pendingJsPositionMatrixReviewCiPassed": true,
-    "pendingJsPositionMatrixStatus": "LOCAL148_COMPLETE_STRICT89_PASS59_FAIL_PIXEL_EXACT_REVIEW_CI_SUCCESS_NO_RUNTIME"
+    "pendingJsPositionMatrixStatus": "LOCAL148_COMPLETE_STRICT89_PASS59_FAIL_PIXEL_EXACT_REVIEW_CI_SUCCESS_NO_RUNTIME",
+    "pendingRelativeTjReviewCommit": "188bb8df2f47aa06a4b1f2f9f70470ccaa79433c",
+    "pendingRelativeTjReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39288463307",
+    "pendingRelativeTjReviewCiPassed": true,
+    "pendingRelativeTjStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_BROAD_TJ_REJECTED_PUNCTUATION_REGRESSION_NO_RUNTIME"
   },
   "blockingDependency": null,
   "dataBackup": {

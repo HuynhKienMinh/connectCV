@@ -1,0 +1,18 @@
+{
+  "scope": "New full-summary guard; unchanged user summary, unmodified parser",
+  "requiredSummary": "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.",
+  "results": [
+    {
+      "file": "tm-only.pdf",
+      "fullSummaryExact": true,
+      "summaryPreview": "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm. ",
+      "pdfPunctuationSplit": false
+    },
+    {
+      "file": "ambitious-vi-MATRIX-after.pdf",
+      "fullSummaryExact": false,
+      "summaryPreview": "Hồ sơ giả để kiểm tra xuất PDF . Kinh nghiệm xây dựng và kiểm thử phần mềm. ",
+      "pdfPunctuationSplit": true
+    }
+  ]
+}

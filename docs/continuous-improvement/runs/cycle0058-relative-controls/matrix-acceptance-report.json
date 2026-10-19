@@ -1,0 +1,64 @@
+{
+  "scope": "Actual native MATRIX case plus heading, new TJ intervention; strict gates kept",
+  "pypdf": "6.10.0",
+  "pdfplumber": "0.11.9",
+  "raster": "Poppler pdftoppm scale-to1200",
+  "allCasesPass": false,
+  "cases": [
+    {
+      "id": "ambitious-vi-MATRIX",
+      "pages": 1,
+      "folded": 85,
+      "beforeBytes": 229691,
+      "afterBytes": 236265,
+      "pdfSha256": [
+        "b0aee0043c1eef9ca2fcb832a7ea16378c00d1d7f7e5544ace3261c56b37cdec",
+        "cdd0ae9d408621689f3e9ca31bb6b28c4b561f2c4f091e638df1b77cbbeff207"
+      ],
+      "fullResourceGraphSha256": [
+        "bf5125d01cd1b62cf49c4dec5ecef55c87b91be39609e156d63b360fefb992e5"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "Ứng viên thử nghiệm",
+          "Kỹ sư kiểm thử",
+          "Công ty giả",
+          "Kiểm thử viên",
+          "Trường thử nghiệm",
+          "MATRIX_EXPERIENCE_SOURCE",
+          "MATRIX_EDUCATION_SOURCE",
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [
+          "Mục tiêu nghề nghiệp"
+        ],
+        "pdfplumber-default": [
+          "Ứng viên thử nghiệm"
+        ]
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    }
+  ],
+  "productionRuntimeChanged": false,
+  "structuralComparison": "font-bound glyph byte sequence and non-show/non-position operators; placement checked independently by raster; text extractors unmodified",
+  "full148MatrixVerified": false,
+  "linuxNativePrototypeVerified": false,
+  "actualCloudExportVerified": false
+}
