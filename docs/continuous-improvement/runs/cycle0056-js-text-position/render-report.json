@@ -1,0 +1,1256 @@
+{
+  "scope": "Seven native SourceCodePro+Roboto cases; JavaScript positioning prototype, no ATS certification",
+  "actualProductionRenderer": true,
+  "chromiumSandbox": true,
+  "syntheticOnly": true,
+  "cloudWrites": 0,
+  "bytes": 2959950,
+  "rows": [
+    {
+      "id": "dev_1-vi-short",
+      "slug": "dev_1",
+      "language": "vi",
+      "bytes": 159551,
+      "fixedBytes": 165468,
+      "folded": 83,
+      "idempotent": true,
+      "pages": 1,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "500",
+            "x": 146.671875,
+            "y": 56.234375,
+            "width": 364.8125,
+            "height": 40
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "300",
+            "x": 146.671875,
+            "y": 94.4375,
+            "width": 151.203125,
+            "height": 23
+          },
+          {
+            "text": "Công ty giả",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 280.0625,
+            "width": 99,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 280.0625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 300.265625,
+            "width": 468,
+            "height": 17
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 403.84375,
+            "y": 400.875,
+            "width": 153,
+            "height": 19
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 403.84375,
+            "y": 440.28125,
+            "width": 179.40625,
+            "height": 17
+          }
+        ],
+        "width": 793.6875,
+        "height": 982.671875,
+        "documentHeight": 1123
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_EXPERIENCE",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "dev_1-en-short",
+      "slug": "dev_1",
+      "language": "en",
+      "bytes": 158193,
+      "fixedBytes": 163882,
+      "folded": 57,
+      "idempotent": true,
+      "pages": 1,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "500",
+            "x": 146.671875,
+            "y": 56.234375,
+            "width": 364.8125,
+            "height": 40
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "300",
+            "x": 146.671875,
+            "y": 94.4375,
+            "width": 151.203125,
+            "height": 23
+          },
+          {
+            "text": "Công ty giả",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 280.0625,
+            "width": 99,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 280.0625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 300.265625,
+            "width": 468,
+            "height": 17
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 403.84375,
+            "y": 400.875,
+            "width": 153,
+            "height": 19
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 403.84375,
+            "y": 440.28125,
+            "width": 179.40625,
+            "height": 17
+          }
+        ],
+        "width": 793.6875,
+        "height": 982.671875,
+        "documentHeight": 1123
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_EXPERIENCE",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "dev_1-vi-long",
+      "slug": "dev_1",
+      "language": "vi",
+      "bytes": 185417,
+      "fixedBytes": 195794,
+      "folded": 304,
+      "idempotent": true,
+      "pages": 2,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "500",
+            "x": 146.671875,
+            "y": 56.234375,
+            "width": 364.8125,
+            "height": 40
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "300",
+            "x": 146.671875,
+            "y": 94.4375,
+            "width": 151.203125,
+            "height": 23
+          },
+          {
+            "text": "Công ty giả 0",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 280.0625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 280.0625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_0",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 300.265625,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 1",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 350.671875,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 350.671875,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_1",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 370.875,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 2",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 421.28125,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 421.28125,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_2",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 441.484375,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 3",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 491.890625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 491.890625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_3",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 512.09375,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 4",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 562.5,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 562.5,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_4",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 582.703125,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 5",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 633.109375,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 633.109375,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_5",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 653.3125,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 6",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 703.71875,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 703.71875,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_6",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 723.921875,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 7",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 774.328125,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 774.328125,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_7",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 794.53125,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 8",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 844.9375,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 844.9375,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_8",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 865.140625,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 9",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 915.546875,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 915.546875,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_9",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 935.75,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 10",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 986.15625,
+            "width": 126,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 986.15625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_10",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 1006.359375,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Công ty giả 11",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 29.671875,
+            "y": 1056.765625,
+            "width": 126,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "600",
+            "x": 274.4375,
+            "y": 1056.765625,
+            "width": 117,
+            "height": 19
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_11",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 294.4375,
+            "y": 1076.96875,
+            "width": 343.203125,
+            "height": 35.203125
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "700",
+            "x": 403.84375,
+            "y": 1195.78125,
+            "width": 153,
+            "height": 19
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "\"Source Code Pro\", Arial, sans-serif",
+            "fontWeight": "400",
+            "x": 403.84375,
+            "y": 1235.1875,
+            "width": 179.40625,
+            "height": 17
+          }
+        ],
+        "width": 793.6875,
+        "height": 1290.625,
+        "documentHeight": 1291
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_LONG_0",
+        "WORD_BOUNDARY_LONG_1",
+        "WORD_BOUNDARY_LONG_2",
+        "WORD_BOUNDARY_LONG_3",
+        "WORD_BOUNDARY_LONG_4",
+        "WORD_BOUNDARY_LONG_5",
+        "WORD_BOUNDARY_LONG_6",
+        "WORD_BOUNDARY_LONG_7",
+        "WORD_BOUNDARY_LONG_8",
+        "WORD_BOUNDARY_LONG_9",
+        "WORD_BOUNDARY_LONG_10",
+        "WORD_BOUNDARY_LONG_11",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "ambitious-vi-short",
+      "slug": "ambitious",
+      "language": "vi",
+      "bytes": 230646,
+      "fixedBytes": 234598,
+      "folded": 85,
+      "idempotent": true,
+      "pages": 1,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 29,
+            "y": 263,
+            "width": 146.890625,
+            "height": 65
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 29,
+            "y": 338,
+            "width": 106.140625,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 152.8125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 184.75,
+            "width": 65.796875,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 214.25,
+            "width": 399.03125,
+            "height": 15
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 328,
+            "width": 112.296875,
+            "height": 15
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 293.5625,
+            "y": 357.5,
+            "width": 185.875,
+            "height": 15
+          }
+        ],
+        "width": 793.6875,
+        "height": 1097,
+        "documentHeight": 1123
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_EXPERIENCE",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "ambitious-en-short",
+      "slug": "ambitious",
+      "language": "en",
+      "bytes": 223025,
+      "fixedBytes": 226766,
+      "folded": 62,
+      "idempotent": true,
+      "pages": 1,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 29,
+            "y": 263,
+            "width": 146.890625,
+            "height": 65
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 29,
+            "y": 338,
+            "width": 106.140625,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 152.8125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 184.75,
+            "width": 65.796875,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 214.25,
+            "width": 399.03125,
+            "height": 15
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 328,
+            "width": 112.296875,
+            "height": 15
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 293.5625,
+            "y": 357.5,
+            "width": 185.875,
+            "height": 15
+          }
+        ],
+        "width": 793.6875,
+        "height": 1097,
+        "documentHeight": 1123
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_EXPERIENCE",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "ambitious-vi-long",
+      "slug": "ambitious",
+      "language": "vi",
+      "bytes": 272498,
+      "fixedBytes": 279250,
+      "folded": 306,
+      "idempotent": true,
+      "pages": 2,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 29,
+            "y": 263,
+            "width": 146.890625,
+            "height": 65
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 29,
+            "y": 338,
+            "width": 106.140625,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 152.8125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 0",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 184.75,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_0",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 214.25,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 248.0625,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 1",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 280,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_1",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 309.5,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 343.3125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 2",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 375.25,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_2",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 404.75,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 438.5625,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 3",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 470.5,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_3",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 500,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 533.8125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 4",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 565.75,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_4",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 595.25,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 629.0625,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 5",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 661,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_5",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 690.5,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 724.3125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 6",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 756.25,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_6",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 785.75,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 819.5625,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 7",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 851.5,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_7",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 881,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 914.8125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 8",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 946.75,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_8",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 976.25,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 1010.0625,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 9",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 1042,
+            "width": 76.484375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_9",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 1071.5,
+            "width": 418.328125,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 1105.3125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 10",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 1137.25,
+            "width": 83.9375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_10",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 1166.75,
+            "width": 425.640625,
+            "height": 15
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 1200.5625,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả 11",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 1232.5,
+            "width": 83.9375,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra dữ liệu giả và triển khai phần mềm. WORD_BOUNDARY_LONG_11",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 1262,
+            "width": 425.640625,
+            "height": 15
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 1375.75,
+            "width": 112.296875,
+            "height": 15
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 293.5625,
+            "y": 1405.25,
+            "width": 185.875,
+            "height": 15
+          }
+        ],
+        "width": 793.6875,
+        "height": 1484.625,
+        "documentHeight": 1485
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_LONG_0",
+        "WORD_BOUNDARY_LONG_1",
+        "WORD_BOUNDARY_LONG_2",
+        "WORD_BOUNDARY_LONG_3",
+        "WORD_BOUNDARY_LONG_4",
+        "WORD_BOUNDARY_LONG_5",
+        "WORD_BOUNDARY_LONG_6",
+        "WORD_BOUNDARY_LONG_7",
+        "WORD_BOUNDARY_LONG_8",
+        "WORD_BOUNDARY_LONG_9",
+        "WORD_BOUNDARY_LONG_10",
+        "WORD_BOUNDARY_LONG_11",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    },
+    {
+      "id": "ambitious-vi-crop",
+      "slug": "ambitious",
+      "language": "vi",
+      "bytes": 230450,
+      "fixedBytes": 234412,
+      "folded": 85,
+      "idempotent": true,
+      "pages": 1,
+      "layout": {
+        "facts": [
+          {
+            "text": "Ứng viên thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 29,
+            "y": 263,
+            "width": 146.890625,
+            "height": 65
+          },
+          {
+            "text": "Kỹ sư kiểm thử",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 29,
+            "y": 338,
+            "width": 106.140625,
+            "height": 19
+          },
+          {
+            "text": "Kiểm thử viên",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "900",
+            "x": 293.5625,
+            "y": 152.8125,
+            "width": 80.359375,
+            "height": 15
+          },
+          {
+            "text": "Công ty giả",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 184.75,
+            "width": 65.796875,
+            "height": 15
+          },
+          {
+            "text": "Kiểm tra ứng dụng bằng dữ liệu giả. WORD_BOUNDARY_EXPERIENCE",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 313.046875,
+            "y": 214.25,
+            "width": 399.03125,
+            "height": 15
+          },
+          {
+            "text": "Trường thử nghiệm",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "700",
+            "x": 293.5625,
+            "y": 328,
+            "width": 112.296875,
+            "height": 15
+          },
+          {
+            "text": "WORD_BOUNDARY_EDUCATION",
+            "fontFamily": "Roboto, serif",
+            "fontWeight": "400",
+            "x": 293.5625,
+            "y": 357.5,
+            "width": 185.875,
+            "height": 15
+          }
+        ],
+        "width": 793.6875,
+        "height": 1097,
+        "documentHeight": 1123
+      },
+      "requiredFacts": [
+        "Ứng viên thử nghiệm",
+        "Kỹ sư kiểm thử",
+        "Công ty giả",
+        "Kiểm thử viên",
+        "Trường thử nghiệm",
+        "WORD_BOUNDARY_EXPERIENCE",
+        "WORD_BOUNDARY_EDUCATION",
+        "Node.js"
+      ]
+    }
+  ]
+}

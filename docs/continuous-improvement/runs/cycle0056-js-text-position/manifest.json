@@ -1,0 +1,193 @@
+{
+  "createdAt": "2026-10-19T14:40:41.392271+00:00",
+  "sourceCommit": "156d44c7a4af108b62760a97550384ab550601a3",
+  "syntheticOnly": true,
+  "stageLimitBytes": 16777216,
+  "stageBytes": 3960292,
+  "stageFiles": [
+    {
+      "name": "acceptance-report.json",
+      "bytes": 9287,
+      "sha256": "ec8a1eae352f7d9cb7869895539c4113cb956bbc9c7e54cd7ad74fd09a7c4f55"
+    },
+    {
+      "name": "ambitious-en-short-after-1.png",
+      "bytes": 42546,
+      "sha256": "05e8ec4fc291b8c3176047d5709b2c8e734bbe8b9dd679f76447538f23905cfb"
+    },
+    {
+      "name": "ambitious-en-short-after.pdf",
+      "bytes": 226766,
+      "sha256": "87ce6cf5c40d3bfe9bfb2f488b4a600bad7de22f562832ef0d89cf1af0c82686"
+    },
+    {
+      "name": "ambitious-en-short-before-1.png",
+      "bytes": 42546,
+      "sha256": "05e8ec4fc291b8c3176047d5709b2c8e734bbe8b9dd679f76447538f23905cfb"
+    },
+    {
+      "name": "ambitious-en-short-before.pdf",
+      "bytes": 223025,
+      "sha256": "534e8720fb3e5c3e39ec1985332f89e663a37fadd0eb653c67c7edb18a55f4bb"
+    },
+    {
+      "name": "ambitious-vi-crop-after-1.png",
+      "bytes": 43869,
+      "sha256": "4e18d897be1403f0113b87c77c246d5373934c9b2e0b923e467a1a0e8f6586fc"
+    },
+    {
+      "name": "ambitious-vi-crop-after.pdf",
+      "bytes": 234412,
+      "sha256": "691125b8a8e5f5b0e76629099a61bafafddc18cf5e77464c5e26fc6e539e713f"
+    },
+    {
+      "name": "ambitious-vi-crop-before-1.png",
+      "bytes": 43869,
+      "sha256": "4e18d897be1403f0113b87c77c246d5373934c9b2e0b923e467a1a0e8f6586fc"
+    },
+    {
+      "name": "ambitious-vi-crop-before.pdf",
+      "bytes": 230450,
+      "sha256": "f5467549c5d722f685fbbf541dc773aed82fd9332efa07aff9665ae4efbeed5c"
+    },
+    {
+      "name": "ambitious-vi-long-after-1.png",
+      "bytes": 101573,
+      "sha256": "578c0e47918e17f26d1864d9b92bf295ec42d4cad430c407d1ef2c5328935a5a"
+    },
+    {
+      "name": "ambitious-vi-long-after-2.png",
+      "bytes": 27391,
+      "sha256": "879f990c90db5137e29cf01187ec37dab25c9fc1add1b872f34c5022ff8573b3"
+    },
+    {
+      "name": "ambitious-vi-long-after.pdf",
+      "bytes": 279250,
+      "sha256": "ad66170be87c30014e49ae8d80949f0fd2f46808cff1c15d85d5180f4b0a9084"
+    },
+    {
+      "name": "ambitious-vi-long-before-1.png",
+      "bytes": 101573,
+      "sha256": "578c0e47918e17f26d1864d9b92bf295ec42d4cad430c407d1ef2c5328935a5a"
+    },
+    {
+      "name": "ambitious-vi-long-before-2.png",
+      "bytes": 27391,
+      "sha256": "879f990c90db5137e29cf01187ec37dab25c9fc1add1b872f34c5022ff8573b3"
+    },
+    {
+      "name": "ambitious-vi-long-before.pdf",
+      "bytes": 272498,
+      "sha256": "744a452c88d2a967b5ec18d2c15030b999050a87d76dcef977e502b948424920"
+    },
+    {
+      "name": "ambitious-vi-short-after-1.png",
+      "bytes": 43827,
+      "sha256": "9bf12678621838b137b65ab9d8b32ad7f195ad21dac752d2e29e9650316fcc7b"
+    },
+    {
+      "name": "ambitious-vi-short-after.pdf",
+      "bytes": 234598,
+      "sha256": "9b431d9a4ab9aaa16bf1f06217dcb7465f5be11531a98e5100b81616e1774fda"
+    },
+    {
+      "name": "ambitious-vi-short-before-1.png",
+      "bytes": 43827,
+      "sha256": "9bf12678621838b137b65ab9d8b32ad7f195ad21dac752d2e29e9650316fcc7b"
+    },
+    {
+      "name": "ambitious-vi-short-before.pdf",
+      "bytes": 230646,
+      "sha256": "d08d6b087f104495c5ddce77549e8de78580907bb466ca3754994bac1fe6e071"
+    },
+    {
+      "name": "dev_1-en-short-after-1.png",
+      "bytes": 40956,
+      "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+    },
+    {
+      "name": "dev_1-en-short-after.pdf",
+      "bytes": 163882,
+      "sha256": "45bc571050c6796280645e7c4bc38d378e1ea08d9d0c7938a32c09ad7da24718"
+    },
+    {
+      "name": "dev_1-en-short-before-1.png",
+      "bytes": 40956,
+      "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+    },
+    {
+      "name": "dev_1-en-short-before.pdf",
+      "bytes": 158193,
+      "sha256": "ac3709d0049fdb595bb705385bb79e18a8465b0ff81beb447b1ebe66feba0b5c"
+    },
+    {
+      "name": "dev_1-vi-long-after-1.png",
+      "bytes": 106444,
+      "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+    },
+    {
+      "name": "dev_1-vi-long-after-2.png",
+      "bytes": 15099,
+      "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+    },
+    {
+      "name": "dev_1-vi-long-after.pdf",
+      "bytes": 195794,
+      "sha256": "d6e26feb091a0a97eae83531dbcaec0d9216923466b724a74d7211185484ca00"
+    },
+    {
+      "name": "dev_1-vi-long-before-1.png",
+      "bytes": 106444,
+      "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+    },
+    {
+      "name": "dev_1-vi-long-before-2.png",
+      "bytes": 15099,
+      "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+    },
+    {
+      "name": "dev_1-vi-long-before.pdf",
+      "bytes": 185417,
+      "sha256": "db22bcf4e2294594914b7e67475e3ccc08f63b4a2348eb12f49cde9132e1cf22"
+    },
+    {
+      "name": "dev_1-vi-short-after-1.png",
+      "bytes": 40819,
+      "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+    },
+    {
+      "name": "dev_1-vi-short-after.pdf",
+      "bytes": 165468,
+      "sha256": "54445f807c5437d738fe9a029bf95302c241f28081addad2c74b0eb53e07aa4f"
+    },
+    {
+      "name": "dev_1-vi-short-before-1.png",
+      "bytes": 40819,
+      "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+    },
+    {
+      "name": "dev_1-vi-short-before.pdf",
+      "bytes": 159551,
+      "sha256": "147a15607ce26ca634be1f241f01e000ff31eb2e869de0c8be85f5e57b2efd44"
+    },
+    {
+      "name": "parser-warnings.log",
+      "bytes": 17226,
+      "sha256": "ae49ffb0f3e595f4688f8e252c23cff8304132fcfda68e430eb5a50f60dd61bb"
+    },
+    {
+      "name": "render-report.json",
+      "bytes": 37653,
+      "sha256": "cf74e1d353ee519a8636fa2151e71f1107982ef5504f7baa44b135b0a1b58bd3"
+    },
+    {
+      "name": "unit-tests.log",
+      "bytes": 11128,
+      "sha256": "4d11fe7965ac0a93115f241a69272df96eebf86dfa03e9e22d74beccef38e95d"
+    }
+  ],
+  "parserFontBBoxWarningCount": 198,
+  "retainedPdfFontBuildBundleClone": false,
+  "cleanupVerified": true,
+  "visualInspection": "Viewed Ambitious short and long page2; name wraps in left column and education lies in right column at same y. Two-column default extraction interrupts name; identical before and after."
+}

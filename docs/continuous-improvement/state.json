@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 55,
-  "lastRun": "runs/2026-10-19-cycle-0055.md",
+  "completedCycles": 56,
+  "lastRun": "runs/2026-10-19-cycle-0056.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "TM_TD_CAUSAL_PROTOTYPE_LOCAL_TEXT_PIXEL_PASS_BASELINE_CI_SUCCESS_NEXT_JS_OPTIN",
+  "issueState": "JS_OPTIN_LOCAL_PLAIN7_PASS_PIXEL9_EXACT_PLUMBER_ORDER4_FAIL_UNIT_LINUX_CI_SUCCESS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Implement a bounded opt-in JavaScript PDF prototype for the proven narrow Chrome Tm(origin)+Td(offset) canonicalization using existing pdf-lib; strict lexical PDF token handling, preserve literal/hex strings and skip unsupported/inline-image streams. Priorc860 reviewCI39268376161 SUCCESS; do not repeat completed controls just to poll.",
-    "Before runtime integration compare output on Roboto/Ambitious short VI/EN/long/crop and SourceCodePro cases: whole facts by plain pypdf+pdfplumber, font/ToUnicode/glyph bytes, A4/pagination and independent raster exact. Generalized58case/fullmatrix still unverified; keep CV002 open.",
-    "Live FE1bc/Hosting89f andBE0bf/catalog53 VERIFIED unchanged; no new backup, deploy or real profile/AI writes. Any future runtime deployment needs new exact code/build/current rollback privateDrive verification."
+    "CV002 cycle56 JavaScript opt-in156d44c: seven native cases pypdf plain facts PASS and nine Poppler page comparisons exact; full resource graph/glyphs/metadata/page boxes unchanged. Ambitious pdfplumber default still loses contiguous full name in four cases, same baseline cross-column interleaving. Preserve strict FAIL; inspect reading order/coordinate evidence before any runtime integration.",
+    "Review156d44c CI39270983378 SUCCESS (all3jobs); npm test includes9 new bounded lexer/wrapper tests, localfeature101PASS. Native Python/Poppler acceptance remains opt-in local FAIL4/7 from existing Ambitious column ordering. Next broaden font/template matrix with bounded sequential staging and record baseline/fixed parser+resource+raster evidence; preserve missing-name failures. Linux native prototype, load-time/object-stream/worker isolation and actual cloud export remain unverified.",
+    "Live FE1bc/Hosting89f andBE0bf/catalog53 VERIFIED unchanged; no backup/deploy or real profile/AI writes. Future runtime deploy requires new exact code/build/rollback Drive verification."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "Implement a bounded opt-in JavaScript PDF prototype for the proven narrow Chrome Tm(origin)+Td(offset) canonicalization using existing pdf-lib; strict lexical PDF token handling, preserve literal/hex strings and skip unsupported/inline-image streams. Priorc860 reviewCI39268376161 SUCCESS; do not repeat completed controls just to poll.",
+    "nextAction": "CV002 cycle56 JavaScript opt-in156d44c: seven native cases pypdf plain facts PASS and nine Poppler page comparisons exact; full resource graph/glyphs/metadata/page boxes unchanged. Ambitious pdfplumber default still loses contiguous full name in four cases, same baseline cross-column interleaving. Preserve strict FAIL; inspect reading order/coordinate evidence before any runtime integration.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -255,7 +255,11 @@
     "pendingTextPositionReviewCommit": "c860b331ffc90fcffa70be09a06e2a1269eccea0",
     "pendingTextPositionReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39268376161",
     "pendingTextPositionStatus": "PYTHON_OPTIN_LOCAL_TEXT_PIXEL_PASS_REVIEW_BASELINE_CI_SUCCESS_NO_RUNTIME_INTEGRATION",
-    "pendingTextPositionReviewCiPassed": true
+    "pendingTextPositionReviewCiPassed": true,
+    "pendingJsPositionReviewCommit": "156d44c7a4af108b62760a97550384ab550601a3",
+    "pendingJsPositionReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39270983378",
+    "pendingJsPositionReviewCiPassed": true,
+    "pendingJsPositionStatus": "REVIEW_CI_SUCCESS_9NEW_UNITS_LOCAL_NATIVE_PARTIAL_ORDER4_FAIL_NO_RUNTIME"
   },
   "blockingDependency": null,
   "dataBackup": {

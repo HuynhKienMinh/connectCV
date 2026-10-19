@@ -106,3 +106,7 @@ Ba dev_1 SourceCodePro cases đọc nguyênfacts bằngpypdf-layout/pdfplumber n
 ## D023 —19/10/2026: vị trí text là prototype riêng, không thay font hoặc parser gate
 
 SameType3/glyphs/paint controls choCompany:perglyphBT/ET tựnóđọcđúng; Tmorigin+Tdoffset twostep cóthể khiếnpypdfplainthêmspaces dùảnhgiống. Localadjacentmatrixfold giữpaint/textfacts trên3dev_1cases, khôngfontreplacement; originalTTFcontrol vẫnbịloại pixelgate. Chưaappintegration: Nodeprototype phảiboundedlexicalparser/narrowknownChromeoperators, failclosedunsupportedstream, fullfont/long/crop/Linux/resourcegates trướcrelease. KhôngdeployPython hoặcđổi verifier sanglayout đểđóngticket.
+
+## D024 —19/10/2026: giữ cổng thứ tự đọc khi prototype sửa split words
+
+JavaScript narrow matrix fold trên7cases giữ full resource graph/glyphs/metadata và9rasterpages chính xác, pypdf plain facts đều đạt. Pdfplumber default vẫn thiếu nguyên tên ở4Ambitious do interleave hai cột, giống baseline. Giữ strict acceptance FAIL, không nối text/đổi mode/bỏ parser để phát hành. Prototype chỉ offline opt-in; unit được đưa vào npm test, native Python/Poppler chưa chạy CI. Phải kiểm reading order và fullmatrix/Linux/resource isolation trước runtime integration; không dùng kết quả local để chứng nhận ATS hoặc đủ bán.
