@@ -77,6 +77,12 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           AUTH_REQUEST_QA_OUTPUT: '${{ runner.temp }}/connectcv-auth-request-qa'
+      - name: Verify React iframe token boundaries, account changes and obsolete document requests
+        run: node tests/featureBridgeUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          FEATURE_BRIDGE_QA_OUTPUT: '${{ runner.temp }}/connectcv-feature-bridge-qa'
       - name: Verify readiness recovery after browser re-creation
         run: node tests/rendererReconnect.check.cjs
         working-directory: backend/features/connectcv
