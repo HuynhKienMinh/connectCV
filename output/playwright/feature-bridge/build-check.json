@@ -25,5 +25,8 @@
   },
   "notDeployed": true,
   "validationBuildOnly": true,
-  "backupCatalogUnchanged": "cycle0046-candidate-0bf51ec.json"
+  "backupCatalogUnchanged": "cycle0046-candidate-0bf51ec.json",
+  "finalCandidateCommit": "964d1af15c3778ed5bee06f8b51e0f5d5da0e139",
+  "finalCandidateFeaturePageMatchesBuiltSource": true,
+  "validationBuildLocalDeleted": true
 }

@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 47,
-  "lastRun": "runs/2026-10-19-cycle-0047.md",
-  "activeRun": "runs/2026-10-19-cycle-0048.md",
+  "completedCycles": 48,
+  "lastRun": "runs/2026-10-19-cycle-0048.md",
+  "activeRun": null,
   "activeIssue": "AUTH004",
-  "issueState": "IFRAME_SESSION_LOCAL_VERIFIED_ISOLATED_CI_RUNNING",
+  "issueState": "IFRAME_SESSION_LOCAL10_PASS_FINAL_CI_AND_CLOUD_RELEASE_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Finish exact review6dfff68 CI39209351630 and isolated8cd5294 CI39209453993 for AUTH004. Local9React/actualchildbridge and17frontendunits/build PASS. Do not deploy aggregate review.",
-    "Before FE-only deployment8cd5294, create new bounded private Drive code/newFEbuild/currentFE rollback catalog; verify checksum/freshrestore and remove ownlocal artifacts. Existing46 catalog protects LIVE0bf/FEce5 only. Do not merge/deploy before CI+newbackup/rollback gate.",
-    "After gates, fast-forward main8cd5294 and verify mainCI; Hosting-only release with current FE9b rollback. BE0bf remains unchanged. RealFirebase/actualmobile/actorE2E unverified. Report/DBcustody deferred."
+    "AUTH004: check final10case candidate964d1af CI39209897092. Core9case review6dfff68 CI39209351630 and previouscandidate8cd5294 CI39209453993 SUCCESS; do not substitute those for final964CI. Localbaseline6PASS/4FAIL→10PASS, isolated10PASS,17frontendunits/buildPASS.",
+    "Before FE-only deployment964d1af, create new bounded private Drive code/newFEbuild/currentFE rollback catalog; verify checksum/freshrestore and remove ownlocal artifacts. Existing46 catalog protects LIVE0bf/FEce5 only. Do not merge/deploy before CI+newbackup/rollback gate.",
+    "After gates, fast-forward main964d1af and verify mainCI; Hosting-only release with current FE9b rollback. BE0bf remains unchanged. RealFirebase/actualmobile/actorE2E unverified. Report/DBcustody deferred."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -118,7 +118,7 @@
     "reviewCommit": "63f20689490ea7819e23b2f890e5aafdb6ee4d70",
     "status": "RECEIPT_MAIN_CI_CLOUD_RESTORE_RENDER_LIVE_SCOPED",
     "lastPushError": null,
-    "nextAction": "Finish exact review6dfff68 CI39209351630 and isolated8cd5294 CI39209453993 for AUTH004. Local9React/actualchildbridge and17frontendunits/build PASS. Do not deploy aggregate review.",
+    "nextAction": "AUTH004: check final10case candidate964d1af CI39209897092. Core9case review6dfff68 CI39209351630 and previouscandidate8cd5294 CI39209453993 SUCCESS; do not substitute those for final964CI. Localbaseline6PASS/4FAIL→10PASS, isolated10PASS,17frontendunits/buildPASS.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39204578949",
@@ -207,11 +207,15 @@
     "pendingReceiptRelease": "dep-dbar56u7bikc73akq250",
     "remainingReceiptVerification": "Real Firebase/Firestore actor replay, production publication and actual mobile interaction unverified; dedicated synthetic account not configured.",
     "pendingIframeReviewCommit": "6dfff68e9021a22a371ef745e79602508d5fcc7b",
-    "pendingIframeCandidateCommit": "8cd5294789b640fbbf738670a1d6138c51b4876a",
+    "pendingIframeCandidateCommit": "964d1af15c3778ed5bee06f8b51e0f5d5da0e139",
     "pendingIframeBranch": "improvement/iframe-session-release-20261019",
     "pendingIframeReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209351630",
-    "pendingIframeCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209453993",
-    "pendingIframeStatus": "LOCAL9_BROWSER_17_UNITS_BUILD_PASS_CI_IN_PROGRESS_NOT_MAIN_NOT_DEPLOYED"
+    "pendingIframeCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209897092",
+    "pendingIframeStatus": "LOCAL10_BROWSER_17_UNITS_BUILD_PASS_FINAL_CI_RUNNING_NOT_MAIN_NOT_DEPLOYED",
+    "pendingIframePreviousCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209453993",
+    "pendingIframePreviousCandidateCiPassed": true,
+    "pendingIframeReviewCiPassed": true,
+    "pendingIframeReviewSupplementCommit": "f435973e48b94f348629653e9bedc0444ddcd2ca"
   },
   "blockingDependency": null,
   "dataBackup": {
