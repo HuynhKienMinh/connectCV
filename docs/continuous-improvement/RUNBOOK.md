@@ -97,3 +97,8 @@ Tái hiện tại local bằng syntheticJPEG≤3MB có entropy cao; trướcfix2
 ## Receipt release —cycle46/47
 
 CurrentRender0bf51ec/dep-dbar56u7bikc73akq250; rollback dùng retained release391fdc3/dep-db9khkjrjlhs73f60aeg qua Render khi có incident, kiểm exactSHA/source/auth/canary saurollback. FEHosting9b4f9bcd010b4645 không đổi. Nếu provider không giữrelease, restore17bundle chain từ catalogcycle0046-candidate-0bf51ec.json vào bounded freshbare, verify SHA/fsck/43critical, lấy391 làm exactrollbackcommit; currentFEZIP/memberSHA cùngcatalog. Dọn ownstage sau verifiedprivatecloud, không xóa bản duy nhất. Không rollbackdatabase bằng codebundle. Receipt newfields additive; tab cũ có thể còn logic clearform/cooldown cũ nên không hứa thay mọi tab, không force-reload làm mất nháp. Tránh publicwrite smoke khi chưa có dedicatedtestaccount.
+
+
+## Iframe/session FE release —cycle49
+
+Candidate964d1af đổiFEonly; RenderBE0bf/dep-dbar56u7bikc73akq250 khôngđổi. NewFEZIP/codedelta tạicatalogcycle0049-candidate-964d1af.json:18bundlechain/44critical/ZIPnew+rollback verified, ownbackupstage đãdọn. RollbackFE version9b4f9bcd010b4645 bằng hosting:clone recordedcatalog; nếuproviderrelease khôngcòn, tảiFEZIP40 đãSHA/CRC/memberSHA verified vềownboundedstage vàdeployhosting-only. KhôngredeployBEmain964 chỉvìmainđãcóFEfix. Đừngforce-refresh tabuser chứa nháp; usernhậnbảnFE mới saukhi đãgiữnháp/tảitrangmới. Không xemtokeninvalidation local làproviderrevocation.

@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-19T06:39:46.558096+00:00",
+  "candidateCommit": "964d1af15c3778ed5bee06f8b51e0f5d5da0e139",
+  "hostingVersion": "projects/connect-cv/sites/connect-cv/versions/73a1cc4c31425bea",
+  "backendCommit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "checks": [
+    {
+      "url": "https://connect-cv.web.app/index.html",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "0ff2fd4e757c42d3a13563b9b79bc87fb8786f3bf57d33284695d49b0cdf069b",
+      "matchesCloudCandidate": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-B5BHDfKL.css",
+      "status": 200,
+      "bytes": 62358,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664",
+      "matchesCloudCandidate": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-iwKoBuoD.js",
+      "status": 200,
+      "bytes": 448666,
+      "sha256": "5f1077a8207e7e4eba74e7551eac04b2940c3da1a0c6b876ab3a6f2aff75d60c",
+      "matchesCloudCandidate": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/index.html",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "0ff2fd4e757c42d3a13563b9b79bc87fb8786f3bf57d33284695d49b0cdf069b",
+      "matchesCloudCandidate": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-B5BHDfKL.css",
+      "status": 200,
+      "bytes": 62358,
+      "sha256": "ec519efaa4a26da39f04121085ebf3c36abe0ebe80498a6334b139caf12d7664",
+      "matchesCloudCandidate": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-iwKoBuoD.js",
+      "status": 200,
+      "bytes": 448666,
+      "sha256": "5f1077a8207e7e4eba74e7551eac04b2940c3da1a0c6b876ab3a6f2aff75d60c",
+      "matchesCloudCandidate": true
+    },
+    {
+      "path": "/api/account/me",
+      "status": 401,
+      "corsFrontend": true
+    },
+    {
+      "path": "/api/features/health",
+      "status": 200,
+      "corsFrontend": true,
+      "authenticationIntegrated": true,
+      "browserConfigured": true,
+      "pdfCanaryVerified": true
+    },
+    {
+      "path": "/ai/",
+      "status": 200,
+      "corsFrontend": true,
+      "backendSourceUnchanged": true,
+      "sha256": "d474e2de4793fbcbd870e34e1fc3c67f6904e4424824b637419c186f15ec208c"
+    }
+  ],
+  "productionUserWrites": 0,
+  "productionAiCalls": 0,
+  "realFirebaseActorReplayVerified": false
+}

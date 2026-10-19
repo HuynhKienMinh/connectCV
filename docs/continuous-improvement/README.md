@@ -205,3 +205,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ0048 —19/10/2026
 
 [React iframe/session isolation](runs/2026-10-19-cycle-0048.md): AUTH004P1 localFeaturePage+actualchildbridge finalbaseline6PASS/4FAIL→10PASS,17frontendunits vàproductionbuild đạt. Frame giữnháp A khiđổiactor, token cũ hồi vềphiênA mới và asyncpostMessage lỗi sau navigation; fixsession/SDKidentity/documentepoch, giữorigin/source/sandbox. Review6dfff68 CI39209351630 SUCCESS; corecandidate8cd5294 CI39209453993 SUCCESS. Final964d1af thêmchildload testcase, exact3files/10browserPASS, CI39209897092 đangchạy. Chưa main/Hostingdeploy hoặc backupnewcandidate. LiveBE0bf/FEce5 và catalog46VERIFIED giữ nguyên; validationbuild tạm đã dọn.
+
+
+## Cập nhật chu kỳ0049 —19/10/2026
+
+[Phát hành iframe/session isolation](runs/2026-10-19-cycle-0049.md): finalcandidate964d1af CI39209897092 SUCCESS. BackupprivateDrive18bundlechain/44critical+FEcandidate/currentrollback ZIP verified/freshrestore, stage243.41MB dọn. Mainfastforward964/mainCI39210757621 SUCCESS; Hosting-only73a1cc4c31425bea live6assethash2domains/3BEauth+canary+source checksPASS. Ownbackupstage243.41MB/deploystage512625bytes đãdọn; rollbackFE9b, BE0bf khôngđổi. AUTH004 DEPLOYED_SCOPED, actualFirebase/mobile replay chưanghiệmthu. Tiếp portfolio scenario mới; không DBbackup/schema/userwrite/AIcall.
