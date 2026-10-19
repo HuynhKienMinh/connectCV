@@ -1,7 +1,7 @@
 {
-  "id": 39211954897,
-  "head_sha": "546f20acc8b443a932472af377b1f57fd7929702",
+  "id": 39212547132,
+  "head_sha": "778ed138669f3ed56d433930e7c1cda20223ac39",
   "status": "completed",
-  "conclusion": "failure",
-  "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39211954897"
+  "conclusion": "success",
+  "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212547132"
 }

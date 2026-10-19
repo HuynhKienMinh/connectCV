@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 49,
-  "lastRun": "runs/2026-10-19-cycle-0049.md",
-  "activeRun": "runs/2026-10-19-cycle-0050.md",
-  "activeIssue": "PORT001",
-  "issueState": "PUBLIC_UI_LOCAL8_PASS_PRIOR_IFRAME_HARNESS_RACE_FIXED_RETRY_CI",
+  "completedCycles": 52,
+  "lastRun": "runs/2026-10-19-cycle-0052.md",
+  "activeRun": null,
+  "activeIssue": "DATA001",
+  "issueState": "NEXT_ACCOUNT_PAGE_LOAD_ERROR_AND_ACTOR_LIFECYCLE_SYNTHETIC",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -17,7 +17,7 @@
     "chatbot",
     "portfolio"
   ],
-  "nextModuleAfterIssue": "auth-profile",
+  "nextModuleAfterIssue": "cv-ats",
   "autoDeployAuthorized": true,
   "deployPolicy": "small_verified_changes_with_backup_and_live_check",
   "customerSegments": [
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "PORT001 new actual React publicView eight scenarios PASS local/isolated; review546f20a CI39211954897 and test-only isolated8685eee CI39212018430 running. Complete CI then fast-forward main test/workflow only, mainCI; no runtime deployment/newbackup required.",
-    "LiveFE964/Hosting73a and BE0bf unchanged; catalog49 VERIFIED18chain/currentFE+rollback, database backup remains false. Do not repeat publichealth/oldpassing tests or user notification.",
-    "After acceptance continue auth-profile rotation: actual React AccountPage initial account load/error/actor/lifecycle with fakeAPI, no real profile writes. RealFirebase/cloudportfolioactors remain unverified."
+    "Auth-profile rotation new scenario: actual React AccountPage initial account GET, error recovery and actor/unmount lifecycle with fake API/observer; no real profile write or SDK calls. Do not repeat completed portfolio8/iframe10 cases.",
+    "Portfolio public test-only1fb4841 mainCI39245470562 SUCCESS; review39212547132/isolated39212602488 SUCCESS. RuntimeFE964/Hosting73a andBE0bf unchanged, realFirebase/cloudportfolioactors still unverified.",
+    "Backup49 VERIFIED18chain protects currentlivecode/build androllback; next runtime deployment needs new code/build/currentFE rollback cloud verification. No database backup; report/ops/custody remain deferred, no repeated owner question."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -94,8 +94,8 @@
     "realCommunityPublicationVerified": false,
     "realIframeActorReplayVerified": false
   },
-  "nextModule": "portfolio",
-  "rotationIndex": 5,
+  "nextModule": "auth-profile",
+  "rotationIndex": 0,
   "backupTransfer": {
     "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
     "localCleanupAuthorized": true,
@@ -117,9 +117,9 @@
   },
   "delivery": {
     "reviewCommit": "6dfff68e9021a22a371ef745e79602508d5fcc7b",
-    "status": "IFRAME_SESSION_MAIN_CI_CLOUD_RESTORE_HOSTING_LIVE_SCOPED",
+    "status": "PORTFOLIO_PUBLIC_TESTS_MAIN_CI_SUCCESS_NO_RUNTIME_DEPLOY",
     "lastPushError": null,
-    "nextAction": "PORT001 new actual React publicView eight scenarios PASS local/isolated; review546f20a CI39211954897 and test-only isolated8685eee CI39212018430 running. Complete CI then fast-forward main test/workflow only, mainCI; no runtime deployment/newbackup required.",
+    "nextAction": "Auth-profile rotation new scenario: actual React AccountPage initial account GET, error recovery and actor/unmount lifecycle with fake API/observer; no real profile write or SDK calls. Do not repeat completed portfolio8/iframe10 cases.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39209897092",
@@ -137,10 +137,10 @@
     "clientBrowserFixtureVerified": true,
     "frontendRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792391947825000",
     "remainingProfileRecovery": "Real user production save and full image-format/mobile matrix unverified; local/CI actual controller+router+in-memory DB pass.",
-    "testOnlyReviewCommit": "ea36649011823c2ae204b36da286e1a19ff6b451",
-    "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783593369",
-    "testOnlyStatus": "REVIEW_AND_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
-    "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/38783963114",
+    "testOnlyReviewCommit": "778ed138669f3ed56d433930e7c1cda20223ac39",
+    "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212547132",
+    "testOnlyStatus": "REVIEW_ISOLATED_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
+    "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39245470562",
     "currentCycleRuntimeChanged": false,
     "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
@@ -224,12 +224,17 @@
     "pendingIframeVersion": "projects/connect-cv/sites/connect-cv/versions/73a1cc4c31425bea",
     "remainingIframeVerification": "Actual Firebase actor/OAuth/mobile replay and provider-token revocation unverified. This fix invalidates local completion/document state, not SDK/provider sessions.",
     "pendingPortfolioPublicReviewCommit": "546f20acc8b443a932472af377b1f57fd7929702",
-    "pendingPortfolioPublicCandidateCommit": "8685eeefaa3824b2088fec38462f0fdef4644146",
+    "pendingPortfolioPublicCandidateCommit": "1fb4841215baa90251297dbadc38c55267782556",
     "pendingPortfolioPublicBranch": "improvement/portfolio-public-checks-20261019",
-    "pendingPortfolioPublicReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39211954897",
-    "pendingPortfolioPublicCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212018430",
-    "pendingPortfolioPublicStatus": "INITIAL_CI_FAILED_PRIOR_IFRAME_FIXTURE_WAIT_HARNESS_ONLY_FIXED_RETRY_PENDING",
-    "pendingPortfolioPublicHarnessReviewCommit": "778ed13"
+    "pendingPortfolioPublicReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212547132",
+    "pendingPortfolioPublicCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212602488",
+    "pendingPortfolioPublicStatus": "REVIEW_ISOLATED_MAIN_CI_SUCCESS_TEST_ONLY_NO_RUNTIME_DEPLOY",
+    "pendingPortfolioPublicHarnessReviewCommit": "778ed138669f3ed56d433930e7c1cda20223ac39",
+    "pendingPortfolioPublicCandidateCiPassed": true,
+    "pendingPortfolioPublicReviewCiPassed": true,
+    "pendingPortfolioPublicMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39245470562",
+    "pendingPortfolioPublicMainCiPassed": true,
+    "testOnlyCandidateCommit": "1fb4841215baa90251297dbadc38c55267782556"
   },
   "blockingDependency": null,
   "dataBackup": {

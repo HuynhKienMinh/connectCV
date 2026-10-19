@@ -210,3 +210,13 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ0049 —19/10/2026
 
 [Phát hành iframe/session isolation](runs/2026-10-19-cycle-0049.md): finalcandidate964d1af CI39209897092 SUCCESS. BackupprivateDrive18bundlechain/44critical+FEcandidate/currentrollback ZIP verified/freshrestore, stage243.41MB dọn. Mainfastforward964/mainCI39210757621 SUCCESS; Hosting-only73a1cc4c31425bea live6assethash2domains/3BEauth+canary+source checksPASS. Ownbackupstage243.41MB/deploystage512625bytes đãdọn; rollbackFE9b, BE0bf khôngđổi. AUTH004 DEPLOYED_SCOPED, actualFirebase/mobile replay chưanghiệmthu. Tiếp portfolio scenario mới; không DBbackup/schema/userwrite/AIcall.
+
+
+## Cập nhật chu kỳ0050 —19/10/2026
+
+[Actual public portfolio UI](runs/2026-10-19-cycle-0050.md):8new actualReact/Router/publicloader casesPASS local/isolated, khôngruntimefindingmới. CIđầufailởprioriframeharness trướcpublicstep: parentDOMsrcđổi chưađồngnghĩa childFrameđãtảixong; chỉsửawaitforcurrentchildcontrol, assertion/runtime giữ. Baselineiframe6PASS/4FAIL→10PASS, candidate1fb4841 exact3test/workflowfiles, reviewCI39212547132/candidateCI39212602488 SUCCESS; main1fb CI39245470562 SUCCESS tại51-52, khôngruntime deploy. LiveFE964/Hosting73a/BE0bf vàDrive49 giữ nguyên; khôngbackup/deploy/userwrite/AI mới. Realcloudactors/wholeappshell/iOS chưanghiệmthu.
+
+
+## Cập nhật chu kỳ0051–0052 —19/10/2026
+
+[Main/test-only acceptance](runs/2026-10-19-cycle-0051.md), [resume/final](runs/2026-10-19-cycle-0052.md): main1fb4841 CI39245470562 SUCCESS, new8publicReact UIcases+iframefixture readiness đãnghiệmthu trênlocal/CI, khôngthayruntime. FE964/Hosting73a/BE0bf vàDrive49/rollback giữ nguyên. PORT001 realcloudactors vẫn mở; tiếp auth-profile actualAccountPage lifecycle với fakeAPI, khôngghi profilethật. Khôngtạo backupbuild/restoreclones hoặcnhắclạinotifyupgrade49.
