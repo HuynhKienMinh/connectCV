@@ -1,0 +1,35 @@
+{
+  "productionFix": false,
+  "cases": [
+    {
+      "id": "dev_1-vi-short",
+      "pages": 1,
+      "foldedPairs": 83,
+      "plainMissing": [],
+      "pdfplumberMissing": [],
+      "fontStreamsAndWidthsUnchanged": true,
+      "beforeBytes": 159551,
+      "afterBytes": 183493
+    },
+    {
+      "id": "dev_1-en-short",
+      "pages": 1,
+      "foldedPairs": 57,
+      "plainMissing": [],
+      "pdfplumberMissing": [],
+      "fontStreamsAndWidthsUnchanged": true,
+      "beforeBytes": 158193,
+      "afterBytes": 180951
+    },
+    {
+      "id": "dev_1-vi-long",
+      "pages": 2,
+      "foldedPairs": 304,
+      "plainMissing": [],
+      "pdfplumberMissing": [],
+      "fontStreamsAndWidthsUnchanged": true,
+      "beforeBytes": 185417,
+      "afterBytes": 253171
+    }
+  ]
+}

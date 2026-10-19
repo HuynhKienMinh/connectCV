@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-10-19T14:08:44.708451+00:00",
+  "checkedAt": "2026-10-19T14:16:21.597108+00:00",
   "id": 39265909853,
   "head_sha": "562057308eea9f2543d717419a3389b5675cd64a",
   "head_branch": "improvement/continuous-review-20261013",
-  "status": "in_progress",
-  "conclusion": null,
+  "status": "completed",
+  "conclusion": "success",
   "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39265909853",
   "newOptInDiagnosticIncludedInCi": false
 }

@@ -1,0 +1,284 @@
+{
+  "scope": "Source Code Pro controlled weight300/400/500/600/700 VI/ASCII; existing original TTF control is a diagnostic intervention, not a candidate fix",
+  "actualProductionRenderer": true,
+  "chromiumSandbox": true,
+  "cloudWrites": 0,
+  "originalRulesUnchanged": true,
+  "geometryExact": true,
+  "rows": [
+    {
+      "id": "W300_vi",
+      "weight": 300,
+      "kind": "vi",
+      "text": "Ứng viên thử nghiệm Công ty giả"
+    },
+    {
+      "id": "W300_ascii",
+      "weight": 300,
+      "kind": "ascii",
+      "text": "Candidate Example Synthetic Company"
+    },
+    {
+      "id": "W400_vi",
+      "weight": 400,
+      "kind": "vi",
+      "text": "Ứng viên thử nghiệm Công ty giả"
+    },
+    {
+      "id": "W400_ascii",
+      "weight": 400,
+      "kind": "ascii",
+      "text": "Candidate Example Synthetic Company"
+    },
+    {
+      "id": "W500_vi",
+      "weight": 500,
+      "kind": "vi",
+      "text": "Ứng viên thử nghiệm Công ty giả"
+    },
+    {
+      "id": "W500_ascii",
+      "weight": 500,
+      "kind": "ascii",
+      "text": "Candidate Example Synthetic Company"
+    },
+    {
+      "id": "W600_vi",
+      "weight": 600,
+      "kind": "vi",
+      "text": "Ứng viên thử nghiệm Công ty giả"
+    },
+    {
+      "id": "W600_ascii",
+      "weight": 600,
+      "kind": "ascii",
+      "text": "Candidate Example Synthetic Company"
+    },
+    {
+      "id": "W700_vi",
+      "weight": 700,
+      "kind": "vi",
+      "text": "Ứng viên thử nghiệm Công ty giả"
+    },
+    {
+      "id": "W700_ascii",
+      "weight": 700,
+      "kind": "ascii",
+      "text": "Candidate Example Synthetic Company"
+    }
+  ],
+  "results": [
+    {
+      "variant": "original-subsets",
+      "bytes": 86738,
+      "geometry": [
+        {
+          "id": "W300_vi",
+          "text": "W300_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "300",
+          "x": 40,
+          "y": 43,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W300_ascii",
+          "text": "W300_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "300",
+          "x": 40,
+          "y": 85,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W400_vi",
+          "text": "W400_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "400",
+          "x": 40,
+          "y": 127,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W400_ascii",
+          "text": "W400_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "400",
+          "x": 40,
+          "y": 169,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W500_vi",
+          "text": "W500_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "500",
+          "x": 40,
+          "y": 211,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W500_ascii",
+          "text": "W500_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "500",
+          "x": 40,
+          "y": 253,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W600_vi",
+          "text": "W600_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "600",
+          "x": 40,
+          "y": 295,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W600_ascii",
+          "text": "W600_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "600",
+          "x": 40,
+          "y": 337,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W700_vi",
+          "text": "W700_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "700",
+          "x": 40,
+          "y": 379,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W700_ascii",
+          "text": "W700_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "700",
+          "x": 40,
+          "y": 421,
+          "width": 496.8125,
+          "height": 23
+        }
+      ]
+    },
+    {
+      "variant": "original-template-ttf-control",
+      "bytes": 30047,
+      "geometry": [
+        {
+          "id": "W300_vi",
+          "text": "W300_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "300",
+          "x": 40,
+          "y": 43,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W300_ascii",
+          "text": "W300_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "300",
+          "x": 40,
+          "y": 85,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W400_vi",
+          "text": "W400_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "400",
+          "x": 40,
+          "y": 127,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W400_ascii",
+          "text": "W400_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "400",
+          "x": 40,
+          "y": 169,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W500_vi",
+          "text": "W500_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "500",
+          "x": 40,
+          "y": 211,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W500_ascii",
+          "text": "W500_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "500",
+          "x": 40,
+          "y": 253,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W600_vi",
+          "text": "W600_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "600",
+          "x": 40,
+          "y": 295,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W600_ascii",
+          "text": "W600_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "600",
+          "x": 40,
+          "y": 337,
+          "width": 496.8125,
+          "height": 23
+        },
+        {
+          "id": "W700_vi",
+          "text": "W700_vi Ứng viên thử nghiệm Công ty giả",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "700",
+          "x": 40,
+          "y": 379,
+          "width": 421.203125,
+          "height": 23
+        },
+        {
+          "id": "W700_ascii",
+          "text": "W700_ascii Candidate Example Synthetic Company",
+          "fontFamily": "\"Source Code Pro\"",
+          "fontWeight": "700",
+          "x": 40,
+          "y": 421,
+          "width": 496.8125,
+          "height": 23
+        }
+      ]
+    }
+  ]
+}

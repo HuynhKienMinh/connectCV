@@ -1,0 +1,193 @@
+{
+  "cycle": 55,
+  "createdAt": "2026-10-19T14:23:17.920179+00:00",
+  "reviewCommit": "c860b331ffc90fcffa70be09a06e2a1269eccea0",
+  "runtimeChanged": false,
+  "deployed": false,
+  "cloudWrites": 0,
+  "actualProductionBrowserSandbox": true,
+  "stageBytes": 2028860,
+  "stageCapBytes": 8388608,
+  "stagingDeleted": true,
+  "artifactRows": [
+    {
+      "file": "folded-pixels.json",
+      "bytes": 984,
+      "sha256": "f1582d475d9460f6e6b5e194aef345b53911e91c4354d72d2967ab339612df3b"
+    },
+    {
+      "file": "folded-subsets.pdf",
+      "bytes": 99830,
+      "sha256": "4b1976559a956f4033f8a6634a40c331e0c3881911e03b3dbf341c7b9e44a821"
+    },
+    {
+      "file": "folded-subsets.png",
+      "bytes": 43283,
+      "sha256": "5c410aa5530053439d47161f86f34ce7eab1b0558bafa916701819a6118488dc"
+    },
+    {
+      "file": "native-prototype-results.json",
+      "bytes": 813,
+      "sha256": "9692db802bc5b29b76fd7f8e16c3ad1c5a8d89fada8635eda3b67edbd4a64cb8"
+    },
+    {
+      "file": "object-control-one-object-one-show.pdf",
+      "bytes": 15433,
+      "sha256": "ecb2305113a73aa9af1a63403e57d777d2f88cc642b6db5305780f8306e59dac"
+    },
+    {
+      "file": "object-control-one-object-one-show.png",
+      "bytes": 6612,
+      "sha256": "9dbe24a775a86d3b5c8696b48dbedecbf6a5f64bfc4339dda00994fe7b3ece08"
+    },
+    {
+      "file": "object-control-one-object-per-glyph-position.pdf",
+      "bytes": 15580,
+      "sha256": "f0ebf7e03e89a7a795f17e9fd640c43431e78a7c19932d4f2a789508e3a646f5"
+    },
+    {
+      "file": "object-control-one-object-per-glyph-position.png",
+      "bytes": 6612,
+      "sha256": "9dbe24a775a86d3b5c8696b48dbedecbf6a5f64bfc4339dda00994fe7b3ece08"
+    },
+    {
+      "file": "object-control-per-glyph-object.pdf",
+      "bytes": 15694,
+      "sha256": "333128b1ff47baec77feb409f5329821a90130a3a35eb994dddf4e09b848f8a8"
+    },
+    {
+      "file": "object-control-per-glyph-object.png",
+      "bytes": 6612,
+      "sha256": "9dbe24a775a86d3b5c8696b48dbedecbf6a5f64bfc4339dda00994fe7b3ece08"
+    },
+    {
+      "file": "object-control-per-glyph-two-step-position.pdf",
+      "bytes": 15743,
+      "sha256": "52bcb5c408e60387c3e0041ca960778a8bd64db6eba5aa944d1a0f20072756b0"
+    },
+    {
+      "file": "object-control-per-glyph-two-step-position.png",
+      "bytes": 6612,
+      "sha256": "9dbe24a775a86d3b5c8696b48dbedecbf6a5f64bfc4339dda00994fe7b3ece08"
+    },
+    {
+      "file": "original-subsets.pdf",
+      "bytes": 86738,
+      "sha256": "6a4f7a426aa380c9f5aa82e66a704d5b842b49847c58ab2752138b6a9c92873e"
+    },
+    {
+      "file": "original-template-ttf-control.pdf",
+      "bytes": 30047,
+      "sha256": "b584070806972958b09c56b4a77d459a5017423c1a2f30f1609221428df6c879"
+    },
+    {
+      "file": "pixels.json",
+      "bytes": 146,
+      "sha256": "31f7509df96e76fd2fd196aca75f625159fe7727bab738902f960004e296bd8e"
+    },
+    {
+      "file": "subsets.png",
+      "bytes": 43283,
+      "sha256": "5c410aa5530053439d47161f86f34ce7eab1b0558bafa916701819a6118488dc"
+    },
+    {
+      "file": "switch-parser.json",
+      "bytes": 14709,
+      "sha256": "d08f9090e6e1db723e5f3f0e88a2ab8a575bd859cd1fc4f6a57c1a351ef45ff0"
+    },
+    {
+      "file": "switch-render.json",
+      "bytes": 7673,
+      "sha256": "8113f90dda514c4468c619ea444dab23e6afcb6954ea574d8e88f576a5ddd3c1"
+    },
+    {
+      "file": "ttf.png",
+      "bytes": 66878,
+      "sha256": "eaa95c7f5beddd2c41784d3eda59ee3c07cfafefe80fe8e973d2454677ecf617"
+    },
+    {
+      "file": "native/dev_1-en-short-1.png",
+      "bytes": 40956,
+      "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+    },
+    {
+      "file": "native/dev_1-en-short-folded-1.png",
+      "bytes": 40956,
+      "sha256": "e00ed458604e6e3502ebc40b0b671dc8ee36f4ae8a4311d75ae30781310ef613"
+    },
+    {
+      "file": "native/dev_1-en-short-folded.pdf",
+      "bytes": 180951,
+      "sha256": "0bfb6b47ba71a656db577733c03cb62dd5858b74246a266a5b987fd2b24ea343"
+    },
+    {
+      "file": "native/dev_1-en-short.pdf",
+      "bytes": 158193,
+      "sha256": "4e3eb44fc1aee7e5e4a20868aa9c6aa0a328ede71be774fb28606f1b0bff898d"
+    },
+    {
+      "file": "native/dev_1-vi-long-1.png",
+      "bytes": 106444,
+      "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+    },
+    {
+      "file": "native/dev_1-vi-long-2.png",
+      "bytes": 15099,
+      "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+    },
+    {
+      "file": "native/dev_1-vi-long-folded-1.png",
+      "bytes": 106444,
+      "sha256": "fd79e33bedaa5534bb4dd7c3b080650f4e3fd80d0efac608d05103e8e603dbd9"
+    },
+    {
+      "file": "native/dev_1-vi-long-folded-2.png",
+      "bytes": 15099,
+      "sha256": "b3a1c47065de6825bfde6adace0b8598b776fb6b6f052f70075b6c42a1d44e9b"
+    },
+    {
+      "file": "native/dev_1-vi-long-folded.pdf",
+      "bytes": 253171,
+      "sha256": "d21d361b58808f304e9cc6dd0c9222faf7bbbcd661a8752a21ad9f528ee77abc"
+    },
+    {
+      "file": "native/dev_1-vi-long.pdf",
+      "bytes": 185417,
+      "sha256": "ad03e74ea16b305f7b75b8fa99f905d7b39267f065acd6375da3a866bc76eb0f"
+    },
+    {
+      "file": "native/dev_1-vi-short-1.png",
+      "bytes": 40819,
+      "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+    },
+    {
+      "file": "native/dev_1-vi-short-folded-1.png",
+      "bytes": 40819,
+      "sha256": "33612e2ba0ccb557776b94911f9cb1a4577b9f59a0296a3b67830550ac53e817"
+    },
+    {
+      "file": "native/dev_1-vi-short-folded.pdf",
+      "bytes": 183493,
+      "sha256": "8b6850a0f7bdc5c1211ba8c3d6600465b4eafa215786fa9a1ed70a22f60058f8"
+    },
+    {
+      "file": "native/dev_1-vi-short.pdf",
+      "bytes": 159551,
+      "sha256": "f0ce3d25f627aceb6e90698a0855bdd912f5bbdf0428d74b5d96bdae79165145"
+    },
+    {
+      "file": "native/render-report.json",
+      "bytes": 18166,
+      "sha256": "85efac3c220b95d5311b3cfad8a8ae346e5ec89b6ff8ae92f610d1f3b987fe52"
+    }
+  ],
+  "originalTtfControlRejected": true,
+  "twoStepPositionControlReproducesPlainSpacing": true,
+  "pythonMatrixFoldPrototypeOnly": true,
+  "prototypeNativeCases": 3,
+  "prototypeNativePages": 4,
+  "allEightPixelComparisonsExact": true,
+  "allNativeFactsWholePypdfPlainAndPdfplumber": true,
+  "actualCloudExportVerified": false,
+  "javascriptParserOrRuntimeIntegrationImplemented": false
+}

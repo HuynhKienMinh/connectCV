@@ -1,0 +1,45 @@
+{
+  "scaleTo": 1200,
+  "cases": [
+    {
+      "id": "dev_1-en-short-1",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "dev_1-vi-long-1",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "dev_1-vi-long-2",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "dev_1-vi-short-1",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "controlled-weight-matrix",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "same-font-per-glyph-object",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "same-font-one-object-per-glyph-position",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    },
+    {
+      "id": "same-font-per-glyph-two-step-position",
+      "differentPixels": 0,
+      "maxChannelDifference": 0
+    }
+  ]
+}

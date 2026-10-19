@@ -1,0 +1,11 @@
+{
+  "sameDimensions": true,
+  "differentPixels": 21319,
+  "maxChannelDifference": 255,
+  "bbox": [
+    0,
+    95,
+    531,
+    430
+  ]
+}

@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 54,
-  "lastRun": "runs/2026-10-19-cycle-0054.md",
+  "completedCycles": 55,
+  "lastRun": "runs/2026-10-19-cycle-0055.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "SOURCE_CODE_PRO_PARSER_CONTRAST_LOCAL_3CASES_REVIEW_CI_PENDING",
+  "issueState": "TM_TD_CAUSAL_PROTOTYPE_LOCAL_TEXT_PIXEL_PASS_BASELINE_CI_SUCCESS_NEXT_JS_OPTIN",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Resume exact5620573 review CI39265909853 acceptance; no new main/runtime deployment. New opt-in diagnostic is excluded from baseline CI and preserves pypdfplain failures. Then continue Source Code Pro causal probe, not repeat the three parser comparisons.",
-    "Continue Source Code Pro/dev_1 font-switch diagnostics: controlled300static vs400/500/600/700variable and PDF Tf/Tm/Tj position/width evidence before considering a replacement. Do not repeat Roboto static/hinting/units prototypes already rejected or all148shortmatrix.",
-    "Live FE1bc/Hosting89f andBE0bf unchanged. Backup53 VERIFIED19chain retained only on privateDrive, next runtime deployment requires newbaseline. No AI/userwrites/database backup/custody changes."
+    "Implement a bounded opt-in JavaScript PDF prototype for the proven narrow Chrome Tm(origin)+Td(offset) canonicalization using existing pdf-lib; strict lexical PDF token handling, preserve literal/hex strings and skip unsupported/inline-image streams. Priorc860 reviewCI39268376161 SUCCESS; do not repeat completed controls just to poll.",
+    "Before runtime integration compare output on Roboto/Ambitious short VI/EN/long/crop and SourceCodePro cases: whole facts by plain pypdf+pdfplumber, font/ToUnicode/glyph bytes, A4/pagination and independent raster exact. Generalized58case/fullmatrix still unverified; keep CV002 open.",
+    "Live FE1bc/Hosting89f andBE0bf/catalog53 VERIFIED unchanged; no new backup, deploy or real profile/AI writes. Any future runtime deployment needs new exact code/build/current rollback privateDrive verification."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "CV002 new unverified native-font word-boundary scenario; no repeat of completed AccountPage18 or whole148template shortmatrix.",
+    "nextAction": "Implement a bounded opt-in JavaScript PDF prototype for the proven narrow Chrome Tm(origin)+Td(offset) canonicalization using existing pdf-lib; strict lexical PDF token handling, preserve literal/hex strings and skip unsupported/inline-image streams. Priorc860 reviewCI39268376161 SUCCESS; do not repeat completed controls just to poll.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -249,9 +249,13 @@
     "pendingAccountRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792418275025000",
     "pendingAccountVersion": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd",
     "pendingWordBoundaryReviewCommit": "562057308eea9f2543d717419a3389b5675cd64a",
-    "pendingWordBoundaryStatus": "LOCAL3_RENDERED_EXPECTED_PLAIN_FAIL_LAYOUT_PDFPLUMBER_PASS_REVIEW_CI_PENDING",
+    "pendingWordBoundaryStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_DIAGNOSTIC_STILL_PLAIN_FAIL",
     "pendingWordBoundaryReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39265909853",
-    "pendingWordBoundaryReviewCiPassed": false
+    "pendingWordBoundaryReviewCiPassed": true,
+    "pendingTextPositionReviewCommit": "c860b331ffc90fcffa70be09a06e2a1269eccea0",
+    "pendingTextPositionReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39268376161",
+    "pendingTextPositionStatus": "PYTHON_OPTIN_LOCAL_TEXT_PIXEL_PASS_REVIEW_BASELINE_CI_SUCCESS_NO_RUNTIME_INTEGRATION",
+    "pendingTextPositionReviewCiPassed": true
   },
   "blockingDependency": null,
   "dataBackup": {

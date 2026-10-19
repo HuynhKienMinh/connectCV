@@ -101,3 +101,8 @@ UID string không đủ khi quay A→B→A. Session object mới sau actor trans
 ## D022 —19/10/2026: parser contrast là chẩn đoán, không đổi cổng ATS
 
 Ba dev_1 SourceCodePro cases đọc nguyênfacts bằngpypdf-layout/pdfplumber nhưngpypdfplain vẫnsplit4facts. Giữmọikếtquả vàexpectedfailure, khôngchuyểnmode/ghépwhitespace đểđóngCV002 hayngoạisuy58cases. Chưathayfont/normalizePDF; kiểmTf/Tm/Tj/width/geometry/raster vàactualATS riêng. PDF2trangtestgiả khôngchứngnhậnfullmatrix hoặcdownloadđăngnhập.
+
+
+## D023 —19/10/2026: vị trí text là prototype riêng, không thay font hoặc parser gate
+
+SameType3/glyphs/paint controls choCompany:perglyphBT/ET tựnóđọcđúng; Tmorigin+Tdoffset twostep cóthể khiếnpypdfplainthêmspaces dùảnhgiống. Localadjacentmatrixfold giữpaint/textfacts trên3dev_1cases, khôngfontreplacement; originalTTFcontrol vẫnbịloại pixelgate. Chưaappintegration: Nodeprototype phảiboundedlexicalparser/narrowknownChromeoperators, failclosedunsupportedstream, fullfont/long/crop/Linux/resourcegates trướcrelease. KhôngdeployPython hoặcđổi verifier sanglayout đểđóngticket.
