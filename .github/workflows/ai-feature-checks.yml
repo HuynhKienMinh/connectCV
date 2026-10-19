@@ -198,3 +198,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           RECEIPT_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-community-receipt-qa'
+      - name: Verify interview voice cancellation, late playback and delayed microphone resume
+        run: node tests/interviewVoiceUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          INTERVIEW_VOICE_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-voice-qa'

@@ -3768,6 +3768,9 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const liveHeader = document.getElementById('live-controls-header');
 
       if (mode === 'script') {
+        cancelLiveVoice();
+        stopLiveListening();
+        isAISpeakingOrThinking = false;
         scriptView.classList.remove('hidden');
         liveView.classList.add('hidden');
         btnScript.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-800 border border-slate-300 flex items-center transition';
@@ -3997,79 +4000,113 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     // Biến cờ toàn cục chống Acoustic Echo: Khóa hoàn toàn Micro khi AI đang suy luận hoặc phát âm
     let isAISpeakingOrThinking = false;
 
-    // Phát âm thanh giọng đọc tiếng Việt (Microsoft Neural Voice + Web Speech Synthesis Fallback)
+    // Each voice operation owns fetch, playback, fallback and delayed mic resume.
+    let liveVoiceOperation = null;
+    function ownsLiveVoice(operation) { return liveVoiceOperation === operation; }
+
+    function releaseLiveVoiceAudio(operation) {
+      const audio = operation.audio;
+      operation.audio = null;
+      if (audio) {
+        audio.onplay = audio.onended = audio.onerror = null;
+        try { audio.pause(); } catch(e) {}
+        if (currentLiveAudio === audio) currentLiveAudio = null;
+      }
+      if (operation.url) {
+        URL.revokeObjectURL(operation.url);
+        operation.url = null;
+      }
+    }
+
+    function cancelLiveVoice() {
+      const operation = liveVoiceOperation;
+      liveVoiceOperation = null; // Invalidate before abort/cancel callbacks.
+      if (operation) {
+        operation.controller.abort();
+        clearTimeout(operation.requestTimer);
+        clearTimeout(operation.resumeTimer);
+        if (operation.utterance) operation.utterance.onend = operation.utterance.onerror = null;
+        releaseLiveVoiceAudio(operation);
+      }
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    }
+
+    function resumeAfterLiveVoice(operation, delay) {
+      if (!ownsLiveVoice(operation)) return;
+      releaseLiveVoiceAudio(operation);
+      clearTimeout(operation.resumeTimer);
+      operation.resumeTimer = setTimeout(() => {
+        if (!ownsLiveVoice(operation)) return;
+        liveVoiceOperation = null;
+        if (operation.utterance) operation.utterance.onend = operation.utterance.onerror = null;
+        isAISpeakingOrThinking = false;
+        currentSpeechBuffer = '';
+        const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
+        if (isHandsFree) startLiveListening();
+        else setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
+      }, delay);
+    }
+
     async function playNaturalVoice(text) {
+      cancelLiveVoice();
+      const operation = { controller: new AbortController(), audio: null, url: null, utterance: null };
+      liveVoiceOperation = operation;
       isAISpeakingOrThinking = true;
       stopLiveListening();
       currentSpeechBuffer = '';
-
-      if (currentLiveAudio) {
-        currentLiveAudio.pause();
-        currentLiveAudio = null;
-      }
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
-
       setLiveOrbState('thinking', 'Đang kết nối âm thanh giọng đọc...');
-
+      operation.requestTimer = setTimeout(() => operation.controller.abort(), 15000);
       try {
         const res = await fetch('/api/interview/tts', {
-          method: 'POST',
-          signal: AbortSignal.timeout(15000),
+          method: 'POST', signal: operation.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text, voice: selectedVoice })
         });
-
-        if (!res.ok) throw new Error('Không thể tải audio từ server');
-
+        if (!ownsLiveVoice(operation)) return;
+        if (!res.ok) throw new Error('Voice unavailable');
         const blob = await res.blob();
-        const audioUrl = URL.createObjectURL(blob);
-        currentLiveAudio = new Audio(audioUrl);
-
-        currentLiveAudio.onplay = () => {
+        if (!ownsLiveVoice(operation)) return;
+        clearTimeout(operation.requestTimer);
+        operation.url = URL.createObjectURL(blob);
+        const audio = new Audio(operation.url);
+        operation.audio = audio;
+        currentLiveAudio = audio;
+        audio.onplay = () => {
+          if (!ownsLiveVoice(operation) || operation.audio !== audio) { audio.pause(); return; }
           isAISpeakingOrThinking = true;
           stopLiveListening();
           currentSpeechBuffer = '';
           setLiveOrbState('speaking');
           updateLiveCaption('interviewer', text);
         };
-
-        currentLiveAudio.onended = () => {
-          currentLiveAudio = null;
-          // Độ trễ an toàn 450ms để triệt tiêu hoàn toàn âm vang (Acoustic Echo Clearance) từ loa
-          setTimeout(() => {
-            isAISpeakingOrThinking = false;
-            currentSpeechBuffer = '';
-            const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-            if (isHandsFree) {
-              startLiveListening();
-            } else {
-              setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
-            }
-          }, 450);
+        audio.onended = () => {
+          if (!ownsLiveVoice(operation) || operation.audio !== audio) return;
+          operation.playbackEnded = true;
+          resumeAfterLiveVoice(operation, 450);
         };
-
-        currentLiveAudio.onerror = (e) => {
-          console.warn('Lỗi phát âm thanh server, chuyển fallback:', e);
-          fallbackBrowserSpeech(text);
+        audio.onerror = () => {
+          if (!ownsLiveVoice(operation) || operation.audio !== audio) return;
+          releaseLiveVoiceAudio(operation);
+          fallbackBrowserSpeech(text, operation);
         };
-
-        await currentLiveAudio.play();
+        await audio.play();
       } catch (err) {
-        console.warn('Lỗi TTS server, sử dụng giọng đọc trình duyệt (Web Speech):', err);
-        fallbackBrowserSpeech(text);
+        if (!ownsLiveVoice(operation) || operation.playbackEnded) return;
+        releaseLiveVoiceAudio(operation);
+        fallbackBrowserSpeech(text, operation);
+      } finally {
+        clearTimeout(operation.requestTimer);
       }
     }
 
-    // Fallback giọng đọc trực tiếp từ trình duyệt khi server TTS bận hoặc không kết nối được
-    function fallbackBrowserSpeech(text) {
+    function fallbackBrowserSpeech(text, operation = liveVoiceOperation) {
+      if (!operation || !ownsLiveVoice(operation) || operation.fallbackStarted) return;
+      operation.fallbackStarted = true;
       isAISpeakingOrThinking = true;
       stopLiveListening();
       currentSpeechBuffer = '';
       setLiveOrbState('speaking');
       updateLiveCaption('interviewer', text);
-
       if ('speechSynthesis' in window) {
         try {
           const cleanText = text
@@ -4077,70 +4114,26 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             .replace(/\[.*?\]/g, '')
             .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
             .trim();
-
           const utterance = new SpeechSynthesisUtterance(cleanText);
+          operation.utterance = utterance;
           utterance.lang = 'vi-VN';
           utterance.rate = 1.0;
-
           const voices = window.speechSynthesis.getVoices();
           const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN') || (v.name && v.name.toLowerCase().includes('vietnam')));
           if (viVoice) {
             utterance.voice = viVoice;
-            utterance.onend = () => {
-              setTimeout(() => {
-                isAISpeakingOrThinking = false;
-                currentSpeechBuffer = '';
-                const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-                if (isHandsFree) {
-                  startLiveListening();
-                } else {
-                  setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
-                }
-              }, 450);
-            };
-            utterance.onerror = () => {
-              setTimeout(() => {
-                isAISpeakingOrThinking = false;
-                currentSpeechBuffer = '';
-                startLiveListening();
-              }, 450);
-            };
+            utterance.onend = utterance.onerror = () => resumeAfterLiveVoice(operation, 450);
             window.speechSynthesis.speak(utterance);
-          } else {
-            console.warn('[Web Speech] Trình duyệt không có giọng đọc tiếng Việt, tránh phát âm đánh vần bằng giọng tiếng Anh.');
-            setTimeout(() => {
-              isAISpeakingOrThinking = false;
-              currentSpeechBuffer = '';
-              const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-              if (isHandsFree) {
-                startLiveListening();
-              } else {
-                setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
-              }
-            }, 3000);
-            return;
-          }
+          } else resumeAfterLiveVoice(operation, 3000);
           return;
-        } catch (e) {
-          console.warn('SpeechSynthesis error:', e);
-        }
+        } catch (e) {}
       }
-
-      // Nếu trình duyệt không có SpeechSynthesis, hiển thị phụ đề 3.5s rồi lắng nghe
-      setTimeout(() => {
-        isAISpeakingOrThinking = false;
-        currentSpeechBuffer = '';
-        const isHandsFree = document.getElementById('handsfree-toggle')?.checked ?? true;
-        if (isHandsFree) {
-          startLiveListening();
-        } else {
-          setLiveOrbState('idle', 'Bấm vào Quả cầu hoặc nút Mic để trả lời');
-        }
-      }, 3500);
+      resumeAfterLiveVoice(operation, 3500);
     }
 
     // Nút "Ngắt lời" (Interrupt) - Cho phép ứng viên ngắt lời AI bất cứ lúc nào
     function interruptAI() {
+      cancelLiveVoice();
       if (currentLiveAudio) {
         currentLiveAudio.pause();
         currentLiveAudio = null;
@@ -4664,6 +4657,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const input = document.getElementById('live-quick-input');
       const text = ((input ? input.value : '') || currentSpeechBuffer || '').trim();
       if (!text) return;
+      cancelLiveVoice();
       if (input) input.value = '';
       currentSpeechBuffer = '';
       if (currentLiveAudio) {
@@ -4751,6 +4745,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Bắt đầu phiên Gemini Live mới
     async function startLiveInterview() {
+      cancelLiveVoice();
       switchIntSubMode('practice');
       switchIntMode('live');
 
@@ -4809,6 +4804,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Bắt đầu luyện tập một câu hỏi cụ thể từ kịch bản STAR
     async function practiceQuestionLive(encodedQ) {
+      cancelLiveVoice();
       const question = decodeURIComponent(encodedQ);
       switchIntMode('live');
 
@@ -4835,6 +4831,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Đặt lại phiên phỏng vấn Live
     function resetLiveInterview() {
+      cancelLiveVoice();
       isAISpeakingOrThinking = false;
       if (currentLiveAudio) {
         currentLiveAudio.pause();
@@ -4855,6 +4852,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Kết thúc phiên phỏng vấn và hiển thị Báo Cáo Đánh Giá Tổng Kết STAR
     async function endLiveInterview() {
+      cancelLiveVoice();
       isAISpeakingOrThinking = false;
       if (currentLiveAudio) {
         currentLiveAudio.pause();
