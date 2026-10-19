@@ -235,3 +235,7 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cập nhật chu kỳ0055 —19/10/2026
 
 [Textpositioning causal probe](runs/2026-10-19-cycle-0055.md): prior562CI39265909853 SUCCESS. c860b33 optincontrolledweights/tinyPDFs cho thấyTmorigin+Td cóthểlàmplainparserthêmspaces màảnhgiống; originalTTFcontrol bịloại21319pixel dùtext/geometryPASS. Pythonlocalmatrixfold giữ3dev_1cases/4pagesfacts và8rastercomparisons0pixel, khôngđổifont/ToUnicode/glyph/text. ChưaNodeintegration/fullfont/Linux/annotationmatrix, khôngruntime/main/deploy;2.03MBstage đãdọn. TiếpboundedJSoptinprototype trướcproductiongate, CV002 vẫnOPEN.
+
+## Cycle0059 —20/10/2026: kiểm soát lỗi dấu câu PDF
+
+[Nhật ký và đối chứng](runs/2026-10-20-cycle-0059.md): mode local mới giữ `PDF.` và khoảng cách từ âm mà không đổi ảnh/font; prototype58 vẫn bị loại. Một native case giữ full summary và hai markers, nhưng heading/thứ tự cột còn lỗi nên CV002 vẫn mở. Đây là thử nghiệm tương thích parser, chưa tích hợp runtime hoặc deploy; chưa chứng nhận ATS hay toàn bộ74mẫu. Live và backup Drive53 giữ nguyên.

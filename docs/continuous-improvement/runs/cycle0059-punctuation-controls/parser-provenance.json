@@ -1,0 +1,13 @@
+{
+  "pypdf": "6.10.0",
+  "module": "pypdf._page.PageObject._extract_text",
+  "sourceSha256": "4f67ace5e7172f294ba236b7e19fd62840f722d13dc95ee32215799e6ec4a7f0",
+  "observedBehavior": "TJ numeric abs(correction) >= halfSpaceWidth*0.95 inserts an ordinary space regardless of correction sign. Wrapper calls original and asserts full output equality.",
+  "excerpt": "            elif operator == b\"TJ\":\n                # The space width may be smaller than the font width, so the width should be 95%.\n                _confirm_space_width = extractor._space_width * 0.95\n                if operands:\n                    for op in operands[0]:\n                        if isinstance(op, (str, bytes)):\n                            extractor.process_operation(b\"Tj\", [op])\n                        if isinstance(op, (int, float, NumberObject, FloatObject)) and (\n                            abs(float(op)) >= _confirm_space_width\n                            and extractor.text\n                            and extractor.text[-1] != \" \"\n                        ):\n                            extractor.process_operation(b\"Tj\", [\" \"])\n            elif operator == b\"TD\":\n                extractor.process_operation(b\"TL\", [-operands[1]])",
+  "observedCase": {
+    "positiveTightening": 114.257813,
+    "halfSpaceWidth": 100,
+    "threshold": 95
+  },
+  "workaroundScope": "Local positive-only fragmentation with part<=50; negative word-gap corrections retained. Parser-specific compatibility experiment, not universal ATS solution."
+}

@@ -1,0 +1,111 @@
+{
+  "scope": "Positive tightening versus negative position-only word gap; diagnostic controls, not universal ATS proof",
+  "nativeOffsets": [
+    "8.2011719",
+    "8.53125",
+    "5.7001953"
+  ],
+  "kerningCorrectionUnits": "thousandths of text space",
+  "capPerPositivePart": "50",
+  "matrixAndFontUnchanged": true,
+  "verifierUnmodified": true,
+  "cases": [
+    {
+      "id": "word-native-relative",
+      "expected": "PDF.",
+      "pypdfPlain": "P DF.",
+      "pdfplumberDefault": "PDF.",
+      "plainExact": false,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm <34> Tj 8.2011719 0 Td <28> Tj 8.53125 0 Td <2a> Tj 5.7001953 0 Td <12> Tj ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "word-raw-TJ",
+      "expected": "PDF.",
+      "pypdfPlain": "PDF .",
+      "pdfplumberDefault": "PDF.",
+      "plainExact": false,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<34> -0.000001923077 <28> 0.000000000000 <2a> 114.257813461538 <12>] TJ ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "word-positive-only-split",
+      "expected": "PDF.",
+      "pypdfPlain": "PDF.",
+      "pdfplumberDefault": "PDF.",
+      "plainExact": true,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<34> -0.000001923077 <28> 0.000000000000 <2a> 50.000000000000 50.000000000000 14.257813461538 <12>] TJ ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "word-all-signs-split",
+      "expected": "PDF.",
+      "pypdfPlain": "PDF.",
+      "pdfplumberDefault": "PDF.",
+      "plainExact": true,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<34> -0.000001923077 <28> 0.000000000000 <2a> 50.000000000000 50.000000000000 14.257813461538 <12>] TJ ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "gap-native-relative",
+      "expected": "PDF. PDF.",
+      "pypdfPlain": "P DF.P DF.",
+      "pdfplumberDefault": "PDF. PDF.",
+      "plainExact": false,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm <34> Tj 8.2011719 0 Td <28> Tj 8.53125 0 Td <2a> Tj 5.7001953 0 Td <12> Tj 7.97773437500 0 Td <34> Tj 8.2011719 0 Td <28> Tj 8.53125 0 Td <2a> Tj 5.7001953 0 Td <12> Tj ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "gap-raw-TJ",
+      "expected": "PDF. PDF.",
+      "pypdfPlain": "PDF . PDF .",
+      "pdfplumberDefault": "PDF. PDF.",
+      "plainExact": false,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<34> -0.000001923077 <28> 0.000000000000 <2a> 114.257813461538 <12> -350.000000000000 <34> -0.000001923077 <28> 0.000000000000 <2a> 114.257813461538 <12>] TJ ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "gap-positive-only-split",
+      "expected": "PDF. PDF.",
+      "pypdfPlain": "PDF. PDF.",
+      "pdfplumberDefault": "PDF. PDF.",
+      "plainExact": true,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<34> -0.000001923077 <28> 0.000000000000 <2a> 50.000000000000 50.000000000000 14.257813461538 <12> -350.000000000000 <34> -0.000001923077 <28> 0.000000000000 <2a> 50.000000000000 50.000000000000 14.257813461538 <12>] TJ ET Q",
+      "fullFontResourceEqual": true
+    },
+    {
+      "id": "gap-all-signs-split",
+      "expected": "PDF. PDF.",
+      "pypdfPlain": "PDF.PDF.",
+      "pdfplumberDefault": "PDF. PDF.",
+      "plainExact": false,
+      "plumberExact": true,
+      "differentPixels": 0,
+      "maximumChannelDifference": 0,
+      "content": "q 1 0 0 -1 0 841.89 cm BT /Probe 13 Tf 1 0 0 -1 40 60 Tm [<34> -0.000001923077 <28> 0.000000000000 <2a> 50.000000000000 50.000000000000 14.257813461538 <12> -50.000000000000 -50.000000000000 -50.000000000000 -50.000000000000 -50.000000000000 -50.000000000000 -50.000000000000 <34> -0.000001923077 <28> 0.000000000000 <2a> 50.000000000000 50.000000000000 14.257813461538 <12>] TJ ET Q",
+      "fullFontResourceEqual": true
+    }
+  ],
+  "generalRuntimeAccepted": false
+}

@@ -1,0 +1,88 @@
+{
+  "scope": "Actual prototype positive-only mode, punctuation and position-only word-gap controls; not a production gate",
+  "pypdf": "6.10.0",
+  "pdfplumber": "0.11.9",
+  "raster": "Poppler pdftoppm scale-to1200",
+  "allCasesPass": true,
+  "cases": [
+    {
+      "id": "word",
+      "pages": 1,
+      "folded": 0,
+      "beforeBytes": 32384,
+      "afterBytes": 32656,
+      "pdfSha256": [
+        "d69c7a8da986973108055b336b9291a3b30ab234e5d5dbab380e568b1dbf7a47",
+        "b6311cf12158bb4823099d54a985d0554d3aa7a89866a556980667ff4f9e9208"
+      ],
+      "fullResourceGraphSha256": [
+        "ff1cfa498bba96e66456eed42915313c250271296e3f82186187206417615f62"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "PDF."
+        ],
+        "pdfplumber-default": []
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": []
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    },
+    {
+      "id": "gap",
+      "pages": 1,
+      "folded": 0,
+      "beforeBytes": 32478,
+      "afterBytes": 32754,
+      "pdfSha256": [
+        "d08287ace30edf0d84135f7da7872ca7760b90bb01bb2a759c913b7bab75c00a",
+        "c34c007a2238e7678aab8084cf57aacca1bdba8269ee2d338d2b856b900d0324"
+      ],
+      "fullResourceGraphSha256": [
+        "ff1cfa498bba96e66456eed42915313c250271296e3f82186187206417615f62"
+      ],
+      "metadataEqual": true,
+      "fontBoundGlyphCodesAndOtherPaintOperatorsEqual": true,
+      "missingFactsBefore": {
+        "pypdf-plain": [
+          "PDF. PDF."
+        ],
+        "pdfplumber-default": []
+      },
+      "missingFactsAfter": {
+        "pypdf-plain": [],
+        "pdfplumber-default": []
+      },
+      "pixels": [
+        {
+          "page": 1,
+          "size": [
+            849,
+            1200
+          ],
+          "differentPixels": 0,
+          "maximumChannelDifference": 0
+        }
+      ]
+    }
+  ],
+  "productionRuntimeChanged": false,
+  "structuralComparison": "font-bound glyph byte sequence and non-show/non-position operators; placement checked independently by raster; text extractors unmodified",
+  "full148MatrixVerified": false,
+  "linuxNativePrototypeVerified": false,
+  "actualCloudExportVerified": false
+}

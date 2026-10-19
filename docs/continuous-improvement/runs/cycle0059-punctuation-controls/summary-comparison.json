@@ -1,0 +1,32 @@
+{
+  "requiredSummary": "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm.",
+  "results": [
+    {
+      "file": "tm-only.pdf",
+      "fullSummaryExact": true,
+      "experienceMarkerWhole": false,
+      "educationMarkerWhole": false,
+      "headingExact": false,
+      "pdfPunctuationSplit": false,
+      "summaryPreview": "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm. "
+    },
+    {
+      "file": "grouped.pdf",
+      "fullSummaryExact": false,
+      "experienceMarkerWhole": true,
+      "educationMarkerWhole": true,
+      "headingExact": false,
+      "pdfPunctuationSplit": true,
+      "summaryPreview": "Hồ sơ giả để kiểm tra xuất PDF . Kinh nghiệm xây dựng và kiểm thử phần mềm. "
+    },
+    {
+      "file": "positive-grouped.pdf",
+      "fullSummaryExact": true,
+      "experienceMarkerWhole": true,
+      "educationMarkerWhole": true,
+      "headingExact": false,
+      "pdfPunctuationSplit": false,
+      "summaryPreview": "Hồ sơ giả để kiểm tra xuất PDF. Kinh nghiệm xây dựng và kiểm thử phần mềm. "
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "createdAt": "2026-10-19T17:07:14.690010+00:00",
+  "sourceCommit": "1ccca75d5fc315626e49300c0a70c1b90c8edf57",
+  "ownedStage": "tmp/pdfs/cycle0059-punctuation-controls",
+  "bytes": 2298333,
+  "files": [
+    {
+      "name": "actual-gap-qa/acceptance-report.json",
+      "bytes": 2557,
+      "sha256": "7ff42b6ec9937c9b8b24c9cb7238f583ee12f4819ca1150dcd09be38d125934d"
+    },
+    {
+      "name": "actual-gap-qa/gap-after-1.png",
+      "bytes": 5285,
+      "sha256": "ccb24f462cd20e989ba9a755aeeb41509ccf090e29baecb9c227fdaf5af0e170"
+    },
+    {
+      "name": "actual-gap-qa/gap-after.pdf",
+      "bytes": 32754,
+      "sha256": "c34c007a2238e7678aab8084cf57aacca1bdba8269ee2d338d2b856b900d0324"
+    },
+    {
+      "name": "actual-gap-qa/gap-before-1.png",
+      "bytes": 5285,
+      "sha256": "ccb24f462cd20e989ba9a755aeeb41509ccf090e29baecb9c227fdaf5af0e170"
+    },
+    {
+      "name": "actual-gap-qa/gap-before.pdf",
+      "bytes": 32478,
+      "sha256": "d08287ace30edf0d84135f7da7872ca7760b90bb01bb2a759c913b7bab75c00a"
+    },
+    {
+      "name": "actual-gap-qa/parser-warnings.log",
+      "bytes": 348,
+      "sha256": "f65df0977ef523b3a6ae8de2d47804a8375af213ec5e0089f8bd1c65619755dd"
+    },
+    {
+      "name": "actual-gap-qa/render-report.json",
+      "bytes": 270,
+      "sha256": "cd3c84e6ed11bcdbe5e71aa9ca674c2553b52ba177762394223c26499161da6c"
+    },
+    {
+      "name": "actual-gap-qa/word-after-1.png",
+      "bytes": 5250,
+      "sha256": "de7a660876718c029c460de9cc3a5851ac3bc8508f34d0bcb207b41858636547"
+    },
+    {
+      "name": "actual-gap-qa/word-after.pdf",
+      "bytes": 32656,
+      "sha256": "b6311cf12158bb4823099d54a985d0554d3aa7a89866a556980667ff4f9e9208"
+    },
+    {
+      "name": "actual-gap-qa/word-before-1.png",
+      "bytes": 5250,
+      "sha256": "de7a660876718c029c460de9cc3a5851ac3bc8508f34d0bcb207b41858636547"
+    },
+    {
+      "name": "actual-gap-qa/word-before.pdf",
+      "bytes": 32384,
+      "sha256": "d69c7a8da986973108055b336b9291a3b30ab234e5d5dbab380e568b1dbf7a47"
+    },
+    {
+      "name": "gap-actual-plan.json",
+      "bytes": 458,
+      "sha256": "a568acf1d18a445441a16d3deaa2af0fabf8ecd12fca179374088a2e2a51c4c3"
+    },
+    {
+      "name": "gap-actual-positive.pdf",
+      "bytes": 32754,
+      "sha256": "c34c007a2238e7678aab8084cf57aacca1bdba8269ee2d338d2b856b900d0324"
+    },
+    {
+      "name": "gap-all-signs-split.pdf",
+      "bytes": 32631,
+      "sha256": "b9ca93b974716290cc0c4fee40e7ad925c70c6bce5a14b9143fcc10b758ed4d7"
+    },
+    {
+      "name": "gap-all-signs-split.png",
+      "bytes": 5285,
+      "sha256": "ccb24f462cd20e989ba9a755aeeb41509ccf090e29baecb9c227fdaf5af0e170"
+    },
+    {
+      "name": "gap-native-relative.pdf",
+      "bytes": 32478,
+      "sha256": "d08287ace30edf0d84135f7da7872ca7760b90bb01bb2a759c913b7bab75c00a"
+    },
+    {
+      "name": "gap-native-relative.png",
+      "bytes": 5285,
+      "sha256": "ccb24f462cd20e989ba9a755aeeb41509ccf090e29baecb9c227fdaf5af0e170"
+    },
+    {
+      "name": "gap-positive-only-split.pdf",
+      "bytes": 32530,
+      "sha256": "35eadde3ea4cfbe7531bbf5c2228850ec9a91b7ae3f71d5dacfc39f702ba04cb"
+    },
+    {
+      "name": "gap-positive-only-split.png",
+      "bytes": 5285,
+      "sha256": "ccb24f462cd20e989ba9a755aeeb41509ccf090e29baecb9c227fdaf5af0e170"
+    },
+    {
+      "name": "gap-raw-TJ.pdf",
+      "bytes": 32468,
+      "sha256": "d3463b427b894496dd8de368a443e6af78d8235cf7b3d2ee9a3f11f5d0868665"
+    },
+    {
+      "name": "gap-raw-TJ.png",
+      "bytes": 5285,
+      "sha256": "ccb24f462cd20e989ba9a755aeeb41509ccf090e29baecb9c227fdaf5af0e170"
+    },
+    {
+      "name": "grouped.pdf",
+      "bytes": 236265,
+      "sha256": "f663cbe83299391457cea53c26cd8abe9b48a55ef5817e54acaa17f830bc0cb3"
+    },
+    {
+      "name": "idempotence-plan.json",
+      "bytes": 174,
+      "sha256": "668d8ec06ceeec0758a9fe6112a2d12f3bf630f6b65ea222de2e1810b84680e5"
+    },
+    {
+      "name": "idempotence-report.json",
+      "bytes": 93,
+      "sha256": "6c038635a10ebc3fe41aada292c7ff11fa0b21ca96d052bf9e48e6ae3ff510e0"
+    },
+    {
+      "name": "idempotence.pdf",
+      "bytes": 236269,
+      "sha256": "6b4bf17e68e7f2af932c359d42e321827efec09aeb8102be947c7bbb41bcf374"
+    },
+    {
+      "name": "insertion-trace.json",
+      "bytes": 2400,
+      "sha256": "67f2cfcb71378a91460f00c4c37818456bd832c6bef14d6ff89bfc362bee10ff"
+    },
+    {
+      "name": "native-qa/acceptance-report.json",
+      "bytes": 2115,
+      "sha256": "b59981f717c3c126af6cdedeaeee3fea4b898ec62ad7f68a959c00f13a7636c7"
+    },
+    {
+      "name": "native-qa/ambitious-after-1.png",
+      "bytes": 43493,
+      "sha256": "2b83fff4b21a76d28b0b84ff0a934b1e5339e0728805fc02dac2b4d88146d3f9"
+    },
+    {
+      "name": "native-qa/ambitious-after.pdf",
+      "bytes": 236269,
+      "sha256": "6b4bf17e68e7f2af932c359d42e321827efec09aeb8102be947c7bbb41bcf374"
+    },
+    {
+      "name": "native-qa/ambitious-before-1.png",
+      "bytes": 43493,
+      "sha256": "2b83fff4b21a76d28b0b84ff0a934b1e5339e0728805fc02dac2b4d88146d3f9"
+    },
+    {
+      "name": "native-qa/ambitious-before.pdf",
+      "bytes": 229691,
+      "sha256": "c35e7ecc2d73d33a162be9b65d222492ea22897b206358850428015e53a7ad48"
+    },
+    {
+      "name": "native-qa/parser-warnings.log",
+      "bytes": 2436,
+      "sha256": "77f6fa2534e214205d1ee69f653be296a3f0ec24adcb039e4993db56c45d7430"
+    },
+    {
+      "name": "native-qa/render-report.json",
+      "bytes": 511,
+      "sha256": "1317df6e3d25982c63808f8e2eff9b738c9899fbb3ce5c37ff020888b4bf27c1"
+    },
+    {
+      "name": "native.pdf",
+      "bytes": 229691,
+      "sha256": "c35e7ecc2d73d33a162be9b65d222492ea22897b206358850428015e53a7ad48"
+    },
+    {
+      "name": "parser-warnings.log",
+      "bytes": 696,
+      "sha256": "bd8baf109858a5ae15df59c59d44c74f06f21ab65ca174ad89d58de4f9d1ecd0"
+    },
+    {
+      "name": "plan.json",
+      "bytes": 18073,
+      "sha256": "daafb14197f35a4a969dc4a2d5dab200c0a389228902f79e53c2082eb359b120"
+    },
+    {
+      "name": "positive-grouped.pdf",
+      "bytes": 236269,
+      "sha256": "6b4bf17e68e7f2af932c359d42e321827efec09aeb8102be947c7bbb41bcf374"
+    },
+    {
+      "name": "positive-plan.json",
+      "bytes": 18189,
+      "sha256": "71cf6b7cbea4f64a182e103a57503888c83e2a32ed5bc2096e4fc5437d696ea6"
+    },
+    {
+      "name": "punctuation-controls.json",
+      "bytes": 4792,
+      "sha256": "a68ffda111f6cc798af42f4da3d18799f202450ea199529d6d458f062b79a444"
+    },
+    {
+      "name": "summary-comparison.json",
+      "bytes": 1211,
+      "sha256": "308bcd276ea73cbe301088b1295119468b9f05fbe3e2476f21037e310870c3fa"
+    },
+    {
+      "name": "tm-only.pdf",
+      "bytes": 233605,
+      "sha256": "c58b66a778a00bf0216113a19be2a91e3befab7796e6cbe33dc8b9f0cfc092e2"
+    },
+    {
+      "name": "word-actual-plan.json",
+      "bytes": 374,
+      "sha256": "b4db298036ef8d66fd9b73595df9fed3c75b0f7eefb3827e0fb76855280e50d8"
+    },
+    {
+      "name": "word-actual-positive.pdf",
+      "bytes": 32656,
+      "sha256": "b6311cf12158bb4823099d54a985d0554d3aa7a89866a556980667ff4f9e9208"
+    },
+    {
+      "name": "word-all-signs-split.pdf",
+      "bytes": 32413,
+      "sha256": "0e473e643e68a732eb81465697b8c5b4f26a66a3d5c03441e0987105a187cfd9"
+    },
+    {
+      "name": "word-all-signs-split.png",
+      "bytes": 5250,
+      "sha256": "de7a660876718c029c460de9cc3a5851ac3bc8508f34d0bcb207b41858636547"
+    },
+    {
+      "name": "word-native-relative.pdf",
+      "bytes": 32384,
+      "sha256": "d69c7a8da986973108055b336b9291a3b30ab234e5d5dbab380e568b1dbf7a47"
+    },
+    {
+      "name": "word-native-relative.png",
+      "bytes": 5250,
+      "sha256": "de7a660876718c029c460de9cc3a5851ac3bc8508f34d0bcb207b41858636547"
+    },
+    {
+      "name": "word-positive-only-split.pdf",
+      "bytes": 32413,
+      "sha256": "0e473e643e68a732eb81465697b8c5b4f26a66a3d5c03441e0987105a187cfd9"
+    },
+    {
+      "name": "word-positive-only-split.png",
+      "bytes": 5250,
+      "sha256": "de7a660876718c029c460de9cc3a5851ac3bc8508f34d0bcb207b41858636547"
+    },
+    {
+      "name": "word-raw-TJ.pdf",
+      "bytes": 32382,
+      "sha256": "dcc00563eb8794d0cd32b7a3c05bf11fb8643609d02a3465da328d7f491d4982"
+    },
+    {
+      "name": "word-raw-TJ.png",
+      "bytes": 5250,
+      "sha256": "de7a660876718c029c460de9cc3a5851ac3bc8508f34d0bcb207b41858636547"
+    }
+  ],
+  "stageLimitBytes": 16777216,
+  "cleanupVerified": true,
+  "retainedPdfFontBuildBundleClone": false,
+  "viewedPng": "gap-positive-only-split.png",
+  "strictNativeAcceptance": false,
+  "cleanupVerifiedAt": "2026-10-19T17:09:02.799715+00:00"
+}

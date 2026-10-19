@@ -114,3 +114,7 @@ JavaScript narrow matrix fold trên7cases giữ full resource graph/glyphs/metad
 ## D025 —19/10/2026: giữ fulltext và numeric-resource gate cho experiment TJ
 
 Same-native-font MATRIX control cho thấy adjustedTJ có thể giữ kerning/pixels và nguyên từ; absoluteTm/perglyphBT chưa đủ, single-naturalTj khác343pixels nên bị loại. Broad local grouping sau đó làm native summary `PDF.`→`PDF .` dù resource/glyph/raster giữ nguyên. Bác bỏ dùng chung prototype hiện tại, giữ full-summary regression trước mọi native/fullmatrix rerun. Pypdf whole-document writer làm tròn FontMatrix cũng bị loại; chỉ stream-plan+pdf-lib bridge giữ tài nguyên đúng. Structural comparator cho phép Tj/TJ representation khác nhưng phải giữ glyph bytes gắn font/size, other operators và independent raster; text parser không patch/whitespace join. Không tích hợp runtime hoặc deploy chỉ từ tinyword/eightfacts/CIbaseline.
+
+## D026 —20/10/2026: không phá word-gap để chữa dấu câu
+
+Pypdf local6.10.0 dùng abs(TJcorrection) cho space threshold nên positive tightening114.257813 tạo `PDF .`. Positive-only fragmentation giữ cùng displacement/pixels và native summary trong một scope; split cả dấu âm làm `PDF.PDF.` mất word-gap nên bị loại. Mode mới là parser-specific diagnostic, chưa universalATS/runtime acceptance. Giữ fullsummary/markers/heading/name/negativegap guards và exact resource/raster; default broadTJ vẫnREJECTED. Cần multi-font/space/continuation/resource proof trước genericintegration hoặc148rerun.

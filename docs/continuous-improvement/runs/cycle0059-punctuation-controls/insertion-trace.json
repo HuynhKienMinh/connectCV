@@ -1,0 +1,94 @@
+{
+  "instrumentedOutputEqual": true,
+  "events": [
+    {
+      "font": "/F23",
+      "before": "t PDF",
+      "outputTail": "hành phố giả\nKỹ năng\nSQL\nNode.js\nM ục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuấ",
+      "halfSpaceWidth": 100.0,
+      "threshold": 95.0,
+      "TJ": [
+        {
+          "text": "t",
+          "hex": "58"
+        },
+        -9.61538e-07,
+        {
+          "text": " ",
+          "hex": "04"
+        },
+        -1.923077e-06,
+        {
+          "text": "P",
+          "hex": "34"
+        },
+        -1.923077e-06,
+        {
+          "text": "D",
+          "hex": "28"
+        },
+        0.0,
+        {
+          "text": "F",
+          "hex": "2a"
+        },
+        114.257813,
+        {
+          "text": ".",
+          "hex": "12"
+        },
+        -1.923077e-06,
+        {
+          "text": " ",
+          "hex": "04"
+        },
+        -1.923077e-06,
+        {
+          "text": "K",
+          "hex": "2f"
+        },
+        -1.442308e-06,
+        {
+          "text": "i",
+          "hex": "4d"
+        },
+        9.61538e-07,
+        {
+          "text": "n",
+          "hex": "52"
+        },
+        1.442308e-06,
+        {
+          "text": "h",
+          "hex": "4c"
+        },
+        -3.846154e-06,
+        {
+          "text": " ",
+          "hex": "04"
+        },
+        -1.923077e-06,
+        {
+          "text": "n",
+          "hex": "52"
+        },
+        1.442308e-06,
+        {
+          "text": "g",
+          "hex": "4b"
+        },
+        -9.61538e-07,
+        {
+          "text": "h",
+          "hex": "4c"
+        },
+        -3.846154e-06,
+        {
+          "text": "i",
+          "hex": "4d"
+        }
+      ]
+    }
+  ],
+  "syntheticPlain": "Ứng Viên Thử\nNghiệm\nKỹ sư kiểm thử\nThông tin cá nhân\n 0102345678\n✉ fixture@example.test\n\n Thành phố giả\nKỹ năng\nSQL\nNode.js\nM ục tiêu nghề nghiệp\nHồ sơ giả để kiểm tra xuất PDF . Kinh nghiệm xây dựng và kiểm thử phần mềm.\nKinh nghiệm làm việc\nKiểm thử viên 2024- 2025\nCông ty giả\n•Kiểm tra ứng dụng bằng dữ liệu giả. MATRIX_EXPERIENCE_SOURCE\nHọc vấn\nKỹ thuật phần mềm 2020- 2024\nTrường thử nghiệm\nMATRIX_EDUCATION_SOURCE\n© ConnectCV"
+}

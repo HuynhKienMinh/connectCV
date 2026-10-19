@@ -4,11 +4,11 @@
   "automationId": "connectcv-ki-m-th-ph-n-bi-n-v-n-ng-c-p",
   "automationStatus": "ACTIVE",
   "cadenceMinutes": 15,
-  "completedCycles": 58,
-  "lastRun": "runs/2026-10-19-cycle-0058.md",
+  "completedCycles": 59,
+  "lastRun": "runs/2026-10-20-cycle-0059.md",
   "activeRun": null,
   "activeIssue": "CV002",
-  "issueState": "ADJUSTED_TJ_TINY_PASS_BROAD_NATIVE_REJECTED_PUNCTUATION_REGRESSION_REVIEW_CI_SUCCESS",
+  "issueState": "POSITIVE_TJ_FRAGMENTATION_LOCAL_SUMMARY_GAP_PASS_NATIVE_STRICT_FAIL_REVIEW_CI_SUCCESS",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -39,7 +39,7 @@
   "liveAiWritesAllowed": false,
   "aiScenarioCapPerDay": 12,
   "aiScenariosUsedToday": 0,
-  "aiBudgetDate": "2026-10-19",
+  "aiBudgetDate": "2026-10-20",
   "backup": {
     "codeVerified": true,
     "buildCopied": true,
@@ -59,9 +59,9 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV002 cycle58 broad relative-Tj/Td grouping is REJECTED for general use: native summary exact PASS withTm-only156d44c toFAIL afterTJ (PDF. becomesPDF .). TinyadjustedTJ MATRIX text/pixel PASS is only causal control, not runtime fix. Preserve new full-summary/heading/name-order failures; no full148 rerun until a new intervention passes these local guards.",
-    "Next same-font/glyph PDF. and sentence controls: isolate TJ adjustment/width/space heuristics versus native offsets using unmodified default parsers, exact glyph/font resources and raster. Do not merge blindly, patch verifier, remove punctuation guard or retry rejected font/unit replacements. Current8nativecases/10pages have0pixel/fontresource equality but strict acceptance stillFAIL.",
-    "Review188bb8d CI39288463307 SUCCESS all3jobs, checked16:51:25UTC; new5files are opt-in local, not Linux-native acceptance. Python whole-doc serializer rejected for roundingFontMatrix; content-plan+pdf-lib bridge preserves resources in testedcases. LiveFE1bc/Hosting89f BE0bf andDrive53 VERIFIED unchanged; future runtime deployment requires new exact backup/rollback verification."
+    "CV002 cycle59 positive-only TJ fragmentation: tinyPDF./position-only negativegap controls +actualprototype2cases PASSboth defaultparsers/fontresource/raster; native1case summary+MATRIXmarkers PASS but Mục heading/pypdf and fullnamecolumn/pdfplumber stillFAIL. Parser-specific workaround, not universalATS; default broadTJ58 remainsREJECTED.",
+    "Next localized multi-font/space/continuation guards before generic integration/full148 rerun. Positive cap50 only demonstrated atRoboto halfspace100; preserve negative gaps, explicit spaces, text-line matrix and fullsummary. Test otherfonts/spacing and positive>2000 skip/resource bounds. Do not split all signs, patch verifier, join words or remove remaining heading/name gates.",
+    "Review1ccca75 CI39291250616 SUCCESS all3jobs, checked17:10:38UTC; newPythoncontrols/positive mode areopt-in local, not Linux-native proof. Need bounded JSfont/advance parsing +worker/load-time bounds before runtime. LiveFE1bc/Hosting89f BE0bf andDrive53VERIFIED unchanged; future deployment requires new exact privateDrive backup/rollback verification."
   ],
   "deployment": {
     "commit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
@@ -120,7 +120,7 @@
     "reviewCommit": "55494c40bf347a7a4988d8013c49ff06d45ceeeb",
     "status": "ACCOUNT_SESSION_HOSTING_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "CV002 cycle58 broad relative-Tj/Td grouping is REJECTED for general use: native summary exact PASS withTm-only156d44c toFAIL afterTJ (PDF. becomesPDF .). TinyadjustedTJ MATRIX text/pixel PASS is only causal control, not runtime fix. Preserve new full-summary/heading/name-order failures; no full148 rerun until a new intervention passes these local guards.",
+    "nextAction": "CV002 cycle59 positive-only TJ fragmentation: tinyPDF./position-only negativegap controls +actualprototype2cases PASSboth defaultparsers/fontresource/raster; native1case summary+MATRIXmarkers PASS but Mục heading/pypdf and fullnamecolumn/pdfplumber stillFAIL. Parser-specific workaround, not universalATS; default broadTJ58 remainsREJECTED.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39263202256",
@@ -267,7 +267,11 @@
     "pendingRelativeTjReviewCommit": "188bb8df2f47aa06a4b1f2f9f70470ccaa79433c",
     "pendingRelativeTjReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39288463307",
     "pendingRelativeTjReviewCiPassed": true,
-    "pendingRelativeTjStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_BROAD_TJ_REJECTED_PUNCTUATION_REGRESSION_NO_RUNTIME"
+    "pendingRelativeTjStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_BROAD_TJ_REJECTED_PUNCTUATION_REGRESSION_NO_RUNTIME",
+    "pendingPunctuationReviewCommit": "1ccca75d5fc315626e49300c0a70c1b90c8edf57",
+    "pendingPunctuationReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39291250616",
+    "pendingPunctuationReviewCiPassed": true,
+    "pendingPunctuationStatus": "REVIEW_CI_SUCCESS_OPTIN_LOCAL_POSITIVE_ONLY_SCOPE_PASS_NATIVE_STRICT_FAIL_NO_RUNTIME"
   },
   "blockingDependency": null,
   "dataBackup": {
