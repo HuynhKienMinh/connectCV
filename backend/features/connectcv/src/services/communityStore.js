@@ -15,7 +15,8 @@ class CommunityStore{
   const existing=s.entries.find(e=>e.contentHash===hash);
   if(existing){
    const event=s.ledger.find(e=>e.id==='community:'+existing.id);
-   const receipt=recoveredReceipt(user,entry,existing,existing.id,event,'file');
+   const latest=s.ledger.filter(e=>e.userId===user.id).reduce((at,e)=>Number.isSafeInteger(e.at)?Math.max(at,e.at):at,0);
+   const receipt=recoveredReceipt(user,entry,existing,existing.id,event,'file',latest);
    if(receipt)return receipt;
    throw Object.assign(new Error('Nội dung đã được chia sẻ.'),{status:409});
   }
@@ -25,8 +26,8 @@ class CommunityStore{
   s.entries.unshift({...entry,id,ownerId:user.id,contentHash:hash,likedUsers:[],likesCount:0});
   // Durable feature reward ledger; central balance integration consumes this ID
   // exactly once, never trusts client +5, and must not increment twice on retry.
-  s.ledger.push({id:'community:'+id,userId:user.id,amount:5,at:Date.now(),status:'pending'});
-  return {debriefId:id,awardedCredits:0,pendingCredits:5,creditStatus:'pending',rewardId:'community:'+id,publishedAt:entry.sharedAt};
+  const at=Date.now();s.ledger.push({id:'community:'+id,userId:user.id,amount:5,at,status:'pending'});
+  return {debriefId:id,awardedCredits:0,pendingCredits:5,creditStatus:'pending',rewardId:'community:'+id,publishedAt:entry.sharedAt,cooldownStartedAt:new Date(at).toISOString()};
  });}
  like(user,id){return this.transaction(s=>{const e=s.entries.find(e=>e.id===id);if(!e||!moderation.isVisible(e))throw Object.assign(new Error('Không tìm thấy bài chia sẻ.'),{status:404});
   const users=e.likedUsers||[];const index=users.indexOf(user.id);if(index<0){if(users.length>=10000)throw Object.assign(new Error('Giới hạn lượt thích.'),{status:429});users.push(user.id);}else users.splice(index,1);
