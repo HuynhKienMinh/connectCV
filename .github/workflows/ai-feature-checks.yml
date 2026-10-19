@@ -204,3 +204,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           INTERVIEW_VOICE_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-voice-qa'
+      - name: Verify interview session ownership across transcription, replies and departure
+        run: node tests/interviewSessionUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          INTERVIEW_SESSION_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-session-qa'

@@ -1656,6 +1656,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         switchFreelanceSubMode('proposal');
       }
 
+      if (tabId !== 'tab-interview-module') invalidateLiveInterview();
       document.querySelectorAll('.tab-content').forEach(el => {
         el.classList.add('hidden');
         el.classList.remove('block');
@@ -1688,6 +1689,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Module 2: Luyện Phỏng Vấn (Script + Live AI) vs Đánh Giá STAR
     function switchIntSubMode(mode) {
+      if (mode !== 'practice') invalidateLiveInterview();
       const practiceSec = document.getElementById('int-submode-practice');
       const evalSec = document.getElementById('int-submode-eval');
       const btnPractice = document.getElementById('subtab-int-practice');
@@ -3768,9 +3770,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const liveHeader = document.getElementById('live-controls-header');
 
       if (mode === 'script') {
-        cancelLiveVoice();
-        stopLiveListening();
-        isAISpeakingOrThinking = false;
+        invalidateLiveInterview();
         scriptView.classList.remove('hidden');
         liveView.classList.add('hidden');
         btnScript.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-800 border border-slate-300 flex items-center transition';
@@ -3859,6 +3859,59 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     let isListeningActive = false;
     let vadSilenceTimer = null;
     let currentSpeechBuffer = '';
+
+    let liveInterviewScope = {};
+    let liveReplyOperation = null;
+    let liveTranscribeOperation = null;
+
+    function cancelLiveReply() {
+      const operation = liveReplyOperation;
+      liveReplyOperation = null;
+      if (operation) operation.controller.abort();
+    }
+    function cancelLiveTranscription() {
+      const operation = liveTranscribeOperation;
+      liveTranscribeOperation = null;
+      if (!operation) return;
+      operation.controller.abort();
+      clearTimeout(operation.timeout);
+      if (operation.reader) {
+        operation.reader.onloadend = operation.reader.onerror = null;
+        if (operation.reader.readyState === 1) operation.reader.abort();
+      }
+    }
+    function invalidateLiveInterview() {
+      liveInterviewScope = {};
+      cancelLiveReply();
+      cancelLiveTranscription();
+      cancelLiveVoice();
+      stopLiveListening();
+      isAISpeakingOrThinking = false;
+      currentSpeechBuffer = '';
+    }
+    function beginLiveReply() {
+      cancelLiveReply();
+      cancelLiveTranscription();
+      cancelLiveVoice();
+      const operation = { scope: liveInterviewScope, controller: new AbortController() };
+      liveReplyOperation = operation;
+      return operation;
+    }
+    function ownsLiveReply(operation) {
+      return liveReplyOperation === operation && operation.scope === liveInterviewScope;
+    }
+    function ownsLiveTranscription(operation) {
+      return liveTranscribeOperation === operation && operation.scope === liveInterviewScope &&
+        (document.getElementById('live-quick-input')?.value || '') === operation.draft;
+    }
+    window.addEventListener('pagehide', invalidateLiveInterview);
+    window.addEventListener('connectcv:logout', invalidateLiveInterview);
+    document.getElementById('live-quick-input')?.addEventListener('input', () => {
+      if (!liveTranscribeOperation) return;
+      cancelLiveTranscription();
+      setLiveOrbState('idle', 'Bạn có thể gửi nội dung vừa nhập hoặc thu âm lại');
+    });
+
 
     // Thay đổi giọng đọc AI (Nam Minh / Hoài My)
     function changeLiveVoice(voiceName) {
@@ -4206,6 +4259,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         console.log('AI đang phát âm hoặc suy luận, micro tạm khóa chống echo');
         return;
       }
+      cancelLiveTranscription();
 
       // Nếu là Brave hoặc không có SpeechRecognition, dùng Gemini Audio Transcribe
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -4387,6 +4441,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     // Engine 2: Ghi âm trực tiếp PCM & mã hóa WAV gửi Gemini AI
     async function startMediaRecorderListening() {
       if (micCapturePending || isMediaRecording || isAISpeakingOrThinking) return;
+      cancelLiveTranscription();
       const generation = ++micCaptureGeneration;
       micCapturePending = true;
       try {
@@ -4531,17 +4586,21 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         return;
       }
 
+      cancelLiveTranscription();
+      const operation = { scope: liveInterviewScope, controller: new AbortController(),
+        draft: document.getElementById('live-quick-input')?.value || '' };
+      liveTranscribeOperation = operation;
       const audioBlob = encodeWAV(samples, sampleRate);
       setLiveOrbState('thinking', 'Gemini AI đang nhận diện tiếng Việt từ giọng nói...');
       updateLiveCaption('thinking', 'Đang chuyển giọng nói thành văn bản qua Gemini AI...');
 
       const reader = new FileReader();
-      reader.readAsDataURL(audioBlob);
+      operation.reader = reader;
       reader.onloadend = async () => {
+        if (!ownsLiveTranscription(operation)) return;
         try {
           const base64Data = reader.result.split(',')[1];
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 20000);
+          operation.timeout = setTimeout(() => operation.controller.abort(), 20000);
 
           const res = await fetch('/api/interview/transcribe', {
             method: 'POST',
@@ -4550,11 +4609,12 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
               audioBase64: base64Data,
               mimeType: 'audio/wav'
             }),
-            signal: controller.signal
+            signal: operation.controller.signal
           });
-          clearTimeout(timeoutId);
+
 
           const data = await res.json();
+          if (!ownsLiveTranscription(operation)) return;
           if (data.isQuotaExceeded) {
             updateLiveCaption('error', '⚠️ Hạn ngạch AI nhận diện giọng nói tạm thời bận (429). Bạn hãy gõ câu trả lời vào ô [Gửi] bên dưới để tiếp tục!');
             setLiveOrbState('idle', 'Hãy gõ câu trả lời vào ô bên dưới');
@@ -4574,6 +4634,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
               if (quickInput) quickInput.focus();
               return;
             }
+            liveTranscribeOperation = null;
+            clearTimeout(operation.timeout);
             updateLiveCaption('candidate', text);
             const quickInput = document.getElementById('live-quick-input');
             if (quickInput) quickInput.value = text;
@@ -4585,19 +4647,25 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             if (quickInput) quickInput.focus();
           }
         } catch (err) {
-          console.error('Lỗi transcribe:', err);
+          if (!ownsLiveTranscription(operation)) return;
           const isTimeout = err.name === 'AbortError';
-          const msg = isTimeout ? 'Hết thời gian chờ nhận diện (Timeout). Hãy thử lại hoặc gõ văn bản bên dưới.' : ('Lỗi nhận diện giọng nói: ' + err.message);
+          const msg = isTimeout ? 'Hết thời gian chờ nhận diện (Timeout). Hãy thử lại hoặc gõ văn bản bên dưới.' : 'Chưa nhận diện được giọng nói. Hãy thử lại hoặc nhập văn bản.';
           updateLiveCaption('error', msg);
           setLiveOrbState('idle', 'Bấm để thử lại hoặc gõ bên dưới');
           const quickInput = document.getElementById('live-quick-input');
           if (quickInput) quickInput.focus();
+        } finally {
+          clearTimeout(operation.timeout);
+          reader.onloadend = reader.onerror = null;
+          if (liveTranscribeOperation === operation) liveTranscribeOperation = null;
         }
       };
+      reader.readAsDataURL(audioBlob);
     }
 
     // Dừng toàn bộ micro nhận diện giọng nói
     function stopLiveListening() {
+      cancelLiveTranscription();
       ++micCaptureGeneration;
       micCapturePending = false;
       clearTimeout(vadSilenceTimer);
@@ -4692,6 +4760,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         }
       }
 
+      const operation = beginLiveReply();
       // Khóa ngay micro và đánh dấu trạng thái AI đang xử lý/phát âm
       isAISpeakingOrThinking = true;
       stopLiveListening();
@@ -4707,7 +4776,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
       try {
         const res = await fetch('/api/interview/live-chat', {
-          method: 'POST',
+          method: 'POST', signal: operation.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             jobTitle: document.getElementById('int-title').value,
@@ -4720,6 +4789,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         });
 
         const data = await res.json();
+        if (!ownsLiveReply(operation)) return;
         if (data.success && data.data) {
           const reply = data.data.interviewerReply || data.data.reply;
           appendTranscriptMessage('interviewer', reply);
@@ -4737,15 +4807,18 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           setLiveOrbState('idle');
         }
       } catch (err) {
+        if (!ownsLiveReply(operation)) return;
         isAISpeakingOrThinking = false;
-        updateLiveCaption('error', 'Lỗi kết nối: ' + err.message);
+        updateLiveCaption('error', 'Chưa kết nối được. Bạn có thể thử lại.');
         setLiveOrbState('idle');
+      } finally {
+        if (liveReplyOperation === operation) liveReplyOperation = null;
       }
     }
 
     // Bắt đầu phiên Gemini Live mới
     async function startLiveInterview() {
-      cancelLiveVoice();
+      invalidateLiveInterview();
       switchIntSubMode('practice');
       switchIntMode('live');
 
@@ -4764,9 +4837,10 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       setLiveOrbState('thinking', 'Đang kết nối với Trưởng nhóm tuyển dụng AI...');
       updateLiveCaption('system', 'Đang khởi tạo phiên phỏng vấn thời gian thực...');
 
+      const operation = beginLiveReply();
       try {
         const res = await fetch('/api/interview/live-chat', {
-          method: 'POST',
+          method: 'POST', signal: operation.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             jobTitle: document.getElementById('int-title').value,
@@ -4777,6 +4851,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         });
 
         const data = await res.json();
+        if (!ownsLiveReply(operation)) return;
         if (data.success && data.data) {
           const reply = data.data.interviewerReply || data.data.reply;
           liveInterviewHistory = [{ role: 'interviewer', message: reply }];
@@ -4796,15 +4871,18 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           setLiveOrbState('idle');
         }
       } catch (err) {
+        if (!ownsLiveReply(operation)) return;
         isAISpeakingOrThinking = false;
-        updateLiveCaption('error', 'Lỗi kết nối: ' + err.message);
+        updateLiveCaption('error', 'Chưa kết nối được. Bạn có thể thử lại.');
         setLiveOrbState('idle');
+      } finally {
+        if (liveReplyOperation === operation) liveReplyOperation = null;
       }
     }
 
     // Bắt đầu luyện tập một câu hỏi cụ thể từ kịch bản STAR
     async function practiceQuestionLive(encodedQ) {
-      cancelLiveVoice();
+      invalidateLiveInterview();
       const question = decodeURIComponent(encodedQ);
       switchIntMode('live');
 
@@ -4831,7 +4909,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Đặt lại phiên phỏng vấn Live
     function resetLiveInterview() {
-      cancelLiveVoice();
+      invalidateLiveInterview();
       isAISpeakingOrThinking = false;
       if (currentLiveAudio) {
         currentLiveAudio.pause();
@@ -4852,7 +4930,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Kết thúc phiên phỏng vấn và hiển thị Báo Cáo Đánh Giá Tổng Kết STAR
     async function endLiveInterview() {
-      cancelLiveVoice();
+      invalidateLiveInterview();
       isAISpeakingOrThinking = false;
       if (currentLiveAudio) {
         currentLiveAudio.pause();
