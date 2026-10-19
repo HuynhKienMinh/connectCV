@@ -1,0 +1,42 @@
+{
+  "retainedEvidence": {
+    "ci-status.json": {
+      "bytes": 883,
+      "sha256": "78e9133f8c90899e98decd440753f517e7c76a2098fe33d81b975279cf66fe76"
+    },
+    "summary.json": {
+      "bytes": 1297,
+      "sha256": "bab7d00d03ac2e7af4466d29c51e78167c0ba94c009340117af525a3b841b46a"
+    },
+    "baseline\\ended-voice-390.png": {
+      "bytes": 72892,
+      "sha256": "9f58381c82bb5b7edf8210c4834c7e153486c0057fc0999760853354878883c1"
+    },
+    "baseline\\results.json": {
+      "bytes": 5248,
+      "sha256": "187436f54a950ae3002a9cc1ba613ca74a7ab0e38fde984a938b94d133415f76"
+    },
+    "final\\ended-voice-390.png": {
+      "bytes": 72892,
+      "sha256": "9f58381c82bb5b7edf8210c4834c7e153486c0057fc0999760853354878883c1"
+    },
+    "final\\results.json": {
+      "bytes": 1414,
+      "sha256": "3583eeb36d7a2b00659167031c61fb7dedc77a6fec35ea7084b79241dadc08f7"
+    },
+    "microphone\\results.json": {
+      "bytes": 1349,
+      "sha256": "4ddeccfafe8175b11337030f771daa5bf0a41fe5c6690f7ab7e632b04d1e2880"
+    },
+    "microphone\\text-fallback-390.png": {
+      "bytes": 99988,
+      "sha256": "d456addddc212071938893589a9dba4d9d691570db8fce602f62295f091bf238"
+    }
+  },
+  "ownDuplicateOutputsDeleted": {
+    "files": 6,
+    "bytes": 229582
+  },
+  "largeBackupsCreated": false,
+  "cloudWrites": 0
+}

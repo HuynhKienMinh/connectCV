@@ -1,0 +1,62 @@
+{
+  "wholeStudio": true,
+  "syntheticAudio": true,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "sourceRef": "working-tree",
+  "rows": [
+    {
+      "phase": "late-tts-response-after-end-cannot-play",
+      "pass": true
+    },
+    {
+      "phase": "superseded-response-cannot-replace-new-voice",
+      "pass": true
+    },
+    {
+      "phase": "late-blob-after-end-cannot-create-object-url",
+      "pass": true
+    },
+    {
+      "phase": "late-network-error-after-end-cannot-speak-fallback",
+      "pass": true
+    },
+    {
+      "phase": "ended-delay-after-end-cannot-reopen-microphone",
+      "pass": true
+    },
+    {
+      "phase": "obsolete-browser-speech-end-cannot-unlock-new-request",
+      "pass": true
+    },
+    {
+      "phase": "current-audio-end-resumes-once-and-releases-url",
+      "pass": true
+    },
+    {
+      "phase": "current-fallback-error-respects-handsfree-off",
+      "pass": true
+    },
+    {
+      "phase": "pending-play-rejection-cannot-fallback-over-new-request",
+      "pass": true
+    },
+    {
+      "phase": "switch-to-script-cancels-pending-voice",
+      "pass": true
+    },
+    {
+      "phase": "typed-answer-cancels-current-voice-url",
+      "pass": true
+    },
+    {
+      "phase": "empty-typed-submit-keeps-current-voice",
+      "pass": true
+    },
+    {
+      "phase": "completed-audio-late-error-cannot-start-fallback",
+      "pass": true
+    }
+  ]
+}

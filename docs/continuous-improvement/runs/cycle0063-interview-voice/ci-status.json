@@ -1,0 +1,34 @@
+{
+  "id": 39299809148,
+  "head": "ea9ca95ccd7f125f8ac599053d994ccc73481698",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39299809148",
+  "checkedAt": "2026-10-19T18:10:45.285573+00:00",
+  "jobs": [
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "voiceSteps": []
+    },
+    {
+      "name": "emulator-restore",
+      "status": "completed",
+      "conclusion": "success",
+      "voiceSteps": []
+    },
+    {
+      "name": "pdf-renderer",
+      "status": "completed",
+      "conclusion": "success",
+      "voiceSteps": [
+        {
+          "name": "Verify interview voice cancellation, late playback and delayed microphone resume",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

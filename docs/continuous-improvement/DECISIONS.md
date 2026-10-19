@@ -132,3 +132,8 @@ PDF.js4.10.38 đã cài đọc đủ10facts trên cùng một native Ambitious V
 ## D029 —20/10/2026: checkpoint heading tại font boundary, không phát hành recode toy
 
 Native M có encoded space nhưng pypdf lookup decodedM lấy width542 tại raw77 thay width1793 của code49, rồi page fallback space200 tạo effectivehalfspace1.6pt. Hai font/BT/Tm tái hiện M ụ; đây không phải run Tj/Td để chữa bằng TJ cap. Đổi tên CharProcs/Encoding sang Adobe vẫnFAIL do ToUnicode identity override; recode toy mới đọc Mu, cùng pixels nhưng đổi FirstChar/LastChar/ToUnicode/show codes, bị loại khỏi runtime theo invariants hiện tại. Không chỉnh parser hoặc gọi resource equality giả. Giữ CV002 IN_PROGRESS/P1 và commercial verdict; checkpoint nghiên cứu để chuyển interview theo rotation, không yêu cầu owner hoặc hạ severity. Lượt sau ưu tiên transcribe/TTS late completion bằng fixture local. Khi quay lại CV002 cần causal control giữ resources/glyphs ở cross-font boundary, genuine word-gap/fulltext/raster guards trước matrix/integration.
+
+
+## D030 —20/10/2026: voice completion thuộc operation; không thay thế session guard
+
+Invalidate trước abort/pause/speech cancel; completion sau fetch/blob/play và delayed resume chỉ chạy khi còn ownership. Audio/URL/utterance/timers cùng owner, release không đụng audio mới. Fallback chỉ một lần, respect handsfree kể cả error; empty typed-submit không hủy voice. INT005 ghi TTS race mới vì ID INT003 bị trùng lịch sử. Không nhận guard TTS đã giải quyết pending transcribe/live-chat upstream, module/actor/session departure; kiểm tiếp trước scoped release và fresh exact private Drive backup. Test fake Audio/SpeechRecognition xác nhận lời gọi, không chứng minh mic thật đã bật hoặc fidelity trêniOS.

@@ -1,0 +1,36 @@
+{
+  "sourceCommit": "ea9ca95ccd7f125f8ac599053d994ccc73481698",
+  "baselineRef": "b8a8173",
+  "knownLiveBackendCommit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "liveBaselineTtsFunctionByteEqual": true,
+  "baselineTtsSha256": "0c46028ff727e78f6ed96377ef45dff553fe90e2d71ff004302f7b65b33cc4f8",
+  "before": {
+    "cases": 13,
+    "pass": 1,
+    "fail": 12
+  },
+  "after": {
+    "cases": 13,
+    "pass": 13,
+    "fail": 0
+  },
+  "microphoneRegression": {
+    "cases": 13,
+    "pass": 13
+  },
+  "featureTests": {
+    "pass": 101,
+    "fail": 0
+  },
+  "testTransportIgnoresAbortToExerciseOwnership": true,
+  "realDeviceUsed": false,
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "upstreamTranscribeLiveChatLifecycleVerified": false,
+  "sourceSha256": {
+    "backend/features/connectcv/public/index.html": "0fd29c4e912866f9ba825b68610ef53f2615377e7ae6262031189b46bba32490",
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs": "af107e51b686563ea1fa2c88dbd00f43ec71bf2041df183fc6b3fffba5e6d9b1",
+    "backend/features/connectcv/tests/interviewTranscript.test.js": "0f8dc8673ab4212ff643b3bfb1d8175d0491ac1ef6c308715e3ff087b85a87ca",
+    ".github/workflows/ai-feature-checks.yml": "6860570eb84ea9c95dd0244f2c4d12104e923e794c2000852b22948f2517495d"
+  }
+}
