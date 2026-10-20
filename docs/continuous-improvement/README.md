@@ -259,3 +259,8 @@ Cycle68 release note: immediate smoke initially mismatched and rollback89f was v
 ## Cycle0069 —20/10/2026: chặn bước đăng ký đã hết ownership
 
 [Nhật ký và bằng chứng](runs/2026-10-20-cycle-0069.md): kết quả tạo tài khoản/profile/email đến muộn chỉ được tiếp tục khi form và SDK User vẫn thuộc thao tác hiện tại. Bản sửa giữ nháp phiên mới và ngăn email follow-up sau khi rời form; không hủy request Firebase đã gửi. 13ca mới baseline11FAIL→13PASS, 18ca auth/Google hồi quy và12unit đạt; source/candidate/mainCI39378630096 đạt. FEce09/Hosting32cb6e9c8222b5ec đã xác minh8GET live sau backupDrive23bundle/2ZIP và restore; staging đã dọn, rollback6ff, BE d6a giữ nguyên. Signup/email/OAuth thật và commercial vẫn chưa nghiệmthu; tiếpCV-ATS.
+
+
+## Cycle0070 checkpoint —20/10/2026: CV export ownership
+
+[Nhật ký và bằng chứng](runs/2026-10-20-cycle-0070.md): CV005 P1 tái hiện readinessclickA gửiB và lỗiA mở inB; baseline12ca8FAIL. Candidate1513 scoped6paths có20newbrowser/103units/5previewphases và fullsource/candidateCI đạt; bổ sung dependencyfixture sau firstCIpreviewfailure, không bỏassert. PrivateDrive25bundle/freshrestore/FEZIP69 verified, stagingdọn. Chưa main/deploy: Renderhếtphiên, automaticapprovalreview chặnGitHublogin; cần owner approval cho routineexistinglogin/noextraaccess hoặc tựđăngnhập. Maince09/FE32cb/BE d6a giữ nguyên; CV005/CV002/realexport/Firebase/DB/pilot chưađóng.

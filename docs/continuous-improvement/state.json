@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0069.md",
   "activeRun": "runs/2026-10-20-cycle-0070.md",
   "activeIssue": "CV005",
-  "issueState": "CV_EXPORT_LOCAL_VERIFIED_FIXTURE_CI_RETRY_PENDING",
+  "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_APPROVAL",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,16 +52,16 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0070-candidate-a367afb.json",
-    "protectedCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+    "currentBaselineCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
+    "protectedCommit": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": true
+    "nextDeploymentRequiresNewBaseline": false
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Continue ACTIVE cycle0070 CV005: source8d59a90/candidate1513dbd (6paths) pushed after priorCI39382005162 previewfixture dependency failure. Local20export+103units+5preview phases PASS. Await exact new fullCI; never deploy failed priora367.",
-    "Catalog70a367 verifiedDrive24bundle/critical59-58-56/FEZIP69; stage243083701bytes removed. Exact1513 needs new delta/restore+cloudack and rollbackBE d6a before deployment; maince09/Hosting32cb/BE d6a unchanged.",
-    "CV002 strict font checkpoint62 and real renderer/Wordvisual/Firebase/mobile/DB/pilot remain open."
+    "ACTIVE cycle0070/CV005 awaiting owner approval for routine Render sign-in with existing GitHub session (no new permissions/IAM/credentials) or owner manual sign-in. Auto-review rejected GitHub button; do not bypass via alternate session/API/auth workaround.",
+    "Source8d59a90 CI39382615459 and candidate1513dbd CI39382615355 fullSUCCESS incl20new export cases. Catalog70-1513 cloudVERIFIED25bundle/critical60candidate59FE57BE/ZIP69; finalSHA cc8d136a08a0f0c905a7466126bf1f3fed54fbd36376cc71513de7a531fe04e6. All owned restore/build/bundle/helpers removed. No deployment attempted; maince09/FE32cb/BE d6a unchanged.",
+    "When Render session available, check live/queued deploys, exact main1513 candidate fastforward fromce09 only after rechecking backup+rollback, run exact fullmainCI then specificcommitRenderdeploy and boundedreadonly source/hash/auth/canary smoke; rollbackBE d6a iffails. If source/live baseline changes, require fresh exactbackup. No real PDF/Firebase/Wordvisual/AI writes; CV002/DB/device/pilot remain open."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -110,7 +110,7 @@
     "deployBlockedUntilCloudVerified": false,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-    "cloudBundlesVerified": 24,
+    "cloudBundlesVerified": 25,
     "localCopiesDeleted": true,
     "localCopiesRetained": false,
     "pendingCatalog": null,
@@ -120,7 +120,7 @@
     "pendingRestoreVerified": true,
     "pendingRestoreCloneDeleted": true,
     "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "a367afb17446f42e39ea291e965f4aa35b6e2a13"
+    "lastVerifiedCandidateCommit": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44"
   },
   "delivery": {
     "reviewCommit": "261d46783e0b6e02e86f407f71236c9f5af12a1e",
@@ -369,14 +369,19 @@
     "pendingSignupLifecyclePublicGetCount": 8,
     "pendingExportReviewCommit": "8d59a90712e4255be0534e0564300f627c2057a0",
     "pendingExportCandidateCommit": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
-    "pendingExportStatus": "CI_FIXTURE_FAILURE_FIXED_LOCAL_PENDING_NEW_CI",
+    "pendingExportStatus": "CI_BACKUP_VERIFIED_RELEASE_BLOCKED_RENDER_LOGIN_APPROVAL",
     "pendingExportPriorCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
     "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382615459",
     "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382615355",
-    "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-a367afb.json",
-    "pendingExportBackupCoversCandidate": false
+    "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
+    "pendingExportBackupCoversCandidate": true,
+    "pendingExportCandidateCiPassed": true,
+    "pendingExportReviewCiPassed": true,
+    "pendingExportOwnerNotifiedCycle": 70,
+    "pendingExportMainChanged": false,
+    "pendingExportLiveVerified": false
   },
-  "blockingDependency": null,
+  "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {
     "status": "WRAPPER_EMULATOR_LOCAL_AND_CI_VERIFIED_REAL_CUSTODY_PENDING",
     "tool": "backend/ops/snapshotEnvelope.cjs",
@@ -463,5 +468,15 @@
     "resolved": true,
     "bypassUsed": false,
     "resolution": "Normal same-tool approval available after later heartbeat20/10 07:01VN; stale tab absent, created fresh IAB tab, verified still Live0bf and no queued/new deployment, rechecked exact mainCI and Drive delta/catalog readback. Exact7c selected and one deployment started07:02:32VN."
+  },
+  "renderLoginApprovalInterruption": {
+    "cycle": 70,
+    "action": "Click GitHub login on Render sign-in page",
+    "reason": "Automatic approval review rejected as authentication/OAuth potentially granting access without specific authorization; user prohibits IAM/credential changes",
+    "resolved": false,
+    "bypassUsed": false,
+    "productionChanged": false,
+    "nextAction": "Owner may approve routine Render login with existing GitHub session and no new permissions, or sign in manually. No alternate-auth workaround; recheck deployment/CI/main/Drive before release.",
+    "handoffTabId": "829831298"
   }
 }
