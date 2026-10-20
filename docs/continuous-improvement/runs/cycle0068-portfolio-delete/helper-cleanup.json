@@ -1,0 +1,56 @@
+{
+  "noReparse": true,
+  "removed": true,
+  "target": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\cycle0068",
+  "bytes": 487020.0,
+  "fileCount": 9,
+  "files": [
+    {
+      "bytes": 7410,
+      "sha256": "46a45f2194075f571924e446e4c2e27360091f6e868998008db49619ab750845",
+      "path": "tmp\\cycle0068\\backup.py"
+    },
+    {
+      "bytes": 446766,
+      "sha256": "4d788230c7f78cea425eefa324f263587104fa30b4e6dc3920efdb85ae032a97",
+      "path": "tmp\\cycle0068\\candidate.index"
+    },
+    {
+      "bytes": 1544,
+      "sha256": "efebf95f803e91290ab51a6c66ceb0ed49cd5f275b3ac5119ab5019e67d7713d",
+      "path": "tmp\\cycle0068\\ci.py"
+    },
+    {
+      "bytes": 7537,
+      "sha256": "d411e420f35b8ba98bc60aa5949d288811e56104db0b29daaa7c7dca5bb6dc46",
+      "path": "tmp\\cycle0068\\deploy.py"
+    },
+    {
+      "bytes": 12693,
+      "sha256": "e698bbef793a3ca445d7b3217ac7a80349f28b0169d3624d16e8704db33c71e5",
+      "path": "tmp\\cycle0068\\finish.py"
+    },
+    {
+      "bytes": 1537,
+      "sha256": "6af5620dbb587a66d6e694470f1197f2b4125af1350f3b462d0e5307288a5ef9",
+      "path": "tmp\\cycle0068\\hosting.py"
+    },
+    {
+      "bytes": 7465,
+      "sha256": "919ece99a851e7d06d47407ac1672b38690adc991c43d775c767c7ece67d914b",
+      "path": "tmp\\cycle0068\\retry.py"
+    },
+    {
+      "bytes": 1623,
+      "sha256": "055c15410bafa61e39179d3b42ed08094a5faf3fcf70dd91468292d17b410de7",
+      "path": "tmp\\cycle0068\\version-files.cjs"
+    },
+    {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329",
+      "path": "tmp\\cycle0068\\control\\firebase.json"
+    }
+  ],
+  "checkedAt": "2026-10-20T12:33:30.0102272+07:00",
+  "preexistingSiblingTmpPreserved": true
+}

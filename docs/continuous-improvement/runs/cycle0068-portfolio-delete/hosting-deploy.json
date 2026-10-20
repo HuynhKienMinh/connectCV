@@ -1,0 +1,42 @@
+{
+  "startedAt": "2026-10-20T05:27:34.858817+00:00",
+  "candidateCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "mainCiIds": [
+    39374577202
+  ],
+  "catalogSha256": "181f1b4e90d25e12a10bbebbc3ec2550f72925870782af9194a049050e4f0a31",
+  "zipSha256": "97e7a3c5918e06b8868ede7d77f6b0ea00b88094e5786518a4fc197a898c6349",
+  "before": {
+    "name": "projects/connect-cv/sites/connect-cv/channels/live",
+    "url": "https://connect-cv.web.app",
+    "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792418275025000",
+    "releaseTime": "2026-10-19T13:57:55.025Z",
+    "versionName": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd"
+  },
+  "backendDeployment": false,
+  "firestoreDeployment": false,
+  "rawOutputLogged": false,
+  "status": "ROLLED_BACK_VERIFIED",
+  "cliExitCode": 0,
+  "cliStatus": "success",
+  "cliCompletedAt": "2026-10-20T05:27:48.267325+00:00",
+  "after": {
+    "name": "projects/connect-cv/sites/connect-cv/channels/live",
+    "url": "https://connect-cv.web.app",
+    "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792474067066000",
+    "releaseTime": "2026-10-20T05:27:47.066Z",
+    "versionName": "projects/connect-cv/sites/connect-cv/versions/6ff2976a15a15e74"
+  },
+  "failureType": "AssertionError",
+  "rollback": {
+    "exitCode": 0,
+    "status": "success",
+    "after": {
+      "name": "projects/connect-cv/sites/connect-cv/channels/live",
+      "url": "https://connect-cv.web.app",
+      "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792474081219000",
+      "releaseTime": "2026-10-20T05:28:01.219Z",
+      "versionName": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd"
+    }
+  }
+}

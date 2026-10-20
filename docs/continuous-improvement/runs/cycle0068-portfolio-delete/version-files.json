@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-20T05:29:54.151Z",
+  "versions": [
+    {
+      "versionId": "6ff2976a15a15e74",
+      "files": [
+        {
+          "path": "/__/firebase/init.js",
+          "hash": "99f98dbe341f5c32bc78a580346b9b4d2eced57569a4540e8bc596ff4529e8cb",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/__/firebase/init.json",
+          "hash": "09ddf154d215121692dbb65c686126bb17d3c20d9cc0f4534f99317c7ae2f1ee",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/assets/index-CSXfn8T3.js",
+          "hash": "dfc7a91317c15585016e765d60fb4f8048387f825da7d04e37b6e68abd74d12d",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/assets/index-D2A9aWF8.css",
+          "hash": "72bce0a866d411ebcdc93ca0bffd9b91112de88066290b1209cb5ed2ebd981bb",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/index.html",
+          "hash": "9ace504b24904f32faaffa9f31fad731028f4d4e697e3794a90a2c819df3b1ad",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "versionId": "89f2be9cbff279bd",
+      "files": [
+        {
+          "path": "/__/firebase/init.js",
+          "hash": "99f98dbe341f5c32bc78a580346b9b4d2eced57569a4540e8bc596ff4529e8cb",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/__/firebase/init.json",
+          "hash": "09ddf154d215121692dbb65c686126bb17d3c20d9cc0f4534f99317c7ae2f1ee",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/assets/index-CpvooDH5.js",
+          "hash": "a811ceb358034084a32f8508d540b2464ee940b45682c53872356807f5300b41",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/assets/index-D2A9aWF8.css",
+          "hash": "72bce0a866d411ebcdc93ca0bffd9b91112de88066290b1209cb5ed2ebd981bb",
+          "status": "ACTIVE"
+        },
+        {
+          "path": "/index.html",
+          "hash": "f0b9f91409843b78342da4ceb5b73cbb104948c521bda4e91bb0c817f60913b1",
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "requests": 2,
+  "readOnly": true,
+  "rawOutputLogged": false
+}

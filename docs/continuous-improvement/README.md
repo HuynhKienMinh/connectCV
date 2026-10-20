@@ -247,3 +247,10 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 
 
 Cycle67 (20/10/2026): [Chatbot routing](runs/2026-10-20-cycle-0067.md) sửa academic/microservices/sprint/accreditation/chats/stats và credit finance/education bị FAQ chiếm nhầm. 11career/10product scenarios trong16local service+HTTP tests; review/candidate/mainCI SUCCESS, scopedmain/Renderd6a Live. Drive21bundle freshrestore/FEZIP verified, localcopiesremoved, rollbackBE7c. Readonlysmoke đạt sau sửa expectationFAQ public200; không AI/providerwrites. CHAT006scoped vàCHAT001semantic/human còn mở; tiếp portfolio.
+
+
+## Cycle0068 —20/10/2026: nháp sau khi xóa portfolio
+
+[Nhật ký và bằng chứng](runs/2026-10-20-cycle-0068.md): xóa hồ sơ đang sửa giữ nội dung nhưng bỏ ID đã mất, nháp mới mặc định riêng tư; save/delete cùng khóa thao tác và bỏ qua completion phiên cũ. 9case mới baseline5FAIL→9PASS, thêm6save+8public regression; review/candidate/mainCI39374577202 đạt. FEonly04bc/Hosting6ff2976a15a15e74 phát hành sauDrive22bundle/new+rollbackZIP checksum/restore; live8readonlyGET hai domain đúnghash/header/auth401. BE d6a giữ nguyên, rollbackFE89f; localstagingđãdọn. RealFirebase deletion/actors và P1/commercial chưa nghiệmthu; tiếpauth-profile scenario mới.
+
+Cycle68 release note: immediate smoke initially mismatched and rollback89f was verified. Provider file hashes matched the candidate; after renewedDrive checksumgate one reactivation of6ff passed final8plainGET. Total24publicGET. Cause remains unproven; see incident section in cycle68 journal.

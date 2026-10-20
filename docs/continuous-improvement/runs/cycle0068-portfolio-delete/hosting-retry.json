@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-20T05:31:05.154489+00:00",
+  "candidateCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "mainCiIds": [
+    39374577202
+  ],
+  "before": {
+    "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792474081219000",
+    "releaseTime": "2026-10-20T05:28:01.219Z",
+    "versionName": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd"
+  },
+  "sourceVersion": "6ff2976a15a15e74",
+  "backendDeployment": false,
+  "firestoreDeployment": false,
+  "status": "DEPLOYED_LIVE_HASH_HEADERS_AUTH_VERIFIED",
+  "rawOutputLogged": false,
+  "verificationResumedAt": "2026-10-20T05:31:34.297756+00:00",
+  "resumeReason": "Clone CLI success has no result field; mutation not repeated",
+  "after": {
+    "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792474267380000",
+    "releaseTime": "2026-10-20T05:31:07.380Z",
+    "versionName": "projects/connect-cv/sites/connect-cv/versions/6ff2976a15a15e74"
+  },
+  "verifiedAt": "2026-10-20T05:32:01.536345+00:00",
+  "rollbackExecuted": false,
+  "previousAttemptRolledBack": true
+}

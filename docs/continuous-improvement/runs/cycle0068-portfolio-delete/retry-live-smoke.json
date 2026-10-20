@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-10-20T05:32:01.536345+00:00",
+  "requests": [
+    {
+      "url": "https://connect-cv.web.app/",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "249d5ff1f67d53a54fc71a2e3120607d33d5c49af7bd966a0716de27f9d1a2c4",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "Date": "Tue, 20 Oct 2026 05:31:58 GMT",
+        "Via": null,
+        "X-Cache": "MISS",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-CSXfn8T3.js",
+      "status": 200,
+      "bytes": 449324,
+      "sha256": "3f8df74769e474a0ceb0c01e297823544c4dfe7dc813bb9b9ceb346aac8c5418",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "Date": "Tue, 20 Oct 2026 05:31:59 GMT",
+        "Via": null,
+        "X-Cache": "MISS",
+        "Content-Type": "text/javascript; charset=utf-8"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "Date": "Tue, 20 Oct 2026 05:31:59 GMT",
+        "Via": null,
+        "X-Cache": "MISS",
+        "Content-Type": "text/css; charset=utf-8"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "249d5ff1f67d53a54fc71a2e3120607d33d5c49af7bd966a0716de27f9d1a2c4",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "Date": "Tue, 20 Oct 2026 05:32:00 GMT",
+        "Via": null,
+        "X-Cache": "MISS",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-CSXfn8T3.js",
+      "status": 200,
+      "bytes": 449324,
+      "sha256": "3f8df74769e474a0ceb0c01e297823544c4dfe7dc813bb9b9ceb346aac8c5418",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "Date": "Tue, 20 Oct 2026 05:32:00 GMT",
+        "Via": null,
+        "X-Cache": "MISS",
+        "Content-Type": "text/javascript; charset=utf-8"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Age": null,
+        "Date": "Tue, 20 Oct 2026 05:32:00 GMT",
+        "Via": null,
+        "X-Cache": "MISS",
+        "Content-Type": "text/css; charset=utf-8"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/account/me",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/portfolios",
+      "status": 401,
+      "passed": true
+    }
+  ],
+  "cloudWrites": 0,
+  "aiCalls": 0,
+  "complete": true,
+  "passed": true,
+  "realFirebaseDeleteVerified": false
+}

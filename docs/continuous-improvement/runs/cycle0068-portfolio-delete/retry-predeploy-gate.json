@@ -1,0 +1,127 @@
+{
+  "checkedAt": "2026-10-20T05:31:05.153489+00:00",
+  "bundleReadbacks": [
+    {
+      "file": "connectcv-2026-10-15-cycle-0015-baseline.bundle",
+      "bytes": 239004493,
+      "sha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0015-baseline-15daaa7.incremental.bundle",
+      "bytes": 289978,
+      "sha256": "65a560742884437feede36588f4cb6f4827472f2dd8557671c81bcdc7bfdbf45"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0016-baseline-94e4418.incremental.bundle",
+      "bytes": 17097,
+      "sha256": "d7bdc239bada9da0c60fb2bcd01bf069566023f354f455ccaed211ffbb12b8e5"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0017-baseline-b1a2279.incremental.bundle",
+      "bytes": 536980,
+      "sha256": "575cad4f4ba64c41578b7d2d0a4914f4e7c1a97d85a714b2d21642fe36adec07"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0017-baseline-884a52c.incremental.bundle",
+      "bytes": 183367,
+      "sha256": "9a4cf7b749f18748e9020f74df5d707092748748a94ca3fee085b0a0a69e1f24"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0018-baseline-b3ca417.incremental.bundle",
+      "bytes": 84969,
+      "sha256": "ebf108592f68ace5264bf870ca148a6113934764ed8b96ff776e84fd29b49a8a"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0019-baseline-f438d16.incremental.bundle",
+      "bytes": 242941,
+      "sha256": "535f5c7bfe99571b4f6bd9b6f25e5871da1a0cb0e1afc84ad5d6ec770f79d7bd"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0019-candidate-be7a52a.incremental.bundle",
+      "bytes": 246161,
+      "sha256": "b053baaacb37447d7ce2a95d680eae58a564043ee3db155f76cd09da8517fb1b"
+    },
+    {
+      "file": "connectcv-2026-10-15-cycle-0019-candidate-aa53702.incremental.bundle",
+      "bytes": 145700,
+      "sha256": "2c6ce17b8583e63798b0f5fd56aa472fd1e3b81c319bc4dd93575e846879102a"
+    },
+    {
+      "file": "connectcv-2026-10-16-cycle-0020-candidate-1bf75b9.incremental.bundle",
+      "bytes": 205135,
+      "sha256": "76f758450174aa653c0e242f5ed5ac3d85751d5d1a6d701ca17088b6c72eb79a"
+    },
+    {
+      "file": "connectcv-2026-10-16-cycle-0036-candidate-aac8134.incremental.bundle",
+      "bytes": 368776,
+      "sha256": "8fbc860a1724826dd34188b66a1db8409819111cf18471fe9895e8adb8e600e8"
+    },
+    {
+      "file": "connectcv-2026-10-17-cycle-0039-candidate-6d965e7.incremental.bundle",
+      "bytes": 9155,
+      "sha256": "5f18848aa6bf7960dde3c1421b59b62a8799a98fa904819caee4f13f53add676"
+    },
+    {
+      "file": "connectcv-2026-10-17-cycle-0040-candidate-fdc3afb.incremental.bundle",
+      "bytes": 5163,
+      "sha256": "5302fa381fc0560ab3101ff0ed4e82aa8a69427d1d11fb8fd24bb2402d743673"
+    },
+    {
+      "file": "connectcv-2026-10-17-cycle-0040-candidate-ce5cfe4.incremental.bundle",
+      "bytes": 936,
+      "sha256": "54aae324c14fbd3ec2213925bcbfacb84fd7d8e3238f3d788e550e7e84b1268e"
+    },
+    {
+      "file": "connectcv-2026-10-17-cycle-0041-candidate-9cbbfe3.incremental.bundle",
+      "bytes": 3552,
+      "sha256": "fe182ee0c245605c3ee43ce1590f0effa4f7c960893ed929fe3573ed1fe3a9db"
+    },
+    {
+      "file": "connectcv-2026-10-17-cycle-0042-candidate-391fdc3.incremental.bundle",
+      "bytes": 5819,
+      "sha256": "5d9903207b8d0d07b32ff3de8179bd9cb66d7b6a00adf773a1d94a3779f449c6"
+    },
+    {
+      "file": "connectcv-2026-10-19-cycle-0046-candidate-0bf51ec.incremental.bundle",
+      "bytes": 13987,
+      "sha256": "84161dc3d3c5da9cab0627ac7e1fd85de849f0f18f0c9e7232a966d5c6a4aaed"
+    },
+    {
+      "file": "connectcv-2026-10-19-cycle-0049-candidate-964d1af.incremental.bundle",
+      "bytes": 5603,
+      "sha256": "3cbc1b55df155e7b1d42d5ce6d9645999d031d6efad9977cbee8d0f0f9d6580f"
+    },
+    {
+      "file": "connectcv-2026-10-19-cycle-0053-candidate-1bc615f.incremental.bundle",
+      "bytes": 11251,
+      "sha256": "e928d89456774dfaf1742228f7143ad2d67153a099ca398a7e661670db210e7d"
+    },
+    {
+      "file": "connectcv-2026-10-20-cycle-0065-candidate-7c6c0c7.incremental.bundle",
+      "bytes": 10426,
+      "sha256": "e4f86f59840516a4c189ef506a3b8d9718a31217b9745efbb999d8bd68588674"
+    },
+    {
+      "file": "connectcv-2026-10-20-cycle-0067-candidate-d6a3fd2.incremental.bundle",
+      "bytes": 8016,
+      "sha256": "5ce65fd75ca9d8f890b523b71f9a85e4bb29159e232d3f374c71af781ee55cb2"
+    },
+    {
+      "file": "connectcv-2026-10-20-cycle-0068-candidate-04bcf12.incremental.bundle",
+      "bytes": 5305,
+      "sha256": "949bae6a575e0729838f4171c8803b5737ab10dfecf02a0988888cfe7fbd8382"
+    }
+  ],
+  "zipAndRollbackAllMembersVerified": true,
+  "freshBareRestoreEvidence": "restore-summary.json (same immutable bytes; not repeated)",
+  "cloudCatalogSha256": "181f1b4e90d25e12a10bbebbc3ec2550f72925870782af9194a049050e4f0a31",
+  "before": {
+    "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792474081219000",
+    "releaseTime": "2026-10-20T05:28:01.219Z",
+    "versionName": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd"
+  },
+  "candidateVersionFilesMatchUploadCache": true,
+  "noNewBackupCreated": true,
+  "noLargeLocalCopies": true,
+  "mainCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd"
+}

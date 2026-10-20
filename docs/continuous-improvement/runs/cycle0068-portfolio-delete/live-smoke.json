@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-20T05:27:54.911720+00:00",
+  "requests": [
+    {
+      "url": "https://connect-cv.web.app/",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "passed": false
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-CSXfn8T3.js",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "passed": false
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "passed": false
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-CSXfn8T3.js",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "passed": false
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/account/me",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/portfolios",
+      "status": 401,
+      "passed": true
+    }
+  ],
+  "cloudWrites": 0,
+  "aiCalls": 0,
+  "complete": true,
+  "passed": false,
+  "realFirebaseDeleteVerified": false
+}
