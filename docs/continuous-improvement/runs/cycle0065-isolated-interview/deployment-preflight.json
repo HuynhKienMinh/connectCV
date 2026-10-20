@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-19T18:43:44.277242+00:00",
+  "candidate": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "mainCiId": 39304326834,
+  "mainCiConclusion": "success",
+  "backupCatalog": "backup-transfer/cycle0065-candidate-7c6c0c7.json",
+  "backupStatus": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
+  "rollbackCommit": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "rollbackRelease": "dep-dbar56u7bikc73akq250",
+  "previousRenderUiLiveConfirmed": true,
+  "frontendDeploymentPlanned": false,
+  "databaseMigration": false,
+  "deployAttempted": true,
+  "resumedAt": "2026-10-20T00:02:56.383474+00:00",
+  "deployAttempts": 1,
+  "candidateRelease": "dep-dbbav649v7es73eie2n0",
+  "renderStatus": "Building",
+  "renderStartedAt": "2026-10-20T00:02:32Z",
+  "normalApprovalRecovered": true
+}

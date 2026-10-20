@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "file": "backup-verification.json",
+      "bytes": 472,
+      "sha256": "ac76e7ac3c559a3d5bf86e665fadc0ebdaef8f1b0d5c6a653697c3f9df9e7b8e"
+    },
+    {
+      "file": "candidate-ci.json",
+      "bytes": 7911,
+      "sha256": "9b82cece53e7d59b35b1851ce4e019fa36d5c50c2414436b55dbe6638513ab27"
+    },
+    {
+      "file": "candidate.json",
+      "bytes": 1540,
+      "sha256": "d603e0931a343e01e06b18a35827c109f1faec212aa15ec6f5e6c6a272d52feb"
+    },
+    {
+      "file": "deployment-preflight.json",
+      "bytes": 804,
+      "sha256": "5faeb88d1bc3dcf2f2ba03d9d294e57e3d5cafc3e01ccc58ce98e058ae84d19c"
+    },
+    {
+      "file": "live-verification.json",
+      "bytes": 1476,
+      "sha256": "50d1ed72c78ba42dd4980a1c2e55a5cce701d387fdd0ba8bb60ab7eeb76cc3e8"
+    },
+    {
+      "file": "main-ci.json",
+      "bytes": 15705,
+      "sha256": "af6327ab7585410fdc4c0e650cbd7cd8e197460eaabbc02512a0a3088359310e"
+    },
+    {
+      "file": "microphone/results.json",
+      "bytes": 1349,
+      "sha256": "4ddeccfafe8175b11337030f771daa5bf0a41fe5c6690f7ab7e632b04d1e2880"
+    },
+    {
+      "file": "microphone/text-fallback-390.png",
+      "bytes": 99981,
+      "sha256": "6efbbe321972bc6b273043540d78f5befae33b86176f861933148da54037debc"
+    },
+    {
+      "file": "render-live.png",
+      "bytes": 94588,
+      "sha256": "b1a828f531a274db7435792c89b5d110a551b445246629b1ca5c2d10f44c42e7"
+    },
+    {
+      "file": "session/ended-transcript-390.png",
+      "bytes": 73385,
+      "sha256": "d47efea195bc4d067b9d6eb2d4428dbd351e1af17538afdd551101a9c2bf2341"
+    },
+    {
+      "file": "session/results.json",
+      "bytes": 1558,
+      "sha256": "3977eb703e71028f7b80529127f2d59c20c902ffb05554dbe1d6bf20404d78ef"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 1375,
+      "sha256": "3bf1db96c96626f0690095ba46185b2203fc782f5ca2f951aa8dc7d53af5e5c3"
+    },
+    {
+      "file": "temporary-cleanup.json",
+      "bytes": 1205,
+      "sha256": "56967d4569a0d5b30e0f5d5f27ced84b7e849eeb18dbca676312aeff68811060"
+    },
+    {
+      "file": "voice/ended-voice-390.png",
+      "bytes": 72892,
+      "sha256": "9f58381c82bb5b7edf8210c4834c7e153486c0057fc0999760853354878883c1"
+    },
+    {
+      "file": "voice/results.json",
+      "bytes": 1442,
+      "sha256": "abb88333842e57c16c47ec3fb876cf912c215c1c317a0515b260d91a3a931218"
+    }
+  ]
+}

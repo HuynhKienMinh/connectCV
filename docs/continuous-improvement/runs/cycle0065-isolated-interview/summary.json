@@ -1,0 +1,39 @@
+{
+  "cycle": 65,
+  "status": "VERIFIED_LIVE_SCOPED",
+  "candidate": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "previousBackend": "0bf51ec37c18880e30d7f4469833f40cdf9d2dba",
+  "renderRelease": "dep-dbbav649v7es73eie2n0",
+  "renderUrl": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-dbbav649v7es73eie2n0",
+  "renderDuration": "2m17s",
+  "verifiedAt": "2026-10-20T00:05:05.892563+00:00",
+  "localCases": {
+    "voice": 13,
+    "session": 15,
+    "microphone": 13
+  },
+  "candidateCiId": 39303385063,
+  "mainCiId": 39304326834,
+  "backendChangedPaths": [
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs",
+    "backend/features/connectcv/tests/interviewTranscript.test.js",
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs"
+  ],
+  "backupCatalog": "backup-transfer/cycle0065-candidate-7c6c0c7.json",
+  "cloudBundleCount": 20,
+  "restoredCriticalSources": {
+    "candidate": 50,
+    "currentFrontend": 48,
+    "rollbackBackend": 45
+  },
+  "backupStageDeletedBytes": 242908522,
+  "releaseStageDeletedBytes": 483945,
+  "frontendDeployed": false,
+  "cloudUserWrites": 0,
+  "realAiCalls": 0,
+  "productionRollbackExecuted": false,
+  "realDeviceVerified": false,
+  "realFirebaseActorVerified": false,
+  "nextModule": "community"
+}

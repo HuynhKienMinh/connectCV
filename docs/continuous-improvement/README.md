@@ -239,3 +239,8 @@ Cycle33 (16/10/2026): [HTTP chatbot và privacy route log](runs/2026-10-16-cycle
 ## Cycle0059 —20/10/2026: kiểm soát lỗi dấu câu PDF
 
 [Nhật ký và đối chứng](runs/2026-10-20-cycle-0059.md): mode local mới giữ `PDF.` và khoảng cách từ âm mà không đổi ảnh/font; prototype58 vẫn bị loại. Một native case giữ full summary và hai markers, nhưng heading/thứ tự cột còn lỗi nên CV002 vẫn mở. Đây là thử nghiệm tương thích parser, chưa tích hợp runtime hoặc deploy; chưa chứng nhận ATS hay toàn bộ74mẫu. Live và backup Drive53 giữ nguyên.
+
+
+## Cập nhật chu kỳ0065 —20/10/2026
+
+[Vòng đời phỏng vấn](runs/2026-10-20-cycle-0065.md): INT005 voice/transcribe/reply guard từ63/64 đã phát hành riêng7c6c0c7;41ca local và full candidate/mainCI đạt. Drive20bundle checksum/freshbare/fsck/source/FEZIP rollback verified, dọn242.91MBrestore và483.95KBhelper/index. Renderdep-dbbav649v7es73eie2n0 Live2m17s; Studio361531bytes SHA khớp Git, auth401/canary và FEHosting89f giữ nguyên. Gián đoạn approval do hạn mức đã phục hồi qua normal same-tool, không bypass. Real device/iOS/Firebase actor/provider/summary-modal chưa nghiệmthu; INT005 giữ pending các phạm vi đó, commercial verdict không đổi. Tiếp community consent/preview lifecycle bằng dữ liệu giả local, report/schema/DBcustody vẫn deferred.

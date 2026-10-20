@@ -1,0 +1,40 @@
+{
+  "stage": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\release-cycle0065",
+  "files": [
+    {
+      "file": "backup.py",
+      "bytes": 6319,
+      "sha256": "bbdfb18b2b3758a4ef06c1b90844e6d3a145fa2ec4d5e1fd1abae3e8dd3c61f5"
+    },
+    {
+      "file": "candidate.index",
+      "bytes": 446414,
+      "sha256": "127e2af683cbc4009166f527630475ac01b94be08019eda46a6f8551e60d9e83"
+    },
+    {
+      "file": "ci.py",
+      "bytes": 1451,
+      "sha256": "015ccff13f11eda8fbaf05b06263ed4266d1a75d436b9e59f443b2f0fe0beedb"
+    },
+    {
+      "file": "finalize_backup.py",
+      "bytes": 3300,
+      "sha256": "737688f1babab5053b4ea95f1784623f6e2d864d8f3ab70bea695e7202cd87b3"
+    },
+    {
+      "file": "runtime.patch",
+      "bytes": 23912,
+      "sha256": "b58deaff5ebdf374eb1f72a98d6fe4298c229ea7d82ae85435ae6cf16792807a"
+    },
+    {
+      "file": "verify_live.py",
+      "bytes": 2549,
+      "sha256": "77bbaf731644cf197554d0d7930ea07aea1207065461b85df5cc40137c9dfdaa"
+    }
+  ],
+  "bytes": 483945,
+  "count": 6,
+  "deleted": true,
+  "deletedAt": "2026-10-20T00:07:00.317335+00:00",
+  "remainingOwnStageBytes": 0
+}

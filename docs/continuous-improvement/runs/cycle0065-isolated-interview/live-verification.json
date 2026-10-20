@@ -1,0 +1,47 @@
+{
+  "candidateCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "verifiedAt": "2026-10-20T00:05:05.892563+00:00",
+  "cloudWrites": 0,
+  "aiCalls": 0,
+  "checks": [
+    {
+      "name": "exact-studio-source",
+      "url": "https://connectcv-api-minh.onrender.com/ai/",
+      "status": 200,
+      "bytes": 361531,
+      "actualSha256": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc",
+      "expectedSha256": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc",
+      "pass": true,
+      "headers": {
+        "Cache-Control": "public, max-age=0",
+        "content-security-policy": "frame-ancestors 'self' https://connect-cv.web.app https://connect-cv.firebaseapp.com; object-src 'none'; base-uri 'self'",
+        "referrer-policy": "same-origin",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "name": "feature-readiness",
+      "status": 200,
+      "value": {
+        "status": "OK",
+        "authenticationIntegrated": true,
+        "browserConfigured": true,
+        "pdfCanaryVerified": true,
+        "durableStorageConfigured": true
+      },
+      "pass": true
+    },
+    {
+      "name": "anonymous-account-rejected",
+      "status": 401,
+      "pass": true
+    },
+    {
+      "name": "hosting-unchanged",
+      "status": 200,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f",
+      "pass": true
+    }
+  ],
+  "allPassed": true
+}
