@@ -5832,25 +5832,16 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     /** Chuyển thẳng sang Tab 2 (Luyện Phỏng Vấn) để luyện tập ngay với AI */
     function practiceQuestionWithAI(questionText, company, role) {
-      if (typeof switchTab === 'function') {
-        switchTab('tab-interview-module');
+      const question = String(questionText || '').trim();
+      if (!question) {
+        showToastWarning('Bài chia sẻ chưa có câu hỏi để luyện tập.', 'Chọn câu hỏi khác');
+        return;
       }
-
-      // Điền câu hỏi vào form đánh giá STAR nếu có
-      setTimeout(() => {
-        const qInput = document.getElementById('eval-question');
-        const roleInput = document.getElementById('live-job-title');
-        if (qInput) {
-          qInput.value = questionText;
-          qInput.focus();
-        }
-        if (roleInput && role) {
-          roleInput.value = role;
-        }
-        if (typeof showToastSuccess === 'function') {
-          showToastSuccess(`Đã đưa câu hỏi từ ${company} vào phòng luyện tập AI!`, '🎯 Sẵn sàng luyện phỏng vấn');
-        }
-      }, 300);
+      switchTab('tab-interview-module');
+      switchIntSubMode('practice');
+      const roleInput = document.getElementById('int-title');
+      if (roleInput && role) roleInput.value = String(role);
+      practiceQuestionLive(encodeURIComponent(question));
     }
 
     /** Tải và render Feed Mạng Xã Hội */
