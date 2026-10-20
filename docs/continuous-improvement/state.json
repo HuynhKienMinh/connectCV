@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0066.md",
   "activeRun": "runs/2026-10-20-cycle-0067.md",
   "activeIssue": "CHAT006",
-  "issueState": "CHATBOT_TOPIC_EXACT_BACKUP_VERIFIED_MAIN_CI_PENDING",
+  "issueState": "CHATBOT_TOPIC_DEPLOYING_EXACT_D6A",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -55,7 +55,7 @@
     "currentBaselineCatalog": "backup-transfer/cycle0067-candidate-d6a3fd2.json",
     "protectedCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": false
+    "nextDeploymentRequiresNewBaseline": true
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
@@ -146,7 +146,7 @@
     "testOnlyStatus": "REVIEW_ISOLATED_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347713425",
     "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": false,
+    "currentCycleDeployAttempted": true,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -323,10 +323,14 @@
     "pendingChatbotTopicBranch": "improvement/chatbot-topic-release-20261020",
     "pendingChatbotTopicReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348876975",
     "pendingChatbotTopicCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348951592",
-    "pendingChatbotTopicStatus": "EXACT_PRIVATE_DRIVE_BACKUP_VERIFIED_MAIN_PENDING",
+    "pendingChatbotTopicStatus": "RENDER_BUILDING_LIVE_VERIFICATION_PENDING",
     "pendingChatbotTopicReviewCiPassed": true,
     "pendingChatbotTopicCandidateCiPassed": true,
-    "pendingChatbotTopicBackupCatalog": "backup-transfer/cycle0067-candidate-d6a3fd2.json"
+    "pendingChatbotTopicBackupCatalog": "backup-transfer/cycle0067-candidate-d6a3fd2.json",
+    "pendingChatbotTopicMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39349670431",
+    "pendingChatbotTopicMainCiPassed": true,
+    "pendingChatbotTopicRelease": "dep-dbbbm6nf3r2c7389u4pg",
+    "pendingChatbotTopicUrl": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-dbbbm6nf3r2c7389u4pg"
   },
   "blockingDependency": null,
   "dataBackup": {

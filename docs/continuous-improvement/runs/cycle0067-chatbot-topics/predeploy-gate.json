@@ -1,0 +1,17 @@
+{
+  "candidate": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "mainCiRun": 39349670431,
+  "mainCiSuccess": true,
+  "cloudCatalogSha256": "08cdade62075ce96affe28fcf818a8169f934e2321e7ef5f393938abbab5f41b",
+  "newBundleSha256": "5ce65fd75ca9d8f890b523b71f9a85e4bb29159e232d3f374c71af781ee55cb2",
+  "freshBareRestorePreviouslyVerified": true,
+  "localRestoreCopiesRetained": false,
+  "rollback": {
+    "backendCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+    "backendRelease": "dep-dbbav649v7es73eie2n0",
+    "backendCommand": "Render srv-db1ut3e7bikc73bqc05g: Deploy specific commit 7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+    "frontendVersion": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd",
+    "frontendCommand": "No FE deployment planned; if needed firebase hosting:clone connect-cv@89f2be9cbff279bd connect-cv:live --project connect-cv --non-interactive"
+  },
+  "checkedAt": "2026-10-20T00:51:22.139101+00:00"
+}
