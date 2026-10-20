@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0069.md",
   "activeRun": "runs/2026-10-20-cycle-0070.md",
   "activeIssue": "CV005",
-  "issueState": "CV_EXPORT_DOCUMENT_LOCAL_VERIFIED_PENDING_CI_RELEASE",
+  "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_AND_FRESH_DOCUMENT_BACKUP_REQUIRED",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,9 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Continue ACTIVE cycle0070 CV005: source5d7105/candidate4609 (7paths) pushed after4new DOMcases against1513 allfailed. New6DOM+20lifecycle+5preview+103units localPASS. Await new exactfullCI, no reusing1513 CI/backup as4609 proof;1513 MUST NOT DEPLOY.",
-    "Render routine login remains blocked by prior auto-review and awaits owner response/manualsession; this heartbeat is not approval. No retry/alternateauth/providerAPI bypass. No deploy/mainpush or newlargebackup/clone/build this continuation.",
-    "Drive25bundle/catalog1513 is VERIFIED/localcopies0 and still covers unchanged maince09/FE32cb/BE d6a. Fresh exact4609 delta+restore/cloudack/rollback and fullmainCI needed before any futuredeployment; source/livechanges require new baseline. Real CV002/renderer/Wordvisual/Firebase/device/DB/pilot remain open."
+    "ACTIVE cycle0070 CV005: source5d7105 CI39384352982 and isolated4609 CI39384352373 fullSUCCESS incl20lifecycle+6DOMsteps. Local26browser/5preview/103units PASS.1513 is SUPERSEDED/NEVERDEPLOY after4newactualDOMfail. Current4609 StudioSHAa3980be68588711e6fdf6c115b7b767f6ac03c2c4965cd5eff9be97ab7f1f148.",
+    "Await owner response to prior Renderlogin approval/manualsession. Prior automaticreview rejection stillpending; heartbeat is not approval. Do not retry login or bypass using alternateauth/browser/API. Production/maince09 FE32cb BE d6a unchanged, no publicsmoke/AIwrites.",
+    "Drive25bundle/catalog1513 remainsverified/localcopies0 for unchangedlive, but DOES NOTcover4609. When release can proceed: fresh exact4609incremental/catalog/cloudchecksum+restore/rollback, no unnecessaryclone whileloginblocked; recheckmain/live/queued deploys, FF7paths and exactfullmainCI, then specificcommitRenderdeploy withreadonlylivegate/rollbackd6a. Neverdeployaggregate review.",
+    "If stillawaitinglogin on nextheartbeat, choose independent unverified local edited-text-to-ATS/Word binary fidelity scenario withinCVscope using syntheticdata/noAI, or recordunchangedblocker quietly. Do not repeat26green/known148fontmatrix merely as polling. CV002/realrenderer/Firebase/device/DB/pilot remainopen."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -369,21 +370,22 @@
     "pendingSignupLifecyclePublicGetCount": 8,
     "pendingExportReviewCommit": "5d7105ae5f77b62e1e6947f07aac69ad903e2059",
     "pendingExportCandidateCommit": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
-    "pendingExportStatus": "DOCUMENT_LOCAL26_VERIFIED_PENDING_NEW_CI_BACKUP_AND_RENDER_LOGIN",
+    "pendingExportStatus": "DOCUMENT26_CI_VERIFIED_RELEASE_BLOCKED_RENDER_LOGIN_FRESH_BACKUP",
     "pendingExportPriorCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
     "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39384352982",
     "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39384352373",
     "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
     "pendingExportBackupCoversCandidate": false,
-    "pendingExportCandidateCiPassed": false,
-    "pendingExportReviewCiPassed": false,
+    "pendingExportCandidateCiPassed": true,
+    "pendingExportReviewCiPassed": true,
     "pendingExportOwnerNotifiedCycle": 70,
     "pendingExportMainChanged": false,
     "pendingExportLiveVerified": false,
     "pendingExportDocumentTests": 6,
     "pendingExportDocumentBaselineFailures": 4,
     "pendingExportPreviousCandidate": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
-    "pendingExportPreviousCandidateSuperseded": true
+    "pendingExportPreviousCandidateSuperseded": true,
+    "pendingExportDocumentOwnerNotifiedAt": "2026-10-20T14:12:47.044757+07:00"
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {
