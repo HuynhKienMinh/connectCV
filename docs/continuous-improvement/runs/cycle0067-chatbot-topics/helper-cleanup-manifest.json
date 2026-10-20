@@ -1,0 +1,27 @@
+{
+  "target": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\cycle0067",
+  "fileCount": 4,
+  "bytes": 457297.0,
+  "files": [
+    {
+      "relative": "backup.py",
+      "bytes": 6293,
+      "sha256": "75b560e9e487805cc35723821ccf1bbff26d650d0ebcc50439c535cbda93c839"
+    },
+    {
+      "relative": "candidate.index",
+      "bytes": 446654,
+      "sha256": "c4fc69bf6925a497ca88e5cf9983a2b9eb48c3df3c969d1b6d699b395dad890d"
+    },
+    {
+      "relative": "ci.py",
+      "bytes": 1607,
+      "sha256": "7e4e2862f678a9004431e8de2613018a5c0e15311040e96ce7967a7d8a4ad4b7"
+    },
+    {
+      "relative": "live.py",
+      "bytes": 2743,
+      "sha256": "814cc481c082668f412cbb8784286d6f59c15c7bca0743eff40202fc933fb22d"
+    }
+  ]
+}

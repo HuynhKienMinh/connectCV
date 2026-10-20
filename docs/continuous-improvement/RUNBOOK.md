@@ -107,3 +107,8 @@ Candidate964d1af đổiFEonly; RenderBE0bf/dep-dbar56u7bikc73akq250 khôngđổi
 ## AccountPage session release —cycle53
 
 Hosting89f2be9cbff279bd/FE1bc615f chỉ frontend, BE0bf giữ nguyên. Rollback `firebase hosting:clone connect-cv@73a1cc4c31425bea connect-cv:live --project connect-cv --non-interactive`; nếu versionkhông còn, dùng verifiedFE49ZIP/current964 theo catalogcycle0053-candidate-1bc615f.json với CRC/memberSHA và backend0bf. Catalog53 có19bundlechain/fsck/criticalsourcebyte/new+rollbackFEZIP proof, privateDrive IDs; khôngDBbackup. Không tựrefresh tabuser códraft. Session/operation guard ngăn completion và SDKfollow-up cũ, không hứa abort writeđãgửi hoặc revoke providertoken. Khi tạo isolatedcandidate, workflow phải từmain cộng deltađangrelease; không copyfullreviewworkflow kèm deferredops/reportchecks vắngsource.
+
+
+## Chatbot topic release —cycle67
+
+BE d6a3fd28859e0ac9b84885a8618c7a1d06d270d0/dep-dbbbm6nf3r2c7389u4pg, FE1bc/89f không đổi. RollbackBE retained7c6c0c7490dfaa6ab357b952f6e9f2a78f579190/dep-dbbav649v7es73eie2n0 qua Render Deploy specificcommit nếu cần, verify exactsource/auth/canary. Catalogcycle0067-candidate-d6a3fd2.json chứa21bundleorderedSHA và FEZIP53/memberSHA, freshbarefsck/54candidate52BE50FEcritical byteproof; khôngfullcheckout/DBrestore. PrivateownerDrive IDs và catalogSHA ghi cloud-summary/predeploy-gate. Ownstage đãdọn; thiếu cloudverification thì giữ bản duy nhất/chặn deploy. FAQ GET cố ýpublic200/sixguides, account/me401; kiểm auth chatbot POST ởlocal/fakeverifiedadapter, public khôngtestAI/write khi chưadedicatedaccount. Không dùng smokeexpectation sai401FAQ để thay auth/runtime hoặc rollback bản tốt. Mixed intents/other languages/realAI semantics chưa được chữa bằng bộ regex67.

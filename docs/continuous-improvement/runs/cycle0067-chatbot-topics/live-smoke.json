@@ -1,0 +1,98 @@
+{
+  "candidate": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "verifiedAt": "2026-10-20T00:56:12.465893+00:00",
+  "authenticatedCareerAdviceVerified": false,
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "requests": [
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/features/health",
+      "status": 200,
+      "bytes": 195,
+      "sha256": "18d5a5ab0390deb49e6485e33c6073cbc3437d9f2b7a2966772ea65aced3341a",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": null,
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/ai/",
+      "status": 200,
+      "bytes": 361531,
+      "sha256": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc",
+      "headers": {
+        "cache-control": "public, max-age=0",
+        "content-security-policy": "frame-ancestors 'self' https://connect-cv.web.app https://connect-cv.firebaseapp.com; object-src 'none'; base-uri 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "same-origin"
+      }
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/chatbot/faq",
+      "status": 200,
+      "bytes": 3016,
+      "sha256": "05000106cb3342fac6aa4f1fa1a6ac231992333484a4172077d6136493ca1986",
+      "headers": {
+        "cache-control": null,
+        "content-security-policy": null,
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/account/me",
+      "status": 401,
+      "bytes": 77,
+      "sha256": "bedd58cf18be0be64c86bb216daa61ba2b0f962c738b0f257cd83e2c30ec44db",
+      "headers": {
+        "cache-control": null,
+        "content-security-policy": null,
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://connect-cv.web.app/",
+      "status": 200,
+      "bytes": 441,
+      "sha256": "7c87c84336f678234d75c637d3f4ac584afaa92ec2ecae2756b30394de31277f",
+      "headers": {
+        "cache-control": "max-age=3600",
+        "content-security-policy": null,
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      }
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-CpvooDH5.js",
+      "status": 200,
+      "bytes": 448887,
+      "sha256": "d916be1e756e9112f21ca010bde64e1ffe7dd3db619e6c20f533e3412946bffb",
+      "headers": {
+        "cache-control": "max-age=3600",
+        "content-security-policy": null,
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      }
+    }
+  ],
+  "health": {
+    "status": "OK",
+    "authenticationIntegrated": true,
+    "creditsMode": "transactional",
+    "translationSigningConfigured": true,
+    "browserConfigured": true,
+    "pdfCanaryVerified": true,
+    "durableStorageConfigured": true
+  },
+  "publicFaqGuideIds": [
+    "cv-keywords",
+    "cv-export",
+    "interview-mic",
+    "community-privacy",
+    "proposal-source",
+    "account-access"
+  ]
+}

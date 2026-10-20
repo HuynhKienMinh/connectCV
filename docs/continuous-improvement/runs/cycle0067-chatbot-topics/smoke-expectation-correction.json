@@ -1,0 +1,12 @@
+{
+  "initialRequests": 3,
+  "initialHealthAndStudioAssertionsPassed": true,
+  "failedAssertion": "Expected401 for GET /api/chatbot/faq",
+  "actualInitialStatusNotPersisted": true,
+  "cause": "Smoke expectation mistake: unchanged mount intentionally allows public GET FAQ. Not a code regression.",
+  "baselineLiveMountByteIdenticalToCandidate": true,
+  "correctedContract": "FAQ200 six owned guides, account/me401",
+  "runtimeChangedForCorrection": false,
+  "realAiCalls": 0,
+  "cloudWrites": 0
+}

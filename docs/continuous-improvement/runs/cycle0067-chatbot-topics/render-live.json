@@ -1,0 +1,16 @@
+{
+  "candidate": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "sourceHref": "https://github.com/HuynhKienMinh/connectCV/commit/d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "release": "dep-dbbbm6nf3r2c7389u4pg",
+  "url": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-dbbbm6nf3r2c7389u4pg",
+  "status": "Deploy succeeded | Live",
+  "duration": "2m37s",
+  "startedAt": "2026-10-20T07:51:38+07:00",
+  "verifiedAt": "2026-10-20T00:56:12.465893+00:00",
+  "liveSmokePassed": true,
+  "realAuthenticatedCareerAdviceVerified": false,
+  "rollbackPerformed": false,
+  "rollbackCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "screenshot": "render-live.png",
+  "initialSmokeExpectationErrorDocumented": true
+}
