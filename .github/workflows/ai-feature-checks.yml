@@ -214,3 +214,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           CV_EXPORT_LIFECYCLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-export-lifecycle-qa'
+      - name: Verify fullscreen document and editable draft export ownership
+        run: node tests/cvExportDocumentUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_EXPORT_DOCUMENT_QA_OUTPUT: '${{ runner.temp }}/connectcv-export-document-qa'
