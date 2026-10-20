@@ -1,0 +1,82 @@
+{
+  "wholeStudio": true,
+  "syntheticTransport": true,
+  "realAiCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "sourceRef": "72dc8447939b648ea0bd7a096592c7d2ce92347f",
+  "rows": [
+    {
+      "phase": "current-summary-renders-zero-and-captured-history",
+      "pass": true
+    },
+    {
+      "phase": "double-end-shares-one-pending-summary",
+      "pass": true
+    },
+    {
+      "phase": "close-aborts-and-late-success-cannot-populate-dismissed-report",
+      "pass": true
+    },
+    {
+      "phase": "older-success-cannot-overwrite-newer-summary",
+      "pass": true
+    },
+    {
+      "phase": "close-during-json-parsing-ignores-late-data",
+      "pass": true
+    },
+    {
+      "phase": "new-session-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "reset-session-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "practice-question-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "module-departure-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "eval-submode-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "script-mode-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "pagehide-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "continued-answer-cancels-summary-and-clears-modal",
+      "pass": true
+    },
+    {
+      "phase": "logout-synchronously-aborts-summary-before-bridge-reload",
+      "pass": true
+    },
+    {
+      "phase": "obsolete-error-cannot-replace-new-loading-state",
+      "pass": true
+    },
+    {
+      "phase": "current-network-failure-has-generic-retry-without-private-error",
+      "pass": true
+    },
+    {
+      "phase": "deadline-releases-lock-explicit-retry-ignores-old-finally",
+      "pass": true
+    },
+    {
+      "phase": "empty-session-does-not-request-ai",
+      "pass": true
+    }
+  ]
+}

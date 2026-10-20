@@ -170,3 +170,7 @@ D035 bổsung heartbeat13:58: global latestRenderedHtml không đại diện rea
 ## D036 —20/10/2026: Worddesign không tự đổi sang nguồn ATS
 
 ATS là phép dựng lại từ structuredprofile/verifiedtranslation, không phải import HTML vừa sửa; giữ grounding đó. Khi người dùng chọn Worddesign, không tự đổi format vì readiness=false. Recheck verifiedcanary có deadline và documentownership; recovered dùng editedHTML, unavailable chỉ cảnh báo giữ CV hiện tại/thử lại/In-LưuPDF, không tự print/POST/AI. ExplicitATS vẫn đi sourcecontract; không coi DOCX XML marker là Wordvisual hoặc realAuth proof. CV006 dùng actuallocalbinary contrast +wholeStudiofixture, candidatecombined1f294f phải có CI/freshDrive/main/live gates trước scopedrelease. Renderlogin vẫn cần quyết định đã hỏi, heartbeat không tự cấp quyền.
+
+## D037 —20/10/2026: summary cũng thuộc session và modal hiện tại
+
+Summary có operation/scope riêng, lock đồng bộ cho End đang chờ và deadline90s. Close/new session/continued answer/departure invalidate trước abort; xóa report DOM, giữ transcript. Guard sau JSON và trong catch/finally không cho response/error cũ ghi đè report hoặc loading/lock mới. Không tự retry hay hứa provider cancellation/refund. Giữ version2/grounding/zero-score; network error dùng lời báo chung. Review và isolated INT candidate không thay candidate CV đang chờ; nếu main thay đổi phải compose lại phạm vi INT và verify CI/fresh exact Drive/live. Whole-Studio fake transport không chứng minh real actor/device/provider; không đóng INT005 từ test xanh.

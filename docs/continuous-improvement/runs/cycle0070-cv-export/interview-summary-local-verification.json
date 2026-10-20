@@ -1,0 +1,48 @@
+{
+  "browserReports": {
+    "interview-summary-baseline-18": {
+      "passed": 2,
+      "failed": 16,
+      "sha256": "04b33798ffe4c111ba946ab2be695d23f62cbd67ec23cbc50caa393a4015a282"
+    },
+    "interview-summary-fixed": {
+      "passed": 18,
+      "failed": 0,
+      "sha256": "739da114989b6bbe434bf606fba52cd555a19673789093734717f0bbc6c84044"
+    },
+    "interview-summary-isolated": {
+      "passed": 18,
+      "failed": 0,
+      "sha256": "b09039149788b0e5a139891ac6f451430a088870da190a4cf0f9bf31083b1208"
+    },
+    "interview-summary-session-regression": {
+      "passed": 15,
+      "failed": 0,
+      "sha256": "bb5ee7e4c201117f2f30d98940aee9dd30ea386565697afaf525594fd4805d2e"
+    },
+    "interview-summary-voice-regression": {
+      "passed": 13,
+      "failed": 0,
+      "sha256": "3583eeb36d7a2b00659167031c61fb7dedc77a6fec35ea7084b79241dadc08f7"
+    },
+    "interview-summary-mic-regression": {
+      "passed": 13,
+      "failed": 0,
+      "sha256": "4ddeccfafe8175b11337030f771daa5bf0a41fe5c6690f7ab7e632b04d1e2880"
+    }
+  },
+  "groundingTranscriptUnits": {
+    "passed": 9,
+    "failed": 0,
+    "observedCommand": "node --test tests/interviewSummaryGrounding.test.js tests/interviewTranscript.test.js",
+    "initialFixtureDependencyFailureCorrected": true
+  },
+  "oldRendererReplayPreservedSha256": "487983499c1f60999c324836620af209f7acca59d70356963df196b3f77396bf",
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "physicalMicrophone": false,
+  "cvCandidatePreserved": true,
+  "mainPushed": false,
+  "deploymentAttempted": false,
+  "newLargeBackup": false
+}

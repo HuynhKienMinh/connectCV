@@ -1,0 +1,237 @@
+{
+  "wholeStudio": true,
+  "syntheticTransport": true,
+  "realAiCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "sourceRef": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+  "rows": [
+    {
+      "phase": "current-summary-renders-zero-and-captured-history",
+      "pass": true
+    },
+    {
+      "phase": "double-end-shares-one-pending-summary",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "hidden": false,
+        "loading": true,
+        "text": "",
+        "requests": 2,
+        "aborted": [
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "phase": "close-aborts-and-late-success-cannot-populate-dismissed-report",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": true,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "older-success-cannot-overwrite-newer-summary",
+      "pass": false,
+      "error": "The input did not match the regular expression /CURRENT_B/. Input:\n\n'\\n' +\n  '        \\n' +\n  '        \\n' +\n  '          \\n' +\n  '            \\n' +\n  '              Xếp loại chung:\\n' +\n  '              \\n' +\n  '                Ước lượng AI\\n' +\n  '              \\n' +\n  '            \\n' +\n  '            OBSOLETE_A\\n' +\n  '          \\n' +\n  '          \\n' +\n  '            Điểm Tổng Thể\\n' +\n  '            0/10\\n' +\n  '            Ước lượng AI để luyện tập\\n' +\n  '          \\n' +\n  '        \\n' +\n  '        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\\n' +\n  '\\n' +\n  '     ",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 2,
+        "aborted": [
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "phase": "close-during-json-parsing-ignores-late-data",
+      "pass": false,
+      "error": "The input was expected to not match the regular expression /OBSOLETE_A/. Input:\n\n'\\n' +\n  '        \\n' +\n  '        \\n' +\n  '          \\n' +\n  '            \\n' +\n  '              Xếp loại chung:\\n' +\n  '              \\n' +\n  '                Ước lượng AI\\n' +\n  '              \\n' +\n  '            \\n' +\n  '            OBSOLETE_A\\n' +\n  '          \\n' +\n  '          \\n' +\n  '            Điểm Tổng Thể\\n' +\n  '            0/10\\n' +\n  '            Ước lượng AI để luyện tập\\n' +\n  '          \\n' +\n  '        \\n' +\n  '        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\\n' +\n  '\\",
+      "state": {
+        "hidden": true,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "new-session-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "reset-session-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "practice-question-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "module-departure-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "eval-submode-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "script-mode-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "pagehide-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "logout-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+      "state": null
+    },
+    {
+      "phase": "continued-answer-cancels-summary-and-clears-modal",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "\n        \n        \n          \n            \n              Xếp loại chung:\n              \n                Ước lượng AI\n              \n            \n            OBSOLETE_A\n          \n          \n            Điểm Tổng Thể\n            0/10\n            Ước lượng AI để luyện tập\n          \n        \n        Đối chiếu các đoạn trích với câu trả lời gốc trước khi luyện lại.\n\n        \n        \n          \n            \n               Điểm Mạnh Nổi Bật\n            \n            \n              \n            \n          \n          \n            \n               Kỹ Năng Cần Trau Dồi Thêm\n            \n            \n              \n            \n          \n        \n\n        \n        \n          \n            \n            Chi Tiết Từng Câu Hỏi & Khung STAR Từ Câu Trả Lời Gốc\n          \n\n          \n            \n          \n        \n\n        \n        \n      ",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "obsolete-error-cannot-replace-new-loading-state",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "Lỗi kết nối: PRIVATE_SYNTHETIC_ERROR",
+        "requests": 2,
+        "aborted": [
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "phase": "current-network-failure-has-generic-retry-without-private-error",
+      "pass": false,
+      "error": "The input was expected to not match the regular expression /PRIVATE_SYNTHETIC_ERROR/. Input:\n\n'Lỗi kết nối: PRIVATE_SYNTHETIC_ERROR'\n",
+      "state": {
+        "hidden": false,
+        "loading": false,
+        "text": "Lỗi kết nối: PRIVATE_SYNTHETIC_ERROR",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "deadline-releases-lock-explicit-retry-ignores-old-finally",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n0 !== 1\n",
+      "state": {
+        "hidden": false,
+        "loading": true,
+        "text": "",
+        "requests": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "phase": "empty-session-does-not-request-ai",
+      "pass": true
+    }
+  ]
+}

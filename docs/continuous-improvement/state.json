@@ -62,7 +62,7 @@
     "ACTIVE cycle0070 CV005+CV006: source7e1820 CI39385955816 and isolated1f294f CI39385956500 fullSUCCESS incl31browser and actualDOCXbinary step. Candidate9paths/StudioSHAafc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b; no mainpush/live proof. Prior1513/4609 superseded for plannedrelease.",
     "Renderloginapproval/manualsession stillpending. One read-only check of the same handed-off tab shows Sign In; no loginclick/authretry or alternatebrowser/API bypass. Heartbeat is not approval. Maince09/FE32cb/BE d6a unchanged.",
     "Before release: fresh exact1f294f privateDrive delta/catalog+checksum/freshrestore/rollback and fullmainCI, then BEStudio-only specificcommitRenderdeploy/livegate/rollbackd6a. Catalog25bundle1513 verified/localcopies0 covers unchangedlive, NOT1f294f. No newlargebackup/clone/build while loginblocked. Codebackup is notDBbackup.",
-    "If login remainsblocked, keep requested approval pending and unchangednotifications quiet. Optional next independent P1 validation follows rotation interview: INT005 live-summary-modal completion ownership after close/End/newsession on local fakeprovider, no realAI/device/cloudwrites. Do not rerun31green/known148fontmatrix merely to poll. CV002/Wordvisual/Firebase/device/DB/pilot remainopen."
+    "Independent INT005 summary checkpoint: source02c8c7c and isolated72dc844 (4paths from maince09) pushed; CI39387903287/39387902753 fullSUCCESS incl new18summary step. New18summary local+exactGitblob PASS; baseline2PASS/16FAIL, related41browser+9units PASS. Keep CV1f294f candidate unchanged; INT72dc is separate, not a successor to CV. Before any later INT release after CV lands, recompose on newmain, exactCI/privateDrive/restore/rollback/live. No auth retries/large backups while Render approval remains pending. Real actor/device/provider/DB/human remain open."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -389,7 +389,27 @@
     "pendingWordRecoveryCases": 5,
     "localEditedDocxBinarySyntheticVerified": true,
     "realWordVisualVerified": false,
-    "pendingWordRecoveryOwnerNotifiedAt": "2026-10-20T14:29:00.356680+07:00"
+    "pendingWordRecoveryOwnerNotifiedAt": "2026-10-20T14:29:00.356680+07:00",
+    "pendingInterviewSummary": {
+      "issue": "INT005",
+      "status": "LOCAL18_AND_EXACT_CI_READY_PENDING_RENDER_BACKUP_RELEASE",
+      "sourceCommit": "02c8c7c1ab148ba1db68e75198dae412e551b870",
+      "candidateCommit": "72dc8447939b648ea0bd7a096592c7d2ce92347f",
+      "candidateBranch": "improvement/interview-summary-release-20261020",
+      "baseCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+      "studioSha256": "c184a5884dab38a323d8c62edeb4b47ff899b6970c14c9f136e77af1b84f597a",
+      "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39387903287",
+      "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39387902753",
+      "ciPassed": true,
+      "backupCoversCandidate": false,
+      "deployed": false,
+      "localSummaryCasesPassed": 18,
+      "relatedBrowserCasesPassed": 41,
+      "groundingTranscriptUnitsPassed": 9,
+      "cvCandidatePreserved": true,
+      "recomposeRequiredIfMainChanges": true,
+      "checkedAt": "2026-10-20T14:43:56.503064+07:00"
+    }
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {
@@ -492,6 +512,7 @@
     "signInStillVisible": true
   },
   "relatedActiveIssues": [
-    "CV006"
+    "CV006",
+    "INT005"
   ]
 }
