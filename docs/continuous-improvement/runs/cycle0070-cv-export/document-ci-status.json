@@ -1,0 +1,82 @@
+[
+  {
+    "id": 39384352982,
+    "head_sha": "5d7105ae5f77b62e1e6947f07aac69ad903e2059",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39384352982",
+    "jobs": [
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "running": [],
+        "failed": [],
+        "exportSteps": []
+      },
+      {
+        "name": "pdf-renderer",
+        "status": "in_progress",
+        "conclusion": null,
+        "running": [
+          "Verify responsive preview and edited photo round trip"
+        ],
+        "failed": [],
+        "exportSteps": [
+          {
+            "name": "Verify CV export ownership, duplicate locking and bounded retry",
+            "conclusion": null
+          },
+          {
+            "name": "Verify fullscreen document and editable draft export ownership",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "name": "emulator-restore",
+        "status": "completed",
+        "conclusion": "success",
+        "running": [],
+        "failed": [],
+        "exportSteps": []
+      }
+    ]
+  },
+  {
+    "id": 39384352373,
+    "head_sha": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39384352373",
+    "jobs": [
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "running": [],
+        "failed": [],
+        "exportSteps": []
+      },
+      {
+        "name": "pdf-renderer",
+        "status": "in_progress",
+        "conclusion": null,
+        "running": [
+          "Verify community receipt retry, authoritative balance and retained newer drafts"
+        ],
+        "failed": [],
+        "exportSteps": [
+          {
+            "name": "Verify CV export ownership, duplicate locking and bounded retry",
+            "conclusion": null
+          },
+          {
+            "name": "Verify fullscreen document and editable draft export ownership",
+            "conclusion": null
+          }
+        ]
+      }
+    ]
+  }
+]

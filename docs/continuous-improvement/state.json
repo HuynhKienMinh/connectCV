@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0069.md",
   "activeRun": "runs/2026-10-20-cycle-0070.md",
   "activeIssue": "CV005",
-  "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_APPROVAL",
+  "issueState": "CV_EXPORT_DOCUMENT_LOCAL_VERIFIED_PENDING_CI_RELEASE",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -55,13 +55,13 @@
     "currentBaselineCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
     "protectedCommit": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": false
+    "nextDeploymentRequiresNewBaseline": true
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "ACTIVE cycle0070/CV005 awaiting owner approval for routine Render sign-in with existing GitHub session (no new permissions/IAM/credentials) or owner manual sign-in. Auto-review rejected GitHub button; do not bypass via alternate session/API/auth workaround.",
-    "Source8d59a90 CI39382615459 and candidate1513dbd CI39382615355 fullSUCCESS incl20new export cases. Catalog70-1513 cloudVERIFIED25bundle/critical60candidate59FE57BE/ZIP69; finalSHA cc8d136a08a0f0c905a7466126bf1f3fed54fbd36376cc71513de7a531fe04e6. All owned restore/build/bundle/helpers removed. No deployment attempted; maince09/FE32cb/BE d6a unchanged.",
-    "When Render session available, check live/queued deploys, exact main1513 candidate fastforward fromce09 only after rechecking backup+rollback, run exact fullmainCI then specificcommitRenderdeploy and boundedreadonly source/hash/auth/canary smoke; rollbackBE d6a iffails. If source/live baseline changes, require fresh exactbackup. No real PDF/Firebase/Wordvisual/AI writes; CV002/DB/device/pilot remain open."
+    "Continue ACTIVE cycle0070 CV005: source5d7105/candidate4609 (7paths) pushed after4new DOMcases against1513 allfailed. New6DOM+20lifecycle+5preview+103units localPASS. Await new exactfullCI, no reusing1513 CI/backup as4609 proof;1513 MUST NOT DEPLOY.",
+    "Render routine login remains blocked by prior auto-review and awaits owner response/manualsession; this heartbeat is not approval. No retry/alternateauth/providerAPI bypass. No deploy/mainpush or newlargebackup/clone/build this continuation.",
+    "Drive25bundle/catalog1513 is VERIFIED/localcopies0 and still covers unchanged maince09/FE32cb/BE d6a. Fresh exact4609 delta+restore/cloudack/rollback and fullmainCI needed before any futuredeployment; source/livechanges require new baseline. Real CV002/renderer/Wordvisual/Firebase/device/DB/pilot remain open."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -367,19 +367,23 @@
     "pendingSignupLifecycleVersion": "projects/connect-cv/sites/connect-cv/versions/32cb6e9c8222b5ec",
     "pendingSignupLifecycleOwnerNotifiedCycle": 69,
     "pendingSignupLifecyclePublicGetCount": 8,
-    "pendingExportReviewCommit": "8d59a90712e4255be0534e0564300f627c2057a0",
-    "pendingExportCandidateCommit": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
-    "pendingExportStatus": "CI_BACKUP_VERIFIED_RELEASE_BLOCKED_RENDER_LOGIN_APPROVAL",
+    "pendingExportReviewCommit": "5d7105ae5f77b62e1e6947f07aac69ad903e2059",
+    "pendingExportCandidateCommit": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+    "pendingExportStatus": "DOCUMENT_LOCAL26_VERIFIED_PENDING_NEW_CI_BACKUP_AND_RENDER_LOGIN",
     "pendingExportPriorCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
-    "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382615459",
-    "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382615355",
+    "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39384352982",
+    "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39384352373",
     "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
-    "pendingExportBackupCoversCandidate": true,
-    "pendingExportCandidateCiPassed": true,
-    "pendingExportReviewCiPassed": true,
+    "pendingExportBackupCoversCandidate": false,
+    "pendingExportCandidateCiPassed": false,
+    "pendingExportReviewCiPassed": false,
     "pendingExportOwnerNotifiedCycle": 70,
     "pendingExportMainChanged": false,
-    "pendingExportLiveVerified": false
+    "pendingExportLiveVerified": false,
+    "pendingExportDocumentTests": 6,
+    "pendingExportDocumentBaselineFailures": 4,
+    "pendingExportPreviousCandidate": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
+    "pendingExportPreviousCandidateSuperseded": true
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {

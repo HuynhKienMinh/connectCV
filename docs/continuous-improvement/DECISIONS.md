@@ -162,3 +162,6 @@ After create settles, only the owning route operation and exact current SDKUser 
 ## D035 —20/10/2026: export phải thuộc CV và operation hiện tại
 
 Click trước awaitreadiness nắm operationobject/snapshotCV/html/template/language/profile; recheck sau health/response/blob và trước save/print. Render/rời CV/pagehide/logout invalidate trướcabort. PDF/Word dùng một synchronouslock; finally chỉ clear chínhoperation/timer của mình. Deadline90s thảlock, cảnh báo thử lại nhưng không tự in/retry hoặc cam kết hủy render/quota phía server. Giữ currentdesignprintfallback, ATS/Word không tự đổi định dạng. Localfake transport phớt lờabort chứng minh guard, không xác nhận realrenderer/identity/layout/Wordvisual. CV005 không đóng trước isolatedCI/exactprivateDrivebackup/rollback/live; CV002 và commercialgate còn mở.
+
+
+D035 bổsung heartbeat13:58: global latestRenderedHtml không đại diện realcontenteditableDOM hoặc fullscreen document. So canonical visible-document snapshot sau await; renderresultmới hủy và bỏ fullscreencũ, hiddenclose khôngcopyback. Emptyframe cần explicitretry khi ready. Không lấy green20cases/CI1513 thaybằngchứng6actualDOMcases;1513 bịsuperseded, candidate4609 cần exactgates mới. Không coi automatedheartbeat là xácnhận cho rejectedRenderlogin.

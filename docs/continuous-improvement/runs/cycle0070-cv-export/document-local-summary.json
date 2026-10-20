@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-10-20T14:07:55.852648+07:00",
+  "baselineRef": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
+  "newBaselineCases": 4,
+  "newBaselineFailures": 4,
+  "newDocumentCasesPassed": 6,
+  "existingLifecycleCasesPassed": 20,
+  "previewPhasesPassed": 5,
+  "featureUnitsPassed": 103,
+  "source": "5d7105ae5f77b62e1e6947f07aac69ad903e2059",
+  "candidate": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+  "isolatedDocumentPassed": 6,
+  "cloudWrites": 0,
+  "aiCalls": 0,
+  "publicRequests": 0,
+  "realPdfOrWordBinaryVerified": false,
+  "newBackupCreated": false,
+  "mainChanged": false,
+  "deploymentAttempted": false
+}

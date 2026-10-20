@@ -264,3 +264,6 @@ Cycle68 release note: immediate smoke initially mismatched and rollback89f was v
 ## Cycle0070 checkpoint —20/10/2026: CV export ownership
 
 [Nhật ký và bằng chứng](runs/2026-10-20-cycle-0070.md): CV005 P1 tái hiện readinessclickA gửiB và lỗiA mở inB; baseline12ca8FAIL. Candidate1513 scoped6paths có20newbrowser/103units/5previewphases và fullsource/candidateCI đạt; bổ sung dependencyfixture sau firstCIpreviewfailure, không bỏassert. PrivateDrive25bundle/freshrestore/FEZIP69 verified, stagingdọn. Chưa main/deploy: Renderhếtphiên, automaticapprovalreview chặnGitHublogin; cần owner approval cho routineexistinglogin/noextraaccess hoặc tựđăngnhập. Maince09/FE32cb/BE d6a giữ nguyên; CV005/CV002/realexport/Firebase/DB/pilot chưađóng.
+
+
+Cycle70 follow-up13:58VN: 4newactualDOMcases cho thấy1513 cònfullscreenHTMLA/metadataB và directeditable race; đãrút1513 khỏirelease. Candidate4609 scoped7paths local6DOM+20lifecycle+5preview+103unitsPASS, exactCI/freshbackup/releasepending. Khôngdeploy hoặc tạo thêmbackup lớn; Renderlogin approval vẫnchờ, productiongiữnguyên. Xemnhậtký70 cho before/after và giới hạn.

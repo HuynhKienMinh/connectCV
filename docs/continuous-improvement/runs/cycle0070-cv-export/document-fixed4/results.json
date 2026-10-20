@@ -1,0 +1,30 @@
+{
+  "wholeStudio": true,
+  "actualExportControllers": true,
+  "syntheticCvState": true,
+  "syntheticTransport": true,
+  "syntheticFileSave": true,
+  "realRendererVerified": false,
+  "realFirebaseVerified": false,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "sourceRef": "working-tree",
+  "rows": [
+    {
+      "name": "fullscreen-export-must-match-current-CV-design",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-export-must-match-current-CV-docx",
+      "passed": true
+    },
+    {
+      "name": "direct-text-edit-during-readiness-invalidates-old-click",
+      "passed": true
+    },
+    {
+      "name": "old-PDF-error-cannot-print-directly-edited-draft",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "candidate": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+  "parent": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
+  "source": "5d7105ae5f77b62e1e6947f07aac69ad903e2059",
+  "pathsFromMain": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/cvExportDocumentUi.check.cjs",
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs",
+    "backend/features/connectcv/tests/cvPreview.check.cjs",
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js",
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs"
+  ],
+  "studioSha256": "a3980be68588711e6fdf6c115b7b767f6ac03c2c4965cd5eff9be97ab7f1f148",
+  "priorCandidateSuperseded": true,
+  "workflowPriorCandidatePrefixExact": true,
+  "runtimeScope": "Only CV close/render/getCurrentHtml/export document ownership range; prefix/suffix of1513 Studio retained byte-for-byte. Deferred community/ops/PDF experiments excluded."
+}

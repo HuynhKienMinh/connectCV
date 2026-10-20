@@ -128,4 +128,6 @@ FEce09d3c/Hosting32cb6e9c8222b5ec; BE d6a giữ nguyên. Rollback `firebase host
 
 ## Pending Studio export lifecycle release —cycle70
 
+**SUPERSEDED: không deploy1513.** Heartbeat13:58 phát hiện4actualDOMfail; candidate4609 thaythế, exactCI/freshbackup/mainCI/live chưađạt. Catalog1513 dướiđây chỉ historicalbackup, không phải gate cho4609. Renderloginapproval trước vẫnpending; khôngauthretry/bypass.
+
 Candidate1513dbdd2e970890d6bbedaa703b3a8b78d06d44, mainbasece09. CI39382615355 SUCCESS, StudioSHA169214739cf05200beec173acc4befb4ff28f5c7d279302ab2c4acc7a8b48a37. Catalogcycle0070-candidate-1513dbd.json SHA cc8d136a08a0f0c905a7466126bf1f3fed54fbd36376cc71513de7a531fe04e6 verified25bundle/criticalbytes/unchangedFEZIP69; owncopiesdeleted. Renderlogin approval blocked, notdeployed. Do not bypass rejectedauth action with alternatecredentials/session/API. Owner may approve routine existingGitHublogin withoutnewpermissions or signinmanually. Then verify Rendercurrent/queue/autodeploydisabled and rollbackBE d6a/dep-dbbbm6nf3r2c7389u4pg, exactmainCI, cloudchecksum before specificcommitdeploy. FEce09/32cb unchanged. No newbackup needed solely becausewaiting if exactcandidate/livebaseline remainsunchanged; if baselinechanges repeatfreshgate. No cloudDBsnapshot exists; no schema/bulkwrites. Real renderer/clientdevice/actor proof remainspending.
