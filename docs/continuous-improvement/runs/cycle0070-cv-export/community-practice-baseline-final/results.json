@@ -1,0 +1,177 @@
+{
+  "wholeStudio": true,
+  "actualCommunityButtons": true,
+  "syntheticTransport": true,
+  "realAiCalls": 0,
+  "realTtsCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "sourceRef": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "rows": [
+    {
+      "phase": "feed-read-does-not-start-interview-provider-or-publication",
+      "pass": true
+    },
+    {
+      "phase": "question-button-opens-visible-selected-question-and-role",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#int-mode-live') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"int-mode-live\" class=\"hidden flex-1 flex flex-col min-h-0 relative\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "deck-button-practices-first-question",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#int-mode-live') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"int-mode-live\" class=\"hidden flex-1 flex flex-col min-h-0 relative\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "handoff-from-prior-evaluation-restores-live-practice-submode",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#int-mode-live') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"int-mode-live\" class=\"hidden flex-1 flex flex-col min-h-0 relative\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "selected-question-is-the-history-sent-with-next-typed-answer",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#int-mode-live') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"int-mode-live\" class=\"hidden flex-1 flex flex-col min-h-0 relative\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "empty-deck-keeps-current-module-and-previous-transcript",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#tab-debrief') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"tab-debrief\" class=\"tab-content space-y-6 hidden\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "unicode-apostrophes-and-html-like-question-remain-inert-and-exact",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#int-mode-live') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"int-mode-live\" class=\"hidden flex-1 flex flex-col min-h-0 relative\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "mobile-card-handoff-shows-selected-question",
+      "pass": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#int-mode-live') to be visible\u001b[22m\n\u001b[2m    14 × locator resolved to hidden <div id=\"int-mode-live\" class=\"hidden flex-1 flex flex-col min-h-0 relative\">…</div>\u001b[22m\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Previous question"
+          },
+          {
+            "role": "candidate",
+            "message": "Previous answer"
+          }
+        ],
+        "title": "Previous role",
+        "caption": "Bấm nút \"Phỏng Vấn Live AI\" hoặc bấm vào Quả cầu để bắt đầu nói chuyện...",
+        "tts": [],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    }
+  ]
+}

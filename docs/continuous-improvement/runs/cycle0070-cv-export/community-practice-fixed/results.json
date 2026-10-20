@@ -1,0 +1,146 @@
+{
+  "wholeStudio": true,
+  "actualCommunityButtons": true,
+  "syntheticTransport": true,
+  "realAiCalls": 0,
+  "realTtsCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "sourceRef": "working-tree",
+  "rows": [
+    {
+      "phase": "feed-read-does-not-start-interview-provider-or-publication",
+      "pass": true
+    },
+    {
+      "phase": "question-button-opens-visible-selected-question-and-role",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     message: 'Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!',\n-     message: 'How would you handle a returned item?',\n      role: 'interviewer'\n    }\n  ]\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+          }
+        ],
+        "title": "Retail Advisor",
+        "caption": "AI: Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+        ],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "deck-button-practices-first-question",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     message: 'Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!',\n-     message: 'How would you handle a returned item?',\n      role: 'interviewer'\n    }\n  ]\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+          }
+        ],
+        "title": "Retail Advisor",
+        "caption": "AI: Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+        ],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "handoff-from-prior-evaluation-restores-live-practice-submode",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     message: 'Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!',\n-     message: 'How would you handle a returned item?',\n      role: 'interviewer'\n    }\n  ]\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+          }
+        ],
+        "title": "Retail Advisor",
+        "caption": "AI: Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+        ],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "selected-question-is-the-history-sent-with-next-typed-answer",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     message: `Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!`,\n-     message: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\",\n      role: 'interviewer'\n    }\n  ]\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+          }
+        ],
+        "title": "Retail Advisor",
+        "caption": "AI: Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+        ],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "empty-deck-keeps-current-module-and-previous-transcript",
+      "pass": true
+    },
+    {
+      "phase": "unicode-apostrophes-and-html-like-question-remain-inert-and-exact",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     message: `Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!`,\n-     message: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\",\n      role: 'interviewer'\n    }\n  ]\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+          }
+        ],
+        "title": "Retail Advisor",
+        "caption": "AI: Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"Bạn xử lý câu hỏi 'đổi hàng' và <script>window.__injected=1</script> thế nào?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+        ],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    },
+    {
+      "phase": "mobile-card-handoff-shows-selected-question",
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n+     message: 'Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!',\n-     message: 'How would you handle a returned item?',\n      role: 'interviewer'\n    }\n  ]\n",
+      "state": {
+        "history": [
+          {
+            "role": "interviewer",
+            "message": "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+          }
+        ],
+        "title": "Retail Advisor",
+        "caption": "AI: Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!",
+        "tts": [
+          "Chào bạn, chúng ta hãy cùng luyện tập câu hỏi này: \"How would you handle a returned item?\". Bạn đã sẵn sàng chưa, hãy trình bày câu trả lời của mình nhé!"
+        ],
+        "chats": [],
+        "otherWrites": [],
+        "injected": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "reports": {
+    "community-practice-baseline-final": {
+      "passed": 1,
+      "failed": 7,
+      "sha256": "bde2ac645e0d739dc9af7ae013c092e5f3dbea59503e7cec09cddbef87bab6e4"
+    },
+    "community-practice-fixed-final": {
+      "passed": 8,
+      "failed": 0,
+      "sha256": "ac116a02f2cd90dbed8acbf80b3f6d36f7c01c22cd06355ea156bd252ee27725"
+    },
+    "community-practice-isolated": {
+      "passed": 7,
+      "failed": 1,
+      "sha256": "787cb278166973bdda38cb2849f24a45c2c2bbe7c8258fa09b1b00ebee3d4357"
+    },
+    "community-practice-isolated-recheck": {
+      "passed": 8,
+      "failed": 0,
+      "sha256": "4a51c79105ac2ed859a9bc2c158f095903afa4b38e5a7136b00feef243d8b9af"
+    }
+  },
+  "realAiCalls": 0,
+  "realTtsCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "firstIsolatedScreenshotContextClosed": true,
+  "unchangedCandidateRecheckPassed": true,
+  "mainPushed": false,
+  "deployed": false,
+  "newLargeBackup": false
+}

@@ -1,0 +1,17 @@
+{
+  "source": "8ced430d0cd154534403de17c209632dd75bc8fc",
+  "candidate": "7676a69fb64ca1063d77810d2f9b089375f3b061",
+  "base": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "branch": "improvement/community-practice-release-20261020",
+  "paths": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/communityPracticeUi.check.cjs"
+  ],
+  "studioSha256": "01684eb7933cca5a51a21055b64a175580bc1092206719d4306577a42129f7f8",
+  "preservedCvCandidate": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+  "preservedInterviewSummaryCandidate": "72dc8447939b648ea0bd7a096592c7d2ce92347f",
+  "deployed": false,
+  "backupCoversCandidate": false,
+  "recomposeRequiredIfMainChanges": true
+}

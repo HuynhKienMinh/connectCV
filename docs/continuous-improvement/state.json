@@ -62,7 +62,8 @@
     "ACTIVE cycle0070 CV005+CV006: source7e1820 CI39385955816 and isolated1f294f CI39385956500 fullSUCCESS incl31browser and actualDOCXbinary step. Candidate9paths/StudioSHAafc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b; no mainpush/live proof. Prior1513/4609 superseded for plannedrelease.",
     "Renderloginapproval/manualsession stillpending. One read-only check of the same handed-off tab shows Sign In; no loginclick/authretry or alternatebrowser/API bypass. Heartbeat is not approval. Maince09/FE32cb/BE d6a unchanged.",
     "Before release: fresh exact1f294f privateDrive delta/catalog+checksum/freshrestore/rollback and fullmainCI, then BEStudio-only specificcommitRenderdeploy/livegate/rollbackd6a. Catalog25bundle1513 verified/localcopies0 covers unchangedlive, NOT1f294f. No newlargebackup/clone/build while loginblocked. Codebackup is notDBbackup.",
-    "Independent INT005 summary checkpoint: source02c8c7c and isolated72dc844 (4paths from maince09) pushed; CI39387903287/39387902753 fullSUCCESS incl new18summary step. New18summary local+exactGitblob PASS; baseline2PASS/16FAIL, related41browser+9units PASS. Keep CV1f294f candidate unchanged; INT72dc is separate, not a successor to CV. Before any later INT release after CV lands, recompose on newmain, exactCI/privateDrive/restore/rollback/live. No auth retries/large backups while Render approval remains pending. Real actor/device/provider/DB/human remain open."
+    "INT005 summary remains isolated72dc844 (4paths) exactCI39387903287/39387902753 SUCCESS and local18. Independent next rotation community found SOCIAL005: source8ced430/isolated7676a69 (3paths) pushed, local8+exactGitblob8PASS vs baseline7FAIL; CI39389251033/39389251543 fullSUCCESS incl new8card-handoff step. Three candidates share maince09; preserve CV1f294f/INT72dc, do not deploy aggregate review. Any main change requires scoped recomposition/newexactCI/Drive/rollback/live.",
+    "Render approval remains pending; heartbeat is not approval, no login retry/alternate auth or new large backup. Keep unchanged notifications quiet. If independent work is useful, follow rotation chatbot with a distinct unverified P1 scenario; do not repeat prior green16-topic/18summary/31export cases just to poll. Real actor/device/provider/DB/human gates remain open."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -409,6 +410,25 @@
       "cvCandidatePreserved": true,
       "recomposeRequiredIfMainChanges": true,
       "checkedAt": "2026-10-20T14:43:56.503064+07:00"
+    },
+    "pendingCommunityPractice": {
+      "issue": "SOCIAL005",
+      "status": "LOCAL8_AND_EXACT_CI_READY_PENDING_RENDER_BACKUP_RELEASE",
+      "sourceCommit": "8ced430d0cd154534403de17c209632dd75bc8fc",
+      "candidateCommit": "7676a69fb64ca1063d77810d2f9b089375f3b061",
+      "candidateBranch": "improvement/community-practice-release-20261020",
+      "baseCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+      "studioSha256": "01684eb7933cca5a51a21055b64a175580bc1092206719d4306577a42129f7f8",
+      "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39389251033",
+      "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39389251543",
+      "ciPassed": true,
+      "backupCoversCandidate": false,
+      "deployed": false,
+      "localPracticeCasesPassed": 8,
+      "baselineFailures": 7,
+      "preservedPendingCvAndSummary": true,
+      "recomposeRequiredIfMainChanges": true,
+      "checkedAt": "2026-10-20T14:56:33.856485+07:00"
     }
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
@@ -513,6 +533,14 @@
   },
   "relatedActiveIssues": [
     "CV006",
-    "INT005"
-  ]
+    "INT005",
+    "SOCIAL005"
+  ],
+  "independentRotation": {
+    "lastModule": "community",
+    "nextModule": "chatbot",
+    "lastIssue": "SOCIAL005",
+    "checkedAt": "2026-10-20T14:56:33.856485+07:00",
+    "note": "Active CV release stays70. Independent checkpoints do not close live gates or create phantom completed cycles."
+  }
 }

@@ -1,0 +1,44 @@
+{
+  "wholeStudio": true,
+  "actualCommunityButtons": true,
+  "syntheticTransport": true,
+  "realAiCalls": 0,
+  "realTtsCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "sourceRef": "working-tree",
+  "rows": [
+    {
+      "phase": "feed-read-does-not-start-interview-provider-or-publication",
+      "pass": true
+    },
+    {
+      "phase": "question-button-opens-visible-selected-question-and-role",
+      "pass": true
+    },
+    {
+      "phase": "deck-button-practices-first-question",
+      "pass": true
+    },
+    {
+      "phase": "handoff-from-prior-evaluation-restores-live-practice-submode",
+      "pass": true
+    },
+    {
+      "phase": "selected-question-is-the-history-sent-with-next-typed-answer",
+      "pass": true
+    },
+    {
+      "phase": "empty-deck-keeps-current-module-and-previous-transcript",
+      "pass": true
+    },
+    {
+      "phase": "unicode-apostrophes-and-html-like-question-remain-inert-and-exact",
+      "pass": true
+    },
+    {
+      "phase": "mobile-card-handoff-shows-selected-question",
+      "pass": true
+    }
+  ]
+}

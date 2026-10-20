@@ -1,0 +1,46 @@
+{
+  "wholeStudio": true,
+  "actualCommunityButtons": true,
+  "syntheticTransport": true,
+  "realAiCalls": 0,
+  "realTtsCalls": 0,
+  "realMicrophone": false,
+  "cloudWrites": 0,
+  "sourceRef": "7676a69fb64ca1063d77810d2f9b089375f3b061",
+  "rows": [
+    {
+      "phase": "feed-read-does-not-start-interview-provider-or-publication",
+      "pass": true
+    },
+    {
+      "phase": "question-button-opens-visible-selected-question-and-role",
+      "pass": true
+    },
+    {
+      "phase": "deck-button-practices-first-question",
+      "pass": true
+    },
+    {
+      "phase": "handoff-from-prior-evaluation-restores-live-practice-submode",
+      "pass": true
+    },
+    {
+      "phase": "selected-question-is-the-history-sent-with-next-typed-answer",
+      "pass": true
+    },
+    {
+      "phase": "empty-deck-keeps-current-module-and-previous-transcript",
+      "pass": true
+    },
+    {
+      "phase": "unicode-apostrophes-and-html-like-question-remain-inert-and-exact",
+      "pass": true
+    },
+    {
+      "phase": "mobile-card-handoff-shows-selected-question",
+      "pass": false,
+      "error": "page.screenshot: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\node_modules\\playwright-core\\.local-browsers\\chromium-1243\\chrome-win64\\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-defaul",
+      "state": null
+    }
+  ]
+}
