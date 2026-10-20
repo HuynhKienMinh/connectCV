@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0067.md",
   "activeRun": "runs/2026-10-20-cycle-0068.md",
   "activeIssue": "PORT004",
-  "issueState": "PORTFOLIO_DELETE_EXACT_CLOUD_BACKUP_VERIFIED_MAIN_PENDING",
+  "issueState": "PORTFOLIO_DELETE_MAIN_CI_PENDING_HOSTING_UNCHANGED",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -333,14 +333,16 @@
     "pendingChatbotTopicRelease": "dep-dbbbm6nf3r2c7389u4pg",
     "pendingChatbotTopicUrl": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-dbbbm6nf3r2c7389u4pg",
     "pendingChatbotTopicOwnerNotifiedCycle": 67,
-    "pendingPortfolioDeleteStatus": "EXACT_CLOUD_BACKUP_VERIFIED_MAIN_PENDING",
+    "pendingPortfolioDeleteStatus": "MAIN_FAST_FORWARDED_CI_PENDING_HOSTING_UNCHANGED",
     "pendingPortfolioDeleteReviewCommit": "5543e4e062dfdc32950214046f9268e8aa0798c1",
     "pendingPortfolioDeleteCandidateCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
     "pendingPortfolioDeleteBranch": "improvement/portfolio-delete-release-20261020",
     "pendingPortfolioDeleteReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39351512954",
     "pendingPortfolioDeleteCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39351681697",
     "pendingPortfolioDeleteReviewCiPassed": true,
-    "pendingPortfolioDeleteCandidateCiPassed": true
+    "pendingPortfolioDeleteCandidateCiPassed": true,
+    "pendingPortfolioDeleteMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39374577202",
+    "pendingPortfolioDeleteMainCiPassed": false
   },
   "blockingDependency": null,
   "dataBackup": {

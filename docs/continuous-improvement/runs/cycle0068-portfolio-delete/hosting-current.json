@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-20T05:22:28.888869+00:00",
+  "channels": [
+    {
+      "name": "projects/connect-cv/sites/connect-cv/channels/live",
+      "id": null,
+      "url": "https://connect-cv.web.app",
+      "releaseName": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792418275025000",
+      "releaseTime": "2026-10-19T13:57:55.025Z",
+      "versionName": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd"
+    }
+  ],
+  "expectedVersion": "projects/connect-cv/sites/connect-cv/versions/89f2be9cbff279bd",
+  "rawOutputLogged": false
+}
