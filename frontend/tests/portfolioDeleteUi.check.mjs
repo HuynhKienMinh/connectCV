@@ -30,10 +30,10 @@ try{
   page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(10000);
   await page.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
   await page.addInitScript(items=>{
-   const qa=window.__qa={user:{uid:'A',emailVerified:true},listeners:new Set(),writes:[],items,reads:0};
+   const qa=window.__qa={user:{uid:'A',emailVerified:true},listeners:new Set(),writes:[],items,reads:0,pendingReads:[],holdReads:false};
    qa.setActor=uid=>{qa.user={uid,emailVerified:true};for(const fn of qa.listeners)fn();};
    qa.api=async(path,options={})=>{
-    if(!options.method){qa.reads++;if(qa.failReads)throw Error('Synthetic list failed');return {portfolios:structuredClone(qa.items)};}
+    if(!options.method){qa.reads++;if(qa.holdReads)return new Promise(resolve=>qa.pendingReads.push({resolve,signal:options.signal}));if(qa.failReads)throw Error('Synthetic list failed');return {portfolios:structuredClone(qa.items)};}
     return new Promise((resolve,reject)=>qa.writes.push({actor:qa.user.uid,path,method:options.method,body:options.body?JSON.parse(options.body):null,resolve:()=>{if(options.method==='DELETE')qa.items=qa.items.filter(x=>!path.endsWith('/'+x.id));resolve({success:true,id:'synthetic-saved'});},reject:()=>reject(Error('Synthetic save failed'))}));
    };
   },items);
@@ -79,6 +79,12 @@ try{
  });
  await scenario('successful-delete-with-list-read-failure-still-detaches-the-retained-draft',async p=>{
   await edit(p);await remove(p);await pending(p);await p.evaluate(()=>{__qa.failReads=true;__qa.writes[0].resolve();});await p.getByRole('status').filter({hasText:'Không tải được hồ sơ.'}).waitFor();assert.equal(await p.getByLabel('Tiêu đề',{exact:true}).inputValue(),existing.title);assert.equal(await p.getByRole('checkbox').isChecked(),false);await p.evaluate(()=>__qa.failReads=false);await save(p);await pending(p,2);assert.equal(await p.evaluate(()=>__qa.writes[1].method),'POST');
+ });
+ await scenario('confirmed-delete-read-timeout-keeps-private-detached-draft-and-does-not-repeat-delete',async p=>{
+  await edit(p);await remove(p);await pending(p);await p.clock.install();await p.evaluate(()=>{__qa.holdReads=true;__qa.writes[0].resolve();});await p.waitForFunction(()=>__qa.pendingReads.length===1);await p.clock.fastForward(60001);
+  assert.equal(await p.getByRole('checkbox').isChecked(),false);assert.equal(await p.getByLabel('Tiêu đề',{exact:true}).inputValue(),existing.title);assert.equal(await p.locator('form button.bg-brand-600').isEnabled(),true);
+  await p.evaluate(()=>__qa.holdReads=false);await p.getByRole('button',{name:'Thử tải lại',exact:true}).click();await p.waitForFunction(()=>!document.querySelector('form button.bg-brand-600').disabled);assert.equal(await p.evaluate(()=>__qa.writes.length),1);
+  await save(p);await pending(p,2);assert.equal(await p.evaluate(()=>__qa.writes[1].method),'POST');assert.equal(await p.evaluate(()=>__qa.writes[1].body.published),false);
  });
  const out=process.env.PORTFOLIO_DELETE_QA_OUTPUT;if(out){await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'results.json'),JSON.stringify({sourceRef:sourceRef||'working-tree',actualReactPage:true,syntheticAuthAndApi:true,firebaseVerified:false,cloudWrites:0,results,observations},null,2));}console.log(JSON.stringify({results,observations,cloudWrites:0,syntheticAuthAndApi:true}));if(results.some(x=>!x.passed))process.exitCode=1;
 }finally{if(browser)await browser.close();await server.close();}
