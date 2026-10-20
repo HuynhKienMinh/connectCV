@@ -1,0 +1,22 @@
+[
+  {
+    "ref": "refs/heads/main",
+    "sha": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16"
+  },
+  {
+    "ref": "refs/heads/improvement/cv-export-release-20261020",
+    "sha": "1f294f3201b0998497e9d00dcaf8067fd615a6d5"
+  },
+  {
+    "ref": "refs/heads/improvement/interview-summary-release-20261020",
+    "sha": "72dc8447939b648ea0bd7a096592c7d2ce92347f"
+  },
+  {
+    "ref": "refs/heads/improvement/community-practice-release-20261020",
+    "sha": "7676a69fb64ca1063d77810d2f9b089375f3b061"
+  },
+  {
+    "ref": "refs/heads/improvement/chatbot-proposal-release-20261020",
+    "sha": "87e786dab5ccd905f82b09853e11123ff44baa61"
+  }
+]

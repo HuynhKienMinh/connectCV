@@ -1,0 +1,32 @@
+{
+  "observedTapCounts": {
+    "baseline-final.tap": {
+      "passed": 1,
+      "failed": 10
+    },
+    "fixed-final.tap": {
+      "passed": 26,
+      "failed": 0
+    },
+    "isolated.tap": {
+      "passed": 11,
+      "failed": 0
+    },
+    "http-regression.tap": {
+      "passed": 8,
+      "failed": 0
+    }
+  },
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "realFirebaseAuth": false,
+  "realModelSemanticsVerified": false,
+  "loopbackOnly": true,
+  "fakeProvider": true,
+  "dedicatedProposalFormPresent": false,
+  "exactCandidateDependenciesMatchMain": true,
+  "mainPushed": false,
+  "deployed": false,
+  "newLargeBackup": false,
+  "checkedAt": "2026-10-20T15:09:44.835967+07:00"
+}

@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: FAQ accurately discloses absence of dedicated proposal form in actual Studio
+ok 1 - FAQ accurately discloses absence of dedicated proposal form in actual Studio
+  ---
+  duration_ms: 128.0964
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: AI có hỗ trợ viết thư ứng tuyển Upwork / Fiverr không?
+ok 2 - capability help remains owned and honest: AI có hỗ trợ viết thư ứng tuyển Upwork / Fiverr không?
+  ---
+  duration_ms: 53.1308
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: Can ConnectCV write Upwork proposals?
+ok 3 - capability help remains owned and honest: Can ConnectCV write Upwork proposals?
+  ---
+  duration_ms: 39.4937
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: Proposal Upwork
+ok 4 - capability help remains owned and honest: Proposal Upwork
+  ---
+  duration_ms: 36.4756
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: Chatbot hỗ trợ Proposal Upwork / Fiverr thế nào?
+ok 5 - capability help remains owned and honest: Chatbot hỗ trợ Proposal Upwork / Fiverr thế nào?
+  ---
+  duration_ms: 35.87
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: RETAIL_2.
+ok 6 - career request reaches mocked advice without invented facts: RETAIL_2.
+  ---
+  duration_ms: 38.6179
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: AUDIT_2.
+ok 7 - career request reaches mocked advice without invented facts: AUDIT_2.
+  ---
+  duration_ms: 36.069
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: WEEKLY.
+ok 8 - career request reaches mocked advice without invented facts: WEEKLY.
+  ---
+  duration_ms: 36.2139
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: PROJECT.
+ok 9 - career request reaches mocked advice without invented facts: PROJECT.
+  ---
+  duration_ms: 36.9177
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: bare request requires clarification
+ok 10 - career request reaches mocked advice without invented facts: bare request requires clarification
+  ---
+  duration_ms: 37.782
+  type: 'test'
+  ...
+# Subtest: proposal request containing instruction override remains owned boundary help
+ok 11 - proposal request containing instruction override remains owned boundary help
+  ---
+  duration_ms: 37.2709
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 709.4827

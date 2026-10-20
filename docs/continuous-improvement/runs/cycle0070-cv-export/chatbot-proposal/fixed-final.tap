@@ -1,0 +1,166 @@
+TAP version 13
+# Subtest: clear history during pending response prevents deleted private conversation from reappearing
+ok 1 - clear history during pending response prevents deleted private conversation from reappearing
+  ---
+  duration_ms: 2.7715
+  type: 'test'
+  ...
+# Subtest: late old completion cannot append to a new conversation or unlock its active request
+ok 2 - late old completion cannot append to a new conversation or unlock its active request
+  ---
+  duration_ms: 2.1636
+  type: 'test'
+  ...
+# Subtest: late failure after clear cannot restore removed question or replace a newer draft
+ok 3 - late failure after clear cannot restore removed question or replace a newer draft
+  ---
+  duration_ms: 0.8292
+  type: 'test'
+  ...
+# Subtest: clear while response JSON is pending discards late parsed answer
+ok 4 - clear while response JSON is pending discards late parsed answer
+  ---
+  duration_ms: 4.1459
+  type: 'test'
+  ...
+# Subtest: deadline covers an ignored fetch signal, retains question once, cleans history and never retries
+ok 5 - deadline covers an ignored fetch signal, retains question once, cleans history and never retries
+  ---
+  duration_ms: 1.4755
+  type: 'test'
+  ...
+# Subtest: logout event aborts current work, clears local personalization/draft and ignores late response
+ok 6 - logout event aborts current work, clears local personalization/draft and ignores late response
+  ---
+  duration_ms: 1.0262
+  type: 'test'
+  ...
+# Subtest: literal hostile text stays escaped; payload excludes display name/profile and duplicate send is blocked
+ok 7 - literal hostile text stays escaped; payload excludes display name/profile and duplicate send is blocked
+  ---
+  duration_ms: 0.8738
+  type: 'test'
+  ...
+# Subtest: FAQ accurately discloses absence of dedicated proposal form in actual Studio
+ok 8 - FAQ accurately discloses absence of dedicated proposal form in actual Studio
+  ---
+  duration_ms: 92.5487
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: AI có hỗ trợ viết thư ứng tuyển Upwork / Fiverr không?
+ok 9 - capability help remains owned and honest: AI có hỗ trợ viết thư ứng tuyển Upwork / Fiverr không?
+  ---
+  duration_ms: 20.9874
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: Can ConnectCV write Upwork proposals?
+ok 10 - capability help remains owned and honest: Can ConnectCV write Upwork proposals?
+  ---
+  duration_ms: 6.6929
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: Proposal Upwork
+ok 11 - capability help remains owned and honest: Proposal Upwork
+  ---
+  duration_ms: 6.21
+  type: 'test'
+  ...
+# Subtest: capability help remains owned and honest: Chatbot hỗ trợ Proposal Upwork / Fiverr thế nào?
+ok 12 - capability help remains owned and honest: Chatbot hỗ trợ Proposal Upwork / Fiverr thế nào?
+  ---
+  duration_ms: 5.4326
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: RETAIL_2.
+ok 13 - career request reaches mocked advice without invented facts: RETAIL_2.
+  ---
+  duration_ms: 6.5464
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: AUDIT_2.
+ok 14 - career request reaches mocked advice without invented facts: AUDIT_2.
+  ---
+  duration_ms: 4.9247
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: WEEKLY.
+ok 15 - career request reaches mocked advice without invented facts: WEEKLY.
+  ---
+  duration_ms: 5.0883
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: PROJECT.
+ok 16 - career request reaches mocked advice without invented facts: PROJECT.
+  ---
+  duration_ms: 5.3282
+  type: 'test'
+  ...
+# Subtest: career request reaches mocked advice without invented facts: bare request requires clarification
+ok 17 - career request reaches mocked advice without invented facts: bare request requires clarification
+  ---
+  duration_ms: 5.4944
+  type: 'test'
+  ...
+# Subtest: proposal request containing instruction override remains owned boundary help
+ok 18 - proposal request containing instruction override remains owned boundary help
+  ---
+  duration_ms: 4.5565
+  type: 'test'
+  ...
+# Subtest: career vocabulary does not masquerade as microphone, export, credits or ATS product help
+ok 19 - career vocabulary does not masquerade as microphone, export, credits or ATS product help
+  ---
+  duration_ms: 1.5645
+  type: 'test'
+  ...
+# Subtest: whole-word product requests still use application-owned guidance
+ok 20 - whole-word product requests still use application-owned guidance
+  ---
+  duration_ms: 0.3935
+  type: 'test'
+  ...
+# Subtest: actual chatbot reset escapes the display name and failed requests restore only unchanged input
+ok 21 - actual chatbot reset escapes the display name and failed requests restore only unchanged input
+  ---
+  duration_ms: 2.2795
+  type: 'test'
+  ...
+# Subtest: product guide does not promise ATS acceptance, hands-free support or ready PDF without evidence
+ok 22 - product guide does not promise ATS acceptance, hands-free support or ready PDF without evidence
+  ---
+  duration_ms: 0.1933
+  type: 'test'
+  ...
+# Subtest: short questions ask for direction; natural product variants use owned facts and do not copy injections
+ok 23 - short questions ask for direction; natural product variants use owned facts and do not copy injections
+  ---
+  duration_ms: 1.1323
+  type: 'test'
+  ...
+# Subtest: chat context is allowlisted; nested legacy contact fields never enter the provider prompt
+ok 24 - chat context is allowlisted; nested legacy contact fields never enter the provider prompt
+  ---
+  duration_ms: 1.6813
+  type: 'test'
+  ...
+# Subtest: invalid messages/history/types get actionable safe errors; AI output shape is controlled
+ok 25 - invalid messages/history/types get actionable safe errors; AI output shape is controlled
+  ---
+  duration_ms: 1.8021
+  type: 'test'
+  ...
+# Subtest: invalid or deterministic guidance never consumes AI quota, but career advice and rate limits still do
+ok 26 - invalid or deterministic guidance never consumes AI quota, but career advice and rate limits still do
+  ---
+  duration_ms: 2.7135
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 326.6002

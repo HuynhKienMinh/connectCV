@@ -1,0 +1,216 @@
+TAP version 13
+# Subtest: FAQ accurately discloses absence of dedicated proposal form in actual Studio
+not ok 1 - FAQ accurately discloses absence of dedicated proposal form in actual Studio
+  ---
+  duration_ms: 130.8801
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
+    
+    'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+  operator: 'match'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:31:10
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+  ...
+# Subtest: capability help remains owned and honest: AI có hỗ trợ viết thư ứng tuyển Upwork / Fiverr không?
+not ok 2 - capability help remains owned and honest: AI có hỗ trợ viết thư ứng tuyển Upwork / Fiverr không?
+  ---
+  duration_ms: 56.5979
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:35:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
+    
+    'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+  operator: 'match'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:36:107
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: capability help remains owned and honest: Can ConnectCV write Upwork proposals?
+not ok 3 - capability help remains owned and honest: Can ConnectCV write Upwork proposals?
+  ---
+  duration_ms: 41.5573
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:35:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
+    
+    'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+  operator: 'match'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:36:107
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: capability help remains owned and honest: Proposal Upwork
+not ok 4 - capability help remains owned and honest: Proposal Upwork
+  ---
+  duration_ms: 40.5472
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:35:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
+    
+    'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
+  operator: 'match'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:36:107
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: career draft reaches mocked advice with supplied facts: RETAIL_2.
+not ok 5 - career draft reaches mocked advice with supplied facts: RETAIL_2.
+  ---
+  duration_ms: 39.4092
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:45:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'product-guide'
+    - 'ai-advice'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ai-advice'
+  actual: 'product-guide'
+  operator: 'strictEqual'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:46:50
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: career draft reaches mocked advice with supplied facts: AUDIT_2.
+not ok 6 - career draft reaches mocked advice with supplied facts: AUDIT_2.
+  ---
+  duration_ms: 37.3119
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:45:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'product-guide'
+    - 'ai-advice'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ai-advice'
+  actual: 'product-guide'
+  operator: 'strictEqual'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:46:50
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: career draft reaches mocked advice with supplied facts: WEEKLY.
+not ok 7 - career draft reaches mocked advice with supplied facts: WEEKLY.
+  ---
+  duration_ms: 39.4303
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:45:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'product-guide'
+    - 'ai-advice'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ai-advice'
+  actual: 'product-guide'
+  operator: 'strictEqual'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:46:50
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: career draft reaches mocked advice with supplied facts: PROJECT.
+not ok 8 - career draft reaches mocked advice with supplied facts: PROJECT.
+  ---
+  duration_ms: 38.8127
+  type: 'test'
+  location: 'C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\backend\\features\\connectcv\\tests\\chatbotProposal.test.js:45:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'product-guide'
+    - 'ai-advice'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'ai-advice'
+  actual: 'product-guide'
+  operator: 'strictEqual'
+  stack: |-
+    C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:46:50
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async fixture (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotProposal.test.js:22:5)
+    async Test.run (node:internal/test_runner/test:1110:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:785:7)
+  ...
+# Subtest: proposal request containing instruction override remains owned boundary help
+ok 9 - proposal request containing instruction override remains owned boundary help
+  ---
+  duration_ms: 37.2019
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 1
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 676.5269

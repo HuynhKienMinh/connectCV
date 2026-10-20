@@ -1,0 +1,25 @@
+{
+  "source": "179b390eb1d42a2f1bbdd63e2bd936653cc37b8c",
+  "candidate": "87e786dab5ccd905f82b09853e11123ff44baa61",
+  "base": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "branch": "improvement/chatbot-proposal-release-20261020",
+  "paths": [
+    "backend/features/connectcv/package.json",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/src/services/chatbotService.js",
+    "backend/features/connectcv/tests/chatbotProposal.test.js",
+    "backend/features/connectcv/tests/chatbotService.test.js"
+  ],
+  "studioSha256": "da325d3af61478a135ca659b1d6959125532ece1dcafc44c55d453281aa979cc",
+  "serviceSha256": "5502f3c5017352162cfd83e06dc9d661af2b7564850e17344a3e155b87ea9aaa",
+  "unmodifiedRouteAndAdmissionMatchMain": true,
+  "priorCandidatesPreserved": [
+    "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+    "72dc8447939b648ea0bd7a096592c7d2ce92347f",
+    "7676a69fb64ca1063d77810d2f9b089375f3b061"
+  ],
+  "mainPushed": false,
+  "deployed": false,
+  "backupCoversCandidate": false,
+  "recomposeRequiredIfMainChanges": true
+}
