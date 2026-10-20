@@ -479,13 +479,13 @@
   "localBackupBytesRemoved": 4769220897,
   "verifiedAt": "2026-10-14T14:30:37Z",
   "catalogCloudFile": "connectcv-backup-catalog-verified-2026-10-14.json",
-  "latestIncrementalCatalog": "cycle0065-candidate-7c6c0c7.json",
+  "latestIncrementalCatalog": "cycle0067-candidate-d6a3fd2.json",
   "latestProtectedCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
   "latestHostingBuildCatalog": "cycle0053-candidate-1bc615f.json",
-  "latestChainBundleCount": 20,
-  "latestChainVerifiedAt": "2026-10-19T18:39:07.601880+00:00",
-  "latestCandidateCatalog": "cycle0065-candidate-7c6c0c7.json",
-  "latestCandidateCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "latestChainBundleCount": 21,
+  "latestChainVerifiedAt": "2026-10-20T00:45:34.438745+00:00",
+  "latestCandidateCatalog": "cycle0067-candidate-d6a3fd2.json",
+  "latestCandidateCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
   "latestCandidateVerified": true,
   "latestCandidateLocalCopiesDeleted": true
 }

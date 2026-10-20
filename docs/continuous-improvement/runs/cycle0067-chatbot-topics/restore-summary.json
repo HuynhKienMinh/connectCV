@@ -1,0 +1,16 @@
+{
+  "candidate": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "bundleSha256": "5ce65fd75ca9d8f890b523b71f9a85e4bb29159e232d3f374c71af781ee55cb2",
+  "cloudBundles": 21,
+  "freshBareFsck": true,
+  "coverage": {
+    "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0": 54,
+    "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190": 52,
+    "1bc615f1727e9816bc1067c557229b2063760116": 50
+  },
+  "frontendZipAllMembersVerified": true,
+  "bytes": 242933950,
+  "limit": 402653184,
+  "verifiedAt": "2026-10-20T00:45:07.594862+00:00",
+  "databaseVerified": false
+}

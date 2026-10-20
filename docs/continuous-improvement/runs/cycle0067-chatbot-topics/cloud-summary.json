@@ -1,0 +1,20 @@
+{
+  "catalog": "docs\\continuous-improvement\\backup-transfer\\cycle0067-candidate-d6a3fd2.json",
+  "catalogCloudId": "18G5zaDPcDWOHV2S357t_deP2HZMNlpPF",
+  "catalogSha256": "08cdade62075ce96affe28fcf818a8169f934e2321e7ef5f393938abbab5f41b",
+  "delta": {
+    "file": "connectcv-2026-10-20-cycle-0067-candidate-d6a3fd2.incremental.bundle",
+    "bytes": 8016,
+    "sha256": "5ce65fd75ca9d8f890b523b71f9a85e4bb29159e232d3f374c71af781ee55cb2",
+    "ref": "refs/backup/cycle0067-candidate-d6a3fd2",
+    "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+    "cloudId": "1VjkuUqySJgjck_ACtSp6PDh7vdNIPc6S",
+    "cloudUrl": "https://drive.google.com/file/d/1VjkuUqySJgjck_ACtSp6PDh7vdNIPc6S/view"
+  },
+  "cloudBundles": 21,
+  "restoreBytesRemoved": 242933950,
+  "freshRestoreVerified": true,
+  "fullWorktreeCheckoutVerified": false,
+  "databaseVerified": false,
+  "localCopiesRemaining": 0
+}

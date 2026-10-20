@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0066.md",
   "activeRun": "runs/2026-10-20-cycle-0067.md",
   "activeIssue": "CHAT006",
-  "issueState": "CHATBOT_TOPIC_BOUNDARY_LOCAL_VERIFIED_CI_PENDING",
+  "issueState": "CHATBOT_TOPIC_EXACT_BACKUP_VERIFIED_MAIN_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,10 +52,10 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0065-candidate-7c6c0c7.json",
+    "currentBaselineCatalog": "backup-transfer/cycle0067-candidate-d6a3fd2.json",
     "protectedCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": true
+    "nextDeploymentRequiresNewBaseline": false
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
@@ -107,7 +107,7 @@
     "deployBlockedUntilCloudVerified": false,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-    "cloudBundlesVerified": 20,
+    "cloudBundlesVerified": 21,
     "localCopiesDeleted": true,
     "localCopiesRetained": false,
     "pendingCatalog": null,
@@ -117,7 +117,7 @@
     "pendingRestoreVerified": true,
     "pendingRestoreCloneDeleted": true,
     "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190"
+    "lastVerifiedCandidateCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0"
   },
   "delivery": {
     "reviewCommit": "c75845f8bcd1080cc16cecf70d2b7db0ae68f05e",
@@ -323,8 +323,10 @@
     "pendingChatbotTopicBranch": "improvement/chatbot-topic-release-20261020",
     "pendingChatbotTopicReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348876975",
     "pendingChatbotTopicCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348951592",
-    "pendingChatbotTopicStatus": "REVIEW_CI_SUCCESS_CANDIDATE_CI_PENDING_LOCAL16PASS_NO_DEPLOY",
-    "pendingChatbotTopicReviewCiPassed": true
+    "pendingChatbotTopicStatus": "EXACT_PRIVATE_DRIVE_BACKUP_VERIFIED_MAIN_PENDING",
+    "pendingChatbotTopicReviewCiPassed": true,
+    "pendingChatbotTopicCandidateCiPassed": true,
+    "pendingChatbotTopicBackupCatalog": "backup-transfer/cycle0067-candidate-d6a3fd2.json"
   },
   "blockingDependency": null,
   "dataBackup": {
