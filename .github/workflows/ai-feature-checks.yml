@@ -210,3 +210,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           INTERVIEW_SESSION_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-session-qa'
+      - name: Verify community public consent across edits, actor changes and token wait
+        run: node tests/communityConsentUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          COMMUNITY_CONSENT_QA_OUTPUT: '${{ runner.temp }}/connectcv-community-consent-qa'
