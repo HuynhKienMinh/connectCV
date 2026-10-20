@@ -29,7 +29,7 @@ try{
   await p.addInitScript(()=>{
    const qa=window.__qa={auth:{user:null,loading:false},listeners:new Set(),reads:[],writes:0};
    qa.setActor=uid=>{qa.auth={user:uid?{uid,emailVerified:true}:null,loading:false};for(const fn of qa.listeners)fn();};
-   qa.api=(path,options={})=>{if(options.method){qa.writes++;throw Error('Unexpected synthetic mutation');}return new Promise((resolve,reject)=>qa.reads.push({path,actor:qa.auth.user?.uid||'visitor',settled:false,resolve,reject}));};
+   qa.api=(path,options={})=>{if(options.method){qa.writes++;throw Error('Unexpected synthetic mutation');}return new Promise((resolve,reject)=>qa.reads.push({path,actor:qa.auth.user?.uid||'visitor',signal:options.signal,settled:false,resolve,reject}));};
   });
   try{await p.goto(base+'/qa-public-portfolio');await p.waitForFunction(()=>__qa.reads.length===2);await check(p);assert.deepEqual(errors,[]);assert.equal(await p.evaluate(()=>__qa.writes),0);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);results.push({name,pass:true});}
   catch(e){results.push({name,pass:false,error:e.message});}
@@ -72,6 +72,12 @@ try{
   await settle(p,1,item('public-A','Public trước login'));await nav(p,'Owner','/login');await p.getByRole('heading',{name:'Đăng nhập giả',exact:true}).waitFor();await settle(p,0,item('public-A','Old public late'));assert.equal(await p.locator('article').count(),0);assert.equal(await p.locator('form').count(),0);assert.equal(await p.evaluate(()=>__qa.reads.some(r=>r.path==='/api/portfolios')),false);
  });
  await scenario('empty-projects-public-profile-renders-without-private-form',async p=>{await settle(p,1,item('public-A','Portfolio giả chưa thêm dự án'));await p.getByRole('heading',{name:'Portfolio giả chưa thêm dự án',exact:true}).waitFor();assert.equal(await p.locator('article').count(),1);assert.equal(await p.getByRole('link',{name:'Xem dự án',exact:true}).count(),0);assert.equal(await p.locator('form').count(),0);},1366);
+ await scenario('stalled-public-read-retries-without-owner-controls-and-ignores-old-data',async p=>{
+  await p.clock.install();await nav(p,'B','/portfolio/public-B');const old=await latest(p,'public-B');await p.clock.fastForward(60001);
+  await p.getByRole('button',{name:'Thử tải lại',exact:true}).waitFor();assert.equal(await p.evaluate(i=>__qa.reads[i].signal?.aborted,old),true);assert.equal(await p.locator('form').count(),0);
+  await p.getByRole('button',{name:'Thử tải lại',exact:true}).click();await p.waitForFunction(n=>__qa.reads.length>n,old+1);const retry=await latest(p,'public-B');assert.ok(retry>old);
+  await settle(p,old,item('public-B','OBSOLETE_PUBLIC_READ'));await noPortfolio(p);await settle(p,retry,item('public-B','Public recovered after explicit retry'));await p.getByRole('heading',{name:'Public recovered after explicit retry',exact:true}).waitFor();assert.equal(await p.locator('form').count(),0);assert.equal(await p.getByRole('button').count(),0);
+ });
  const report={actualReactPortfolioPage:true,actualRouter:true,actualPortfolioLoader:true,syntheticAuthAndApi:true,realFirebaseVerified:false,cloudWrites:0,externalNetworkBlocked:true,chromiumSandbox:true,passed:results.filter(r=>r.pass).length,failed:results.filter(r=>!r.pass).length,results};
  if(out){await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'results.json'),JSON.stringify(report,null,2));}console.log(JSON.stringify(report));if(report.failed)process.exitCode=1;
 }finally{await browser?.close();await server.close();}

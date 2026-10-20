@@ -3,12 +3,17 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
+import {execFileSync} from 'node:child_process';
 import {createServer} from 'vite';
 import react from '@vitejs/plugin-react';
 const require=createRequire(import.meta.url),{chromium}=require('../../backend/features/connectcv/node_modules/playwright-core');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),results=[];
+const sourceRef=process.env.PORTFOLIO_READ_SOURCE_REF;
+const readSource=file=>sourceRef?execFileSync('git',['show',`${sourceRef}:frontend/${file}`],{encoding:'utf8'}):null;
+const selectedSources=new Map(['src/pages/PortfolioPage.jsx','src/lib/portfolioLoader.js'].map(file=>[path.join(root,file).replaceAll('\\','/'),readSource(file)]));
 const server=await createServer({root,configFile:false,plugins:[{
  name:'synthetic-portfolio-adapters',enforce:'pre',
+ transform(code,id){const selected=selectedSources.get(id.replaceAll('\\','/').split('?')[0]);if(selected)return selected;},
  resolveId(id){if(id==='/qa-portfolio.jsx')return '\0portfolio-entry';if(id==='../context/AuthContext')return '\0portfolio-auth';if(id==='../lib/api')return '\0portfolio-api';},
  load(id){
   if(id==='\0portfolio-entry')return `import React from 'react';import {createRoot} from 'react-dom/client';import {MemoryRouter} from 'react-router-dom';import PortfolioPage from '/src/pages/PortfolioPage.jsx';import '/src/index.css';createRoot(document.getElementById('root')).render(React.createElement(React.StrictMode,null,React.createElement(MemoryRouter,null,React.createElement(PortfolioPage))));`;
@@ -26,14 +31,15 @@ try{
   page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(10000);
   await page.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
   await page.addInitScript(items=>{
-   const qa=window.__qa={user:{uid:'A',emailVerified:true},listeners:new Set(),writes:[],items,reads:0};
+   const qa=window.__qa={user:{uid:'A',emailVerified:true},listeners:new Set(),writes:[],items,reads:0,pendingReads:[],holdReads:false};
    qa.setActor=uid=>{qa.user={uid,emailVerified:true};for(const fn of qa.listeners)fn();};
    qa.api=async(path,options={})=>{
-    if(!options.method){qa.reads++;return {portfolios:structuredClone(qa.items)};}
+    if(!options.method){qa.reads++;if(qa.holdReads)return new Promise((resolve,reject)=>qa.pendingReads.push({resolve,reject,signal:options.signal}));return {portfolios:structuredClone(qa.items)};}
     return new Promise((resolve,reject)=>qa.writes.push({actor:qa.user.uid,path,method:options.method,body:JSON.parse(options.body),resolve:()=>resolve({success:true,id:'synthetic-saved'}),reject:()=>reject(Error('Synthetic save failed'))}));
    };
   },items);
   try{await page.goto(base+'/qa-portfolio');await page.getByRole('button',{name:'Lưu hồ sơ',exact:true}).waitFor();await page.waitForFunction(()=>__qa.reads>=2);await check(page);assert.deepEqual(errors,[]);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);results.push({name,passed:true});}
+  catch(e){results.push({name,passed:false,error:e.message.slice(0,900)});}
   finally{await context.close();}
  }
  async function start(p,title='Bản đã gửi'){await p.getByLabel('Tiêu đề',{exact:true}).fill(title);await p.locator('textarea').fill('Dữ kiện giả đã gửi');await p.getByRole('button',{name:'Lưu hồ sơ',exact:true}).click();await p.waitForFunction(()=>__qa.writes.length===1);}
@@ -64,5 +70,23 @@ try{
   await start(p);await p.evaluate(()=>__qa.setActor('B'));await p.getByLabel('Tiêu đề',{exact:true}).fill('B');await p.evaluate(()=>__qa.setActor('A'));await p.getByLabel('Tiêu đề',{exact:true}).fill('Phiên A mới');await p.getByRole('button',{name:'Lưu hồ sơ',exact:true}).click();await p.waitForFunction(()=>__qa.writes.length===2);await p.locator('textarea').fill('Nháp mới khi gửi');
   await p.evaluate(()=>__qa.writes[0].resolve());await p.evaluate(()=>new Promise(r=>setTimeout(r,50)));assert.equal(await p.getByLabel('Tiêu đề',{exact:true}).inputValue(),'Phiên A mới');assert.equal(await p.getByRole('button',{name:'Đang lưu…',exact:true}).isDisabled(),true);await p.evaluate(()=>__qa.writes[1].resolve());await p.getByRole('button',{name:'Lưu hồ sơ',exact:true}).waitFor();assert.equal(await p.locator('textarea').inputValue(),'Nháp mới khi gửi');
  });
- const out=process.env.PORTFOLIO_UI_QA_OUTPUT;if(out){await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'results.json'),JSON.stringify({actualReactPage:true,syntheticAuthAndApi:true,firebaseVerified:false,cloudWrites:0,results},null,2));}console.log(JSON.stringify({results,cloudWrites:0,syntheticAuthAndApi:true}));
+ await scenario('read-deadline-unlocks-form-and-explicit-retry-keeps-draft',async p=>{
+  await p.clock.install();await p.evaluate(()=>{__qa.holdReads=true;__qa.setActor('B');});await p.waitForFunction(()=>__qa.pendingReads.length===1);
+  await p.getByLabel('Tiêu đề',{exact:true}).fill('Draft retained during stalled read');await p.clock.fastForward(60001);
+  assert.equal(await p.locator('form button.bg-brand-600').isEnabled(),true);assert.equal(await p.evaluate(()=>__qa.pendingReads[0].signal?.aborted),true);
+  const qaOut=process.env.PORTFOLIO_UI_QA_OUTPUT;if(qaOut){await fs.mkdir(qaOut,{recursive:true});await p.screenshot({path:path.join(qaOut,'read-timeout-retained-draft-390.png')});}
+  await p.getByRole('button',{name:'Thử tải lại',exact:true}).waitFor();await p.evaluate(()=>__qa.holdReads=false);await p.getByRole('button',{name:'Thử tải lại',exact:true}).click();
+  await p.waitForFunction(()=>!document.querySelector('form button.bg-brand-600').disabled);assert.equal(await p.getByLabel('Tiêu đề',{exact:true}).inputValue(),'Draft retained during stalled read');assert.equal(await p.evaluate(()=>__qa.writes.length),0);
+ });
+ await scenario('confirmed-save-read-timeout-releases-lock-without-resubmitting-write',async p=>{
+  await start(p);await p.getByLabel('Tiêu đề',{exact:true}).fill('Newer unsent draft');await p.clock.install();await p.evaluate(()=>{__qa.holdReads=true;__qa.writes[0].resolve();});await p.waitForFunction(()=>__qa.pendingReads.length===1);await p.clock.fastForward(60001);
+  assert.equal(await p.locator('form button.bg-brand-600').isEnabled(),true);assert.equal(await p.getByLabel('Tiêu đề',{exact:true}).inputValue(),'Newer unsent draft');assert.equal(await p.evaluate(()=>__qa.writes.length),1);
+  await p.evaluate(()=>__qa.holdReads=false);await p.getByRole('button',{name:'Thử tải lại',exact:true}).click();await p.waitForFunction(()=>!document.querySelector('form button.bg-brand-600').disabled);assert.equal(await p.evaluate(()=>__qa.writes.length),1);assert.equal(await p.getByLabel('Tiêu đề',{exact:true}).inputValue(),'Newer unsent draft');
+ });
+ await scenario('late-timed-out-read-cannot-populate-or-unlock-new-retry',async p=>{
+  await p.clock.install();await p.evaluate(()=>{__qa.holdReads=true;__qa.setActor('B');});await p.waitForFunction(()=>__qa.pendingReads.length===1);await p.clock.fastForward(60001);await p.getByRole('button',{name:'Thử tải lại',exact:true}).click();await p.waitForFunction(()=>__qa.pendingReads.length===2);
+  await p.evaluate(()=>__qa.pendingReads[0].resolve({portfolios:[{id:'old',title:'OBSOLETE_READ',summary:'',projects:[]}]}));await p.clock.runFor(5);assert.equal(await p.locator('article').count(),0);assert.equal(await p.locator('form button.bg-brand-600').isDisabled(),true);
+  await p.evaluate(()=>__qa.pendingReads[1].resolve({portfolios:[]}));await p.waitForFunction(()=>!document.querySelector('form button.bg-brand-600').disabled);assert.equal(await p.locator('article').count(),0);assert.equal(await p.evaluate(()=>__qa.writes.length),0);
+ });
+ const out=process.env.PORTFOLIO_UI_QA_OUTPUT;if(out){await fs.mkdir(out,{recursive:true});await fs.writeFile(path.join(out,'results.json'),JSON.stringify({sourceRef:sourceRef||'working-tree',actualReactPage:true,syntheticAuthAndApi:true,firebaseVerified:false,cloudWrites:0,results},null,2));}console.log(JSON.stringify({results,cloudWrites:0,syntheticAuthAndApi:true}));if(results.some(x=>!x.passed))process.exitCode=1;
 }finally{if(browser)await browser.close();await server.close();}
