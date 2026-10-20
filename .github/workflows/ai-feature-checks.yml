@@ -228,3 +228,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           SIGNUP_LIFECYCLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-signup-lifecycle-qa'
+      - name: Verify CV export ownership, duplicate locking and bounded retry
+        run: node tests/cvExportLifecycleUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_EXPORT_LIFECYCLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-export-lifecycle-qa'

@@ -1657,6 +1657,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       }
 
       if (tabId !== 'tab-interview-module') invalidateLiveInterview();
+      if (tabId !== 'tab-cv-module') invalidateCVExport();
       document.querySelectorAll('.tab-content').forEach(el => {
         el.classList.add('hidden');
         el.classList.remove('block');
@@ -3316,6 +3317,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Render giao diện kết quả CV trực quan và phân tích ATS
     function renderCVResult(cv, renderedHtml) {
+      invalidateCVExport();
       const _es = document.getElementById('cv-empty-state');
       if (_es) _es.style.display = 'none';
       const emptyState = document.getElementById('cv-empty-state');
@@ -3546,16 +3548,50 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       if (batchCVResults[activeBatchIndex]) batchCVResults[activeBatchIndex].renderedHtml = html;
     });
 
+    let cvExportOperation = null;
+    function ownsCVExport(op) {
+      return cvExportOperation === op && latestCVData === op.cv
+        && latestRenderedHtml === op.html && currentSelectedTemplateId === op.template
+        && currentAppliedTemplate === op.appliedTemplate && currentCVLanguage === op.language
+        && (document.getElementById('cv-profile')?.value || '') === op.profile;
+    }
+    function invalidateCVExport() {
+      const previous = cvExportOperation;
+      cvExportOperation = null;
+      if (previous) { clearTimeout(previous.deadline); previous.controller.abort(); }
+    }
+    function beginCVExport() {
+      if (cvExportOperation && ownsCVExport(cvExportOperation)) return null;
+      invalidateCVExport();
+      const op = {cv: latestCVData, html: latestRenderedHtml, template: currentSelectedTemplateId,
+        appliedTemplate: currentAppliedTemplate, language: currentCVLanguage,
+        profile: document.getElementById('cv-profile')?.value || '', controller: new AbortController()};
+      cvExportOperation = op;
+      op.deadline = setTimeout(() => {
+        const notify = ownsCVExport(op);
+        if (cvExportOperation === op) invalidateCVExport();
+        if (notify) showToastWarning('Xuất CV mất quá lâu. Vui lòng thử lại.', 'Chưa tải được CV');
+      }, 90000);
+      return op;
+    }
+    function finishCVExport(op) {
+      clearTimeout(op.deadline);
+      if (cvExportOperation === op) cvExportOperation = null;
+    }
+    window.addEventListener('pagehide', invalidateCVExport);
+    window.addEventListener('connectcv:logout', invalidateCVExport);
+
     // Recheck only a stale unavailable flag on an explicit design download.
     // Public readiness is read-only; only the server's verified canary can clear it.
-    async function refreshPdfReadinessForExport() {
+    async function refreshPdfReadinessForExport(op) {
       if (window.connectCVServerPdf !== false) return;
-      const controller = new AbortController();
+      const controller = op?.controller || new AbortController();
       const deadline = setTimeout(() => controller.abort(), 3000);
       try {
         const response = await fetch('/api/features/health', { cache: 'no-store', signal: controller.signal });
         if (!response.ok) return;
         const status = await response.json();
+        if (op && !ownsCVExport(op)) return;
         if (status.browserConfigured === true && status.pdfCanaryVerified === true) {
           window.connectCVServerPdf = true;
         }
@@ -3573,7 +3609,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         return;
       }
 
-      if (format === 'design') await refreshPdfReadinessForExport();
+      const op = beginCVExport();
+      if (!op) return;
+      try {
+      if (format === 'design') await refreshPdfReadinessForExport(op);
+      if (!ownsCVExport(op)) return;
       if (format === 'design' && window.connectCVServerPdf === false) {
         showToastWarning('Chọn Lưu thành PDF trong hộp thoại in. Bật đồ họa nền và tắt đầu trang/chân trang để giữ thiết kế mẫu.', 'Lưu PDF bằng trình duyệt');
         printCV();
@@ -3625,15 +3665,18 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
         const res = await fetch('/api/cv/export-pdf', {
           method: 'POST',
+          signal: op.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
+        if (!ownsCVExport(op)) return;
         if (!res.ok) {
           throw new Error('Lỗi server: HTTP ' + res.status);
         }
 
         const blob = await res.blob();
+        if (!ownsCVExport(op)) return;
         const downloadUrl = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.style.display = 'none';
@@ -3648,11 +3691,13 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
         showToastSuccess('Đã tải xuống bản PDF Vector siêu nét thành công!', 'Hoàn tất');
       } catch (err) {
-        console.error('Lỗi tải PDF từ máy chủ:', err);
+        if (!ownsCVExport(op)) return;
+        console.error('Không thể hoàn tất xuất PDF.');
         showToastWarning('Đang chuyển sang chế độ in trực tiếp của trình duyệt...', 'Dự phòng');
         if (format === 'design') printCV();
         else showToastWarning('Không thể xuất PDF ATS. Vui lòng thử lại.', 'Lỗi');
       }
+      } finally { finishCVExport(op); }
     }
 
     // 2. IN TRÌNH DUYỆT (CHỈNH SẴN MARGIN 0, GIỮ NGUYÊN MÀU NỀN, KHÔNG BỊ RỚT SANG TRANG 2)
@@ -3702,6 +3747,9 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         showToastWarning('Vui lòng tạo CV trước khi tải xuống.', 'Chưa có CV');
         return;
       }
+      const op = beginCVExport();
+      if (!op) return;
+      try {
       const cv = latestCVData;
       const isEn = cv.language === 'en' || currentCVLanguage === 'en';
 
@@ -3729,15 +3777,18 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
         const res = await fetch('/api/cv/export-docx', {
           method: 'POST',
+          signal: op.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
+        if (!ownsCVExport(op)) return;
         if (!res.ok) {
           throw new Error('Lỗi server: HTTP ' + res.status);
         }
 
         const blob = await res.blob();
+        if (!ownsCVExport(op)) return;
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.style.display = 'none';
@@ -3752,9 +3803,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
         showToastSuccess(format === 'ats' ? 'Đã xuất Word nội dung chỉnh sửa được.' : 'Đã xuất file Word theo thiết kế mẫu.', 'Hoàn tất');
       } catch (err) {
-        console.error('Lỗi tải file Word từ máy chủ:', err);
+        if (!ownsCVExport(op)) return;
+        console.error('Không thể hoàn tất xuất Word.');
         showToastWarning('Không thể tải file Word tự động. Vui lòng thử lại.', 'Lỗi');
       }
+      } finally { finishCVExport(op); }
     }
 
     // ========================================================
