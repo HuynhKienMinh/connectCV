@@ -38,10 +38,11 @@ test('older report clients stop before AI budget and action buckets while curren
 });
 test('actual end-interview request declares version2 and leaves transcript intact on stale-client error',async()=>{
  const source=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8'),start=source.indexOf('    async function endLiveInterview('),end=source.indexOf('    function closeLiveSummaryModal(',start);assert.ok(start>0&&end>start);
- const elements=new Map(),requests=[];const scope={window:{},currentLiveAudio:null,isAISpeakingOrThinking:false,currentSpeechBuffer:'',liveInterviewHistory:structuredClone(history),isLiveInterviewActive:true,invalidateLiveInterview(){},cancelLiveVoice(){},stopLiveListening(){},setLiveOrbState(){},updateLiveCaption(){},escapeHTML:s=>String(s??''),
+ const helpers=source.indexOf('    let liveInterviewScope ='),helpersEnd=source.indexOf('    function cancelLiveReply(',helpers);assert.ok(helpers>0&&helpersEnd>helpers);
+ const elements=new Map(),requests=[];const scope={AbortController,setTimeout,clearTimeout,window:{},currentLiveAudio:null,isAISpeakingOrThinking:false,currentSpeechBuffer:'',liveInterviewHistory:structuredClone(history),isLiveInterviewActive:true,invalidateLiveInterview(){},cancelLiveVoice(){},stopLiveListening(){},setLiveOrbState(){},updateLiveCaption(){},escapeHTML:s=>String(s??''),
   document:{getElementById:id=>{if(!elements.has(id))elements.set(id,{value:'Synthetic',innerHTML:'',classList:{add(){},remove(){}}});return elements.get(id);}},
   fetch:async(url,options)=>{requests.push(JSON.parse(options.body));return {json:async()=>({success:false,message:'Mở lại trang để nhận báo cáo mới.'})};}};
- vm.createContext(scope);vm.runInContext(source.slice(start,end),scope);await scope.endLiveInterview();
+ vm.createContext(scope);vm.runInContext(source.slice(helpers,helpersEnd)+source.slice(start,end),scope);await scope.endLiveInterview();
  assert.equal(requests[0].reportVersion,2);assert.equal(JSON.stringify(scope.liveInterviewHistory),JSON.stringify(history));assert.match(elements.get('live-summary-result').innerHTML,/Mở lại trang/);
 });
 test('actual live-summary handler sends complete non-IT answers and returns guarded evidence with mocked provider',async()=>{
