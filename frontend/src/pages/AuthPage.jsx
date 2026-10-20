@@ -40,9 +40,18 @@ export default function AuthPage({mode='login'}){
  async function submit(e){e.preventDefault();const op=begin();if(!op)return;try{
  const enteredEmail=email.trim();
  if(mode==='reset'){await sendPasswordResetEmail(auth,enteredEmail);if(owns(op))setMessage('Nếu email hợp lệ, bạn sẽ nhận được hướng dẫn đặt lại mật khẩu.');}
- else if(mode==='signup'){const result=await createUserWithEmailAndPassword(auth,enteredEmail,password);await updateProfile(result.user,{displayName:name.trim()});await sendEmailVerification(result.user);if(owns(op))navigate('/account');}
+ else if(mode==='signup'){
+ const result=await createUserWithEmailAndPassword(auth,enteredEmail,password),createdUser=result.user;
+ op.signupUser=createdUser;
+ const currentSignup=()=>owns(op)&&auth.currentUser===createdUser;
+ if(!currentSignup())return;
+ await updateProfile(createdUser,{displayName:name.trim()});
+ if(!currentSignup())return;
+ await sendEmailVerification(createdUser);
+ if(currentSignup())navigate('/account');
+ }
  else{await signInWithEmailAndPassword(auth,enteredEmail,password);if(owns(op))navigate('/account');}
- }catch(error){if(!owns(op))return;const failure=authFailure(error.code,mode);setPassword('');
+ }catch(error){if(!owns(op)||(op.signupUser&&auth.currentUser!==op.signupUser))return;const failure=authFailure(error.code,mode);setPassword('');
  if(failure.next)navigate('/'+failure.next,{state:{email:email.trim(),notice:failure.message}});else setMessage(failure.message);
  }finally{finish(op);}}
  return <main className="max-w-md mx-auto my-12 p-8 bg-white rounded-2xl border shadow-sm"><h1 className="text-2xl font-bold mb-6">{mode==='signup'?'Tạo tài khoản':mode==='reset'?'Đặt lại mật khẩu':'Đăng nhập'}</h1>
