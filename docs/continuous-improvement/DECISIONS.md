@@ -165,3 +165,8 @@ Click trước awaitreadiness nắm operationobject/snapshotCV/html/template/lan
 
 
 D035 bổsung heartbeat13:58: global latestRenderedHtml không đại diện realcontenteditableDOM hoặc fullscreen document. So canonical visible-document snapshot sau await; renderresultmới hủy và bỏ fullscreencũ, hiddenclose khôngcopyback. Emptyframe cần explicitretry khi ready. Không lấy green20cases/CI1513 thaybằngchứng6actualDOMcases;1513 bịsuperseded, candidate4609 cần exactgates mới. Không coi automatedheartbeat là xácnhận cho rejectedRenderlogin.
+
+
+## D036 —20/10/2026: Worddesign không tự đổi sang nguồn ATS
+
+ATS là phép dựng lại từ structuredprofile/verifiedtranslation, không phải import HTML vừa sửa; giữ grounding đó. Khi người dùng chọn Worddesign, không tự đổi format vì readiness=false. Recheck verifiedcanary có deadline và documentownership; recovered dùng editedHTML, unavailable chỉ cảnh báo giữ CV hiện tại/thử lại/In-LưuPDF, không tự print/POST/AI. ExplicitATS vẫn đi sourcecontract; không coi DOCX XML marker là Wordvisual hoặc realAuth proof. CV006 dùng actuallocalbinary contrast +wholeStudiofixture, candidatecombined1f294f phải có CI/freshDrive/main/live gates trước scopedrelease. Renderlogin vẫn cần quyết định đã hỏi, heartbeat không tự cấp quyền.

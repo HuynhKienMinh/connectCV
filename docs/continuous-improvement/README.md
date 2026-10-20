@@ -269,3 +269,6 @@ Cycle68 release note: immediate smoke initially mismatched and rollback89f was v
 Cycle70 follow-up13:58VN: 4newactualDOMcases cho thấy1513 cònfullscreenHTMLA/metadataB và directeditable race; đãrút1513 khỏirelease. Candidate4609 scoped7paths local6DOM+20lifecycle+5preview+103unitsPASS, exactCI/freshbackup/releasepending. Khôngdeploy hoặc tạo thêmbackup lớn; Renderlogin approval vẫnchờ, productiongiữnguyên. Xemnhậtký70 cho before/after và giới hạn.
 
 Latest70 follow-up: sourceCI39384352982/candidateCI39384352373 fullSUCCESS gồm26browsercases; candidate4609 chưađượcbackup/deploy. Productiongiữnguyên; Renderlogindecision trướcđangpending, khôngauthretry/bypass.
+
+
+Latest70 heartbeat14:14VN: CV006Worddesign silentATS fallback làm mất chữ sửa đã tái hiện qua2actualDOCXbinary và3/5UIbaselinefails. Fix7e1820/combinedcandidate1f294f giữdesign/recheckready/warnretain; local31browser+5unitPASS, newCIpending.4609 superseded, no newbackup/deploy; Renderdecision trước vẫnpending.

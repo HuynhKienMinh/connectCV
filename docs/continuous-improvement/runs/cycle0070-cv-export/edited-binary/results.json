@@ -1,0 +1,31 @@
+{
+  "synthetic": true,
+  "actualDocxHttpRoute": true,
+  "actualLocalSandboxRenderer": true,
+  "authenticationVerified": false,
+  "wordVisualVerified": false,
+  "providerCalls": 0,
+  "cloudWrites": 0,
+  "binariesRetained": false,
+  "rows": [
+    {
+      "format": "design",
+      "status": 200,
+      "bytes": 2970,
+      "sha256": "2f5020a118c0741ae881a44232b55c920ce268f7b1a7d99b15e0b85f632b0a56",
+      "editedTextPresent": true,
+      "oldSourceTextPresent": false,
+      "wordXmlVerified": true
+    },
+    {
+      "format": "ats",
+      "status": 200,
+      "bytes": 1125,
+      "sha256": "ca84cb961388fc6a8a0ee675a931a38f3fa4c3799be9284f8faa1fd83f7625d0",
+      "editedTextPresent": false,
+      "oldSourceTextPresent": true,
+      "wordXmlVerified": true
+    }
+  ],
+  "finding": "ATS intentionally rebuilds from the structured source and omits direct HTML edits; silent client design-to-ATS fallback can discard the edited document."
+}

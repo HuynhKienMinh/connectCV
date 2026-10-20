@@ -1,0 +1,34 @@
+{
+  "wholeStudio": true,
+  "actualExportControllers": true,
+  "syntheticCvState": true,
+  "syntheticTransport": true,
+  "syntheticFileSave": true,
+  "realRendererVerified": false,
+  "realFirebaseVerified": false,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "sourceRef": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+  "rows": [
+    {
+      "name": "unavailable-Word-design-never-silently-exports-profile-ATS",
+      "passed": true
+    },
+    {
+      "name": "stale-false-Word-readiness-recovers-design-with-edited-DOM",
+      "passed": true
+    },
+    {
+      "name": "Word-readiness-wait-is-owned-by-the-editable-document",
+      "passed": true
+    },
+    {
+      "name": "explicit-ATS-keeps-the-structured-profile-contract",
+      "passed": true
+    },
+    {
+      "name": "ready-Word-design-exports-current-edited-HTML",
+      "passed": true
+    }
+  ]
+}

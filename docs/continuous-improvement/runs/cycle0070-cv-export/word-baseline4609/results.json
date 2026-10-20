@@ -1,0 +1,163 @@
+{
+  "wholeStudio": true,
+  "actualExportControllers": true,
+  "syntheticCvState": true,
+  "syntheticTransport": true,
+  "syntheticFileSave": true,
+  "realRendererVerified": false,
+  "realFirebaseVerified": false,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "sourceRef": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+  "rows": [
+    {
+      "name": "unavailable-Word-design-never-silently-exports-profile-ATS",
+      "passed": false,
+      "error": "An unavailable design renderer must not silently switch to structured-profile ATS\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-docx",
+            "body": {
+              "format": "ats",
+              "html": "<!DOCTYPE html><html><head></head><body><div class=\"cv-page-container\"><p contenteditable=\"true\" data-qa-edit=\"\">EDITED_SENTINEL_NEW</p></div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Synthetic CV content",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS_VI_ATS_1col"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang xuất file Word (.docx)...",
+            "title": "Tải Word"
+          }
+        ],
+        "deadlines": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "name": "stale-false-Word-readiness-recovers-design-with-edited-DOM",
+      "passed": false,
+      "error": "Explicit design click must retain design after readiness recovery\n\n'ats' !== 'design'\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-docx",
+            "body": {
+              "format": "ats",
+              "html": "<!DOCTYPE html><html><head></head><body><div class=\"cv-page-container\"><p contenteditable=\"true\" data-qa-edit=\"\">EDITED_SENTINEL_NEW</p></div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Synthetic CV content",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS_VI_ATS_1col"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang xuất file Word (.docx)...",
+            "title": "Tải Word"
+          }
+        ],
+        "deadlines": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "name": "Word-readiness-wait-is-owned-by-the-editable-document",
+      "passed": false,
+      "error": "Word design should probe stale readiness before rendering\n\n0 !== 1\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-docx",
+            "body": {
+              "format": "ats",
+              "html": "<!DOCTYPE html><html><head></head><body><div class=\"cv-page-container\"><p contenteditable=\"true\" data-qa-edit=\"\">CV_A_GIA</p></div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Synthetic CV content",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS_VI_ATS_1col"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang xuất file Word (.docx)...",
+            "title": "Tải Word"
+          }
+        ],
+        "deadlines": 1,
+        "aborted": [
+          false
+        ]
+      }
+    },
+    {
+      "name": "explicit-ATS-keeps-the-structured-profile-contract",
+      "passed": true
+    },
+    {
+      "name": "ready-Word-design-exports-current-edited-HTML",
+      "passed": true
+    }
+  ]
+}

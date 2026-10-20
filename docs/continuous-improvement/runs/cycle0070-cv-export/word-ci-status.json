@@ -1,0 +1,82 @@
+[
+  {
+    "id": 39385955816,
+    "head_sha": "7e1820c2c715b3808b25399b207e2011a2b62a09",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385955816",
+    "jobs": [
+      {
+        "name": "pdf-renderer",
+        "status": "in_progress",
+        "conclusion": null,
+        "running": [
+          "Verify AccountPage load, version conflicts and actor operation ownership"
+        ],
+        "failed": [],
+        "wordSteps": [
+          {
+            "name": "Verify Word recovery preserves requested design and edited content",
+            "conclusion": null
+          },
+          {
+            "name": "Verify local edited DOCX design and structured ATS binary contracts",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "running": [],
+        "failed": [],
+        "wordSteps": []
+      },
+      {
+        "name": "emulator-restore",
+        "status": "completed",
+        "conclusion": "success",
+        "running": [],
+        "failed": [],
+        "wordSteps": []
+      }
+    ]
+  },
+  {
+    "id": 39385956500,
+    "head_sha": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385956500",
+    "jobs": [
+      {
+        "name": "pdf-renderer",
+        "status": "in_progress",
+        "conclusion": null,
+        "running": [
+          "Verify React iframe token boundaries, account changes and obsolete document requests"
+        ],
+        "failed": [],
+        "wordSteps": [
+          {
+            "name": "Verify Word recovery preserves requested design and edited content",
+            "conclusion": null
+          },
+          {
+            "name": "Verify local edited DOCX design and structured ATS binary contracts",
+            "conclusion": null
+          }
+        ]
+      },
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "running": [],
+        "failed": [],
+        "wordSteps": []
+      }
+    ]
+  }
+]

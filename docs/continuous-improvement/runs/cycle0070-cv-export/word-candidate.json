@@ -1,0 +1,19 @@
+{
+  "candidate": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+  "parent": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+  "source": "7e1820c2c715b3808b25399b207e2011a2b62a09",
+  "pathsFromMain": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/cvEditedBinary.check.cjs",
+    "backend/features/connectcv/tests/cvExportDocumentUi.check.cjs",
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs",
+    "backend/features/connectcv/tests/cvPreview.check.cjs",
+    "backend/features/connectcv/tests/cvWordRecoveryUi.check.cjs",
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js",
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs"
+  ],
+  "studioSha256": "afc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b",
+  "workflowParentPrefixExact": true,
+  "runtimeScope": "Only downloadCVDoc function changes from4609. Studio prefix/suffix retained, no server/grounding/parser/schema or deferred aggregate runtime."
+}
