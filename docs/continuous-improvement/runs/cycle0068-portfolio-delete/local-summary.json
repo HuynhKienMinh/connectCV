@@ -1,0 +1,18 @@
+{
+  "baseCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "liveFrontendBuildCommit": "1bc615f1727e9816bc1067c557229b2063760116",
+  "baselinePageByteIdenticalToLiveBuildSource": true,
+  "baselinePageSha256": "760f103784ac7010430bff80d14febee14ea7569df56f93634e78ca85f12d1ff",
+  "fixedPageSha256": "9def11c32ad1a3aab3b8a2dd753da90a566f02a60058bc3562bafbc52195d4b2",
+  "newScenarios": 9,
+  "baselineFailed": 5,
+  "baselinePassed": 4,
+  "fixedPassed": 9,
+  "saveRegressionPassed": 6,
+  "publicRegressionPassed": 8,
+  "realFirebaseVerified": false,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "chromiumSandbox": true,
+  "externalNetworkBlocked": true
+}

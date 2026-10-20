@@ -1,0 +1,32 @@
+{
+  "actualReactPage": true,
+  "syntheticAuthAndApi": true,
+  "firebaseVerified": false,
+  "cloudWrites": 0,
+  "results": [
+    {
+      "name": "newer-draft-survives-successful-create",
+      "passed": true
+    },
+    {
+      "name": "pending-update-retains-project-publication-and-original-id",
+      "passed": true
+    },
+    {
+      "name": "unchanged-success-clears-once-and-double-submit-is-ignored",
+      "passed": true
+    },
+    {
+      "name": "failed-save-keeps-latest-text-and-projects",
+      "passed": true
+    },
+    {
+      "name": "old-account-completion-cannot-clear-new-account-draft",
+      "passed": true
+    },
+    {
+      "name": "return-to-same-account-does-not-revive-old-save-or-unlock-new-save",
+      "passed": true
+    }
+  ]
+}

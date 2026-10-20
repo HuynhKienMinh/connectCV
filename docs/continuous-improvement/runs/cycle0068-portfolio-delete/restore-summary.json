@@ -1,0 +1,18 @@
+{
+  "candidate": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "bundleSha256": "949bae6a575e0729838f4171c8803b5737ab10dfecf02a0988888cfe7fbd8382",
+  "newFrontendZipSha256": "97e7a3c5918e06b8868ede7d77f6b0ea00b88094e5786518a4fc197a898c6349",
+  "cloudBundles": 22,
+  "freshBareFsck": true,
+  "coverage": {
+    "04bcf12d3d17c840239f3611e6604060788dd4cd": 55,
+    "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0": 54,
+    "1bc615f1727e9816bc1067c557229b2063760116": 50
+  },
+  "newAndRollbackFrontendZipsAllMembersVerified": true,
+  "restoreBytes": 243087763,
+  "buildBytes": 1603658,
+  "limit": 402653184,
+  "verifiedAt": "2026-10-20T01:13:25.450028+00:00",
+  "databaseVerified": false
+}

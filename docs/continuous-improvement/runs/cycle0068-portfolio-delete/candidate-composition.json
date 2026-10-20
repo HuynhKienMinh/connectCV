@@ -1,0 +1,20 @@
+{
+  "base": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "source": "5543e4e062dfdc32950214046f9268e8aa0798c1",
+  "candidate": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "branch": "improvement/portfolio-delete-release-20261020",
+  "paths": [
+    "frontend/src/pages/PortfolioPage.jsx",
+    "frontend/tests/portfolioDeleteUi.check.mjs",
+    ".github/workflows/ai-feature-checks.yml"
+  ],
+  "workflowPreservedMainBytesPlusSixLfLines": true,
+  "candidateAssemblyCorrection": "First unpushed candidate appended CRLF lines, git diff --check flagged trailing CR. Replaced only new six lines with LF while preserving original main workflow bytes; old unpushed own ref replaced atomically. No source/assertion changes.",
+  "backendRuntimeChanged": false,
+  "frontendRuntimeChanged": true,
+  "fileSha256": {
+    "frontend/src/pages/PortfolioPage.jsx": "083bda472e6a3341e469149eb7f85b740c18e057b5f20d69dc6924a4f8910519",
+    "frontend/tests/portfolioDeleteUi.check.mjs": "67a91237e2f61e5c1cce32fcc01c9308071ae36b26ddb6c66326534a7c87a152",
+    ".github/workflows/ai-feature-checks.yml": "23eb70ea6bda2fcb2f2903397c4e6d049f0741b9de7fa5c4e62573bb0eba9a7e"
+  }
+}

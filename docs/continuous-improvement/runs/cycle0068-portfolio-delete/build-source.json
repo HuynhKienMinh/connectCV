@@ -1,0 +1,14 @@
+{
+  "commit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "archiveBytes": 1146880,
+  "stageLimit": 20971520,
+  "frontendPackageAndLockSameAsInstalledReview": true,
+  "backendStudioCssReadOnlyCheck": true,
+  "noEnvFilesCopied": false,
+  "temporaryStage": "tmp/cycle0068/build",
+  "trackedEnvExampleFiles": [
+    ".env.example"
+  ],
+  "noEnvironmentOverrideFilesCopied": true,
+  "envExampleNotConsumedByProductionLoadEnv": true
+}

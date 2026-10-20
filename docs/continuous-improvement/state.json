@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 67,
   "lastRun": "runs/2026-10-20-cycle-0067.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "CHATBOT_TOPICS_DEPLOYED_SCOPED_REAL_ADVICE_UNVERIFIED",
+  "activeRun": "runs/2026-10-20-cycle-0068.md",
+  "activeIssue": "PORT004",
+  "issueState": "PORTFOLIO_DELETE_EXACT_CLOUD_BACKUP_VERIFIED_MAIN_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,14 +52,14 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0067-candidate-d6a3fd2.json",
+    "currentBaselineCatalog": "backup-transfer/cycle0068-candidate-04bcf12.json",
     "protectedCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
     "liveCommitCovered": true,
-    "nextDeploymentRequiresNewBaseline": true
+    "nextDeploymentRequiresNewBaseline": false
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Next rotation portfolio: inspect existing owner/save/public/HTTP fixtures first, select a genuinely unverified customer scenario (e.g. keyboard access, public projection or conditional error recovery). Do not merely repeat passed owner/visitor phases. Keep fake providers/local synthetic data; real cloud writes require dedicated test account.",
+    "Continue PORT004 portfolio delete lifecycle:9new browser scenarios baseline5FAIL/4PASS→9PASS,6save+8public regression PASS. Commit/reviewCI then isolated3paths from main d6a (PortfolioPage, newtest, mainworkflow+newstep). FE-only candidate, BE d6a unchanged. Before deployment fresh exact privateDrive code/build/rollback89f and restore gate; no real deletion/cloudwrite/AI or DBschema change.",
     "CHAT006 d6a sourcef517 now RenderLive dep-dbbbm6nf3r2c7389u4pg after review39348876975/candidate39348951592/main39349670431 allSUCCESS. Local16tests include11career routing and10product FAQ positives. Exact4paths, mainworkflow unchanged. Initial smoke wrongly expected401 from intentionallypublicFAQ; unchanged mount byte-confirmed; corrected6GET smokePASS (9GETtotal), no runtimechange for correction. Real authenticated advice, language/semantic/human quality remain CHAT001/CHAT006 pending.",
     "Live BE d6a, rollback BE7c/dep-dbbav649v7es73eie2n0; FE1bc/Hosting89f unchanged. Private Drivecatalog67 VERIFIED21bundle/restore/FEZIP:54candidate/52oldBE/50FE criticalfiles, all6ZIPmembers; own242933950byte restore +457297byte helper/index stage removed. No DBbackup, currentACL viewer hung (priorprivateownerfolder/noACLchanges). Fresh exactbaseline needed for NEXTdeployment. OPS002 custody/realDB, CV002 checkpoint62, INT005 realdevice/provider/human gates open; AI0."
   ],
@@ -108,7 +108,7 @@
     "deployBlockedUntilCloudVerified": false,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-    "cloudBundlesVerified": 21,
+    "cloudBundlesVerified": 22,
     "localCopiesDeleted": true,
     "localCopiesRetained": false,
     "pendingCatalog": null,
@@ -118,13 +118,13 @@
     "pendingRestoreVerified": true,
     "pendingRestoreCloneDeleted": true,
     "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0"
+    "lastVerifiedCandidateCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd"
   },
   "delivery": {
     "reviewCommit": "f517c853ed640ad5355012d66b512722c6d646f4",
     "status": "CHATBOT_TOPIC_FIX_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "Next rotation portfolio: inspect existing owner/save/public/HTTP fixtures first, select a genuinely unverified customer scenario (e.g. keyboard access, public projection or conditional error recovery). Do not merely repeat passed owner/visitor phases. Keep fake providers/local synthetic data; real cloud writes require dedicated test account.",
+    "nextAction": "Continue PORT004 portfolio delete lifecycle:9new browser scenarios baseline5FAIL/4PASS→9PASS,6save+8public regression PASS. Commit/reviewCI then isolated3paths from main d6a (PortfolioPage, newtest, mainworkflow+newstep). FE-only candidate, BE d6a unchanged. Before deployment fresh exact privateDrive code/build/rollback89f and restore gate; no real deletion/cloudwrite/AI or DBschema change.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348951592",
@@ -147,7 +147,7 @@
     "testOnlyStatus": "REVIEW_ISOLATED_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347713425",
     "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -332,7 +332,15 @@
     "pendingChatbotTopicMainCiPassed": true,
     "pendingChatbotTopicRelease": "dep-dbbbm6nf3r2c7389u4pg",
     "pendingChatbotTopicUrl": "https://dashboard.render.com/web/srv-db1ut3e7bikc73bqc05g/deploys/dep-dbbbm6nf3r2c7389u4pg",
-    "pendingChatbotTopicOwnerNotifiedCycle": 67
+    "pendingChatbotTopicOwnerNotifiedCycle": 67,
+    "pendingPortfolioDeleteStatus": "EXACT_CLOUD_BACKUP_VERIFIED_MAIN_PENDING",
+    "pendingPortfolioDeleteReviewCommit": "5543e4e062dfdc32950214046f9268e8aa0798c1",
+    "pendingPortfolioDeleteCandidateCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+    "pendingPortfolioDeleteBranch": "improvement/portfolio-delete-release-20261020",
+    "pendingPortfolioDeleteReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39351512954",
+    "pendingPortfolioDeleteCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39351681697",
+    "pendingPortfolioDeleteReviewCiPassed": true,
+    "pendingPortfolioDeleteCandidateCiPassed": true
   },
   "blockingDependency": null,
   "dataBackup": {

@@ -147,3 +147,8 @@ TTS guard không đủ nếu completion upstream tạo operation mới. Phiên d
 ## D032 —20/10/2026: FAQ token phải phân biệt từ nghề nghiệp
 
 CHAT006 cho thấy mic ở academic/economic, micro ở microbiology/microservices, print ở sprint/blueprint, credit ở accreditation, ats ở chats/stats chiếm sai route. Whole-word English product tokens và domain-context credit guard giữ11career requests ở provider. Các mẫu credit finance/education mới chỉ heuristic, chưa universal intent/language classifier; context.targetRole không được khiến câu hỏi Credits rõ ràng đổi đường. Giữ deterministic FAQ/capability/security precedence, auth/quota/throttle và generic errors. Chỉ claims routing từ local fake-provider/actualmount và Linux CI, không khẳng định semanticAI hoặc hiring outcomes. Main candidate phải giữ đúng4file và workflow hiện hữu, không đưa PDF/moderation/DB experiments vào deployment.
+
+
+## D033 —20/10/2026: xóa portfolio không giữ ID chết hoặc làm sống lại completion cũ
+
+DELETE và Save dùng cùng operationobject/ref khóa đồng bộ và invalidate khi scope/effect rời. Chỉ currentoperation được reloadlist/report/unlock; UIDstring A-B-A không đủ. Sau DELETEconfirmed, form đanggắn recordđó giữ latestdraftfields nhưng bỏID và mặc địnhprivate; Save tiếp là explicitPOST, không autorepublish. Nháp khác/cancel/failure không đổi; listreloadfail không đảo ngược DELETEđãthànhcông. Completionguard không hứa abortprovider/serverwriteđãgửi. Không chuyển syntheticcallback thành realcloud auth/delete proof hoặc tự đóng PORT001/003/P1. ScopedFEcandidate cần CI và freshDrive code+newbuild/currentrollback restore trướcHostingdeploy; BE d6a khôngredeploy.

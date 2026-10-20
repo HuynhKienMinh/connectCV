@@ -1,0 +1,22 @@
+{
+  "candidate": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "catalogCloudId": "1tq0-oxk-9u0O3d9F1mqcdaawvA-Fhb-q",
+  "catalogSha256": "181f1b4e90d25e12a10bbebbc3ec2550f72925870782af9194a049050e4f0a31",
+  "bundle": {
+    "file": "connectcv-2026-10-20-cycle-0068-candidate-04bcf12.incremental.bundle",
+    "bytes": 5305,
+    "sha256": "949bae6a575e0729838f4171c8803b5737ab10dfecf02a0988888cfe7fbd8382",
+    "ref": "refs/backup/cycle0068-candidate-04bcf12",
+    "commit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+    "cloudId": "1R7ehZgr9pTUWIY2kog44cy-88DFwab34",
+    "cloudUrl": "https://drive.google.com/file/d/1R7ehZgr9pTUWIY2kog44cy-88DFwab34/view"
+  },
+  "frontendZipSha256": "97e7a3c5918e06b8868ede7d77f6b0ea00b88094e5786518a4fc197a898c6349",
+  "frontendZipCloudId": "1CrJrEHty_CZb5iZj0vjUnAB3zt-fE6UT",
+  "cloudBundles": 22,
+  "restoreAndBuildBytesRemoved": 244691421,
+  "localCopiesRemaining": 0,
+  "freshBareRestoreVerified": true,
+  "fullWorktreeCheckoutVerified": false,
+  "databaseVerified": false
+}

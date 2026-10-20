@@ -1,0 +1,44 @@
+{
+  "actualReactPage": true,
+  "syntheticAuthAndApi": true,
+  "firebaseVerified": false,
+  "cloudWrites": 0,
+  "results": [
+    {
+      "name": "deleted-edit-draft-can-be-explicitly-saved-as-a-new-private-record",
+      "passed": false,
+      "error": "Deleted published record must not preselect publication of a new record\n\ntrue !== false\n"
+    },
+    {
+      "name": "edits-during-deletion-survive-with-projects-and-private-publication",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "name": "failed-deletion-keeps-existing-edit-identity-for-explicit-update",
+      "passed": true
+    },
+    {
+      "name": "deleting-another-record-preserves-unrelated-new-draft-publication-choice",
+      "passed": true
+    },
+    {
+      "name": "cancel-deletion-does-not-send-or-alter-edit-draft",
+      "passed": true
+    },
+    {
+      "name": "pending-deletion-locks-other-mutations-including-programmatic-submit",
+      "passed": false,
+      "error": "Save cannot race an unfinished deletion\n\n2 !== 1\n"
+    },
+    {
+      "name": "old-actor-delete-completion-does-not-read-or-alter-new-actor-draft",
+      "passed": true
+    },
+    {
+      "name": "A-B-A-deletion-completion-cannot-reload-or-unlock-the-new-operation",
+      "passed": false,
+      "error": "Old session cannot launch a new list request\n\n5 !== 4\n"
+    }
+  ]
+}
