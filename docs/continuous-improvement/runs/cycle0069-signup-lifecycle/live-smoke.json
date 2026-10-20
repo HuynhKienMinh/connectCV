@@ -1,0 +1,128 @@
+{
+  "checkedAt": "2026-10-20T06:12:45.003092+00:00",
+  "requests": [
+    {
+      "url": "https://connect-cv.web.app/",
+      "status": 200,
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Date": "Tue, 20 Oct 2026 06:12:41 GMT",
+        "X-Cache": "MISS",
+        "Age": null
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-B5CIh4VQ.js",
+      "status": 200,
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Date": "Tue, 20 Oct 2026 06:12:42 GMT",
+        "X-Cache": "MISS",
+        "Age": null
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Date": "Tue, 20 Oct 2026 06:12:42 GMT",
+        "X-Cache": "MISS",
+        "Age": null
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/",
+      "status": 200,
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Date": "Tue, 20 Oct 2026 06:12:43 GMT",
+        "X-Cache": "MISS",
+        "Age": null
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-B5CIh4VQ.js",
+      "status": 200,
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Date": "Tue, 20 Oct 2026 06:12:43 GMT",
+        "X-Cache": "MISS",
+        "Age": null
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "cacheHeaders": {
+        "Cache-Control": "max-age=3600",
+        "Date": "Tue, 20 Oct 2026 06:12:44 GMT",
+        "X-Cache": "MISS",
+        "Age": null
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/account/me",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/portfolios",
+      "status": 401,
+      "passed": true
+    }
+  ],
+  "complete": true,
+  "passed": true,
+  "customerDataWrites": 0,
+  "aiCalls": 0,
+  "realFirebaseSignupVerified": false
+}

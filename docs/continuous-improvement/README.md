@@ -254,3 +254,8 @@ Cycle67 (20/10/2026): [Chatbot routing](runs/2026-10-20-cycle-0067.md) sửa aca
 [Nhật ký và bằng chứng](runs/2026-10-20-cycle-0068.md): xóa hồ sơ đang sửa giữ nội dung nhưng bỏ ID đã mất, nháp mới mặc định riêng tư; save/delete cùng khóa thao tác và bỏ qua completion phiên cũ. 9case mới baseline5FAIL→9PASS, thêm6save+8public regression; review/candidate/mainCI39374577202 đạt. FEonly04bc/Hosting6ff2976a15a15e74 phát hành sauDrive22bundle/new+rollbackZIP checksum/restore; live8readonlyGET hai domain đúnghash/header/auth401. BE d6a giữ nguyên, rollbackFE89f; localstagingđãdọn. RealFirebase deletion/actors và P1/commercial chưa nghiệmthu; tiếpauth-profile scenario mới.
 
 Cycle68 release note: immediate smoke initially mismatched and rollback89f was verified. Provider file hashes matched the candidate; after renewedDrive checksumgate one reactivation of6ff passed final8plainGET. Total24publicGET. Cause remains unproven; see incident section in cycle68 journal.
+
+
+## Cycle0069 —20/10/2026: chặn bước đăng ký đã hết ownership
+
+[Nhật ký và bằng chứng](runs/2026-10-20-cycle-0069.md): kết quả tạo tài khoản/profile/email đến muộn chỉ được tiếp tục khi form và SDK User vẫn thuộc thao tác hiện tại. Bản sửa giữ nháp phiên mới và ngăn email follow-up sau khi rời form; không hủy request Firebase đã gửi. 13ca mới baseline11FAIL→13PASS, 18ca auth/Google hồi quy và12unit đạt; source/candidate/mainCI39378630096 đạt. FEce09/Hosting32cb6e9c8222b5ec đã xác minh8GET live sau backupDrive23bundle/2ZIP và restore; staging đã dọn, rollback6ff, BE d6a giữ nguyên. Signup/email/OAuth thật và commercial vẫn chưa nghiệmthu; tiếpCV-ATS.

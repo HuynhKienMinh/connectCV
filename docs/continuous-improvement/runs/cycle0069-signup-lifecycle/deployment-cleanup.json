@@ -1,0 +1,45 @@
+{
+  "bytes": 513437.0,
+  "files": [
+    {
+      "path": "tmp\\cycle0069\\deploy\\firebase-rollback.json",
+      "sha256": "15365b3d1ad1c0bb1c58ce543ffe76c8192b5057a33d64fdf44380773bd76cd4",
+      "bytes": 354
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy\\firebase.json",
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329",
+      "bytes": 445
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy\\.firebase\\hosting.ZnJvbnRlbmRcZGlzdA.cache",
+      "sha256": "2bce2dccf46051b4bed5f6243c5130b62124aafbe6aaec9839b687ce7f9f496f",
+      "bytes": 299
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy\\frontend\\dist\\.gitkeep",
+      "sha256": "bc896b55b22fb28e53a5476069357a083c722b594565c463c33e694a25e693e3",
+      "bytes": 86
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy\\frontend\\dist\\index.html",
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049",
+      "bytes": 429
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy\\frontend\\dist\\assets\\index-B5CIh4VQ.js",
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b",
+      "bytes": 449438
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy\\frontend\\dist\\assets\\index-D2A9aWF8.css",
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "bytes": 62386
+    }
+  ],
+  "checkedAt": "2026-10-20T13:13:27.5571056+07:00",
+  "target": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\cycle0069\\deploy",
+  "removed": true,
+  "noReparse": true,
+  "fileCount": 7
+}

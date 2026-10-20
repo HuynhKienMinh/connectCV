@@ -1,0 +1,41 @@
+{
+  "bytes": 473366.0,
+  "target": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\cycle0069",
+  "preexistingSiblingTmpPreserved": true,
+  "noReparse": true,
+  "checkedAt": "2026-10-20T13:13:56.3616805+07:00",
+  "fileCount": 6,
+  "removed": true,
+  "files": [
+    {
+      "path": "tmp\\cycle0069\\backup.py",
+      "sha256": "d794e86d344d14cbd33897d4c10765e0493dbb3f24a5847dcb680b0722d916f4",
+      "bytes": 9065
+    },
+    {
+      "path": "tmp\\cycle0069\\candidate.index",
+      "sha256": "68e276fd7db4cecd07fa79db05560fb8b8226fba6c29f0bb4d6185fe3f9294a8",
+      "bytes": 446878
+    },
+    {
+      "path": "tmp\\cycle0069\\ci.py",
+      "sha256": "043374f1c2b0d3285be5c59048f68443d014a88f21bc1428cac3667b4d31c950",
+      "bytes": 1701
+    },
+    {
+      "path": "tmp\\cycle0069\\deploy.py",
+      "sha256": "bc4f18843c988fb94e1759d64b72cad4d511db2647635ff4987e4ac03e223b6d",
+      "bytes": 6612
+    },
+    {
+      "path": "tmp\\cycle0069\\finish.py",
+      "sha256": "3cce821b6892ac8d530b67ff2c9909f1437ea17455e6b8c01e6029654400213d",
+      "bytes": 8665
+    },
+    {
+      "path": "tmp\\cycle0069\\control\\firebase.json",
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329",
+      "bytes": 445
+    }
+  ]
+}
