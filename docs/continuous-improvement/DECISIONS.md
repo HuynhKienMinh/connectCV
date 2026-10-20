@@ -157,3 +157,8 @@ DELETE và Save dùng cùng operationobject/ref khóa đồng bộ và invalidat
 ## D034 —20/10/2026: signup SDK followups require current operation and current User instance
 
 After create settles, only the owning route operation and exact current SDKUser may updateProfile. Recheck after profile before email and after email before navigation; suppress stale SDK-user errors while still letting current-operation finally release busy. Do not signOut/delete an abandoned account, retry emails, or promise cancellation of the create request/provider persistence already sent. InstalledFirebase12.19 sets currentUser before resolving create; regression mock follows that contract. Real actor/mobile/OAuth and SDK persistence races remain unverified; candidate must contain only4scoped paths and pass freshDrive/currentFE6ff rollback gate.
+
+
+## D035 —20/10/2026: export phải thuộc CV và operation hiện tại
+
+Click trước awaitreadiness nắm operationobject/snapshotCV/html/template/language/profile; recheck sau health/response/blob và trước save/print. Render/rời CV/pagehide/logout invalidate trướcabort. PDF/Word dùng một synchronouslock; finally chỉ clear chínhoperation/timer của mình. Deadline90s thảlock, cảnh báo thử lại nhưng không tự in/retry hoặc cam kết hủy render/quota phía server. Giữ currentdesignprintfallback, ATS/Word không tự đổi định dạng. Localfake transport phớt lờabort chứng minh guard, không xác nhận realrenderer/identity/layout/Wordvisual. CV005 không đóng trước isolatedCI/exactprivateDrivebackup/rollback/live; CV002 và commercialgate còn mở.

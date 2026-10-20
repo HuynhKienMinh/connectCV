@@ -1,0 +1,446 @@
+{
+  "wholeStudio": true,
+  "actualExportControllers": true,
+  "syntheticCvState": true,
+  "syntheticTransport": true,
+  "syntheticFileSave": true,
+  "realRendererVerified": false,
+  "realFirebaseVerified": false,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "sourceRef": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "rows": [
+    {
+      "name": "readiness-completion-cannot-export-a-different-CV",
+      "passed": false,
+      "error": "Obsolete readiness must not send CV B from the old click\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_B_GIA"
+              },
+              "html": "<html><body><div class=\"cv-page-container\">CV_B_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_B_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_B_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_B_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          }
+        ]
+      }
+    },
+    {
+      "name": "readiness-after-module-departure-cannot-export-or-print",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          }
+        ]
+      }
+    },
+    {
+      "name": "design-response-after-CV-change-cannot-save-old-file",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [
+          "CV_A_GIA_CV_ATS.pdf"
+        ],
+        "prints": [],
+        "urls": [
+          16
+        ],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          },
+          {
+            "kind": "success",
+            "message": "Đã tải xuống bản PDF Vector siêu nét thành công!",
+            "title": "Hoàn tất"
+          }
+        ]
+      }
+    },
+    {
+      "name": "docx-response-after-CV-change-cannot-save-old-file",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-docx",
+            "body": {
+              "format": "design",
+              "html": "<!DOCTYPE html><html style=\"\"><head></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS_VI"
+            }
+          }
+        ],
+        "downloads": [
+          "CV_A_GIA_CV_ATS_VI.docx"
+        ],
+        "prints": [],
+        "urls": [
+          16
+        ],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang xuất file Word (.docx)...",
+            "title": "Tải Word"
+          },
+          {
+            "kind": "success",
+            "message": "Đã xuất file Word theo thiết kế mẫu.",
+            "title": "Hoàn tất"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blob-after-CV-change-cannot-create-download-URL",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [
+          "CV_A_GIA_CV_ATS.pdf"
+        ],
+        "prints": [],
+        "urls": [
+          16
+        ],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          },
+          {
+            "kind": "success",
+            "message": "Đã tải xuống bản PDF Vector siêu nét thành công!",
+            "title": "Hoàn tất"
+          }
+        ]
+      }
+    },
+    {
+      "name": "old-PDF-error-cannot-print-new-CV",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'CV_B_GIA'\n+ ]\n- []\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [
+          "CV_B_GIA"
+        ],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          },
+          {
+            "kind": "warning",
+            "message": "Đang chuyển sang chế độ in trực tiếp của trình duyệt...",
+            "title": "Dự phòng"
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate-PDF-submit-sends-one-render-request",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          },
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          },
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          }
+        ]
+      }
+    },
+    {
+      "name": "pagehide-cancels-late-file-completion",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n",
+      "state": {
+        "requests": [
+          {
+            "route": "/api/cv/export-pdf",
+            "body": {
+              "format": "design",
+              "userProfile": {
+                "fullName": "CV_A_GIA"
+              },
+              "html": "<!DOCTYPE html><html style=\"--cv-preview-scale: 0.8327868852459016;\"><head><style data-cv-preview=\"true\">@media screen{html,body{width:100%!important;min-width:0!important;background:#e2e8f0!important}body{overflow-x:hidden!important}.cv-page-container{zoom:var(--cv-preview-scale,1);margin:16px auto!important}#cvo-document{margin-left:auto!important;margin-right:auto!important;box-shadow:0 2px 12px #0002!important}}</style></head><body><div class=\"cv-page-container\">CV_A_GIA</div></body></html>",
+              "templateId": "default_v2",
+              "cvData": {
+                "fullName": "CV_A_GIA",
+                "language": "vi",
+                "sourceProfile": {
+                  "fullName": "CV_A_GIA"
+                },
+                "summary": "Nội dung giả",
+                "tailoredExperience": [],
+                "skills": [],
+                "education": []
+              },
+              "language": "vi",
+              "fileName": "CV_A_GIA_CV_ATS"
+            }
+          }
+        ],
+        "downloads": [
+          "CV_A_GIA_CV_ATS.pdf"
+        ],
+        "prints": [],
+        "urls": [
+          16
+        ],
+        "toasts": [
+          {
+            "kind": "success",
+            "message": "Đang kết xuất bản PDF Vector A4 siêu nét (có lớp văn bản)...",
+            "title": "Tải PDF"
+          },
+          {
+            "kind": "success",
+            "message": "Đã tải xuống bản PDF Vector siêu nét thành công!",
+            "title": "Hoàn tất"
+          }
+        ]
+      }
+    },
+    {
+      "name": "current-design-still-downloads-once",
+      "passed": true
+    },
+    {
+      "name": "current-docx-still-downloads-once",
+      "passed": true
+    },
+    {
+      "name": "current-design-error-retains-print-fallback",
+      "passed": true
+    },
+    {
+      "name": "current-ATS-error-does-not-print-an-unrequested-design",
+      "passed": true
+    }
+  ]
+}

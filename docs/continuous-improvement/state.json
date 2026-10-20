@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 69,
   "lastRun": "runs/2026-10-20-cycle-0069.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "SIGNUP_FOLLOWUPS_DEPLOYED_SCOPED_PENDING_REAL_FIREBASE",
+  "activeRun": "runs/2026-10-20-cycle-0070.md",
+  "activeIssue": "CV005",
+  "issueState": "CV_EXPORT_LOCAL_VERIFIED_FIXTURE_CI_RETRY_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -52,16 +52,16 @@
     "catalog": "backup-transfer/catalog.json",
     "localCopiesRetained": false,
     "cloudReadbackVerified": true,
-    "currentBaselineCatalog": "backup-transfer/cycle0069-candidate-ce09d3c.json",
+    "currentBaselineCatalog": "backup-transfer/cycle0070-candidate-a367afb.json",
     "protectedCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
     "liveCommitCovered": true,
     "nextDeploymentRequiresNewBaseline": true
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "CV-ATS rotation: continue CV002 from checkpoint62 causal font-width evidence or choose a distinct unverified export recovery scenario. Do not rerun148fontmatrix or rejected TJ/Roboto/hinting prototypes merely to repeat known failures. Preserve strict text/pixel gates. Auth005 realFirebase/signup/email/mobile and earlierP1 actor/device/DB/human gates remain open.",
-    "AUTH005 scoped FEce09/Hosting32cb6e9c8222b5ec deployed after13new signup cases baseline2PASS11FAIL to13PASS,8auth+10Google browser regression and12units; source/candidate/mainCI39378630096SUCCESS. Fresh privateDrive23bundle fsck/56candidate55oldFE54BEcritical bytes/new+rollbackZIPverified; local247254700byte backup/build removed. Final8readonlyGET hash/header/authPASS, no real signup/email/profile/AI calls. BE d6a retained; rollbackFE6ff/ZIP68.",
-    "Fresh exact baseline required before NEXTdeployment. Catalog69 cloudVERIFIED/localcopies0; databaseVerifiedfalse and custody/realrestore pending. Signup guard cannot cancel already-sent SDK/providercreate or email. Commercial NOT_READY_EVIDENCE_INCOMPLETE."
+    "Continue ACTIVE cycle0070 CV005: source8d59a90/candidate1513dbd (6paths) pushed after priorCI39382005162 previewfixture dependency failure. Local20export+103units+5preview phases PASS. Await exact new fullCI; never deploy failed priora367.",
+    "Catalog70a367 verifiedDrive24bundle/critical59-58-56/FEZIP69; stage243083701bytes removed. Exact1513 needs new delta/restore+cloudack and rollbackBE d6a before deployment; maince09/Hosting32cb/BE d6a unchanged.",
+    "CV002 strict font checkpoint62 and real renderer/Wordvisual/Firebase/mobile/DB/pilot remain open."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -110,7 +110,7 @@
     "deployBlockedUntilCloudVerified": false,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
-    "cloudBundlesVerified": 23,
+    "cloudBundlesVerified": 24,
     "localCopiesDeleted": true,
     "localCopiesRetained": false,
     "pendingCatalog": null,
@@ -120,7 +120,7 @@
     "pendingRestoreVerified": true,
     "pendingRestoreCloneDeleted": true,
     "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16"
+    "lastVerifiedCandidateCommit": "a367afb17446f42e39ea291e965f4aa35b6e2a13"
   },
   "delivery": {
     "reviewCommit": "261d46783e0b6e02e86f407f71236c9f5af12a1e",
@@ -366,7 +366,15 @@
     "pendingSignupLifecycleRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792476736185000",
     "pendingSignupLifecycleVersion": "projects/connect-cv/sites/connect-cv/versions/32cb6e9c8222b5ec",
     "pendingSignupLifecycleOwnerNotifiedCycle": 69,
-    "pendingSignupLifecyclePublicGetCount": 8
+    "pendingSignupLifecyclePublicGetCount": 8,
+    "pendingExportReviewCommit": "8d59a90712e4255be0534e0564300f627c2057a0",
+    "pendingExportCandidateCommit": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
+    "pendingExportStatus": "CI_FIXTURE_FAILURE_FIXED_LOCAL_PENDING_NEW_CI",
+    "pendingExportPriorCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
+    "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382615459",
+    "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382615355",
+    "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-a367afb.json",
+    "pendingExportBackupCoversCandidate": false
   },
   "blockingDependency": null,
   "dataBackup": {

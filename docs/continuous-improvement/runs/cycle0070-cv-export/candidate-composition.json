@@ -1,0 +1,16 @@
+{
+  "base": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "review": "f78164b083b6cb9ed130fb50dffab2ef921950bd",
+  "candidate": "a367afb17446f42e39ea291e965f4aa35b6e2a13",
+  "branch": "improvement/cv-export-release-20261020",
+  "paths": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs",
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js",
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs"
+  ],
+  "candidateStudioSha256": "169214739cf05200beec173acc4befb4ff28f5c7d279302ab2c4acc7a8b48a37",
+  "candidateWorkflowMainPrefixExact": true,
+  "scope": "Only export controller and2invalidation hooks; main workflow plus newstep. No deferred aggregate runtime."
+}

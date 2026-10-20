@@ -1,0 +1,158 @@
+{
+  "wholeStudio": true,
+  "actualExportControllers": true,
+  "syntheticCvState": true,
+  "syntheticTransport": true,
+  "syntheticFileSave": true,
+  "realRendererVerified": false,
+  "realFirebaseVerified": false,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "sourceRef": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "rows": [
+    {
+      "name": "readiness-completion-cannot-export-a-different-CV",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "readiness-after-module-departure-cannot-export-or-print",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "design-response-after-CV-change-cannot-save-old-file",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "docx-response-after-CV-change-cannot-save-old-file",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "blob-after-CV-change-cannot-create-download-URL",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "old-PDF-error-cannot-print-new-CV",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "duplicate-PDF-submit-sends-one-render-request",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "pagehide-cancels-late-file-completion",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "current-design-still-downloads-once",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "current-docx-still-downloads-once",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "current-design-error-retains-print-fallback",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    },
+    {
+      "name": "current-ATS-error-does-not-print-an-unrequested-design",
+      "passed": false,
+      "error": "page.evaluate: TypeError: Cannot set properties of null (setting 'srcdoc')\n    at window.qaCV (eval at evaluate (:311:30), <anonymous>:3:402)\n    at eval (eval at evaluate (:311:30), <anonymous>:3:527)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "run": 39382005162,
+  "failed": [
+    {
+      "job": "pdf-renderer",
+      "id": 118493002086,
+      "steps": [
+        {
+          "number": 20,
+          "name": "Verify responsive preview and edited photo round trip",
+          "conclusion": "failure"
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "file": "pdf-renderer/20_Verify responsive preview and edited photo round trip.txt",
+      "tail": [
+        "﻿2026-10-20T06:44:54.5148344Z ##[group]Run node tests/cvPreview.check.cjs",
+        "2026-10-20T06:44:54.5148802Z \u001b[36;1mnode tests/cvPreview.check.cjs\u001b[0m",
+        "2026-10-20T06:44:54.5209305Z shell: /usr/bin/bash -e {0}",
+        "2026-10-20T06:44:54.5209649Z env:",
+        "2026-10-20T06:44:54.5209973Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-20T06:44:54.5210506Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+        "2026-10-20T06:44:54.5210977Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-20T06:44:54.5211581Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-20T06:44:54.5212030Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+        "2026-10-20T06:44:54.5212468Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+        "2026-10-20T06:44:54.5212967Z   PLAYWRIGHT_BROWSERS_PATH: 0",
+        "2026-10-20T06:44:54.5213353Z   CV_PREVIEW_QA_OUTPUT: /home/runner/work/_temp/connectcv-preview-qa",
+        "2026-10-20T06:44:54.5213798Z ##[endgroup]",
+        "2026-10-20T06:44:54.8390047Z 🛡️  [KeyManager] In-Memory Pool đã nạp 0 API Key(s) sẵn sàng hoạt động.",
+        "2026-10-20T06:44:55.3397177Z Fixture page: invalidateCVExport is not defined",
+        "2026-10-20T06:45:03.4047005Z locator.waitFor: Timeout 8000ms exceeded.",
+        "2026-10-20T06:45:03.4047346Z Call log:",
+        "2026-10-20T06:45:03.4047759Z   - waiting for locator('#cv-rendered-iframe').contentFrame().locator('.cv-photo-frame') to be visible",
+        "2026-10-20T06:45:03.4048091Z ",
+        "2026-10-20T06:45:03.4048405Z     at /home/runner/work/connectCV/connectCV/backend/features/connectcv/tests/cvPreview.check.cjs:46:166",
+        "2026-10-20T06:45:03.6871221Z ##[error]Process completed with exit code 1."
+      ]
+    }
+  ]
+}

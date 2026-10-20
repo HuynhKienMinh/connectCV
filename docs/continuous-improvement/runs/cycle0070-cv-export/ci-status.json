@@ -1,0 +1,62 @@
+[
+  {
+    "id": 39382004951,
+    "head_sha": "f78164b083b6cb9ed130fb50dffab2ef921950bd",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382004951",
+    "jobs": [
+      {
+        "name": "pdf-renderer",
+        "status": "completed",
+        "conclusion": "failure",
+        "exportStep": [
+          {
+            "name": "Verify CV export ownership, duplicate locking and bounded retry",
+            "status": "completed",
+            "conclusion": "skipped"
+          }
+        ]
+      },
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "exportStep": []
+      },
+      {
+        "name": "emulator-restore",
+        "status": "completed",
+        "conclusion": "success",
+        "exportStep": []
+      }
+    ]
+  },
+  {
+    "id": 39382005162,
+    "head_sha": "a367afb17446f42e39ea291e965f4aa35b6e2a13",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
+    "jobs": [
+      {
+        "name": "pdf-renderer",
+        "status": "completed",
+        "conclusion": "failure",
+        "exportStep": [
+          {
+            "name": "Verify CV export ownership, duplicate locking and bounded retry",
+            "status": "completed",
+            "conclusion": "skipped"
+          }
+        ]
+      },
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "exportStep": []
+      }
+    ]
+  }
+]

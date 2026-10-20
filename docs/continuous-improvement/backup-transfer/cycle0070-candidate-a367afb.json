@@ -1,0 +1,210 @@
+{
+  "baseBundle": "connectcv-2026-10-15-cycle-0015-baseline.bundle",
+  "baseSha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4",
+  "cloudFolderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
+  "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
+  "protectedCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "candidateCommit": "a367afb17446f42e39ea291e965f4aa35b6e2a13",
+  "requiresCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "parentCatalog": "cycle0069-candidate-ce09d3c.json",
+  "orderedDeltasSha256": {
+    "connectcv-2026-10-15-cycle-0015-baseline-15daaa7.incremental.bundle": "65a560742884437feede36588f4cb6f4827472f2dd8557671c81bcdc7bfdbf45",
+    "connectcv-2026-10-15-cycle-0016-baseline-94e4418.incremental.bundle": "d7bdc239bada9da0c60fb2bcd01bf069566023f354f455ccaed211ffbb12b8e5",
+    "connectcv-2026-10-15-cycle-0017-baseline-b1a2279.incremental.bundle": "575cad4f4ba64c41578b7d2d0a4914f4e7c1a97d85a714b2d21642fe36adec07",
+    "connectcv-2026-10-15-cycle-0017-baseline-884a52c.incremental.bundle": "9a4cf7b749f18748e9020f74df5d707092748748a94ca3fee085b0a0a69e1f24",
+    "connectcv-2026-10-15-cycle-0018-baseline-b3ca417.incremental.bundle": "ebf108592f68ace5264bf870ca148a6113934764ed8b96ff776e84fd29b49a8a",
+    "connectcv-2026-10-15-cycle-0019-baseline-f438d16.incremental.bundle": "535f5c7bfe99571b4f6bd9b6f25e5871da1a0cb0e1afc84ad5d6ec770f79d7bd",
+    "connectcv-2026-10-15-cycle-0019-candidate-be7a52a.incremental.bundle": "b053baaacb37447d7ce2a95d680eae58a564043ee3db155f76cd09da8517fb1b",
+    "connectcv-2026-10-15-cycle-0019-candidate-aa53702.incremental.bundle": "2c6ce17b8583e63798b0f5fd56aa472fd1e3b81c319bc4dd93575e846879102a",
+    "connectcv-2026-10-16-cycle-0020-candidate-1bf75b9.incremental.bundle": "76f758450174aa653c0e242f5ed5ac3d85751d5d1a6d701ca17088b6c72eb79a",
+    "connectcv-2026-10-16-cycle-0036-candidate-aac8134.incremental.bundle": "8fbc860a1724826dd34188b66a1db8409819111cf18471fe9895e8adb8e600e8",
+    "connectcv-2026-10-17-cycle-0039-candidate-6d965e7.incremental.bundle": "5f18848aa6bf7960dde3c1421b59b62a8799a98fa904819caee4f13f53add676",
+    "connectcv-2026-10-17-cycle-0040-candidate-fdc3afb.incremental.bundle": "5302fa381fc0560ab3101ff0ed4e82aa8a69427d1d11fb8fd24bb2402d743673",
+    "connectcv-2026-10-17-cycle-0040-candidate-ce5cfe4.incremental.bundle": "54aae324c14fbd3ec2213925bcbfacb84fd7d8e3238f3d788e550e7e84b1268e",
+    "connectcv-2026-10-17-cycle-0041-candidate-9cbbfe3.incremental.bundle": "fe182ee0c245605c3ee43ce1590f0effa4f7c960893ed929fe3573ed1fe3a9db",
+    "connectcv-2026-10-17-cycle-0042-candidate-391fdc3.incremental.bundle": "5d9903207b8d0d07b32ff3de8179bd9cb66d7b6a00adf773a1d94a3779f449c6",
+    "connectcv-2026-10-19-cycle-0046-candidate-0bf51ec.incremental.bundle": "84161dc3d3c5da9cab0627ac7e1fd85de849f0f18f0c9e7232a966d5c6a4aaed",
+    "connectcv-2026-10-19-cycle-0049-candidate-964d1af.incremental.bundle": "3cbc1b55df155e7b1d42d5ce6d9645999d031d6efad9977cbee8d0f0f9d6580f",
+    "connectcv-2026-10-19-cycle-0053-candidate-1bc615f.incremental.bundle": "e928d89456774dfaf1742228f7143ad2d67153a099ca398a7e661670db210e7d",
+    "connectcv-2026-10-20-cycle-0065-candidate-7c6c0c7.incremental.bundle": "e4f86f59840516a4c189ef506a3b8d9718a31217b9745efbb999d8bd68588674",
+    "connectcv-2026-10-20-cycle-0067-candidate-d6a3fd2.incremental.bundle": "5ce65fd75ca9d8f890b523b71f9a85e4bb29159e232d3f374c71af781ee55cb2",
+    "connectcv-2026-10-20-cycle-0068-candidate-04bcf12.incremental.bundle": "949bae6a575e0729838f4171c8803b5737ab10dfecf02a0988888cfe7fbd8382",
+    "connectcv-2026-10-20-cycle-0069-candidate-ce09d3c.incremental.bundle": "07b3e877941d4595d15d399c80369519baaaa3b45e1fe17f6626b1b7bc6d2586",
+    "connectcv-2026-10-20-cycle-0070-candidate-a367afb.incremental.bundle": "fcae4ebcf6314fdc453f89491ca70c5fd68e352b7503691a744b1f3263d6f02a"
+  },
+  "newBundles": [
+    {
+      "file": "connectcv-2026-10-20-cycle-0070-candidate-a367afb.incremental.bundle",
+      "bytes": 6411,
+      "sha256": "fcae4ebcf6314fdc453f89491ca70c5fd68e352b7503691a744b1f3263d6f02a",
+      "ref": "refs/backup/cycle0070-candidate-a367afb",
+      "commit": "a367afb17446f42e39ea291e965f4aa35b6e2a13",
+      "cloudId": "1F7MrhOZX6VFVqe5YXK2TKHzHNt16o74k",
+      "cloudUrl": "https://drive.google.com/file/d/1F7MrhOZX6VFVqe5YXK2TKHzHNt16o74k/view"
+    }
+  ],
+  "frontendFile": "connectcv-2026-10-20-cycle-0069-frontend-ce09d3c.zip",
+  "frontendSha256": "b6eb07b0c03ca33c548e841168bbd83948cdb36954c21d2bae5e852bf4d1f16a",
+  "frontendBytes": 142447,
+  "frontendMembers": {
+    "frontend/dist/.gitkeep": {
+      "bytes": 86,
+      "sha256": "bc896b55b22fb28e53a5476069357a083c722b594565c463c33e694a25e693e3"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049"
+    },
+    "frontend/dist/assets/index-B5CIh4VQ.js": {
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b"
+    },
+    "frontend/dist/assets/index-D2A9aWF8.css": {
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    "firebase-rollback.json": {
+      "bytes": 354,
+      "sha256": "15365b3d1ad1c0bb1c58ce543ffe76c8192b5057a33d64fdf44380773bd76cd4"
+    }
+  },
+  "frontendBuildCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "frontendUnchanged": true,
+  "backendUnchanged": false,
+  "rollbackFrontendFile": "connectcv-2026-10-20-cycle-0069-frontend-ce09d3c.zip",
+  "rollbackFrontendSha256": "b6eb07b0c03ca33c548e841168bbd83948cdb36954c21d2bae5e852bf4d1f16a",
+  "rollbackFrontendBytes": 142447,
+  "rollbackFrontendCloudId": "1nt_aTHU69VdSu8V1CQCgr6hF79nL4kPp",
+  "rollbackFrontendMembers": {
+    "frontend/dist/.gitkeep": {
+      "bytes": 86,
+      "sha256": "bc896b55b22fb28e53a5476069357a083c722b594565c463c33e694a25e693e3"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049"
+    },
+    "frontend/dist/assets/index-B5CIh4VQ.js": {
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b"
+    },
+    "frontend/dist/assets/index-D2A9aWF8.css": {
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    "firebase-rollback.json": {
+      "bytes": 354,
+      "sha256": "15365b3d1ad1c0bb1c58ce543ffe76c8192b5057a33d64fdf44380773bd76cd4"
+    }
+  },
+  "rollbackFrontendBuildCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "catalogCloudFile": "connectcv-catalog-cycle-0070-candidate-a367afb.json",
+  "databaseIncluded": false,
+  "localCopiesRetained": false,
+  "cloudUploadVerified": true,
+  "rollback": {
+    "frontendVersion": "projects/connect-cv/sites/connect-cv/versions/32cb6e9c8222b5ec",
+    "frontendCommand": "No FE deployment; retain Hosting32cb/FEce09; fallback verifiedZIP69",
+    "backendCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+    "backendRelease": "dep-dbbbm6nf3r2c7389u4pg",
+    "backendCommand": "Render specific commit d6a3fd28859e0ac9b84885a8618c7a1d06d270d0; verify exact Studio bytes and readiness/auth gates; FE unchanged"
+  },
+  "criticalFiles": [
+    "frontend/src/pages/AuthPage.jsx",
+    "frontend/src/lib/googleAuthFlow.js",
+    "frontend/src/lib/firebase.js",
+    "frontend/src/context/AuthContext.jsx",
+    "frontend/src/lib/api.js",
+    "frontend/package-lock.json",
+    "frontend/src/pages/FeaturePage.jsx",
+    "firebase.json",
+    "backend/features/connectcv/public/js/cv-photo-layout.js",
+    "backend/features/connectcv/public/js/cv-preview.js",
+    "backend/features/connectcv/src/services/jobService.js",
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json",
+    "backend/features/connectcv/package-lock.json",
+    "backend/package-lock.json",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/public/js/profile-image.js",
+    "backend/features/connectcv/public/js/account-bridge.js",
+    "backend/features/connectcv/public/js/profile-autosave.js",
+    "backend/src/routes/account.js",
+    "backend/features/connectcv/src/routes/upload.js",
+    "backend/features/connectcv/src/routes/chatbot.js",
+    "backend/features/connectcv/src/services/geminiService.js",
+    "backend/features/connectcv/src/services/keyManager.js",
+    "backend/features/connectcv/src/services/securityError.js",
+    "backend/features/connectcv/package.json",
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/tests/chatbotUi.check.cjs",
+    "backend/tests/chatbotHttp.test.cjs",
+    "frontend/src/pages/PortfolioPage.jsx",
+    "frontend/tests/portfolioSaveUi.check.mjs",
+    "backend/tests/portfolioAuthHttp.test.cjs",
+    "frontend/tests/authRequestUi.check.mjs",
+    "backend/features/connectcv/src/services/atsExportService.js",
+    "backend/features/connectcv/tests/atsOptionalTranslation.test.js",
+    "backend/features/connectcv/tests/interviewMicUi.check.cjs",
+    "backend/src/services/firestoreCommunity.js",
+    "backend/features/connectcv/src/services/communityStore.js",
+    "backend/features/connectcv/src/routes/interview.js",
+    "backend/src/services/communityReceipt.js",
+    "backend/tests/communityReceipt.test.cjs",
+    "backend/tests/communityHttp.test.cjs",
+    "backend/tests/communityFaults.test.cjs",
+    "backend/features/connectcv/tests/communityReceiptUi.check.cjs",
+    "frontend/tests/featureBridgeUi.check.mjs",
+    "frontend/src/pages/AccountPage.jsx",
+    "frontend/tests/accountLifecycleUi.check.mjs",
+    "frontend/tests/portfolioPublicUi.check.mjs",
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs",
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs",
+    "backend/features/connectcv/tests/interviewTranscript.test.js",
+    "backend/features/connectcv/src/services/chatbotService.js",
+    "backend/features/connectcv/tests/chatbotService.test.js",
+    "backend/features/connectcv/tests/fixtures/chatbotTopicCases.json",
+    "frontend/tests/communityConsentUi.check.mjs",
+    "frontend/tests/portfolioDeleteUi.check.mjs",
+    "frontend/tests/signupLifecycleUi.check.mjs",
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs",
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js",
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs"
+  ],
+  "createdAt": "2026-10-20T06:46:15.175210+00:00",
+  "fullWorktreeCheckoutVerified": false,
+  "restoreInstructions": "Verify base+23 ordered deltas SHA from privateDrive; fetch directly fromDrive into freshbare (no duplicatebase), verify/fetch/fsck and criticalsource. Verify unchanged FEZIP69 CRC/all6members SHA. Cap384MiB; delete only ownstage after cloud acknowledgment. Code backup is not database backup.",
+  "freshBareRestore": true,
+  "fullFsckPassed": true,
+  "criticalSourceByteMatch": true,
+  "criticalSourceCoverage": {
+    "a367afb17446f42e39ea291e965f4aa35b6e2a13": 59,
+    "ce09d3c7a95cace46d7eed10b0cd5d428c119c16": 58,
+    "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0": 56
+  },
+  "frontendRestoreVerified": true,
+  "rollbackFrontendRestoreVerified": true,
+  "cloudReadbackVerified": true,
+  "cloudBundleCount": 24,
+  "restoreBytes": 243083701,
+  "buildBytes": 0,
+  "restoreVerifiedAt": "2026-10-20T06:46:15.175210+00:00",
+  "restoreLocalDeleted": true,
+  "localBuildDeleted": true,
+  "localCopiesDeleted": true,
+  "cloudUiListed": true,
+  "cloudSharingPolicy": "Existing owner privateDrive folder; current ACL not reread/no access changes. New delta/catalog filenames and IDs acknowledged viaDrive UI, native stream SHA and freshbare restore. Not coldcache/server rehydration. Candidatea367 failed preview fixture CI, superseded; not deployed.",
+  "frontendCloudId": "1nt_aTHU69VdSu8V1CQCgr6hF79nL4kPp",
+  "frontendCloudUrl": "https://drive.google.com/file/d/1nt_aTHU69VdSu8V1CQCgr6hF79nL4kPp/view",
+  "cloudVerifiedAt": "2026-10-20T06:49:01.435343+00:00",
+  "cloudAcknowledgedAt": "2026-10-20T06:49:01.435343+00:00",
+  "catalogCloudId": "1xuxfAl4xCpHUlnfztN_eNhwyuYiryxt1",
+  "catalogCloudUrl": "https://drive.google.com/file/d/1xuxfAl4xCpHUlnfztN_eNhwyuYiryxt1/view"
+}

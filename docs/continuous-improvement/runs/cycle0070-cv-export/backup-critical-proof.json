@@ -1,0 +1,700 @@
+{
+  "a367afb17446f42e39ea291e965f4aa35b6e2a13": {
+    "frontend/src/pages/AuthPage.jsx": {
+      "bytes": 9322,
+      "sha256": "55d036aa6d1e434a2d36edb6cbec7ef1afc2a4941f1fee4379d23182fb24a024"
+    },
+    "frontend/src/lib/googleAuthFlow.js": {
+      "bytes": 3239,
+      "sha256": "c49f296c3c23a975be3b47176dc523040d335b64dd2530e5b7b5f249cd48cb3f"
+    },
+    "frontend/src/lib/firebase.js": {
+      "bytes": 481,
+      "sha256": "de2e9374d10e909c285504455fd8dddbc12d21f3f545e3b737934f8a355271df"
+    },
+    "frontend/src/context/AuthContext.jsx": {
+      "bytes": 561,
+      "sha256": "b3c38a4d35308070003a0e6a57d4bf7ce4568cfc51363bffbc5d673ccdd990f0"
+    },
+    "frontend/src/lib/api.js": {
+      "bytes": 756,
+      "sha256": "7849d84607c8e9b226239c1aae8aba693b9fe3a9955e6939a9a6e3143d163350"
+    },
+    "frontend/package-lock.json": {
+      "bytes": 107134,
+      "sha256": "3e6964785a3471bff005224a1f5e2dcf443eecaf05f084ce29b6aa300cd1fba7"
+    },
+    "frontend/src/pages/FeaturePage.jsx": {
+      "bytes": 2066,
+      "sha256": "6cf70dae0e767ab4878c8173967a51e03d9c7ffef559b3e4a9c9d20205754d39"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    "backend/features/connectcv/public/js/cv-photo-layout.js": {
+      "bytes": 2061,
+      "sha256": "60c6481ff78fe38465f23a52b442fe9d11db8b942af162a6fb35f542c4663c6c"
+    },
+    "backend/features/connectcv/public/js/cv-preview.js": {
+      "bytes": 1648,
+      "sha256": "2a0aa82aedda74eee364fd315fce8063368108e94add99f7100bf299c977be8e"
+    },
+    "backend/features/connectcv/src/services/jobService.js": {
+      "bytes": 2660,
+      "sha256": "2fdba9027b780f0aaed364113b8dee38f24e06ef955f282bcd9f03b8c3743fda"
+    },
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json": {
+      "bytes": 240758,
+      "sha256": "885394273f29f1a900aede6befb8e3bcf9280d2735f4184fb8df286a8b97e3f2"
+    },
+    "backend/features/connectcv/package-lock.json": {
+      "bytes": 60804,
+      "sha256": "57b4eb3f751d60211447443f0a0914393f06a2b133475496e2d457afd014cf42"
+    },
+    "backend/package-lock.json": {
+      "bytes": 122664,
+      "sha256": "cf2581ad4e70e746751be53b9865bfed4fa842b6bd2066a7703d924ce8e1423e"
+    },
+    "backend/features/connectcv/public/index.html": {
+      "bytes": 363858,
+      "sha256": "169214739cf05200beec173acc4befb4ff28f5c7d279302ab2c4acc7a8b48a37"
+    },
+    "backend/features/connectcv/public/js/profile-image.js": {
+      "bytes": 3662,
+      "sha256": "f45df49181152f256539a27e40408f400426b9b1cdae721af9b40b6c7bb4e80a"
+    },
+    "backend/features/connectcv/public/js/account-bridge.js": {
+      "bytes": 8278,
+      "sha256": "1d8e9592226702baabc10e869689ff169bd4aa90991eb9cf2386517b42f0d0da"
+    },
+    "backend/features/connectcv/public/js/profile-autosave.js": {
+      "bytes": 1750,
+      "sha256": "050651397646d006a4242e648d307dd28b05557408f32dab208df3b104dcec69"
+    },
+    "backend/src/routes/account.js": {
+      "bytes": 3733,
+      "sha256": "3cb3b9c9f31ff38fc713a14fe89a5797b02d987c026b0692d52b623c6991d9f7"
+    },
+    "backend/features/connectcv/src/routes/upload.js": {
+      "bytes": 6437,
+      "sha256": "d50a1a7298cea7244d64ae2da471b4e7334816890989bd77066e9f630dbd1c3b"
+    },
+    "backend/features/connectcv/src/routes/chatbot.js": {
+      "bytes": 1440,
+      "sha256": "32f4a9c9f6bcedd9096708d5bf94f4da1713fd98220ee7d68ac48fa31b1549a6"
+    },
+    "backend/features/connectcv/src/services/geminiService.js": {
+      "bytes": 6480,
+      "sha256": "c402dd13d9968e0bd350eb489516eaec5ce99014ccca333ed3029f79cdba1646"
+    },
+    "backend/features/connectcv/src/services/keyManager.js": {
+      "bytes": 17045,
+      "sha256": "9d82177e05abf3f3e2f0c2af23e94e6b0752a00e9e08c827d0d9942f1102d836"
+    },
+    "backend/features/connectcv/src/services/securityError.js": {
+      "bytes": 1133,
+      "sha256": "0b4a1687650430b89f2c0f457aea0f77b92d87ecb5cf3db682f8e776187924aa"
+    },
+    "backend/features/connectcv/package.json": {
+      "bytes": 1519,
+      "sha256": "e25a070261d729e1895e59beb2f6028fd358fa7ef74173c91f92c472d2820f7a"
+    },
+    ".github/workflows/ai-feature-checks.yml": {
+      "bytes": 10392,
+      "sha256": "1df11aaac483d25c709bb2042b292ca7ffebdfccc8bbce55b08ff23a1dcd8136"
+    },
+    "backend/features/connectcv/tests/chatbotUi.check.cjs": {
+      "bytes": 10993,
+      "sha256": "aca0e071d8db1ffceb08bb3acf7363efbe314dbf43f994550eda165f48595119"
+    },
+    "backend/tests/chatbotHttp.test.cjs": {
+      "bytes": 9688,
+      "sha256": "ea48275cf18ad9635c0c6feea6ae0002c716a5576dbe6626f7f2bc6c73ebad7b"
+    },
+    "frontend/src/pages/PortfolioPage.jsx": {
+      "bytes": 6711,
+      "sha256": "083bda472e6a3341e469149eb7f85b740c18e057b5f20d69dc6924a4f8910519"
+    },
+    "frontend/tests/portfolioSaveUi.check.mjs": {
+      "bytes": 9124,
+      "sha256": "7f71a50213fe6ca95585c4e039a099ed7e3580282540e54f6c5d7c0a59d39c7a"
+    },
+    "backend/tests/portfolioAuthHttp.test.cjs": {
+      "bytes": 10640,
+      "sha256": "690d30197201246433e1a40f6f7899bd95d06e98227a1d4455b9d4f14f5db3fc"
+    },
+    "frontend/tests/authRequestUi.check.mjs": {
+      "bytes": 10957,
+      "sha256": "aed84937fd1f5ecd9f13c57423f374be7a0497d9d2ae04dd479d765e8aae2973"
+    },
+    "backend/features/connectcv/src/services/atsExportService.js": {
+      "bytes": 4758,
+      "sha256": "7688348e3869a690daa6c741463b248a6eee943b58dcac90e0c1d6801ac6e6b2"
+    },
+    "backend/features/connectcv/tests/atsOptionalTranslation.test.js": {
+      "bytes": 6254,
+      "sha256": "ffffe1b3231e2938d62b5bdfe2c7b653b0ea2b0b37bb4aeabe82105d25fa1086"
+    },
+    "backend/features/connectcv/tests/interviewMicUi.check.cjs": {
+      "bytes": 10496,
+      "sha256": "3c3a3eb056ce482ce23d0a72bf7bfb0b6b67513982654dc2ea3c56ec8af29a27"
+    },
+    "backend/src/services/firestoreCommunity.js": {
+      "bytes": 3470,
+      "sha256": "5b1566bfd8d62e099a380cb9b7cbef516758c45ae4fde3f5b6a951778e2e1495"
+    },
+    "backend/features/connectcv/src/services/communityStore.js": {
+      "bytes": 3268,
+      "sha256": "88f812922d903344c15cd0e92459a771122c4b22d58c976e27cc7b3eed70b46c"
+    },
+    "backend/features/connectcv/src/routes/interview.js": {
+      "bytes": 37977,
+      "sha256": "183ed95bf21a1311d0de38a2fe107d2d87a21ae63faf72b50ac45df00b1777f8"
+    },
+    "backend/src/services/communityReceipt.js": {
+      "bytes": 1998,
+      "sha256": "05b38ba7f6282c9a9632c2cf026d15b86bbc09d2c0158a1a26ec776236949c76"
+    },
+    "backend/tests/communityReceipt.test.cjs": {
+      "bytes": 7654,
+      "sha256": "e942e6d58dbc230f05957956e6054b702400b97b2be94aae7a8f66ab505edb22"
+    },
+    "backend/tests/communityHttp.test.cjs": {
+      "bytes": 10987,
+      "sha256": "e5a3a6bd46e295c1803794bfa6b6ec4512c4a42fd4e70a18e1804069c3e4196c"
+    },
+    "backend/tests/communityFaults.test.cjs": {
+      "bytes": 5626,
+      "sha256": "ab45a3a64725307d499f27099199217a726b69bf947589faba966c2273b046c6"
+    },
+    "backend/features/connectcv/tests/communityReceiptUi.check.cjs": {
+      "bytes": 8719,
+      "sha256": "8e13408f014d57a0d828d7c20939c457dcbade8568c2677d9a3684b036f6d3a2"
+    },
+    "frontend/tests/featureBridgeUi.check.mjs": {
+      "bytes": 10803,
+      "sha256": "22c547ee672911a76ce644f9356bc61697404a98e9cc1b73badcab9d5c64efd7"
+    },
+    "frontend/src/pages/AccountPage.jsx": {
+      "bytes": 6716,
+      "sha256": "12998dd9f005b4ee09fac85751b894e6cc9e121151880d912fefc5c96ac4f5ba"
+    },
+    "frontend/tests/accountLifecycleUi.check.mjs": {
+      "bytes": 15318,
+      "sha256": "b83bfd30270bfa29cc3d3692a9f17c45451839680be816ca16a5e98c897eb3ef"
+    },
+    "frontend/tests/portfolioPublicUi.check.mjs": {
+      "bytes": 11296,
+      "sha256": "9f8cbfba6bf8ea1ebd9af2d830ab802dc209207970122a4577a04f8bf729b078"
+    },
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs": {
+      "bytes": 9967,
+      "sha256": "af107e51b686563ea1fa2c88dbd00f43ec71bf2041df183fc6b3fffba5e6d9b1"
+    },
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs": {
+      "bytes": 10855,
+      "sha256": "4fc4b75e574a41d5118b2acef770712c6b46d60dddb936e2f6c719ca55d28ec4"
+    },
+    "backend/features/connectcv/tests/interviewTranscript.test.js": {
+      "bytes": 7478,
+      "sha256": "4d699474208fe1901abaf1ed77007e8da1b5cd69e767744e7b007cd2763c6bb7"
+    },
+    "backend/features/connectcv/src/services/chatbotService.js": {
+      "bytes": 8917,
+      "sha256": "2ae7839251cc57d823f37a2c898ea37cd2dab5dc94e2acdc86c8dfd1d87bb2b7"
+    },
+    "backend/features/connectcv/tests/chatbotService.test.js": {
+      "bytes": 6181,
+      "sha256": "c09c1d3fa7559ccb7eaba2ce913a67baccfb1e48899d2e0c5e9e1b9338f6d746"
+    },
+    "backend/features/connectcv/tests/fixtures/chatbotTopicCases.json": {
+      "bytes": 1455,
+      "sha256": "ac2b1ee4c0f1efbc9a3d7b6e07df6c8d5729e69778799c0f81ae0b66d1880615"
+    },
+    "frontend/tests/communityConsentUi.check.mjs": {
+      "bytes": 12961,
+      "sha256": "c954e66011d16d99b5117bb12ba3ae1f1bccda0d9a4e0812b90d466dd1e993ec"
+    },
+    "frontend/tests/portfolioDeleteUi.check.mjs": {
+      "bytes": 11166,
+      "sha256": "67a91237e2f61e5c1cce32fcc01c9308071ae36b26ddb6c66326534a7c87a152"
+    },
+    "frontend/tests/signupLifecycleUi.check.mjs": {
+      "bytes": 11165,
+      "sha256": "1e91bbf9fdb793faf12e0c61e0045d89f4301bc66bb867c33b6691cbb9067208"
+    },
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs": {
+      "bytes": 12760,
+      "sha256": "e0fa6f9208b063f1faa375b650b05e2336f2a9718b5b6732a204d1064d918ffe"
+    },
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js": {
+      "bytes": 4580,
+      "sha256": "fb4b531fff38b1d532a32054e354d0df0851388ae5df672ed17ef88815becb15"
+    },
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs": {
+      "bytes": 4727,
+      "sha256": "c25214e1c9994cc59c70c1464a5844fcdf01b3a6bc37d9e6462cac6c44be7879"
+    }
+  },
+  "ce09d3c7a95cace46d7eed10b0cd5d428c119c16": {
+    "frontend/src/pages/AuthPage.jsx": {
+      "bytes": 9322,
+      "sha256": "55d036aa6d1e434a2d36edb6cbec7ef1afc2a4941f1fee4379d23182fb24a024"
+    },
+    "frontend/src/lib/googleAuthFlow.js": {
+      "bytes": 3239,
+      "sha256": "c49f296c3c23a975be3b47176dc523040d335b64dd2530e5b7b5f249cd48cb3f"
+    },
+    "frontend/src/lib/firebase.js": {
+      "bytes": 481,
+      "sha256": "de2e9374d10e909c285504455fd8dddbc12d21f3f545e3b737934f8a355271df"
+    },
+    "frontend/src/context/AuthContext.jsx": {
+      "bytes": 561,
+      "sha256": "b3c38a4d35308070003a0e6a57d4bf7ce4568cfc51363bffbc5d673ccdd990f0"
+    },
+    "frontend/src/lib/api.js": {
+      "bytes": 756,
+      "sha256": "7849d84607c8e9b226239c1aae8aba693b9fe3a9955e6939a9a6e3143d163350"
+    },
+    "frontend/package-lock.json": {
+      "bytes": 107134,
+      "sha256": "3e6964785a3471bff005224a1f5e2dcf443eecaf05f084ce29b6aa300cd1fba7"
+    },
+    "frontend/src/pages/FeaturePage.jsx": {
+      "bytes": 2066,
+      "sha256": "6cf70dae0e767ab4878c8173967a51e03d9c7ffef559b3e4a9c9d20205754d39"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    "backend/features/connectcv/public/js/cv-photo-layout.js": {
+      "bytes": 2061,
+      "sha256": "60c6481ff78fe38465f23a52b442fe9d11db8b942af162a6fb35f542c4663c6c"
+    },
+    "backend/features/connectcv/public/js/cv-preview.js": {
+      "bytes": 1648,
+      "sha256": "2a0aa82aedda74eee364fd315fce8063368108e94add99f7100bf299c977be8e"
+    },
+    "backend/features/connectcv/src/services/jobService.js": {
+      "bytes": 2660,
+      "sha256": "2fdba9027b780f0aaed364113b8dee38f24e06ef955f282bcd9f03b8c3743fda"
+    },
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json": {
+      "bytes": 240758,
+      "sha256": "885394273f29f1a900aede6befb8e3bcf9280d2735f4184fb8df286a8b97e3f2"
+    },
+    "backend/features/connectcv/package-lock.json": {
+      "bytes": 60804,
+      "sha256": "57b4eb3f751d60211447443f0a0914393f06a2b133475496e2d457afd014cf42"
+    },
+    "backend/package-lock.json": {
+      "bytes": 122664,
+      "sha256": "cf2581ad4e70e746751be53b9865bfed4fa842b6bd2066a7703d924ce8e1423e"
+    },
+    "backend/features/connectcv/public/index.html": {
+      "bytes": 361531,
+      "sha256": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc"
+    },
+    "backend/features/connectcv/public/js/profile-image.js": {
+      "bytes": 3662,
+      "sha256": "f45df49181152f256539a27e40408f400426b9b1cdae721af9b40b6c7bb4e80a"
+    },
+    "backend/features/connectcv/public/js/account-bridge.js": {
+      "bytes": 8278,
+      "sha256": "1d8e9592226702baabc10e869689ff169bd4aa90991eb9cf2386517b42f0d0da"
+    },
+    "backend/features/connectcv/public/js/profile-autosave.js": {
+      "bytes": 1750,
+      "sha256": "050651397646d006a4242e648d307dd28b05557408f32dab208df3b104dcec69"
+    },
+    "backend/src/routes/account.js": {
+      "bytes": 3733,
+      "sha256": "3cb3b9c9f31ff38fc713a14fe89a5797b02d987c026b0692d52b623c6991d9f7"
+    },
+    "backend/features/connectcv/src/routes/upload.js": {
+      "bytes": 6437,
+      "sha256": "d50a1a7298cea7244d64ae2da471b4e7334816890989bd77066e9f630dbd1c3b"
+    },
+    "backend/features/connectcv/src/routes/chatbot.js": {
+      "bytes": 1440,
+      "sha256": "32f4a9c9f6bcedd9096708d5bf94f4da1713fd98220ee7d68ac48fa31b1549a6"
+    },
+    "backend/features/connectcv/src/services/geminiService.js": {
+      "bytes": 6480,
+      "sha256": "c402dd13d9968e0bd350eb489516eaec5ce99014ccca333ed3029f79cdba1646"
+    },
+    "backend/features/connectcv/src/services/keyManager.js": {
+      "bytes": 17045,
+      "sha256": "9d82177e05abf3f3e2f0c2af23e94e6b0752a00e9e08c827d0d9942f1102d836"
+    },
+    "backend/features/connectcv/src/services/securityError.js": {
+      "bytes": 1133,
+      "sha256": "0b4a1687650430b89f2c0f457aea0f77b92d87ecb5cf3db682f8e776187924aa"
+    },
+    "backend/features/connectcv/package.json": {
+      "bytes": 1519,
+      "sha256": "e25a070261d729e1895e59beb2f6028fd358fa7ef74173c91f92c472d2820f7a"
+    },
+    ".github/workflows/ai-feature-checks.yml": {
+      "bytes": 10061,
+      "sha256": "cbc0ced72197d638c00e8b237524539d0db3403c855a951f1d98882f46924b34"
+    },
+    "backend/features/connectcv/tests/chatbotUi.check.cjs": {
+      "bytes": 10993,
+      "sha256": "aca0e071d8db1ffceb08bb3acf7363efbe314dbf43f994550eda165f48595119"
+    },
+    "backend/tests/chatbotHttp.test.cjs": {
+      "bytes": 9688,
+      "sha256": "ea48275cf18ad9635c0c6feea6ae0002c716a5576dbe6626f7f2bc6c73ebad7b"
+    },
+    "frontend/src/pages/PortfolioPage.jsx": {
+      "bytes": 6711,
+      "sha256": "083bda472e6a3341e469149eb7f85b740c18e057b5f20d69dc6924a4f8910519"
+    },
+    "frontend/tests/portfolioSaveUi.check.mjs": {
+      "bytes": 9124,
+      "sha256": "7f71a50213fe6ca95585c4e039a099ed7e3580282540e54f6c5d7c0a59d39c7a"
+    },
+    "backend/tests/portfolioAuthHttp.test.cjs": {
+      "bytes": 10640,
+      "sha256": "690d30197201246433e1a40f6f7899bd95d06e98227a1d4455b9d4f14f5db3fc"
+    },
+    "frontend/tests/authRequestUi.check.mjs": {
+      "bytes": 10957,
+      "sha256": "aed84937fd1f5ecd9f13c57423f374be7a0497d9d2ae04dd479d765e8aae2973"
+    },
+    "backend/features/connectcv/src/services/atsExportService.js": {
+      "bytes": 4758,
+      "sha256": "7688348e3869a690daa6c741463b248a6eee943b58dcac90e0c1d6801ac6e6b2"
+    },
+    "backend/features/connectcv/tests/atsOptionalTranslation.test.js": {
+      "bytes": 6254,
+      "sha256": "ffffe1b3231e2938d62b5bdfe2c7b653b0ea2b0b37bb4aeabe82105d25fa1086"
+    },
+    "backend/features/connectcv/tests/interviewMicUi.check.cjs": {
+      "bytes": 10496,
+      "sha256": "3c3a3eb056ce482ce23d0a72bf7bfb0b6b67513982654dc2ea3c56ec8af29a27"
+    },
+    "backend/src/services/firestoreCommunity.js": {
+      "bytes": 3470,
+      "sha256": "5b1566bfd8d62e099a380cb9b7cbef516758c45ae4fde3f5b6a951778e2e1495"
+    },
+    "backend/features/connectcv/src/services/communityStore.js": {
+      "bytes": 3268,
+      "sha256": "88f812922d903344c15cd0e92459a771122c4b22d58c976e27cc7b3eed70b46c"
+    },
+    "backend/features/connectcv/src/routes/interview.js": {
+      "bytes": 37977,
+      "sha256": "183ed95bf21a1311d0de38a2fe107d2d87a21ae63faf72b50ac45df00b1777f8"
+    },
+    "backend/src/services/communityReceipt.js": {
+      "bytes": 1998,
+      "sha256": "05b38ba7f6282c9a9632c2cf026d15b86bbc09d2c0158a1a26ec776236949c76"
+    },
+    "backend/tests/communityReceipt.test.cjs": {
+      "bytes": 7654,
+      "sha256": "e942e6d58dbc230f05957956e6054b702400b97b2be94aae7a8f66ab505edb22"
+    },
+    "backend/tests/communityHttp.test.cjs": {
+      "bytes": 10987,
+      "sha256": "e5a3a6bd46e295c1803794bfa6b6ec4512c4a42fd4e70a18e1804069c3e4196c"
+    },
+    "backend/tests/communityFaults.test.cjs": {
+      "bytes": 5626,
+      "sha256": "ab45a3a64725307d499f27099199217a726b69bf947589faba966c2273b046c6"
+    },
+    "backend/features/connectcv/tests/communityReceiptUi.check.cjs": {
+      "bytes": 8719,
+      "sha256": "8e13408f014d57a0d828d7c20939c457dcbade8568c2677d9a3684b036f6d3a2"
+    },
+    "frontend/tests/featureBridgeUi.check.mjs": {
+      "bytes": 10803,
+      "sha256": "22c547ee672911a76ce644f9356bc61697404a98e9cc1b73badcab9d5c64efd7"
+    },
+    "frontend/src/pages/AccountPage.jsx": {
+      "bytes": 6716,
+      "sha256": "12998dd9f005b4ee09fac85751b894e6cc9e121151880d912fefc5c96ac4f5ba"
+    },
+    "frontend/tests/accountLifecycleUi.check.mjs": {
+      "bytes": 15318,
+      "sha256": "b83bfd30270bfa29cc3d3692a9f17c45451839680be816ca16a5e98c897eb3ef"
+    },
+    "frontend/tests/portfolioPublicUi.check.mjs": {
+      "bytes": 11296,
+      "sha256": "9f8cbfba6bf8ea1ebd9af2d830ab802dc209207970122a4577a04f8bf729b078"
+    },
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs": {
+      "bytes": 9967,
+      "sha256": "af107e51b686563ea1fa2c88dbd00f43ec71bf2041df183fc6b3fffba5e6d9b1"
+    },
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs": {
+      "bytes": 10855,
+      "sha256": "4fc4b75e574a41d5118b2acef770712c6b46d60dddb936e2f6c719ca55d28ec4"
+    },
+    "backend/features/connectcv/tests/interviewTranscript.test.js": {
+      "bytes": 7478,
+      "sha256": "4d699474208fe1901abaf1ed77007e8da1b5cd69e767744e7b007cd2763c6bb7"
+    },
+    "backend/features/connectcv/src/services/chatbotService.js": {
+      "bytes": 8917,
+      "sha256": "2ae7839251cc57d823f37a2c898ea37cd2dab5dc94e2acdc86c8dfd1d87bb2b7"
+    },
+    "backend/features/connectcv/tests/chatbotService.test.js": {
+      "bytes": 6181,
+      "sha256": "c09c1d3fa7559ccb7eaba2ce913a67baccfb1e48899d2e0c5e9e1b9338f6d746"
+    },
+    "backend/features/connectcv/tests/fixtures/chatbotTopicCases.json": {
+      "bytes": 1455,
+      "sha256": "ac2b1ee4c0f1efbc9a3d7b6e07df6c8d5729e69778799c0f81ae0b66d1880615"
+    },
+    "frontend/tests/communityConsentUi.check.mjs": {
+      "bytes": 12961,
+      "sha256": "c954e66011d16d99b5117bb12ba3ae1f1bccda0d9a4e0812b90d466dd1e993ec"
+    },
+    "frontend/tests/portfolioDeleteUi.check.mjs": {
+      "bytes": 11166,
+      "sha256": "67a91237e2f61e5c1cce32fcc01c9308071ae36b26ddb6c66326534a7c87a152"
+    },
+    "frontend/tests/signupLifecycleUi.check.mjs": {
+      "bytes": 11165,
+      "sha256": "1e91bbf9fdb793faf12e0c61e0045d89f4301bc66bb867c33b6691cbb9067208"
+    },
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js": {
+      "bytes": 4443,
+      "sha256": "ca721ffc6df91c97da3631d14f1d067767eb16566ffc6be7daac56232be7e46e"
+    },
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs": {
+      "bytes": 4614,
+      "sha256": "6d7f905aae88fe2ec7a8432b32ea29a0d0d0ec7f7bd245f319a63702ddc7a5ad"
+    }
+  },
+  "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0": {
+    "frontend/src/pages/AuthPage.jsx": {
+      "bytes": 9077,
+      "sha256": "e8767062c63aa047b3086d21e008876d23b26ffbf2fd3f66d9333adcbb78df95"
+    },
+    "frontend/src/lib/googleAuthFlow.js": {
+      "bytes": 3239,
+      "sha256": "c49f296c3c23a975be3b47176dc523040d335b64dd2530e5b7b5f249cd48cb3f"
+    },
+    "frontend/src/lib/firebase.js": {
+      "bytes": 481,
+      "sha256": "de2e9374d10e909c285504455fd8dddbc12d21f3f545e3b737934f8a355271df"
+    },
+    "frontend/src/context/AuthContext.jsx": {
+      "bytes": 561,
+      "sha256": "b3c38a4d35308070003a0e6a57d4bf7ce4568cfc51363bffbc5d673ccdd990f0"
+    },
+    "frontend/src/lib/api.js": {
+      "bytes": 756,
+      "sha256": "7849d84607c8e9b226239c1aae8aba693b9fe3a9955e6939a9a6e3143d163350"
+    },
+    "frontend/package-lock.json": {
+      "bytes": 107134,
+      "sha256": "3e6964785a3471bff005224a1f5e2dcf443eecaf05f084ce29b6aa300cd1fba7"
+    },
+    "frontend/src/pages/FeaturePage.jsx": {
+      "bytes": 2066,
+      "sha256": "6cf70dae0e767ab4878c8173967a51e03d9c7ffef559b3e4a9c9d20205754d39"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    "backend/features/connectcv/public/js/cv-photo-layout.js": {
+      "bytes": 2061,
+      "sha256": "60c6481ff78fe38465f23a52b442fe9d11db8b942af162a6fb35f542c4663c6c"
+    },
+    "backend/features/connectcv/public/js/cv-preview.js": {
+      "bytes": 1648,
+      "sha256": "2a0aa82aedda74eee364fd315fce8063368108e94add99f7100bf299c977be8e"
+    },
+    "backend/features/connectcv/src/services/jobService.js": {
+      "bytes": 2660,
+      "sha256": "2fdba9027b780f0aaed364113b8dee38f24e06ef955f282bcd9f03b8c3743fda"
+    },
+    "backend/features/connectcv/src/catalog/jobs.synthetic.json": {
+      "bytes": 240758,
+      "sha256": "885394273f29f1a900aede6befb8e3bcf9280d2735f4184fb8df286a8b97e3f2"
+    },
+    "backend/features/connectcv/package-lock.json": {
+      "bytes": 60804,
+      "sha256": "57b4eb3f751d60211447443f0a0914393f06a2b133475496e2d457afd014cf42"
+    },
+    "backend/package-lock.json": {
+      "bytes": 122664,
+      "sha256": "cf2581ad4e70e746751be53b9865bfed4fa842b6bd2066a7703d924ce8e1423e"
+    },
+    "backend/features/connectcv/public/index.html": {
+      "bytes": 361531,
+      "sha256": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc"
+    },
+    "backend/features/connectcv/public/js/profile-image.js": {
+      "bytes": 3662,
+      "sha256": "f45df49181152f256539a27e40408f400426b9b1cdae721af9b40b6c7bb4e80a"
+    },
+    "backend/features/connectcv/public/js/account-bridge.js": {
+      "bytes": 8278,
+      "sha256": "1d8e9592226702baabc10e869689ff169bd4aa90991eb9cf2386517b42f0d0da"
+    },
+    "backend/features/connectcv/public/js/profile-autosave.js": {
+      "bytes": 1750,
+      "sha256": "050651397646d006a4242e648d307dd28b05557408f32dab208df3b104dcec69"
+    },
+    "backend/src/routes/account.js": {
+      "bytes": 3733,
+      "sha256": "3cb3b9c9f31ff38fc713a14fe89a5797b02d987c026b0692d52b623c6991d9f7"
+    },
+    "backend/features/connectcv/src/routes/upload.js": {
+      "bytes": 6437,
+      "sha256": "d50a1a7298cea7244d64ae2da471b4e7334816890989bd77066e9f630dbd1c3b"
+    },
+    "backend/features/connectcv/src/routes/chatbot.js": {
+      "bytes": 1440,
+      "sha256": "32f4a9c9f6bcedd9096708d5bf94f4da1713fd98220ee7d68ac48fa31b1549a6"
+    },
+    "backend/features/connectcv/src/services/geminiService.js": {
+      "bytes": 6480,
+      "sha256": "c402dd13d9968e0bd350eb489516eaec5ce99014ccca333ed3029f79cdba1646"
+    },
+    "backend/features/connectcv/src/services/keyManager.js": {
+      "bytes": 17045,
+      "sha256": "9d82177e05abf3f3e2f0c2af23e94e6b0752a00e9e08c827d0d9942f1102d836"
+    },
+    "backend/features/connectcv/src/services/securityError.js": {
+      "bytes": 1133,
+      "sha256": "0b4a1687650430b89f2c0f457aea0f77b92d87ecb5cf3db682f8e776187924aa"
+    },
+    "backend/features/connectcv/package.json": {
+      "bytes": 1519,
+      "sha256": "e25a070261d729e1895e59beb2f6028fd358fa7ef74173c91f92c472d2820f7a"
+    },
+    ".github/workflows/ai-feature-checks.yml": {
+      "bytes": 9425,
+      "sha256": "adb511eb8ab3bb09ea6c9b6499ee0305b4e9ac9914b92bcfd28bf98cefc06079"
+    },
+    "backend/features/connectcv/tests/chatbotUi.check.cjs": {
+      "bytes": 10993,
+      "sha256": "aca0e071d8db1ffceb08bb3acf7363efbe314dbf43f994550eda165f48595119"
+    },
+    "backend/tests/chatbotHttp.test.cjs": {
+      "bytes": 9688,
+      "sha256": "ea48275cf18ad9635c0c6feea6ae0002c716a5576dbe6626f7f2bc6c73ebad7b"
+    },
+    "frontend/src/pages/PortfolioPage.jsx": {
+      "bytes": 5895,
+      "sha256": "760f103784ac7010430bff80d14febee14ea7569df56f93634e78ca85f12d1ff"
+    },
+    "frontend/tests/portfolioSaveUi.check.mjs": {
+      "bytes": 9124,
+      "sha256": "7f71a50213fe6ca95585c4e039a099ed7e3580282540e54f6c5d7c0a59d39c7a"
+    },
+    "backend/tests/portfolioAuthHttp.test.cjs": {
+      "bytes": 10640,
+      "sha256": "690d30197201246433e1a40f6f7899bd95d06e98227a1d4455b9d4f14f5db3fc"
+    },
+    "frontend/tests/authRequestUi.check.mjs": {
+      "bytes": 10848,
+      "sha256": "d37782a40876568175dbbee181bbef2d48aa1857a018ca9474479e6ba86568da"
+    },
+    "backend/features/connectcv/src/services/atsExportService.js": {
+      "bytes": 4758,
+      "sha256": "7688348e3869a690daa6c741463b248a6eee943b58dcac90e0c1d6801ac6e6b2"
+    },
+    "backend/features/connectcv/tests/atsOptionalTranslation.test.js": {
+      "bytes": 6254,
+      "sha256": "ffffe1b3231e2938d62b5bdfe2c7b653b0ea2b0b37bb4aeabe82105d25fa1086"
+    },
+    "backend/features/connectcv/tests/interviewMicUi.check.cjs": {
+      "bytes": 10496,
+      "sha256": "3c3a3eb056ce482ce23d0a72bf7bfb0b6b67513982654dc2ea3c56ec8af29a27"
+    },
+    "backend/src/services/firestoreCommunity.js": {
+      "bytes": 3470,
+      "sha256": "5b1566bfd8d62e099a380cb9b7cbef516758c45ae4fde3f5b6a951778e2e1495"
+    },
+    "backend/features/connectcv/src/services/communityStore.js": {
+      "bytes": 3268,
+      "sha256": "88f812922d903344c15cd0e92459a771122c4b22d58c976e27cc7b3eed70b46c"
+    },
+    "backend/features/connectcv/src/routes/interview.js": {
+      "bytes": 37977,
+      "sha256": "183ed95bf21a1311d0de38a2fe107d2d87a21ae63faf72b50ac45df00b1777f8"
+    },
+    "backend/src/services/communityReceipt.js": {
+      "bytes": 1998,
+      "sha256": "05b38ba7f6282c9a9632c2cf026d15b86bbc09d2c0158a1a26ec776236949c76"
+    },
+    "backend/tests/communityReceipt.test.cjs": {
+      "bytes": 7654,
+      "sha256": "e942e6d58dbc230f05957956e6054b702400b97b2be94aae7a8f66ab505edb22"
+    },
+    "backend/tests/communityHttp.test.cjs": {
+      "bytes": 10987,
+      "sha256": "e5a3a6bd46e295c1803794bfa6b6ec4512c4a42fd4e70a18e1804069c3e4196c"
+    },
+    "backend/tests/communityFaults.test.cjs": {
+      "bytes": 5626,
+      "sha256": "ab45a3a64725307d499f27099199217a726b69bf947589faba966c2273b046c6"
+    },
+    "backend/features/connectcv/tests/communityReceiptUi.check.cjs": {
+      "bytes": 8719,
+      "sha256": "8e13408f014d57a0d828d7c20939c457dcbade8568c2677d9a3684b036f6d3a2"
+    },
+    "frontend/tests/featureBridgeUi.check.mjs": {
+      "bytes": 10803,
+      "sha256": "22c547ee672911a76ce644f9356bc61697404a98e9cc1b73badcab9d5c64efd7"
+    },
+    "frontend/src/pages/AccountPage.jsx": {
+      "bytes": 6716,
+      "sha256": "12998dd9f005b4ee09fac85751b894e6cc9e121151880d912fefc5c96ac4f5ba"
+    },
+    "frontend/tests/accountLifecycleUi.check.mjs": {
+      "bytes": 15318,
+      "sha256": "b83bfd30270bfa29cc3d3692a9f17c45451839680be816ca16a5e98c897eb3ef"
+    },
+    "frontend/tests/portfolioPublicUi.check.mjs": {
+      "bytes": 11296,
+      "sha256": "9f8cbfba6bf8ea1ebd9af2d830ab802dc209207970122a4577a04f8bf729b078"
+    },
+    "backend/features/connectcv/tests/interviewVoiceUi.check.cjs": {
+      "bytes": 9967,
+      "sha256": "af107e51b686563ea1fa2c88dbd00f43ec71bf2041df183fc6b3fffba5e6d9b1"
+    },
+    "backend/features/connectcv/tests/interviewSessionUi.check.cjs": {
+      "bytes": 10855,
+      "sha256": "4fc4b75e574a41d5118b2acef770712c6b46d60dddb936e2f6c719ca55d28ec4"
+    },
+    "backend/features/connectcv/tests/interviewTranscript.test.js": {
+      "bytes": 7478,
+      "sha256": "4d699474208fe1901abaf1ed77007e8da1b5cd69e767744e7b007cd2763c6bb7"
+    },
+    "backend/features/connectcv/src/services/chatbotService.js": {
+      "bytes": 8917,
+      "sha256": "2ae7839251cc57d823f37a2c898ea37cd2dab5dc94e2acdc86c8dfd1d87bb2b7"
+    },
+    "backend/features/connectcv/tests/chatbotService.test.js": {
+      "bytes": 6181,
+      "sha256": "c09c1d3fa7559ccb7eaba2ce913a67baccfb1e48899d2e0c5e9e1b9338f6d746"
+    },
+    "backend/features/connectcv/tests/fixtures/chatbotTopicCases.json": {
+      "bytes": 1455,
+      "sha256": "ac2b1ee4c0f1efbc9a3d7b6e07df6c8d5729e69778799c0f81ae0b66d1880615"
+    },
+    "frontend/tests/communityConsentUi.check.mjs": {
+      "bytes": 12961,
+      "sha256": "c954e66011d16d99b5117bb12ba3ae1f1bccda0d9a4e0812b90d466dd1e993ec"
+    },
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js": {
+      "bytes": 4443,
+      "sha256": "ca721ffc6df91c97da3631d14f1d067767eb16566ffc6be7daac56232be7e46e"
+    },
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs": {
+      "bytes": 4614,
+      "sha256": "6d7f905aae88fe2ec7a8432b32ea29a0d0d0ec7f7bd245f319a63702ddc7a5ad"
+    }
+  }
+}

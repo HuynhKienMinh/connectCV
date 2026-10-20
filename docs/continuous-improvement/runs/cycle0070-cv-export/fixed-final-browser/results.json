@@ -1,0 +1,104 @@
+{
+  "wholeStudio": true,
+  "actualExportControllers": true,
+  "syntheticCvState": true,
+  "syntheticTransport": true,
+  "syntheticFileSave": true,
+  "realRendererVerified": false,
+  "realFirebaseVerified": false,
+  "cloudUserWrites": 0,
+  "aiCalls": 0,
+  "sourceRef": "working-tree",
+  "rows": [
+    {
+      "name": "readiness-completion-cannot-export-a-different-CV",
+      "passed": true
+    },
+    {
+      "name": "readiness-after-module-departure-cannot-export-or-print",
+      "passed": true
+    },
+    {
+      "name": "design-response-after-CV-change-cannot-save-old-file",
+      "passed": true
+    },
+    {
+      "name": "docx-response-after-CV-change-cannot-save-old-file",
+      "passed": true
+    },
+    {
+      "name": "blob-after-CV-change-cannot-create-download-URL",
+      "passed": true
+    },
+    {
+      "name": "old-PDF-error-cannot-print-new-CV",
+      "passed": true
+    },
+    {
+      "name": "duplicate-PDF-submit-sends-one-render-request",
+      "passed": true
+    },
+    {
+      "name": "pagehide-cancels-late-file-completion",
+      "passed": true
+    },
+    {
+      "name": "current-design-still-downloads-once",
+      "passed": true
+    },
+    {
+      "name": "current-docx-still-downloads-once",
+      "passed": true
+    },
+    {
+      "name": "current-design-error-retains-print-fallback",
+      "passed": true
+    },
+    {
+      "name": "current-ATS-error-does-not-print-an-unrequested-design",
+      "passed": true
+    },
+    {
+      "name": "pending-readiness-invalidated-by-profile",
+      "passed": true
+    },
+    {
+      "name": "pending-readiness-invalidated-by-html",
+      "passed": true
+    },
+    {
+      "name": "pending-readiness-invalidated-by-language",
+      "passed": true
+    },
+    {
+      "name": "pending-readiness-invalidated-by-template",
+      "passed": true
+    },
+    {
+      "name": "A-B-A-old-finally-cannot-unlock-new-export",
+      "passed": true
+    },
+    {
+      "name": "deadline-releases-lock-without-auto-print-or-retry",
+      "passed": true
+    },
+    {
+      "name": "logout-aborts-and-suppresses-old-Word-response",
+      "passed": false,
+      "error": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+      "state": {
+        "requests": [],
+        "downloads": [],
+        "prints": [],
+        "urls": [],
+        "toasts": [],
+        "deadlines": 0,
+        "aborted": []
+      }
+    },
+    {
+      "name": "current-Word-error-releases-lock-for-explicit-retry",
+      "passed": true
+    }
+  ]
+}

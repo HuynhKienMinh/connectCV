@@ -1,0 +1,17 @@
+{
+  "candidate": "1513dbdd2e970890d6bbedaa703b3a8b78d06d44",
+  "parent": "a367afb17446f42e39ea291e965f4aa35b6e2a13",
+  "review": "8d59a90712e4255be0534e0564300f627c2057a0",
+  "runtimeByteIdenticalToPriorCandidate": true,
+  "supplementOnly": [
+    "backend/features/connectcv/tests/cvPreview.check.cjs"
+  ],
+  "pathsFromMain": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs",
+    "backend/features/connectcv/tests/cvPreview.check.cjs",
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js",
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs"
+  ]
+}
