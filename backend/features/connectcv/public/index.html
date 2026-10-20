@@ -3753,7 +3753,6 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // TẢI FILE WORD (.DOCX) CHUẨN MẪU CV (ĐÚNG MÀU SẮC, ĐÚNG THEO MẪU ĐÃ CHỌN, ĐIỀN DỮ LIỆU ỨNG VIÊN)
     async function downloadCVDoc(format = 'design') {
-      if (window.connectCVServerPdf === false) format = 'ats';
       if (!latestCVData) {
         showToastWarning('Vui lòng tạo CV trước khi tải xuống.', 'Chưa có CV');
         return;
@@ -3761,6 +3760,12 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const op = beginCVExport();
       if (!op) return;
       try {
+      if (format === 'design') await refreshPdfReadinessForExport(op);
+      if (!ownsCVExport(op)) return;
+      if (format === 'design' && window.connectCVServerPdf === false) {
+        showToastWarning('Dịch vụ xuất Word chưa sẵn sàng. Chỉnh sửa vẫn ở CV hiện tại; hãy thử lại hoặc dùng In / Lưu PDF.', 'Chưa thể xuất Word');
+        return;
+      }
       const cv = latestCVData;
       const isEn = cv.language === 'en' || currentCVLanguage === 'en';
 

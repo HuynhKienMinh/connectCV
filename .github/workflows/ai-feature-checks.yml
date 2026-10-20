@@ -220,3 +220,16 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           CV_EXPORT_DOCUMENT_QA_OUTPUT: '${{ runner.temp }}/connectcv-export-document-qa'
+      - name: Verify Word recovery preserves requested design and edited content
+        run: node tests/cvWordRecoveryUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_WORD_RECOVERY_QA_OUTPUT: '${{ runner.temp }}/connectcv-word-recovery-qa'
+      - name: Verify local edited DOCX design and structured ATS binary contracts
+        run: node tests/cvEditedBinary.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          NODE_ENV: production
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          CV_EDITED_BINARY_QA_OUTPUT: '${{ runner.temp }}/connectcv-edited-binary-qa'
