@@ -1,6 +1,15 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const {validateChat,chatError,guides,localReply,buildPrompt,aiReply}=require('../src/services/chatbotService');
 const {createFeatureSecurity}=require('../src/middlewares/featureSecurity');
+const topicCases=require('./fixtures/chatbotTopicCases.json');
+
+test('career vocabulary does not masquerade as microphone, export, credits or ATS product help',()=>{
+ for(const message of topicCases.career)assert.equal(localReply(message,{}),null,message);
+});
+test('whole-word product requests still use application-owned guidance',()=>{
+ const {localTopic}=require('../src/services/chatbotService');
+ for(const row of topicCases.guides){assert.equal(localTopic(row.message),row.topic,row.message);assert.equal(localReply(row.message,{}).responseKind,'product-guide');}
+});
 test('actual chatbot reset escapes the display name and failed requests restore only unchanged input',()=>{
  const fs=require('fs'),path=require('path'),vm=require('vm');
  const html=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8');
