@@ -1,0 +1,20 @@
+{
+  "path": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\cycle0066",
+  "count": 2,
+  "files": [
+    {
+      "file": "candidate.index",
+      "bytes": 446526,
+      "sha256": "8ce59c620beb29be868141448ecc942a076df7acebee5d92bdebf5b96a33a15e"
+    },
+    {
+      "file": "ci.py",
+      "bytes": 1755,
+      "sha256": "32e93a95d03900c7af99112108e28ac792e62de39905b5ed109692710baccbaa"
+    }
+  ],
+  "bytes": 448281,
+  "deleted": true,
+  "deletedAt": "2026-10-20T00:31:05.182915+00:00",
+  "remainingOwnStageBytes": 0
+}

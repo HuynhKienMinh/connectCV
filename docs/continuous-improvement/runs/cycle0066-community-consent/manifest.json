@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "file": "candidate-ci.json",
+      "bytes": 8081,
+      "sha256": "60d4cac4bf99b4b14cd2802bcaefd2b4457797aff1d996ce514c53dde700e445"
+    },
+    {
+      "file": "candidate.json",
+      "bytes": 576,
+      "sha256": "1ed0fcc6fd9ba0548f21239dbd1ab5f1643183fe470dd8b36743d252de021c84"
+    },
+    {
+      "file": "main-baseline/consent-390.png",
+      "bytes": 51436,
+      "sha256": "f2fca885da176d3a8d44917bb6d6e3a06424ba799a0951d1bf139f417cfe3c4d"
+    },
+    {
+      "file": "main-baseline/fixture-icons.json",
+      "bytes": 1582,
+      "sha256": "9b755489cd25b8a28745d67dea4bd8b3bae1cbe014e855efa98fa415ff70a8c2"
+    },
+    {
+      "file": "main-baseline/fixture-initial.json",
+      "bytes": 1809,
+      "sha256": "fa5feb82f12474e27789b276602502f9a6d8961f791c12f4fd8b77c23c1f0dfd"
+    },
+    {
+      "file": "main-baseline/results.json",
+      "bytes": 1541,
+      "sha256": "b6ef0faf341dc5c3d13785770e2e10a779e9335f514151d7dc14072134f10ee8"
+    },
+    {
+      "file": "main-ci.json",
+      "bytes": 8040,
+      "sha256": "a320c828ab080e7dc4ba686030ca116583b97c7b3692003e63e9015b03b3ff76"
+    },
+    {
+      "file": "review-ci.json",
+      "bytes": 9734,
+      "sha256": "8aa3ab459f0699f8fdc95a48f9c31043b97691789904052c10b1559ccefec0a1"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 765,
+      "sha256": "9f85ba476e860f84e25cc8c05f1341f99309de92e87a91800d2afe2ee48f6a72"
+    },
+    {
+      "file": "temporary-cleanup.json",
+      "bytes": 581,
+      "sha256": "85f3c9821876eb02e9d41af517d57b80d8493cfda02ea845e8b2d79b4fe2d2f7"
+    }
+  ]
+}
