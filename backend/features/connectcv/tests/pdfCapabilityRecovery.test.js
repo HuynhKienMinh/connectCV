@@ -5,7 +5,7 @@ const start=html.includes('    let cvExportOperation')?html.indexOf('    let cvE
 const script=html.slice(start,html.indexOf('    function printCV()',start));
 function fixture(health){
  const calls=[],timers=new Map();let downloads=0,prints=0,nextTimer=0;
- const scope={latestCVData:{sourceProfile:{}},latestRenderedHtml:'',currentSelectedTemplateId:'default_v2',currentAppliedTemplate:null,currentCVLanguage:'vi',AbortController,console:{error:()=>{}},showToastWarning:()=>{},showToastSuccess:()=>{},printCV:()=>prints++,
+ const scope={getCurrentCVHtml:()=>'<html>Synthetic CV snapshot</html>',latestCVData:{sourceProfile:{}},latestRenderedHtml:'',currentSelectedTemplateId:'default_v2',currentAppliedTemplate:null,currentCVLanguage:'vi',AbortController,console:{error:()=>{}},showToastWarning:()=>{},showToastSuccess:()=>{},printCV:()=>prints++,
   setTimeout:(fn,ms)=>{const id=++nextTimer;timers.set(id,{fn,ms});return id;},clearTimeout:id=>timers.delete(id),
   window:{addEventListener:()=>{},connectCVServerPdf:false,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL:()=>{}}},
   document:{getElementById:id=>id==='cv-profile'?{value:'{"fullName":"Synthetic Export"}'}:id==='cv-rendered-iframe'?{contentDocument:{documentElement:{cloneNode:()=>({querySelector:()=>null,outerHTML:'<html><body><div class="cv-page-container">Synthetic</div></body></html>'})}}}:null,

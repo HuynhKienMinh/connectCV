@@ -3303,6 +3303,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     }
 
     function closeCVFullscreen() {
+      const modal = document.getElementById('modal-cv-fullscreen');
+      if (!modal || modal.classList.contains('hidden')) return;
       const edited = getCurrentCVHtml(document.getElementById('iframe-cv-fullscreen'));
       if (edited) {
         latestRenderedHtml = edited;
@@ -3311,13 +3313,17 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         if (cvLanguageCache[currentCVLanguage]) cvLanguageCache[currentCVLanguage].renderedHtml = edited;
         if (batchCVResults[activeBatchIndex]) batchCVResults[activeBatchIndex].renderedHtml = edited;
       }
-      const modal = document.getElementById('modal-cv-fullscreen');
-      if (modal) modal.classList.add('hidden');
+      modal.classList.add('hidden');
     }
 
     // Render giao diện kết quả CV trực quan và phân tích ATS
     function renderCVResult(cv, renderedHtml) {
       invalidateCVExport();
+      // A new result must never export the previous fullscreen document.
+      const fullscreen = document.getElementById('modal-cv-fullscreen');
+      if (fullscreen) fullscreen.classList.add('hidden');
+      const fullscreenFrame = document.getElementById('iframe-cv-fullscreen');
+      if (fullscreenFrame) fullscreenFrame.srcdoc = '';
       const _es = document.getElementById('cv-empty-state');
       if (_es) _es.style.display = 'none';
       const emptyState = document.getElementById('cv-empty-state');
@@ -3521,6 +3527,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       const clone = doc.documentElement.cloneNode(true);
       clone.querySelectorAll('.cv-toolbar, .cv-photo-editor').forEach(el=>el.remove());
       window.connectCVPreview?.clean(clone);
+      if (clone.getAttribute('style') === '') clone.removeAttribute('style');
       return '<!DOCTYPE html>' + clone.outerHTML;
     }
 
@@ -3553,7 +3560,8 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       return cvExportOperation === op && latestCVData === op.cv
         && latestRenderedHtml === op.html && currentSelectedTemplateId === op.template
         && currentAppliedTemplate === op.appliedTemplate && currentCVLanguage === op.language
-        && (document.getElementById('cv-profile')?.value || '') === op.profile;
+        && (document.getElementById('cv-profile')?.value || '') === op.profile
+        && getCurrentCVHtml() === op.documentHtml;
     }
     function invalidateCVExport() {
       const previous = cvExportOperation;
@@ -3563,9 +3571,14 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     function beginCVExport() {
       if (cvExportOperation && ownsCVExport(cvExportOperation)) return null;
       invalidateCVExport();
+      const documentHtml = getCurrentCVHtml();
+      if (!documentHtml) {
+        showToastWarning('Nội dung CV đang tải. Vui lòng đợi rồi tải lại.', 'Chưa có nội dung CV');
+        return null;
+      }
       const op = {cv: latestCVData, html: latestRenderedHtml, template: currentSelectedTemplateId,
         appliedTemplate: currentAppliedTemplate, language: currentCVLanguage,
-        profile: document.getElementById('cv-profile')?.value || '', controller: new AbortController()};
+        profile: document.getElementById('cv-profile')?.value || '', documentHtml, controller: new AbortController()};
       cvExportOperation = op;
       op.deadline = setTimeout(() => {
         const notify = ownsCVExport(op);

@@ -11,7 +11,8 @@ function controller(html){
  const helper='    async function refreshPdfReadinessForExport(',download='    async function downloadCVPDF(';
  const start=html.includes('    let cvExportOperation')?html.indexOf('    let cvExportOperation'):html.includes(helper)?html.indexOf(helper):html.indexOf(download),end=html.indexOf('    function printCV()',start);
  if(start<0||end<0)throw Error('Actual export controller not found');
- return html.slice(start,end);
+ const documentStart=html.indexOf('    function getCurrentCVHtml('),documentEnd=html.indexOf("    window.addEventListener('message', event => {",documentStart);
+ return (documentStart<0?'':html.slice(documentStart,documentEnd))+'\n'+html.slice(start,end);
 }
 function fixture(route){return `<!doctype html><html><head><meta charset="utf-8"><title>ConnectCV local PDF recovery fixture</title></head><body>
  <h1>Local synthetic PDF recovery — ${route}</h1>
