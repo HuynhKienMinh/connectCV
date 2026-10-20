@@ -208,3 +208,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           SIGNUP_LIFECYCLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-signup-lifecycle-qa'
+      - name: Verify actual community cards hand selected questions to live interview
+        run: node tests/communityPracticeUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          COMMUNITY_PRACTICE_QA_OUTPUT: '${{ runner.temp }}/connectcv-community-practice-qa'
