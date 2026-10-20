@@ -8,9 +8,9 @@ not ok 1 - FAQ accurately discloses absence of dedicated proposal form in actual
   failureType: 'testCodeFailure'
   error: |-
     The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
-    
+
     'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -32,9 +32,9 @@ not ok 2 - capability help remains owned and honest: AI có hỗ trợ viết th
   failureType: 'testCodeFailure'
   error: |-
     The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
-    
+
     'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -56,9 +56,9 @@ not ok 3 - capability help remains owned and honest: Can ConnectCV write Upwork 
   failureType: 'testCodeFailure'
   error: |-
     The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
-    
+
     'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -80,9 +80,9 @@ not ok 4 - capability help remains owned and honest: Proposal Upwork
   failureType: 'testCodeFailure'
   error: |-
     The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
-    
+
     'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -104,9 +104,9 @@ not ok 5 - capability help remains owned and honest: Chatbot hỗ trợ Proposal
   failureType: 'testCodeFailure'
   error: |-
     The input did not match the regular expression /chưa có màn hình.*[Pp]roposal/. Input:
-    
+
     'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
@@ -129,10 +129,10 @@ not ok 6 - career request reaches mocked advice without invented facts: RETAIL_2
   error: |-
     Expected values to be strictly equal:
     + actual - expected
-    
+
     + 'product-guide'
     - 'ai-advice'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 'ai-advice'
@@ -155,10 +155,10 @@ not ok 7 - career request reaches mocked advice without invented facts: AUDIT_2.
   error: |-
     Expected values to be strictly equal:
     + actual - expected
-    
+
     + 'product-guide'
     - 'ai-advice'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 'ai-advice'
@@ -181,10 +181,10 @@ not ok 8 - career request reaches mocked advice without invented facts: WEEKLY.
   error: |-
     Expected values to be strictly equal:
     + actual - expected
-    
+
     + 'product-guide'
     - 'ai-advice'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 'ai-advice'
@@ -207,10 +207,10 @@ not ok 9 - career request reaches mocked advice without invented facts: PROJECT.
   error: |-
     Expected values to be strictly equal:
     + actual - expected
-    
+
     + 'product-guide'
     - 'ai-advice'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 'ai-advice'
@@ -233,10 +233,10 @@ not ok 10 - career request reaches mocked advice without invented facts: bare re
   error: |-
     Expected values to be strictly equal:
     + actual - expected
-    
+
     + 'product-guide'
     - 'ai-advice'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 'ai-advice'
