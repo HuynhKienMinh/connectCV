@@ -142,3 +142,8 @@ Invalidate trước abort/pause/speech cancel; completion sau fetch/blob/play v�
 ## D031 —20/10/2026: session/request ownership trước auto-send hoặc tạo voice mới
 
 TTS guard không đủ nếu completion upstream tạo operation mới. Phiên dùng scope object, reply/transcribe có object riêng; đổi scope trước abort tại End/new session/practice/departure. Kiểm sau JSON và trước side effect; FileReader + draft snapshot/input cancellation bảo toàn nháp mới. New capture/typed-send/stop hủy transcription cũ; finally không clear operation mới. Local fake transport không tuân abort vẫn phải giữ guard. Không hứa abort đã hủy provider/refund quota, actualactor hay summary-modal lifecycle. Sau review CI tạo isolated runtime63/64 từ main, workflow từ main cộng đúng guards, rồi fresh exact privateDrive backup/restore trước deployment; không deploy aggregate review.
+
+
+## D032 —20/10/2026: FAQ token phải phân biệt từ nghề nghiệp
+
+CHAT006 cho thấy mic ở academic/economic, micro ở microbiology/microservices, print ở sprint/blueprint, credit ở accreditation, ats ở chats/stats chiếm sai route. Whole-word English product tokens và domain-context credit guard giữ11career requests ở provider. Các mẫu credit finance/education mới chỉ heuristic, chưa universal intent/language classifier; context.targetRole không được khiến câu hỏi Credits rõ ràng đổi đường. Giữ deterministic FAQ/capability/security precedence, auth/quota/throttle và generic errors. Chỉ claims routing từ local fake-provider/actualmount và Linux CI, không khẳng định semanticAI hoặc hiring outcomes. Main candidate phải giữ đúng4file và workflow hiện hữu, không đưa PDF/moderation/DB experiments vào deployment.

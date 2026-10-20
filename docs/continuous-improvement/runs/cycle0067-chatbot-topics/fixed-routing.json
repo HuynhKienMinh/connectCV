@@ -1,0 +1,115 @@
+{
+  "sourceRef": "f517c853ed640ad5355012d66b512722c6d646f4",
+  "candidate": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "career": [
+    {
+      "message": "How should I present my academic projects for a first analyst role?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How do I describe economic research experience when changing careers?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How should I describe a microbiology placement on my CV?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How can I explain microservices experience without exaggerating?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How do I describe sprint planning experience on my resume?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How should I present a blueprint project in a design portfolio?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How should I describe accreditation work for a training role?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How should I describe my credit risk analyst experience?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How do I explain university course credits when changing careers?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How do I describe customer chats on my retail CV?",
+      "actualTopic": null,
+      "actualKind": null
+    },
+    {
+      "message": "How should I describe store sales stats in an interview?",
+      "actualTopic": null,
+      "actualKind": null
+    }
+  ],
+  "guides": [
+    {
+      "message": "Tải PDF CV ở đâu?",
+      "topic": "cv-export",
+      "actualTopic": "cv-export"
+    },
+    {
+      "message": "Print CV",
+      "topic": "cv-export",
+      "actualTopic": "cv-export"
+    },
+    {
+      "message": "PDF.js",
+      "topic": "cv-export",
+      "actualTopic": "cv-export"
+    },
+    {
+      "message": "Micro tôi lỗi",
+      "topic": "interview-mic",
+      "actualTopic": "interview-mic"
+    },
+    {
+      "message": "How do I fix my microphone?",
+      "topic": "interview-mic",
+      "actualTopic": "interview-mic"
+    },
+    {
+      "message": "My mic is not working",
+      "topic": "interview-mic",
+      "actualTopic": "interview-mic"
+    },
+    {
+      "message": "Nhận Credits thế nào?",
+      "topic": "community-privacy",
+      "actualTopic": "community-privacy"
+    },
+    {
+      "message": "Why are my Credits pending?",
+      "topic": "community-privacy",
+      "actualTopic": "community-privacy"
+    },
+    {
+      "message": "Chia sẻ ẩn danh",
+      "topic": "community-privacy",
+      "actualTopic": "community-privacy"
+    },
+    {
+      "message": "ATS",
+      "topic": "cv-keywords",
+      "actualTopic": "cv-keywords"
+    }
+  ]
+}

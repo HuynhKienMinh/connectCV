@@ -1,0 +1,21 @@
+{
+  "base": "3aa1b55a98d0101fa648fc3070c46ac15d84c4a4",
+  "source": "f517c853ed640ad5355012d66b512722c6d646f4",
+  "candidate": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "branch": "improvement/chatbot-topic-release-20261020",
+  "paths": [
+    "backend/features/connectcv/src/services/chatbotService.js",
+    "backend/features/connectcv/tests/chatbotService.test.js",
+    "backend/features/connectcv/tests/fixtures/chatbotTopicCases.json",
+    "backend/tests/chatbotHttp.test.cjs"
+  ],
+  "workflowUnchanged": true,
+  "databaseSchemaChanged": false,
+  "frontendChanged": false,
+  "fileSha256": {
+    "backend/features/connectcv/src/services/chatbotService.js": "2ae7839251cc57d823f37a2c898ea37cd2dab5dc94e2acdc86c8dfd1d87bb2b7",
+    "backend/features/connectcv/tests/chatbotService.test.js": "c09c1d3fa7559ccb7eaba2ce913a67baccfb1e48899d2e0c5e9e1b9338f6d746",
+    "backend/features/connectcv/tests/fixtures/chatbotTopicCases.json": "ac2b1ee4c0f1efbc9a3d7b6e07df6c8d5729e69778799c0f81ae0b66d1880615",
+    "backend/tests/chatbotHttp.test.cjs": "ea48275cf18ad9635c0c6feea6ae0002c716a5576dbe6626f7f2bc6c73ebad7b"
+  }
+}

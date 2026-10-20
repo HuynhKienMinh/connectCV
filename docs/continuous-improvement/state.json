@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 66,
   "lastRun": "runs/2026-10-20-cycle-0066.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "COMMUNITY_CONSENT_LOCAL_LINUX_VERIFIED_TEST_ONLY",
+  "activeRun": "runs/2026-10-20-cycle-0067.md",
+  "activeIssue": "CHAT006",
+  "issueState": "CHATBOT_TOPIC_BOUNDARY_LOCAL_VERIFIED_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,7 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Next rotation chatbot: read existing CHAT001/CHAT003 and12browser/6HTTP cases first, then select a genuinely unverified customer scenario for non-IT/career-change guidance, local fake-provider/error recovery or privacy. Do not repeat Clear/Logout/oldresponse checks only to count cycles; no live AI/cloud writes without dedicated synthetic account. Keep actual Firebase/Google/sandbox.",
+    "Continue CHAT006: scoped topic-boundary runtime fix and 11 career/10 explicit product fixtures pass16local service+actual HTTP tests. Push source/review CI, build isolated candidate from main3aa1b55 (only service, two tests, shared fixture; existing workflow already runs both); verify candidate CI then fresh exact privateDrive code/build/restore baseline before main/deploy. No real AI/profile/public writes; commercial gates remain open.",
     "Cycle66 community consent10new actualReact+wholeStudio+tokenbridge cases PASS; review8e99fef CI39347220692, isolated/main3aa1b55 CI39347261028/39347713425 SUCCESS including newLinuxstep. Main change only2test/workflowfiles, no runtimefinding/deployment. Physical star pointer/CDNfonts, realFirebase/Firestore actors/publicpublication and moderation remain unverified/deferred; SOCIAL001/OPS002 needs real encryptedDBbackup/restore/keycustody.",
     "Live baseline from65 remains BE7c6c0c7/dep-dbbav649v7es73eie2n0 and FE1bc/Hosting89f; no public smoke66. Drivecatalog65 VERIFIED20bundle/restore/FEZIP, no new bundle/build/clone; own448281byte temporary index/helper stage deleted. Next deployment needs fresh exact baseline; codebackup is not DBbackup. INT005 realdevice/provider/summary lifecycle and CV002 checkpoint62/P1 remain open; AI0."
   ],
@@ -123,7 +123,7 @@
     "reviewCommit": "c75845f8bcd1080cc16cecf70d2b7db0ae68f05e",
     "status": "INTERVIEW_LIFECYCLE_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "Next rotation chatbot: read existing CHAT001/CHAT003 and12browser/6HTTP cases first, then select a genuinely unverified customer scenario for non-IT/career-change guidance, local fake-provider/error recovery or privacy. Do not repeat Clear/Logout/oldresponse checks only to count cycles; no live AI/cloud writes without dedicated synthetic account. Keep actual Firebase/Google/sandbox.",
+    "nextAction": "Continue CHAT006: scoped topic-boundary runtime fix and 11 career/10 explicit product fixtures pass16local service+actual HTTP tests. Push source/review CI, build isolated candidate from main3aa1b55 (only service, two tests, shared fixture; existing workflow already runs both); verify candidate CI then fresh exact privateDrive code/build/restore baseline before main/deploy. No real AI/profile/public writes; commercial gates remain open.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39303385063",
@@ -145,7 +145,7 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347220692",
     "testOnlyStatus": "REVIEW_ISOLATED_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347713425",
-    "currentCycleRuntimeChanged": false,
+    "currentCycleRuntimeChanged": true,
     "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
@@ -317,7 +317,14 @@
     "pendingCommunityConsentReviewCiPassed": true,
     "pendingCommunityConsentCandidateCiPassed": true,
     "pendingCommunityConsentMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347713425",
-    "pendingCommunityConsentMainCiPassed": true
+    "pendingCommunityConsentMainCiPassed": true,
+    "pendingChatbotTopicReviewCommit": "f517c853ed640ad5355012d66b512722c6d646f4",
+    "pendingChatbotTopicCandidateCommit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+    "pendingChatbotTopicBranch": "improvement/chatbot-topic-release-20261020",
+    "pendingChatbotTopicReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348876975",
+    "pendingChatbotTopicCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348951592",
+    "pendingChatbotTopicStatus": "REVIEW_CI_SUCCESS_CANDIDATE_CI_PENDING_LOCAL16PASS_NO_DEPLOY",
+    "pendingChatbotTopicReviewCiPassed": true
   },
   "blockingDependency": null,
   "dataBackup": {

@@ -1,0 +1,275 @@
+{
+  "checkedAt": "2026-10-20T00:42:09.003290+00:00",
+  "headSha": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+  "runs": [
+    {
+      "id": 39348951592,
+      "head_sha": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
+      "head_branch": "improvement/chatbot-topic-release-20261020",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39348951592",
+      "jobs": [
+        {
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci --omit=dev",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm run build",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --test tests/authFlow.test.js tests/googleAuthFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityReceipt.test.cjs tests/communityHttp.test.cjs tests/chatbotHttp.test.cjs tests/portfolio.test.cjs tests/portfolioAuthHttp.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm test",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm audit --audit-level=moderate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm audit --audit-level=moderate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm audit --audit-level=moderate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "name": "pdf-renderer",
+          "status": "in_progress",
+          "conclusion": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci --omit=dev",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci --omit=dev",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned Chromium for sandboxed PDF verification",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify production sandbox, isolated resources and PDF text",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify mobile Google login guards and recovery with synthetic SDK",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify email/reset route lifecycle, late results and duplicate submission",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify AccountPage load, version conflicts and actor operation ownership",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify React iframe token boundaries, account changes and obsolete document requests",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify readiness recovery after browser re-creation",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install independent PDF text verifier",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare native font geometry, crop and pagination",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify exact Vietnamese words with independent parser",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify native role fields and long-title wrapping",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify source facts in all eight role-field PDFs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify responsive preview and edited photo round trip",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify canonical photo layout in sandboxed PDF exports",
+              "status": "in_progress",
+              "conclusion": null
+            },
+            {
+              "name": "Verify synthetic matching cards and selection for ten industries",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify large portrait saving, retained drafts and profile conflicts",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify chatbot clear, logout, late responses and responsive browser lifecycle",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify portfolio saves preserve newer drafts and ignore obsolete account operations",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify actual public portfolio routes, visitor controls and transport recovery",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify interview microphone cancellation, device loss and text fallback",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify community receipt retry, authoritative balance and retained newer drafts",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify interview voice cancellation, late playback and delayed microphone resume",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify interview session ownership across transcription, replies and departure",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Verify community public consent across edits, actor changes and token wait",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "pending",
+              "conclusion": null
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "pending",
+              "conclusion": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

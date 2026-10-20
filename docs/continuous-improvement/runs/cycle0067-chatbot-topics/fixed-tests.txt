@@ -1,0 +1,24 @@
+✔ career vocabulary does not masquerade as microphone, export, credits or ATS product help (1.5296ms)
+✔ whole-word product requests still use application-owned guidance (0.3898ms)
+✔ actual chatbot reset escapes the display name and failed requests restore only unchanged input (3.2494ms)
+✔ product guide does not promise ATS acceptance, hands-free support or ready PDF without evidence (0.1892ms)
+✔ short questions ask for direction; natural product variants use owned facts and do not copy injections (0.7611ms)
+✔ chat context is allowlisted; nested legacy contact fields never enter the provider prompt (1.6767ms)
+✔ invalid messages/history/types get actionable safe errors; AI output shape is controlled (2.0374ms)
+✔ invalid or deterministic guidance never consumes AI quota, but career advice and rate limits still do (2.7404ms)
+✔ career terms reach the provider through the actual mount instead of unrelated local FAQs (206.6001ms)
+✔ explicit product help remains provider-free even with a credit analyst target role (20.0521ms)
+✔ actual mount rejects unauthenticated, forged and unverified chat before provider/budget; invalid body is safe (14.9159ms)
+✔ owned product guidance follows actual readiness/credits facts and ignores poisoned history without AI quota (12.9423ms)
+✔ career advice uses verified actor budget, projects legacy PII out and keeps history as untrusted data (5.6608ms)
+✔ provider failure is single route attempt with generic503 and no private provider body in route logs (4.9002ms)
+✔ budget refusal blocks provider and does not echo private error details (4.7817ms)
+✔ deterministic product replies retain action throttle across route variants without consuming AI budget (18.2422ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 452.2532

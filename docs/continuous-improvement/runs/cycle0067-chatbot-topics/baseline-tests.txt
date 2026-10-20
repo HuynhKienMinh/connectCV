@@ -1,0 +1,67 @@
+✖ career vocabulary does not masquerade as microphone, export, credits or ATS product help (2.1446ms)
+✔ whole-word product requests still use application-owned guidance (0.604ms)
+✖ career terms reach the provider through the actual mount instead of unrelated local FAQs (197.3189ms)
+✔ explicit product help remains provider-free even with a credit analyst target role (34.2684ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 403.7129
+
+✖ failing tests:
+
+test at backend\features\connectcv\tests\chatbotService.test.js:6:1
+✖ career vocabulary does not masquerade as microphone, export, credits or ATS product help (2.1446ms)
+  AssertionError [ERR_ASSERTION]: How should I present my academic projects for a first analyst role?
+  + actual - expected
+  
+  + {
+  +   knowledgeSources: [
+  +     'interview-mic'
+  +   ],
+  +   relevantFeature: 'interview',
+  +   reply: 'Trong Phỏng vấn, bạn có thể luyện bằng văn bản và chấm câu trả lời theo STAR. Phỏng vấn giọng nói cần trình duyệt hỗ trợ, quyền micro và thiết bị hoạt động; không bảo đảm rảnh tay trong mọi môi trường. Nếu micro lỗi, chuyển sang nhập câu trả lời. Góp ý AI là gợi ý luyện tập, không phải kết luận tuyển dụng.',
+  +   responseKind: 'product-guide',
+  +   suggestedQuestions: [
+  +     'Đối chiếu CV với JD như thế nào?',
+  +     'Làm sao tải PDF và chỉnh ảnh CV?',
+  +     'Chia sẻ ẩn danh và nhận Credits thế nào?'
+  +   ]
+  + }
+  - null
+  
+      at TestContext.<anonymous> (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\features\connectcv\tests\chatbotService.test.js:7:48)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1103:25)
+      at Test.start (node:internal/test_runner/test:1000:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { reply: 'Trong Phỏng vấn, bạn có thể luyện bằng văn bản và chấm câu trả lời theo STAR. Phỏng vấn giọng nói cần trình duyệt hỗ trợ, quyền micro và thiết bị hoạt động; không bảo đảm rảnh tay trong mọi môi trường. Nếu micro lỗi, chuyển sang nhập câu trả lời. Góp ý AI là gợi ý luyện tập, không phải kết luận tuyển dụng.', suggestedQuestions: [ 'Đối chiếu CV với JD như thế nào?', 'Làm sao tải PDF và chỉnh ảnh CV?', 'Chia sẻ ẩn danh và nhận Credits thế nào?' ], relevantFeature: 'interview', responseKind: 'product-guide', knowledgeSources: [ 'interview-mic' ] },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at backend\tests\chatbotHttp.test.cjs:30:1
+✖ career terms reach the provider through the actual mount instead of unrelated local FAQs (197.3189ms)
+  AssertionError [ERR_ASSERTION]: How should I present my academic projects for a first analyst role?
+  + actual - expected
+  
+  + 'product-guide'
+  - 'ai-advice'
+  
+      at TestContext.<anonymous> (C:\Users\huynh\Documents\Codex\2026-10-04\new-chat\work\connectcv-independent\backend\tests\chatbotHttp.test.cjs:32:160)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1110:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'product-guide',
+    expected: 'ai-advice',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,73 @@
+{
+  "sourceRef": "3aa1b55a98d0101fa648fc3070c46ac15d84c4a4",
+  "realAiCalls": 0,
+  "cloudWrites": 0,
+  "cases": [
+    {
+      "message": "How should I present my academic projects for a first analyst role?",
+      "expected": "provider-career-advice",
+      "actualTopic": "interview-mic",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How do I describe economic research experience when changing careers?",
+      "expected": "provider-career-advice",
+      "actualTopic": "interview-mic",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How should I describe a microbiology placement on my CV?",
+      "expected": "provider-career-advice",
+      "actualTopic": "interview-mic",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How can I explain microservices experience without exaggerating?",
+      "expected": "provider-career-advice",
+      "actualTopic": "interview-mic",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How do I describe sprint planning experience on my resume?",
+      "expected": "provider-career-advice",
+      "actualTopic": "cv-export",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How should I present a blueprint project in a design portfolio?",
+      "expected": "provider-career-advice",
+      "actualTopic": "cv-export",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How should I describe accreditation work for a training role?",
+      "expected": "provider-career-advice",
+      "actualTopic": "community-privacy",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How should I describe my credit risk analyst experience?",
+      "expected": "provider-career-advice",
+      "actualTopic": "community-privacy",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How do I explain university course credits when changing careers?",
+      "expected": "provider-career-advice",
+      "actualTopic": "community-privacy",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How do I describe customer chats on my retail CV?",
+      "expected": "provider-career-advice",
+      "actualTopic": "cv-keywords",
+      "actualKind": "product-guide"
+    },
+    {
+      "message": "How should I describe store sales stats in an interview?",
+      "expected": "provider-career-advice",
+      "actualTopic": "cv-keywords",
+      "actualKind": "product-guide"
+    }
+  ]
+}
