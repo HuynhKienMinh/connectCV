@@ -18,7 +18,7 @@ function guides({pdfReady=false,transactionalCredits=false}={}){
   {id:'cv-export',category:'Xuất CV',question:'Làm sao tải PDF và chỉnh ảnh CV?',feature:'cv',answer:(pdfReady?'Renderer PDF phía server đang sẵn sàng; chọn Download PDF trong kết quả.':'PDF phía server hiện chưa sẵn sàng. Trong kết quả CV, dùng Print / Vector PDF rồi chọn Save as PDF trong trình duyệt.')+' Chỉnh ảnh/text trong bản xem trước trước khi xuất; file PDF đã tải là tài liệu tĩnh. Kiểm tra font, nội dung và ngắt trang trước khi gửi.'},
   {id:'interview-mic',category:'Phỏng vấn',question:'Micro lỗi thì luyện phỏng vấn thế nào?',feature:'interview',answer:'Trong Phỏng vấn, bạn có thể luyện bằng văn bản và chấm câu trả lời theo STAR. Phỏng vấn giọng nói cần trình duyệt hỗ trợ, quyền micro và thiết bị hoạt động; không bảo đảm rảnh tay trong mọi môi trường. Nếu micro lỗi, chuyển sang nhập câu trả lời. Góp ý AI là gợi ý luyện tập, không phải kết luận tuyển dụng.'},
   {id:'community-privacy',category:'Cộng đồng & Credits',question:'Chia sẻ ẩn danh và nhận Credits thế nào?',feature:'debrief',answer:'Trong Cộng đồng, nhập kinh nghiệm phỏng vấn thật, xem trước và xác nhận đăng công khai. Ẩn danh chỉ giấu tên/avatar; nội dung vẫn có thể nhận diện bạn. Bỏ email, số điện thoại, thông tin người khác và bí mật công ty. Mỗi tài khoản chia sẻ tối đa một bài mỗi 6 giờ; bài trùng không nhận thêm thưởng. '+(transactionalCredits?'Bài hợp lệ được cộng 5 Credits qua giao dịch tài khoản; xem số dư sau khi thành công.':'Thưởng 5 Credits hiện được ghi pending; chưa cộng vào số dư cho đến khi kho credits xác nhận.')},
-  {id:'proposal-source',category:'Freelance',question:'Viết Proposal Upwork / Fiverr thế nào?',feature:'proposal',answer:'Trong Phỏng vấn, mở Viết Proposal, nhập yêu cầu dự án và kinh nghiệm thật của bạn. AI gợi ý cách trình bày; hãy kiểm tra kỹ trước khi gửi. Không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'},
+  {id:'proposal-source',category:'Freelance',question:'Chatbot hỗ trợ Proposal Upwork / Fiverr thế nào?',feature:'general',answer:'Ứng dụng hiện chưa có màn hình tạo Proposal riêng. Bạn có thể yêu cầu chatbot viết hoặc góp ý bản nháp, kèm yêu cầu dự án và kinh nghiệm thật của bạn. Gợi ý AI cần được kiểm tra trước khi gửi; không biến ví dụ giả định thành dự án, kỹ năng hay thành tích đã có. Chatbot không tự gửi proposal hoặc cam kết với khách hàng.'},
   {id:'account-access',category:'Tài khoản',question:'Đăng nhập hoặc quên mật khẩu ở đâu?',feature:'general',answer:'Dùng Đăng nhập hoặc Tiếp tục với Google trên website. Nếu dùng email/mật khẩu, chọn Quên mật khẩu để nhận hướng dẫn. Không gửi mật khẩu, mã xác thực hay API key trong chat. Chatbot không xem mật khẩu, sửa tài khoản hoặc truy cập hồ sơ của người khác.'}
  ];
 }
@@ -30,7 +30,12 @@ function localTopic(message){
  const careerCredit=/\b(?:risk|analyst|loan|lending|card|bank|banking|union|academic|course|university|college|degree|school)\b/.test(t);
  if(/chia se|an danh|cong dong/.test(t)||(/\bcredits?\b/.test(t)&&!careerCredit))return 'community-privacy';
  if(/\b(?:micro|mics?|microphones?)\b|gemini live|live studio|giong noi|phong van.*(hoat dong|su dung)/.test(t))return 'interview-mic';
- if(/proposal|upwork|fiverr/.test(t))return 'proposal-source';
+ if(/\b(?:proposals?|upwork|fiverr)\b/.test(t)){
+  const capability=/(?:connectcv|ung dung|tinh nang|chatbot|ai).{0,35}(?:ho tro|co the|lam duoc)|\b(?:can|does) (?:connectcv|this app|the app|ai)\b|\b(?:where|screen|menu|feature)\b|o dau|trong (?:connectcv|ung dung)|\b(?:in|using|with) (?:connectcv|this app|the app)\b/.test(t);
+  const draftTask=/\b(?:viet|soan|sua|gop y|danh gia|write|draft|rewrite|review|improve|edit|polish|tailor|compose)\b/.test(t);
+  // A draft/review request is career advice; capability help uses owned facts.
+  return draftTask&&!capability?null:'proposal-source';
+ }
  if(/dang nhap|mat khau|google.*(login|sign|tai khoan)|login/.test(t))return 'account-access';
  if(/\bats\b|doi chieu.*jd/.test(t))return 'cv-keywords';
  if(/^(cv|connectcv|hello|hi|xin chao)[?.!]*$/.test(t)||/connectcv.*(lam duoc|chuc nang|ho tro|su dung)/.test(t))return 'overview';
