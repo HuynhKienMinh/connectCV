@@ -9,9 +9,10 @@ const current=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8'
 const baseline=execFileSync('git',['show','15daaa7:backend/features/connectcv/public/index.html'],{cwd:repo,encoding:'utf8'});
 function controller(html){
  const helper='    async function refreshPdfReadinessForExport(',download='    async function downloadCVPDF(';
- const start=html.includes(helper)?html.indexOf(helper):html.indexOf(download),end=html.indexOf('    function printCV()',start);
+ const start=html.includes('    let cvExportOperation')?html.indexOf('    let cvExportOperation'):html.includes(helper)?html.indexOf(helper):html.indexOf(download),end=html.indexOf('    function printCV()',start);
  if(start<0||end<0)throw Error('Actual export controller not found');
- return html.slice(start,end);
+ const documentStart=html.indexOf('    function getCurrentCVHtml('),documentEnd=html.indexOf("    window.addEventListener('message', event => {",documentStart);
+ return (documentStart<0?'':html.slice(documentStart,documentEnd))+'\n'+html.slice(start,end);
 }
 function fixture(route){return `<!doctype html><html><head><meta charset="utf-8"><title>ConnectCV local PDF recovery fixture</title></head><body>
  <h1>Local synthetic PDF recovery — ${route}</h1>
@@ -22,7 +23,7 @@ function fixture(route){return `<!doctype html><html><head><meta charset="utf-8"
  <iframe id="cv-rendered-iframe" sandbox="allow-same-origin" srcdoc="&lt;html&gt;&lt;body&gt;&lt;div class='cv-page-container'&gt;Synthetic CV&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
  <script>
  window.connectCVServerPdf=false;
- const latestCVData={sourceProfile:{}},latestRenderedHtml='',currentSelectedTemplateId='default_v2',currentCVLanguage='vi';
+ const latestCVData={sourceProfile:{}},latestRenderedHtml='',currentSelectedTemplateId='default_v2',currentAppliedTemplate=null,currentCVLanguage='vi';
  const result={route:${JSON.stringify(route)},prints:0,downloads:0,requests:[],formats:[],finished:false};
  function evidence(){document.getElementById('evidence').textContent=JSON.stringify({...result,readyFlag:window.connectCVServerPdf});}
  function printCV(){result.prints++;evidence();}

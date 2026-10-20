@@ -1,13 +1,13 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const html=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8');
-const start=html.includes('    async function refreshPdfReadinessForExport(')?html.indexOf('    async function refreshPdfReadinessForExport('):html.indexOf('    async function downloadCVPDF(');
+const start=html.includes('    let cvExportOperation')?html.indexOf('    let cvExportOperation'):html.includes('    async function refreshPdfReadinessForExport(')?html.indexOf('    async function refreshPdfReadinessForExport('):html.indexOf('    async function downloadCVPDF(');
 const script=html.slice(start,html.indexOf('    function printCV()',start));
 function fixture(health){
  const calls=[],timers=new Map();let downloads=0,prints=0,nextTimer=0;
- const scope={latestCVData:{sourceProfile:{}},latestRenderedHtml:'',currentSelectedTemplateId:'default_v2',currentCVLanguage:'vi',AbortController,console:{error:()=>{}},showToastWarning:()=>{},showToastSuccess:()=>{},printCV:()=>prints++,
+ const scope={getCurrentCVHtml:()=>'<html>Synthetic CV snapshot</html>',latestCVData:{sourceProfile:{}},latestRenderedHtml:'',currentSelectedTemplateId:'default_v2',currentAppliedTemplate:null,currentCVLanguage:'vi',AbortController,console:{error:()=>{}},showToastWarning:()=>{},showToastSuccess:()=>{},printCV:()=>prints++,
   setTimeout:(fn,ms)=>{const id=++nextTimer;timers.set(id,{fn,ms});return id;},clearTimeout:id=>timers.delete(id),
-  window:{connectCVServerPdf:false,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL:()=>{}}},
+  window:{addEventListener:()=>{},connectCVServerPdf:false,URL:{createObjectURL:()=> 'blob:synthetic',revokeObjectURL:()=>{}}},
   document:{getElementById:id=>id==='cv-profile'?{value:'{"fullName":"Synthetic Export"}'}:id==='cv-rendered-iframe'?{contentDocument:{documentElement:{cloneNode:()=>({querySelector:()=>null,outerHTML:'<html><body><div class="cv-page-container">Synthetic</div></body></html>'})}}}:null,
    createElement:()=>({style:{},click:()=>downloads++}),body:{appendChild:()=>{},removeChild:()=>{}}},
   fetch:async(url,options)=>{calls.push({url,options});if(url==='/api/features/health'){if(health instanceof Error)throw health;if(typeof health==='function')return health(options);return {ok:health.ok!==false,json:async()=>health.body};}return {ok:true,blob:async()=>Buffer.from('synthetic download fixture')};}
