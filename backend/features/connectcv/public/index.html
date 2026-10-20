@@ -3861,6 +3861,22 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     let liveInterviewScope = {};
     let liveReplyOperation = null;
     let liveTranscribeOperation = null;
+    let liveSummaryOperation = null;
+
+    function cancelLiveSummary() {
+      const operation = liveSummaryOperation;
+      liveSummaryOperation = null;
+      if (operation) {
+        clearTimeout(operation.timeout);
+        operation.controller.abort();
+      }
+      document.getElementById('live-summary-modal')?.classList.add('hidden');
+      const result = document.getElementById('live-summary-result');
+      if (result) result.innerHTML = '';
+    }
+    function ownsLiveSummary(operation) {
+      return liveSummaryOperation === operation && operation.scope === liveInterviewScope;
+    }
 
     function cancelLiveReply() {
       const operation = liveReplyOperation;
@@ -3880,6 +3896,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     }
     function invalidateLiveInterview() {
       liveInterviewScope = {};
+      cancelLiveSummary();
       cancelLiveReply();
       cancelLiveTranscription();
       cancelLiveVoice();
@@ -3888,6 +3905,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
       currentSpeechBuffer = '';
     }
     function beginLiveReply() {
+      cancelLiveSummary();
       cancelLiveReply();
       cancelLiveTranscription();
       cancelLiveVoice();
@@ -4928,6 +4946,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Kết thúc phiên phỏng vấn và hiển thị Báo Cáo Đánh Giá Tổng Kết STAR
     async function endLiveInterview() {
+      if (liveSummaryOperation && ownsLiveSummary(liveSummaryOperation)) return;
       invalidateLiveInterview();
       isAISpeakingOrThinking = false;
       if (currentLiveAudio) {
@@ -4967,9 +4986,20 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         return;
       }
 
+      const operation = { scope: liveInterviewScope, controller: new AbortController() };
+      liveSummaryOperation = operation;
+      operation.timeout = setTimeout(() => {
+        if (!ownsLiveSummary(operation)) return;
+        liveSummaryOperation = null;
+        operation.controller.abort();
+        loading.classList.add('hidden');
+        resultDiv.classList.remove('hidden');
+        resultDiv.innerHTML = '<div class="p-4 bg-amber-50 text-amber-800 text-xs rounded-xl">Tạo báo cáo đang mất quá nhiều thời gian. Hội thoại vẫn được giữ; bạn có thể bấm Kết thúc để thử lại.</div>';
+      }, 90000);
       try {
         const res = await fetch('/api/interview/live-summary', {
           method: 'POST',
+          signal: operation.controller.signal,
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             reportVersion: 2,
@@ -4981,6 +5011,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         });
 
         const resData = await res.json();
+        if (!ownsLiveSummary(operation)) return;
         loading.classList.add('hidden');
         resultDiv.classList.remove('hidden');
 
@@ -4990,14 +5021,18 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
           resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Không thể lập báo cáo: ${escapeHTML(resData.message || 'Lỗi hệ thống')}</div>`;
         }
       } catch (err) {
+        if (!ownsLiveSummary(operation)) return;
         loading.classList.add('hidden');
         resultDiv.classList.remove('hidden');
-        resultDiv.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Lỗi kết nối: ${escapeHTML(err.message)}</div>`;
+        resultDiv.innerHTML = '<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl">Chưa thể tạo báo cáo. Hội thoại vẫn được giữ; bạn có thể bấm Kết thúc để thử lại.</div>';
+      } finally {
+        clearTimeout(operation.timeout);
+        if (liveSummaryOperation === operation) liveSummaryOperation = null;
       }
     }
 
     function closeLiveSummaryModal() {
-      document.getElementById('live-summary-modal').classList.add('hidden');
+      cancelLiveSummary();
     }
 
     function renderLiveSummaryReport(data) {

@@ -208,3 +208,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           SIGNUP_LIFECYCLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-signup-lifecycle-qa'
+      - name: Verify interview summary cancellation, duplicate locking and bounded retry
+        run: node tests/interviewSummaryLifecycleUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          INTERVIEW_SUMMARY_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-summary-qa'
