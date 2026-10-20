@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0069.md",
   "activeRun": "runs/2026-10-20-cycle-0070.md",
   "activeIssue": "CV005",
-  "issueState": "WORD_DESIGN_RECOVERY_LOCAL31_PENDING_CI_RELEASE",
+  "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_FRESH_WORD_BACKUP_REQUIRED",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,10 +59,10 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Continue ACTIVE cycle0070 CV005+CV006: source7e1820/candidate1f294f9paths pushed; local31browser(20+6+5), readiness5units and2actualDOCXbinarycontractsPASS, noAI/provider/cloudwrite. NewCI39385955816/39385956500 pending; no reuse prior4609CI as currentproof.",
-    "CV006P1: Word design with stale/unready flag silently selected ATS and discarded HTML edits. Binarydiagnostic proves design contains edited marker but ATS contains oldstructuredsource. Fix retains design, probes stale readiness with ownership, warns/keepsdraft ifunavailable; explicitATS remains sourcecontract.4609 superseded by1f294f.",
-    "Prior Renderloginapproval stillpending; this heartbeat is not approval. No authretry/alternateauth/API bypass/mainpush/deploy or newlargebackup/clone/build. Drive25bundle1513verified/localcopies0 covers unchangedlive only, not1f294f.",
-    "After ownerlogin, fresh exact1f294fprivateDrivebackup/restore/cloudack+rollback, recheckmain/live/queues, FFonly9paths and fullmainCI, then specificRenderdeploy/livegate/rollbackd6a. RealWordvisual/auth/Firebase/device/CV002/DB/pilot remainopen; neverdeployaggregate review."
+    "ACTIVE cycle0070 CV005+CV006: source7e1820 CI39385955816 and isolated1f294f CI39385956500 fullSUCCESS incl31browser and actualDOCXbinary step. Candidate9paths/StudioSHAafc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b; no mainpush/live proof. Prior1513/4609 superseded for plannedrelease.",
+    "Renderloginapproval/manualsession stillpending. One read-only check of the same handed-off tab shows Sign In; no loginclick/authretry or alternatebrowser/API bypass. Heartbeat is not approval. Maince09/FE32cb/BE d6a unchanged.",
+    "Before release: fresh exact1f294f privateDrive delta/catalog+checksum/freshrestore/rollback and fullmainCI, then BEStudio-only specificcommitRenderdeploy/livegate/rollbackd6a. Catalog25bundle1513 verified/localcopies0 covers unchangedlive, NOT1f294f. No newlargebackup/clone/build while loginblocked. Codebackup is notDBbackup.",
+    "If login remainsblocked, keep requested approval pending and unchangednotifications quiet. Optional next independent P1 validation follows rotation interview: INT005 live-summary-modal completion ownership after close/End/newsession on local fakeprovider, no realAI/device/cloudwrites. Do not rerun31green/known148fontmatrix merely to poll. CV002/Wordvisual/Firebase/device/DB/pilot remainopen."
   ],
   "deployment": {
     "commit": "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0",
@@ -138,9 +138,9 @@
     "autoDeployDisabledBySpecificCommit": true,
     "lastCandidateCheckedAt": "2026-10-20T06:12:45.004088+00:00",
     "remainingFrontendRecovery": "ATS optional translated facts corrected9c in backend formatter; full Word/design/pagination/labels/authenticated export and browser E2E remain pending.",
-    "nextReviewStatus": "NEXT_CV_ATS_NEW_UNVERIFIED_SCENARIO",
-    "nextReviewCommit": null,
-    "nextReviewCiUrl": null,
+    "nextReviewStatus": "WORD31_CI_READY_PENDING_LOGIN_EXACT_BACKUP_RELEASE",
+    "nextReviewCommit": "7e1820c2c715b3808b25399b207e2011a2b62a09",
+    "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385955816",
     "candidateCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
     "clientBrowserFixtureVerified": true,
     "frontendRelease": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792418275025000",
@@ -191,7 +191,7 @@
     "authCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39006177131",
     "authCandidateStatus": "VERIFIED_MAIN_CI_BACKUP_RESTORE_HOSTING_DEPLOYED_LIVE_SCOPED",
     "authMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39006354363",
-    "candidateRuntimeScope": "FRONTEND_HOSTING_ONLY_BACKEND_D6A_UNCHANGED",
+    "candidateRuntimeScope": "BACKEND_STUDIO_EXPORT_ONLY_FRONTEND_CE09_UNCHANGED",
     "authReviewCommits": [
       "26ae54b",
       "876e64c"
@@ -370,14 +370,14 @@
     "pendingSignupLifecyclePublicGetCount": 8,
     "pendingExportReviewCommit": "7e1820c2c715b3808b25399b207e2011a2b62a09",
     "pendingExportCandidateCommit": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
-    "pendingExportStatus": "WORD_DESIGN_LOCAL31_VERIFIED_PENDING_CI_BACKUP_RENDER_LOGIN",
+    "pendingExportStatus": "WORD31_BINARY_CI_VERIFIED_RELEASE_BLOCKED_RENDER_LOGIN_FRESH_BACKUP",
     "pendingExportPriorCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
     "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385955816",
     "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385956500",
     "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
     "pendingExportBackupCoversCandidate": false,
-    "pendingExportCandidateCiPassed": false,
-    "pendingExportReviewCiPassed": false,
+    "pendingExportCandidateCiPassed": true,
+    "pendingExportReviewCiPassed": true,
     "pendingExportOwnerNotifiedCycle": 70,
     "pendingExportMainChanged": false,
     "pendingExportLiveVerified": false,
@@ -388,7 +388,8 @@
     "pendingExportDocumentOwnerNotifiedAt": "2026-10-20T14:12:47.044757+07:00",
     "pendingWordRecoveryCases": 5,
     "localEditedDocxBinarySyntheticVerified": true,
-    "realWordVisualVerified": false
+    "realWordVisualVerified": false,
+    "pendingWordRecoveryOwnerNotifiedAt": "2026-10-20T14:29:00.356680+07:00"
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {
@@ -486,7 +487,9 @@
     "bypassUsed": false,
     "productionChanged": false,
     "nextAction": "Owner may approve routine Render login with existing GitHub session and no new permissions, or sign in manually. No alternate-auth workaround; recheck deployment/CI/main/Drive before release.",
-    "handoffTabId": "829831298"
+    "handoffTabId": "829831298",
+    "lastReadOnlyCheckedAt": "2026-10-20T14:29:00.356680+07:00",
+    "signInStillVisible": true
   },
   "relatedActiveIssues": [
     "CV006"

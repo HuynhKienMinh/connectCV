@@ -272,3 +272,5 @@ Latest70 follow-up: sourceCI39384352982/candidateCI39384352373 fullSUCCESS gồm
 
 
 Latest70 heartbeat14:14VN: CV006Worddesign silentATS fallback làm mất chữ sửa đã tái hiện qua2actualDOCXbinary và3/5UIbaselinefails. Fix7e1820/combinedcandidate1f294f giữdesign/recheckready/warnretain; local31browser+5unitPASS, newCIpending.4609 superseded, no newbackup/deploy; Renderdecision trước vẫnpending.
+
+Latest70 Word checkpoint: fullsourceCI39385955816/candidateCI39385956500 SUCCESS gồm31browser và actualDOCXbinarycontract. Candidate1f294f vẫnchưabackup/deploy; read-onlyRenderhandoff vẫnSignIn, khôngauthretry. Main/productiongiữnguyên, commercial/realWordvisual/Firebase/DB/pilot chưađóng.

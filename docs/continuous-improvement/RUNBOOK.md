@@ -128,7 +128,7 @@ FEce09d3c/Hosting32cb6e9c8222b5ec; BE d6a giữ nguyên. Rollback `firebase host
 
 ## Pending Studio export lifecycle release —cycle70
 
-Latest14:14VN follow-up: **currentcandidate1f294f, supersedes4609** for combinedCV005+CV006 (9paths). Source7e1820/newCI39385955816/39385956500 pending; local31browser+5readinessunit+2DOCXbinarycontractPASS. StudioSHAafc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b. No fresh1f294fbackup/mainCI/deployment; catalog1513 and priorCI are historical only. Renderloginapproval stillpending, no retry/bypass. Below earliercheckpoints do not authorize oldcandidate release.
+Latest14:14VN follow-up: **currentcandidate1f294f, supersedes4609** for combinedCV005+CV006 (9paths). Source7e1820 CI39385955816/candidate1f294f CI39385956500 fullSUCCESS incl31browser+actualDOCXbinary; local31browser+5readinessunit+2DOCXbinarycontractPASS. StudioSHAafc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b. No fresh1f294fbackup/mainCI/deployment; catalog1513 and priorCI are historical only. Renderloginapproval stillpending, no retry/bypass. Below earliercheckpoints do not authorize oldcandidate release.
 
 **SUPERSEDED: không deploy1513.** Heartbeat13:58 phát hiện4actualDOMfail; candidate4609 thaythế. FullsourceCI39384352982/candidateCI39384352373 SUCCESS incl26browser; StudioSHAa3980be68588711e6fdf6c115b7b767f6ac03c2c4965cd5eff9be97ab7f1f148. Fresh exact4609Drivebackup/restore/cloudack/rollback/mainCI/deploy/live còn bắtbuộc. Catalog1513 dướiđây chỉ historicalbackup, không phải gate cho4609. Renderloginapproval trước vẫnpending; khôngauthretry/bypass.
 
