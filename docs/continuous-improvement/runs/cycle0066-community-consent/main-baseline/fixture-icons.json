@@ -1,0 +1,8 @@
+{
+  "attempt": "parent CSS corrected; icon pointer unavailable with external CDN blocked",
+  "passed": 9,
+  "failed": 1,
+  "failure": "locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#deb-stars-wrap [data-star=\"2\"]')\u001b[22m\n\u001b[2m    - locator resolved to <i data-star=\"2\" class=\"fa-solid fa-star\" onclick=\"setDebriefDifficulty(2)\"></i>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    10 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "scopeCorrection": "Call existing setDebriefDifficulty handler to change hidden rating without input event; consent/publication assertions unchanged. Do not claim physical star pointer interaction verified.",
+  "helperCorrection": "First edit failed because Python default cp1252; no source edits occurred. An unchanged local rerun was launched inadvertently and retained9PASS/1unreachable; not new evidence. Subsequent edit uses explicitUTF8."
+}

@@ -1,0 +1,57 @@
+{
+  "actualReactFeaturePage": true,
+  "actualStudio": true,
+  "actualTokenBridge": true,
+  "parentCssLoaded": true,
+  "bridgePublicationAssetsFromSelectedRef": true,
+  "starPointerInteractionVerified": false,
+  "sourceRef": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "syntheticSdkAndLoopbackApi": true,
+  "cloudWrites": 0,
+  "realAiCalls": 0,
+  "realFirebaseVerified": false,
+  "chromiumSandbox": true,
+  "externalNetworkBlocked": true,
+  "rows": [
+    {
+      "name": "rating-handler-without-input-event-requires-new-preview-and-consent",
+      "pass": true
+    },
+    {
+      "name": "programmatic-edit-without-input-event-cannot-reuse-consent",
+      "pass": true
+    },
+    {
+      "name": "anonymity-toggle-revokes-old-consent",
+      "pass": true
+    },
+    {
+      "name": "back-to-edit-never-publishes-and-requires-consent-again",
+      "pass": true
+    },
+    {
+      "name": "contact-added-after-consent-is-rejected-before-local-post",
+      "pass": true
+    },
+    {
+      "name": "literal-preview-is-inert-and-current-confirmation-sends-only-public-fields",
+      "pass": true
+    },
+    {
+      "name": "actor-change-remounts-actual-form-and-discards-old-consent",
+      "pass": true
+    },
+    {
+      "name": "module-round-trip-does-not-restore-public-consent",
+      "pass": true
+    },
+    {
+      "name": "verification-revocation-removes-consented-form-without-posting",
+      "pass": true
+    },
+    {
+      "name": "actor-change-during-real-bridge-token-wait-cannot-publish-old-consent",
+      "pass": true
+    }
+  ]
+}

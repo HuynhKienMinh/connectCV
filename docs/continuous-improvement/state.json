@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 65,
   "lastRun": "runs/2026-10-20-cycle-0065.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "INT005_DEPLOYED_SCOPED_REAL_DEVICE_PENDING",
+  "activeRun": "runs/2026-10-20-cycle-0066.md",
+  "activeIssue": "SOCIAL002",
+  "issueState": "COMMUNITY_CONSENT_NEW10_LOCAL_PASS_REVIEW_ISOLATED_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,7 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Next rotation community: inspect actual current-main preview/consent lifetime when draft/profile/actor changes before confirmation. Use local sandbox and fake transport only; choose a new unverified scenario, not another receipt-health pass. Keep Firebase Auth/Google and public publication untouched. Deferred report/schema SOCIAL001/OPS002 still requires real encrypted DB backup/restore and key custody.",
+    "Cycle66 community consent10new actualReact+wholeStudio+bridge cases PASS at exactmain7c, no runtimefinding. Test-only review8e99fef/isolated3aa1b55 onmain7c; reviewCI39347220692/candidateCI39347261028 pending. Check exactCI, then fast-forwardmain test-only2files and mainCI. No runtime deploy/largebackup/database write; keep activeRun66 until completed.",
     "INT005 deployed scoped7c6c0c7/Renderdep-dbbav649v7es73eie2n0: local13voice+15session+13mic and candidate/mainCI SUCCESS, live361531byte Studio SHA2c94110e... exact, auth401/canary/FEroot unchanged. RealFirebase actors, physicalmic/iOS, provider abort/refund, absolute deadline ignoringabort and summary-modal lifecycle unverified. Do not claim broad safety/commercial readiness or rerun completed cases just for heartbeat.",
     "Drive catalog65 VERIFIED20bundle/freshbare/fsck/criticalcandidate50/currentFE48/rollbackBE45 and FEZIP verified; own242908522byte restore +483945byte release helper/index stage deleted. RollbackBE0bf/dep-dbar56u7bikc73akq250, FE89f/1bc unchanged. New different deployment needs fresh exact baseline. CV002 remains checkpoint62/P1; real DB backup false and no AI/cloud user writes."
   ],
@@ -145,8 +145,8 @@
     "testOnlyReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39212547132",
     "testOnlyStatus": "REVIEW_ISOLATED_MAIN_SUCCESS_NO_RUNTIME_DEPLOY",
     "testOnlyMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39245470562",
-    "currentCycleRuntimeChanged": true,
-    "currentCycleDeployAttempted": true,
+    "currentCycleRuntimeChanged": false,
+    "currentCycleDeployAttempted": false,
     "pendingCommunityCommit": "6d6831a8d456073db0bdf729724abfac4c19881c",
     "pendingCommunityStatus": "API_UI_REVIEW_CI_SUCCESS_NOT_MAIN_NOT_DEPLOYED",
     "pendingCommunityDeployBlocked": true,
@@ -307,7 +307,13 @@
     "isolatedInterviewMainCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39304326834",
     "isolatedInterviewMainCiPassed": true,
     "isolatedInterviewRelease": "dep-dbbav649v7es73eie2n0",
-    "interviewVoiceCompletionNotifiedCycle": 65
+    "interviewVoiceCompletionNotifiedCycle": 65,
+    "pendingCommunityConsentReviewCommit": "8e99fefac878cbbc608adf77bf72a05e86a73caf",
+    "pendingCommunityConsentCandidateCommit": "3aa1b55a98d0101fa648fc3070c46ac15d84c4a4",
+    "pendingCommunityConsentBranch": "improvement/community-consent-checks-20261020",
+    "pendingCommunityConsentStatus": "TEST_ONLY_LOCAL10_PASS_CI_PENDING_NO_RUNTIME_DEPLOY",
+    "pendingCommunityConsentReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347220692",
+    "pendingCommunityConsentCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39347261028"
   },
   "blockingDependency": null,
   "dataBackup": {

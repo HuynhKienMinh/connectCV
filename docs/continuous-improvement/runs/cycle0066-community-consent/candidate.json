@@ -1,0 +1,14 @@
+{
+  "base": "7c6c0c7490dfaa6ab357b952f6e9f2a78f579190",
+  "reviewCommit": "8e99fefac878cbbc608adf77bf72a05e86a73caf",
+  "candidate": "3aa1b55a98d0101fa648fc3070c46ac15d84c4a4",
+  "branch": "improvement/community-consent-checks-20261020",
+  "changedPaths": [
+    ".github/workflows/ai-feature-checks.yml",
+    "frontend/tests/communityConsentUi.check.mjs"
+  ],
+  "runtimeChanged": false,
+  "workflowPrefixByteIdentical": true,
+  "testSha256": "c954e66011d16d99b5117bb12ba3ae1f1bccda0d9a4e0812b90d466dd1e993ec",
+  "createdAt": "2026-10-20T00:22:27.809355+00:00"
+}
