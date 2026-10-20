@@ -1,0 +1,17 @@
+{
+  "sdkVersion": "12.19.0",
+  "implementationSha256": "37dd38c4160623f29491c74c7af6af4f5f656387c0bad93daeb497f75d9db544",
+  "createAwaitCurrentUserBeforeReturn": true,
+  "directlySetCurrentUserUsesSameObject": true,
+  "realFirebaseExercised": false,
+  "implementationPath": "frontend/node_modules/firebase/node_modules/@firebase/auth/dist/node/totp-C8DKrPQi.js",
+  "lines": [
+    2890,
+    2901,
+    3152,
+    3159,
+    6187,
+    6206,
+    6589
+  ]
+}

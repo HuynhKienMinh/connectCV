@@ -152,3 +152,8 @@ CHAT006 cho thấy mic ở academic/economic, micro ở microbiology/microservic
 ## D033 —20/10/2026: xóa portfolio không giữ ID chết hoặc làm sống lại completion cũ
 
 DELETE và Save dùng cùng operationobject/ref khóa đồng bộ và invalidate khi scope/effect rời. Chỉ currentoperation được reloadlist/report/unlock; UIDstring A-B-A không đủ. Sau DELETEconfirmed, form đanggắn recordđó giữ latestdraftfields nhưng bỏID và mặc địnhprivate; Save tiếp là explicitPOST, không autorepublish. Nháp khác/cancel/failure không đổi; listreloadfail không đảo ngược DELETEđãthànhcông. Completionguard không hứa abortprovider/serverwriteđãgửi. Không chuyển syntheticcallback thành realcloud auth/delete proof hoặc tự đóng PORT001/003/P1. ScopedFEcandidate cần CI và freshDrive code+newbuild/currentrollback restore trướcHostingdeploy; BE d6a khôngredeploy.
+
+
+## D034 —20/10/2026: signup SDK followups require current operation and current User instance
+
+After create settles, only the owning route operation and exact current SDKUser may updateProfile. Recheck after profile before email and after email before navigation; suppress stale SDK-user errors while still letting current-operation finally release busy. Do not signOut/delete an abandoned account, retry emails, or promise cancellation of the create request/provider persistence already sent. InstalledFirebase12.19 sets currentUser before resolving create; regression mock follows that contract. Real actor/mobile/OAuth and SDK persistence races remain unverified; candidate must contain only4scoped paths and pass freshDrive/currentFE6ff rollback gate.

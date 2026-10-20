@@ -1,0 +1,9 @@
+{
+  "candidateCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "archiveBytes": 1146880,
+  "noEnvironmentOverrideFilesCopied": true,
+  "envExampleCopied": true,
+  "coreAutocrlf": false,
+  "dependencyPackageMatches": true,
+  "dependencyLockMatches": true
+}

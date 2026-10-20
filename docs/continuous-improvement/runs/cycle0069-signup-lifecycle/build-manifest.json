@@ -1,0 +1,24 @@
+{
+  "candidateCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "members": {
+    "frontend/dist/.gitkeep": {
+      "bytes": 86,
+      "sha256": "bc896b55b22fb28e53a5476069357a083c722b594565c463c33e694a25e693e3"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049"
+    },
+    "frontend/dist/assets/index-B5CIh4VQ.js": {
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b"
+    },
+    "frontend/dist/assets/index-D2A9aWF8.css": {
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af"
+    }
+  },
+  "productionApi": "https://connectcv-api-minh.onrender.com",
+  "fixtureCodeAbsent": true,
+  "dependencyJunctionRemoved": true
+}

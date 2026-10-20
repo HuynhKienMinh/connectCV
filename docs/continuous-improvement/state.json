@@ -6,9 +6,9 @@
   "cadenceMinutes": 15,
   "completedCycles": 68,
   "lastRun": "runs/2026-10-20-cycle-0068.md",
-  "activeRun": null,
-  "activeIssue": null,
-  "issueState": "PORTFOLIO_DELETE_DEPLOYED_SCOPED_PENDING_REAL_FIREBASE",
+  "activeRun": "runs/2026-10-20-cycle-0069.md",
+  "activeIssue": "AUTH005",
+  "issueState": "SIGNUP_SOURCE_CANDIDATE_CI_PENDING",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -59,7 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
-    "Auth-profile rotation: choose a new unverified account/auth recovery scenario from current main04bc; do not repeat the18AccountPage or23portfolio scenarios merely to add green counts. Keep real Firebase actor/OAuth, PORT001/003/004 actual cloud writes, CV002 checkpoint62 native PDF, OPS002 encrypted realDB/custody and interview device/provider/human gates open.",
+    "Continue AUTH005 signup SDK followup ownership: baseline main04bc13cases2PASS11FAIL to fixed13PASS; existingauth8+Google10 regressionsPASS. ReviewCI and isolate onlyAuthPage/signupLifecycle/newfixturecontract/mainworkflow newstep. Before FE-onlydeploy require fresh exact privateDrive code/build/rollback6ff and restore gate. No real accounts/email/cloudwrites or AI.",
     "PORT004 scoped FE04bc/Hosting6ff2976a15a15e74 deployed after source/candidate/mainCI and fresh privateDrive22bundle/fsck/criticalbyte/new+rollbackFEZIP verification. Initial immediate smoke returned old content and rolled back89f; provider file API confirmed correct uploaded files; one reactivation after renewed22bundle/ZIPreadback passed8plainGET after boundedwait. Total24publicreadonlyGET across attempt/rollback/final. No proven cause beyond transient serving mismatch; no real deletion/cloudactor test. BE d6a retained; rollbackFE89f/oldZIP53.",
     "Fresh exact privateDrive baseline required before NEXTdeployment; catalog68 VERIFIED/localcopies0, no DBsnapshot. Commercial NOT_READY_EVIDENCE_INCOMPLETE; no AI/provider/profile/community writes."
   ],
@@ -125,7 +125,7 @@
     "reviewCommit": "5543e4e062dfdc32950214046f9268e8aa0798c1",
     "status": "PORTFOLIO_DELETE_FIX_DEPLOYED_SCOPED",
     "lastPushError": null,
-    "nextAction": "Auth-profile rotation: choose a new unverified account/auth recovery scenario from current main04bc; do not repeat the18AccountPage or23portfolio scenarios merely to add green counts. Keep real Firebase actor/OAuth, PORT001/003/004 actual cloud writes, CV002 checkpoint62 native PDF, OPS002 encrypted realDB/custody and interview device/provider/human gates open.",
+    "nextAction": "Continue AUTH005 signup SDK followup ownership: baseline main04bc13cases2PASS11FAIL to fixed13PASS; existingauth8+Google10 regressionsPASS. ReviewCI and isolate onlyAuthPage/signupLifecycle/newfixturecontract/mainworkflow newstep. Before FE-onlydeploy require fresh exact privateDrive code/build/rollback6ff and restore gate. No real accounts/email/cloudwrites or AI.",
     "runtimeChanged": true,
     "deployAttempted": true,
     "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39351681697",
@@ -350,7 +350,13 @@
     "pendingPortfolioDeleteOwnerNotifiedCycle": 68,
     "pendingPortfolioDeleteInitialRollbackExecuted": true,
     "pendingPortfolioDeleteServingMismatchCause": "UNPROVEN_TRANSIENT_SERVING_MISMATCH_INITIAL_IMMEDIATE_SMOKE",
-    "pendingPortfolioDeletePublicGetCount": 24
+    "pendingPortfolioDeletePublicGetCount": 24,
+    "pendingSignupLifecycleStatus": "SOURCE_CANDIDATE_CI_PENDING",
+    "pendingSignupLifecycleReviewCommit": "261d46783e0b6e02e86f407f71236c9f5af12a1e",
+    "pendingSignupLifecycleCandidateCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+    "pendingSignupLifecycleBranch": "improvement/signup-lifecycle-release-20261020",
+    "pendingSignupLifecycleReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39377575487",
+    "pendingSignupLifecycleCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39377575385"
   },
   "blockingDependency": null,
   "dataBackup": {

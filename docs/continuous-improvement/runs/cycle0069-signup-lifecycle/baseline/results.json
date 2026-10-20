@@ -1,0 +1,144 @@
+{
+  "actualReactPage": true,
+  "actualRouter": true,
+  "syntheticSdk": true,
+  "cloudAuthCalls": 0,
+  "realFirebaseVerified": false,
+  "sourceRef": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "results": [
+    {
+      "name": "abandoned-create-does-not-update-profile-or-send-email",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     displayName: 'Tên đăng ký giả',\n+     kind: 'profile',\n+     uid: 'synthetic-created'\n+   }\n+ ]\n- []\n",
+      "route": "/outside",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        }
+      ]
+    },
+    {
+      "name": "return-to-signup-does-not-revive-old-create",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     displayName: 'Tên đăng ký giả',\n+     kind: 'profile',\n+     uid: 'synthetic-created'\n+   }\n+ ]\n- []\n",
+      "route": "/signup",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        }
+      ]
+    },
+    {
+      "name": "changed-SDK-actor-stops-create-followups",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     displayName: 'Tên đăng ký giả',\n+     kind: 'profile',\n+     uid: 'synthetic-created'\n+   }\n+ ]\n- []\n",
+      "route": "/signup",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        }
+      ]
+    },
+    {
+      "name": "same-UID-new-SDK-object-stops-create-followups",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     displayName: 'Tên đăng ký giả',\n+     kind: 'profile',\n+     uid: 'synthetic-created'\n+   }\n+ ]\n- []\n",
+      "route": "/signup",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        }
+      ]
+    },
+    {
+      "name": "departure-during-profile-update-stops-verification",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'profile',\n+   'verify'\n  ]\n",
+      "route": "/outside",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        },
+        {
+          "kind": "verify",
+          "uid": "synthetic-created"
+        }
+      ]
+    },
+    {
+      "name": "SDK-replacement-during-profile-update-stops-verification",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'profile',\n+   'verify'\n  ]\n",
+      "route": "/signup",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        },
+        {
+          "kind": "verify",
+          "uid": "synthetic-created"
+        }
+      ]
+    },
+    {
+      "name": "SDK-change-during-email-does-not-navigate",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '/account'\n- '/signup'\n",
+      "route": "/account",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        },
+        {
+          "kind": "verify",
+          "uid": "synthetic-created"
+        }
+      ]
+    },
+    {
+      "name": "current-signup-completes-name-email-and-navigation-once",
+      "passed": true
+    },
+    {
+      "name": "old-create-finally-cannot-unlock-new-signup",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     displayName: 'Tên đăng ký giả',\n+     kind: 'profile',\n+     uid: 'synthetic-created'\n+   }\n+ ]\n- []\n",
+      "route": "/signup",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        }
+      ]
+    },
+    {
+      "name": "signed-out-before-create-completion-stops-followups",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   {\n+     displayName: 'Tên đăng ký giả',\n+     kind: 'profile',\n+     uid: 'synthetic-created'\n+   }\n+ ]\n- []\n",
+      "route": "/signup",
+      "effects": [
+        {
+          "kind": "profile",
+          "uid": "synthetic-created",
+          "displayName": "Tên đăng ký giả"
+        }
+      ]
+    }
+  ],
+  "passed": 1
+}

@@ -1,0 +1,51 @@
+{
+  "actualReactPage": true,
+  "actualRouter": true,
+  "syntheticSdk": true,
+  "cloudAuthCalls": 0,
+  "realFirebaseVerified": false,
+  "sourceRef": "working-tree",
+  "results": [
+    {
+      "name": "abandoned-create-does-not-update-profile-or-send-email",
+      "passed": true
+    },
+    {
+      "name": "return-to-signup-does-not-revive-old-create",
+      "passed": true
+    },
+    {
+      "name": "changed-SDK-actor-stops-create-followups",
+      "passed": true
+    },
+    {
+      "name": "same-UID-new-SDK-object-stops-create-followups",
+      "passed": true
+    },
+    {
+      "name": "departure-during-profile-update-stops-verification",
+      "passed": true
+    },
+    {
+      "name": "SDK-replacement-during-profile-update-stops-verification",
+      "passed": true
+    },
+    {
+      "name": "SDK-change-during-email-does-not-navigate",
+      "passed": true
+    },
+    {
+      "name": "current-signup-completes-name-email-and-navigation-once",
+      "passed": true
+    },
+    {
+      "name": "old-create-finally-cannot-unlock-new-signup",
+      "passed": true
+    },
+    {
+      "name": "signed-out-before-create-completion-stops-followups",
+      "passed": true
+    }
+  ],
+  "passed": 10
+}

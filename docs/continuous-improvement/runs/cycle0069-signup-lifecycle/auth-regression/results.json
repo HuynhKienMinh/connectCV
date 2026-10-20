@@ -1,0 +1,43 @@
+{
+  "actualReactPage": true,
+  "actualRouter": true,
+  "syntheticSdk": true,
+  "realFirebaseVerified": false,
+  "cloudAuthCalls": 0,
+  "sourceRevision": "working-tree",
+  "passed": 8,
+  "results": [
+    {
+      "name": "pending-reset-does-not-lock-login",
+      "passed": true
+    },
+    {
+      "name": "obsolete-login-error-cannot-redirect-password-recovery",
+      "passed": true
+    },
+    {
+      "name": "return-to-same-mode-does-not-unlock-new-request",
+      "passed": true
+    },
+    {
+      "name": "synchronous-duplicate-submit-ignored",
+      "passed": true
+    },
+    {
+      "name": "current-reset-failure-retains-email-and-explicit-retry",
+      "passed": true
+    },
+    {
+      "name": "current-signup-still-updates-name-and-sends-verification",
+      "passed": true
+    },
+    {
+      "name": "late-google-error-cannot-overwrite-reset-page",
+      "passed": true
+    },
+    {
+      "name": "late-email-success-cannot-navigate-after-leaving-form",
+      "passed": true
+    }
+  ]
+}

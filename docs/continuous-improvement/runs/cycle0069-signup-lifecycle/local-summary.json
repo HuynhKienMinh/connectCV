@@ -1,0 +1,12 @@
+{
+  "newScenarios": 13,
+  "baselinePassed": 2,
+  "baselineFailed": 11,
+  "fixedPassed": 13,
+  "authRegressionPassed": 8,
+  "googleRegressionPassed": 10,
+  "authUnitsPassed": 12,
+  "cloudAuthCalls": 0,
+  "aiCalls": 0,
+  "realFirebaseVerified": false
+}

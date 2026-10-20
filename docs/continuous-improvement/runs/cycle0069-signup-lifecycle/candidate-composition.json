@@ -1,0 +1,15 @@
+{
+  "baseCommit": "04bcf12d3d17c840239f3611e6604060788dd4cd",
+  "reviewCommit": "261d46783e0b6e02e86f407f71236c9f5af12a1e",
+  "candidateCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "branch": "improvement/signup-lifecycle-release-20261020",
+  "changedPaths": [
+    ".github/workflows/ai-feature-checks.yml",
+    "frontend/src/pages/AuthPage.jsx",
+    "frontend/tests/authRequestUi.check.mjs",
+    "frontend/tests/signupLifecycleUi.check.mjs"
+  ],
+  "mainWorkflowPreservedBeforeNewStep": true,
+  "backendChanged": false,
+  "databaseChanged": false
+}
