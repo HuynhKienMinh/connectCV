@@ -12,10 +12,11 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const sourceRevision=process.env.AUTH_REQUEST_SOURCE_REV;
 const source=sourceRevision?execFileSync('git',['show',`${sourceRevision}:frontend/src/pages/AuthPage.jsx`],{cwd:root,encoding:'utf8'}):null;
 const sdk=`
+ import {auth} from '../lib/firebase';
  export class GoogleAuthProvider {setCustomParameters(){}}
  const request=(kind,args)=>new Promise((resolve,reject)=>window.__qa.calls.push({kind,args,resolve,reject}));
  export const signInWithEmailAndPassword=(_auth,email)=>request('login',{email});
- export const createUserWithEmailAndPassword=(_auth,email)=>request('signup',{email});
+ export const createUserWithEmailAndPassword=async(_auth,email)=>{const result=await request('signup',{email});auth.currentUser=result.user;return result;};
  export const sendPasswordResetEmail=(_auth,email)=>request('reset',{email});
  export const signInWithPopup=()=>request('popup',{});
  export const signInWithRedirect=()=>request('redirect',{});
