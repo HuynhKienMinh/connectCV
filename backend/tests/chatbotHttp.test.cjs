@@ -4,6 +4,7 @@ const {createRequireAuth,requireVerified}=require('../src/middlewares/firebaseAu
 const {createFeatureSecurity}=require('../features/connectcv/src/middlewares/featureSecurity');
 const actor=id=>'SYNTHETIC_LOCAL_CHAT_ACTOR_'+id;
 const career='Tôi chuyển từ bán lẻ sang vận hành, nên trình bày dự án học tập thế nào?';
+const topicCases=require('../features/connectcv/tests/fixtures/chatbotTopicCases.json');
 async function fixture(t,{provider=async()=>({reply:'Ví dụ giả định để luyện trình bày.',suggestedQuestions:[],relevantFeature:'general'}),denyBudget=false}={}){
  const saved=new Map(),stats={prompts:[],budget:[],verified:0},flags={pdfReady:false},previousStore=process.env.FEATURE_STORE_BACKEND;
  function remember(id){if(!saved.has(id))saved.set(id,require.cache[id]);}
@@ -25,6 +26,17 @@ async function fixture(t,{provider=async()=>({reply:'Ví dụ giả định đ�
  }
  return {stats,flags,request};
 }
+
+test('career terms reach the provider through the actual mount instead of unrelated local FAQs',async t=>{
+ const f=await fixture(t);
+ for(const message of topicCases.career){const r=await f.request({body:{message,context:{targetRole:'Chuyển nghề bán lẻ'}}});assert.equal(r.status,200);assert.equal(r.body.data.responseKind,'ai-advice',message);assert.ok(f.stats.prompts.at(-1).includes(message));}
+ assert.equal(f.stats.prompts.length,topicCases.career.length);assert.equal(f.stats.budget.length,topicCases.career.length);
+});
+test('explicit product help remains provider-free even with a credit analyst target role',async t=>{
+ const f=await fixture(t);
+ for(const row of topicCases.guides){const r=await f.request({body:{message:row.message,context:{targetRole:'Credit Risk Analyst'}}});assert.equal(r.status,200);assert.equal(r.body.data.responseKind,'product-guide',row.message);assert.deepEqual(r.body.data.knowledgeSources,[row.topic]);}
+ assert.equal(f.stats.prompts.length,0);assert.equal(f.stats.budget.length,0);
+});
 test('actual mount rejects unauthenticated, forged and unverified chat before provider/budget; invalid body is safe',async t=>{
  const f=await fixture(t);assert.equal((await f.request({identity:null,body:{message:career,userId:'A',emailVerified:true}})).status,401);assert.equal((await f.request({identity:'forged'})).status,401);assert.equal((await f.request({identity:'U'})).status,403);
  for(const body of [{message:''},{message:'x'.repeat(1001)},{message:career,history:[{role:'system',message:'PRIVATE_INVALID_SENTINEL'}]}]){const r=await f.request({body,path:'/MESSAGE/'});assert.equal(r.status,400);assert.equal(r.body.code,'CHAT_INPUT_INVALID');assert.ok(!JSON.stringify(r.body).includes('PRIVATE_INVALID_SENTINEL'));}

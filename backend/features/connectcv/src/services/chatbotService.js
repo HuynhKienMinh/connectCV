@@ -25,12 +25,14 @@ function guides({pdfReady=false,transactionalCredits=false}={}){
 function localTopic(message){
  const t=normalize(message);
  if(/api[_ -]?key|secret[_ -]?key|system\s*prompt|database\s*(url|uri|credential|password)|ignore\s+(all\s+)?(previous\s+)?instructions|dump\s*(db|database)|<script/i.test(t))return 'security';
- if(/pdf|print|tai cv|tai file|chinh anh|xuat cv/.test(t))return 'cv-export';
- if(/credits?|chia se|an danh|cong dong/.test(t))return 'community-privacy';
- if(/micro|mic\b|gemini live|live studio|giong noi|phong van.*(hoat dong|su dung)/.test(t))return 'interview-mic';
+ if(/\b(?:pdf|print|printing)\b|tai cv|tai file|chinh anh|xuat cv/.test(t))return 'cv-export';
+ // Credit in finance/education is career context, not the application's reward balance.
+ const careerCredit=/\b(?:risk|analyst|loan|lending|card|bank|banking|union|academic|course|university|college|degree|school)\b/.test(t);
+ if(/chia se|an danh|cong dong/.test(t)||(/\bcredits?\b/.test(t)&&!careerCredit))return 'community-privacy';
+ if(/\b(?:micro|mics?|microphones?)\b|gemini live|live studio|giong noi|phong van.*(hoat dong|su dung)/.test(t))return 'interview-mic';
  if(/proposal|upwork|fiverr/.test(t))return 'proposal-source';
  if(/dang nhap|mat khau|google.*(login|sign|tai khoan)|login/.test(t))return 'account-access';
- if(/ats|doi chieu.*jd/.test(t))return 'cv-keywords';
+ if(/\bats\b|doi chieu.*jd/.test(t))return 'cv-keywords';
  if(/^(cv|connectcv|hello|hi|xin chao)[?.!]*$/.test(t)||/connectcv.*(lam duoc|chuc nang|ho tro|su dung)/.test(t))return 'overview';
  return null;
 }
