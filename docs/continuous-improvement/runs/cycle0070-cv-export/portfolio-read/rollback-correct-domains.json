@@ -1,0 +1,91 @@
+{
+  "version": "32cb6e9c8222b5ec",
+  "checkedAt": "2026-10-21T02:13:21.554234+07:00",
+  "checks": [
+    {
+      "url": "https://connect-cv.web.app/",
+      "status": 200,
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049",
+      "headers": {
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-B5CIh4VQ.js",
+      "status": 200,
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b",
+      "headers": {
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.web.app/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/",
+      "status": 200,
+      "bytes": 429,
+      "sha256": "48ed8e222ef20ae7d57430a5d9ff18f97d2b50a09276799c5024b0d144df3049",
+      "headers": {
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-B5CIh4VQ.js",
+      "status": 200,
+      "bytes": 449438,
+      "sha256": "2d397016b32138e5a60a7e714aa1844847e31a892394def635c2764bd92de09b",
+      "headers": {
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connect-cv.firebaseapp.com/assets/index-D2A9aWF8.css",
+      "status": 200,
+      "bytes": 62386,
+      "sha256": "f666fb63fcfd320eac26e58d6d942e6a8ba15187d7bc7f5f3f73844d605401af",
+      "headers": {
+        "x-frame-options": "DENY",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin"
+      },
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/account/me",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "url": "https://connectcv-api-minh.onrender.com/api/portfolios",
+      "status": 401,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "publicGetCount": 8,
+  "initialOracleError": "Wrong out-of-scope domain was selected by assistant; no requests to that domain after discovery."
+}

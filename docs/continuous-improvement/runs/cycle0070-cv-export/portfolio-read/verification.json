@@ -1,0 +1,200 @@
+{
+  "issue": "PORT005",
+  "localSyntheticBrowser": {
+    "baseline": {
+      "file": "baseline/results.json",
+      "sourceRef": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+      "passed": 6,
+      "failed": 3,
+      "cases": [
+        {
+          "name": "newer-draft-survives-successful-create",
+          "passed": true
+        },
+        {
+          "name": "pending-update-retains-project-publication-and-original-id",
+          "passed": true
+        },
+        {
+          "name": "unchanged-success-clears-once-and-double-submit-is-ignored",
+          "passed": true
+        },
+        {
+          "name": "failed-save-keeps-latest-text-and-projects",
+          "passed": true
+        },
+        {
+          "name": "old-account-completion-cannot-clear-new-account-draft",
+          "passed": true
+        },
+        {
+          "name": "return-to-same-account-does-not-revive-old-save-or-unlock-new-save",
+          "passed": true
+        },
+        {
+          "name": "read-deadline-unlocks-form-and-explicit-retry-keeps-draft",
+          "passed": false
+        },
+        {
+          "name": "confirmed-save-read-timeout-releases-lock-without-resubmitting-write",
+          "passed": false
+        },
+        {
+          "name": "late-timed-out-read-cannot-populate-or-unlock-new-retry",
+          "passed": false
+        }
+      ]
+    },
+    "save": {
+      "file": "fixed-final/results.json",
+      "sourceRef": "working-tree",
+      "passed": 9,
+      "failed": 0,
+      "cases": [
+        {
+          "name": "newer-draft-survives-successful-create",
+          "passed": true
+        },
+        {
+          "name": "pending-update-retains-project-publication-and-original-id",
+          "passed": true
+        },
+        {
+          "name": "unchanged-success-clears-once-and-double-submit-is-ignored",
+          "passed": true
+        },
+        {
+          "name": "failed-save-keeps-latest-text-and-projects",
+          "passed": true
+        },
+        {
+          "name": "old-account-completion-cannot-clear-new-account-draft",
+          "passed": true
+        },
+        {
+          "name": "return-to-same-account-does-not-revive-old-save-or-unlock-new-save",
+          "passed": true
+        },
+        {
+          "name": "read-deadline-unlocks-form-and-explicit-retry-keeps-draft",
+          "passed": true
+        },
+        {
+          "name": "confirmed-save-read-timeout-releases-lock-without-resubmitting-write",
+          "passed": true
+        },
+        {
+          "name": "late-timed-out-read-cannot-populate-or-unlock-new-retry",
+          "passed": true
+        }
+      ]
+    },
+    "public": {
+      "file": "public/results.json",
+      "sourceRef": "working-tree",
+      "passed": 9,
+      "failed": 0,
+      "cases": [
+        {
+          "name": "anonymous-public-page-has-no-owner-controls",
+          "passed": true
+        },
+        {
+          "name": "route-change-hides-A-before-B-and-ignores-old-A-success",
+          "passed": true
+        },
+        {
+          "name": "hidden-or-missing-response-removes-old-public-content",
+          "passed": true
+        },
+        {
+          "name": "return-to-same-public-id-does-not-revive-old-generation",
+          "passed": true
+        },
+        {
+          "name": "transport-error-can-recover-with-explicit-browser-reload",
+          "passed": true
+        },
+        {
+          "name": "account-switch-keeps-public-route-and-never-adds-owner-controls",
+          "passed": true
+        },
+        {
+          "name": "anonymous-owner-navigation-clears-public-view-and-requires-login",
+          "passed": true
+        },
+        {
+          "name": "empty-projects-public-profile-renders-without-private-form",
+          "passed": true
+        },
+        {
+          "name": "stalled-public-read-retries-without-owner-controls-and-ignores-old-data",
+          "passed": true
+        }
+      ]
+    },
+    "delete": {
+      "file": "delete/results.json",
+      "sourceRef": "working-tree",
+      "passed": 10,
+      "failed": 0,
+      "cases": [
+        {
+          "name": "deleted-edit-draft-can-be-explicitly-saved-as-a-new-private-record",
+          "passed": true
+        },
+        {
+          "name": "edits-during-deletion-survive-with-projects-and-private-publication",
+          "passed": true
+        },
+        {
+          "name": "failed-deletion-keeps-existing-edit-identity-for-explicit-update",
+          "passed": true
+        },
+        {
+          "name": "deleting-another-record-preserves-unrelated-new-draft-publication-choice",
+          "passed": true
+        },
+        {
+          "name": "cancel-deletion-does-not-send-or-alter-edit-draft",
+          "passed": true
+        },
+        {
+          "name": "pending-deletion-locks-other-mutations-including-programmatic-submit",
+          "passed": true
+        },
+        {
+          "name": "old-actor-delete-completion-does-not-read-or-alter-new-actor-draft",
+          "passed": true
+        },
+        {
+          "name": "A-B-A-deletion-completion-cannot-reload-or-unlock-the-new-operation",
+          "passed": true
+        },
+        {
+          "name": "successful-delete-with-list-read-failure-still-detaches-the-retained-draft",
+          "passed": true
+        },
+        {
+          "name": "confirmed-delete-read-timeout-keeps-private-detached-draft-and-does-not-repeat-delete",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "loaderUnitsPassed": 7,
+  "newBrowserCases": 5,
+  "regressionBrowserCases": 23,
+  "cloudWrites": 0,
+  "aiProviderCalls": 0,
+  "browserSandboxRetained": true,
+  "virtualTimeUsedForDeadline": true,
+  "realUserStudy": false,
+  "realFirebaseJourneyVerified": false,
+  "commercialReady": false,
+  "approvedFrontendSmokeHosts": [
+    "connect-cv.web.app",
+    "connect-cv.firebaseapp.com"
+  ],
+  "initialSmokeTargetSelectionIncident": "See initial-smoke-wrong-domain.json and continuation journal; six erroneous readonly GETs stopped, no scan/exploit/auth/write."
+}

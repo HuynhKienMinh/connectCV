@@ -1,0 +1,58 @@
+{
+  "candidate": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "mainCiId": 39480619034,
+  "before": {
+    "version": "projects/connect-cv/sites/connect-cv/versions/32cb6e9c8222b5ec",
+    "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792476736185000",
+    "versionStatus": "FINALIZED",
+    "releaseTime": "2026-10-20T06:12:16.185Z"
+  },
+  "after": {
+    "version": "projects/connect-cv/sites/connect-cv/versions/be365408272cb1ad",
+    "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792523447869000",
+    "versionStatus": "FINALIZED",
+    "releaseTime": "2026-10-20T19:10:47.869Z"
+  },
+  "cliExitCode": 0,
+  "cliStatus": "success",
+  "only": "hosting",
+  "backendDeployed": false,
+  "rollbackVersion": "32cb6e9c8222b5ec",
+  "deployedAt": "2026-10-21T02:10:53.244450+07:00",
+  "liveSmokeVerified": true,
+  "stageFiles": {
+    ".firebaserc": {
+      "bytes": 37,
+      "sha256": "72da7bd97433e37890a30375c451a8e95c4fba1fa6f6b7acb751cacc315cfed3"
+    },
+    "firebase-rollback.json": {
+      "bytes": 440,
+      "sha256": "fc25c850fd2d1b38ca03328e8b27a63bee52df05f898d9d3b3df4024bb406cf7"
+    },
+    "firebase.json": {
+      "bytes": 445,
+      "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+    },
+    ".firebase/hosting.ZnJvbnRlbmRcZGlzdA.cache": {
+      "bytes": 299,
+      "sha256": "520d8ff42632e037bd1121f9a7e961fee8e0174ecfb0ed03eba9ed734111fa85"
+    },
+    "frontend/dist/.gitkeep": {
+      "bytes": 87,
+      "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+    },
+    "frontend/dist/index.html": {
+      "bytes": 441,
+      "sha256": "d270c573dca3708279348f987578bf0c86b737c3d5585e604d96f50476685f21"
+    },
+    "frontend/dist/assets/index-BSPfxstl.css": {
+      "bytes": 62430,
+      "sha256": "00b975ddc6af05d10643967ce214399b6ec38c94ca407a84eeda7f58dd3bccd1"
+    },
+    "frontend/dist/assets/index-hY2FV8As.js": {
+      "bytes": 450177,
+      "sha256": "002419e0cbd47f7d5e5a5024d4571b1c661d5eb905cd9ddc6b86358a3dc9c98d"
+    }
+  },
+  "liveVerifiedAt": "2026-10-21T02:14:43.049109+07:00"
+}

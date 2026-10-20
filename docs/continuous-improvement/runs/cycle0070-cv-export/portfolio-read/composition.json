@@ -1,0 +1,23 @@
+{
+  "source": "0dc80a1f7a408d04fedccc573deca54dc9ea7c44",
+  "candidate": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "base": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "branch": "improvement/portfolio-read-release-20261021",
+  "paths": [
+    "frontend/src/lib/portfolioLoader.js",
+    "frontend/src/pages/PortfolioPage.jsx",
+    "frontend/tests/portfolioDeleteUi.check.mjs",
+    "frontend/tests/portfolioLoader.test.js",
+    "frontend/tests/portfolioPublicUi.check.mjs",
+    "frontend/tests/portfolioSaveUi.check.mjs"
+  ],
+  "allFrontendFilesMatchReview": true,
+  "backendRuntimeChanged": false,
+  "requiresRenderDeployment": false,
+  "frontendRollbackVersion": "32cb6e9c8222b5ec",
+  "loaderSha256": "a572fe303cd332a743cbe78be8eb63cc54a7a4925b8b63356fe70948d2e7e11f",
+  "pageSha256": "45eb8ff5aed86524da8c43ece24707f89fb63064212d5f4cf79ffcc31364096e",
+  "mainPushed": false,
+  "deployed": false,
+  "backupCoversCandidate": false
+}

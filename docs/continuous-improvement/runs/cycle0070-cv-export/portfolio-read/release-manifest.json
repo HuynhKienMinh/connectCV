@@ -1,0 +1,56 @@
+{
+  "candidate": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "base": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "createdAt": "2026-10-21T02:03:56.792601+07:00",
+  "bundle": {
+    "file": "connectcv-2026-10-21-cycle-0070-portfolio-caf28d8.incremental.bundle",
+    "bytes": 5813,
+    "sha256": "0455667745179906c00d33fa630965cf3dbb75d08fc33d301da757e8e794953e",
+    "ref": "refs/backup/cycle0070-portfolio-caf28d8"
+  },
+  "frontend": {
+    "file": "connectcv-2026-10-21-cycle-0070-frontend-caf28d8.zip",
+    "bytes": 143177,
+    "sha256": "c891f1f747714fc6ddd665ec2de52c639b4d363ff5522ea1bef706e16c7680c2",
+    "members": {
+      "frontend/dist/.gitkeep": {
+        "bytes": 87,
+        "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+      },
+      "frontend/dist/assets/index-BSPfxstl.css": {
+        "bytes": 62430,
+        "sha256": "00b975ddc6af05d10643967ce214399b6ec38c94ca407a84eeda7f58dd3bccd1"
+      },
+      "frontend/dist/assets/index-hY2FV8As.js": {
+        "bytes": 450177,
+        "sha256": "002419e0cbd47f7d5e5a5024d4571b1c661d5eb905cd9ddc6b86358a3dc9c98d"
+      },
+      "frontend/dist/index.html": {
+        "bytes": 441,
+        "sha256": "d270c573dca3708279348f987578bf0c86b737c3d5585e604d96f50476685f21"
+      },
+      "firebase.json": {
+        "bytes": 445,
+        "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+      },
+      "firebase-rollback.json": {
+        "bytes": 440,
+        "sha256": "fc25c850fd2d1b38ca03328e8b27a63bee52df05f898d9d3b3df4024bb406cf7"
+      }
+    }
+  },
+  "rollback": {
+    "site": "connect-cv",
+    "project": "connect-cv",
+    "version": "32cb6e9c8222b5ec",
+    "buildCommit": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+    "command": "firebase hosting:clone connect-cv@32cb6e9c8222b5ec connect-cv:live --project connect-cv --non-interactive",
+    "fallbackZip": "connectcv-2026-10-20-cycle-0069-frontend-ce09d3c.zip",
+    "fallbackSha256": "b6eb07b0c03ca33c548e841168bbd83948cdb36954c21d2bae5e852bf4d1f16a"
+  },
+  "stageBytes": 663135,
+  "capBytes": 402653184,
+  "mainPushed": false,
+  "deployed": false,
+  "cloudCatalogAcknowledged": false
+}

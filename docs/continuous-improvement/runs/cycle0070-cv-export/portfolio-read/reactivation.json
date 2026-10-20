@@ -1,0 +1,20 @@
+{
+  "candidate": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "before": {
+    "version": "projects/connect-cv/sites/connect-cv/versions/32cb6e9c8222b5ec",
+    "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792523503629000",
+    "versionStatus": "FINALIZED",
+    "releaseTime": "2026-10-20T19:11:43.629Z"
+  },
+  "after": {
+    "version": "projects/connect-cv/sites/connect-cv/versions/be365408272cb1ad",
+    "release": "projects/connect-cv/sites/connect-cv/channels/live/releases/1792523630832000",
+    "versionStatus": "FINALIZED",
+    "releaseTime": "2026-10-20T19:13:50.832Z"
+  },
+  "cliExitCode": 0,
+  "cliStatus": "success",
+  "backendDeployed": false,
+  "reason": "Correct smoke oracle to established Firebase domains after unnecessary rollback; same immutable candidate version",
+  "reactivatedAt": "2026-10-21T02:13:56.154992+07:00"
+}

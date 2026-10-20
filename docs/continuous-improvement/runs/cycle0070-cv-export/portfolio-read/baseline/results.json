@@ -1,0 +1,48 @@
+{
+  "sourceRef": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "actualReactPage": true,
+  "syntheticAuthAndApi": true,
+  "firebaseVerified": false,
+  "cloudWrites": 0,
+  "results": [
+    {
+      "name": "newer-draft-survives-successful-create",
+      "passed": true
+    },
+    {
+      "name": "pending-update-retains-project-publication-and-original-id",
+      "passed": true
+    },
+    {
+      "name": "unchanged-success-clears-once-and-double-submit-is-ignored",
+      "passed": true
+    },
+    {
+      "name": "failed-save-keeps-latest-text-and-projects",
+      "passed": true
+    },
+    {
+      "name": "old-account-completion-cannot-clear-new-account-draft",
+      "passed": true
+    },
+    {
+      "name": "return-to-same-account-does-not-revive-old-save-or-unlock-new-save",
+      "passed": true
+    },
+    {
+      "name": "read-deadline-unlocks-form-and-explicit-retry-keeps-draft",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "confirmed-save-read-timeout-releases-lock-without-resubmitting-write",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "late-timed-out-read-cannot-populate-or-unlock-new-retry",
+      "passed": false,
+      "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Thử tải lại', exact: true })\u001b[22m\n"
+    }
+  ]
+}

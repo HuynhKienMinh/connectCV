@@ -182,3 +182,8 @@ Nút từng câu và luyện đề chuyển sang practice/live, điền int-titl
 ## D039 —20/10/2026: proposal task khác hướng dẫn tính năng
 
 FAQ không hướng tới màn hình Proposal khi DOM sản phẩm không có form đó. Giải thích khả năng góp ý/viết bản nháp trong chatbot, cần yêu cầu dự án và kinh nghiệm thật, không tự gửi khách hàng. Hỏi capability dùng owned guide/quotaAI0; yêu cầu viết/góp ý dùng advice và quota hiện có, kể cả yêu cầu ngắn có động từ cần hỏi thêm dữ kiện. Từ khóa ConnectCV trong tên dự án không tự biến career task thành FAQ. Security boundary chạy trước intent; không đổi auth/limits/budget/grounding prompt. Classifier vẫn là heuristic, không bằng chứng hiểu mọi ngôn ngữ hay kiểm chất lượng AI thật. Local actual HTTP/fakeprovider chứng minh routing/admission và prompt payload; không chứng minh mô hình sẽ luôn giữ facts. Candidate5paths tách khỏi CV/INT/community; main đổi thì compose lại/CI/exactDrive/rollback/live.
+
+
+## 21/10/2026 — cycle70 portfolio read scope
+
+PORT005 isolatescaf28d8 sixfrontend paths from maince09; Renderlogin rejection remains unresolved and blocks BE release. Existing privateDrive session and Firebase Hosting session/rollback32cb are available without auth/access changes, so an independent Hosting-only release may pass its own exactCI/newcloudbackup/restore/rollback/mainCI/live gates. Do not treat this as Render auth approval or deploy aggregate review. No new large BEbackup while its release/rollback path is blocked. Current25bundle1513 does not covercaf. Any main advance requires later pending BE scopes recomposed with fresh branch/CI/backup; preserve prior candidates as evidence. No DB/schema/provider writes.

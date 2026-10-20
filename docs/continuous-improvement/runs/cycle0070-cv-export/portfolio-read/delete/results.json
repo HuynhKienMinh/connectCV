@@ -1,0 +1,59 @@
+{
+  "sourceRef": "working-tree",
+  "actualReactPage": true,
+  "syntheticAuthAndApi": true,
+  "firebaseVerified": false,
+  "cloudWrites": 0,
+  "results": [
+    {
+      "name": "deleted-edit-draft-can-be-explicitly-saved-as-a-new-private-record",
+      "passed": true
+    },
+    {
+      "name": "edits-during-deletion-survive-with-projects-and-private-publication",
+      "passed": true
+    },
+    {
+      "name": "failed-deletion-keeps-existing-edit-identity-for-explicit-update",
+      "passed": true
+    },
+    {
+      "name": "deleting-another-record-preserves-unrelated-new-draft-publication-choice",
+      "passed": true
+    },
+    {
+      "name": "cancel-deletion-does-not-send-or-alter-edit-draft",
+      "passed": true
+    },
+    {
+      "name": "pending-deletion-locks-other-mutations-including-programmatic-submit",
+      "passed": true
+    },
+    {
+      "name": "old-actor-delete-completion-does-not-read-or-alter-new-actor-draft",
+      "passed": true
+    },
+    {
+      "name": "A-B-A-deletion-completion-cannot-reload-or-unlock-the-new-operation",
+      "passed": true
+    },
+    {
+      "name": "successful-delete-with-list-read-failure-still-detaches-the-retained-draft",
+      "passed": true
+    },
+    {
+      "name": "confirmed-delete-read-timeout-keeps-private-detached-draft-and-does-not-repeat-delete",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "afterDeletedEdit": {
+        "method": "POST",
+        "path": "/api/portfolios",
+        "publishedBeforeSave": false,
+        "publishedInRequest": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "actualReactPortfolioPage": true,
+  "actualRouter": true,
+  "actualPortfolioLoader": true,
+  "syntheticAuthAndApi": true,
+  "realFirebaseVerified": false,
+  "cloudWrites": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "passed": 9,
+  "failed": 0,
+  "results": [
+    {
+      "name": "anonymous-public-page-has-no-owner-controls",
+      "pass": true
+    },
+    {
+      "name": "route-change-hides-A-before-B-and-ignores-old-A-success",
+      "pass": true
+    },
+    {
+      "name": "hidden-or-missing-response-removes-old-public-content",
+      "pass": true
+    },
+    {
+      "name": "return-to-same-public-id-does-not-revive-old-generation",
+      "pass": true
+    },
+    {
+      "name": "transport-error-can-recover-with-explicit-browser-reload",
+      "pass": true
+    },
+    {
+      "name": "account-switch-keeps-public-route-and-never-adds-owner-controls",
+      "pass": true
+    },
+    {
+      "name": "anonymous-owner-navigation-clears-public-view-and-requires-login",
+      "pass": true
+    },
+    {
+      "name": "empty-projects-public-profile-renders-without-private-form",
+      "pass": true
+    },
+    {
+      "name": "stalled-public-read-retries-without-owner-controls-and-ignores-old-data",
+      "pass": true
+    }
+  ]
+}

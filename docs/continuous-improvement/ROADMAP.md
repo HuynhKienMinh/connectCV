@@ -112,3 +112,9 @@ Hai ngôn ngữ VI/EN hiện có là phạm vi kiểm thử ban đầu. Những 
 P0: mất/lộ dữ liệu, thực thi mã trái phép, sai tiền nghiêm trọng — dừng release, khống chế và thông báo. P1: không hoàn thành tác vụ chính, backup không dùng được, nhận định gây hiểu sai khi trả tiền — sửa trước tính năng mới. P2: giảm ma sát, tiếp cận, hiệu suất. P3: tiện ích/đẹp hơn.
 
 Mỗi item cần owner-góc nhìn, evidence, effort, tác động, test xác nhận, metric trước/sau, rollback và rủi ro còn lại. Độ ưu tiên không thay đổi chỉ để làm đẹp số ticket đóng. Không tối ưu p95 từ một mẫu đo hay tăng điểm UX bằng nhận xét không có kịch bản.
+
+
+21/10 cycle70 evidence update: PORT005 portfolio read recovery7unit/28actualReact cases and fullsource/candidateCI pass, sixFEpaths isolatedcaf. Bounded read and GET-only retry retain drafts without retrying confirmed writes. PrivateDrive restore verified; main advance requires fullnewmainCI+Hosting/live proof before scoped deployment acceptance. RealFirebase/physicaldevice/human gates unchanged. This checkpoint does not close CV005/CV006 or claim commercial readiness.
+
+
+Cycle70 PORT005 final21/10: caf28d8/Hostingbe365408272cb1ad live scoped after fullmainCI39480619034 and exactprivateDrive26bundle/freshrestore/new+rollbackZIP gates. Final8GET on web.app/firebaseapp.com hash/header/auth401 PASS. Initial assistant wrongdomain selection caused unnecessary rollback; corrected after actualrollback8PASS, then one reactivation. Incident and32GET total (6wrongdomain readonly) preserved in continuation journal; no runtime/CDN defect inferred. RealFirebase/actors/devices/DB/pilot/commercial remain open; CV005/CV006 active70 and old-baseBEscopes require newrecomposition/CI afterRenderdecision.

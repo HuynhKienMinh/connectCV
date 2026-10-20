@@ -1,0 +1,20 @@
+{
+  "candidate": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "bundleCount": 26,
+  "criticalSourceCoverage": {
+    "caf28d8531b432543a4c4106aa1e766f77a10e77": 61,
+    "ce09d3c7a95cace46d7eed10b0cd5d428c119c16": 61,
+    "d6a3fd28859e0ac9b84885a8618c7a1d06d270d0": 59
+  },
+  "freshBareFsck": true,
+  "zipMembersVerified": true,
+  "databaseIncluded": false,
+  "stagePeakBytes": 243770353,
+  "catalog": {
+    "file": "connectcv-catalog-cycle-0070-portfolio-caf28d8.json",
+    "bytes": 12531,
+    "sha256": "39ff5f43ac7d64d2fb1b4d6d7bf0086fe9964e9cf2de67fb1f72d0caacfcf9f5"
+  },
+  "verifiedAt": "2026-10-21T02:05:03.148716+07:00",
+  "localCleanupPending": true
+}

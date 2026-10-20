@@ -1,0 +1,35 @@
+{
+  "candidate": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "catalog": {
+    "path": "backup-transfer/cycle0070-portfolio-caf28d8.json",
+    "file": "connectcv-catalog-cycle-0070-portfolio-caf28d8.json",
+    "bytes": 12531,
+    "sha256": "39ff5f43ac7d64d2fb1b4d6d7bf0086fe9964e9cf2de67fb1f72d0caacfcf9f5",
+    "cloudId": "14lCeqxDLR4d5neQYpF2nFEguwxSrUUwN"
+  },
+  "cloudFiles": {
+    "catalog": {
+      "id": "14lCeqxDLR4d5neQYpF2nFEguwxSrUUwN",
+      "url": "https://drive.google.com/file/d/14lCeqxDLR4d5neQYpF2nFEguwxSrUUwN/view"
+    },
+    "bundle": {
+      "id": "1RO5LPXfleCQgvCXaFcM-hjamAFJDkd2l",
+      "url": "https://drive.google.com/file/d/1RO5LPXfleCQgvCXaFcM-hjamAFJDkd2l/view"
+    },
+    "frontend": {
+      "id": "1d3SRKetZzkcjgDgNUtsTpFCx--oTS-PS",
+      "url": "https://drive.google.com/file/d/1d3SRKetZzkcjgDgNUtsTpFCx--oTS-PS/view"
+    }
+  },
+  "cloudUiAcknowledged": true,
+  "nativeDriveChecksumReadback": true,
+  "coldCacheServerRehydrationVerified": false,
+  "freshBareFsck": true,
+  "databaseIncluded": false,
+  "stageBytesBeforeCleanup": 243770353,
+  "localCleanupPending": false,
+  "verifiedAt": "2026-10-21T02:06:18.358283+07:00",
+  "localCopiesRetained": false,
+  "localStageDeleted": true,
+  "cleanedAt": "2026-10-21T02:06:18.635830+07:00"
+}
