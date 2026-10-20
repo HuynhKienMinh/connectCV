@@ -1,0 +1,11 @@
+{
+  "cloudSha256": "cd9211e898a2437e9baf2df13d075eaba189140a69d61508b78abf1155be65e4",
+  "checkedAt": "2026-10-20T13:02:37.4965233+07:00",
+  "removedDuplicate": "C:\\Users\\huynh\\Documents\\Codex\\2026-10-04\\new-chat\\work\\connectcv-independent\\tmp\\cycle0069\\restore\\connectcv-2026-10-15-cycle-0015-baseline.bundle",
+  "newBundleAndBuildPreserved": true,
+  "configuredCapBytes": 402653184,
+  "removedBytes": 239004493,
+  "recovery": "Fetch verified base directly from Drive, no additional local base copy",
+  "cause": "Copied base bundle plus freshbare duplicated239MB; gate stopped before upload/deploy",
+  "peakRestoreBytes": 480814472
+}

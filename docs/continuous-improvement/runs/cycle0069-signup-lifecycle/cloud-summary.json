@@ -1,0 +1,22 @@
+{
+  "copiedAt": "2026-10-20T06:03:12.498299+00:00",
+  "newBundle": {
+    "file": "connectcv-2026-10-20-cycle-0069-candidate-ce09d3c.incremental.bundle",
+    "sha256": "07b3e877941d4595d15d399c80369519baaaa3b45e1fe17f6626b1b7bc6d2586",
+    "bytes": 3612
+  },
+  "frontend": {
+    "file": "connectcv-2026-10-20-cycle-0069-frontend-ce09d3c.zip",
+    "sha256": "b6eb07b0c03ca33c548e841168bbd83948cdb36954c21d2bae5e852bf4d1f16a",
+    "bytes": 142447
+  },
+  "catalogFile": "connectcv-catalog-cycle-0069-candidate-ce09d3c.json",
+  "catalogSha256": "2c0cb15f4dc0c1fc883030804b53d13173efa79e611988507e932604db1603aa",
+  "nativeDriveReadbackVerified": true,
+  "webUiAcknowledged": true,
+  "providerCachePurged": false,
+  "cloudSharingChanged": false,
+  "localCopiesDeleted": true,
+  "verifiedAt": "2026-10-20T06:07:06.945863+00:00",
+  "catalogCloudId": "1xsE3I5Yj7CugB6pMNeRvsD8Ih-5pNG_8"
+}
