@@ -216,3 +216,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           COMMUNITY_CONSENT_QA_OUTPUT: '${{ runner.temp }}/connectcv-community-consent-qa'
+      - name: Verify portfolio delete ownership, retained private draft and mutation locking
+        run: node tests/portfolioDeleteUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          PORTFOLIO_DELETE_QA_OUTPUT: '${{ runner.temp }}/connectcv-portfolio-delete-qa'
