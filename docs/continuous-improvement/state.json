@@ -8,7 +8,7 @@
   "lastRun": "runs/2026-10-20-cycle-0069.md",
   "activeRun": "runs/2026-10-21-cycle-0070.md",
   "activeIssue": "CV005",
-  "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_RECOMPOSE_AFTER_FE_MAIN_ADVANCE",
+  "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_FRESH_B93_BACKUP_REQUIRED",
   "rotation": [
     "auth-profile",
     "cv-ats",
@@ -60,7 +60,7 @@
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
     "PORT005 FEcaf28d8/Hostingbe365 deployed scoped after exactsource/candidate/mainCI39480619034 and Drive26bundle/freshrestore/new+rollbackZIP. Initial smoke selected wrong out-of-scope domain6readonlyGET ->unnecessary rollback32cb, correctdomains rollback8PASS then one reactivation +final8PASS; total32GET. No remaining runtime defect inferred. RealFirebase write/retry/device verification remains open; codebackup notDBbackup.",
-    "CV005+CV006 active70: old-base1f294f9paths/31browser+actualDOCX and fullCI39385955816/39385956500 remain evidence; main advancedcaf, MUST compose a NEW scoped successor branch/commit and exactCI from then-currentmain before freshDrive/rollback/Renderrelease. Do not forcepush old releasebranch or deploy aggregate review. Catalog1513 does not cover combined newer candidate.",
+    "CV005/CV006 active70 candidateb93c3de17079ecf66ab9165d2b60239e9702e9c3 on maincaf/newbranch improvement/cv-export-release-20261021,9CVpaths. ExactCI39482594614 fullSUCCESS incl CVownership/fullscreen/Word/DOCX and all3portfolio browser steps, unit/build/audits. EntireBE identical historical1f, entireFE currentcaf; no other pending scope imported. Render human decision +fresh exactb93 privateDrive restore/build/rollback +mainCI/live required. Current26bundlecaf does NOT coverb93; no newlargebackup/authretry/mainpush/deploy while blocked. Preserve historicalrefs.",
     "Render GitHub login action-time decision remains pending since automaticreview rejection; no authretry/alternatebrowser/API bypass. ExistingDrive/Firebase-only session used for independent FE backup does not approve Render login or BE release.",
     "INT005 old-base72dc844 CI39387902753/source39387903287; SOCIAL005 old-base7676a69 CI39389251543/source39389251033; CHAT007 old-base87e786d CI39391077588/source39391077893 preserved, not deployed. Recompose each separately from newmain +newexactCI+freshDrivebackup+rollback before release; no newlargeBEbackup while Renderrelease path blocked.",
     "Independent next rotation auth-profile distinct unverified scenario after PORT005 release/checkpoint. No repeat green tests or realFirebase/AI/profile/community writes; real actors/devices/providers/database/human pilot and commercial gates remain open. Code backup is not database backup."
@@ -144,7 +144,7 @@
     "autoDeployDisabledBySpecificCommit": true,
     "lastCandidateCheckedAt": "2026-10-20T06:12:45.004088+00:00",
     "remainingFrontendRecovery": "ATS optional translated facts corrected9c in backend formatter; full Word/design/pagination/labels/authenticated export and browser E2E remain pending.",
-    "nextReviewStatus": "WORD31_CI_READY_PENDING_LOGIN_EXACT_BACKUP_RELEASE",
+    "nextReviewStatus": "RECOMPOSED_B93_EXACT_CI_VERIFIED_PENDING_RENDER_FRESH_BACKUP_RELEASE",
     "nextReviewCommit": "7e1820c2c715b3808b25399b207e2011a2b62a09",
     "nextReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385955816",
     "candidateCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
@@ -375,21 +375,21 @@
     "pendingSignupLifecycleOwnerNotifiedCycle": 69,
     "pendingSignupLifecyclePublicGetCount": 8,
     "pendingExportReviewCommit": "7e1820c2c715b3808b25399b207e2011a2b62a09",
-    "pendingExportCandidateCommit": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
-    "pendingExportStatus": "VERIFIED_OLD_BASE_RECOMPOSITION_REQUIRED_PENDING_RENDER_LOGIN",
+    "pendingExportCandidateCommit": "b93c3de17079ecf66ab9165d2b60239e9702e9c3",
+    "pendingExportStatus": "EXACT_RECOMPOSED_CI_SUCCESS_BLOCKED_RENDER_LOGIN_FRESH_BACKUP",
     "pendingExportPriorCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39382005162",
     "pendingExportReviewCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385955816",
-    "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39385956500",
-    "pendingExportBackupCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
+    "pendingExportCandidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39482594614",
+    "pendingExportBackupCatalog": null,
     "pendingExportBackupCoversCandidate": false,
     "pendingExportCandidateCiPassed": true,
     "pendingExportReviewCiPassed": true,
     "pendingExportOwnerNotifiedCycle": 70,
-    "pendingExportMainChanged": true,
+    "pendingExportMainChanged": false,
     "pendingExportLiveVerified": false,
     "pendingExportDocumentTests": 6,
     "pendingExportDocumentBaselineFailures": 4,
-    "pendingExportPreviousCandidate": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+    "pendingExportPreviousCandidate": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
     "pendingExportPreviousCandidateSuperseded": true,
     "pendingExportDocumentOwnerNotifiedAt": "2026-10-20T14:12:47.044757+07:00",
     "pendingWordRecoveryCases": 5,
@@ -499,7 +499,24 @@
       "localCleanupPending": false,
       "localCopiesRetained": false,
       "remainingVerification": "Actual dedicated synthetic Firebase account/device journey; no real profile writes this run. Live proof only exact static build and anonymous API boundaries."
-    }
+    },
+    "pendingExportCandidateBranch": "improvement/cv-export-release-20261021",
+    "pendingExportBaseCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+    "pendingExportComposition": "runs/cycle0070-cv-export/recompose-caf/composition.json",
+    "pendingExportHistoricalBackupCatalog": "backup-transfer/cycle0070-candidate-1513dbd.json",
+    "pendingExportStudioSha256": "afc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b",
+    "pendingExportNextReleaseGates": [
+      "exact b93 CI success",
+      "human Render login decision/no permission expansion",
+      "fresh exact b93 privateDrive code/build checksum+restore+rollback",
+      "fresh mainCI",
+      "specificcommit Render deploy and live checks"
+    ],
+    "pendingExportCandidateCiId": 39482594614,
+    "pendingExportRecomposedCheckedAt": "2026-10-21T02:26:36.656678+07:00",
+    "pendingExportLastReadbackAt": "2026-10-21T11:02:17.993423+07:00",
+    "pendingExportDeployAttempted": false,
+    "pendingExportReleaseBlockedReason": "Existing Render human login decision, then fresh exact b93 Drive code/build restore+rollback/mainCI/live gates; no auth retry or new large backup while blocked."
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {
@@ -613,6 +630,6 @@
     "lastIssue": "PORT005",
     "nextModule": "auth-profile",
     "checkedAt": "2026-10-21T02:01:54.082581+07:00",
-    "note": "Cycle70 continuation, not completion; FE-only candidate independent of Render login, exact CI/Drive/main/live gates pending."
+    "note": "PORT005 deployed scoped. Active CV recomposedb93 on caf; exactCI39482594614 SUCCESS. Render decision/freshcandidatebackup/main/live stillblocked. Next independent auth-profile distinct scenario, no repeated green tests/phantom cycle."
   }
 }

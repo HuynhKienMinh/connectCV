@@ -1,0 +1,36 @@
+{
+  "candidate": "b93c3de17079ecf66ab9165d2b60239e9702e9c3",
+  "base": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "ciId": 39482594614,
+  "ciUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39482594614",
+  "ciPassed": true,
+  "requiredSteps": {
+    "Verify portfolio saves preserve newer drafts and ignore obsolete account operations": "success",
+    "Verify actual public portfolio routes, visitor controls and transport recovery": "success",
+    "Verify portfolio delete ownership, retained private draft and mutation locking": "success",
+    "Verify CV export ownership, duplicate locking and bounded retry": "success",
+    "Verify fullscreen document and editable draft export ownership": "success",
+    "Verify Word recovery preserves requested design and edited content": "success",
+    "Verify local edited DOCX design and structured ATS binary contracts": "success",
+    "Run npm run build": "success",
+    "Run npm test": "success"
+  },
+  "backendIdenticalPriorCvCandidate": true,
+  "frontendIdenticalLiveMain": true,
+  "localFunctionalTestsRerun": false,
+  "priorCv31BrowserAndDocxEvidenceHistorical": true,
+  "newCiVerifiesExactCombinedTree": true,
+  "mainPushed": false,
+  "productionChanged": false,
+  "renderAuthAttempted": false,
+  "newLargeBackupCreated": false,
+  "candidateBackupVerified": false,
+  "databaseVerified": false,
+  "remaining": [
+    "Render human login decision",
+    "fresh exact candidate Drive checksum/restore/build and rollback",
+    "mainCI and specificcommit deployment/live",
+    "actual Word/Firebase/device/provider/human evaluation"
+  ],
+  "checkedAt": "2026-10-21T02:26:36.656678+07:00"
+}

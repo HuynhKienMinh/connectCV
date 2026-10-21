@@ -284,3 +284,9 @@ Cycle70 continuation21/10: [portfolio read recovery](runs/2026-10-21-cycle-0070.
 
 
 Cycle70 PORT005 final21/10: caf28d8/Hostingbe365408272cb1ad live scoped after fullmainCI39480619034 and exactprivateDrive26bundle/freshrestore/new+rollbackZIP gates. Final8GET on web.app/firebaseapp.com hash/header/auth401 PASS. Initial assistant wrongdomain selection caused unnecessary rollback; corrected after actualrollback8PASS, then one reactivation. Incident and32GET total (6wrongdomain readonly) preserved in continuation journal; no runtime/CDN defect inferred. RealFirebase/actors/devices/DB/pilot/commercial remain open; CV005/CV006 active70 and old-baseBEscopes require newrecomposition/CI afterRenderdecision.
+
+
+Cycle70 continuation21/10 02:18VN: CV005/CV006 candidateb93c3de17079ecf66ab9165d2b60239e9702e9c3 freshly composed on currentcaf main, nineCV paths only; backend byte-identical1f294f and frontend byte-identicalcaf, no other pending scopes. Newbranch improvement/cv-export-release-20261021 pushed for exactCI. Prior1f remains historical old-base evidence (its immediate parent4609, ce09 ancestor); do not deploy it overcaf. No newbackup/build/clone/mainpush/deploy or Renderauth action. Catalog26caf does not coverb93; fullnewCI/freshDrive/rollback/mainCI/permittedRenderrelease/live stillrequired. See currentstate and recompose-caf/composition.json.
+
+
+Cycle70 CV recomposition checkpoint: b93c3de on caf passes fullCI39482594614 includingCV/Word/DOCX and portfolio recovery; no mainpush/deploy/newbackup/authretry. CV release remains blocked existingRender human decision then fresh exactDrive/rollback/mainCI/live. Historical1f/4609 refs preserved; no new user action or production finding to notify.

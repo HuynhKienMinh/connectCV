@@ -1,0 +1,35 @@
+{
+  "issue": [
+    "CV005",
+    "CV006"
+  ],
+  "candidate": "b93c3de17079ecf66ab9165d2b60239e9702e9c3",
+  "branch": "improvement/cv-export-release-20261021",
+  "base": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "priorCandidate": "1f294f3201b0998497e9d00dcaf8067fd615a6d5",
+  "priorBaseAncestor": "ce09d3c7a95cace46d7eed10b0cd5d428c119c16",
+  "priorImmediateParent": "4609b6ab6f15645fca1b96035cba10e9ab698ffd",
+  "paths": [
+    ".github/workflows/ai-feature-checks.yml",
+    "backend/features/connectcv/public/index.html",
+    "backend/features/connectcv/tests/cvEditedBinary.check.cjs",
+    "backend/features/connectcv/tests/cvExportDocumentUi.check.cjs",
+    "backend/features/connectcv/tests/cvExportLifecycleUi.check.cjs",
+    "backend/features/connectcv/tests/cvPreview.check.cjs",
+    "backend/features/connectcv/tests/cvWordRecoveryUi.check.cjs",
+    "backend/features/connectcv/tests/pdfCapabilityRecovery.test.js",
+    "backend/features/connectcv/tests/pdfCapabilityUi.check.cjs"
+  ],
+  "tree": "965d413e561fe40975981d960926109d27e2d478",
+  "studioSha256": "afc93cd0eb9b911a27a1fd3dedbf8462cf4f67525830e0872428da6031ca392b",
+  "backendBytesEqualPriorCandidate": true,
+  "allFrontendBytesEqualCurrentMain": true,
+  "workflowEqualPriorScopedCandidate": true,
+  "otherPendingScopesImported": false,
+  "productionChanged": false,
+  "mainPushed": false,
+  "backupCoversCandidate": false,
+  "newLargeBackupCreated": false,
+  "renderLoginAttempted": false,
+  "createdAt": "2026-10-21T02:19:52.400487+07:00"
+}
