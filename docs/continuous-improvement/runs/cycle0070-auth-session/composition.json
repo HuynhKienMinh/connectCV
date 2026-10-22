@@ -1,0 +1,19 @@
+{
+  "source": "fc2eeb983a767ad65174f2040bae8e58ef1904ee",
+  "candidate": "63ceb8432f2ed42bd8e113ffefd6e62208be6fe1",
+  "branch": "improvement/api-session-release-20261022",
+  "base": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "paths": [
+    "frontend/src/lib/api.js",
+    "frontend/tests/apiSessionUi.check.mjs",
+    ".github/workflows/ai-feature-checks.yml"
+  ],
+  "allFrontendMatchesTestedSource": true,
+  "backendUnchanged": true,
+  "workflowMainPlusOnlyApiSessionStep": true,
+  "apiSha256": "8d4202222ddc453b75fd9618b869ebf2af6c2055f714a1c3143c83f0a5bcef66",
+  "mainPushed": false,
+  "deployed": false,
+  "backupCoversCandidate": false,
+  "createdAt": "2026-10-22T09:35:48.878187+07:00"
+}

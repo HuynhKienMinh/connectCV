@@ -1,0 +1,52 @@
+{
+  "actualReactAccountPage": true,
+  "actualRouter": true,
+  "actualApiModule": true,
+  "syntheticSdkAndFetch": true,
+  "realFirebaseVerified": false,
+  "cloudWrites": 0,
+  "aiProviderCalls": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "sourceRef": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "passed": 4,
+  "failed": 4,
+  "results": [
+    {
+      "name": "logout-before-token-resolution-cannot-dispatch-profile-write",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "account-switch-before-token-resolution-cannot-dispatch-old-profile-write",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "same-uid-new-sdk-instance-cannot-dispatch-old-profile-write",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "obsolete-sdk-token-error-is-generic-for-new-same-uid-session",
+      "pass": false,
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "current-profile-save-remains-versioned-and-sent-once",
+      "pass": true
+    },
+    {
+      "name": "current-token-failure-retains-draft-and-explicit-retry-works",
+      "pass": true
+    },
+    {
+      "name": "already-dispatched-write-is-not-retracted-and-late-result-does-not-replace-B",
+      "pass": true
+    },
+    {
+      "name": "anonymous-public-read-still-works-without-credentials",
+      "pass": true
+    }
+  ]
+}

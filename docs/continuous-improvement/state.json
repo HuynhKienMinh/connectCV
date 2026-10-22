@@ -6,7 +6,7 @@
   "cadenceMinutes": 15,
   "completedCycles": 69,
   "lastRun": "runs/2026-10-20-cycle-0069.md",
-  "activeRun": "runs/2026-10-21-cycle-0070.md",
+  "activeRun": "runs/2026-10-22-cycle-0070.md",
   "activeIssue": "CV005",
   "issueState": "RELEASE_BLOCKED_RENDER_LOGIN_FRESH_B93_BACKUP_REQUIRED",
   "rotation": [
@@ -59,6 +59,7 @@
   },
   "commercialReleaseVerdict": "NOT_READY_EVIDENCE_INCOMPLETE",
   "nextActions": [
+    "AUTH006 current priority among independent FE work: sourcefc2eeb9/isolated63ceb8432f2ed42bd8e113ffefd6e62208be6fe1 on caf,3paths. Local actualAccountPage+api8PASS vs4FAIL baseline +18Account regressionPASS. CI39712291982/39712292052 stillinprogress (npm dependency/audit phases), NOT verified; do not rerun just to poll. No newbundle/build/clone/mainpush/deploy. Resume same exact CI/state/main/Drive/Hosting first. Prepared backup_procedure.py NOTexecuted; after CI success require fresh exact63ceb8 privateDrive27bundle/newZIP/currentcafZIP restore+be365 rollback, mainCI/Hosting/live. RealFirebase pending; no actualuser/provider writes.",
     "PORT005 FEcaf28d8/Hostingbe365 deployed scoped after exactsource/candidate/mainCI39480619034 and Drive26bundle/freshrestore/new+rollbackZIP. Initial smoke selected wrong out-of-scope domain6readonlyGET ->unnecessary rollback32cb, correctdomains rollback8PASS then one reactivation +final8PASS; total32GET. No remaining runtime defect inferred. RealFirebase write/retry/device verification remains open; codebackup notDBbackup.",
     "CV005/CV006 active70 candidateb93c3de17079ecf66ab9165d2b60239e9702e9c3 on maincaf/newbranch improvement/cv-export-release-20261021,9CVpaths. ExactCI39482594614 fullSUCCESS incl CVownership/fullscreen/Word/DOCX and all3portfolio browser steps, unit/build/audits. EntireBE identical historical1f, entireFE currentcaf; no other pending scope imported. Render human decision +fresh exactb93 privateDrive restore/build/rollback +mainCI/live required. Current26bundlecaf does NOT coverb93; no newlargebackup/authretry/mainpush/deploy while blocked. Preserve historicalrefs.",
     "Render GitHub login action-time decision remains pending since automaticreview rejection; no authretry/alternatebrowser/API bypass. ExistingDrive/Firebase-only session used for independent FE backup does not approve Render login or BE release.",
@@ -516,7 +517,39 @@
     "pendingExportRecomposedCheckedAt": "2026-10-21T02:26:36.656678+07:00",
     "pendingExportLastReadbackAt": "2026-10-21T11:02:17.993423+07:00",
     "pendingExportDeployAttempted": false,
-    "pendingExportReleaseBlockedReason": "Existing Render human login decision, then fresh exact b93 Drive code/build restore+rollback/mainCI/live gates; no auth retry or new large backup while blocked."
+    "pendingExportReleaseBlockedReason": "Existing Render human login decision, then fresh exact b93 Drive code/build restore+rollback/mainCI/live gates; no auth retry or new large backup while blocked.",
+    "pendingApiSession": {
+      "issue": "AUTH006",
+      "status": "LOCAL_VERIFIED_EXACT_CI_IN_PROGRESS_NO_BACKUP_NO_DEPLOY",
+      "sourceCommit": "fc2eeb983a767ad65174f2040bae8e58ef1904ee",
+      "candidateCommit": "63ceb8432f2ed42bd8e113ffefd6e62208be6fe1",
+      "candidateBranch": "improvement/api-session-release-20261022",
+      "baseCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+      "apiSha256": "8d4202222ddc453b75fd9618b869ebf2af6c2055f714a1c3143c83f0a5bcef66",
+      "requiresRenderDeployment": false,
+      "backupCoversCandidate": false,
+      "deployed": false,
+      "realFirebaseVerified": false,
+      "localNewCasesPassed": 8,
+      "baselineFailures": 4,
+      "relatedBrowserCasesPassed": 18,
+      "checkedAt": "2026-10-22T09:46:05.672216+07:00",
+      "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39712291982",
+      "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39712292052",
+      "ciPassed": false,
+      "ciStatus": "in_progress",
+      "blockingDependency": "EXACT_SOURCE_AND_CANDIDATE_CI",
+      "preparedBackupProcedure": "runs/cycle0070-auth-session/backup_procedure.py",
+      "preparedBackupProcedureExecuted": false,
+      "hostingRollbackObserved": "be365408272cb1ad",
+      "driveOwnerFolderSessionObserved": true,
+      "newLargeBackupCreated": false,
+      "mainPushed": false,
+      "publicSmokeRequests": 0,
+      "localCopiesRetained": false,
+      "findingNotificationPreparedAt": "2026-10-22T09:46:05.672216+07:00",
+      "completionNotified": false
+    }
   },
   "blockingDependency": "RENDER_LOGIN_APPROVAL",
   "dataBackup": {
@@ -623,13 +656,14 @@
     "INT005",
     "SOCIAL005",
     "CHAT007",
-    "PORT005"
+    "PORT005",
+    "AUTH006"
   ],
   "independentRotation": {
-    "lastModule": "portfolio",
-    "lastIssue": "PORT005",
-    "nextModule": "auth-profile",
-    "checkedAt": "2026-10-21T02:01:54.082581+07:00",
-    "note": "PORT005 deployed scoped. Active CV recomposedb93 on caf; exactCI39482594614 SUCCESS. Render decision/freshcandidatebackup/main/live stillblocked. Next independent auth-profile distinct scenario, no repeated green tests/phantom cycle."
+    "lastModule": "auth-profile",
+    "lastIssue": "AUTH006",
+    "nextModule": "cv-ats",
+    "checkedAt": "2026-10-22T09:38:13.790633+07:00",
+    "note": "ActiveCV70 remainsblocked. Independent API token-wait defect reproduced/fixed local; exactCI/Drive/main/live gates pending, no phantom cycle."
   }
 }

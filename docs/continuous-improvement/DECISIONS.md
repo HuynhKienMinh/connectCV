@@ -187,3 +187,8 @@ FAQ không hướng tới màn hình Proposal khi DOM sản phẩm không có fo
 ## 21/10/2026 — cycle70 portfolio read scope
 
 PORT005 isolatescaf28d8 sixfrontend paths from maince09; Renderlogin rejection remains unresolved and blocks BE release. Existing privateDrive session and Firebase Hosting session/rollback32cb are available without auth/access changes, so an independent Hosting-only release may pass its own exactCI/newcloudbackup/restore/rollback/mainCI/live gates. Do not treat this as Render auth approval or deploy aggregate review. No new large BEbackup while its release/rollback path is blocked. Current25bundle1513 does not covercaf. Any main advance requires later pending BE scopes recomposed with fresh branch/CI/backup; preserve prior candidates as evidence. No DB/schema/provider writes.
+
+
+## D040 —22/10/2026: API token wait binds to SDK User instance
+
+Capture current SDK User before getIdToken; compare exact identity before fetch and before exposing a token rejection. Replaced session gets fixed AUTH_SESSION_CHANGED error and explicit retry choice; current failures keep behavior. Do not treat UID equality as SDKinstance equality. No auto retry, token revocation or cancellation of already sent writes. Existing React operation guards remain responsible for response/draft ownership. Same-object transient history not observed between boundaries remains unverified; do not claim full provider isolation. FE-only3path candidate from main, no backend/permissions/schema changes; exactCI/privateDrive/currentHosting rollback/main/live gates before release.

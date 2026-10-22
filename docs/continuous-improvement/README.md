@@ -290,3 +290,6 @@ Cycle70 continuation21/10 02:18VN: CV005/CV006 candidateb93c3de17079ecf66ab9165d
 
 
 Cycle70 CV recomposition checkpoint: b93c3de on caf passes fullCI39482594614 includingCV/Word/DOCX and portfolio recovery; no mainpush/deploy/newbackup/authretry. CV release remains blocked existingRender human decision then fresh exactDrive/rollback/mainCI/live. Historical1f/4609 refs preserved; no new user action or production finding to notify.
+
+
+Cycle70 continuation22/10: [API SDK session ownership](runs/2026-10-22-cycle-0070.md) AUTH006P1 maincaf actualAccountPage/api baseline4FAIL/4PASS; localfixed8PASS +18Account regression. API stops not-yet-dispatched fetch after SDKUserreplacement and returns generic obsolete-token failure; current versioned save/anonymousread and alreadysentwrite behavior preserved. Sourcefc2eeb9/isolated63ceb8 threepaths pushed; exactCI39712291982/39712292052 inprogress, no backup/mainpush/deploy yet. ExistingDrive/Hosting rollbackbe365 sessions ready but must recheck before release; preparedprocedure sourceonly. CurrentCVb93/otherpendingcandidates/live/Drive26 preserved; realFirebase/device/provider/DB/human/commercial gates open.
