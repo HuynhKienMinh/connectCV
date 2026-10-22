@@ -97,6 +97,12 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           ACCOUNT_UI_QA_OUTPUT: '${{ runner.temp }}/connectcv-account-lifecycle-qa'
+      - name: Verify API token wait cannot dispatch after SDK session replacement
+        run: node tests/apiSessionUi.check.mjs
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          API_SESSION_QA_OUTPUT: '${{ runner.temp }}/connectcv-api-session-qa'
       - name: Verify React iframe token boundaries, account changes and obsolete document requests
         run: node tests/featureBridgeUi.check.mjs
         working-directory: frontend
