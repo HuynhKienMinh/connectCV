@@ -1,0 +1,27 @@
+{
+  "command": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "tests/account.test.cjs",
+    "tests/communityFaults.test.cjs",
+    "tests/communityReceipt.test.cjs",
+    "tests/communityHttp.test.cjs",
+    "tests/chatbotHttp.test.cjs",
+    "tests/portfolio.test.cjs",
+    "tests/portfolioAuthHttp.test.cjs",
+    "tests/profileConflict.test.cjs",
+    "tests/renderBrowser.test.cjs"
+  ],
+  "exitCode": 0,
+  "summary": [
+    "# tests 61",
+    "# pass 61",
+    "# fail 0",
+    "# cancelled 0",
+    "# skipped 0"
+  ],
+  "scope": "local synthetic mocked data/auth/provider HTTP only; no cloud writes",
+  "priorRestrictedRun": "Failed loopback EACCES; normal approved rerun, no sandbox weakening",
+  "priorCaptureFailure": "cp1252 output decode failed after process; use explicit UTF8/tap; no outcome inferred from lost output"
+}

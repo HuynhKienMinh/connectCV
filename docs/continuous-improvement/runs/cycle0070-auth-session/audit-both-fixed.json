@@ -1,0 +1,74 @@
+[
+  {
+    "directory": "backend",
+    "exitCode": 0,
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 145,
+        "dev": 0,
+        "optional": 129,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 273
+      }
+    },
+    "vulnerabilities": {},
+    "error": null
+  },
+  {
+    "directory": "frontend",
+    "exitCode": 0,
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 106,
+        "dev": 93,
+        "optional": 50,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 198
+      }
+    },
+    "vulnerabilities": {},
+    "error": null
+  },
+  {
+    "directory": "backend/features/connectcv",
+    "exitCode": 0,
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 123,
+        "dev": 0,
+        "optional": 12,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 134
+      }
+    },
+    "vulnerabilities": {},
+    "error": null
+  }
+]

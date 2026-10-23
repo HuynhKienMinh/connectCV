@@ -1,0 +1,48 @@
+{
+  "actualReactAccountPage": true,
+  "actualRouter": true,
+  "actualApiModule": true,
+  "syntheticSdkAndFetch": true,
+  "realFirebaseVerified": false,
+  "cloudWrites": 0,
+  "aiProviderCalls": 0,
+  "externalNetworkBlocked": true,
+  "chromiumSandbox": true,
+  "sourceRef": "working-tree",
+  "passed": 8,
+  "failed": 0,
+  "results": [
+    {
+      "name": "logout-before-token-resolution-cannot-dispatch-profile-write",
+      "pass": true
+    },
+    {
+      "name": "account-switch-before-token-resolution-cannot-dispatch-old-profile-write",
+      "pass": true
+    },
+    {
+      "name": "same-uid-new-sdk-instance-cannot-dispatch-old-profile-write",
+      "pass": true
+    },
+    {
+      "name": "obsolete-sdk-token-error-is-generic-for-new-same-uid-session",
+      "pass": true
+    },
+    {
+      "name": "current-profile-save-remains-versioned-and-sent-once",
+      "pass": true
+    },
+    {
+      "name": "current-token-failure-retains-draft-and-explicit-retry-works",
+      "pass": true
+    },
+    {
+      "name": "already-dispatched-write-is-not-retracted-and-late-result-does-not-replace-B",
+      "pass": true
+    },
+    {
+      "name": "anonymous-public-read-still-works-without-credentials",
+      "pass": true
+    }
+  ]
+}

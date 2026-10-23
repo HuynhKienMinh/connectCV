@@ -1,0 +1,20 @@
+{
+  "version": "10.7.4",
+  "scope": "Local installed dependency only; no HTTP/load/provider/public request",
+  "boundedParserCases": [
+    {
+      "n": 10000,
+      "valid": false,
+      "durationMs": 0.107
+    },
+    {
+      "n": 40000,
+      "valid": false,
+      "durationMs": 0.081
+    }
+  ],
+  "unchangedRateLimitKeyCases": 5,
+  "cleanInstallVerified": true,
+  "baselineVersion": "10.7.3",
+  "applicationExploitabilityEstablished": false
+}

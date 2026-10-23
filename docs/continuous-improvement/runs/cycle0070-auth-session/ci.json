@@ -2,16 +2,250 @@
   {
     "id": 39712291982,
     "head_sha": "fc2eeb983a767ad65174f2040bae8e58ef1904ee",
-    "head_branch": "improvement/continuous-review-20261013",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
+    "run_attempt": 2,
     "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39712291982",
-    "readAt": "2026-10-22T09:44:03.092329+07:00",
+    "updated_at": "2026-10-23T05:07:46Z",
     "jobs": [
       {
+        "id": 120250571061,
+        "name": "pdf-renderer",
+        "status": "completed",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci --omit=dev",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci --omit=dev",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install pinned Chromium for sandboxed PDF verification",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify production sandbox, isolated resources and PDF text",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify mobile Google login guards and recovery with synthetic SDK",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify email/reset route lifecycle, late results and duplicate submission",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify AccountPage load, version conflicts and actor operation ownership",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify API token wait cannot dispatch after SDK session replacement",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify React iframe token boundaries, account changes and obsolete document requests",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify readiness recovery after browser re-creation",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install independent PDF text verifier",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Compare native font geometry, crop and pagination",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify exact Vietnamese words with independent parser",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify native role fields and long-title wrapping",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify source facts in all eight role-field PDFs",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify responsive preview and edited photo round trip",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify canonical photo layout in sandboxed PDF exports",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify synthetic matching cards and selection for ten industries",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify large portrait saving, retained drafts and profile conflicts",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify private report dialog, retained choices and network recovery",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify chatbot clear, logout, late responses and responsive browser lifecycle",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify portfolio saves preserve newer drafts and ignore obsolete account operations",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify actual public portfolio routes, visitor controls and transport recovery",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify interview microphone cancellation, device loss and text fallback",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify community receipt retry, authoritative balance and retained newer drafts",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify interview voice cancellation, late playback and delayed microphone resume",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify interview session ownership across transcription, replies and departure",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify community public consent across edits, actor changes and token wait",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify portfolio delete ownership, retained private draft and mutation locking",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify signup followups stop after departure or SDK user replacement",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify CV export ownership, duplicate locking and bounded retry",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify fullscreen document and editable draft export ownership",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify Word recovery preserves requested design and edited content",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify local edited DOCX design and structured ATS binary contracts",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify interview summary cancellation, duplicate locking and bounded retry",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify actual community cards hand selected questions to live interview",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 120250571225,
         "name": "verify",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "failure",
         "steps": [
           {
             "name": "Set up job",
@@ -35,57 +269,63 @@
           },
           {
             "name": "Run npm ci",
-            "status": "in_progress",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run npm run build",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run node --test tests/authFlow.test.js tests/googleAuthFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityReceipt.test.cjs tests/communityHttp.test.cjs tests/chatbotHttp.test.cjs tests/portfolio.test.cjs tests/portfolioAuthHttp.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs tests/snapshotEnvelope.test.cjs tests/snapshotCollector.test.cjs tests/firestoreReadTransport.test.cjs tests/snapshotReadTime.test.cjs tests/snapshotCredential.test.cjs tests/encryptedSnapshot.test.cjs",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run npm test",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run npm audit --audit-level=moderate",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "failure"
           },
           {
             "name": "Run npm audit --audit-level=moderate",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "skipped"
           },
           {
             "name": "Run npm audit --audit-level=moderate",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "skipped"
           },
           {
             "name": "Post Run actions/setup-node@v4",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "skipped"
           },
           {
             "name": "Post Run actions/checkout@v4",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
           }
         ]
       },
       {
+        "id": 120250571392,
         "name": "emulator-restore",
         "status": "completed",
         "conclusion": "success",
@@ -136,244 +376,23 @@
             "conclusion": "success"
           }
         ]
-      },
-      {
-        "name": "pdf-renderer",
-        "status": "in_progress",
-        "conclusion": null,
-        "steps": [
-          {
-            "name": "Set up job",
-            "status": "completed",
-            "conclusion": "success"
-          },
-          {
-            "name": "Run actions/checkout@v4",
-            "status": "completed",
-            "conclusion": "success"
-          },
-          {
-            "name": "Run actions/setup-node@v4",
-            "status": "completed",
-            "conclusion": "success"
-          },
-          {
-            "name": "Run npm ci --omit=dev",
-            "status": "in_progress",
-            "conclusion": null
-          },
-          {
-            "name": "Run npm ci --omit=dev",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Run npm ci",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Install pinned Chromium for sandboxed PDF verification",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify production sandbox, isolated resources and PDF text",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify mobile Google login guards and recovery with synthetic SDK",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify email/reset route lifecycle, late results and duplicate submission",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify AccountPage load, version conflicts and actor operation ownership",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify API token wait cannot dispatch after SDK session replacement",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify React iframe token boundaries, account changes and obsolete document requests",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify readiness recovery after browser re-creation",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Run actions/setup-python@v5",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Install independent PDF text verifier",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Compare native font geometry, crop and pagination",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify exact Vietnamese words with independent parser",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify native role fields and long-title wrapping",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify source facts in all eight role-field PDFs",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify responsive preview and edited photo round trip",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify canonical photo layout in sandboxed PDF exports",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify synthetic matching cards and selection for ten industries",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify large portrait saving, retained drafts and profile conflicts",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify private report dialog, retained choices and network recovery",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify chatbot clear, logout, late responses and responsive browser lifecycle",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify portfolio saves preserve newer drafts and ignore obsolete account operations",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify actual public portfolio routes, visitor controls and transport recovery",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify interview microphone cancellation, device loss and text fallback",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify community receipt retry, authoritative balance and retained newer drafts",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify interview voice cancellation, late playback and delayed microphone resume",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify interview session ownership across transcription, replies and departure",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify community public consent across edits, actor changes and token wait",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify portfolio delete ownership, retained private draft and mutation locking",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify signup followups stop after departure or SDK user replacement",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify CV export ownership, duplicate locking and bounded retry",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify fullscreen document and editable draft export ownership",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify Word recovery preserves requested design and edited content",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify local edited DOCX design and structured ATS binary contracts",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify interview summary cancellation, duplicate locking and bounded retry",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Verify actual community cards hand selected questions to live interview",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Post Run actions/setup-node@v4",
-            "status": "pending",
-            "conclusion": null
-          },
-          {
-            "name": "Post Run actions/checkout@v4",
-            "status": "pending",
-            "conclusion": null
-          }
-        ]
       }
     ]
   },
   {
     "id": 39712292052,
     "head_sha": "63ceb8432f2ed42bd8e113ffefd6e62208be6fe1",
-    "head_branch": "improvement/api-session-release-20261022",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
+    "run_attempt": 2,
     "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39712292052",
-    "readAt": "2026-10-22T09:44:04.118010+07:00",
+    "updated_at": "2026-10-23T05:07:20Z",
     "jobs": [
       {
+        "id": 120250574026,
         "name": "pdf-renderer",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "success",
         "steps": [
           {
             "name": "Set up job",
@@ -392,175 +411,186 @@
           },
           {
             "name": "Run npm ci --omit=dev",
-            "status": "in_progress",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run npm ci --omit=dev",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run npm ci",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Install pinned Chromium for sandboxed PDF verification",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify production sandbox, isolated resources and PDF text",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify mobile Google login guards and recovery with synthetic SDK",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify email/reset route lifecycle, late results and duplicate submission",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify AccountPage load, version conflicts and actor operation ownership",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify API token wait cannot dispatch after SDK session replacement",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify React iframe token boundaries, account changes and obsolete document requests",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify readiness recovery after browser re-creation",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Run actions/setup-python@v5",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Install independent PDF text verifier",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Compare native font geometry, crop and pagination",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify exact Vietnamese words with independent parser",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify native role fields and long-title wrapping",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify source facts in all eight role-field PDFs",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify responsive preview and edited photo round trip",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify canonical photo layout in sandboxed PDF exports",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify synthetic matching cards and selection for ten industries",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify large portrait saving, retained drafts and profile conflicts",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify chatbot clear, logout, late responses and responsive browser lifecycle",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify portfolio saves preserve newer drafts and ignore obsolete account operations",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify actual public portfolio routes, visitor controls and transport recovery",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify interview microphone cancellation, device loss and text fallback",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify community receipt retry, authoritative balance and retained newer drafts",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify interview voice cancellation, late playback and delayed microphone resume",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify interview session ownership across transcription, replies and departure",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify community public consent across edits, actor changes and token wait",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify portfolio delete ownership, retained private draft and mutation locking",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Verify signup followups stop after departure or SDK user replacement",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Post Run actions/setup-node@v4",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
           },
           {
             "name": "Post Run actions/checkout@v4",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
           }
         ]
       },
       {
+        "id": 120250574569,
         "name": "verify",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "failure",
         "steps": [
           {
             "name": "Set up job",
@@ -609,28 +639,33 @@
           },
           {
             "name": "Run npm audit --audit-level=moderate",
-            "status": "in_progress",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "failure"
           },
           {
             "name": "Run npm audit --audit-level=moderate",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "skipped"
           },
           {
             "name": "Run npm audit --audit-level=moderate",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "skipped"
           },
           {
             "name": "Post Run actions/setup-node@v4",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "skipped"
           },
           {
             "name": "Post Run actions/checkout@v4",
-            "status": "pending",
-            "conclusion": null
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success"
           }
         ]
       }

@@ -1,0 +1,46 @@
+{
+  "version": "10.7.3",
+  "scope": "Local installed dependency only; no HTTP/load/provider/public request",
+  "boundedParserCases": [
+    {
+      "n": 10000,
+      "valid": false,
+      "durationMs": 57.772
+    },
+    {
+      "n": 40000,
+      "valid": false,
+      "durationMs": 936.845
+    }
+  ],
+  "keyCases": [
+    {
+      "ip": "192.0.2.1",
+      "key": "192.0.2.1"
+    },
+    {
+      "ip": "2001:db8:abcd:1234::1",
+      "key": "2001:db8:abcd:1200::/56"
+    },
+    {
+      "ip": "2001:db8:abcd:12ff::2",
+      "key": "2001:db8:abcd:1200::/56"
+    },
+    {
+      "ip": "::ffff:192.0.2.1",
+      "key": "192.0.2.1"
+    },
+    {
+      "ip": "fe80::1%eth0",
+      "key": "fe80::/56"
+    }
+  ],
+  "invalidInputRejectedByNodeIsIPv6": true,
+  "directApplicationImportsFound": false,
+  "dependencyPath": [
+    "backend",
+    "express-rate-limit@8.7.0",
+    "ip-address@10.7.3"
+  ],
+  "reachability": "Rate limiter gates Address6 behind node:net.isIPv6; application request exploitability not established"
+}

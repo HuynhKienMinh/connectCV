@@ -2,9 +2,9 @@
 import datetime,hashlib,json,os,shutil,subprocess,sys,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[4];DOC=ROOT/'docs/continuous-improvement';E=DOC/'runs/cycle0070-auth-session';STAGE=ROOT/'.tmp/auth-release70';DRIVE=Path('G:/My Drive/ConnectCV_Backups_2026-10-14')
-CAND='63ceb8432f2ed42bd8e113ffefd6e62208be6fe1';BASE='caf28d8531b432543a4c4106aa1e766f77a10e77';VERSION='be365408272cb1ad';CAP=384*1024*1024
+CAND='3e7f0e9b1c77937d4e5aa197cf16caf197d4440d';SOURCE='7b3d500a8eddf3663800277fd670eb272efb5c22';BASE='caf28d8531b432543a4c4106aa1e766f77a10e77';VERSION='be365408272cb1ad';CAP=384*1024*1024
 OLD=json.loads((DOC/'backup-transfer/cycle0070-portfolio-caf28d8.json').read_text());OLDRECEIPT=json.loads((DOC/'runs/cycle0070-cv-export/portfolio-read/cloud-receipt.json').read_text())
-BUNDLE='connectcv-2026-10-22-cycle-0070-api-63ceb84.incremental.bundle';ZIP='connectcv-2026-10-22-cycle-0070-frontend-63ceb84.zip';CAT='connectcv-catalog-cycle-0070-api-63ceb84.json';CATLOCAL='backup-transfer/cycle0070-api-63ceb84.json';REF='refs/backup/cycle0070-api-63ceb84'
+BUNDLE='connectcv-2026-10-23-cycle-0070-api-3e7f0e9.incremental.bundle';ZIP='connectcv-2026-10-23-cycle-0070-frontend-3e7f0e9.zip';CAT='connectcv-catalog-cycle-0070-api-3e7f0e9.json';CATLOCAL='backup-transfer/cycle0070-api-3e7f0e9.json';REF='refs/backup/cycle0070-api-3e7f0e9'
 def now():return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))).isoformat()
 def git(*a):return subprocess.check_output(['git',*map(str,a)],cwd=ROOT,stderr=subprocess.PIPE)
 def digest(p):
@@ -23,9 +23,13 @@ def zipcheck(p,sha,members):
 
 if sys.argv[1]=='backup':
  assert not STAGE.exists() and DRIVE.is_dir();assert shutil.disk_usage(ROOT).free>CAP*1.2
- ci=json.loads((E/'ci.json').read_text());assert len(ci)==2 and all(r['conclusion']=='success' for r in ci)
+ ci=json.loads((E/'ci-security.json').read_text());assert len(ci)==2 and {r['head_sha'] for r in ci}=={SOURCE,CAND} and all(r['status']=='completed' and r['conclusion']=='success' for r in ci)
+ state=json.loads((DOC/'state.json').read_text(encoding='utf-8-sig'));assert state['backupTransfer']['status']=='VERIFIED_CLOUD_LOCAL_COPIES_DELETED'
+ assert git('rev-parse','refs/remotes/origin/main').strip().decode()==BASE
+ assert set(git('diff','--name-only',BASE,CAND).decode().splitlines())=={'.github/workflows/ai-feature-checks.yml','backend/package-lock.json','frontend/package-lock.json','frontend/package.json','frontend/src/lib/api.js','frontend/tests/apiSessionUi.check.mjs'}
  assert git('diff','--name-only',CAND,'HEAD','--','frontend').strip()==b''
- assert git('diff','--name-only',BASE,CAND,'--','backend').strip()==b''
+ assert git('diff','--name-only',BASE,CAND,'--','backend').strip()==b'backend/package-lock.json'
+ assert git('show',CAND+':backend/package-lock.json')==git('show',SOURCE+':backend/package-lock.json')
  assert digest(DRIVE/OLDRECEIPT['catalog']['file'])==OLDRECEIPT['catalog']['sha256']
  STAGE.mkdir();(STAGE/'frontend').mkdir();shutil.move(str(ROOT/'frontend/dist'),str(STAGE/'frontend/dist'));(ROOT/'frontend/dist').mkdir()
  if (STAGE/'frontend/dist/.gitkeep').is_file():shutil.copyfile(STAGE/'frontend/dist/.gitkeep',ROOT/'frontend/dist/.gitkeep')
@@ -47,7 +51,7 @@ if sys.argv[1]=='backup':
   subprocess.run(['git','-C',str(bare),'bundle','verify',str(p)],capture_output=True,check=True)
   git('-C',bare,'fetch','--no-tags',p,'+refs/*:refs/*');peak=cap();progress=json.loads((DOC/'state.json').read_text(encoding='utf-8-sig'));progress['backupTransfer']['pendingRetainedBytes']=peak;save(DOC/'state.json',progress);print(json.dumps({'restored':i+1,'total':len(chain),'stageBytes':peak}),flush=True)
  git('-C',bare,'fsck','--full','--strict')
- critical=list(dict.fromkeys(OLD['criticalFiles']+['frontend/tests/apiSessionUi.check.mjs']));coverage={}
+ critical=list(dict.fromkeys(OLD['criticalFiles']+['frontend/tests/apiSessionUi.check.mjs','backend/package-lock.json','frontend/package-lock.json','frontend/package.json']));coverage={}
  for commit in [CAND,BASE,OLD['protectedCommit']]:
   assert git('-C',bare,'rev-parse',commit+'^{tree}')==git('rev-parse',commit+'^{tree}')
   n=0

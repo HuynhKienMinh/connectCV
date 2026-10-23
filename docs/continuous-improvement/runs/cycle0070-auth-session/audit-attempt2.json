@@ -1,0 +1,52 @@
+[
+  {
+    "jobId": 120250571225,
+    "runAttempt": 2,
+    "filteredAuditLog": [
+      "2026-10-23T05:04:02.4874156Z ##[group]Run npm audit --audit-level=moderate",
+      "2026-10-23T05:04:02.4874578Z \u001b[36;1mnpm audit --audit-level=moderate\u001b[0m",
+      "2026-10-23T05:04:02.4938595Z shell: /usr/bin/bash -e {0}",
+      "2026-10-23T05:04:02.4938913Z ##[endgroup]",
+      "2026-10-23T05:04:02.9594517Z # npm audit report",
+      "2026-10-23T05:04:02.9594861Z ",
+      "2026-10-23T05:04:02.9595082Z ip-address  <=10.7.3",
+      "2026-10-23T05:04:02.9595608Z Severity: moderate",
+      "2026-10-23T05:04:02.9597454Z ip-address: Address6 matches a zone identifier in quadratic time ahead of its length limit, allowing a single long string to stall the process - https://github.com/advisories/GHSA-rxp7-6hxx-x8q5",
+      "2026-10-23T05:04:02.9599333Z fix available via `npm audit fix`",
+      "2026-10-23T05:04:02.9599872Z node_modules/ip-address",
+      "2026-10-23T05:04:02.9600145Z ",
+      "2026-10-23T05:04:02.9600411Z 1 moderate severity vulnerability",
+      "2026-10-23T05:04:02.9600715Z ",
+      "2026-10-23T05:04:02.9600921Z To address all issues, run:",
+      "2026-10-23T05:04:02.9601368Z   npm audit fix",
+      "2026-10-23T05:04:02.9707959Z ##[error]Process completed with exit code 1."
+    ],
+    "rawLogPersisted": false,
+    "signedDownloadUrlPersisted": false
+  },
+  {
+    "jobId": 120250574569,
+    "runAttempt": 2,
+    "filteredAuditLog": [
+      "2026-10-23T05:03:58.1372417Z ##[group]Run npm audit --audit-level=moderate",
+      "2026-10-23T05:03:58.1372644Z \u001b[36;1mnpm audit --audit-level=moderate\u001b[0m",
+      "2026-10-23T05:03:58.1425228Z shell: /usr/bin/bash -e {0}",
+      "2026-10-23T05:03:58.1425371Z ##[endgroup]",
+      "2026-10-23T05:03:58.4687063Z # npm audit report",
+      "2026-10-23T05:03:58.4687275Z ",
+      "2026-10-23T05:03:58.4687387Z ip-address  <=10.7.3",
+      "2026-10-23T05:03:58.4687823Z Severity: moderate",
+      "2026-10-23T05:03:58.4688719Z ip-address: Address6 matches a zone identifier in quadratic time ahead of its length limit, allowing a single long string to stall the process - https://github.com/advisories/GHSA-rxp7-6hxx-x8q5",
+      "2026-10-23T05:03:58.4689545Z fix available via `npm audit fix`",
+      "2026-10-23T05:03:58.4689825Z node_modules/ip-address",
+      "2026-10-23T05:03:58.4689959Z ",
+      "2026-10-23T05:03:58.4690087Z 1 moderate severity vulnerability",
+      "2026-10-23T05:03:58.4690232Z ",
+      "2026-10-23T05:03:58.4690335Z To address all issues, run:",
+      "2026-10-23T05:03:58.4690551Z   npm audit fix",
+      "2026-10-23T05:03:58.4773486Z ##[error]Process completed with exit code 1."
+    ],
+    "rawLogPersisted": false,
+    "signedDownloadUrlPersisted": false
+  }
+]

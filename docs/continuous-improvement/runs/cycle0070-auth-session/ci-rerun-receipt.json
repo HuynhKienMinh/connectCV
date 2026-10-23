@@ -1,0 +1,18 @@
+[
+  {
+    "id": 39712291982,
+    "head_sha": "fc2eeb983a767ad65174f2040bae8e58ef1904ee",
+    "previousConclusion": "cancelled",
+    "requestStatus": 201,
+    "reason": "One bounded retry after prior audit endpoint HTTP503 and cancelled source run; do not weaken audit or change dependencies",
+    "requestedAt": "2026-10-23T12:03:28.602001+07:00"
+  },
+  {
+    "id": 39712292052,
+    "head_sha": "63ceb8432f2ed42bd8e113ffefd6e62208be6fe1",
+    "previousConclusion": "failure",
+    "requestStatus": 201,
+    "reason": "One bounded retry after prior audit endpoint HTTP503 and cancelled source run; do not weaken audit or change dependencies",
+    "requestedAt": "2026-10-23T12:03:29.762999+07:00"
+  }
+]

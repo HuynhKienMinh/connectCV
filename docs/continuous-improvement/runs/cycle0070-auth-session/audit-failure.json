@@ -1,0 +1,13 @@
+{
+  "jobId": 119606181909,
+  "auditGroups": [
+    [
+      "npm warn audit 503 Service Unavailable - POST https://registry.npmjs.org/-/npm/v1/security/advisories/bulk - Service Unavailable",
+      "npm error audit endpoint returned an error",
+      "npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-10-22T02_42_11_169Z-debug-0.log",
+      "##[error]Process completed with exit code 1."
+    ]
+  ],
+  "rawJobLogSaved": false,
+  "signedDownloadUrlSaved": false
+}
