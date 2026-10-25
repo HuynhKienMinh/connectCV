@@ -112,23 +112,55 @@
   "nextModule": "cv-ats",
   "rotationIndex": 1,
   "backupTransfer": {
-    "status": "VERIFIED_CLOUD_LOCAL_COPIES_DELETED",
-    "localCleanupAuthorized": true,
+    "status": "TRANSFER_BLOCKED_CLOUD_CONTENT_READBACK_UNVERIFIED",
+    "localCleanupAuthorized": false,
     "destination": "Google Drive private owner folder",
-    "deployBlockedUntilCloudVerified": false,
+    "deployBlockedUntilCloudVerified": true,
     "catalog": "backup-transfer/catalog.json",
     "folderUrl": "https://drive.google.com/drive/folders/1mSFmiAVfI6CEVPFd8G9vA2SrBq58qh7W",
     "cloudBundlesVerified": 26,
-    "localCopiesDeleted": true,
-    "localCopiesRetained": false,
-    "pendingCatalog": null,
-    "pendingCandidateCommit": null,
-    "blocker": null,
+    "localCopiesDeleted": false,
+    "localCopiesRetained": true,
+    "pendingCatalog": "backup-transfer/cycle0070-api-3e7f0e9.json",
+    "pendingCandidateCommit": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
+    "blocker": "Drive UI lists the exact three new files and owner, but download/readback timed out and CUA kernel exited; mounted G: reads PermissionError. UI listing is not byte checksum or independent cloud restore proof.",
     "verifiedBaselineLocalCopiesDeleted": true,
-    "pendingRestoreVerified": true,
-    "pendingRestoreCloneDeleted": true,
-    "pendingRetainedBytes": 0,
-    "lastVerifiedCandidateCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77"
+    "pendingRestoreVerified": false,
+    "pendingRestoreCloneDeleted": false,
+    "pendingRetainedBytes": 243856661,
+    "lastVerifiedCandidateCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+    "cloudUiListed": true,
+    "cloudUiOwnerConfirmed": true,
+    "cloudUiAcknowledged": true,
+    "cloudByteChecksumVerified": false,
+    "independentCloudRestoreVerified": false,
+    "lastCheckedAt": "2026-10-25T10:31:50+07:00",
+    "pendingCloudFiles": [
+      {
+        "name": "connectcv-2026-10-23-cycle-0070-api-3e7f0e9.incremental.bundle",
+        "id": "1r3NTVRVlyTaqNFXgAKo8ep-VtnsBoSVN",
+        "uiSize": "24 KB",
+        "expectedBytes": 24878,
+        "expectedSha256": "b88f018f55ac79c62bda1c6665e570a90b6546d42cba12f07af1ae1574d79798"
+      },
+      {
+        "name": "connectcv-2026-10-23-cycle-0070-frontend-3e7f0e9.zip",
+        "id": "1jPSM_6TLtUDMq8imAFPdkFkQGHZD-fvA",
+        "uiSize": "140 KB",
+        "expectedBytes": 143221,
+        "expectedSha256": "a8b953ef6fa9e3888c78306bf0e25cf503e9d63013fc8c8f5a63cb9646ea01c0"
+      },
+      {
+        "name": "connectcv-catalog-cycle-0070-api-3e7f0e9.json",
+        "id": "1TcgJGuP9CvgqAkcEYGNp8x1eJYJRG5up",
+        "uiSize": "12 KB",
+        "expectedBytes": 12734,
+        "expectedSha256": "761ee26d2c6e5c773af6a96af0f47a59460aa58175b5d0041d868f4453b681fb"
+      }
+    ],
+    "stagePath": ".tmp/auth-release70",
+    "nextAction": "Resume ordinary Drive UI session; download exactly the listed bundle, ZIP, and catalog into existing bounded stage, verify byte SHA and perform fresh bundle restore/ZIP CRC; only then delete the exact own stage. Until then no deployment.",
+    "localSynchronizedPathRestoreVerified": true
   },
   "delivery": {
     "reviewCommit": "0dc80a1f7a408d04fedccc573deca54dc9ea7c44",
@@ -520,7 +552,7 @@
     "pendingExportReleaseBlockedReason": "Existing Render human login decision, then fresh exact b93 Drive code/build restore+rollback/mainCI/live gates; no auth retry or new large backup while blocked.",
     "pendingApiSession": {
       "issue": "AUTH006",
-      "status": "SECURITY_PATCH_EXACT_CI_IN_PROGRESS_BACKUP_UI_BLOCKED",
+      "status": "EXACT_CI_SUCCESS_CLOUD_READBACK_BLOCKED",
       "sourceCommit": "7b3d500a8eddf3663800277fd670eb272efb5c22",
       "candidateCommit": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
       "candidateBranch": "improvement/api-session-security-release-20261023",
@@ -536,17 +568,17 @@
       "checkedAt": "2026-10-23T12:19:51.960980+07:00",
       "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39904748698",
       "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39904748485",
-      "ciPassed": false,
-      "ciStatus": "in_progress",
-      "blockingDependency": "EXACT_SOURCE_CANDIDATE_CI_THEN_DRIVE_BROWSER_PREFLIGHT",
+      "ciPassed": true,
+      "ciStatus": "completed_success",
+      "blockingDependency": "PRIVATE_DRIVE_DOWNLOAD_READBACK_AND_INDEPENDENT_CLOUD_RESTORE",
       "preparedBackupProcedure": "runs/cycle0070-auth-session/backup_procedure.py",
-      "preparedBackupProcedureExecuted": false,
+      "preparedBackupProcedureExecuted": true,
       "hostingRollbackObserved": "be365408272cb1ad",
-      "driveOwnerFolderSessionObserved": false,
+      "driveOwnerFolderSessionObserved": true,
       "newLargeBackupCreated": false,
       "mainPushed": false,
       "publicSmokeRequests": 0,
-      "localCopiesRetained": false,
+      "localCopiesRetained": true,
       "findingNotificationPreparedAt": "2026-10-22T09:46:05.672216+07:00",
       "completionNotified": false,
       "ciRunAttempt": 1,
@@ -580,11 +612,18 @@
       "currentBrowserPreflightAvailable": false,
       "ciVerifyJobsPassed": true,
       "ciAllThreeAuditsPassedBothScopes": true,
-      "ciBrowserJobsPending": true
+      "ciBrowserJobsPending": false,
+      "cloudUiListed": true,
+      "cloudUiAcknowledged": true,
+      "cloudByteChecksumVerified": false,
+      "independentCloudRestoreVerified": false,
+      "lastCheckedAt": "2026-10-25T10:31:50+07:00",
+      "localSynchronizedPathRestoreVerified": true,
+      "restoreClonePendingCleanup": true
     },
     "pendingDependencySecurity": {
       "issue": "SEC005",
-      "status": "PATCHED_LOCAL_CI_PENDING_NOT_DEPLOYED",
+      "status": "PATCHED_EXACT_CI_SUCCESS_CLOUD_RELEASE_BLOCKED",
       "sourceCommit": "7b3d500a8eddf3663800277fd670eb272efb5c22",
       "candidateCommit": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
       "ipAddressVersion": "10.7.4",
@@ -596,13 +635,14 @@
       "backendPatchRequiresRenderDeployment": true,
       "realAttackPerformed": false,
       "evidence": "runs/cycle0070-auth-session/audit-both-fixed.json",
-      "checkedAt": "2026-10-23T12:18:02.180802+07:00",
+      "checkedAt": "2026-10-25T10:31:50+07:00",
       "ciVerifyJobsPassed": true,
       "ciAllThreeAuditsPassedBothScopes": true,
-      "ciBrowserJobsPending": true
+      "ciBrowserJobsPending": false,
+      "backupCoversCandidate": false
     }
   },
-  "blockingDependency": "RENDER_LOGIN_APPROVAL",
+  "blockingDependency": "PRIVATE_DRIVE_CONTENT_READBACK_AND_INDEPENDENT_RESTORE",
   "dataBackup": {
     "status": "WRAPPER_EMULATOR_LOCAL_AND_CI_VERIFIED_REAL_CUSTODY_PENDING",
     "tool": "backend/ops/snapshotEnvelope.cjs",
@@ -721,5 +761,12 @@
     "nextModule": "cv-ats",
     "checkedAt": "2026-10-22T09:38:13.790633+07:00",
     "note": "ActiveCV70 remainsblocked. Independent API token-wait defect reproduced/fixed local; exactCI/Drive/main/live gates pending, no phantom cycle."
+  },
+  "lastCycleCheckpoint": {
+    "cycle": 70,
+    "date": "2026-10-25",
+    "issue": "AUTH006 / SEC005",
+    "outcome": "Exact source+candidate CI succeeded; cloud UI lists uploads, but byte readback/independent cloud restore unverified; no deploy; own bounded stage retained.",
+    "journal": "runs/2026-10-25-cycle-0070.md"
   }
 }

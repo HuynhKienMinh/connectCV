@@ -1,0 +1,51 @@
+{
+  "candidate": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
+  "base": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "bundle": {
+    "file": "connectcv-2026-10-23-cycle-0070-api-3e7f0e9.incremental.bundle",
+    "bytes": 24878,
+    "sha256": "b88f018f55ac79c62bda1c6665e570a90b6546d42cba12f07af1ae1574d79798",
+    "ref": "refs/backup/cycle0070-api-3e7f0e9",
+    "commit": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d"
+  },
+  "frontend": {
+    "file": "connectcv-2026-10-23-cycle-0070-frontend-3e7f0e9.zip",
+    "bytes": 143221,
+    "sha256": "a8b953ef6fa9e3888c78306bf0e25cf503e9d63013fc8c8f5a63cb9646ea01c0",
+    "members": {
+      "frontend/dist/.gitkeep": {
+        "bytes": 87,
+        "sha256": "e3d5c5d471c3d3733f03aded062326476e1b460e7e16e53444b3061a24370124"
+      },
+      "frontend/dist/assets/index-BmrqLgLr.js": {
+        "bytes": 450394,
+        "sha256": "b81c31aa4f2fe68dcd82fc8c3092ca4c4d2a662f49bbc70afdfffe038000edda"
+      },
+      "frontend/dist/assets/index-BSPfxstl.css": {
+        "bytes": 62430,
+        "sha256": "00b975ddc6af05d10643967ce214399b6ec38c94ca407a84eeda7f58dd3bccd1"
+      },
+      "frontend/dist/index.html": {
+        "bytes": 441,
+        "sha256": "69a63ad83e779aeb976e746b8532d70df50189d4416092b84633a8d56b2105f1"
+      },
+      "firebase.json": {
+        "bytes": 445,
+        "sha256": "2eebacc9cb7b5177c4b6f088cc531eef0eb102288d6fa2125eea41d67ba08329"
+      },
+      "firebase-rollback.json": {
+        "bytes": 387,
+        "sha256": "4108f4f53501f6010d7e7ddb6ce71776c46d2adcf8906c35b68212bf1902d56d"
+      }
+    }
+  },
+  "rollback": {
+    "version": "be365408272cb1ad",
+    "buildCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+    "command": "firebase hosting:clone connect-cv@be365408272cb1ad connect-cv:live --project connect-cv --non-interactive",
+    "fallbackZip": "connectcv-2026-10-21-cycle-0070-frontend-caf28d8.zip",
+    "fallbackSha256": "c891f1f747714fc6ddd665ec2de52c639b4d363ff5522ea1bef706e16c7680c2"
+  },
+  "createdAt": "2026-10-24T10:37:04.628590+07:00",
+  "capBytes": 402653184
+}
