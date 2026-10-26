@@ -1,0 +1,120 @@
+{
+  "checkedAt": "2026-10-26T10:56:50.363519+07:00",
+  "issue": "SEC006",
+  "sourceCommit": "0be2392d95d8154a617b2c0b015d3f1874398692",
+  "sourceBranch": "improvement/continuous-review-20261013",
+  "sourceCi": {
+    "id": 40266356806,
+    "url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40266356806",
+    "status": "in_progress",
+    "conclusion": null,
+    "jobs": [
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "emulator-restore",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "pdf-renderer",
+        "status": "in_progress",
+        "conclusion": null
+      }
+    ]
+  },
+  "baseline": {
+    "bodyParser": "1.20.8",
+    "multer": "2.4.0",
+    "parserRegression": {
+      "cases": 6,
+      "passed": 4,
+      "failed": 2,
+      "failure": "actual app child exits1 with decoder error after valid gzip frame followed by delayed trailing bytes",
+      "paths": [
+        "/api/synthetic-missing",
+        "/api/chatbot/synthetic-missing"
+      ],
+      "rootAnonymous": true,
+      "featureTrustedLocalAuthFixture": true
+    },
+    "audits": {
+      "backend": {
+        "high": 1
+      },
+      "feature": {
+        "high": 2
+      },
+      "frontend": {
+        "total": 0
+      }
+    }
+  },
+  "patched": {
+    "bodyParserBothLocks": "1.20.9",
+    "multer": "2.5.0",
+    "unrelatedDependencyVersionsChanged": false,
+    "cleanInstallSucceeded": true,
+    "parserRegressionPassed": 6,
+    "relatedHttpTestsIncludingParserPassed": 46,
+    "avatarUploadHttpPassed": 9,
+    "featureUnitsPassed": 114,
+    "localTotalPassed": 169,
+    "audits": {
+      "backend": {
+        "exitCode": 0,
+        "total": 0
+      },
+      "feature": {
+        "exitCode": 0,
+        "total": 0
+      },
+      "frontend": {
+        "exitCode": 0,
+        "total": 0
+      }
+    }
+  },
+  "uploadBrowserRegression": {
+    "status": "NOT_RUN_MISSING_PINNED_CHROMIUM",
+    "revision": "chromium-1243",
+    "ownedHungTestStopped": true,
+    "sandboxBypassUsed": false
+  },
+  "multerAppExploitabilityEstablished": false,
+  "multerAppFileFilterSynchronous": true,
+  "bodyParserAppCrashReproducedLocally": true,
+  "liveFaultInjected": false,
+  "publicRequests": 0,
+  "providerCalls": 0,
+  "cloudDataWrites": 0,
+  "advisories": [
+    {
+      "package": "body-parser",
+      "id": "GHSA-27r3-jxmh-p828",
+      "cve": "CVE-2026-111181",
+      "url": "https://github.com/advisories/GHSA-27r3-jxmh-p828"
+    },
+    {
+      "package": "multer",
+      "id": "GHSA-q7qp-rjg7-q26m",
+      "cve": "CVE-2026-113872",
+      "url": "https://github.com/advisories/GHSA-q7qp-rjg7-q26m"
+    }
+  ],
+  "backup": {
+    "newBackupCreated": false,
+    "existingCandidate": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
+    "cloudReadbackStillUnverified": true,
+    "retainedStageBytes": 243856661,
+    "newSourceCoveredByCloudBackup": false,
+    "databaseBackup": false
+  },
+  "mainChanged": false,
+  "productionChanged": false,
+  "deployed": false,
+  "cleanDSourceChanged": false
+}

@@ -160,7 +160,11 @@
     ],
     "stagePath": ".tmp/auth-release70",
     "nextAction": "Resume ordinary Drive UI session; download exactly the listed bundle, ZIP, and catalog into existing bounded stage, verify byte SHA and perform fresh bundle restore/ZIP CRC; only then delete the exact own stage. Until then no deployment.",
-    "localSynchronizedPathRestoreVerified": true
+    "localSynchronizedPathRestoreVerified": true,
+    "pendingCandidateMayDeploy": false,
+    "pendingSourceSupersededForRelease": true,
+    "sourceSupersedingIssue": "SEC006",
+    "newBackupCreationBlocked": true
   },
   "delivery": {
     "reviewCommit": "0dc80a1f7a408d04fedccc573deca54dc9ea7c44",
@@ -552,7 +556,7 @@
     "pendingExportReleaseBlockedReason": "Existing Render human login decision, then fresh exact b93 Drive code/build restore+rollback/mainCI/live gates; no auth retry or new large backup while blocked.",
     "pendingApiSession": {
       "issue": "AUTH006",
-      "status": "EXACT_CI_SUCCESS_CLOUD_READBACK_BLOCKED",
+      "status": "HISTORICAL_EXACT_CI_SUCCESS_RELEASE_BLOCKED_SEC006_AND_CLOUD",
       "sourceCommit": "7b3d500a8eddf3663800277fd670eb272efb5c22",
       "candidateCommit": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
       "candidateBranch": "improvement/api-session-security-release-20261023",
@@ -570,7 +574,7 @@
       "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39904748485",
       "ciPassed": true,
       "ciStatus": "completed_success",
-      "blockingDependency": "PRIVATE_DRIVE_DOWNLOAD_READBACK_AND_INDEPENDENT_CLOUD_RESTORE",
+      "blockingDependency": "SEC006_SCOPED_RECOMPOSITION_EXACT_CI_THEN_CLOUD_READBACK",
       "preparedBackupProcedure": "runs/cycle0070-auth-session/backup_procedure.py",
       "preparedBackupProcedureExecuted": true,
       "hostingRollbackObserved": "be365408272cb1ad",
@@ -619,11 +623,15 @@
       "independentCloudRestoreVerified": false,
       "lastCheckedAt": "2026-10-25T10:31:50+07:00",
       "localSynchronizedPathRestoreVerified": true,
-      "restoreClonePendingCleanup": true
+      "restoreClonePendingCleanup": true,
+      "currentReleaseAuditPassed": false,
+      "securityRecompositionRequired": true,
+      "securityPatchSourceCommit": "0be2392d95d8154a617b2c0b015d3f1874398692",
+      "securityPatchIssue": "SEC006"
     },
     "pendingDependencySecurity": {
       "issue": "SEC005",
-      "status": "PATCHED_EXACT_CI_SUCCESS_CLOUD_RELEASE_BLOCKED",
+      "status": "PATCHED_HISTORICAL_CI_SUCCESS_NEW_SEC006_RELEASE_BLOCKER",
       "sourceCommit": "7b3d500a8eddf3663800277fd670eb272efb5c22",
       "candidateCommit": "3e7f0e9b1c77937d4e5aa197cf16caf197d4440d",
       "ipAddressVersion": "10.7.4",
@@ -639,10 +647,49 @@
       "ciVerifyJobsPassed": true,
       "ciAllThreeAuditsPassedBothScopes": true,
       "ciBrowserJobsPending": false,
-      "backupCoversCandidate": false
-    }
+      "backupCoversCandidate": false,
+      "currentReleaseAuditPassed": false,
+      "securityRecompositionRequired": true
+    },
+    "pendingParserSecurity": {
+      "issue": "SEC006",
+      "status": "PATCHED_LOCAL_EXACT_SOURCE_CI_IN_PROGRESS_NO_RELEASE_CANDIDATE",
+      "sourceCommit": "0be2392d95d8154a617b2c0b015d3f1874398692",
+      "sourceBranch": "improvement/continuous-review-20261013",
+      "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40266356806",
+      "sourceCiId": 40266356806,
+      "ciStatus": "in_progress",
+      "ciPassed": false,
+      "baselineParserCasesPassed": 4,
+      "baselineParserCasesFailed": 2,
+      "localParserCasesPassed": 6,
+      "localAvatarHttpCasesPassed": 9,
+      "localRelatedHttpIncludingParserCasesPassed": 46,
+      "localFeatureUnitsPassed": 114,
+      "localAllThreeAuditsPassed": true,
+      "bodyParserVersion": "1.20.9",
+      "multerVersion": "2.5.0",
+      "bodyParserAppCrashLocallyReproduced": true,
+      "multerAsyncFilterConditionPresent": false,
+      "browserRegressionStatus": "MISSING_PINNED_CHROMIUM_1243",
+      "evidence": "runs/cycle0070-parser-security/verification.json",
+      "backupCoversSource": false,
+      "candidateCommit": null,
+      "candidateCiPassed": false,
+      "requiresRenderDeployment": true,
+      "deployed": false,
+      "publicFaultRequests": 0,
+      "cleanDSourceChanged": false,
+      "checkedAt": "2026-10-26T10:56:50.363519+07:00",
+      "nextAction": "Read exact source CI; compose only reviewed parser/security scope on then-current main and run exact candidate CI after release access is available. No old candidate deploy. Resolve existing Drive byte readback/restore and Render login decision before backup/deploy.",
+      "ciVerifyPassed": true,
+      "ciEmulatorRestorePassed": true,
+      "ciPdfRendererPending": true,
+      "ciReceipt": "runs/cycle0070-parser-security/ci.json"
+    },
+    "pendingExportSecurityRecompositionRequired": true
   },
-  "blockingDependency": "PRIVATE_DRIVE_CONTENT_READBACK_AND_INDEPENDENT_RESTORE",
+  "blockingDependency": "SEC006_EXACT_CI_AND_SCOPED_RECOMPOSITION_THEN_CLOUD_READBACK_AND_RENDER_LOGIN",
   "dataBackup": {
     "status": "WRAPPER_EMULATOR_LOCAL_AND_CI_VERIFIED_REAL_CUSTODY_PENDING",
     "tool": "backend/ops/snapshotEnvelope.cjs",
@@ -753,7 +800,8 @@
     "CHAT007",
     "PORT005",
     "AUTH006",
-    "SEC005"
+    "SEC005",
+    "SEC006"
   ],
   "independentRotation": {
     "lastModule": "auth-profile",
@@ -764,9 +812,9 @@
   },
   "lastCycleCheckpoint": {
     "cycle": 70,
-    "date": "2026-10-25",
-    "issue": "AUTH006 / SEC005",
-    "outcome": "Exact source+candidate CI succeeded; cloud UI lists uploads, but byte readback/independent cloud restore unverified; no deploy; own bounded stage retained.",
-    "journal": "runs/2026-10-25-cycle-0070.md"
+    "date": "2026-10-26",
+    "issue": "SEC006",
+    "outcome": "Confirmed local compressed-body process crash; minimal body-parser/Multer patch passes169local checks and three audits; exact source CI in progress. Cloud readback, scoped recomposition and Render release gates remain blocked.",
+    "journal": "runs/2026-10-26-cycle-0070.md"
   }
 }
