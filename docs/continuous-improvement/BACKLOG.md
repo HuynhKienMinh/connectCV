@@ -68,3 +68,5 @@ Trạng thái: OPEN → IN_PROGRESS → VERIFIED_LOCAL → DEPLOYED → VERIFIED
 ## Chính sách chọn việc
 
 Ưu tiên lỗi làm khách không hoàn thành tác vụ hoặc có nguy cơ mất/lộ dữ liệu. Mỗi chu kỳ chọn một issue chính; nếu không sửa được, phải tạo test/tái hiện/thiết kế/backup có giá trị cho lượt kế tiếp. Không thêm tính năng để tránh xử lý vấn đề đã xác nhận. Chủ dự án có thể đổi ưu tiên qua chat; ghi quyết định vào DECISIONS.md.
+
+27/10 cycle70 SEC006 checkpoint: exact source0be2392 CI40266356806 completed SUCCESS across verify, emulator-restore and pdf-renderer. Source CI is not scoped candidate/main/live verification. Existing Drive independent byte readback/restore and Render login blockers remain; no deployment or large backup.

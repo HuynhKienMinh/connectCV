@@ -77,7 +77,7 @@
     "frontendAsset": "index-hY2FV8As.js",
     "frontendVerified": true,
     "frontendSha256": "002419e0cbd47f7d5e5a5024d4571b1c661d5eb905cd9ddc6b86358a3dc9c98d",
-    "verifiedAt": "2026-10-20T00:56:12.465893+00:00",
+    "verifiedAt": "2026-10-20T07:56:12.465893+07:00",
     "frontendCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
     "pdfRendererReady": true,
     "livePdfExportVerified": false,
@@ -179,7 +179,7 @@
     "frontendStatus": "VERIFIED_LIVE_EXACT_ASSET_HASH_HEADERS_TWO_AUTHORIZED_DOMAINS_AUTH401",
     "backendStatus": "NO_BACKEND_DEPLOY_THIS_RUN_PRIOR_D6A_RETAINED",
     "autoDeployDisabledBySpecificCommit": true,
-    "lastCandidateCheckedAt": "2026-10-20T06:12:45.004088+00:00",
+    "lastCandidateCheckedAt": "2026-10-20T13:12:45.004088+07:00",
     "remainingFrontendRecovery": "ATS optional translated facts corrected9c in backend formatter; full Word/design/pagination/labels/authenticated export and browser E2E remain pending.",
     "nextReviewStatus": "RECOMPOSED_B93_EXACT_CI_VERIFIED_PENDING_RENDER_FRESH_BACKUP_RELEASE",
     "nextReviewCommit": "7e1820c2c715b3808b25399b207e2011a2b62a09",
@@ -432,7 +432,7 @@
     "pendingWordRecoveryCases": 5,
     "localEditedDocxBinarySyntheticVerified": true,
     "realWordVisualVerified": false,
-    "pendingWordRecoveryOwnerNotifiedAt": "2026-10-20T14:29:00.356680+07:00",
+    "pendingWordRecoveryOwnerNotifiedAt": "2026-10-20T14:29:00.35668+07:00",
     "pendingInterviewSummary": {
       "issue": "INT005",
       "status": "EXACT_OLD_BASE_CI_VERIFIED_RECOMPOSITION_REQUIRED_PENDING_RENDER",
@@ -569,7 +569,7 @@
       "localNewCasesPassed": 8,
       "baselineFailures": 4,
       "relatedBrowserCasesPassed": 18,
-      "checkedAt": "2026-10-23T12:19:51.960980+07:00",
+      "checkedAt": "2026-10-23T12:19:51.96098+07:00",
       "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39904748698",
       "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/39904748485",
       "ciPassed": true,
@@ -653,13 +653,13 @@
     },
     "pendingParserSecurity": {
       "issue": "SEC006",
-      "status": "PATCHED_LOCAL_EXACT_SOURCE_CI_IN_PROGRESS_NO_RELEASE_CANDIDATE",
+      "status": "EXACT_SOURCE_CI_SUCCESS_SCOPED_RELEASE_AND_CLOUD_BLOCKED",
       "sourceCommit": "0be2392d95d8154a617b2c0b015d3f1874398692",
       "sourceBranch": "improvement/continuous-review-20261013",
       "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40266356806",
       "sourceCiId": 40266356806,
-      "ciStatus": "in_progress",
-      "ciPassed": false,
+      "ciStatus": "completed_success",
+      "ciPassed": true,
       "baselineParserCasesPassed": 4,
       "baselineParserCasesFailed": 2,
       "localParserCasesPassed": 6,
@@ -680,16 +680,17 @@
       "deployed": false,
       "publicFaultRequests": 0,
       "cleanDSourceChanged": false,
-      "checkedAt": "2026-10-26T10:56:50.363519+07:00",
-      "nextAction": "Read exact source CI; compose only reviewed parser/security scope on then-current main and run exact candidate CI after release access is available. No old candidate deploy. Resolve existing Drive byte readback/restore and Render login decision before backup/deploy.",
+      "checkedAt": "2026-10-27",
+      "nextAction": "Exact source CI passed. Prepare only scoped security recomposition on then-current main when release access is available; require exact candidate CI, independent private Drive byte readback/fresh restore and current rollback before deployment. No old candidate deploy.",
       "ciVerifyPassed": true,
       "ciEmulatorRestorePassed": true,
-      "ciPdfRendererPending": true,
-      "ciReceipt": "runs/cycle0070-parser-security/ci.json"
+      "ciPdfRendererPending": false,
+      "ciReceipt": "runs/cycle0070-parser-security/ci.json",
+      "ciPdfRendererPassed": true
     },
     "pendingExportSecurityRecompositionRequired": true
   },
-  "blockingDependency": "SEC006_EXACT_CI_AND_SCOPED_RECOMPOSITION_THEN_CLOUD_READBACK_AND_RENDER_LOGIN",
+  "blockingDependency": "SEC006_SCOPED_RECOMPOSITION_THEN_CLOUD_READBACK_AND_RENDER_LOGIN",
   "dataBackup": {
     "status": "WRAPPER_EMULATOR_LOCAL_AND_CI_VERIFIED_REAL_CUSTODY_PENDING",
     "tool": "backend/ops/snapshotEnvelope.cjs",
@@ -790,7 +791,7 @@
     "productionChanged": false,
     "nextAction": "Owner may approve routine Render login with existing GitHub session and no new permissions, or sign in manually. No alternate-auth workaround; recheck deployment/CI/main/Drive before release.",
     "handoffTabId": "829831298",
-    "lastReadOnlyCheckedAt": "2026-10-20T14:29:00.356680+07:00",
+    "lastReadOnlyCheckedAt": "2026-10-20T14:29:00.35668+07:00",
     "signInStillVisible": true
   },
   "relatedActiveIssues": [
@@ -811,10 +812,10 @@
     "note": "ActiveCV70 remainsblocked. Independent API token-wait defect reproduced/fixed local; exactCI/Drive/main/live gates pending, no phantom cycle."
   },
   "lastCycleCheckpoint": {
-    "cycle": 70,
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "issue": "SEC006",
-    "outcome": "Confirmed local compressed-body process crash; minimal body-parser/Multer patch passes169local checks and three audits; exact source CI in progress. Cloud readback, scoped recomposition and Render release gates remain blocked.",
-    "journal": "runs/2026-10-26-cycle-0070.md"
+    "journal": "runs/2026-10-27-cycle-0070.md",
+    "cycle": 70,
+    "outcome": "Exact source CI40266356806 success for 0be2392 across all three jobs. No release candidate, cloud verification or deployment; existing blockers retained."
   }
 }
