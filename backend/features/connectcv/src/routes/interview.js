@@ -191,126 +191,25 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
 // ─────────────────────────────────────────────────────────────────────
 // POST /api/interview/live-chat — Phỏng vấn live theo lượt (Start & Reply)
 // ─────────────────────────────────────────────────────────────────────
-router.post('/live-chat', async (req, res) => {
-  try {
-    const {
-      userMessage,
-      message,
-      jobTitle,
-      conversationHistory,
-      history,
-      jdText,
-      candidateProfile,
-      action
-    } = req.body;
-
-    const currentMsg   = (userMessage || message || '').trim();
-    const rawHistory   = history || conversationHistory || [];
-    const safeTitle    = escStr(jobTitle || 'Software Engineer', 100);
-    const safeJD       = sanitizeForPrompt(jdText || '', 2500);
-    const safeProfile  = sanitizeForPrompt(require('../services/aiProfilePrivacy').planningProfile(candidateProfile) || '', 1500);
-
-    const isStart = action === 'start' || (!currentMsg && rawHistory.length === 0);
-
-    if (!isStart && !currentMsg) {
-      return res.status(400).json({ success: false, message: 'Vui lòng cung cấp câu trả lời!' });
-    }
-
-    if (isStart) {
-      const prompt = `
-Bạn là Trưởng nhóm Tuyển dụng AI (Senior Technical Hiring Manager) tại công ty hàng đầu.
-Bạn đang trực tiếp phỏng vấn ứng viên cho vị trí: "${safeTitle}".
-
-MÔ TẢ CÔNG VIỆC (JD):
-${safeJD || 'Phỏng vấn đánh giá năng lực chuyên môn và xử lý tình huống thực tế.'}
-
-THÔNG TIN ỨNG VIÊN:
-${safeProfile || 'Ứng viên vừa tham gia buổi phỏng vấn.'}
-
-NHIỆM VỤ:
-1. Hãy mở đầu buổi phỏng vấn một cách tự nhiên, lịch thiệp, thân thiện và ấm áp.
-2. Chào mừng ứng viên, giới thiệu ngắn gọn lý do buổi phỏng vấn và đưa ra câu hỏi mở đầu (ví dụ: mời ứng viên giới thiệu đôi nét về bản thân hoặc chia sẻ về kinh nghiệm nổi bật nhất liên quan tới vị trí này).
-3. Đảm bảo câu thoại súc tích, mạch lạc (khoảng 2-3 câu, tối đa 60 từ), rất thích hợp để phát âm bằng giọng đọc AI tự nhiên (TTS). Tuyệt đối không dùng markdown, dấu sao hay ký tự lạ.
-
-Trả về DUY NHẤT một JSON hợp lệ:
-{
-  "interviewerReply": "Chào bạn! Rất vui được gặp bạn trong buổi phỏng vấn vị trí ${safeTitle} hôm nay. Để bắt đầu, bạn có thể chia sẻ đôi nét về bản thân và những kinh nghiệm nổi bật nhất của mình không?",
-  "quickFeedback": "Bắt đầu buổi phỏng vấn thành công",
-  "interviewPhase": "opening"
-}
-`;
-
-      const result = await callGeminiJSON(prompt);
-      const reply = result.interviewerReply || result.reply || `Chào bạn! Rất vui được gặp bạn trong buổi phỏng vấn vị trí ${safeTitle} hôm nay. Để bắt đầu, bạn có thể giới thiệu đôi nét về bản thân và kinh nghiệm nổi bật nhất của mình không?`;
-      const quickFeedback = result.quickFeedback || result.quickEvaluation || 'Bắt đầu phiên phỏng vấn';
-
-      return res.status(200).json({
-        success: true,
-        data: {
-          interviewerReply: reply,
-          reply: reply,
-          quickFeedback: quickFeedback,
-          quickEvaluation: quickFeedback,
-          interviewPhase: 'opening'
-        }
-      });
-    }
-
-    // Xử lý lượt phản hồi (action === 'reply')
-    const safeMsg = sanitizeForPrompt(currentMsg, 800);
-    const recentHist = rawHistory.slice(-8).map(h => {
-      const r = h.role === 'interviewer' ? 'Interviewer' : 'Candidate';
-      const text = h.message || h.content || '';
-      return `${r}: ${sanitizeForPrompt(text, 400)}`;
-    }).join('\n');
-
-    const prompt = `
-Bạn là Trưởng nhóm Tuyển dụng AI (Senior Technical Hiring Manager) đang phỏng vấn ứng viên cho vị trí "${safeTitle}".
-
-MÔ TẢ CÔNG VIỆC (JD):
-${safeJD}
-
-THÔNG TIN ỨNG VIÊN:
-${safeProfile}
-
-LỊCH SỬ ĐỐI THOẠI GẦN ĐÂY:
-${recentHist || '(Chưa có đối thoại trước đó)'}
-
-ỨNG VIÊN VỪA TRẢ LỜI:
-"${safeMsg}"
-
-NHIỆM VỤ:
-1. Đóng vai người phỏng vấn thật: ngắn gọn ghi nhận câu trả lời vừa rồi (khen ngợi điểm mạnh hoặc hỏi sâu vào chi tiết kỹ thuật/giải pháp thực tế).
-2. Đưa ra tiếp 1 câu hỏi logic, sắc bén theo mô hình STAR (Situation, Task, Action, Result) để thử thách năng lực giải quyết vấn đề của ứng viên.
-3. Câu nói súc tích, tự nhiên (khoảng 2-3 câu, tối đa 70 từ), rất dễ nghe khi đọc qua TTS tiếng Việt. Tuyệt đối không dùng ký tự định dạng markdown như dấu sao hay gạch đầu dòng.
-4. Kèm 1 lời nhận xét nhanh (quickFeedback) ngắn gọn để ứng viên biết điểm mạnh hoặc điểm cần cải thiện ngay lập tức.
-
-Trả về DUY NHẤT một JSON hợp lệ:
-{
-  "interviewerReply": "Câu phản hồi và câu hỏi phỏng vấn tiếp theo...",
-  "quickFeedback": "Góp ý nhanh 1 câu...",
-  "interviewPhase": "technical"
-}
-`;
-
-    const result = await callGeminiJSON(prompt);
-    const reply = result.interviewerReply || result.reply || 'Cảm ơn câu trả lời của bạn. Bạn có thể chia sẻ cụ thể hơn về một thử thách kỹ thuật lớn nhất bạn từng gặp và cách bạn đã vượt qua nó không?';
-    const quickFeedback = result.quickFeedback || result.quickEvaluation || 'Phản hồi tốt';
-
-    return res.status(200).json({
-      success: true,
-      data: {
-        interviewerReply: reply,
-        reply: reply,
-        quickFeedback: quickFeedback,
-        quickEvaluation: quickFeedback,
-        interviewPhase: result.interviewPhase || 'technical'
-      }
-    });
-  } catch (error) {
-    console.error('[Interview /live-chat]', safeError(error));
-    return res.status(500).json({ success: false, message: 'Lỗi kết nối phỏng vấn AI. Vui lòng thử lại.' });
+router.get('/question-bank/catalog', (req,res)=>res.set('Cache-Control','no-store').json({success:true,data:require('../services/interviewQuestionBank').catalog()}));
+router.get('/question-bank', (req,res)=>res.set('Cache-Control','no-store').json({success:true,data:require('../services/interviewQuestionBank').listQuestions(req.query)}));
+router.post('/live-chat', async (req,res)=>{
+ const session=require('../services/interviewLiveSession'),policy=require('../services/interviewTurnPolicy');
+ const prepared=req.liveInterviewPrepared||session.prepareLiveInput(req.body);
+ if(prepared.error)return res.status(400).json(prepared.error);
+ const {value,plan}=prepared;
+ try{
+  let data;
+  if(value.action==='start'){
+   const reply=plan.next?'Chúng ta bắt đầu luyện phỏng vấn. '+plan.next.question:'Ngành và cấp độ này chưa có câu hỏi trong bộ biên soạn hiện tại. Hãy chọn mục khác hoặc quay lại sau.';
+   data={interviewerReply:reply,reply,quickFeedback:'',quickEvaluation:'',interviewPhase:plan.next?'opening':'completed',decision:plan.next?'next_question':'complete'};
+  }else{
+   const input={question:plan.question,candidateAnswer:value.action==='skip'?'Bỏ qua câu này.':value.message,jobTitle:value.jobTitle,level:value.level,jdText:value.jdText,answerType:plan.current?.answerType,expectedAnswer:plan.current?.answerSample||'',rubric:plan.current?.keyPoints||[],nextQuestion:plan.next};
+   const model=plan.local?null:await callGeminiJSON(policy.buildLiveAssessmentPrompt(input));
+   data=policy.groundLiveAssessment(model,input);
   }
+  return res.set('Cache-Control','no-store').json({success:true,data:session.decorateTurn(data,value,plan)});
+ }catch(error){console.error('[Interview /live-chat] provider_unavailable');return res.status(503).json({success:false,code:'INTERVIEW_PROVIDER_UNAVAILABLE',message:'Chưa nhận được nhận xét. Bạn có thể thử lại hoặc bỏ qua câu này.'});}
 });
 
 // ─────────────────────────────────────────────────────────────────────

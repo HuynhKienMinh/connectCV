@@ -4,7 +4,7 @@
   "description": "Isolated CV, interview, community and chatbot feature module",
   "main": "server.js",
   "scripts": {
-    "test": "node --test tests/cvGrounding.test.js tests/atsOptionalTranslation.test.js tests/runtimeResources.test.js tests/interviewSummaryGrounding.test.js tests/browserConfig.test.js tests/profilePersistence.test.js tests/profileImage.test.js tests/cvInputValidation.test.js tests/interviewEvaluation.test.js tests/communityPublication.test.js tests/chatbotService.test.js tests/chatbotLifecycle.test.js tests/providerDiagnostics.test.js tests/rendererReadiness.test.js tests/nativePdfFonts.test.js tests/pdfCapabilityRecovery.test.js tests/nativeProfileTitle.test.js tests/interviewTranscript.test.js tests/jobMatching.test.js",
+    "test": "node --test tests/cvGrounding.test.js tests/atsOptionalTranslation.test.js tests/runtimeResources.test.js tests/interviewSummaryGrounding.test.js tests/browserConfig.test.js tests/profilePersistence.test.js tests/profileImage.test.js tests/cvInputValidation.test.js tests/interviewEvaluation.test.js tests/communityPublication.test.js tests/chatbotService.test.js tests/chatbotLifecycle.test.js tests/providerDiagnostics.test.js tests/rendererReadiness.test.js tests/nativePdfFonts.test.js tests/pdfCapabilityRecovery.test.js tests/nativeProfileTitle.test.js tests/interviewTranscript.test.js tests/jobMatching.test.js tests/interviewTurnPolicy.test.js tests/interviewQuestionBank.test.js tests/interviewLiveSession.test.js",
     "test:cv-routes": "node tests/cvRoutes.check.cjs",
     "test:security": "node tests/featureSecurity.check.cjs"
   },
@@ -19,7 +19,7 @@
     "helmet": "^8.0.0",
     "joi": "^17.13.3",
     "msedge-tts": "^2.0.7",
-    "multer": "2.4.0",
+    "multer": "2.5.0",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^4.10.38",
     "playwright-core": "1.63.0"

@@ -28,7 +28,7 @@ jobs:
           VITE_API_BASE_URL: 'https://connectcv-api-minh.onrender.com'
       - run: node --test tests/authFlow.test.js tests/googleAuthFlow.test.js tests/portfolioLoader.test.js tests/productionApi.test.js
         working-directory: frontend
-      - run: node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityReceipt.test.cjs tests/communityHttp.test.cjs tests/chatbotHttp.test.cjs tests/portfolio.test.cjs tests/portfolioAuthHttp.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs
+      - run: node --test tests/account.test.cjs tests/communityFaults.test.cjs tests/communityReceipt.test.cjs tests/communityHttp.test.cjs tests/chatbotHttp.test.cjs tests/portfolio.test.cjs tests/portfolioAuthHttp.test.cjs tests/profileConflict.test.cjs tests/renderBrowser.test.cjs tests/compressedBodyHttp.test.cjs tests/avatarUploadHttp.test.cjs tests/interviewCoachingHttp.test.cjs
         working-directory: backend
       - run: npm test
         working-directory: backend/features/connectcv
@@ -208,3 +208,9 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           SIGNUP_LIFECYCLE_QA_OUTPUT: '${{ runner.temp }}/connectcv-signup-lifecycle-qa'
+      - name: Verify role-level coaching, skipped topics and session ownership
+        run: node tests/interviewCoachingUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          INTERVIEW_COACHING_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-coaching-qa'
