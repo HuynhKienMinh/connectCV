@@ -875,14 +875,14 @@
     "currentPriority": true,
     "editorialCorrectnessCertified": false,
     "previousNextModule": "cv-ats",
-    "sourceCommit": "0dc778fdb77664cb0a1eb19b2e75d8ef62cfef95",
-    "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40785729037",
+    "sourceCommit": "48bab24b349ce67f305d3db5b2995f2c2992525d",
+    "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40786270933",
     "sourceCiPassed": false,
-    "candidateCommit": "c34c291f8a28fd452dfbe2d342eb76647b8b0078",
+    "candidateCommit": "193d4ab62cdbb5eafca6f3d9df3c3d48e6e2afbb",
     "candidateBranch": "improvement/interview-coaching-release-20261029",
-    "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40785729813",
+    "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40786271736",
     "candidateCiPassed": false,
-    "candidateStatus": "AUDIT_RE2JS_PATCHED_NEW_EXACT_CI_REQUIRED",
+    "candidateStatus": "CONTENT_SPECIFICITY_CORRECTION_REQUIRES_FRESH_CI",
     "candidateBackupVerified": false,
     "candidateHtmlLocalCases": 10,
     "bankComplete": false,
@@ -891,7 +891,8 @@
     "renderLoginDecisionPending": true,
     "contentSourceCiPending": true,
     "contentReviewReceipt": "runs/interview-upgrade-20261029/content-350.json",
-    "lastVerifiedCoachingSourceCommit": "5af53e11a9869030f75954a14a07c59c9b292c90"
+    "lastVerifiedCoachingSourceCommit": "5af53e11a9869030f75954a14a07c59c9b292c90",
+    "rubricsRefined": 40
   },
   "userPriorityIssue": "INT006_INT007"
 }

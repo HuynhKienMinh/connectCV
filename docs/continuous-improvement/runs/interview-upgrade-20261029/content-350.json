@@ -505,7 +505,7 @@
       "targetMet": false
     }
   ],
-  "recordsCanonicalSha256": "25c88b35f3bd93928ba3e25118c1e9064b300ed5dcb34e06b2138a29e1f6a054",
+  "recordsCanonicalSha256": "2378d4760046728eb3b9d8c35fca01be7686ffec5eb3b56501315fd9886db03e",
   "schemaValid": true,
   "exactNormalizedQuestionDuplicates": 0,
   "exactNormalizedAnswerDuplicates": 0,
@@ -547,5 +547,11 @@
   "references": [
     "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
     "https://www.postgresql.org/docs/current/using-explain.html"
-  ]
+  ],
+  "followupReview": {
+    "genericRedFlagsReplaced": 40,
+    "secondSemanticDuplicate": "sales-junior-007 contact-preferences duplicated junior002 follow-up; replaced with demo-preparation without increasing count",
+    "bankCases": 7,
+    "correctnessCertified": false
+  }
 }
