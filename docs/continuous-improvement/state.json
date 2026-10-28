@@ -868,6 +868,7 @@
     },
     "releaseBlocked": true,
     "nextActions": [
+      "Deep voice QA priority: source5b14757 CI40788043353 pending. Oldd308 candidate summary16FAIL despite earlierCI: recomposition MUST include verified summary lifecycle and speech fixes. Real test account question pending.",
       "Finish exact latest source/candidate CI40786552134/40786551425; verify jobs/audits passed, browser pending. Do not reuse prior300CI or pre-re2js runs.",
       "Expand and review1000 distinct Q&A for each50pairs; now7each,350total; no permutation padding",
       "Verify model semantics with bounded synthetic cases when an authorized local/staging provider is configured; no secret copied into repo/log",
@@ -878,8 +879,8 @@
     "currentPriority": true,
     "editorialCorrectnessCertified": false,
     "previousNextModule": "cv-ats",
-    "sourceCommit": "759fee6563a47ed61bff77c8b3ab065998259c50",
-    "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40786552134",
+    "sourceCommit": "5b14757809d68ea357595d659a8a5349773046b1",
+    "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40788043353",
     "sourceCiPassed": false,
     "candidateCommit": "d3083656efcc4f6a649f5c9eebc0874535777a75",
     "candidateBranch": "improvement/interview-coaching-release-20261029",
@@ -913,6 +914,14 @@
     "realProviderCalls": 0,
     "realMicVerified": false,
     "dedicatedTestAccountQuestionPending": true,
-    "deployed": false
+    "deployed": false,
+    "sourceCommit": "5b14757809d68ea357595d659a8a5349773046b1",
+    "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40788043353",
+    "sourceCiStatus": "in_progress",
+    "nextActions": [
+      "Finish exact source CI40788043353",
+      "Recompose scoped release to include summary lifecycle fix and browser gate plus speech fixes; oldd308 has16summary failures",
+      "Use dedicated test account/local configured provider for real mic, Vietnamese accuracy and audio latency; do not request secrets in chat"
+    ]
   }
 }
