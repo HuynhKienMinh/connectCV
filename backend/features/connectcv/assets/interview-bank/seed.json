@@ -1037,7 +1037,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ thử mật khẩu đúng, bỏ qua lỗi quyền, trạng thái tài khoản và đường phục hồi"
       ],
       "referenceUrls": []
     },
@@ -1054,7 +1054,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Dùng bản ghi cuối cùng ghi đè mà không phát hiện phiên bản đã thay đổi"
       ],
       "referenceUrls": []
     },
@@ -1071,7 +1071,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chọn microservices theo xu hướng mà không tính chi phí vận hành và ranh giới nghiệp vụ"
       ],
       "referenceUrls": []
     },
@@ -1088,7 +1088,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Làm thay dài hạn nhưng không có mục tiêu tăng tự chủ của lập trình viên"
       ],
       "referenceUrls": []
     },
@@ -1105,7 +1105,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Bật ngân sách trước khi kiểm tra trang đích và sự kiện chuyển đổi"
       ],
       "referenceUrls": []
     },
@@ -1122,7 +1122,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chọn kênh chỉ bằng giá lead mà không đối chiếu chất lượng sau chuyển giao"
       ],
       "referenceUrls": []
     },
@@ -1139,7 +1139,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Phản hồi khi chưa xác minh hoặc đính chính mà không có hành động đi kèm"
       ],
       "referenceUrls": []
     },
@@ -1156,7 +1156,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Giao toàn bộ quyền duyệt và dữ liệu cho đối tác mà không có đầu mối nội bộ"
       ],
       "referenceUrls": []
     },
@@ -1173,7 +1173,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Liên hệ dồn dập hoặc bỏ qua mong muốn dừng của khách"
       ],
       "referenceUrls": []
     },
@@ -1190,7 +1190,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Hứa tính năng trong lộ trình như khả năng đang có"
       ],
       "referenceUrls": []
     },
@@ -1207,7 +1207,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Dựa một người ủng hộ rồi coi các bên đã thống nhất mua"
       ],
       "referenceUrls": []
     },
@@ -1224,7 +1224,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ ép tăng hoạt động mà không chẩn đoán điểm nghẽn và hỗ trợ"
       ],
       "referenceUrls": []
     },
@@ -1241,7 +1241,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Tự sửa hóa đơn hoặc thanh toán khi chênh lệch chưa được xác nhận"
       ],
       "referenceUrls": []
     },
@@ -1258,7 +1258,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Quy mọi chênh lệch chi phí cho lãng phí mà không phân tích nguyên nhân"
       ],
       "referenceUrls": []
     },
@@ -1275,7 +1275,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Trình một con số ước tính như kết quả chắc chắn, không nêu độ nhạy"
       ],
       "referenceUrls": []
     },
@@ -1292,7 +1292,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Tự động hóa quy trình mà không có đối soát trước sau và cách khôi phục"
       ],
       "referenceUrls": []
     },
@@ -1309,7 +1309,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Báo ứng viên đạt hoặc không đạt khi người có quyền chưa quyết định"
       ],
       "referenceUrls": []
     },
@@ -1326,7 +1326,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chọn khóa học theo sở thích mà không xác định khoảng thiếu năng lực công việc"
       ],
       "referenceUrls": []
     },
@@ -1343,7 +1343,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Công bố chi tiết nhóm nhỏ có thể nhận diện người phản hồi"
       ],
       "referenceUrls": []
     },
@@ -1360,7 +1360,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ gửi thông báo một chiều mà không kiểm tra người nhận hiểu và thực hiện được"
       ],
       "referenceUrls": []
     },
@@ -1377,7 +1377,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Gán nhãn người học thiếu hợp tác khi chưa tìm nguyên nhân ít tham gia"
       ],
       "referenceUrls": []
     },
@@ -1394,7 +1394,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Cắt phần thực hành nền tảng chỉ để giảng hết danh sách nội dung"
       ],
       "referenceUrls": []
     },
@@ -1411,7 +1411,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Lấy trung bình điểm mà không xử lý cách hiểu rubric khác nhau"
       ],
       "referenceUrls": []
     },
@@ -1428,7 +1428,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chia nguồn lực theo người yêu cầu mạnh nhất thay vì tác động học tập"
       ],
       "referenceUrls": []
     },
@@ -1445,7 +1445,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Nhận dịch vụ hoặc phát sinh phí trước khi xác nhận khả năng và khách đồng ý"
       ],
       "referenceUrls": []
     },
@@ -1462,7 +1462,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ trách bộ phận bàn giao mà không chốt thông tin tối thiểu và người nhận"
       ],
       "referenceUrls": []
     },
@@ -1479,7 +1479,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Cho quyền bồi thường không giới hạn hoặc bắt mọi trường hợp đều chờ quản lý"
       ],
       "referenceUrls": []
     },
@@ -1496,7 +1496,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chọn phương án thay thế chưa xác nhận năng lực hoặc bỏ cập nhật đoàn khách"
       ],
       "referenceUrls": []
     },
@@ -1513,7 +1513,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Sửa mọi yếu tố theo cảm giác mà chưa làm rõ tiêu chí phản hồi"
       ],
       "referenceUrls": []
     },
@@ -1530,7 +1530,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ kiểm tra màu sắc hoặc chỉ dựa công cụ tự động để kết luận accessibility"
       ],
       "referenceUrls": []
     },
@@ -1547,7 +1547,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chọn vài ý kiến hợp phương án mình thích rồi bỏ các bằng chứng mâu thuẫn"
       ],
       "referenceUrls": []
     },
@@ -1564,7 +1564,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Nhận mọi yêu cầu gấp mà không nói rõ ảnh hưởng tới việc đang cam kết"
       ],
       "referenceUrls": []
     },
@@ -1581,7 +1581,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Yêu cầu khách đăng công khai thông tin giao dịch để xác minh"
       ],
       "referenceUrls": []
     },
@@ -1598,7 +1598,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Cho mọi người sửa thông tin sản phẩm mà không có nguồn chuẩn hoặc quyền duyệt"
       ],
       "referenceUrls": []
     },
@@ -1615,7 +1615,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Ngoại suy đỉnh khuyến mại thành nhu cầu nền và bỏ qua ảnh hưởng thiếu hàng"
       ],
       "referenceUrls": []
     },
@@ -1632,7 +1632,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ đàm phán đơn giá mà không theo dõi chất lượng, giao nhận và phương án thay thế"
       ],
       "referenceUrls": []
     },
@@ -1649,7 +1649,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Áp dụng bài hướng dẫn sai phiên bản hoặc giả vờ biết khi chưa xác nhận"
       ],
       "referenceUrls": []
     },
@@ -1666,7 +1666,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chuyển hồ sơ không có người nhận và để khách tự hỏi lại đội kỹ thuật"
       ],
       "referenceUrls": []
     },
@@ -1683,7 +1683,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Khuyến khích nhân viên tự bỏ chính sách mà không có phê duyệt và đánh giá rủi ro"
       ],
       "referenceUrls": []
     },
@@ -1700,7 +1700,7 @@
       ],
       "answerType": "scenario",
       "redFlags": [
-        "Bỏ qua bằng chứng hoặc cam kết ngoài phạm vi được xác nhận"
+        "Chỉ tăng số người trực mà không chuẩn bị kiến thức, tuyến xử lý và kịch bản tải"
       ],
       "referenceUrls": []
     },
@@ -6004,16 +6004,16 @@
       "id": "sales-junior-007",
       "industry": "sales",
       "level": "junior",
-      "topic": "contact-preferences",
-      "question": "Khách không trả lời các lần liên hệ, bạn quyết định tiếp tục hay dừng thế nào?",
-      "answerSample": "Em xem lịch sử, kênh và tần suất đã thỏa thuận, gửi một thông điệp ngắn có giá trị hoặc hỏi cách liên hệ phù hợp trong quy trình. Em đặt mốc giảm hoặc dừng theo dõi và tôn trọng yêu cầu không liên hệ. Em không nhắn dồn nhiều kênh hoặc lấy im lặng làm lý do tăng áp lực.",
+      "topic": "demo-preparation",
+      "question": "Bạn chuẩn bị demo sản phẩm cho một khách hàng đã nêu hai nhu cầu cụ thể như thế nào?",
+      "answerSample": "Em chốt mục tiêu và thời lượng với khách, chọn luồng minh họa hai nhu cầu thay vì trình bày toàn bộ tính năng. Em thử trước với dữ liệu mẫu được phép, chuẩn bị cách giải thích giới hạn và dành thời gian xác nhận mức phù hợp. Em không dùng hồ sơ khách khác để làm demo hoặc hứa phần chưa kiểm chứng.",
       "answerType": "scenario",
       "keyPoints": [
-        "Tôn trọng kênh và tần suất phù hợp",
-        "Có điểm dừng rõ ràng"
+        "Demo theo nhu cầu và thời lượng đã thống nhất",
+        "Thử trước bằng dữ liệu mẫu và nêu giới hạn"
       ],
       "redFlags": [
-        "Nhắn dồn hoặc bỏ qua yêu cầu dừng"
+        "Trình mọi tính năng, dùng dữ liệu riêng khách khác hoặc hứa điều chưa kiểm chứng"
       ],
       "evidencePrompts": [
         "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
