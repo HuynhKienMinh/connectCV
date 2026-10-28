@@ -656,7 +656,7 @@
     },
     "pendingParserSecurity": {
       "issue": "SEC006",
-      "status": "EXACT_SOURCE_CI_SUCCESS_SCOPED_RELEASE_AND_CLOUD_BLOCKED",
+      "status": "INCLUDED_IN_VOICE_CANDIDATE_CI_SUCCESS_NOT_DEPLOYED",
       "sourceCommit": "0be2392d95d8154a617b2c0b015d3f1874398692",
       "sourceBranch": "improvement/continuous-review-20261013",
       "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40266356806",
@@ -677,14 +677,14 @@
       "browserRegressionStatus": "MISSING_PINNED_CHROMIUM_1243",
       "evidence": "runs/cycle0070-parser-security/verification.json",
       "backupCoversSource": false,
-      "candidateCommit": null,
-      "candidateCiPassed": false,
+      "candidateCommit": "b6c30a8e7005ce2f461e72de00370394d1a3fbf2",
+      "candidateCiPassed": true,
       "requiresRenderDeployment": true,
       "deployed": false,
       "publicFaultRequests": 0,
       "cleanDSourceChanged": false,
       "checkedAt": "2026-10-27",
-      "nextAction": "Exact source CI passed. Prepare only scoped security recomposition on then-current main when release access is available; require exact candidate CI, independent private Drive byte readback/fresh restore and current rollback before deployment. No old candidate deploy.",
+      "nextAction": "Candidate b6 includes prior parser dependency patches plus qs6.16.2 and voice. Do not deploy old3e. Existing Render login approval, new exact candidate private Drive backup/restore/rollback and mainCI/live verification remain required.",
       "ciVerifyPassed": true,
       "ciEmulatorRestorePassed": true,
       "ciPdfRendererPending": false,
@@ -694,9 +694,23 @@
       "releaseScopeReviewed": true,
       "releaseScopeComposed": false,
       "cloudByteChecksumVerified": true,
-      "independentCloudRestoreVerified": true
+      "independentCloudRestoreVerified": true,
+      "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783994897"
     },
-    "pendingExportSecurityRecompositionRequired": true
+    "pendingExportSecurityRecompositionRequired": true,
+    "pendingInterviewUpgrade": {
+      "sourceCommit": "5af53e11a9869030f75954a14a07c59c9b292c90",
+      "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783448264",
+      "sourceCiPassed": true,
+      "candidateCommit": "b6c30a8e7005ce2f461e72de00370394d1a3fbf2",
+      "candidateBranch": "improvement/interview-coaching-release-20261029",
+      "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783994897",
+      "candidateCiPassed": true,
+      "releaseBlocked": true,
+      "backupCoversCandidate": false,
+      "deployed": false,
+      "bankComplete": false
+    }
   },
   "blockingDependency": "SEC006_SCOPED_RECOMPOSITION_THEN_CLOUD_READBACK_AND_RENDER_LOGIN",
   "dataBackup": {
@@ -850,7 +864,6 @@
     },
     "releaseBlocked": true,
     "nextActions": [
-      "Finish exact source CI after qs6.16.2 patch and new9case browser registration",
       "Expand and review1000 distinct question-answer entries for each of50 industry/level pairs; currently4each; no permutation padding",
       "Verify model semantics with bounded synthetic cases when an authorized local/staging provider is configured; no secret copied into repo/log",
       "Owner normal existing Render login approval remains pending; do not bypass previous automatic review rejection",
@@ -859,7 +872,21 @@
     "journal": "runs/2026-10-29-interview-upgrade.md",
     "currentPriority": true,
     "editorialCorrectnessCertified": false,
-    "previousNextModule": "cv-ats"
+    "previousNextModule": "cv-ats",
+    "sourceCommit": "5af53e11a9869030f75954a14a07c59c9b292c90",
+    "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783448264",
+    "sourceCiPassed": true,
+    "candidateCommit": "b6c30a8e7005ce2f461e72de00370394d1a3fbf2",
+    "candidateBranch": "improvement/interview-coaching-release-20261029",
+    "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783994897",
+    "candidateCiPassed": true,
+    "candidateStatus": "EXACT_CANDIDATE_CI_SUCCESS_RELEASE_ACCESS_AND_FRESH_BACKUP_PENDING",
+    "candidateBackupVerified": false,
+    "candidateHtmlLocalCases": 10,
+    "bankComplete": false,
+    "realProviderEvalBlockedReason": "No local/staging provider key configured; no production key retrieved",
+    "nextContentBatch": "Author007+ distinct records per pair; inspect existing topics first, prioritize commonly assessed competencies and correctness over count",
+    "renderLoginDecisionPending": true
   },
   "userPriorityIssue": "INT006_INT007"
 }

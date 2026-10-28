@@ -1,0 +1,20 @@
+{
+  "id": 40783994897,
+  "head_sha": "b6c30a8e7005ce2f461e72de00370394d1a3fbf2",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783994897",
+  "checkedAt": "2026-10-29T06:04:01.7463570+07:00",
+  "jobs": [
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "pdf-renderer",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}
