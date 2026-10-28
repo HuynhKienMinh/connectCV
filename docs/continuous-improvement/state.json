@@ -686,7 +686,10 @@
       "ciEmulatorRestorePassed": true,
       "ciPdfRendererPending": false,
       "ciReceipt": "runs/cycle0070-parser-security/ci.json",
-      "ciPdfRendererPassed": true
+      "ciPdfRendererPassed": true,
+      "releaseScopeReceipt": "runs/cycle0070-parser-security/release-scope.json",
+      "releaseScopeReviewed": true,
+      "releaseScopeComposed": false
     },
     "pendingExportSecurityRecompositionRequired": true
   },
@@ -812,10 +815,10 @@
     "note": "ActiveCV70 remainsblocked. Independent API token-wait defect reproduced/fixed local; exactCI/Drive/main/live gates pending, no phantom cycle."
   },
   "lastCycleCheckpoint": {
-    "date": "2026-10-27",
     "issue": "SEC006",
-    "journal": "runs/2026-10-27-cycle-0070.md",
+    "date": "2026-10-28",
     "cycle": 70,
-    "outcome": "Exact source CI40266356806 success for 0be2392 across all three jobs. No release candidate, cloud verification or deployment; existing blockers retained."
+    "outcome": "Reviewed eight-path security-only release scope against unchanged remote main; identified unrelated feature test-script additions to exclude. No candidate/build/backup/deploy; cloud and Render blockers unchanged.",
+    "journal": "runs/2026-10-28-cycle-0070.md"
   }
 }

@@ -1,0 +1,42 @@
+{
+  "status": "SCOPE_REVIEWED_NOT_COMPOSED_OR_DEPLOYABLE",
+  "checkedDate": "2026-10-28",
+  "baseCommit": "caf28d8531b432543a4c4106aa1e766f77a10e77",
+  "sourceCommit": "0be2392d95d8154a617b2c0b015d3f1874398692",
+  "sourceCiId": 40266356806,
+  "scope": [
+    "backend/package-lock.json",
+    "backend/features/connectcv/package.json",
+    "backend/features/connectcv/package-lock.json",
+    "frontend/package.json",
+    "frontend/package-lock.json",
+    "backend/tests/compressedBodyHttp.test.cjs",
+    "backend/tests/avatarUploadHttp.test.cjs",
+    ".github/workflows/ai-feature-checks.yml"
+  ],
+  "allowedDependencyChanges": [
+    "body-parser 1.20.8 -> 1.20.9 in both backend lockfiles",
+    "multer 2.4.0 -> 2.5.0 in feature manifest/lock",
+    "ip-address 10.7.3 -> 10.7.4 in root backend lock",
+    "vite 8.3.2 -> 8.3.3 in frontend manifest/lock"
+  ],
+  "excludedChanges": [
+    "feature test script references chatbotProposal.test.js and pdfTextPositionPrototype.test.js",
+    "all unrelated source/workflow steps from aggregate review",
+    "AUTH006 API session runtime change"
+  ],
+  "workflowRule": "Start from main workflow and add only the two parser/avatar HTTP test names to existing backend test command; do not copy entire review workflow.",
+  "manifestRule": "Start from main feature manifest and change only multer version; retain main test script.",
+  "candidateCommit": null,
+  "candidateCiPassed": false,
+  "newBackupCreated": false,
+  "deployAllowed": false,
+  "requiredGates": [
+    "recheck then-current main",
+    "compose exact scope and inspect changed paths",
+    "exact scoped candidate CI and current dependency audits",
+    "independent private Drive byte checksum and fresh restore of retained backup before cleanup",
+    "resolve existing Render login decision without permission expansion",
+    "exact release backup/current rollback/main CI/live verification"
+  ]
+}
