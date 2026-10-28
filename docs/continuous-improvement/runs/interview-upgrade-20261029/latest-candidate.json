@@ -6,10 +6,11 @@
     "backend/features/connectcv/assets/interview-bank/seed.json"
   ],
   "sourceCiPassed": false,
-  "candidateCiPassed": false,
+  "candidateCiPassed": true,
   "deployed": false,
   "sourceCiId": 40786552134,
   "candidateCiId": 40786551425,
   "verifyAndAuditsPassedBoth": true,
-  "browserCiPending": true
+  "browserCiPending": "Source only; exact candidate completeSUCCESS",
+  "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40786551425"
 }
