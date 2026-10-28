@@ -5500,19 +5500,19 @@
       "id": "design-junior-006",
       "industry": "creative-design",
       "level": "junior",
-      "topic": "ambiguous-feedback",
-      "question": "Người duyệt chỉ nói thiết kế chưa sang, bạn làm rõ phản hồi thế nào?",
-      "answerSample": "Em hỏi phần nào đang tạo cảm nhận đó, mục tiêu và ví dụ tham chiếu phù hợp với thương hiệu. Em chuyển phản hồi thành các yếu tố có thể thử như mật độ, chữ, màu hoặc hình ảnh, chốt một hướng rồi so phương án. Em không tự sửa tất cả hoặc tranh luận rằng cảm nhận của người duyệt là sai khi chưa hiểu bối cảnh.",
+      "topic": "motion-pacing",
+      "question": "Một video ngắn phải chứa nhiều thông điệp nhưng chữ chạy quá nhanh để đọc, bạn điều chỉnh thế nào?",
+      "answerSample": "Em xác nhận thông điệp và hành động ưu tiên, đề xuất giảm hoặc chia nội dung thay vì chỉ tăng tốc chữ. Em điều chỉnh nhịp xuất hiện, thời gian đọc và quan hệ hình với lời, xem thử trên thiết bị cùng kích thước phát thực tế. Em không kết luận đủ rõ chỉ vì người đã thuộc kịch bản đọc kịp.",
       "answerType": "scenario",
       "keyPoints": [
-        "Chuyển cảm nhận thành tiêu chí có thể trao đổi",
-        "Thử hướng đã thống nhất thay vì sửa mọi thứ"
+        "Ưu tiên thông điệp theo thời lượng thực",
+        "Kiểm tra nhịp đọc với người chưa thuộc nội dung"
       ],
       "redFlags": [
-        "Nhận yêu cầu mơ hồ rồi sửa không giới hạn"
+        "Dồn mọi chữ vào video rồi tăng tốc để đủ thời lượng"
       ],
       "evidencePrompts": [
-        "Nêu thứ tự hành động, căn cứ quyết định và giới hạn thẩm quyền. Nếu liên hệ trải nghiệm, chỉ kể phần thực sự đã tham gia và kiểm chứng được; không biến tình huống giả định thành sự việc đã xảy ra."
+        "Giải thích cách chọn phần giữ lại, cách thử thời gian đọc và đánh đổi với brief. Chỉ nêu kết quả người xem nếu đã thực sự kiểm tra."
       ],
       "referenceUrls": []
     },
@@ -5773,6 +5773,1010 @@
       ],
       "evidencePrompts": [
         "Nêu thứ tự hành động, căn cứ quyết định và giới hạn thẩm quyền. Nếu liên hệ trải nghiệm, chỉ kể phần thực sự đã tham gia và kiểm chứng được; không biến tình huống giả định thành sự việc đã xảy ra."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "swe-fresher-007",
+      "industry": "software-engineering",
+      "level": "fresher",
+      "topic": "parameterized-sql",
+      "question": "Vì sao không nên nối trực tiếp dữ liệu người dùng vào câu lệnh SQL?",
+      "answerSample": "Dữ liệu có thể bị diễn giải thành một phần cú pháp truy vấn. Em dùng tham số hóa để tách giá trị khỏi cấu trúc lệnh và kiểm soát riêng các thành phần không thể bind như tên cột bằng lựa chọn cho phép. Em không coi việc bỏ dấu nháy hoặc dùng ORM là tự động bảo vệ mọi truy vấn viết tay.",
+      "answerType": "knowledge",
+      "keyPoints": [
+        "Tách giá trị khỏi cấu trúc truy vấn",
+        "Kiểm soát phần cú pháp động"
+      ],
+      "redFlags": [
+        "Dựa vào xóa dấu nháy làm biện pháp chính"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+      ]
+    },
+    {
+      "id": "swe-junior-007",
+      "industry": "software-engineering",
+      "level": "junior",
+      "topic": "query-plan-reading",
+      "question": "Trong PostgreSQL, chi phí ước tính trên EXPLAIN có phải số mili giây truy vấn sẽ chạy không?",
+      "answerSample": "Không. Chi phí là đơn vị ước lượng của bộ lập kế hoạch, hữu ích để hiểu và so các phương án trong bối cảnh cấu hình. Em xem thêm số hàng ước tính và kiểu thao tác; đo thực tế cần cách kiểm chứng phù hợp. EXPLAIN ANALYZE thực sự thực thi lệnh nên em không chạy tùy tiện trên lệnh ghi hoặc dữ liệu production.",
+      "answerType": "knowledge",
+      "keyPoints": [
+        "Phân biệt chi phí ước lượng với thời gian thực",
+        "Hiểu tác động khi dùng ANALYZE"
+      ],
+      "redFlags": [
+        "Đọc cost như thời gian thực thi chắc chắn"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": [
+        "https://www.postgresql.org/docs/current/using-explain.html"
+      ]
+    },
+    {
+      "id": "swe-middle-007",
+      "industry": "software-engineering",
+      "level": "middle",
+      "topic": "request-cancellation",
+      "question": "Một kết quả tìm kiếm cũ trả về sau kết quả mới và ghi đè giao diện, bạn sửa thế nào?",
+      "answerSample": "Tôi gắn quyền sở hữu cho mỗi yêu cầu hoặc phiên tìm kiếm, hủy phần cũ khi phù hợp và chỉ nhận kết quả nếu nó còn thuộc yêu cầu hiện hành. Tôi kiểm tra cả lúc fetch xong nhưng JSON chưa xong và lúc màn hình đã chuyển. Chỉ gọi abort không đủ nếu một bước xử lý không tuân theo tín hiệu hủy.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Chỉ nhận kết quả còn thuộc yêu cầu hiện hành",
+        "Kiểm tra cả các bước xử lý muộn"
+      ],
+      "redFlags": [
+        "Tin abort luôn ngăn mọi completion"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "swe-senior-007",
+      "industry": "software-engineering",
+      "level": "senior",
+      "topic": "failure-containment",
+      "question": "Một dịch vụ phụ trợ lỗi nhưng kéo cả luồng chính chậm theo, bạn giới hạn ảnh hưởng ra sao?",
+      "answerSample": "Tôi xác định phụ thuộc nào bắt buộc, đặt thời hạn và giới hạn tài nguyên theo ngân sách của luồng chính, thiết kế cách giảm chức năng nếu nghiệp vụ cho phép. Tôi kiểm soát retry và quan sát khi phục hồi để tránh tạo thêm tải. Tôi không trả thành công giả cho thao tác chưa thực hiện hoặc thêm retry vô hạn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Ngân sách thời gian và tài nguyên cho phụ thuộc",
+        "Giảm chức năng đúng nghĩa nghiệp vụ"
+      ],
+      "redFlags": [
+        "Che lỗi bằng trả thành công giả"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "swe-lead-007",
+      "industry": "software-engineering",
+      "level": "lead",
+      "topic": "service-ownership",
+      "question": "Bạn tổ chức quyền sở hữu kỹ thuật thế nào khi nhiều nhóm cùng sửa một dịch vụ?",
+      "answerSample": "Tôi làm rõ nhóm chịu trách nhiệm vận hành, người quyết định thay đổi giao diện và cách phối hợp khi có sự cố. Tôi thống nhất tiêu chí review, bàn giao và tài liệu đủ để nhóm khác làm việc đúng. Quyền sở hữu phải đi kèm năng lực và thời gian, không chỉ là gắn tên một người để nhận mọi yêu cầu ngoài giờ.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Trách nhiệm vận hành và thay đổi giao diện rõ",
+        "Nguồn lực tương ứng với trách nhiệm"
+      ],
+      "redFlags": [
+        "Giao trách nhiệm mà không cấp năng lực hỗ trợ"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-fresher-007",
+      "industry": "marketing",
+      "level": "fresher",
+      "topic": "claim-verification",
+      "question": "Bạn được yêu cầu viết sản phẩm tốt nhất thị trường nhưng chưa có bằng chứng, bạn xử lý thế nào?",
+      "answerSample": "Em hỏi căn cứ và phạm vi so sánh, đề xuất thông điệp cụ thể dựa trên điểm mạnh đã xác nhận nếu chưa chứng minh được nhận định tuyệt đối. Em lưu nguồn nội dung và gửi duyệt phần còn chưa chắc. Em không biến ý kiến của nhóm thành kết quả khảo sát hoặc chứng nhận độc lập.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Thông điệp dựa trên bằng chứng có thật",
+        "Thay tuyên bố tuyệt đối bằng giá trị cụ thể"
+      ],
+      "redFlags": [
+        "Bịa khảo sát hoặc chứng nhận"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-junior-007",
+      "industry": "marketing",
+      "level": "junior",
+      "topic": "campaign-link-qa",
+      "question": "Bạn kiểm tra một đường dẫn quảng cáo trước khi phát hành như thế nào?",
+      "answerSample": "Em mở đúng trang đích trên thiết bị đại diện, kiểm tra tham số nguồn, chuyển hướng, nút hành động và việc hoàn tất mục tiêu bằng dữ liệu test được phép. Em ghi nhận lỗi cho người phụ trách và kiểm tra lại bản sửa. Một đường dẫn mở được chưa bảo đảm toàn bộ hành trình đăng ký hoặc mua hàng hoạt động.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Kiểm tra hành trình sau nhấp bằng dữ liệu giả",
+        "Xác nhận tham số và chuyển hướng"
+      ],
+      "redFlags": [
+        "Chỉ xem trang tải được là đủ nghiệm thu"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-middle-007",
+      "industry": "marketing",
+      "level": "middle",
+      "topic": "survey-selection-bias",
+      "question": "Khảo sát chỉ gửi cho người theo dõi tích cực có thể làm bạn hiểu sai thị trường thế nào?",
+      "answerSample": "Nhóm đó có thể khác người chưa biết hoặc đã rời thương hiệu về nhu cầu và mức hài lòng. Tôi làm rõ đối tượng cần hiểu, cách tuyển mẫu và nhóm chưa được đại diện, kết hợp thêm nguồn phù hợp trước khi ra quyết định. Tôi không gán tỷ lệ trong mẫu tự chọn thành tỷ lệ của toàn bộ khách hàng.",
+      "answerType": "knowledge",
+      "keyPoints": [
+        "Nhận diện nhóm bị bỏ sót trong mẫu",
+        "Nêu giới hạn khi suy rộng kết quả"
+      ],
+      "redFlags": [
+        "Gọi mẫu tự chọn là đại diện toàn thị trường"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-senior-007",
+      "industry": "marketing",
+      "level": "senior",
+      "topic": "model-assisted-planning",
+      "question": "Một công cụ dự báo đề xuất tăng mạnh ngân sách nhưng ít dữ liệu lịch sử, bạn phản biện ra sao?",
+      "answerSample": "Tôi xem giả định, độ bao phủ dữ liệu, khoảng bất định và các điều kiện mô hình chưa quan sát. Tôi so với ràng buộc vận hành và thử tăng có giới hạn nếu phù hợp, dùng kết quả để cập nhật. Tôi không dùng một con số do công cụ tạo ra như lý do đủ để cam kết ngân sách.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Phản biện dữ liệu và giả định dự báo",
+        "Thử có giới hạn trước cam kết lớn"
+      ],
+      "redFlags": [
+        "Coi đầu ra mô hình là bảo đảm hiệu quả"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-lead-007",
+      "industry": "marketing",
+      "level": "lead",
+      "topic": "experiment-learning-system",
+      "question": "Bạn tổ chức học hỏi từ các thử nghiệm marketing thế nào để nhóm không lặp lại cùng một thử nghiệm?",
+      "answerSample": "Tôi yêu cầu ghi giả thuyết, đối tượng, thay đổi, cách đo, kết quả và giới hạn trước khi kết luận có thể áp dụng lại ở đâu. Tôi tạo nơi tra cứu cùng nhịp chia sẻ quyết định tiếp theo. Thử nghiệm không đạt vẫn có ích nếu kiểm chứng được giả thuyết; tôi không chỉ lưu các trường hợp thành công để báo cáo.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Lưu giả thuyết và điều kiện áp dụng",
+        "Học từ cả kết quả không đạt"
+      ],
+      "redFlags": [
+        "Chỉ công bố thử nghiệm có số đẹp"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-fresher-007",
+      "industry": "sales",
+      "level": "fresher",
+      "topic": "budget-discovery",
+      "question": "Bạn hỏi ngân sách của khách thế nào khi họ chưa muốn đưa ra một con số?",
+      "answerSample": "Em giải thích mục đích để đề xuất phạm vi phù hợp, hỏi ưu tiên và cách họ thường đánh giá khoản đầu tư này. Em có thể trình các mức phạm vi rõ để khách phản hồi mà không ép tiết lộ. Em không tự suy rằng chưa có con số nghĩa là khách không đủ khả năng hoặc không nghiêm túc.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Hỏi theo mục đích và phạm vi giải pháp",
+        "Không suy diễn khả năng tài chính"
+      ],
+      "redFlags": [
+        "Ép khách tiết lộ thông tin không cần thiết"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-junior-007",
+      "industry": "sales",
+      "level": "junior",
+      "topic": "contact-preferences",
+      "question": "Khách không trả lời các lần liên hệ, bạn quyết định tiếp tục hay dừng thế nào?",
+      "answerSample": "Em xem lịch sử, kênh và tần suất đã thỏa thuận, gửi một thông điệp ngắn có giá trị hoặc hỏi cách liên hệ phù hợp trong quy trình. Em đặt mốc giảm hoặc dừng theo dõi và tôn trọng yêu cầu không liên hệ. Em không nhắn dồn nhiều kênh hoặc lấy im lặng làm lý do tăng áp lực.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Tôn trọng kênh và tần suất phù hợp",
+        "Có điểm dừng rõ ràng"
+      ],
+      "redFlags": [
+        "Nhắn dồn hoặc bỏ qua yêu cầu dừng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-middle-007",
+      "industry": "sales",
+      "level": "middle",
+      "topic": "missing-decision-process",
+      "question": "Bạn đang trao đổi tốt với một người liên hệ nhưng chưa biết quy trình ra quyết định, bạn làm gì?",
+      "answerSample": "Tôi hỏi cách tổ chức đánh giá giải pháp, tiêu chí và những bên cần tham gia, gắn câu hỏi với việc chuẩn bị đủ tài liệu. Tôi thống nhất cách mời người liên quan cùng đầu mối hiện có. Tôi không tự vượt qua hoặc gây mất uy tín cho người liên hệ chỉ vì họ chưa phải người ký cuối cùng.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm rõ quy trình mua một cách tôn trọng",
+        "Phối hợp tiếp cận các bên liên quan"
+      ],
+      "redFlags": [
+        "Gạt người liên hệ khỏi quá trình mà không trao đổi"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-senior-007",
+      "industry": "sales",
+      "level": "senior",
+      "topic": "renewal-value-review",
+      "question": "Trước kỳ gia hạn, khách nói họ không thấy đủ giá trị dù sản phẩm ít lỗi, bạn xử lý thế nào?",
+      "answerSample": "Tôi cùng khách xem mục tiêu ban đầu, mức sử dụng và kết quả công việc thực tế, tìm điểm chưa đạt do giải pháp, triển khai hoặc kỳ vọng. Tôi đề xuất kế hoạch cải thiện có tiêu chí và thời gian phù hợp trước khi thảo luận điều kiện gia hạn. Tôi không coi ít ticket hỗ trợ là bằng chứng khách đang thành công.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Đối chiếu giá trị sử dụng với mục tiêu",
+        "Kế hoạch cải thiện có tiêu chí"
+      ],
+      "redFlags": [
+        "Đồng nhất ít khiếu nại với khách nhận đủ giá trị"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-lead-007",
+      "industry": "sales",
+      "level": "lead",
+      "topic": "pricing-feedback-loop",
+      "question": "Bạn tổng hợp phản hồi về giá từ nhóm sales thế nào để hỗ trợ quyết định định giá?",
+      "answerSample": "Tôi thống nhất cách ghi nhận bối cảnh, phân khúc, lựa chọn thay thế và lý do thắng hoặc mất có xác nhận, thay vì chỉ đếm số lần khách nói đắt. Tôi phối hợp tài chính và sản phẩm xem biên, giá trị và độ nhạy qua thử nghiệm được phép. Tôi không để một thương vụ lớn quyết định chính sách giá cho mọi khách.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Phản hồi giá có bối cảnh và bằng chứng",
+        "Phối hợp giá trị biên và thử nghiệm"
+      ],
+      "redFlags": [
+        "Thay giá toàn bộ theo một phản hồi đơn lẻ"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-fresher-007",
+      "industry": "finance-accounting",
+      "level": "fresher",
+      "topic": "spreadsheet-source-lineage",
+      "question": "Bạn được gửi một bảng tổng hợp không rõ dữ liệu nguồn, bạn kiểm tra trước khi sử dụng ra sao?",
+      "answerSample": "Em hỏi nguồn, thời điểm trích xuất, định nghĩa chỉ tiêu và các bước xử lý, rồi đối chiếu một số dòng cùng tổng kiểm soát với hồ sơ được phép. Em ghi rõ phần chưa kiểm chứng để người phụ trách quyết định phạm vi dùng. Em không coi bảng có nhiều công thức là mặc nhiên chính xác.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Truy xuất nguồn và cách biến đổi dữ liệu",
+        "Đối chiếu dòng mẫu cùng tổng kiểm soát"
+      ],
+      "redFlags": [
+        "Dùng bảng không rõ nguồn làm số đã xác nhận"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-junior-007",
+      "industry": "finance-accounting",
+      "level": "junior",
+      "topic": "reconciliation-handoff",
+      "question": "Bạn nhận bàn giao một tài khoản còn nhiều khoản đối chiếu treo, bạn bắt đầu thế nào?",
+      "answerSample": "Em lập danh sách theo tuổi khoản, giá trị, căn cứ và người đang xử lý, phân biệt lệch thời điểm với vấn đề chưa xác minh. Em chốt thứ tự ưu tiên và lịch theo dõi với người phụ trách, giữ nguyên dấu vết. Em không xóa khoản treo chỉ vì đã qua nhiều kỳ hoặc gộp chúng thành một chênh lệch không giải thích được.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Phân loại khoản treo và căn cứ",
+        "Theo dõi trách nhiệm đến khi xử lý"
+      ],
+      "redFlags": [
+        "Xóa hoặc bù trừ khoản treo thiếu căn cứ"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-middle-007",
+      "industry": "finance-accounting",
+      "level": "middle",
+      "topic": "forecast-versioning",
+      "question": "Các bộ phận dùng những phiên bản dự báo tài chính khác nhau, bạn xử lý thế nào?",
+      "answerSample": "Tôi xác định bản đã được duyệt, mốc dữ liệu và giả định của từng bản, giải thích phần chênh rồi thống nhất nguồn dùng cho quyết định hiện tại. Tôi đặt quy tắc lưu phiên bản, người duyệt và thông báo cập nhật. Tôi không ghi đè mọi bản cũ vì vẫn cần giải thích lịch sử quyết định.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Một phiên bản có thẩm quyền cho quyết định hiện tại",
+        "Giữ lịch sử giả định và thay đổi"
+      ],
+      "redFlags": [
+        "Ghi đè lịch sử khiến không thể đối chiếu"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-senior-007",
+      "industry": "finance-accounting",
+      "level": "senior",
+      "topic": "audit-request-scope",
+      "question": "Đoàn kiểm tra yêu cầu một tập dữ liệu rộng có thông tin không liên quan, bạn phối hợp đáp ứng ra sao?",
+      "answerSample": "Tôi xác nhận mục đích, phạm vi và thẩm quyền yêu cầu với người có trách nhiệm, chuẩn bị dữ liệu đầy đủ trong phạm vi đã chốt qua kênh phù hợp. Tôi giữ dấu vết bàn giao và giải thích phần cần làm rõ. Tôi không tự che thông tin thuộc nghĩa vụ cung cấp, cũng không gửi toàn bộ dữ liệu nhạy cảm vì muốn trả lời nhanh.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác nhận phạm vi và thẩm quyền",
+        "Bàn giao có kiểm soát và dấu vết"
+      ],
+      "redFlags": [
+        "Gửi mọi dữ liệu hoặc tự giấu dữ liệu cần cung cấp"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-lead-007",
+      "industry": "finance-accounting",
+      "level": "lead",
+      "topic": "finance-ai-controls",
+      "question": "Bạn đưa công cụ AI vào hỗ trợ lập báo cáo tài chính nội bộ với những giới hạn nào?",
+      "answerSample": "Tôi chọn đầu việc hỗ trợ có thể đối chiếu, xác định dữ liệu được phép đưa vào công cụ và giữ người chịu trách nhiệm kiểm tra nguồn, phép tính cùng kết luận. Tôi thử trên dữ liệu giả hoặc phạm vi đã được phép trước khi mở rộng. Tôi không để văn phong thuyết phục hoặc số liệu do AI tự tạo thay thế bằng chứng kế toán.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Dữ liệu được phép và đầu việc có thể kiểm chứng",
+        "Người chịu trách nhiệm đối chiếu kết quả"
+      ],
+      "redFlags": [
+        "Dùng số AI bịa như số liệu kế toán"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-fresher-007",
+      "industry": "human-resources",
+      "level": "fresher",
+      "topic": "screening-bias",
+      "question": "Bạn có thiện cảm với một ứng viên học cùng trường, làm sao tránh để điều đó ảnh hưởng sàng lọc?",
+      "answerSample": "Em quay lại tiêu chí công việc, ghi bằng chứng phù hợp từ hồ sơ và chấm theo cùng hướng dẫn với các ứng viên khác. Em tự nhận diện yếu tố thiện cảm, xin người phụ trách xem lại khi cần. Em không nâng điểm vì quan hệ trường lớp hoặc coi khác nền tảng là thiếu phù hợp.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Đánh giá theo tiêu chí và bằng chứng",
+        "Nhận diện và giảm thiên kiến cá nhân"
+      ],
+      "redFlags": [
+        "Ưu tiên ứng viên vì cùng trường"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-junior-007",
+      "industry": "human-resources",
+      "level": "junior",
+      "topic": "reference-check-boundaries",
+      "question": "Quản lý muốn bạn hỏi người quen về ứng viên trước khi liên hệ tham chiếu chính thức, bạn làm gì?",
+      "answerSample": "Em xác nhận quy trình và phạm vi được phép, trao đổi với người phụ trách về sự đồng ý hoặc căn cứ cần có cho hoạt động tham chiếu. Em chỉ hỏi nội dung liên quan công việc qua kênh phù hợp, ghi rõ nguồn và giới hạn. Em không thu thập tin đồn riêng tư hoặc coi nhận xét không kiểm chứng là kết luận tuyển dụng.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm đúng quy trình tham chiếu và phạm vi",
+        "Phân biệt bằng chứng công việc với tin đồn"
+      ],
+      "redFlags": [
+        "Thu thập thông tin riêng tư qua quan hệ ngoài quy trình"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-middle-007",
+      "industry": "human-resources",
+      "level": "middle",
+      "topic": "interview-score-disagreement",
+      "question": "Hai người phỏng vấn đánh giá cùng một câu trả lời rất khác nhau, bạn điều phối thế nào?",
+      "answerSample": "Tôi yêu cầu từng người nêu bằng chứng và tiêu chí đã dùng trước khi bàn kết luận, đối chiếu hướng dẫn chấm và phần chưa đủ thông tin. Tôi hỗ trợ thống nhất cách hiểu hoặc thu thêm bằng chứng phù hợp với quy trình. Tôi không lấy trung bình điểm như cách duy nhất để giải quyết khác biệt về tiêu chuẩn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Thảo luận bằng chứng trước kết luận",
+        "Hiệu chỉnh cách hiểu tiêu chí"
+      ],
+      "redFlags": [
+        "Lấy trung bình để che việc chấm theo tiêu chuẩn khác nhau"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-senior-007",
+      "industry": "human-resources",
+      "level": "senior",
+      "topic": "promotion-evidence",
+      "question": "Nhân viên được đề cử thăng chức nhờ một thành tích nổi bật gần đây, bạn xem xét thêm điều gì?",
+      "answerSample": "Tôi đối chiếu yêu cầu vai trò mới, phạm vi đóng góp, tính ổn định và điều kiện tạo ra kết quả, đồng thời xem nhiều bằng chứng theo quy trình. Tôi phân biệt ghi nhận thành tích với mức sẵn sàng nhận trách nhiệm khác. Tôi không dùng một sự kiện gần nhất hoặc mức độ được chú ý làm căn cứ đủ cho quyết định.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Vai trò mới và tính ổn định của năng lực",
+        "Phân biệt ghi nhận với sẵn sàng thăng chức"
+      ],
+      "redFlags": [
+        "Dựa toàn bộ vào một thành tích gần đây"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-lead-007",
+      "industry": "human-resources",
+      "level": "lead",
+      "topic": "resourcing-demand",
+      "question": "Các bộ phận đều nói thiếu người nhưng ngân sách chỉ đáp ứng một phần, bạn tổ chức ưu tiên ra sao?",
+      "answerSample": "Tôi làm rõ công việc, tải thực, kỹ năng thiếu và tác động khi không bổ sung, xem cả khả năng điều chỉnh quy trình hoặc phân công. Tôi phối hợp các bên so phương án theo mục tiêu chung, ghi giả định và mốc đánh giá lại. Tôi không ưu tiên chỉ theo người đề nghị mạnh nhất hoặc chia đều số vị trí cho dễ thỏa hiệp.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Nhu cầu công việc và tác động đã kiểm chứng",
+        "So tuyển thêm với phương án vận hành khác"
+      ],
+      "redFlags": [
+        "Chia ngân sách chỉ theo tiếng nói của quản lý"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-fresher-007",
+      "industry": "education",
+      "level": "fresher",
+      "topic": "misconception-check",
+      "question": "Học viên đưa ra đáp án đúng nhưng giải thích sai nguyên lý, bạn phản hồi thế nào?",
+      "answerSample": "Em ghi nhận kết quả đã làm được nhưng chỉ rõ phần lý giải cần kiểm tra, dùng một ví dụ thay đổi để người học tự xem cách hiểu còn đúng không. Em hướng dẫn sửa nguyên lý rồi cho vận dụng lại. Em không khen toàn bộ câu trả lời là tốt chỉ vì đáp án cuối trùng đáp án mẫu.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Tách đáp án cuối khỏi hiểu nguyên lý",
+        "Kiểm tra bằng tình huống thay đổi"
+      ],
+      "redFlags": [
+        "Khen đúng toàn bộ dù lập luận sai"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-junior-007",
+      "industry": "education",
+      "level": "junior",
+      "topic": "incomplete-homework",
+      "question": "Một học viên thường xuyên không hoàn thành bài ở nhà, bạn tìm nguyên nhân thế nào?",
+      "answerSample": "Em trao đổi riêng, xem mức hiểu yêu cầu, khối lượng, điều kiện thực hiện và các bằng chứng học tập khác trước khi kết luận. Em cùng người học thống nhất bước hỗ trợ cụ thể và kiểm tra lại tiến độ. Em không mặc định đó là lười hoặc công khai hoàn cảnh riêng để làm lời cảnh báo cho cả lớp.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Tìm nguyên nhân từ nhiều điều kiện",
+        "Thống nhất hỗ trợ và kiểm tra lại"
+      ],
+      "redFlags": [
+        "Gán nhãn lười khi chưa tìm hiểu"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-middle-007",
+      "industry": "education",
+      "level": "middle",
+      "topic": "rubric-feedback",
+      "question": "Bạn giúp học viên sử dụng rubric để tự sửa bài thay vì chỉ chờ điểm như thế nào?",
+      "answerSample": "Tôi diễn giải tiêu chí bằng ví dụ phù hợp, cho học viên đối chiếu một phần bài của mình và chọn bước sửa có căn cứ. Tôi dùng trao đổi ngắn để kiểm tra họ hiểu tiêu chí rồi xem lại bản sửa. Tôi không chỉ gửi một bảng nhiều mức điểm mà mặc định người học sẽ tự hiểu cách cải thiện.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm rõ tiêu chí bằng ví dụ",
+        "Học viên tự đối chiếu và kiểm tra bản sửa"
+      ],
+      "redFlags": [
+        "Coi gửi rubric là đã hướng dẫn sử dụng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-senior-007",
+      "industry": "education",
+      "level": "senior",
+      "topic": "project-learning-assessment",
+      "question": "Với bài tập nhóm dài hạn, bạn phân biệt chất lượng sản phẩm và mức học của từng thành viên ra sao?",
+      "answerSample": "Tôi thiết kế các mốc quá trình, phần giải thích quyết định và bằng chứng đóng góp cá nhân phù hợp mục tiêu, đồng thời đánh giá sản phẩm chung. Tôi thống nhất tiêu chí trước và xử lý khác biệt bằng nhiều nguồn. Tôi không coi một sản phẩm nhóm tốt là bằng chứng mọi người đạt cùng mức năng lực.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Bằng chứng quá trình và đóng góp cá nhân",
+        "Tiêu chí cá nhân tách khỏi kết quả nhóm"
+      ],
+      "redFlags": [
+        "Cho tất cả cùng kết luận chỉ dựa sản phẩm chung"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-lead-007",
+      "industry": "education",
+      "level": "lead",
+      "topic": "curriculum-governance",
+      "question": "Bạn quản lý thay đổi chương trình học thế nào để không mỗi lớp dạy một chuẩn khác nhau?",
+      "answerSample": "Tôi làm rõ mục tiêu và phần cốt lõi chung, phân biệt không gian giảng viên được điều chỉnh với thay đổi cần rà soát. Tôi giữ phiên bản, nguồn phê duyệt và cách cập nhật học liệu cùng đánh giá liên quan. Tôi theo dõi phản hồi thực tế, không dùng việc có một bộ file chung như bằng chứng các lớp đã triển khai nhất quán.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Chuẩn cốt lõi và quyền điều chỉnh rõ",
+        "Phiên bản học liệu cùng đánh giá được cập nhật"
+      ],
+      "redFlags": [
+        "Đồng nhất chia sẻ file với thực thi nhất quán"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-fresher-007",
+      "industry": "hospitality",
+      "level": "fresher",
+      "topic": "lost-property",
+      "question": "Khách báo để quên đồ nhưng chưa chắc ở khu vực nào, bạn tiếp nhận thế nào?",
+      "answerSample": "Em hỏi mô tả và thông tin cần thiết để lập hồ sơ, kiểm tra theo quy trình đồ thất lạc và chuyển đúng bộ phận. Em hẹn cách cập nhật, xác minh quyền nhận trước khi bàn giao nếu tìm thấy. Em không hứa đã tìm được hoặc công khai thông tin món đồ và người nhận cho người chưa được phép.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Hồ sơ và kiểm tra theo quy trình",
+        "Xác minh quyền nhận trước bàn giao"
+      ],
+      "redFlags": [
+        "Giao đồ chỉ vì người gọi mô tả gần đúng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-junior-007",
+      "industry": "hospitality",
+      "level": "junior",
+      "topic": "accessibility-request",
+      "question": "Khách cần hỗ trợ tiếp cận mà bạn chưa rõ cơ sở có đáp ứng được không, bạn làm gì?",
+      "answerSample": "Em hỏi nhu cầu hỗ trợ cụ thể một cách tôn trọng, kiểm tra khả năng thực tế với người phụ trách và trình bày rõ lựa chọn cùng giới hạn. Em chỉ chia sẻ thông tin cần để phối hợp. Em không tự suy về khả năng của khách hoặc cam kết phòng và tiện ích phù hợp khi chưa xác nhận.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Hỏi nhu cầu thay vì suy đoán",
+        "Xác nhận khả năng và bảo vệ thông tin"
+      ],
+      "redFlags": [
+        "Hứa đáp ứng trước khi kiểm tra cơ sở"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-middle-007",
+      "industry": "hospitality",
+      "level": "middle",
+      "topic": "booking-channel-conflict",
+      "question": "Hai kênh cùng xác nhận bán phòng cuối và có nguy cơ không đủ phòng, bạn xử lý thế nào?",
+      "answerSample": "Tôi xác minh thời điểm, điều kiện xác nhận và trạng thái phòng với các bên, báo người có quyền để chốt phương án hỗ trợ khách. Tôi phối hợp cập nhật tồn các kênh và theo dõi việc thực hiện cam kết thay thế. Tôi không tự hủy một đặt phòng chỉ vì giá thấp hơn hoặc đổ hoàn toàn trách nhiệm cho kênh bán khi chưa kiểm chứng.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác minh nghĩa vụ và năng lực phòng",
+        "Phương án hỗ trợ cùng cập nhật kênh"
+      ],
+      "redFlags": [
+        "Ưu tiên tùy ý theo giá rồi hủy cam kết khác"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-senior-007",
+      "industry": "hospitality",
+      "level": "senior",
+      "topic": "public-guest-complaint",
+      "question": "Khách đăng phàn nàn công khai có chi tiết bạn cho rằng chưa đúng, bạn hướng dẫn phản hồi ra sao?",
+      "answerSample": "Tôi kiểm tra diễn biến nội bộ, phản hồi bình tĩnh về phần có thể xác nhận và đề xuất kênh riêng để xử lý chi tiết. Tôi bảo vệ thông tin khách cùng nhân viên, sửa sai nếu có và theo dõi tới kết quả. Tôi không công khai hồ sơ lưu trú hoặc tranh luận bằng chi tiết riêng tư để thắng một cuộc phản bác.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác minh và giải quyết thay vì tranh cãi",
+        "Bảo vệ thông tin khi phản hồi công khai"
+      ],
+      "redFlags": [
+        "Đăng hồ sơ khách để chứng minh mình đúng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-lead-007",
+      "industry": "hospitality",
+      "level": "lead",
+      "topic": "continuity-drill",
+      "question": "Bạn kiểm chứng phương án duy trì hoạt động khi một tiện ích quan trọng gián đoạn như thế nào?",
+      "answerSample": "Tôi chọn kịch bản phù hợp, xác định công việc phải giữ, người quyết định và phương án phục vụ thay thế trong điều kiện an toàn. Tôi diễn tập được phê duyệt, ghi khoảng thiếu về liên lạc, nguồn lực hoặc thời gian rồi theo dõi khắc phục. Tôi không coi có tài liệu kế hoạch là đã chứng minh nhóm thực hiện được.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Diễn tập vai trò và nguồn lực thực tế",
+        "Theo dõi lỗ hổng sau diễn tập"
+      ],
+      "redFlags": [
+        "Coi có kế hoạch giấy là đã sẵn sàng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-fresher-007",
+      "industry": "creative-design",
+      "level": "fresher",
+      "topic": "process-explanation",
+      "question": "Khi trình bày một bài thiết kế chưa hoàn hảo, bạn chọn nói về quá trình và giới hạn như thế nào?",
+      "answerSample": "Em nêu mục tiêu, giới hạn và quyết định quan trọng của phần mình làm, chỉ rõ phần đã kiểm tra và phần còn giả định. Em đề xuất bước cải thiện tiếp theo có lý do. Em không cố kể một câu chuyện thành công trọn vẹn hoặc nhận phản hồi người dùng chưa từng thu thập để làm bài thuyết phục hơn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Phân biệt điều kiểm chứng với giả định",
+        "Đề xuất bước cải thiện có lý do"
+      ],
+      "redFlags": [
+        "Bịa nghiên cứu để hợp thức hóa quyết định"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-junior-007",
+      "industry": "creative-design",
+      "level": "junior",
+      "topic": "delivery-checklist",
+      "question": "Trước khi gửi file thiết kế cuối cho bên sử dụng, bạn kiểm tra những gì?",
+      "answerSample": "Em đối chiếu danh sách đầu ra với brief và bản đã duyệt, kiểm tra định dạng, kích thước, tên phiên bản, nội dung và tài sản liên quan. Em mở thử các file, ghi hướng dẫn sử dụng hoặc phần còn cần xác nhận. Em không gửi một thư mục lẫn nhiều bản mà yêu cầu người nhận tự đoán đâu là bản cuối.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Đối chiếu bản duyệt và danh sách đầu ra",
+        "Mở thử file cùng nhận diện phiên bản"
+      ],
+      "redFlags": [
+        "Bàn giao nhiều bản không rõ hiệu lực"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-middle-007",
+      "industry": "creative-design",
+      "level": "middle",
+      "topic": "usability-evidence",
+      "question": "Một màn hình trông gọn hơn sau chỉnh sửa nhưng người dùng mất nhiều thao tác hơn, bạn đánh giá ra sao?",
+      "answerSample": "Tôi đối chiếu mục tiêu nhiệm vụ, số bước cần thiết, lỗi và mức hiểu thay vì chỉ đánh giá cảm giác gọn. Tôi quan sát người dùng đại diện để tìm phần thông tin bị giấu hoặc luồng chưa rõ, rồi so các phương án. Tôi không coi giảm số thành phần trên màn hình là cải thiện mặc định.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Đánh giá theo việc người dùng hoàn thành",
+        "Quan sát tác động của thông tin bị giấu"
+      ],
+      "redFlags": [
+        "Tối giản hình thức bất kể tải thao tác"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-senior-007",
+      "industry": "creative-design",
+      "level": "senior",
+      "topic": "brand-story-consistency",
+      "question": "Bạn giữ câu chuyện thương hiệu nhất quán khi thiết kế cho nhiều nhóm khách khác nhau thế nào?",
+      "answerSample": "Tôi làm rõ giá trị cốt lõi và yếu tố nhận diện phải giữ, rồi điều chỉnh cách thể hiện theo nhu cầu và bối cảnh từng nhóm. Tôi đối chiếu các điểm chạm, dùng phản hồi để kiểm tra thông điệp có bị hiểu khác ý không. Tôi tránh áp cùng một hình ảnh cho mọi nhóm hoặc thay toàn bộ cá tính thương hiệu theo từng chiến dịch.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Giữ cốt lõi và điều chỉnh theo bối cảnh",
+        "Đối chiếu sự nhất quán giữa điểm chạm"
+      ],
+      "redFlags": [
+        "Thay cá tính thương hiệu theo mỗi yêu cầu riêng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-lead-007",
+      "industry": "creative-design",
+      "level": "lead",
+      "topic": "design-engineering-alignment",
+      "question": "Nhóm thiết kế và kỹ thuật liên tục tranh luận vì phương án khó triển khai, bạn điều hành phối hợp thế nào?",
+      "answerSample": "Tôi đưa hai nhóm về mục tiêu sử dụng, ràng buộc và chi phí thực tế, yêu cầu làm rõ điều gì là bắt buộc và điều gì có thể thử nhỏ. Tôi tổ chức điểm trao đổi sớm, chốt người quyết định và cách kiểm tra đầu ra. Tôi không chỉ yêu cầu một bên nhượng bộ hoặc coi file đã bàn giao là trách nhiệm của thiết kế đã kết thúc.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm rõ mục tiêu và ràng buộc cùng nhau",
+        "Phối hợp sớm tới kết quả triển khai"
+      ],
+      "redFlags": [
+        "Kết thúc trách nhiệm khi mới giao file"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-fresher-007",
+      "industry": "retail-ecommerce",
+      "level": "fresher",
+      "topic": "split-shipment",
+      "question": "Một đơn có các mặt hàng ở nhiều kho, bạn trao đổi cách giao với khách như thế nào?",
+      "answerSample": "Em kiểm tra khả năng gom hoặc tách, thời gian và phí được phép áp dụng, rồi giải thích rõ từng lựa chọn để khách xác nhận. Em bảo đảm trạng thái và thông báo theo dõi phản ánh các kiện hàng. Em không nói đơn đã giao xong khi mới giao một phần hoặc tự thêm phí chưa được xác nhận.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Thông tin rõ về kiện thời gian và phí",
+        "Trạng thái phản ánh giao từng phần"
+      ],
+      "redFlags": [
+        "Coi giao một kiện là hoàn tất cả đơn"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-junior-007",
+      "industry": "retail-ecommerce",
+      "level": "junior",
+      "topic": "address-change",
+      "question": "Có người yêu cầu đổi địa chỉ giao hàng sau khi đơn đã xử lý, bạn làm gì?",
+      "answerSample": "Em xác minh quyền yêu cầu qua quy trình, kiểm tra trạng thái và khả năng điều chỉnh với kho hoặc vận chuyển. Em thông báo phần có thể thực hiện, phí hoặc thời gian nếu có theo điều kiện đã xác nhận, lưu dấu vết thay đổi. Em không đổi thông tin người nhận chỉ vì có người biết mã đơn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác minh quyền yêu cầu thay đổi",
+        "Kiểm tra khả năng thực hiện theo trạng thái"
+      ],
+      "redFlags": [
+        "Coi biết mã đơn là đủ quyền đổi địa chỉ"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-middle-007",
+      "industry": "retail-ecommerce",
+      "level": "middle",
+      "topic": "overselling-recovery",
+      "question": "Bạn phát hiện một nhóm đơn đã bán vượt tồn, bạn ưu tiên xử lý và khắc phục thế nào?",
+      "answerSample": "Tôi ngăn nhận thêm cam kết sai trong phạm vi có quyền, xác minh số lượng thực và phân loại các đơn bị ảnh hưởng. Tôi phối hợp phương án bổ sung, thay thế hoặc xử lý theo chính sách với khách, giữ nguyên tắc ưu tiên rõ ràng. Sau đó tôi kiểm tra nguyên nhân giữ tồn và đồng bộ, không chỉ sửa số kho rồi bỏ các đơn đã xác nhận.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Chặn cam kết sai và xử lý đơn đã ảnh hưởng",
+        "Ưu tiên rõ cùng sửa nguyên nhân đồng bộ"
+      ],
+      "redFlags": [
+        "Chỉ sửa tồn mà bỏ cam kết với khách"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-senior-007",
+      "industry": "retail-ecommerce",
+      "level": "senior",
+      "topic": "inventory-resilience",
+      "question": "Một nhóm hàng phụ thuộc nhà cung cấp duy nhất có thời gian giao thất thường, bạn giảm rủi ro thiếu hàng ra sao?",
+      "answerSample": "Tôi phân tích biến động nhu cầu và thời gian cung ứng, mức phục vụ cùng vốn và rủi ro chậm bán để so phương án. Tôi xem nguồn thay thế, lịch đặt và mức dự phòng phù hợp, thử rồi cập nhật theo dữ kiện. Tôi không tăng tồn mọi mặt hàng cùng một tỷ lệ hoặc giả định nhà cung cấp sẽ luôn giao đúng lịch đã hứa.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xem biến động và đánh đổi vốn với mức phục vụ",
+        "Nguồn thay thế cùng cập nhật kế hoạch"
+      ],
+      "redFlags": [
+        "Tăng tồn đồng loạt mà không đánh giá rủi ro"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-lead-007",
+      "industry": "retail-ecommerce",
+      "level": "lead",
+      "topic": "channel-unit-economics",
+      "question": "Bạn so hiệu quả các kênh bán khi doanh thu và mức hỗ trợ vận hành khác nhau thế nào?",
+      "answerSample": "Tôi thống nhất cách tính doanh thu thực nhận, phí kênh, khuyến mại, xử lý, hoàn và hỗ trợ, phân biệt phần chi phí có thể quy trực tiếp với phần phân bổ. Tôi xem cả vai trò của kênh trong hành trình mua và năng lực mở rộng. Tôi không xếp hạng chỉ bằng doanh thu hoặc bỏ chi phí nội bộ mà kênh đang sử dụng.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "So trên định nghĩa chi phí nhất quán",
+        "Cân nhắc vai trò hành trình và khả năng mở rộng"
+      ],
+      "redFlags": [
+        "Bỏ chi phí nội bộ để làm kênh có vẻ tốt hơn"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-fresher-007",
+      "industry": "customer-service",
+      "level": "fresher",
+      "topic": "problem-clarification",
+      "question": "Khách chỉ nhắn không dùng được, bạn hỏi thêm như thế nào để xác định vấn đề?",
+      "answerSample": "Em hỏi họ đang muốn làm gì, xảy ra ở bước nào và thông báo cụ thể, ưu tiên từng câu dễ trả lời. Em dùng thông tin đã có để tránh hỏi lại và nhắc không gửi mật khẩu hoặc mã xác thực. Em tóm tắt điều đã hiểu trước khi hướng dẫn, không lập tức đưa một danh sách thao tác chung quá dài.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm rõ mục tiêu bước lỗi và dấu hiệu",
+        "Chỉ xin dữ liệu cần thiết không có bí mật"
+      ],
+      "redFlags": [
+        "Xin mật khẩu để tái hiện vấn đề"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-junior-007",
+      "industry": "customer-service",
+      "level": "junior",
+      "topic": "incorrect-reply-recovery",
+      "question": "Bạn phát hiện mình vừa gửi hướng dẫn sai cho khách, bạn xử lý thế nào?",
+      "answerSample": "Em kiểm tra hướng dẫn đúng và ảnh hưởng có thể có, chủ động đính chính, xin lỗi cụ thể và đưa bước khắc phục trong quyền. Nếu khách đã làm theo, em chuyển hỗ trợ phù hợp và theo dõi tới kết quả. Em không chỉ sửa nội dung trong hệ thống mà không báo người đã nhận bản sai.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Đính chính chủ động và xem ảnh hưởng thực tế",
+        "Theo dõi khách đã áp dụng hướng dẫn sai"
+      ],
+      "redFlags": [
+        "Sửa tài liệu nhưng không thông báo khách bị ảnh hưởng"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-middle-007",
+      "industry": "customer-service",
+      "level": "middle",
+      "topic": "chat-expectations",
+      "question": "Một cuộc chat cần thời gian kiểm tra khiến khách liên tục hỏi đã xong chưa, bạn duy trì trao đổi ra sao?",
+      "answerSample": "Tôi thông báo rõ đang kiểm tra phần nào, đưa mốc cập nhật có thể giữ và chủ động quay lại kể cả chưa có kết quả cuối. Tôi xác nhận kênh theo dõi nếu cần chuyển xử lý dài hơn. Tôi tránh để khách chờ im lặng hoặc gửi nhiều tin trấn an không có thông tin thực chất.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Mốc cập nhật chủ động có thể giữ",
+        "Kênh tiếp tục khi xử lý kéo dài"
+      ],
+      "redFlags": [
+        "Hứa sắp xong lặp lại mà không có căn cứ"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-senior-007",
+      "industry": "customer-service",
+      "level": "senior",
+      "topic": "exception-consistency",
+      "question": "Nhóm xử lý những trường hợp hoàn tiền tương tự nhưng kết quả khác nhau, bạn rà soát thế nào?",
+      "answerSample": "Tôi đối chiếu điều kiện từng trường hợp, quyền xử lý và căn cứ ngoại lệ, tìm khác biệt thực sự thay vì mặc định mọi kết quả phải giống. Tôi hiệu chỉnh hướng dẫn cùng người có trách nhiệm, xem phần cần giải thích hoặc khắc phục với khách. Tôi không công khai thông tin khách khác để biện minh cho một quyết định.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "So điều kiện và căn cứ ngoại lệ",
+        "Hiệu chỉnh hướng dẫn cùng khắc phục phù hợp"
+      ],
+      "redFlags": [
+        "Dùng hồ sơ riêng khách khác để giải thích công khai"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-lead-007",
+      "industry": "customer-service",
+      "level": "lead",
+      "topic": "urgent-backlog",
+      "question": "Hàng tồn yêu cầu hỗ trợ tăng nhanh trong khi có nhiều ca khẩn, bạn điều hành ưu tiên thế nào?",
+      "answerSample": "Tôi xác định mức tác động, độ khẩn và thời gian đã chờ, tách ca cần đội chuyên trách rồi phân người theo năng lực. Tôi thống nhất cập nhật cho khách, theo dõi nguy cơ các ca ít được chú ý bị chờ vô hạn và điều chỉnh nguồn lực. Tôi không chỉ xử lý ai phản ánh lớn tiếng nhất hoặc đóng hàng loạt để giảm số tồn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Ưu tiên theo tác động khẩn và thời gian chờ",
+        "Tránh bỏ quên ca còn lại và giữ cập nhật"
+      ],
+      "redFlags": [
+        "Đóng hồ sơ chưa giải quyết để giảm backlog"
+      ],
+      "evidencePrompts": [
+        "Giải thích một lựa chọn và cách kiểm chứng kết quả. Nếu liên hệ kinh nghiệm, chỉ nêu tình huống, phần việc và bằng chứng thật; nói rõ nếu đây mới là cách xử lý giả định."
       ],
       "referenceUrls": []
     }

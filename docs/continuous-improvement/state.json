@@ -842,14 +842,14 @@
   },
   "userInterviewUpgrade": {
     "requestedAt": "2026-10-29",
-    "status": "LOCAL_COACHING_VERIFIED_BANK_300_OF_50000_NOT_DEPLOYED",
+    "status": "BANK_350_OF_50000_CONTENT_CORRECTION_NOT_DEPLOYED",
     "targetPerIndustryLevel": 1000,
     "industryCount": 10,
     "levelCount": 5,
     "totalTarget": 50000,
-    "authoredDrafts": 300,
+    "authoredDrafts": 350,
     "expertReviewed": 0,
-    "remainingAuthored": 49700,
+    "remainingAuthored": 49650,
     "quantityConfirmedByOwner": true,
     "qualityApproved": false,
     "tests": {
@@ -864,7 +864,7 @@
     },
     "releaseBlocked": true,
     "nextActions": [
-      "Expand and review1000 distinct question-answer entries for each of50 industry/level pairs; currently4each; no permutation padding",
+      "Expand and review1000 distinct Q&A for each50pairs; now7each,350total; no permutation padding",
       "Verify model semantics with bounded synthetic cases when an authorized local/staging provider is configured; no secret copied into repo/log",
       "Owner normal existing Render login approval remains pending; do not bypass previous automatic review rejection",
       "For actual release compose scoped voice and required security patches on current main, run exact candidate CI, verify fresh private Drive code/build backup and rollback, then deploy small and smoke"
@@ -875,18 +875,21 @@
     "previousNextModule": "cv-ats",
     "sourceCommit": "5af53e11a9869030f75954a14a07c59c9b292c90",
     "sourceCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783448264",
-    "sourceCiPassed": true,
+    "sourceCiPassed": false,
     "candidateCommit": "b6c30a8e7005ce2f461e72de00370394d1a3fbf2",
     "candidateBranch": "improvement/interview-coaching-release-20261029",
     "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40783994897",
     "candidateCiPassed": true,
-    "candidateStatus": "EXACT_CANDIDATE_CI_SUCCESS_RELEASE_ACCESS_AND_FRESH_BACKUP_PENDING",
+    "candidateStatus": "PRIOR_300_CANDIDATE_CI_PASSED_NEW_CONTENT_REQUIRES_REFRESH",
     "candidateBackupVerified": false,
     "candidateHtmlLocalCases": 10,
     "bankComplete": false,
     "realProviderEvalBlockedReason": "No local/staging provider key configured; no production key retrieved",
-    "nextContentBatch": "Author007+ distinct records per pair; inspect existing topics first, prioritize commonly assessed competencies and correctness over count",
-    "renderLoginDecisionPending": true
+    "nextContentBatch": "008; inspect current topics and semantic duplicates before authoring",
+    "renderLoginDecisionPending": true,
+    "contentSourceCiPending": true,
+    "contentReviewReceipt": "runs/interview-upgrade-20261029/content-350.json",
+    "lastVerifiedCoachingSourceCommit": "5af53e11a9869030f75954a14a07c59c9b292c90"
   },
   "userPriorityIssue": "INT006_INT007"
 }
