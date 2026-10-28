@@ -1,4 +1,5 @@
 'use strict';
+const {browserPath}=require('../src/services/browserConfig');
 // Actual Studio controller with deferred synthetic transport/audio; no real device/AI.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),express=require('express');
 const {execFileSync}=require('node:child_process'),{chromium}=require('playwright-core');
@@ -10,7 +11,7 @@ app.get('/ai/runtime.js',(q,s)=>s.type('js').send('window.connectCVParentOrigins
 app.get('/ai/',(q,s)=>s.type('html').send(source));app.use('/ai',express.static(root));app.use('/api',(q,s)=>s.status(401).json({success:false,message:'Synthetic unavailable'}));
 (async()=>{let server,browser;try{
  server=app.listen(0,'127.0.0.1');await new Promise((r,j)=>{server.once('listening',r);server.once('error',j);});const base='http://127.0.0.1:'+server.address().port;
- browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:chromium.executablePath()});const context=await browser.newContext({viewport:{width:1366,height:900}}),page=await context.newPage();page.setDefaultTimeout(5000);
+ browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:browserPath(process.env,chromium)});const context=await browser.newContext({viewport:{width:1366,height:900}}),page=await context.newPage();page.setDefaultTimeout(5000);
  await context.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
  await page.addInitScript(()=>{
   const qa=window.__voiceQA={requests:[],audio:[],utterances:[],recognizers:[],urls:[],revoked:[],playPending:false,playRejects:[],blobResolvers:[]};

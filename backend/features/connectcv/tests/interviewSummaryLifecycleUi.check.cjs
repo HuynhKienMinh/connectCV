@@ -1,4 +1,5 @@
 'use strict';
+const {browserPath}=require('../src/services/browserConfig');
 // Whole Studio, deferred synthetic transport (deliberately ignores abort); no AI/device/cloud.
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
 const express = require('express'), { execFileSync } = require('node:child_process');
@@ -18,7 +19,7 @@ app.use('/api', (q, s) => s.status(401).json({ success: false, message: 'Synthet
     server = app.listen(0, '127.0.0.1');
     await new Promise((r, j) => { server.once('listening', r); server.once('error', j); });
     const base = 'http://127.0.0.1:' + server.address().port;
-    browser = await chromium.launch({ headless: true, chromiumSandbox: true, executablePath: chromium.executablePath() });
+    browser = await chromium.launch({ headless: true, chromiumSandbox: true, executablePath: browserPath(process.env,chromium) });
     const context = await browser.newContext({ viewport: { width: 1366, height: 900 } }), page = await context.newPage();
     page.setDefaultTimeout(5000);
     await context.route('**/*', r => new URL(r.request().url()).origin === base ? r.continue() : r.abort());

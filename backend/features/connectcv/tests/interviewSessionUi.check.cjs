@@ -1,4 +1,5 @@
 'use strict';
+const {browserPath}=require('../src/services/browserConfig');
 // Actual Studio: deferred fake transcribe/reply/JSON, no real audio device or AI.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),express=require('express');
 const {execFileSync}=require('node:child_process'),{chromium}=require('playwright-core');
@@ -8,7 +9,7 @@ const source=process.env.INTERVIEW_SESSION_SOURCE_REF?execFileSync('git',['show'
 const app=express(),rows=[];app.get('/ai/runtime.js',(q,s)=>s.type('js').send('window.connectCVParentOrigins=[];window.connectCVServerPdf=false;'));app.get('/ai/',(q,s)=>s.type('html').send(source));app.use('/ai',express.static(root));app.use('/api',(q,s)=>s.status(401).json({success:false,message:'Synthetic unavailable'}));
 (async()=>{let server,browser;try{
  server=app.listen(0,'127.0.0.1');await new Promise((r,j)=>{server.once('listening',r);server.once('error',j);});const base='http://127.0.0.1:'+server.address().port;
- browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:chromium.executablePath()});const context=await browser.newContext({viewport:{width:1366,height:900}}),page=await context.newPage();page.setDefaultTimeout(5000);await context.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
+ browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:browserPath(process.env,chromium)});const context=await browser.newContext({viewport:{width:1366,height:900}}),page=await context.newPage();page.setDefaultTimeout(5000);await context.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
  await page.addInitScript(()=>{
   const qa=window.__sessionQA={requests:[],tts:[],audio:[],readers:[],holdReads:false,jsonResolvers:[]};
   const original=fetch.bind(window);window.fetch=(url,options)=>{

@@ -1,4 +1,5 @@
 'use strict';
+const {browserPath}=require('../src/services/browserConfig');
 // Actual Studio DOM/controller; synthetic microphone and transport, no device permissions.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),express=require('express');
 const {execFileSync}=require('node:child_process'),{chromium}=require('playwright-core');
@@ -12,7 +13,7 @@ app.use('/api',(q,s)=>s.status(401).json({success:false,message:'Synthetic unaut
 (async()=>{let server,browser;try{
  server=app.listen(0,'127.0.0.1');await new Promise((r,j)=>{server.once('listening',r);server.once('error',j);});
  const base='http://127.0.0.1:'+server.address().port;
- browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:chromium.executablePath()});const context=await browser.newContext({viewport:{width:1366,height:900}}),page=await context.newPage();
+ browser=await chromium.launch({headless:true,chromiumSandbox:true,executablePath:browserPath(process.env,chromium)});const context=await browser.newContext({viewport:{width:1366,height:900}}),page=await context.newPage();
  page.setDefaultTimeout(5000);
  await context.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());
  await page.addInitScript(()=>{

@@ -709,7 +709,9 @@
       "releaseBlocked": true,
       "backupCoversCandidate": false,
       "deployed": false,
-      "bankComplete": false
+      "bankComplete": false,
+      "deepVoiceQaPassed": false,
+      "recompositionRequired": true
     }
   },
   "blockingDependency": "SEC006_SCOPED_RECOMPOSITION_THEN_CLOUD_READBACK_AND_RENDER_LOGIN",
@@ -883,7 +885,7 @@
     "candidateBranch": "improvement/interview-coaching-release-20261029",
     "candidateCiUrl": "https://github.com/HuynhKienMinh/connectCV/actions/runs/40786551425",
     "candidateCiPassed": true,
-    "candidateStatus": "EXACT_350_CANDIDATE_CI_SUCCESS_RENDER_AND_FRESH_BACKUP_PENDING",
+    "candidateStatus": "DEEP_VOICE_QA_FOUND16SUMMARY_FAILURES_RECOMPOSE_REQUIRED",
     "candidateBackupVerified": false,
     "candidateHtmlLocalCases": 10,
     "bankComplete": false,
@@ -896,5 +898,21 @@
     "rubricsRefined": 40,
     "previousSource350": "48bab24b349ce67f305d3db5b2995f2c2992525d"
   },
-  "userPriorityIssue": "INT006_INT007"
+  "userPriorityIssue": "INT006_INT007",
+  "voiceDeepTest": {
+    "journal": "runs/2026-10-29-voice-deep-check.md",
+    "evidence": "runs/voice-deep-20261029/verification.json",
+    "status": "SOURCE_LOCAL_VERIFIED_LIVE_AND_OLD_CANDIDATE_NOT_ACCEPTED",
+    "browserReviewPass": 69,
+    "featurePass": 140,
+    "actualHttpPass": 7,
+    "newSpeechBaselineFailures": 4,
+    "newSpeechPatchedPass": 5,
+    "liveHtmlSummaryFail": 16,
+    "candidateSummaryFail": 16,
+    "realProviderCalls": 0,
+    "realMicVerified": false,
+    "dedicatedTestAccountQuestionPending": true,
+    "deployed": false
+  }
 }

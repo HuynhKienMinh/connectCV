@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-29",
+  "liveStudioReadRequests": 1,
+  "liveStudioSha256": "2c94110e7014d40039be2bbb4785773d4f281e2aff97c703fd197f770fd342dc",
+  "liveStudioByteIdenticalGitRef": "d6a3fd2",
+  "liveReproductionMode": "Downloaded public HTML replayed locally with deferred synthetic providers/devices; no live fault injection",
+  "browserTests": {
+    "review-mic": {
+      "pass": 13,
+      "fail": 0,
+      "failedCases": []
+    },
+    "review-voice": {
+      "pass": 13,
+      "fail": 0,
+      "failedCases": []
+    },
+    "review-session": {
+      "pass": 15,
+      "fail": 0,
+      "failedCases": []
+    },
+    "review-summary": {
+      "pass": 18,
+      "fail": 0,
+      "failedCases": []
+    },
+    "review-coaching": {
+      "pass": 10,
+      "fail": 0,
+      "failedCases": []
+    },
+    "live-voice": {
+      "pass": 13,
+      "fail": 0,
+      "failedCases": []
+    },
+    "live-session": {
+      "pass": 15,
+      "fail": 0,
+      "failedCases": []
+    },
+    "live-summary": {
+      "pass": 2,
+      "fail": 16,
+      "failedCases": [
+        "double-end-shares-one-pending-summary",
+        "close-aborts-and-late-success-cannot-populate-dismissed-report",
+        "older-success-cannot-overwrite-newer-summary",
+        "close-during-json-parsing-ignores-late-data",
+        "new-session-cancels-summary-and-clears-modal",
+        "reset-session-cancels-summary-and-clears-modal",
+        "practice-question-cancels-summary-and-clears-modal",
+        "module-departure-cancels-summary-and-clears-modal",
+        "eval-submode-cancels-summary-and-clears-modal",
+        "script-mode-cancels-summary-and-clears-modal",
+        "pagehide-cancels-summary-and-clears-modal",
+        "continued-answer-cancels-summary-and-clears-modal",
+        "logout-synchronously-aborts-summary-before-bridge-reload",
+        "obsolete-error-cannot-replace-new-loading-state",
+        "current-network-failure-has-generic-retry-without-private-error",
+        "deadline-releases-lock-explicit-retry-ignores-old-finally"
+      ]
+    },
+    "candidate-summary": {
+      "pass": 2,
+      "fail": 16,
+      "failedCases": [
+        "double-end-shares-one-pending-summary",
+        "close-aborts-and-late-success-cannot-populate-dismissed-report",
+        "older-success-cannot-overwrite-newer-summary",
+        "close-during-json-parsing-ignores-late-data",
+        "new-session-cancels-summary-and-clears-modal",
+        "reset-session-cancels-summary-and-clears-modal",
+        "practice-question-cancels-summary-and-clears-modal",
+        "module-departure-cancels-summary-and-clears-modal",
+        "eval-submode-cancels-summary-and-clears-modal",
+        "script-mode-cancels-summary-and-clears-modal",
+        "pagehide-cancels-summary-and-clears-modal",
+        "continued-answer-cancels-summary-and-clears-modal",
+        "logout-synchronously-aborts-summary-before-bridge-reload",
+        "obsolete-error-cannot-replace-new-loading-state",
+        "current-network-failure-has-generic-retry-without-private-error",
+        "deadline-releases-lock-explicit-retry-ignores-old-finally"
+      ]
+    }
+  },
+  "newSpeechTests": {
+    "baselinePass": 1,
+    "baselineFail": 4,
+    "patchedPass": 5,
+    "patchedFail": 0
+  },
+  "fullFeaturePass": 140,
+  "actualMountCoachingHttpPass": 7,
+  "realAiCalls": 0,
+  "realMicrophoneUsed": false,
+  "realTtsAudioHeard": false,
+  "productionWrites": 0,
+  "findings": [
+    "Live and old candidate summary lifecycle16of18fail: duplicate submission, late response, closing, departure, error text, deadline",
+    "TTS removed meaningful conditions/negations in brackets; fixed source and tested",
+    "Empty audio reached mocked provider; rejected before provider in route now, quota-admission behavior not changed",
+    "Provider exception body reached transcription logs; fixed diagnostic; TTS fallback raw exception removed too",
+    "Transcription deadline timer retained on success; now cleared in finally"
+  ],
+  "sourceFixesVerifiedLocally": true,
+  "candidateMustBeRecomposed": true,
+  "deployed": false,
+  "limitations": [
+    "No dedicated test account or authorized local provider currently available",
+    "Microphone accuracy, accents, ambient noise, audible voice quality and real latency not verified",
+    "Timeout race cleanup does not prove provider request is canceled; three30s fallback attempts and client deadline mismatch require further review",
+    "No claim all logs or provider internals audited"
+  ]
+}

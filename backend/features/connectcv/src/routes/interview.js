@@ -135,7 +135,7 @@ router.post('/tts', async (req, res) => {
 router.post('/transcribe', async (req, res) => {
   try {
     const { audioBase64, mimeType = 'audio/webm' } = req.body;
-    if (typeof audioBase64!=='string' || !/^[A-Za-z0-9+/]*={0,2}$/.test(audioBase64) || typeof mimeType!=='string') {
+    if (typeof audioBase64!=='string' || !audioBase64.trim() || !/^[A-Za-z0-9+/]*={0,2}$/.test(audioBase64) || typeof mimeType!=='string') {
       return res.status(400).json({ success: false, message: 'Vui lòng cung cấp dữ liệu âm thanh (audioBase64)!' });
     }
 
@@ -163,10 +163,13 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
     for (const modelName of candidateModels) {
       try {
         const model  = genAI.getGenerativeModel({ model: modelName });
-        const result = await Promise.race([
-          model.generateContent([{ inlineData: { mimeType: cleanMimeType, data: audioBase64 } }, { text: transcribePrompt }]),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout 30s')), 30000))
-        ]);
+        let deadline, result;
+        try {
+          result = await Promise.race([
+            model.generateContent([{ inlineData: { mimeType: cleanMimeType, data: audioBase64 } }, { text: transcribePrompt }]),
+            new Promise((_, reject) => { deadline = setTimeout(() => reject(Object.assign(new Error('Transcription deadline'), {code:'AI_TIMEOUT'})), 30000); })
+          ]);
+        } finally { clearTimeout(deadline); }
         transcript = result.response.text().trim()
           .replace(/\d{1,2}:\d{2}:\d{2}[,.]\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2}[,.]\d{3}/gi, '')
           .replace(/^\s*\d+\s*$/gm, '')
@@ -174,7 +177,7 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
         if (!transcript || transcript.length < 2) transcript = '[Không nghe rõ]';
         if (transcript) { lastError = null; break; }
       } catch (err) {
-        console.warn(`[Transcribe] Model ${modelName}:`, err.message);
+        console.warn('[Interview /transcribe] provider_attempt_failed');
         lastError = err;
       }
     }
@@ -184,7 +187,7 @@ KHÔNG xuất SRT, timestamp, số thứ tự. Nếu im lặng hoàn toàn, tr�
     }
     return res.status(200).json({ success: true, transcript, data: { transcript } });
   } catch (error) {
-    console.error('[Interview /transcribe]', safeError(error));
+    console.error('[Interview /transcribe] request_failed');
     return res.status(500).json({ success: false, transcript: '[Không nghe rõ]', data: { transcript: '[Không nghe rõ]' }, message: 'Lỗi xử lý âm thanh.' });
   }
 });

@@ -11,8 +11,8 @@ function cleanTextForSpeech(text) {
   if (!text) return '';
   return text
     .replace(/[*_~`#>]/g, '') // Xóa ký tự markdown
-    .replace(/\[.*?\]/g, '')  // Xóa [S], [T], [A], [R]...
-    .replace(/\(.*?\)/g, '')  // Xóa nội dung trong ngoặc đơn nếu có
+    .replace(/\[(?:S|T|A|R)\]/g, ' ') // Remove only standalone STAR labels
+    .replace(/[\[\]()]/g, '') // Keep spoken conditions and negations inside brackets
     .replace(/https?:\/\/\S+/g, '') // Xóa URL
     .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '') // Xóa emoji
     .replace(/\s+/g, ' ')
@@ -143,7 +143,7 @@ async function generateSpeechMP3(text, voiceName = 'vi-VN-NamMinhNeural') {
     try {
       buffer = await generateGoogleTTSFallback(cleaned);
     } catch (gErr) {
-      console.error('[TTS Google Fallback Error]:', gErr.message);
+      console.error('[TTS] fallback_unavailable');
       throw new Error('Không thể tạo âm thanh giọng đọc từ tất cả nguồn TTS.');
     }
   }
