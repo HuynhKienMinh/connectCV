@@ -1,0 +1,344 @@
+{
+  "records": [
+    {
+      "id": "swe-fresher-001",
+      "industry": "software-engineering",
+      "level": "fresher",
+      "topic": "http-methods",
+      "question": "GET và POST khác nhau thế nào khi thiết kế một API?",
+      "answerSample": "GET dùng để đọc biểu diễn tài nguyên và phải có ngữ nghĩa an toàn; POST yêu cầu tài nguyên xử lý dữ liệu, có thể tạo thay đổi. Không đặt dữ liệu nhạy cảm vào URL. Tôi chọn theo ngữ nghĩa thao tác, bổ sung xác thực và kiểm thử; POST không tự bảo mật hơn nếu thiếu HTTPS.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Ngữ nghĩa đọc và xử lý",
+        "An toàn không đồng nghĩa mã hóa"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "swe-fresher-002",
+      "industry": "software-engineering",
+      "level": "fresher",
+      "topic": "data-integrity",
+      "question": "Bạn sẽ tránh cập nhật dở dang khi một nghiệp vụ ghi vào hai bảng như thế nào?",
+      "answerSample": "Tôi dùng transaction để hai thay đổi cùng commit hoặc cùng rollback, đồng thời đặt ràng buộc dữ liệu phù hợp. Tôi kiểm tra mức cô lập và thử trường hợp lỗi giữa hai bước. Nếu liên quan dịch vụ ngoài database, transaction cục bộ không đủ; cần cơ chế phối hợp như outbox và xử lý lặp an toàn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Commit hoặc rollback toàn nghiệp vụ",
+        "Phân biệt giao dịch cục bộ và dịch vụ ngoài"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-fresher-001",
+      "industry": "marketing",
+      "level": "fresher",
+      "topic": "campaign-objective",
+      "question": "Bạn chọn chỉ số nào để đánh giá một chiến dịch thu hút khách hàng tiềm năng?",
+      "answerSample": "Tôi thống nhất định nghĩa lead hợp lệ và mục tiêu với bộ phận bán hàng trước. Sau đó theo dõi chi phí mỗi lead hợp lệ, tỷ lệ chuyển đổi và chất lượng ở các bước sau. Lượt xem chỉ là tín hiệu đầu phễu. Tôi kiểm tra nguồn đo, thời gian ghi nhận và không kết luận từ một mẫu nhỏ.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Chỉ số gắn mục tiêu kinh doanh",
+        "Chất lượng lead và giới hạn đo lường"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "mkt-fresher-002",
+      "industry": "marketing",
+      "level": "fresher",
+      "topic": "audience-research",
+      "question": "Bạn nghiên cứu khách hàng mục tiêu trước khi viết nội dung như thế nào?",
+      "answerSample": "Tôi kết hợp dữ liệu hiện có, phỏng vấn ngắn và quan sát câu hỏi khách thường gặp để xác định nhu cầu. Tôi tách điều đã có bằng chứng khỏi giả thuyết, rồi thử thông điệp trên nhóm nhỏ. Tôi chỉ sử dụng dữ liệu được phép và điều chỉnh nội dung theo phản hồi thay vì suy diễn từ tuổi hay giới tính.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Kết hợp nguồn nghiên cứu",
+        "Phân biệt giả thuyết và bằng chứng"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-fresher-001",
+      "industry": "sales",
+      "level": "fresher",
+      "topic": "discovery",
+      "question": "Khách nói sản phẩm quá đắt, bạn phản hồi thế nào?",
+      "answerSample": "Tôi hỏi thêm khách đang so sánh với phương án nào và điều gì quan trọng nhất trong quyết định. Sau đó tôi trình bày giá trị phù hợp với nhu cầu, làm rõ tổng chi phí và giới hạn sản phẩm. Tôi không giảm giá hoặc hứa tính năng vượt thẩm quyền; nếu ngân sách chưa phù hợp, tôi đề xuất phương án trong phạm vi được duyệt.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm rõ phản đối trước khi bán",
+        "Không hứa hoặc giảm giá trái thẩm quyền"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "sales-fresher-002",
+      "industry": "sales",
+      "level": "fresher",
+      "topic": "pipeline",
+      "question": "Bạn ưu tiên danh sách khách hàng tiềm năng trong ngày như thế nào?",
+      "answerSample": "Tôi xem mức phù hợp, nhu cầu đã xác nhận, thời điểm mua và bước tiếp theo đã cam kết. Tôi ghi căn cứ trong CRM và dành thời gian cho cả cơ hội gần chốt lẫn xây nguồn mới. Nếu chưa có dữ liệu, tôi xác minh trước thay vì tự gán xác suất thắng hoặc bỏ qua khách chỉ vì quy mô nhỏ.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Ưu tiên có căn cứ",
+        "Theo dõi bước tiếp theo trong CRM"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-fresher-001",
+      "industry": "finance-accounting",
+      "level": "fresher",
+      "topic": "reconciliation",
+      "question": "Khi số dư sổ kế toán lệch với sao kê, bạn bắt đầu kiểm tra từ đâu?",
+      "answerSample": "Tôi xác nhận kỳ đối chiếu, số dư đầu kỳ và tính đầy đủ chứng từ, rồi so khớp từng khoản theo ngày, số tiền và tham chiếu. Tôi tách chênh lệch thời điểm khỏi lỗi ghi sổ, lập danh sách cần xác minh và xin phê duyệt điều chỉnh. Tôi không ghi bút toán làm cân số khi chưa có chứng từ.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Tách chênh lệch thời điểm và lỗi",
+        "Không điều chỉnh thiếu bằng chứng"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "fin-fresher-002",
+      "industry": "finance-accounting",
+      "level": "fresher",
+      "topic": "financial-statements",
+      "question": "Lợi nhuận và dòng tiền khác nhau như thế nào?",
+      "answerSample": "Lợi nhuận phản ánh doanh thu và chi phí được ghi nhận theo nguyên tắc kế toán; dòng tiền phản ánh tiền thực thu và thực chi. Ví dụ bán chịu có thể tạo doanh thu nhưng chưa thu tiền. Tôi đối chiếu thêm khoản phải thu, hàng tồn kho và nghĩa vụ thanh toán để giải thích, không kết luận doanh nghiệp khỏe chỉ từ một chỉ tiêu.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Ghi nhận khác thu chi tiền",
+        "Xem khoản phải thu và vốn lưu động"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-fresher-001",
+      "industry": "human-resources",
+      "level": "fresher",
+      "topic": "screening",
+      "question": "Bạn sàng lọc CV cho một vị trí mới như thế nào?",
+      "answerSample": "Tôi thống nhất tiêu chí liên quan công việc với quản lý tuyển dụng, phân biệt điều bắt buộc và điều có thể đào tạo. Tôi đánh giá bằng chứng theo cùng một bảng tiêu chí, ghi điểm cần xác minh và bảo vệ thông tin ứng viên. Tôi không loại người chỉ theo tuổi, ảnh hay các đặc điểm không liên quan năng lực thực hiện công việc.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Tiêu chí nhất quán và liên quan công việc",
+        "Bảo vệ dữ liệu ứng viên"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hr-fresher-002",
+      "industry": "human-resources",
+      "level": "fresher",
+      "topic": "onboarding",
+      "question": "Bạn chuẩn bị gì cho ngày đầu của nhân viên mới?",
+      "answerSample": "Tôi dùng checklist gồm giấy tờ, thiết bị, quyền truy cập theo phê duyệt, lịch giới thiệu và người hỗ trợ. Tôi xác nhận với các bộ phận phụ trách trước ngày nhận việc, cung cấp mục tiêu giai đoạn đầu và kênh hỏi đáp. Tôi không tự cấp quyền hệ thống hay gửi hồ sơ cá nhân ngoài phạm vi công việc.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Checklist và xác nhận người phụ trách",
+        "Quyền truy cập theo phê duyệt"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-fresher-001",
+      "industry": "education",
+      "level": "fresher",
+      "topic": "lesson-planning",
+      "question": "Bạn thiết kế một buổi học khi học viên có trình độ khác nhau như thế nào?",
+      "answerSample": "Tôi khảo sát kiến thức đầu vào, đặt mục tiêu học tập cụ thể rồi chuẩn bị nhiệm vụ cơ bản và phần mở rộng. Tôi kiểm tra mức hiểu trong buổi học để điều chỉnh nhịp độ, hỗ trợ nhóm còn thiếu nền tảng và dùng bài thực hành để đánh giá. Tôi không đồng nhất việc học viên ít phát biểu với việc họ không hiểu.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Mục tiêu và khảo sát đầu vào",
+        "Đánh giá bằng thực hành"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "edu-fresher-002",
+      "industry": "education",
+      "level": "fresher",
+      "topic": "feedback",
+      "question": "Bạn phản hồi bài làm chưa đạt của học viên như thế nào?",
+      "answerSample": "Tôi chỉ rõ phần đáp ứng và phần chưa đáp ứng tiêu chí, đưa một ví dụ sửa có giải thích và để học viên tự làm lại. Tôi nhận xét hành vi hoặc sản phẩm học tập, không gắn nhãn năng lực con người. Tôi ghi nhận tiến bộ từ bằng chứng ở lần làm sau, không khen chung chung để tránh làm học viên hiểu sai kết quả.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Nhận xét theo tiêu chí",
+        "Cho cơ hội sửa và kiểm tra tiến bộ"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-fresher-001",
+      "industry": "hospitality",
+      "level": "fresher",
+      "topic": "service-recovery",
+      "question": "Khách phàn nàn phòng chưa sẵn sàng, bạn xử lý ra sao?",
+      "answerSample": "Tôi lắng nghe, xác nhận tình trạng với bộ phận phụ trách và giải thích thời gian dự kiến đã được kiểm tra. Tôi đề xuất nơi chờ hoặc phương án thay thế trong thẩm quyền, cập nhật cho khách và bàn giao rõ người chịu trách nhiệm. Tôi không hứa bồi thường chưa được duyệt hay nêu lỗi cá nhân của đồng nghiệp trước khách.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác minh và cập nhật thời gian",
+        "Phương án trong thẩm quyền"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "hotel-fresher-002",
+      "industry": "hospitality",
+      "level": "fresher",
+      "topic": "handover",
+      "question": "Bạn bàn giao ca để tránh bỏ sót yêu cầu của khách như thế nào?",
+      "answerSample": "Tôi ghi việc đang mở, mức ưu tiên, thời hạn, người phụ trách và hành động đã thực hiện trên hệ thống được phép. Tôi trao đổi trực tiếp các trường hợp khẩn rồi yêu cầu ca sau xác nhận tiếp nhận. Tôi chỉ chia sẻ thông tin khách cần thiết cho phục vụ, không lưu giấy tờ hay số liên hệ vào thiết bị cá nhân.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Bàn giao việc mở có người phụ trách",
+        "Bảo vệ thông tin khách"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-fresher-001",
+      "industry": "creative-design",
+      "level": "fresher",
+      "topic": "brief",
+      "question": "Bạn làm gì khi nhận một yêu cầu thiết kế quá chung chung?",
+      "answerSample": "Tôi hỏi mục tiêu, đối tượng xem, thông điệp, kênh sử dụng, thời hạn và tiêu chí duyệt. Tôi xác nhận phạm vi bằng brief ngắn, sau đó trình bày hướng thiết kế để kiểm tra sớm. Tôi giải thích lựa chọn theo mục tiêu thay vì sở thích cá nhân và chỉ dùng tài nguyên có quyền sử dụng phù hợp.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác nhận brief và tiêu chí duyệt",
+        "Quyền sử dụng tài nguyên"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "design-fresher-002",
+      "industry": "creative-design",
+      "level": "fresher",
+      "topic": "revision",
+      "question": "Khách yêu cầu sửa nhiều lần ngoài phạm vi, bạn trao đổi thế nào?",
+      "answerSample": "Tôi tổng hợp yêu cầu và phân biệt điều chỉnh trong phạm vi với yêu cầu mới theo thỏa thuận. Tôi giải thích ảnh hưởng đến thời gian và chi phí, đề xuất ưu tiên hoặc phương án bổ sung để khách quyết định trước khi làm. Tôi giữ thái độ hợp tác nhưng không tự hứa thêm công việc không giới hạn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Làm rõ phạm vi",
+        "Thống nhất thay đổi trước khi thực hiện"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-fresher-001",
+      "industry": "retail-ecommerce",
+      "level": "fresher",
+      "topic": "inventory",
+      "question": "Bạn xử lý thế nào khi tồn kho thực tế không khớp hệ thống?",
+      "answerSample": "Tôi kiểm đếm lại đúng mã hàng và đơn vị tính, đối chiếu giao nhận, đơn đang xử lý và các lần điều chỉnh. Tôi báo người phụ trách, ghi nhận chênh lệch theo quy trình và xác minh nguyên nhân trước khi sửa. Tôi không tự bù số hoặc tiếp tục hứa giao hàng khi chưa chắc có hàng.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Đối chiếu mã và đơn vị tính",
+        "Điều chỉnh theo quy trình"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "retail-fresher-002",
+      "industry": "retail-ecommerce",
+      "level": "fresher",
+      "topic": "conversion",
+      "question": "Gian hàng có nhiều lượt xem nhưng ít đơn, bạn kiểm tra gì?",
+      "answerSample": "Tôi kiểm tra từng bước từ xem sản phẩm, thêm giỏ đến thanh toán, đồng thời xem giá, phí giao hàng, thông tin sản phẩm và lỗi kỹ thuật. Tôi ưu tiên giả thuyết có dữ liệu hỗ trợ và thử từng thay đổi có thể đo. Tôi không dùng đánh giá giả hoặc khẳng định nguyên nhân chỉ từ lượt xem tổng.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xem từng bước chuyển đổi",
+        "Thử thay đổi có đo lường"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-fresher-001",
+      "industry": "customer-service",
+      "level": "fresher",
+      "topic": "complaint",
+      "question": "Khách đang tức giận vì vấn đề chưa được giải quyết, bạn trả lời thế nào?",
+      "answerSample": "Tôi xác nhận điều khách gặp phải, hỏi thông tin tối thiểu cần để tra cứu và tóm tắt lại vấn đề. Tôi cho khách biết bước xử lý tiếp theo cùng mốc cập nhật có thể thực hiện. Nếu vượt thẩm quyền, tôi chuyển đúng bộ phận kèm bối cảnh; không bắt khách kể lại từ đầu hoặc hứa kết quả chưa chắc chắn.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Lắng nghe và tóm tắt",
+        "Cam kết bước cập nhật thực tế"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    },
+    {
+      "id": "cs-fresher-002",
+      "industry": "customer-service",
+      "level": "fresher",
+      "topic": "privacy",
+      "question": "Bạn làm gì khi người gọi yêu cầu thông tin tài khoản của người thân?",
+      "answerSample": "Tôi giải thích rằng cần xác minh quyền truy cập theo quy trình trước khi cung cấp thông tin. Tôi hướng dẫn chủ tài khoản hoặc người được ủy quyền đi theo kênh chính thức, chỉ ghi dữ liệu cần thiết và báo phụ trách khi có dấu hiệu bất thường. Tôi không coi việc biết tên hay số điện thoại là đủ bằng chứng được phép truy cập.",
+      "answerType": "scenario",
+      "keyPoints": [
+        "Xác minh quyền truy cập",
+        "Tối thiểu hóa dữ liệu"
+      ],
+      "redFlags": [
+        "Bịa thành tích, số liệu hoặc cam kết ngoài thẩm quyền"
+      ],
+      "referenceUrls": []
+    }
+  ]
+}

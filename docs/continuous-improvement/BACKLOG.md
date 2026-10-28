@@ -71,3 +71,6 @@ Trạng thái: OPEN → IN_PROGRESS → VERIFIED_LOCAL → DEPLOYED → VERIFIED
 
 27/10 cycle70 SEC006 checkpoint: exact source0be2392 CI40266356806 completed SUCCESS across verify, emulator-restore and pdf-renderer. Source CI is not scoped candidate/main/live verification. Existing Drive independent byte readback/restore and Render login blockers remain; no deployment or large backup.
 28/10 cycle70 SEC006: security-only eight-path scope reviewed against unchanged main caf28d8; preserve main feature test script and workflow except two new HTTP tests. Receipt runs/cycle0070-parser-security/release-scope.json. Not composed/tested as candidate; cloud/Render release blockers unchanged.
+
+| INT006 | P1 | Voice feedback flatters unrelated answers and insists on unknown topic | Owner report29/10; route prompt/default praise confirmed | Evidence-grounded neutral feedback and distinct-topic skip | LOCAL_VERIFIED_NOT_DEPLOYED;128feature+15HTTP, UI/CI pending |
+| INT007 | P1 | Industry/seniority question bank target1000 eachpair | Owner explicitly confirms50,000 target (10x5x1000) | Authored diverse Q&A with honest STAR/technical rubrics, no padding | IN_PROGRESS:20editorial fresher seeds,0expert-reviewed,49,980authored missing; not complete |

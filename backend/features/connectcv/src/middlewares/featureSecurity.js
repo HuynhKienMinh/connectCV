@@ -40,6 +40,11 @@ async function featureSecurity(req,res,next){
   if(result.error)return res.status(400).json(chatError(result.error));
   req.body=result.value;
  }
+ if(fullPath==='/api/interview/live-chat'){
+  const prepared=require('../services/interviewLiveSession').prepareLiveInput(req.body);
+  if(prepared.error)return res.status(400).json(prepared.error);
+  req.liveInterviewPrepared=prepared;req.body=prepared.value;
+ }
  const body=req.body;
  if(!body||typeof body!=='object'||Array.isArray(body))return res.status(400).json({success:false,message:'Nội dung yêu cầu không hợp lệ.'});
  for(const key of ['history','messages','conversationHistory'])if(body[key]!==undefined){
@@ -69,7 +74,7 @@ async function featureSecurity(req,res,next){
  if(buckets.size>=12000)return res.status(503).json({success:false,message:'Hệ thống đang bận.'});
  for(const key of keys){let v=buckets.get(key);if(!v||v.until<=now)v={count:0,until:now+window};v.count++;buckets.set(key,v);}
  const localChat=fullPath==='/api/chatbot/message'&&require('../services/chatbotService').localTopic(req.body.message)!==null;
- try{if(ai&&!localChat)await consumeBudget(req.user.id);}
+ try{if(ai&&!localChat&&!req.liveInterviewPrepared?.plan.local)await consumeBudget(req.user.id);}
  catch(error){return res.status(error.status||503).json({success:false,code:'FEATURE_BUDGET',message:error.status===429?'Đã đạt giới hạn 100 yêu cầu/ngày. Vui lòng quay lại ngày mai.':'Chưa cấu hình kho quota bền vững hoặc dịch vụ đang bận.'});}
  next();
 }
