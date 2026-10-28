@@ -1,0 +1,15 @@
+{
+  "source": "759fee6563a47ed61bff77c8b3ab065998259c50",
+  "candidate": "d3083656efcc4f6a649f5c9eebc0874535777a75",
+  "parent": "193d4ab62cdbb5eafca6f3d9df3c3d48e6e2afbb",
+  "changedPaths": [
+    "backend/features/connectcv/assets/interview-bank/seed.json"
+  ],
+  "sourceCiPassed": false,
+  "candidateCiPassed": false,
+  "deployed": false,
+  "sourceCiId": 40786552134,
+  "candidateCiId": 40786551425,
+  "verifyAndAuditsPassedBoth": true,
+  "browserCiPending": true
+}
