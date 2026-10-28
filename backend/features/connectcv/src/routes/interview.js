@@ -205,7 +205,7 @@ router.post('/live-chat', async (req,res)=>{
    const reply=plan.next?'Chúng ta bắt đầu luyện phỏng vấn. '+plan.next.question:'Ngành và cấp độ này chưa có câu hỏi trong bộ biên soạn hiện tại. Hãy chọn mục khác hoặc quay lại sau.';
    data={interviewerReply:reply,reply,quickFeedback:'',quickEvaluation:'',interviewPhase:plan.next?'opening':'completed',decision:plan.next?'next_question':'complete'};
   }else{
-   const input={question:plan.question,candidateAnswer:value.action==='skip'?'Bỏ qua câu này.':value.message,jobTitle:value.jobTitle,level:value.level,jdText:value.jdText,expectedAnswer:plan.current?.answerSample||'',rubric:plan.current?.keyPoints||[],nextQuestion:plan.next};
+   const input={question:plan.question,candidateAnswer:value.action==='skip'?'Bỏ qua câu này.':value.message,jobTitle:value.jobTitle,level:value.level,jdText:value.jdText,answerType:plan.current?.answerType,expectedAnswer:plan.current?.answerSample||'',rubric:plan.current?.keyPoints||[],nextQuestion:plan.next};
    const model=plan.local?null:await callGeminiJSON(policy.buildLiveAssessmentPrompt(input));
    data=policy.groundLiveAssessment(model,input);
   }

@@ -49,7 +49,7 @@ test('invalid live-coaching inputs fail before provider or daily AI budget',asyn
   {...startBody,action:'reply',message:''},
   {...startBody,message:{text:'PRIVATE_INVALID_SENTINEL'}},
   {...startBody,history:[{role:'system',message:'PRIVATE_INVALID_SENTINEL'}]},
-  {...startBody,askedQuestionIds:Array(101).fill('swe-fresher-001')},
+  {...startBody,askedQuestionIds:Array(1001).fill('swe-fresher-001')},
   {...startBody,action:'reply',message:'x'.repeat(3001)}
  ]){const r=await f.request({body});assert.equal(r.status,400);assert.doesNotMatch(JSON.stringify(r.body),/PRIVATE_INVALID_SENTINEL/);}
  assert.equal((await f.request({raw:'{invalid-json'})).status,400);assert.equal(f.stats.prompts.length,0);assert.equal(f.stats.budget.length,0);

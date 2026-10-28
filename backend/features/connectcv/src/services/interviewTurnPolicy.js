@@ -17,12 +17,17 @@ function detectTurnIntent(candidateAnswer) {
   }
   const skip = new RegExp('^' + intro + '(?:(?:cho|xin|vui long|hay|please|can we|could we)\\s+)?' + speaker + '(?:(?:muon|xin|duoc|want to|would like to)\\s+)?(?:bo qua(?: cau(?: hoi)?(?: nay)?)?|chuyen(?: sang)?(?: cau(?: hoi)?| chu de)(?: khac| tiep theo| moi)|doi(?: sang)? cau(?: hoi)? khac|skip(?: this)?(?: question)?|move (?:on|to (?:another|the next) question)|next question|pass)(?:\\b|[.!?,])');
   if (skip.test(text)) return { type: 'skip', reason: 'explicit_skip_request' };
+  const questionLead = '(?:(?:cau(?: hoi)?(?: nay)?|cai nay|phan nay|noi dung nay)\\s+)?';
+  const directMoveOn = new RegExp('^' + intro + '(?:em|toi|minh|i|we)\\b.{0,250}\\b(?:xin (?:qua|chuyen sang) cau khac|cho (?:em|toi|minh) (?:qua|chuyen sang) cau khac|can we move on|could we move on)[.!? ]*$');
+  if (directMoveOn.test(text)) return { type: 'skip', reason: 'explicit_skip_request' };
+  const surrender = new RegExp('^' + intro + questionLead + speaker + '(?:chiu|bo tay)(?: roi| thoi)?(?:[.!?, ]*(?:cau khac di|chuyen cau khac|a|nhe))*[.!? ]*$');
+  if (surrender.test(text)) return { type: 'no_answer', reason: 'explicit_no_answer' };
   // Do not discard a substantive answer after a contrast or an explanation of
   // what the candidate DOES know. Short "but please move on" is still a skip.
   if (/\b(nhung|tuy nhien|but|however)\b/u.test(text) && text.split(/\s+/u).length > 18) {
     return { type: 'answer', reason: 'substantive_qualified_answer' };
   }
-  const unknownVi = new RegExp('^' + intro + speaker + '(?:(?:hien tai|thuc su|that su|van|cung)\\s+)?(?:khong|chua)\\s+(?:biet|ro|hieu|nho|nam (?:ro|duoc)|tra loi duoc|co (?:cau tra loi|kien thuc|kinh nghiem))(?:\\b|[.!?,])');
+  const unknownVi = new RegExp('^' + intro + questionLead + speaker + '(?:(?:hien tai|thuc su|that su|van|cung)\\s+)?(?:khong|chua)\\s+(?:biet|ro|hieu|nho|nam (?:ro|duoc)|tra loi duoc|co (?:cau tra loi|kien thuc|kinh nghiem))(?:\\b|[.!?,])');
   const unknownEn = new RegExp('^' + intro + '(?:(?:i|we)\\s+)?(?:don[’\u0027]?t know|do not know|am not sure|have no (?:idea|answer)|can[’\u0027]?t answer|cannot answer)(?:\\b|[.!?,])');
   if (unknownVi.test(text) || unknownEn.test(text)) return { type: 'no_answer', reason: 'explicit_no_answer' };
   return { type: 'answer', reason: 'no_explicit_request' };
@@ -34,6 +39,7 @@ function buildLiveAssessmentPrompt(input) {
     candidateAnswer: String(input.candidateAnswer || '').slice(0, 3000),
     jobTitle: String(input.jobTitle || '').slice(0, 150),
     level: String(input.level || '').slice(0, 50),
+    answerType: ['knowledge','scenario','behavioral'].includes(input.answerType) ? input.answerType : 'unspecified',
     jdText: String(input.jdText || '').slice(0, 4000),
     expectedAnswer: String(input.expectedAnswer || '').slice(0, 3000),
     rubric: input.rubric || []

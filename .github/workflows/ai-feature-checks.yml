@@ -198,6 +198,12 @@ jobs:
         env:
           PLAYWRIGHT_BROWSERS_PATH: '0'
           INTERVIEW_MIC_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-mic-qa'
+      - name: Verify role-level coaching, no-answer topic change and completed session microphone
+        run: node tests/interviewCoachingUi.check.cjs
+        working-directory: backend/features/connectcv
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: '0'
+          INTERVIEW_COACHING_QA_OUTPUT: '${{ runner.temp }}/connectcv-interview-coaching-qa'
       - name: Verify community receipt retry, authoritative balance and retained newer drafts
         run: node tests/communityReceiptUi.check.cjs
         working-directory: backend/features/connectcv

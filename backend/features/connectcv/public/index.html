@@ -1064,7 +1064,7 @@ window.fetch=async function(resource,options={}){
 <i class="fa-solid fa-bullseye text-red-600 mr-2"></i> Thiết Lập Phiên Phỏng Vấn
             </h2>
 <div class="space-y-4">
-<div class="grid grid-cols-2 gap-3"><div><label for="int-industry">Ngành luyện tập</label><select id="int-industry" class="w-full border rounded-lg p-2 text-sm" onchange="resetInterviewBankScope()"><option value="">Chọn ngành phù hợp</option><option value="software-engineering">Công nghệ Thông tin</option><option value="marketing">Marketing & Truyền thông</option><option value="sales">Kinh doanh & Bán hàng</option><option value="finance-accounting">Tài chính & Kế toán</option><option value="human-resources">Hành chính & Nhân sự</option><option value="education">Giáo dục & Đào tạo</option><option value="hospitality">Khách sạn & Nhà hàng</option><option value="creative-design">Sáng tạo & Nghệ thuật</option><option value="retail-ecommerce">Thương mại Điện tử & Bán lẻ</option><option value="customer-service">Tư vấn & Chăm sóc khách hàng</option></select></div><div><label for="int-level">Cấp độ chuyên môn</label><select id="int-level" class="w-full border rounded-lg p-2 text-sm" onchange="resetInterviewBankScope()"><option value="fresher">Fresher / mới vào nghề</option><option value="junior">Junior</option><option value="middle">Middle</option><option value="senior">Senior</option><option value="lead">Lead / quản lý nhóm</option></select></div></div><button type="button" class="text-sm text-blue-700 underline" onclick="showInterviewBank()">Xem ngân hàng câu hỏi và đáp án tham khảo</button><button type="button" class="text-sm border rounded px-3 py-2" onclick="skipLiveBankQuestion()">Không biết / Bỏ qua câu hiện tại</button><p class="text-xs text-slate-600" id="interview-bank-coverage">Bộ khởi đầu đang biên soạn; chưa đạt 1.000 câu/ngành/cấp độ.</p><div id="interview-bank-items" class="text-sm max-h-64 overflow-auto" aria-live="polite"></div>
+<div class="grid grid-cols-2 gap-3"><div><label for="int-industry">Ngành luyện tập</label><select id="int-industry" class="w-full border rounded-lg p-2 text-sm" onchange="resetInterviewBankScope()"><option value="">Chọn ngành phù hợp</option><option value="software-engineering">Công nghệ Thông tin</option><option value="marketing">Marketing & Truyền thông</option><option value="sales">Kinh doanh & Bán hàng</option><option value="finance-accounting">Tài chính & Kế toán</option><option value="human-resources">Hành chính & Nhân sự</option><option value="education">Giáo dục & Đào tạo</option><option value="hospitality">Khách sạn & Nhà hàng</option><option value="creative-design">Sáng tạo & Nghệ thuật</option><option value="retail-ecommerce">Thương mại Điện tử & Bán lẻ</option><option value="customer-service">Tư vấn & Chăm sóc khách hàng</option></select></div><div><label for="int-level">Cấp độ chuyên môn</label><select id="int-level" class="w-full border rounded-lg p-2 text-sm" onchange="resetInterviewBankScope()"><option value="fresher">Fresher / mới vào nghề</option><option value="junior">Junior</option><option value="middle">Middle</option><option value="senior">Senior</option><option value="lead">Lead / quản lý nhóm</option></select></div></div><button type="button" class="text-sm text-blue-700 underline" onclick="showInterviewBank()">Xem ngân hàng câu hỏi và đáp án tham khảo</button><button type="button" class="text-sm border rounded px-3 py-2" onclick="skipLiveBankQuestion()">Không biết / Bỏ qua câu hiện tại</button><p class="text-xs text-slate-600" id="interview-bank-coverage">Bộ khởi đầu đang biên soạn; chưa đạt 1.000 câu/ngành/cấp độ.</p><div class="flex gap-2 items-center"><label for="interview-bank-search" class="sr-only">Tìm câu hỏi trong ngành và cấp độ đã chọn</label><input id="interview-bank-search" type="search" maxlength="150" placeholder="Tìm câu hỏi trong bộ đã chọn" class="border rounded p-2 text-sm min-w-0 flex-1" onkeydown="if(event.key==='Enter'){event.preventDefault();showInterviewBank();}"><button type="button" class="border rounded p-2 text-sm" onclick="showInterviewBank()">Tìm</button></div><div id="interview-bank-items" class="text-sm max-h-64 overflow-auto" aria-live="polite"></div><div id="interview-bank-pages" class="flex gap-3 items-center text-sm" aria-label="Phân trang ngân hàng câu hỏi"></div>
 <div>
 <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1">Chức Danh Công Việc</label>
 <input class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-red-500 focus:outline-none" id="int-title" type="text" value=""/>
@@ -3933,22 +3933,54 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     let currentSpeechBuffer = '';
 
     let liveInterviewScope = {};
-    let liveBankQuestion = null, liveBankAsked = [], liveBankComplete = false, interviewBankRead = null;
-    function resetInterviewBankScope(){invalidateLiveInterview();liveInterviewHistory=[];document.getElementById('interview-bank-items').replaceChildren();document.getElementById('transcript-drawer-messages').replaceChildren();showLiveFeedback('');updateLiveCaption('system','Ngành hoặc cấp độ đã đổi. Hãy bắt đầu phiên mới.');}
-    async function showInterviewBank(){
-      if(interviewBankRead)interviewBankRead.abort();const controller=new AbortController();interviewBankRead=controller;
-      const industry=document.getElementById('int-industry').value,level=document.getElementById('int-level').value;
-      const timeout=setTimeout(()=>controller.abort(),15000);
-      try{const response=await fetch('/api/interview/question-bank?'+new URLSearchParams({industry,level,limit:'20'}),{signal:controller.signal});const payload=await response.json();
-       if(interviewBankRead!==controller||industry!==document.getElementById('int-industry').value||level!==document.getElementById('int-level').value)return;
-       if(!response.ok||!payload.success)throw Error('unavailable');const data=payload.data,host=document.getElementById('interview-bank-items');host.replaceChildren();
-       document.getElementById('interview-bank-coverage').textContent=data.total+' câu biên soạn / mục tiêu 1.000 cho ngành và cấp độ này. Chưa thẩm định chuyên gia; đáp án là gợi ý, không phải thành tích của bạn.';
-       for(const row of data.items){const box=document.createElement('details'),title=document.createElement('summary'),answer=document.createElement('p');title.textContent=row.question;answer.textContent=row.answerSample;box.className='my-3 border rounded p-2';box.append(title,answer);host.append(box);}
-      }catch(error){if(interviewBankRead===controller)document.getElementById('interview-bank-coverage').textContent='Chưa tải được ngân hàng. Bạn có thể thử lại.';}finally{clearTimeout(timeout);if(interviewBankRead===controller)interviewBankRead=null;}
+    let liveBankQuestion = null, liveBankAsked = [], liveBankSkippedTopics = [], liveBankComplete = false, interviewBankRead = null;
+    function resetInterviewBankScope(){
+      invalidateLiveInterview();liveInterviewHistory=[];
+      document.getElementById('interview-bank-items').replaceChildren();
+      document.getElementById('interview-bank-pages').replaceChildren();
+      document.getElementById('interview-bank-search').value='';
+      document.getElementById('interview-bank-coverage').textContent='Chọn Xem ngân hàng để tải câu hỏi của ngành và cấp độ mới.';
+      document.getElementById('transcript-drawer-messages').replaceChildren();
+      showLiveFeedback('');updateLiveCaption('system','Ngành hoặc cấp độ đã đổi. Hãy bắt đầu phiên mới.');
     }
-    function skipLiveBankQuestion(){if(!liveInterviewHistory.length||liveBankComplete)return;sendCandidateLiveAnswer('Bỏ qua câu này.');}
-    function liveBankRequest(){return {industry:document.getElementById('int-industry').value,level:document.getElementById('int-level').value,currentQuestionId:liveBankQuestion?.id||null,askedQuestionIds:liveBankAsked};}
-    function acceptLiveBankTurn(data){liveBankQuestion=data.currentQuestion||null;liveBankAsked=data.askedQuestionIds||[];liveBankComplete=!!data.sessionComplete;}
+    async function showInterviewBank(offset=0){
+      if(interviewBankRead)interviewBankRead.abort();
+      const industry=document.getElementById('int-industry').value,level=document.getElementById('int-level').value;
+      if(!industry){document.getElementById('interview-bank-coverage').textContent='Chọn ngành trước khi xem câu hỏi.';return;}
+      const search=document.getElementById('interview-bank-search').value.trim();
+      const controller=new AbortController();interviewBankRead=controller;
+      const timeout=setTimeout(()=>controller.abort(),15000);
+      const pageOffset=Number.isSafeInteger(offset)&&offset>=0?offset:0;
+      try{
+        const response=await fetch('/api/interview/question-bank?'+new URLSearchParams({industry,level,search,offset:String(pageOffset),limit:'20'}),{signal:controller.signal});
+        const payload=await response.json();
+        if(interviewBankRead!==controller||industry!==document.getElementById('int-industry').value||level!==document.getElementById('int-level').value)return;
+        if(!response.ok||!payload.success)throw Error('unavailable');
+        const data=payload.data,host=document.getElementById('interview-bank-items'),pages=document.getElementById('interview-bank-pages');
+        host.replaceChildren();pages.replaceChildren();
+        document.getElementById('interview-bank-coverage').textContent=data.total+' câu biên soạn'+(search?' phù hợp tìm kiếm':' / mục tiêu 1.000 cho ngành và cấp độ này')+'. Nội dung tham khảo đang mở rộng; hãy điều chỉnh đáp án theo kinh nghiệm thật.';
+        for(const row of data.items){
+          const box=document.createElement('details'),title=document.createElement('summary'),answer=document.createElement('p');
+          title.textContent=row.question;answer.textContent=row.answerSample;answer.className='my-2';
+          box.className='my-3 border rounded p-2';box.append(title,answer);
+          for(const [label,values] of [['Ý cần có',row.keyPoints],['Điểm cần tránh',row.redFlags],['Tự kiểm chứng',row.evidencePrompts]]){
+            if(!Array.isArray(values)||!values.length)continue;
+            const heading=document.createElement('strong'),list=document.createElement('ul');heading.textContent=label;list.className='list-disc pl-5 my-2';
+            for(const text of values){const item=document.createElement('li');item.textContent=text;list.append(item);}box.append(heading,list);
+          }
+          host.append(box);
+        }
+        const addPage=(label,target)=>{const button=document.createElement('button');button.type='button';button.textContent=label;button.className='border rounded px-3 py-1';button.onclick=()=>showInterviewBank(target);pages.append(button);};
+        if(data.offset>0)addPage('Trang trước',Math.max(0,data.offset-data.limit));
+        const range=document.createElement('span');range.textContent=data.total?String(data.offset+1)+'–'+Math.min(data.offset+data.items.length,data.total)+' / '+data.total:'Không có câu hỏi phù hợp';pages.append(range);
+        if(data.nextOffset!==null)addPage('Trang sau',data.nextOffset);
+      }catch(error){
+        if(interviewBankRead===controller)document.getElementById('interview-bank-coverage').textContent='Chưa tải được ngân hàng. Bạn có thể thử lại.';
+      }finally{clearTimeout(timeout);if(interviewBankRead===controller)interviewBankRead=null;}
+    }
+    function skipLiveBankQuestion(){if(!liveInterviewHistory.length||liveBankComplete)return;return sendCandidateLiveAnswer('Bỏ qua câu này.',{source:'skip'});}
+    function liveBankRequest(){return {industry:document.getElementById('int-industry').value,level:document.getElementById('int-level').value,currentQuestionId:liveBankQuestion?.id||null,askedQuestionIds:liveBankAsked,skippedTopics:liveBankSkippedTopics};}
+    function acceptLiveBankTurn(data){liveBankQuestion=data.currentQuestion||null;liveBankAsked=data.askedQuestionIds||[];liveBankSkippedTopics=data.skippedTopics||[];liveBankComplete=!!data.sessionComplete;}
 
     let liveReplyOperation = null;
     let liveTranscribeOperation = null;
@@ -3987,6 +4019,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     }
     function invalidateLiveInterview() {
       liveInterviewScope = {};
+      liveBankQuestion = null;
+      liveBankAsked = [];
+      liveBankSkippedTopics = [];
+      liveBankComplete = false;
+      if (interviewBankRead) { interviewBankRead.abort(); interviewBankRead = null; }
       cancelLiveSummary();
       cancelLiveReply();
       cancelLiveTranscription();
@@ -4361,6 +4398,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Khởi tạo và Bật micro nhận diện giọng nói tiếng Việt
     async function startLiveListening() {
+      if (liveBankComplete) return;
       // Chống tiếng vọng âm thanh: Tuyệt đối không mở micro khi AI đang suy luận hoặc phát âm qua loa
       if (isAISpeakingOrThinking) {
         console.log('AI đang phát âm hoặc suy luận, micro tạm khóa chống echo');
@@ -4547,7 +4585,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
 
     // Engine 2: Ghi âm trực tiếp PCM & mã hóa WAV gửi Gemini AI
     async function startMediaRecorderListening() {
-      if (micCapturePending || isMediaRecording || isAISpeakingOrThinking) return;
+      if (liveBankComplete || micCapturePending || isMediaRecording || isAISpeakingOrThinking) return;
       cancelLiveTranscription();
       const generation = ++micCaptureGeneration;
       micCapturePending = true;
@@ -4815,7 +4853,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         // Nếu đã có nội dung nói xong (ở chế độ thủ công hoặc đã thu được văn bản), bấm nút là GỬI NGAY!
         if (textToSend) {
           stopLiveListening();
-          sendCandidateLiveAnswer(textToSend);
+          sendCandidateLiveAnswer(textToSend,{source:inputVal?'text':'voice'});
           return;
         }
 
@@ -4831,7 +4869,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     function sendQuickLiveAnswer() {
       const input = document.getElementById('live-quick-input');
       const text = ((input ? input.value : '') || currentSpeechBuffer || '').trim();
-      if (!text) return;
+      if (!text || liveBankComplete) return;
       cancelLiveVoice();
       if (input) input.value = '';
       currentSpeechBuffer = '';
@@ -4840,20 +4878,20 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
         currentLiveAudio = null;
       }
       stopLiveListening();
-      sendCandidateLiveAnswer(text);
+      sendCandidateLiveAnswer(text,{source:'text'});
     }
 
     // Gửi câu trả lời của ứng viên sang AI và tiếp tục vòng lặp Gemini Live
-    async function sendCandidateLiveAnswer(answerText) {
+    async function sendCandidateLiveAnswer(answerText, {source='voice'} = {}) {
       if (!answerText || !answerText.trim() || liveBankComplete) return;
 
       // Chống tiếng vang (Echo Filter): Nếu lời nói thu được trùng với câu hỏi của AI vừa phát qua loa thì loại bỏ ngay
-      const lastAIMsg = [...liveInterviewHistory].reverse().find(m => m.role === 'interviewer')?.message || '';
-      if (lastAIMsg) {
+      const lastAIMsg = liveBankQuestion?.question || [...liveInterviewHistory].reverse().find(m => m.role === 'interviewer')?.message || '';
+      if (source === 'voice' && lastAIMsg) {
         const cleanAIText = lastAIMsg.toLowerCase().replace(/[^a-z0-9à-ỹ]/gi, ' ').trim();
         const cleanAnsText = answerText.toLowerCase().replace(/[^a-z0-9à-ỹ]/gi, ' ').trim();
         if (cleanAIText && cleanAnsText && (cleanAIText.includes(cleanAnsText) || cleanAnsText.includes(cleanAIText)) && cleanAnsText.length > 12) {
-          console.warn('[Echo Filter] Bỏ qua câu trả lời do là tiếng vang từ loa ngoài của AI:', answerText);
+          console.warn('[Interview] echo_discarded');
           currentSpeechBuffer = '';
           const quickInput = document.getElementById('live-quick-input');
           if (quickInput) quickInput.value = '';
@@ -4889,7 +4927,7 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
             jobTitle: document.getElementById('int-title').value,
             jdText: document.getElementById('int-jd').value,
             candidateProfile: document.getElementById('int-exp').value,
-            history: liveInterviewHistory,
+            history: liveInterviewHistory.slice(-8).map(row=>({role:row.role,message:String(row.message||'').slice(0,3000)})),
             message: answerText,
             ...liveBankRequest(),
             action: 'reply'
@@ -5271,11 +5309,11 @@ Em xử lý race condition thế nào khi có 1000 request?" rows="4"></textarea
     function sendManualAnswer() {
       const input = document.getElementById('live-manual-input');
       const text = input.value.trim();
-      if (!text) return;
+      if (!text || liveBankComplete) return;
 
       input.value = '';
       document.getElementById('text-input-modal').classList.add('hidden');
-      sendCandidateLiveAnswer(text);
+      sendCandidateLiveAnswer(text,{source:'text'});
     }
 
     // Gán sự kiện click vào Quả cầu Live Orb

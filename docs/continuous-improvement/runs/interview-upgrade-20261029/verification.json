@@ -1,0 +1,715 @@
+{
+  "date": "2026-10-29",
+  "catalog": {
+    "schemaVersion": 1,
+    "language": "vi",
+    "industries": [
+      {
+        "id": "software-engineering",
+        "label": "Công nghệ Thông tin",
+        "aliases": [
+          "it",
+          "software engineering",
+          "software engineer",
+          "developer",
+          "backend",
+          "frontend",
+          "fullstack",
+          "lập trình",
+          "công nghệ thông tin",
+          "devops",
+          "tester",
+          "qa engineer"
+        ]
+      },
+      {
+        "id": "marketing",
+        "label": "Marketing & Truyền thông",
+        "aliases": [
+          "marketing",
+          "truyền thông",
+          "content marketing",
+          "seo",
+          "digital marketing"
+        ]
+      },
+      {
+        "id": "sales",
+        "label": "Kinh doanh & Bán hàng",
+        "aliases": [
+          "sales",
+          "kinh doanh",
+          "bán hàng",
+          "account executive",
+          "business development"
+        ]
+      },
+      {
+        "id": "finance-accounting",
+        "label": "Tài chính & Kế toán",
+        "aliases": [
+          "finance",
+          "accounting",
+          "kế toán",
+          "tài chính",
+          "accountant"
+        ]
+      },
+      {
+        "id": "human-resources",
+        "label": "Hành chính & Nhân sự",
+        "aliases": [
+          "human resources",
+          "nhân sự",
+          "hành chính",
+          "hr",
+          "recruiter",
+          "recruitment"
+        ]
+      },
+      {
+        "id": "education",
+        "label": "Giáo dục & Đào tạo",
+        "aliases": [
+          "education",
+          "giáo dục",
+          "đào tạo",
+          "teacher",
+          "giáo viên",
+          "training"
+        ]
+      },
+      {
+        "id": "hospitality",
+        "label": "Khách sạn & Nhà hàng",
+        "aliases": [
+          "hospitality",
+          "khách sạn",
+          "nhà hàng",
+          "hotel",
+          "restaurant",
+          "lễ tân"
+        ]
+      },
+      {
+        "id": "creative-design",
+        "label": "Sáng tạo & Nghệ thuật",
+        "aliases": [
+          "creative",
+          "sáng tạo",
+          "nghệ thuật",
+          "design",
+          "designer",
+          "thiết kế",
+          "đồ họa"
+        ]
+      },
+      {
+        "id": "retail-ecommerce",
+        "label": "Thương mại Điện tử & Bán lẻ",
+        "aliases": [
+          "ecommerce",
+          "e commerce",
+          "thương mại điện tử",
+          "bán lẻ",
+          "retail",
+          "merchandiser"
+        ]
+      },
+      {
+        "id": "customer-service",
+        "label": "Tư vấn & Chăm sóc khách hàng",
+        "aliases": [
+          "customer service",
+          "customer support",
+          "chăm sóc khách hàng",
+          "tư vấn",
+          "customer success",
+          "call center"
+        ]
+      }
+    ],
+    "levels": [
+      {
+        "id": "fresher",
+        "label": "Fresher / mới vào nghề",
+        "scope": "Kiến thức nền tảng, bài tập hoặc dự án học tập; không yêu cầu kinh nghiệm quản lý."
+      },
+      {
+        "id": "junior",
+        "label": "Junior",
+        "scope": "Đầu việc có phạm vi rõ, biết kiểm tra kết quả và xin hỗ trợ đúng lúc."
+      },
+      {
+        "id": "middle",
+        "label": "Middle",
+        "scope": "Tự chủ một đầu việc, phân tích đánh đổi và phối hợp liên nhóm."
+      },
+      {
+        "id": "senior",
+        "label": "Senior",
+        "scope": "Vấn đề phức tạp, rủi ro, hướng dẫn đồng nghiệp và kết quả dài hạn."
+      },
+      {
+        "id": "lead",
+        "label": "Lead / quản lý nhóm",
+        "scope": "Ưu tiên, phân bổ nguồn lực, phản biện và trách nhiệm của nhóm."
+      }
+    ],
+    "targetPerIndustryLevel": 1000,
+    "totalTarget": 50000,
+    "totalDrafts": 300,
+    "totalReviewed": 0,
+    "targetMet": false,
+    "status": "SEED_ONLY_EXPANSION_AND_REVIEW_PENDING",
+    "disclosure": "Bộ khởi đầu do biên tập, chưa được chuyên gia độc lập thẩm định; chưa đạt mục tiêu 1.000 câu cho mỗi ngành và cấp độ. Không có bằng chứng thống kê về tần suất xuất hiện khi tuyển dụng.",
+    "answerPolicy": "Đáp án là gợi ý luyện tập, không phải sự thật về ứng viên. Không học thuộc thành tích hoặc số liệu. Chỉ dùng STAR cho câu hỏi hành vi có sự kiện thật; câu kiến thức cần trả lời trực tiếp, nêu điều kiện và đánh đổi. Nếu chưa làm, nói rõ giới hạn và cách kiểm chứng.",
+    "coverage": [
+      {
+        "industry": "software-engineering",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "software-engineering",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "software-engineering",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "software-engineering",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "software-engineering",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "marketing",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "marketing",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "marketing",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "marketing",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "marketing",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "sales",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "sales",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "sales",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "sales",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "sales",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "finance-accounting",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "finance-accounting",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "finance-accounting",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "finance-accounting",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "finance-accounting",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "human-resources",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "human-resources",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "human-resources",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "human-resources",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "human-resources",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "education",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "education",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "education",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "education",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "education",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "hospitality",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "hospitality",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "hospitality",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "hospitality",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "hospitality",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "creative-design",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "creative-design",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "creative-design",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "creative-design",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "creative-design",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "retail-ecommerce",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "retail-ecommerce",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "retail-ecommerce",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "retail-ecommerce",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "retail-ecommerce",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "customer-service",
+        "level": "fresher",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "customer-service",
+        "level": "junior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "customer-service",
+        "level": "middle",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "customer-service",
+        "level": "senior",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      },
+      {
+        "industry": "customer-service",
+        "level": "lead",
+        "draftCount": 6,
+        "reviewedCount": 0,
+        "target": 1000,
+        "remainingReviewed": 1000,
+        "remainingAuthored": 994,
+        "targetMet": false
+      }
+    ]
+  },
+  "actualUniqueIds": 300,
+  "exactDuplicateQuestions": [],
+  "exactDuplicateAnswers": [],
+  "answerTypes": {
+    "knowledge": 63,
+    "scenario": 187,
+    "behavioral": 50
+  },
+  "behavioralFrameworksNeedingRealExperience": 50,
+  "semanticQualityCertified": false,
+  "independentExpertReview": false,
+  "prevalenceEvidence": false,
+  "verification": {
+    "feature": 135,
+    "httpRelated": 21,
+    "browser": 10,
+    "baselineBrowserFailures": 4,
+    "realAiCalls": 0,
+    "realMicrophoneUsed": false,
+    "productionWrites": 0,
+    "localProviderConfigured": false
+  },
+  "priorSourceCi": {
+    "sha": "776b9d563653519190bd9444eaad103fc4277b98",
+    "run": 40775787350,
+    "conclusion": "failure",
+    "cause": "backend qs advisory GHSA-6pq8-jhm2-2vcw; pdf-renderer and emulator jobs passed"
+  },
+  "dependencyPatch": {
+    "package": "qs",
+    "from": "6.16.0",
+    "to": "6.16.2",
+    "locks": [
+      "backend/package-lock.json",
+      "backend/features/connectcv/package-lock.json"
+    ],
+    "localAudit": "zero at check time",
+    "exploitationEstablished": false
+  },
+  "coverageValidation": {
+    "all50PairsPresent": true,
+    "minPerPair": 6,
+    "maxPerPair": 6,
+    "remainingAuthored": 49700
+  }
+}

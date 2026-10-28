@@ -9,7 +9,8 @@ const schema = Joi.object({
  message:Joi.string().allow('').max(3000),userMessage:Joi.string().allow('').max(3000),jdText:Joi.string().allow('').max(5000).default(''),
  candidateProfile:Joi.alternatives().try(Joi.string().allow('').max(1500),Joi.object()).optional(),
  history:Joi.array().items(historyItem).max(100),conversationHistory:Joi.array().items(historyItem).max(100),
- currentQuestionId:Joi.string().allow(null,'').max(120),askedQuestionIds:Joi.array().items(Joi.string().max(120)).max(100).default([])
+ currentQuestionId:Joi.string().allow(null,'').max(120),askedQuestionIds:Joi.array().items(Joi.string().max(120)).max(1000).default([]),
+ skippedTopics:Joi.array().items(Joi.string().max(80)).max(1000).default([])
 }).required();
 function invalid(field,message){return {success:false,code:'INTERVIEW_INPUT_INVALID',message,fieldErrors:{[field]:message}};}
 function prepareLiveInput(body){
@@ -29,13 +30,15 @@ function prepareLiveInput(body){
  for(const h of value.action==='start'?[]:history){if(h.questionId)ids.add(h.questionId);}
  if(current)ids.add(current.id);
  const intent=value.action==='skip'?{type:'skip'}:policy.detectTurnIntent(answer);
- const next=bank.selectQuestion({industry:value.industry,level:value.level,excludeIds:[...ids],excludeTopics:current?[current.topic]:[]});
+ const skippedTopics=new Set(value.action==='start'?[]:value.skippedTopics);
+ if(current&&intent.type!=='answer')skippedTopics.add(current.topic);
+ const next=bank.selectQuestion({industry:value.industry,level:value.level,excludeIds:[...ids],excludeTopics:[...skippedTopics,...(current?[current.topic]:[])]});
  value.message=answer;value.history=history;
- return {value,plan:{current,next,intent,question:current?.question||(last?.message||last?.content||'').slice(0,1500),askedQuestionIds:[...ids],local:value.action==='start'||intent.type!=='answer'}};
+ return {value,plan:{current,next,intent,question:current?.question||(last?.message||last?.content||'').slice(0,1500),askedQuestionIds:[...ids],skippedTopics:[...skippedTopics],local:value.action==='start'||intent.type!=='answer'}};
 }
 function questionView(q){return q?{id:q.id,question:q.question,topic:q.topic,industry:q.industry,level:q.level}:null;}
 function decorateTurn(data,input,plan){
  const next=questionView(plan.next);
- return {...data,currentQuestion:next,askedQuestionIds:[...new Set([...plan.askedQuestionIds,...(next?[next.id]:[])])].slice(-100),sessionComplete:!next,industry:input.industry,level:input.level,bankStatus:'editorial_draft',assessmentNotice:'Nhận xét AI dùng để luyện tập; trích dẫn đúng nguồn chưa chứng minh đánh giá chuyên môn là đúng.'};
+ return {...data,currentQuestion:next,askedQuestionIds:[...new Set([...plan.askedQuestionIds,...(next?[next.id]:[])])].slice(-1000),skippedTopics:plan.skippedTopics,sessionComplete:!next,industry:input.industry,level:input.level,bankStatus:'editorial_draft',assessmentNotice:'Nhận xét AI dùng để luyện tập; trích dẫn đúng nguồn chưa chứng minh đánh giá chuyên môn là đúng.'};
 }
 module.exports={prepareLiveInput,decorateTurn,questionView};

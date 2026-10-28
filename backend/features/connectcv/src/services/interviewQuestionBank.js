@@ -76,20 +76,29 @@ const records = seed.records.map(row => ({ ...row, reviewStatus: STATUS, evidenc
 const checked = validateImport(records);
 if (!checked.valid) throw new Error('INTERVIEW_BANK_INVALID_SEED: ' + JSON.stringify(checked.errors));
 const byId = new Map(records.map(row => [row.id, row]));
+const byPair = new Map();
+for (const row of records) {
+  const key = `${row.industry}/${row.level}`;
+  if (!byPair.has(key)) byPair.set(key, []);
+  byPair.get(key).push(row);
+}
+function pairRows(industry, level) { return byPair.get(`${industry}/${level}`) || []; }
 
 function catalog() {
   const coverage = meta.industries.flatMap(industry => meta.levels.map(level => {
-    const count = records.filter(row => row.industry === industry.id && row.level === level.id).length;
+    const count = pairRows(industry.id, level.id).length;
     return { industry: industry.id, level: level.id, draftCount: count, reviewedCount: 0, target: meta.targetPerIndustryLevel, remainingReviewed: meta.targetPerIndustryLevel, remainingAuthored: Math.max(0, meta.targetPerIndustryLevel - count), targetMet: false };
   }));
   return { schemaVersion: meta.schemaVersion, language: meta.language, industries: copy(meta.industries), levels: copy(meta.levels), targetPerIndustryLevel: meta.targetPerIndustryLevel, totalTarget: meta.industries.length * meta.levels.length * meta.targetPerIndustryLevel, totalDrafts: records.length, totalReviewed: 0, targetMet: false, status: 'SEED_ONLY_EXPANSION_AND_REVIEW_PENDING', disclosure: meta.disclosure, answerPolicy: meta.answerPolicy, coverage };
 }
 
-function listQuestions({ industry, level, topic, offset = 0, limit = 20, status = STATUS } = {}) {
+function listQuestions({ industry, level, topic, search, offset = 0, limit = 20, status = STATUS } = {}) {
   const industryId = normalizeIndustry(industry), levelId = normalizeLevel(level);
   const pageOffset = Number.isSafeInteger(Number(offset)) && Number(offset) >= 0 ? Math.min(Number(offset), 100000) : 0;
   const pageLimit = Number.isSafeInteger(Number(limit)) && Number(limit) > 0 ? Math.min(Number(limit), 100) : 20;
-  const rows = industryId && levelId && status === STATUS ? records.filter(row => row.industry === industryId && row.level === levelId && (topic === undefined || row.topic === topic)) : [];
+  const query = normalize(typeof search === 'string' ? search.slice(0, 150) : '').split(' ').filter(Boolean);
+  const rows = industryId && levelId && status === STATUS ? pairRows(industryId, levelId).filter(row =>
+    (topic === undefined || row.topic === topic) && query.every(word => normalize(`${row.question} ${row.topic}`).includes(word))) : [];
   return { items: copy(rows.slice(pageOffset, pageOffset + pageLimit)), total: rows.length, offset: pageOffset, limit: pageLimit, nextOffset: pageOffset + pageLimit < rows.length ? pageOffset + pageLimit : null, industry: industryId, level: levelId, reviewStatus: STATUS, disclosure: meta.disclosure };
 }
 
@@ -106,7 +115,7 @@ function selectQuestion({ industry, level, excludeIds = [], excludeTopics = [], 
   if (!industryId || !levelId) return null;
   const ids = new Set(Array.isArray(excludeIds) ? excludeIds.filter(x => typeof x === 'string').slice(0, 10000) : []);
   const topics = new Set(Array.isArray(excludeTopics) ? excludeTopics.filter(x => typeof x === 'string').slice(0, 1000) : []);
-  const available = records.filter(row => row.industry === industryId && row.level === levelId && !ids.has(row.id) && !topics.has(row.topic));
+  const available = pairRows(industryId, levelId).filter(row => !ids.has(row.id) && !topics.has(row.topic));
   if (!available.length) return null;
   // Optional seed changes the first question without storing candidate data or mutating the bank.
   const index = typeof selectionSeed === 'string' && selectionSeed.length <= 200 ? crypto.createHash('sha256').update(selectionSeed).digest().readUInt32BE(0) % available.length : 0;
