@@ -1,0 +1,21 @@
+{
+  "advisory": "GHSA-gg6h-894w-4m9c",
+  "package": "re2js",
+  "from": "2.8.6",
+  "to": "2.9.1",
+  "severity": "high",
+  "sourceCiFailure": 40785729037,
+  "candidateCiFailure": 40785729813,
+  "scope": [
+    "frontend/package-lock.json"
+  ],
+  "applicationExploitabilityEstablished": false,
+  "localAuditAfter": "zero",
+  "frontendUnitTests": 21,
+  "reviewTreeBuildPassed": true,
+  "reviewBuildTemporaryRemoved": true,
+  "candidateBuildVerified": false,
+  "nodeVersionUsed": 24,
+  "engineCompatibility": "re2js>=20 fits existing Vite8 build requirements and Node24 CI",
+  "note": "Initial build refused missing API origin; known public origin rerun passed. No deployment."
+}

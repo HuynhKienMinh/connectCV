@@ -1,0 +1,10 @@
+{
+  "source": "0dc778fdb77664cb0a1eb19b2e75d8ef62cfef95",
+  "candidate": "c34c291f8a28fd452dfbe2d342eb76647b8b0078",
+  "parent": "b6c30a8e7005ce2f461e72de00370394d1a3fbf2",
+  "changedPaths": [
+    "backend/features/connectcv/assets/interview-bank/seed.json"
+  ],
+  "branch": "improvement/interview-coaching-release-20261029",
+  "deployed": false
+}
